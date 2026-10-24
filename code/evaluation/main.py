@@ -439,7 +439,16 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
           "Rows emitted as INCOMPLETE `[]` with `reason_code=NO_ATTRIBUTABLE_RESOURCE` (DESIGN.md C5/M2(b)): "
           + (", ".join(summary["eval"].get("no_attributable_resource", [])) or "none") + " (eval); "
           + (", ".join(summary.get("samples", {}).get("no_attributable_resource", [])) or "none") + " (samples).", ""]
-    L += ["## 4. Custom evaluation cases (X1–X5, fixtures in `code/evaluation/custom_cases/`)", "",
+    cov = _category_coverage()
+    if cov:
+        L += ["### Data-category coverage (C6)", "",
+              "Resources per category in the eval traces, and in the sample answers (joined to the sample traces).",
+              "Categories with no sample coverage are exercised by fixtures X6–X13 (section 4).", "",
+              "| Category | Eval resources | Eval resources with steps | Sample-answer resources |", "|---|---|---|---|"]
+        L += [f"| {c} | {v['eval_resources']} | {v['eval_with_steps']} | {v['sample_answer_resources']} |"
+              for c, v in cov["categories"].items()]
+        L += ["", f"UNMAPPED eval resources: {len(cov['unmapped'])}. No sample coverage: {', '.join(cov['no_sample_coverage'])}.", ""]
+    L += [f"## 4. Custom evaluation cases (X1–X{len(custom)}, fixtures in `code/evaluation/custom_cases/`)", "",
           "| Case | Failure mode tested | Expected | Predicted | Steps exact | Result |", "|---|---|---|---|---|---|"]
     for c in custom:
         L.append(f"| {c['case']} | {c['failure_mode']} | {c['expected_status']} | {c['predicted_status']} | "
@@ -498,6 +507,13 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
           "| Task / model | Calls | Total tokens |", "|---|---|---|"] + [
           f"| {k} | {v['calls']} | {v['tokens']} |" for k, v in sorted(usage.get("experiments", {}).items())]
     (EVAL_DIR / "usage_report.md").write_text("\n".join(U) + "\n", encoding="utf-8")
+
+
+def _category_coverage() -> dict:
+    sys.path.insert(0, str(CODE_DIR / "analysis"))
+    import category_coverage  # noqa: E402
+    category_coverage.main()
+    return json.loads((EVAL_DIR / "category_coverage.json").read_text(encoding="utf-8"))
 
 
 def _models_verified() -> dict:

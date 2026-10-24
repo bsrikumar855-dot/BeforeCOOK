@@ -1,0 +1,98 @@
+{
+ "categories": {
+  "USER_PROFILE": {
+   "eval_resources": 272,
+   "eval_with_steps": 272,
+   "sample_answer_resources": 19
+  },
+  "SECONDARY_IDENTIFIER": {
+   "eval_resources": 0,
+   "eval_with_steps": 0,
+   "sample_answer_resources": 0
+  },
+  "SEARCH_INDEX_ENTRY": {
+   "eval_resources": 270,
+   "eval_with_steps": 270,
+   "sample_answer_resources": 12
+  },
+  "CACHE_ENTRY": {
+   "eval_resources": 0,
+   "eval_with_steps": 0,
+   "sample_answer_resources": 0
+  },
+  "SUPPORT_MESSAGE": {
+   "eval_resources": 155,
+   "eval_with_steps": 155,
+   "sample_answer_resources": 8
+  },
+  "SUPPORT_ATTACHMENT": {
+   "eval_resources": 27,
+   "eval_with_steps": 27,
+   "sample_answer_resources": 3
+  },
+  "ANALYTICS_PROFILE": {
+   "eval_resources": 81,
+   "eval_with_steps": 81,
+   "sample_answer_resources": 5
+  },
+  "PRODUCT_TELEMETRY": {
+   "eval_resources": 0,
+   "eval_with_steps": 0,
+   "sample_answer_resources": 0
+  },
+  "USER_EXPORT": {
+   "eval_resources": 31,
+   "eval_with_steps": 31,
+   "sample_answer_resources": 2
+  },
+  "MARKETING_PROFILE": {
+   "eval_resources": 0,
+   "eval_with_steps": 0,
+   "sample_answer_resources": 1
+  },
+  "EMAIL_DELIVERY_LOG": {
+   "eval_resources": 0,
+   "eval_with_steps": 0,
+   "sample_answer_resources": 0
+  },
+  "SECURITY_AUDIT_LOG": {
+   "eval_resources": 416,
+   "eval_with_steps": 416,
+   "sample_answer_resources": 22
+  },
+  "LEGAL_HOLD_RECORD": {
+   "eval_resources": 8,
+   "eval_with_steps": 8,
+   "sample_answer_resources": 0
+  },
+  "BACKUP_ARCHIVE": {
+   "eval_resources": 59,
+   "eval_with_steps": 59,
+   "sample_answer_resources": 6
+  },
+  "ACCOUNT_TOMBSTONE": {
+   "eval_resources": 9,
+   "eval_with_steps": 9,
+   "sample_answer_resources": 2
+  },
+  "DATA_FLOW": {
+   "eval_resources": 146,
+   "eval_with_steps": 146,
+   "sample_answer_resources": 9
+  },
+  "UNMAPPED": {
+   "eval_resources": 0,
+   "eval_with_steps": 0,
+   "sample_answer_resources": 0
+  }
+ },
+ "sample_answer_resources_not_predicted": 22,
+ "unmapped": [],
+ "no_sample_coverage": [
+  "SECONDARY_IDENTIFIER",
+  "CACHE_ENTRY",
+  "PRODUCT_TELEMETRY",
+  "EMAIL_DELIVERY_LOG",
+  "LEGAL_HOLD_RECORD"
+ ]
+}

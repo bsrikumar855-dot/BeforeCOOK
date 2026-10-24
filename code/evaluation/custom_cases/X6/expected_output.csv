@@ -1,0 +1,2 @@
+case_id,deletion_status,steps_json
+case_x06,COMPLETE,"[{""step_no"":1,""phase"":""VERIFICATION"",""system_id"":""account_service"",""resource_id"":""account_990006"",""operation"":""VERIFY_RECORD_ABSENT"",""state"":""ABSENT"",""evidence_id"":""evidence_x061""},{""step_no"":2,""phase"":""VERIFICATION"",""system_id"":""legal_service"",""resource_id"":""legal_hold_990006"",""operation"":""VERIFY_RECORD_PRESENT"",""state"":""PRESENT"",""evidence_id"":""evidence_x061""}]"

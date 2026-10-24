@@ -1,0 +1,23 @@
+{
+  "exported_at": "2026-09-14T12:00:00Z",
+  "origin": "fixture_ledger",
+  "record_count": 2,
+  "records": [
+    {
+      "recorded_at": "2026-09-14T12:00:00Z",
+      "system": "account_service",
+      "resource_id": "account_990010",
+      "record_type": "USER_PROFILE",
+      "result": "NOT_FOUND",
+      "subject_reference": "ines.10@example.test"
+    },
+    {
+      "recorded_at": "2026-09-14T12:00:00Z",
+      "system": "profile_service",
+      "resource_id": "secondary_id_990010",
+      "record_type": "SECONDARY_IDENTIFIER",
+      "result": "FOUND",
+      "subject_reference": "ines.10@example.test"
+    }
+  ]
+}

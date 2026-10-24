@@ -118,7 +118,34 @@ NOT_DERIVABLE_FROM_INPUTS (missing sample steps no parsed source names; not purs
 
 Rows emitted as INCOMPLETE `[]` with `reason_code=NO_ATTRIBUTABLE_RESOURCE` (DESIGN.md C5/M2(b)): case_63 (eval); case_04 (samples).
 
-## 4. Custom evaluation cases (X1–X5, fixtures in `code/evaluation/custom_cases/`)
+### Data-category coverage (C6)
+
+Resources per category in the eval traces, and in the sample answers (joined to the sample traces).
+Categories with no sample coverage are exercised by fixtures X6–X13 (section 4).
+
+| Category | Eval resources | Eval resources with steps | Sample-answer resources |
+|---|---|---|---|
+| USER_PROFILE | 272 | 272 | 19 |
+| SECONDARY_IDENTIFIER | 0 | 0 | 0 |
+| SEARCH_INDEX_ENTRY | 270 | 270 | 12 |
+| CACHE_ENTRY | 0 | 0 | 0 |
+| SUPPORT_MESSAGE | 155 | 155 | 8 |
+| SUPPORT_ATTACHMENT | 27 | 27 | 3 |
+| ANALYTICS_PROFILE | 81 | 81 | 5 |
+| PRODUCT_TELEMETRY | 0 | 0 | 0 |
+| USER_EXPORT | 31 | 31 | 2 |
+| MARKETING_PROFILE | 0 | 0 | 1 |
+| EMAIL_DELIVERY_LOG | 0 | 0 | 0 |
+| SECURITY_AUDIT_LOG | 416 | 416 | 22 |
+| LEGAL_HOLD_RECORD | 8 | 8 | 0 |
+| BACKUP_ARCHIVE | 59 | 59 | 6 |
+| ACCOUNT_TOMBSTONE | 9 | 9 | 2 |
+| DATA_FLOW | 146 | 146 | 9 |
+| UNMAPPED | 0 | 0 | 0 |
+
+UNMAPPED eval resources: 0. No sample coverage: SECONDARY_IDENTIFIER, CACHE_ENTRY, PRODUCT_TELEMETRY, EMAIL_DELIVERY_LOG, LEGAL_HOLD_RECORD.
+
+## 4. Custom evaluation cases (X1–X13, fixtures in `code/evaluation/custom_cases/`)
 
 | Case | Failure mode tested | Expected | Predicted | Steps exact | Result |
 |---|---|---|---|---|---|
@@ -127,6 +154,14 @@ Rows emitted as INCOMPLETE `[]` with `reason_code=NO_ATTRIBUTABLE_RESOURCE` (DES
 | X3 | Post-delete replication recreation (replica drift) under reported_status=COMPLETE | INCOMPLETE | INCOMPLETE | True | PASS |
 | X4 | Inclusive audit_at boundary; a resurrection dated after audit_at inside an admissible file | COMPLETE | COMPLETE | True | PASS |
 | X5 | Absence by omission next to a near-name decoy | COMPLETE | COMPLETE | True | PASS |
+| X6 | LEGAL_HOLD_RECORD (RETAIN while a supplied hold is active): kept and verified present | COMPLETE | COMPLETE | True | PASS |
+| X7 | CACHE_ENTRY (DELETE always): a cached copy survives the account delete | INCOMPLETE | INCOMPLETE | True | PASS |
+| X8 | EMAIL_DELIVERY_LOG (REDACT when it holds the email): log kept, address exposed | INCOMPLETE | INCOMPLETE | True | PASS |
+| X9 | PRODUCT_TELEMETRY (ANONYMIZE): already anonymized, so COMPLETE | COMPLETE | COMPLETE | True | PASS |
+| X10 | SECONDARY_IDENTIFIER (DELETE always): an alternate contact outlives the profile | INCOMPLETE | INCOMPLETE | True | PASS |
+| X11 | USER_EXPORT (DELETE always): export already gone, verified absent | COMPLETE | COMPLETE | True | PASS |
+| X12 | MARKETING_PROFILE (DELETE always) on the marketing platform | INCOMPLETE | INCOMPLETE | True | PASS |
+| X13 | BACKUP_ARCHIVE (RETAIN; restore access must be blocked): restore still active | INCOMPLETE | INCOMPLETE | True | PASS |
 
 Why each case exists (expected output, why naive logic fails, spec rule) is documented in DESIGN.md §10 and in `code/evaluation/custom_cases/build_fixtures.py`.
 

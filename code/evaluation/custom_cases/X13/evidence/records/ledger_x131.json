@@ -1,0 +1,23 @@
+{
+  "exported_at": "2026-09-14T12:00:00Z",
+  "origin": "fixture_ledger",
+  "record_count": 2,
+  "records": [
+    {
+      "recorded_at": "2026-09-14T12:00:00Z",
+      "system": "account_service",
+      "resource_id": "account_990013",
+      "record_type": "USER_PROFILE",
+      "result": "NOT_FOUND",
+      "subject_reference": "nils.13@example.test"
+    },
+    {
+      "recorded_at": "2026-09-14T12:00:00Z",
+      "system": "backup_service",
+      "resource_id": "backup_990013",
+      "record_type": "BACKUP_ARCHIVE",
+      "result": "ACTIVE",
+      "subject_reference": "nils.13@example.test"
+    }
+  ]
+}

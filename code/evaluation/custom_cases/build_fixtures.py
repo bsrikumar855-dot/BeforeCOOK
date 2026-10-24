@@ -8,6 +8,9 @@ expected_output.csv. People, emails and IDs are fictional (*.example.test, 99xxx
   X3  account deleted, then re-synced into a read replica, while reported COMPLETE
   X4  inclusive audit_at boundary + a record dated after audit_at inside an admissible file
   X5  absence by omission next to a near-name decoy (no fuzzy matching)
+  X6-X13 (C6) one case per data category with no sample coverage, expected steps written from the rule text
+         in deletion_rules.csv: LEGAL_HOLD_RECORD, CACHE_ENTRY, EMAIL_DELIVERY_LOG, PRODUCT_TELEMETRY,
+         SECONDARY_IDENTIFIER, USER_EXPORT, MARKETING_PROFILE, BACKUP_ARCHIVE
 
 Run:  python code/evaluation/custom_cases/build_fixtures.py   (rewrites the fixture folders)
 """
@@ -202,6 +205,89 @@ CASES = {
             step(1, "VERIFICATION", "account_service", "account_990005", "VERIFY_RECORD_ABSENT", "ABSENT", "evidence_x501")]),
     },
 }
+
+
+DELETE_TEXT = "Please permanently delete my account and the personal data linked to it."
+PHASE_OF = {"REPORT": "FINDING", "VERIFY": "VERIFICATION"}
+STATE_OF = {"REPORT_REMAINING_RECORD": "PRESENT", "REPORT_EXPOSED_PII": "PRESENT", "REPORT_RESTORE_RISK": "ACTIVE",
+            "BLOCK_RESTORE": "BLOCKED", "DELETE_RECORD": "ABSENT", "REDACT_RECORD": "REDACTED",
+            "VERIFY_RECORD_ABSENT": "ABSENT", "VERIFY_RECORD_PRESENT": "PRESENT", "VERIFY_RECORD_REDACTED": "REDACTED",
+            "VERIFY_RECORD_ANONYMIZED": "ANONYMIZED", "VERIFY_RESTORE_BLOCKED": "BLOCKED"}
+
+
+def category_case(n: int, name: str, failure_mode: str, system: str, rid: str, category: str, result: str,
+                  expected: tuple[str, list[tuple[str, str, str]]]) -> dict:
+    """A ledger read-back of the subject's account (gone) and one record of `category` with `result`.
+
+    `expected` is (status, [(system_id, resource_id, operation), ...]) written by hand, in output order, from the
+    rule text. Evidence is cited in FINDING steps, and in every step of a COMPLETE case.
+    """
+    uid, email, fid = f"user_99{n:02d}", f"{name.split()[0].lower()}.{n}@example.test", f"evidence_x{n:02d}1"
+    account = f"account_9900{n:02d}"
+    records = [{"recorded_at": "2026-09-14T12:00:00Z", "system": "account_service", "resource_id": account,
+                "record_type": "USER_PROFILE", "result": "NOT_FOUND", "subject_reference": email},
+               {"recorded_at": "2026-09-14T12:00:00Z", "system": system, "resource_id": rid,
+                "record_type": category, "result": result, "subject_reference": email}]
+    status, plan = expected
+    steps = []
+    for i, (sysid, r, op) in enumerate(plan, 1):
+        phase = PHASE_OF.get(op.split("_")[0], "REMEDIATION")
+        steps.append(step(i, phase, sysid, r, op, STATE_OF[op], fid if status == "COMPLETE" or phase == "FINDING" else ""))
+    return {
+        "failure_mode": failure_mode,
+        "users": [user(uid, name, email, f"+44 7700 9900{n:02d}", f"{n:02x}" * 32)],
+        "audit": [],
+        "requests": [request(f"case_x{n:02d}", email, "2026-09-01T09:00:00Z", "COMPLETE", "2026-09-02T12:00:00Z",
+                             "2026-09-15T12:00:00Z", DELETE_TEXT)],
+        "activity": [activity(f"activity_x{n:02d}1", "2026-09-02T11:00:00Z", "DELETE_RECORD", "deletion_worker",
+                              "account_service", account, "SUCCESS",
+                              f"Deletion worker submitted primary profile {account} to account_service.")],
+        "evidence": {fid: (f"evidence/records/ledger_x{n:02d}1.json", "fixture_ledger", "2026-09-14T12:00:00Z",
+                           ledger("2026-09-14T12:00:00Z", records))},
+        "expected": (status, steps),
+    }
+
+
+def _acct(n: int) -> tuple[str, str, str]:
+    return ("account_service", f"account_9900{n:02d}", "VERIFY_RECORD_ABSENT")
+
+
+CASES.update({
+    "X6": category_case(6, "Odile Ferrand", "LEGAL_HOLD_RECORD (RETAIN while a supplied hold is active): kept and verified present",
+                        "legal_service", "legal_hold_990006", "LEGAL_HOLD_RECORD", "FOUND",
+                        ("COMPLETE", [_acct(6), ("legal_service", "legal_hold_990006", "VERIFY_RECORD_PRESENT")])),
+    "X7": category_case(7, "Bram Okafor", "CACHE_ENTRY (DELETE always): a cached copy survives the account delete",
+                        "cache_service", "cache_990007", "CACHE_ENTRY", "FOUND",
+                        ("INCOMPLETE", [("cache_service", "cache_990007", "REPORT_REMAINING_RECORD"),
+                                        ("cache_service", "cache_990007", "DELETE_RECORD"),
+                                        _acct(7), ("cache_service", "cache_990007", "VERIFY_RECORD_ABSENT")])),
+    "X8": category_case(8, "Saanvi Rao", "EMAIL_DELIVERY_LOG (REDACT when it holds the email): log kept, address exposed",
+                        "email_delivery_service", "email_delivery_990008", "EMAIL_DELIVERY_LOG", "IDENTIFIABLE",
+                        ("INCOMPLETE", [("email_delivery_service", "email_delivery_990008", "REPORT_EXPOSED_PII"),
+                                        ("email_delivery_service", "email_delivery_990008", "REDACT_RECORD"),
+                                        _acct(8), ("email_delivery_service", "email_delivery_990008", "VERIFY_RECORD_REDACTED")])),
+    "X9": category_case(9, "Teodor Lind", "PRODUCT_TELEMETRY (ANONYMIZE): already anonymized, so COMPLETE",
+                        "analytics_platform", "telemetry_990009", "PRODUCT_TELEMETRY", "ANONYMIZED",
+                        ("COMPLETE", [_acct(9), ("analytics_platform", "telemetry_990009", "VERIFY_RECORD_ANONYMIZED")])),
+    "X10": category_case(10, "Ines Duarte", "SECONDARY_IDENTIFIER (DELETE always): an alternate contact outlives the profile",
+                         "profile_service", "secondary_id_990010", "SECONDARY_IDENTIFIER", "FOUND",
+                         ("INCOMPLETE", [("profile_service", "secondary_id_990010", "REPORT_REMAINING_RECORD"),
+                                         ("profile_service", "secondary_id_990010", "DELETE_RECORD"),
+                                         _acct(10), ("profile_service", "secondary_id_990010", "VERIFY_RECORD_ABSENT")])),
+    "X11": category_case(11, "Yusuf Demir", "USER_EXPORT (DELETE always): export already gone, verified absent",
+                         "export_service", "export_990011", "USER_EXPORT", "NOT_FOUND",
+                         ("COMPLETE", [_acct(11), ("export_service", "export_990011", "VERIFY_RECORD_ABSENT")])),
+    "X12": category_case(12, "Mei Tanaka", "MARKETING_PROFILE (DELETE always) on the marketing platform",
+                         "marketing_platform", "marketing_990012", "MARKETING_PROFILE", "FOUND",
+                         ("INCOMPLETE", [("marketing_platform", "marketing_990012", "REPORT_REMAINING_RECORD"),
+                                         ("marketing_platform", "marketing_990012", "DELETE_RECORD"),
+                                         _acct(12), ("marketing_platform", "marketing_990012", "VERIFY_RECORD_ABSENT")])),
+    "X13": category_case(13, "Nils Berg", "BACKUP_ARCHIVE (RETAIN; restore access must be blocked): restore still active",
+                         "backup_service", "backup_990013", "BACKUP_ARCHIVE", "ACTIVE",
+                         ("INCOMPLETE", [("backup_service", "backup_990013", "REPORT_RESTORE_RISK"),
+                                         ("backup_service", "backup_990013", "BLOCK_RESTORE"),
+                                         _acct(13), ("backup_service", "backup_990013", "VERIFY_RESTORE_BLOCKED")])),
+})
 
 
 def _write_csv(path: Path, rows: list[dict], fields: list[str]) -> None:

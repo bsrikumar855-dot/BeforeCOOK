@@ -1,0 +1,23 @@
+{
+  "exported_at": "2026-09-14T12:00:00Z",
+  "origin": "fixture_ledger",
+  "record_count": 2,
+  "records": [
+    {
+      "recorded_at": "2026-09-14T12:00:00Z",
+      "system": "account_service",
+      "resource_id": "account_990007",
+      "record_type": "USER_PROFILE",
+      "result": "NOT_FOUND",
+      "subject_reference": "bram.7@example.test"
+    },
+    {
+      "recorded_at": "2026-09-14T12:00:00Z",
+      "system": "cache_service",
+      "resource_id": "cache_990007",
+      "record_type": "CACHE_ENTRY",
+      "result": "FOUND",
+      "subject_reference": "bram.7@example.test"
+    }
+  ]
+}
