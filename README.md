@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ghost Data Still Exists: deletion-audit agent
 
 HackerRank Orchestrate, October 2026. For every request in `dataset/deletion_requests.csv`, the agent decides whether
@@ -104,3 +105,6 @@ zip -r code.zip README.md code -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "*/no
 ```
 
 Challenge and submission page: https://wwww.hackerrank.com/contests/hackerrank-orchestrate-october26/challenges/ghost-data-still-exists
+=======
+# COOKED---October
+>>>>>>> origin/main
