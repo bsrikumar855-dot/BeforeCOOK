@@ -42,6 +42,9 @@ Step object: exactly the keys `step_no, phase, system_id, resource_id, operation
 - **The model has exactly two jobs:**
   (a) `request_text` → `{DELETION, NON_DELETION, UNCLEAR}`. This must be multilingual and negation-aware.
   (b) Extract PNG content (and the content of any PDF *without* a text layer) into the Observation schema, cached by SHA-256 of the file bytes plus the prompt version.
+  Every resource id from (b) must then appear verbatim in local Tesseract OCR text of the same image (C9,
+  `code/agent/parsers/ocr_grounding.py`, no model); ids that do not are dropped as UNGROUNDED. Identifiers must match
+  a known identity exactly or are kept only as `unknown_identifiers`.
 - **Code decides everything that reaches the CSV:** status, every step, every ID, every citation.
 - **Experiment E2 (built, measured, not shipped):** a tool-calling investigator loop (`code/analysis/e2_investigator.py`)
   works one batch of unresolved pairs at a time. The model plans and calls five read-only tools
@@ -50,7 +53,8 @@ Step object: exactly the keys `step_no, phase, system_id, resource_id, operation
   alone decides: it accepts only cited, existing tool results that show a shared identifier or user_id link, and it
   rejects contradicted hard links, double assignments and ordering-only arguments. On the samples it accepted 0 of 126
   proposals, so it is not wired into `code/main.py`.
-- **Exit codes:** 0 ok; 2 validation failed (including self-contradicting rows); 3 cache miss under `--from-cache`;
+- **Exit codes:** 0 ok; 2 validation failed (including self-contradicting rows, except INCOMPLETE `[]` with
+  `reason_code=NO_ATTRIBUTABLE_RESOURCE`); 3 cache miss under `--from-cache` or no OCR cache/engine;
   4 model failure. On 2, 3 or 4 output.csv is never replaced; `--allow-degraded` writes output.degraded.csv.
 - **Hard constraints:**
   - The model never writes `deletion_status`, `operation`, `resource_id`, `system_id` or `evidence_id` into the output.
