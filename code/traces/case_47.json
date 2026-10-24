@@ -1,0 +1,459 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_47",
+   "edges": [
+    {
+     "case_id": "case_47",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_034",
+     "source_id": "activity_3797",
+     "strength": "SECONDARY",
+     "time": "2026-09-12T09:54:10Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 50: several assignments equally supported (rival cases for account_034: ['case_49'])",
+   "resource_id": "account_034",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_47",
+   "edges": [
+    {
+     "case_id": "case_47",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_483",
+     "source_id": "activity_3798",
+     "strength": "SECONDARY",
+     "time": "2026-09-12T10:05:24Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 50: several assignments equally supported (rival cases for account_483: ['case_49'])",
+   "resource_id": "account_483",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_47",
+   "edges": [
+    {
+     "case_id": "case_47",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_617",
+     "source_id": "activity_3796",
+     "strength": "SECONDARY",
+     "time": "2026-09-12T09:45:38Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 50: several assignments equally supported (rival cases for account_617: ['case_49'])",
+   "resource_id": "account_617",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_47",
+   "edges": [
+    {
+     "case_id": "case_47",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7119",
+     "source_id": "activity_3795",
+     "strength": "SECONDARY",
+     "time": "2026-09-12T09:06:33Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 50: several assignments equally supported (rival cases for account_7119: ['case_49'])",
+   "resource_id": "account_7119",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_47",
+   "edges": [
+    {
+     "case_id": "case_47",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_9447",
+     "source_id": "activity_3805",
+     "strength": "SECONDARY",
+     "time": "2026-09-12T11:31:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3805 lies in the burst windows of cases ['case_11', 'case_47', 'case_49']",
+   "resource_id": "analytics_9447",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_47",
+   "edges": [
+    {
+     "case_id": "case_47",
+     "identifier": "email:zofia-dvorak79@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_4324",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T09:41:03Z"
+    },
+    {
+     "case_id": "case_47",
+     "identifier": "email:zofia-dvorak79@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_4324",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T09:41:03Z"
+    },
+    {
+     "case_id": "case_47",
+     "identifier": "email:zofia-dvorak79@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_4324",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T09:41:03Z"
+    },
+    {
+     "case_id": "case_47",
+     "identifier": "email:zofia-dvorak79@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_4324",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T09:41:03Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_4324",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_94",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_47",
+   "edges": [
+    {
+     "case_id": "case_47",
+     "identifier": "email:zofia-dvorak79@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_5742",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T08:49:37Z"
+    },
+    {
+     "case_id": "case_47",
+     "identifier": "email:zofia-dvorak79@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_5742",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T08:49:37Z"
+    },
+    {
+     "case_id": "case_47",
+     "identifier": "email:zofia-dvorak79@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_5742",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T08:49:37Z"
+    },
+    {
+     "case_id": "case_47",
+     "identifier": "email:zofia-dvorak79@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_5742",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T08:49:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_5742",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_94",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_47",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3799",
+   "reason": "hard-linked to ['user_60']",
+   "resource_id": "data_flow_108"
+  },
+  {
+   "activity_id": "activity_3800",
+   "reason": "hard-linked to ['user_60']",
+   "resource_id": "search_5960"
+  },
+  {
+   "activity_id": "activity_3801",
+   "reason": "hard-linked to ['user_32']",
+   "resource_id": "account_4248"
+  },
+  {
+   "activity_id": "activity_3803",
+   "reason": "hard-linked to ['user_31']",
+   "resource_id": "account_146"
+  },
+  {
+   "activity_id": "activity_3804",
+   "reason": "hard-linked to ['user_60']",
+   "resource_id": "support_8765"
+  },
+  {
+   "activity_id": "activity_3806",
+   "reason": "hard-linked to ['user_46']",
+   "resource_id": "data_flow_7759"
+  },
+  {
+   "activity_id": "activity_3807",
+   "reason": "hard-linked to ['user_60']",
+   "resource_id": "analytics_5715"
+  },
+  {
+   "activity_id": "activity_3810",
+   "reason": "hard-linked to ['user_46']",
+   "resource_id": "search_2127"
+  },
+  {
+   "activity_id": "activity_3811",
+   "reason": "hard-linked to ['user_47']",
+   "resource_id": "search_459"
+  },
+  {
+   "activity_id": "activity_3814",
+   "reason": "hard-linked to ['user_32']",
+   "resource_id": "search_052"
+  },
+  {
+   "activity_id": "activity_3815",
+   "reason": "hard-linked to ['user_32']",
+   "resource_id": "support_864"
+  },
+  {
+   "activity_id": "activity_3816",
+   "reason": "hard-linked to ['user_32']",
+   "resource_id": "analytics_2034"
+  },
+  {
+   "activity_id": "activity_3817",
+   "reason": "hard-linked to ['user_32']",
+   "resource_id": "data_flow_9522"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 50: several assignments equally supported (rival cases for account_034: ['case_49'])",
+   "resource_id": "account_034"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 50: several assignments equally supported (rival cases for account_483: ['case_49'])",
+   "resource_id": "account_483"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 50: several assignments equally supported (rival cases for account_617: ['case_49'])",
+   "resource_id": "account_617"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 50: several assignments equally supported (rival cases for account_7119: ['case_49'])",
+   "resource_id": "account_7119"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3805 lies in the burst windows of cases ['case_11', 'case_47', 'case_49']",
+   "resource_id": "analytics_9447"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-26T11:00:00Z",
+  "email": "zofia-dvorak79@proton.me",
+  "reported_at": "2026-09-12T11:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-09-11T11:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_94",
+   "required_action": "DELETE",
+   "resource_id": "search_4324",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_94#L37"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_94",
+    "resource_id": "search_4324",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_ATTACHMENT",
+   "category_basis": "shape ambiguous; deletion workflow attempted DELETE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_94",
+   "required_action": "DELETE",
+   "resource_id": "support_5742",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_94#L17"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_94",
+    "resource_id": "support_5742",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_94",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_4324",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_94",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "support_5742",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_4324",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_5742",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_4324",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "support_5742",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "zofia-dvorak79@proton.me": "request.email",
+    "zofia-dvorak@proton.me": "user_identities.email"
+   },
+   "email_hash": {
+    "28d1f9e52b92f6450899df8ed1e1e76608efeb934a6dd35348f66701cdf50444": "user_audit_log.old_value audit_296",
+    "9098fec1bfb4f0b17c051c05e3681fe9adac3a0d6bbd3774fc70c5aff8887cdb": "user_identities.email_hash"
+   },
+   "name": {
+    "Zofia Dvořák": "user_identities.name"
+   },
+   "phone": {
+    "+48 522 801 050": "user_identities.phone"
+   },
+   "user_id": {
+    "user_45": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_45 via user_audit_log.old_value audit_295"
+  ],
+  "user_ids": [
+   "user_45"
+  ]
+ },
+ "validation_errors": []
+}

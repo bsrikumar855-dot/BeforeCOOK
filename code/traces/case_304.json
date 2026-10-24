@@ -1,0 +1,194 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_304",
+   "edges": [
+    {
+     "case_id": "case_304",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4771",
+     "source_id": "activity_1820",
+     "strength": "SECONDARY",
+     "time": "2026-05-10T05:10:22Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 29: several assignments equally supported (rival cases for account_4771: [])",
+   "resource_id": "account_4771",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_304",
+   "edges": [
+    {
+     "case_id": "case_304",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7907",
+     "source_id": "activity_1819",
+     "strength": "SECONDARY",
+     "time": "2026-05-10T04:50:06Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 29: several assignments equally supported (rival cases for account_7907: [])",
+   "resource_id": "account_7907",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_304",
+   "edges": [
+    {
+     "case_id": "case_304",
+     "identifier": "user_id:user_302",
+     "kind": "HARD",
+     "resource_id": "audit_record_4759",
+     "source_id": "evidence_29",
+     "strength": "HARD",
+     "time": "2026-05-19T06:00:00Z"
+    },
+    {
+     "case_id": "case_304",
+     "identifier": "user_id:user_302",
+     "kind": "HARD",
+     "resource_id": "audit_record_4759",
+     "source_id": "evidence_29",
+     "strength": "HARD",
+     "time": "2026-05-19T06:00:00Z"
+    },
+    {
+     "case_id": "case_304",
+     "identifier": "user_id:user_302",
+     "kind": "HARD",
+     "resource_id": "audit_record_4759",
+     "source_id": "evidence_29",
+     "strength": "HARD",
+     "time": "2026-05-19T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_4759",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_29",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_304",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1822",
+   "reason": "hard-linked to ['user_301']",
+   "resource_id": "backup_4935"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 29: several assignments equally supported (rival cases for account_4771: [])",
+   "resource_id": "account_4771"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 29: several assignments equally supported (rival cases for account_7907: [])",
+   "resource_id": "account_7907"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-19T06:00:00Z",
+  "email": "walker.charlotte@gmail.com",
+  "reported_at": "2026-05-10T06:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-05-07T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_29",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_4759",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_29#customer_data_primary:5",
+     "evidence_29#customer_data_replica_ap_south:6",
+     "evidence_29#customer_data_replica_eu_west:5"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_29",
+    "resource_id": "audit_record_4759",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_29",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_4759",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "walker.charlotte@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "a60efa094a22f64e9b2d5e76d3fcd46956ba89e9cc7f2bb29867d47c355c457c": "user_identities.email_hash"
+   },
+   "name": {
+    "Charlotte Walker": "user_identities.name"
+   },
+   "phone": {
+    "+44 7700 900302": "user_identities.phone"
+   },
+   "user_id": {
+    "user_302": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_302 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_302"
+  ]
+ },
+ "validation_errors": []
+}

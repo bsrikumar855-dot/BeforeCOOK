@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_182",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-23T12:00:00Z",
+  "email": "ren.watanabe@gmail.com",
+  "reported_at": "2026-07-14T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-07-13T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ren.watanabe@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "730d698f25a13b9c890515eaa5f553cb78a31c9d7adcfa4791d1d609b2d5a0b7": "user_identities.email_hash"
+   },
+   "name": {
+    "Ren Watanabe": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 6422 2673": "user_audit_log.old_value audit_73",
+    "+81 90 7271 9766": "user_identities.phone"
+   },
+   "user_id": {
+    "user_180": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_180 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_180"
+  ]
+ }
+}

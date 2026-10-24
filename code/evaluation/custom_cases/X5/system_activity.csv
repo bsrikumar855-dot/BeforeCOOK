@@ -1,0 +1,2 @@
+activity_id,event_time,event_type,source_system,target_system,resource_id,reported_result,details
+activity_x501,2026-09-02T11:00:00Z,DELETE_RECORD,deletion_worker,account_service,account_990005,SUCCESS,Deletion worker reported the requested operation as completed. Target resource: account_990005.

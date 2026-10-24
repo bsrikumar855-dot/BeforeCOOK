@@ -1,0 +1,23 @@
+{
+  "exported_at": "2026-09-09T12:00:00Z",
+  "origin": "fixture_ledger",
+  "record_count": 2,
+  "records": [
+    {
+      "recorded_at": "2026-09-09T12:00:00Z",
+      "system": "account_service",
+      "resource_id": "account_990001",
+      "record_type": "USER_PROFILE",
+      "result": "FOUND",
+      "subject_reference": "luz.marin@example.test"
+    },
+    {
+      "recorded_at": "2026-09-09T12:00:00Z",
+      "system": "search_service",
+      "resource_id": "search_990001",
+      "record_type": "SEARCH_INDEX_ENTRY",
+      "result": "FOUND",
+      "subject_reference": "luz.marin@example.test"
+    }
+  ]
+}

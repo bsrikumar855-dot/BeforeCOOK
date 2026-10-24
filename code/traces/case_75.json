@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_75",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-11T08:00:00Z",
+  "email": "n.nwosu16@gmail.com",
+  "reported_at": "2026-08-21T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-19T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "n.nwosu16@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "8ca376e3791ac4677c6d2bd00b4723cb5a104158035008b9de28337b8b759940": "user_identities.email_hash"
+   },
+   "name": {
+    "Nneka Nwosu": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 340 6727": "user_identities.phone"
+   },
+   "user_id": {
+    "user_73": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_73 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_73"
+  ]
+ }
+}

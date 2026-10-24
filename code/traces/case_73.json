@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_73",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-11T08:00:00Z",
+  "email": "ana.k6978@zoho.com",
+  "reported_at": "2026-08-24T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-21T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ana.k6978@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "610d46e321a3c56b74d24553d3c8699379e47d52d811e0d491a01b31482f0b33": "user_identities.email_hash"
+   },
+   "name": {
+    "Ana Kowalski": "user_identities.name"
+   },
+   "phone": {
+    "+48 572 027 769": "user_identities.phone"
+   },
+   "user_id": {
+    "user_71": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_71 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_71"
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_545",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-20T12:00:00Z",
+  "email": "soojin.k584@outlook.com",
+  "reported_at": "2026-09-08T12:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-09-05T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "soojin.k584@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "e671db6bd2e6cb2cf53ad53e10c90666d7fc72652a36c469f287625ea28c479c": "user_identities.email_hash"
+   },
+   "name": {
+    "Soo-jin Kang": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 3702 5161": "user_audit_log.old_value audit_53",
+    "+82 10 4314 8697": "user_identities.phone"
+   },
+   "user_id": {
+    "user_545": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_545 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_545"
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_208",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-08T09:00:00Z",
+  "email": "nakamura.sota@gmail.com",
+  "reported_at": "2026-06-25T09:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-06-22T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "nakamura.sota@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "8fb39676bc7f2e29c92e355f40ab8c368661228ddb9e2e8fd56768532850b793": "user_identities.email_hash"
+   },
+   "name": {
+    "Sota Nakamura": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 2756 1120": "user_identities.phone"
+   },
+   "user_id": {
+    "user_206": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_206 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_206"
+  ]
+ }
+}

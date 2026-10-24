@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_329",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-09T11:00:00Z",
+  "email": "diego-fernandez@gmail.com",
+  "reported_at": "2026-04-23T11:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-04-22T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "diego-fernandez@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "dd126b271a19209d6d22ff27d3c06171ebcf53284ca4d3287258041e78f2905d": "user_identities.email_hash"
+   },
+   "name": {
+    "Diego Fernández": "user_identities.name"
+   },
+   "phone": {
+    "+34 658 383 577": "user_identities.phone"
+   },
+   "user_id": {
+    "user_327": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_327 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_327"
+  ]
+ }
+}

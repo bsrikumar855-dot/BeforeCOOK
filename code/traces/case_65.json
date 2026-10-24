@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_65",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-16T09:00:00Z",
+  "email": "aoi-yamamoto@gmail.com",
+  "reported_at": "2026-09-04T09:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-09-03T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "aoi-yamamoto@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "54bc80b5c1fc3b15a69da19b3c803b192c26e87afa064431e26ac5cc5c2ba776": "user_identities.email_hash"
+   },
+   "name": {
+    "Aoi Yamamoto": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 5843 8965": "user_identities.phone"
+   },
+   "user_id": {
+    "user_63": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_63 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_63"
+  ]
+ }
+}

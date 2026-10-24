@@ -1,0 +1,341 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_437",
+   "edges": [
+    {
+     "case_id": "case_437",
+     "identifier": "email:zofia-novak@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_022",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_022",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_437",
+   "edges": [
+    {
+     "case_id": "case_437",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_4031",
+     "source_id": "activity_634",
+     "strength": "SECONDARY",
+     "time": "2026-02-19T05:31:26Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_634; no identity link to anyone else",
+   "resource_id": "analytics_4031",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_437",
+   "edges": [
+    {
+     "case_id": "case_437",
+     "identifier": "email:zofia-novak@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_6172",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_6172",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_437",
+   "edges": [
+    {
+     "case_id": "case_437",
+     "identifier": "user_id:user_435",
+     "kind": "HARD",
+     "resource_id": "audit_record_6846",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_6846",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_437",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_635",
+   "reason": "hard-linked to ['user_436']",
+   "resource_id": "account_1680"
+  },
+  {
+   "activity_id": "activity_637",
+   "reason": "hard-linked to ['user_437']",
+   "resource_id": "account_3002"
+  },
+  {
+   "activity_id": "activity_640",
+   "reason": "hard-linked to ['user_436']",
+   "resource_id": "support_6688"
+  },
+  {
+   "activity_id": "activity_642",
+   "reason": "hard-linked to ['user_436']",
+   "resource_id": "search_2052"
+  },
+  {
+   "activity_id": "activity_643",
+   "reason": "hard-linked to ['user_436']",
+   "resource_id": "analytics_6528"
+  },
+  {
+   "activity_id": "activity_644",
+   "reason": "hard-linked to ['user_436']",
+   "resource_id": "data_flow_3226"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-03-15T07:00:00Z",
+  "email": "zofia-novak@gmail.com",
+  "reported_at": "2026-02-19T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-02-18T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "DELETE",
+   "resource_id": "account_022",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L1"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "account_022",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_66",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_4031",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_66#customer_analytics_profiles:2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_66",
+    "resource_id": "analytics_4031",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_6172",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L12"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "analytics_6172",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_6846",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L33"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "audit_record_6846",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_41",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_6172",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_6172",
+   "state": "ANONYMIZED",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_022",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_6846",
+   "state": "PRESENT",
+   "step_no": 4,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_4031",
+   "state": "ANONYMIZED",
+   "step_no": 5,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_6172",
+   "state": "ANONYMIZED",
+   "step_no": 6,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "zofia-novak@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "05388aad688ef79b8b1ca9c7c156d1cbda09eea0d55455a2790557257d14a585": "user_identities.email_hash"
+   },
+   "name": {
+    "Zofia Novak": "user_identities.name"
+   },
+   "phone": {
+    "+48 530 927 757": "user_identities.phone",
+    "+48 765 328 958": "user_audit_log.old_value audit_21"
+   },
+   "user_id": {
+    "user_435": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_435 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_435"
+  ]
+ },
+ "validation_errors": []
+}

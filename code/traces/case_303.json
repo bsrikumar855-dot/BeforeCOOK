@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_303",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-19T06:00:00Z",
+  "email": "j.castillo4893@gmail.com",
+  "reported_at": "2026-05-10T06:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-05-08T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "j.castillo4893@gmail.com": "request.email",
+    "j.castillo48@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "26f9a90e477109d93536cff216ed8334e37192092b0991bbd9090c2ae823635d": "user_audit_log.old_value audit_163",
+    "2af7b8d5c134adcdf2efad944beab7a99f0704f1cc665b9a2c194df8464fdd83": "user_identities.email_hash"
+   },
+   "name": {
+    "Javier Castillo": "user_identities.name"
+   },
+   "phone": {
+    "+34 680 118 916": "user_identities.phone"
+   },
+   "user_id": {
+    "user_301": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_301 via user_audit_log.old_value audit_162"
+  ],
+  "user_ids": [
+   "user_301"
+  ]
+ }
+}

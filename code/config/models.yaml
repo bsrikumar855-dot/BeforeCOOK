@@ -1,0 +1,76 @@
+# Model routing. Exact model ids live here, never in code.
+# Keys come only from environment variables (or an uncommitted .env at the repo root):
+#   GEMINI_API_KEY              primary key
+#   GEMINI_API_KEY_FALLBACK_1   used when the primary key is exhausted or failing
+#   GEMINI_API_KEY_FALLBACK_2   used when fallback 1 is exhausted or failing
+#   GEMINI_API_KEY_FALLBACK_3   used when fallback 2 is exhausted or failing
+# The ids below are checked against the provider's model list before the first live call
+# (python code/main.py --check-models); the ids actually used are recorded on every cache entry.
+
+providers:
+  gemini:
+    endpoint: https://generativelanguage.googleapis.com/v1beta
+    key_slots:
+      primary: GEMINI_API_KEY
+      fallback_1: GEMINI_API_KEY_FALLBACK_1
+      fallback_2: GEMINI_API_KEY_FALLBACK_2
+      fallback_3: GEMINI_API_KEY_FALLBACK_3
+
+models:
+  flash:
+    provider: gemini
+    id: gemini-2.5-flash
+    requests_per_minute: 8          # free-tier limit is 10 RPM; stay under it
+    thinking_budget: 0
+  flash_lite:
+    provider: gemini
+    id: gemini-2.5-flash-lite
+    requests_per_minute: 12         # free-tier limit is 15 RPM; stay under it
+    thinking_budget: 0
+
+# Ordered (model, key slot) attempts per task. The next entry is tried on HTTP 429/5xx,
+# timeout, or output that still fails schema validation after 2 retries.
+tasks:
+  vision:
+    prompt_file: image_extraction.md
+    attempts:
+      - {model: flash, key_slot: primary}
+      - {model: flash, key_slot: fallback_1}
+      - {model: flash, key_slot: fallback_2}
+      - {model: flash, key_slot: fallback_3}
+      - {model: flash_lite, key_slot: primary}
+      - {model: flash_lite, key_slot: fallback_1}
+      - {model: flash_lite, key_slot: fallback_2}
+      - {model: flash_lite, key_slot: fallback_3}
+  intent:
+    prompt_file: intent.md
+    batch_size: 20
+    attempts:
+      - {model: flash_lite, key_slot: primary}
+      - {model: flash_lite, key_slot: fallback_1}
+      - {model: flash_lite, key_slot: fallback_2}
+      - {model: flash_lite, key_slot: fallback_3}
+      - {model: flash, key_slot: primary}
+      - {model: flash, key_slot: fallback_1}
+      - {model: flash, key_slot: fallback_2}
+      - {model: flash, key_slot: fallback_3}
+
+limits:
+  timeout_seconds: 90
+  schema_retries: 2               # extra attempts on the same model when the output fails validation
+  backoff_initial_seconds: 4
+  backoff_max_seconds: 60
+  max_429_retries_per_attempt: 3
+
+# Paid list prices used only for the "estimated cost at paid list price" line in usage_report.md.
+# The run itself uses the free tier (actual cost $0). Source and date are cited in usage_report.md.
+# Source: https://ai.google.dev/gemini-api/docs/pricing (page last updated 2026-10-22 UTC, retrieved 2026-10-24).
+# Text/image input and output (output includes thinking). 3.x Flash prices are the rates valid through 2026-12-31.
+paid_list_price_usd_per_million_tokens:
+  gemini-2.5-flash: {input: 0.30, output: 2.50}
+  gemini-2.5-flash-lite: {input: 0.10, output: 0.40}
+  gemini-3.8-flash: {input: 0.75, output: 3.75}
+  gemini-3.6-flash: {input: 0.75, output: 3.75}
+  gemini-3.5-flash-lite: {input: 0.30, output: 2.50}
+  gemini-3.1-flash-lite: {input: 0.25, output: 1.50}
+  gemini-3-flash-preview: {input: 0.50, output: 3.00}

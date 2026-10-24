@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_115",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-22T11:00:00Z",
+  "email": "nana.b9576@outlook.com",
+  "reported_at": "2026-08-02T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-07-30T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "nana.b9576@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "1b8b810bf535e2d05a358efad6fb0c505e76677acf2c465f22e79eda67e23c86": "user_identities.email_hash"
+   },
+   "name": {
+    "Nana Boateng": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 926 0668": "user_identities.phone"
+   },
+   "user_id": {
+    "user_113": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_113 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_113"
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_501",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-13T08:00:00Z",
+  "email": "O.ERIKSEN10@YAHOO.COM",
+  "reported_at": "2026-01-17T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-15T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "o.eriksen10@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "202b0e081de8b828bed9f619267324aa049ee50b9d196f026a2cae1c5b348256": "user_identities.email_hash"
+   },
+   "name": {
+    "Oskar Eriksen": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 696 63 90": "user_identities.phone"
+   },
+   "user_id": {
+    "user_499": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_499 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_499"
+  ]
+ }
+}

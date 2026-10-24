@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_96",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-01T06:00:00Z",
+  "email": "smorgan9115@fastmail.com",
+  "reported_at": "2026-08-10T06:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-08-08T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "smorgan9115@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "c037c6954e96fb11b8e23e9a7f72e22a89f04f8f477286615271ec73e70ca870": "user_identities.email_hash"
+   },
+   "name": {
+    "Sophie Morgan": "user_identities.name"
+   },
+   "phone": {
+    "+44 7700 900094": "user_identities.phone"
+   },
+   "user_id": {
+    "user_94": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_94 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_94"
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_503",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-08T07:00:00Z",
+  "email": "sami-nasser@proton.me",
+  "reported_at": "2026-01-29T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-28T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "sami-nasser@proton.me": "request.email"
+   },
+   "email_hash": {
+    "b91f7b7c24a828d13e7776f9b94f98dc456c2a1b7dd2e1ab33ae764d924d05c7": "user_identities.email_hash"
+   },
+   "name": {
+    "Sami Nasser": "user_identities.name"
+   },
+   "phone": {
+    "+971 55 289 4844": "user_identities.phone"
+   },
+   "user_id": {
+    "user_501": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_501 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_501"
+  ]
+ }
+}

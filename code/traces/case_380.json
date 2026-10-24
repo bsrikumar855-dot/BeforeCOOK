@@ -1,0 +1,275 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_380",
+   "edges": [
+    {
+     "case_id": "case_380",
+     "identifier": "email:rohan.jain@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_4001",
+     "source_id": "evidence_70",
+     "strength": "HARD",
+     "time": "2026-04-14T04:45:32Z"
+    },
+    {
+     "case_id": "case_380",
+     "identifier": "email:rohan.jain@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_4001",
+     "source_id": "evidence_70",
+     "strength": "HARD",
+     "time": "2026-04-14T04:45:32Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_4001",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_70",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_380",
+   "edges": [
+    {
+     "case_id": "case_380",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_9326",
+     "source_id": "activity_1033",
+     "strength": "SECONDARY",
+     "time": "2026-03-18T05:31:31Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1033; no identity link to anyone else",
+   "resource_id": "analytics_9326",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_380",
+   "edges": [
+    {
+     "case_id": "case_380",
+     "identifier": "user_id:user_378",
+     "kind": "HARD",
+     "resource_id": "audit_record_4489",
+     "source_id": "evidence_70",
+     "strength": "HARD",
+     "time": "2026-04-14T05:02:54Z"
+    },
+    {
+     "case_id": "case_380",
+     "identifier": "user_id:user_378",
+     "kind": "HARD",
+     "resource_id": "audit_record_4489",
+     "source_id": "evidence_70",
+     "strength": "HARD",
+     "time": "2026-04-14T05:02:54Z"
+    },
+    {
+     "case_id": "case_380",
+     "identifier": "user_id:user_378",
+     "kind": "HARD",
+     "resource_id": "audit_record_4489",
+     "source_id": "evidence_70",
+     "strength": "HARD",
+     "time": "2026-04-14T05:02:54Z"
+    },
+    {
+     "case_id": "case_380",
+     "identifier": "user_id:user_378",
+     "kind": "HARD",
+     "resource_id": "audit_record_4489",
+     "source_id": "evidence_35",
+     "strength": "HARD",
+     "time": "2026-04-14T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_4489",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_70",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_380",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1031",
+   "reason": "hard-linked to ['user_379']",
+   "resource_id": "account_6784"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-04-14T06:00:00Z",
+  "email": "rohan.jain@outlook.com",
+  "reported_at": "2026-03-18T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-17T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_70",
+   "required_action": "DELETE",
+   "resource_id": "account_4001",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_70#L31"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_70",
+    "resource_id": "account_4001",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_70",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_9326",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_70#L33"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_70",
+    "resource_id": "analytics_9326",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_70",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_4489",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_70#L37"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_70",
+    "resource_id": "audit_record_4489",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_70",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4001",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_70",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_4489",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_70",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_9326",
+   "state": "ANONYMIZED",
+   "step_no": 3,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "rohan.jain@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "9ba1c5f7d14e5af7224e110703a78ff7cebd2a4fd08ece51cf9085b32ffe3606": "user_identities.email_hash"
+   },
+   "name": {
+    "Rohan Jain": "user_identities.name"
+   },
+   "phone": {
+    "+91 98211 00875": "user_identities.phone"
+   },
+   "user_id": {
+    "user_378": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_378 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_378"
+  ]
+ },
+ "validation_errors": []
+}

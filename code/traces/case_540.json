@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_540",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3512"
+  ],
+  "error": "",
+  "is_deletion": false,
+  "label": "NON_DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": true,
+  "path": "model_non_deletion+classify_corroborates->NOT_APPLICABLE",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-24T12:00:00Z",
+  "email": "ieriksen5151@fastmail.com",
+  "reported_at": "2026-08-29T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-08-27T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ieriksen5151@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "53d9214cb336cd2831fcdea17e2322d398d60ddd0ee504e016987949e5774fd0": "user_identities.email_hash"
+   },
+   "name": {
+    "Ingrid Eriksen": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 571 37 96": "user_identities.phone"
+   },
+   "user_id": {
+    "user_538": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_538 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_538"
+  ]
+ }
+}

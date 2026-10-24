@@ -1,0 +1,234 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_247",
+   "edges": [
+    {
+     "case_id": "case_247",
+     "identifier": "email:rina.y488481@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_2981",
+     "source_id": "evidence_78",
+     "strength": "HARD",
+     "time": "2026-06-18T11:44:03Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_2981",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_78",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_247",
+   "edges": [
+    {
+     "case_id": "case_247",
+     "identifier": "email:rina.y488481@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_9473",
+     "source_id": "evidence_78",
+     "strength": "HARD",
+     "time": "2026-06-18T11:44:03Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_9473",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_78",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_247",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2240",
+   "reason": "hard-linked to ['user_260']",
+   "resource_id": "search_2228"
+  },
+  {
+   "activity_id": "activity_2241",
+   "reason": "hard-linked to ['user_244']",
+   "resource_id": "support_579"
+  },
+  {
+   "activity_id": "activity_2243",
+   "reason": "hard-linked to ['user_243']",
+   "resource_id": "analytics_4010"
+  },
+  {
+   "activity_id": "activity_2244",
+   "reason": "hard-linked to ['user_244']",
+   "resource_id": "search_2725"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-06-18T12:00:00Z",
+  "email": "rina.y488481@outlook.com",
+  "reported_at": "2026-06-06T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-03T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_78",
+   "required_action": "DELETE",
+   "resource_id": "account_2981",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_78#customer_profiles:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_78",
+    "resource_id": "account_2981",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_78",
+   "required_action": "DELETE",
+   "resource_id": "search_9473",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_78#customer_search_documents:5"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_78",
+    "resource_id": "search_9473",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_78",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "account_2981",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_78",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_9473",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "account_2981",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_9473",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_2981",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_9473",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "rina.y488481@outlook.com": "request.email",
+    "rina.y4884@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "003d21e360feed836331c853166c32211837d855c66eed79752ea1705b3a84a1": "user_audit_log.old_value audit_188",
+    "d6b84ad059ecee85f145aab531352165555ee75b07d761951c9566ea3d2739b5": "user_identities.email_hash"
+   },
+   "name": {
+    "Rina Yamamoto": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 3677 8075": "user_identities.phone"
+   },
+   "user_id": {
+    "user_245": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_245 via user_audit_log.old_value audit_187"
+  ],
+  "user_ids": [
+   "user_245"
+  ]
+ },
+ "validation_errors": []
+}

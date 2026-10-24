@@ -1,0 +1,115 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_01",
+   "edges": [
+    {
+     "case_id": "case_01",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_001",
+     "source_id": "activity_3342",
+     "strength": "SECONDARY",
+     "time": "2026-08-20T16:41:43Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_3342 is in every maximum one-to-one assignment of batch 0 (cases ['case_01'], rows ['account_001']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_001",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  }
+ ],
+ "case_id": "case_01",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-03T11:30:00Z",
+  "email": "amina.elmasri@gmail.com",
+  "reported_at": "2026-08-20T16:42:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-18T09:14:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_54",
+   "required_action": "DELETE",
+   "resource_id": "account_001",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_54",
+    "resource_id": "account_001",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_54",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_001",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "amina.elmasri@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "d4e1f59abcf9a1e0cfdc7c27ad6c07ed4ff88b326a16ed5eed5ec6bc31618c93": "user_identities.email_hash"
+   },
+   "name": {
+    "Amina El-Masri": "user_identities.name"
+   },
+   "phone": {
+    "+971 50 482 7316": "user_identities.phone"
+   },
+   "user_id": {
+    "user_01": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_01 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_01"
+  ]
+ },
+ "validation_errors": []
+}

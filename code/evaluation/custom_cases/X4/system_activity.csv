@@ -1,0 +1,3 @@
+activity_id,event_time,event_type,source_system,target_system,resource_id,reported_result,details
+activity_x401,2026-09-06T11:00:00Z,DELETE_RECORD,deletion_worker,account_service,account_990004,SUCCESS,Deletion worker submitted primary profile account_990004 to account_service.
+activity_x402,2026-09-06T12:30:00Z,DELETE_RECORD,deletion_worker,search_service,search_990004,SUCCESS,Deletion worker received the final result for search_990004 from search_service.

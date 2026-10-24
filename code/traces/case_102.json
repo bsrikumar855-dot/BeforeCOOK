@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_102",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-01T06:00:00Z",
+  "email": "eaddo6629@gmail.com",
+  "reported_at": "2026-08-24T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-22T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "eaddo6629@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "025085603b82c32e7febf86ae064516d8af0f2c9bf1df1200bd611bec5843c98": "user_identities.email_hash"
+   },
+   "name": {
+    "Efua Addo": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 034 4993": "user_audit_log.old_value audit_49",
+    "+233 24 660 3074": "user_identities.phone"
+   },
+   "user_id": {
+    "user_100": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_100 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_100"
+  ]
+ }
+}

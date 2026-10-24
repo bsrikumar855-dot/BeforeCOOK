@@ -1,0 +1,480 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_26",
+   "edges": [
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "account_5684",
+     "source_id": "evidence_02",
+     "strength": "HARD",
+     "time": "2026-09-09T12:00:00Z"
+    },
+    {
+     "case_id": "case_26",
+     "identifier": "email:almeida.mariana@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_5684",
+     "source_id": "evidence_02",
+     "strength": "HARD",
+     "time": "2026-09-09T12:00:00Z"
+    },
+    {
+     "case_id": "case_26",
+     "identifier": "phone:+55 21 90180-9087",
+     "kind": "HARD",
+     "resource_id": "account_5684",
+     "source_id": "evidence_02",
+     "strength": "HARD",
+     "time": "2026-09-09T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_5684",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_02",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_26",
+   "edges": [
+    {
+     "case_id": "case_26",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1895",
+     "source_id": "activity_3602",
+     "strength": "SECONDARY",
+     "time": "2026-09-02T11:31:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3602 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "resource_id": "analytics_1895",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_26",
+   "edges": [
+    {
+     "case_id": "case_26",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_4566",
+     "source_id": "activity_3603",
+     "strength": "SECONDARY",
+     "time": "2026-09-02T11:31:24Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3603 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "resource_id": "analytics_4566",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_26",
+   "edges": [
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "audit_record_5416",
+     "source_id": "evidence_92",
+     "strength": "HARD",
+     "time": "2026-09-15T10:56:58Z"
+    },
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "audit_record_5416",
+     "source_id": "evidence_02",
+     "strength": "HARD",
+     "time": "2026-09-15T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_5416",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_92",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_26",
+   "edges": [
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "backup_3120",
+     "source_id": "evidence_92",
+     "strength": "HARD",
+     "time": "2026-09-15T10:58:35Z"
+    },
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "backup_3120",
+     "source_id": "evidence_02",
+     "strength": "HARD",
+     "time": "2026-09-15T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "backup_3120",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_92",
+   "system_id": "backup_service"
+  },
+  {
+   "case_id": "case_26",
+   "edges": [
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "data_flow_6244",
+     "source_id": "evidence_92",
+     "strength": "HARD",
+     "time": "2026-09-15T10:15:29Z"
+    },
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "data_flow_6244",
+     "source_id": "evidence_02",
+     "strength": "HARD",
+     "time": "2026-09-15T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_6244",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_92",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_26",
+   "edges": [
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "support_4715",
+     "source_id": "evidence_92",
+     "strength": "HARD",
+     "time": "2026-09-15T10:00:05Z"
+    },
+    {
+     "case_id": "case_26",
+     "identifier": "user_id:user_26",
+     "kind": "HARD",
+     "resource_id": "support_4715",
+     "source_id": "evidence_02",
+     "strength": "HARD",
+     "time": "2026-09-15T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "support_4715",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_92",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_26",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3596",
+   "reason": "hard-linked to ['user_10']",
+   "resource_id": "support_002"
+  },
+  {
+   "activity_id": "activity_3599",
+   "reason": "hard-linked to ['user_24']",
+   "resource_id": "account_5334"
+  },
+  {
+   "activity_id": "activity_3604",
+   "reason": "hard-linked to ['user_549']",
+   "resource_id": "tombstone_3963"
+  },
+  {
+   "activity_id": "activity_3609",
+   "reason": "hard-linked to ['user_550']",
+   "resource_id": "tombstone_7389"
+  },
+  {
+   "activity_id": "activity_3610",
+   "reason": "hard-linked to ['user_24']",
+   "resource_id": "search_5577"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3602 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "resource_id": "analytics_1895"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3603 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "resource_id": "analytics_4566"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-15T12:00:00Z",
+  "email": "almeida.mariana@gmail.com",
+  "reported_at": "2026-09-02T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-08-30T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_92",
+   "required_action": "DELETE",
+   "resource_id": "account_5684",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_92#account_service.profile_lookups.4"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_92",
+    "resource_id": "account_5684",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_92",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5416",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_92#security_service.audit_records.3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_92",
+    "resource_id": "audit_record_5416",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "BACKUP_ARCHIVE",
+   "category_basis": "default category for backup_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RESTORE_BLOCKED"
+   ],
+   "proof_file_id": "evidence_92",
+   "required_action": "RETAIN",
+   "resource_id": "backup_3120",
+   "state": {
+    "exposure": "STABLE_REFERENCE_ONLY",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_92#backup_service.restore_entries.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_92",
+    "resource_id": "backup_3120",
+    "restore_state": "BLOCKED",
+    "system_id": "backup_service"
+   },
+   "system_id": "backup_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_92",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_6244",
+   "state": {
+    "exposure": "STABLE_REFERENCE_ONLY",
+    "flow_state": "DISABLED",
+    "observation_ids": [
+     "evidence_92#integration_service.connectors.3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_92",
+    "resource_id": "data_flow_6244",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_92",
+   "required_action": "REDACT",
+   "resource_id": "support_4715",
+   "state": {
+    "exposure": "STABLE_REFERENCE_ONLY",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_92#support_platform.tickets.2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_92",
+    "resource_id": "support_4715",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_92",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_5684",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_92",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5416",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_92",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_4715",
+   "state": "REDACTED",
+   "step_no": 3,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "evidence_92",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_6244",
+   "state": "DISABLED",
+   "step_no": 4,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "evidence_92",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "phase": "VERIFICATION",
+   "resource_id": "backup_3120",
+   "state": "BLOCKED",
+   "step_no": 5,
+   "system_id": "backup_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "almeida.mariana@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "a10867f0e5d747ce148149d94b42ccb9917cc719ab2107662d1789f4a121aa01": "user_identities.email_hash"
+   },
+   "name": {
+    "Mariana Almeida": "user_identities.name"
+   },
+   "phone": {
+    "+55 21 90180-9087": "user_identities.phone"
+   },
+   "user_id": {
+    "user_26": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_26 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_26"
+  ]
+ },
+ "validation_errors": []
+}

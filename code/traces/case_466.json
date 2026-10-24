@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_466",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-28T11:00:00Z",
+  "email": "appiah.ama80@icloud.com",
+  "reported_at": "2026-02-17T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-02-14T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "appiah.ama80@icloud.com": "request.email",
+    "appiah.ama@icloud.com": "user_identities.email"
+   },
+   "email_hash": {
+    "b2f931fe74744901b609f70294779a6a59d9f9364852ede6705f720d0ba5e3ce": "user_audit_log.old_value audit_90",
+    "b3ceaf96cf2a8bcd59dd0aea99b80b020a9d20d65e8a1cb660f06ad0a5904807": "user_identities.email_hash"
+   },
+   "name": {
+    "Ama Appiah": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 990 6182": "user_identities.phone"
+   },
+   "user_id": {
+    "user_464": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_464 via user_audit_log.old_value audit_89"
+  ],
+  "user_ids": [
+   "user_464"
+  ]
+ }
+}

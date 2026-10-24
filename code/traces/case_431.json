@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_431",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-20T08:00:00Z",
+  "email": "lucas-almeida@proton.me",
+  "reported_at": "2026-03-02T08:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-03-01T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "lucas-almeida@proton.me": "request.email"
+   },
+   "email_hash": {
+    "99b86a480d2eb03db56490ff0d7320bb998d2525cd83141f97edb15eb32250bf": "user_identities.email_hash"
+   },
+   "name": {
+    "Lucas Almeida": "user_identities.name"
+   },
+   "phone": {
+    "+55 31 95698-0675": "user_identities.phone"
+   },
+   "user_id": {
+    "user_429": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_429 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_429"
+  ]
+ }
+}

@@ -1,0 +1,234 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_299",
+   "edges": [
+    {
+     "case_id": "case_299",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1618",
+     "source_id": "activity_1625",
+     "strength": "SECONDARY",
+     "time": "2026-04-28T06:03:33Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 27: several assignments equally supported (rival cases for account_1618: ['case_301'])",
+   "resource_id": "account_1618",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_299",
+   "edges": [
+    {
+     "case_id": "case_299",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7249",
+     "source_id": "activity_1624",
+     "strength": "SECONDARY",
+     "time": "2026-04-28T05:52:49Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 27: several assignments equally supported (rival cases for account_7249: ['case_301'])",
+   "resource_id": "account_7249",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_299",
+   "edges": [
+    {
+     "case_id": "case_299",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_9993",
+     "source_id": "activity_1626",
+     "strength": "SECONDARY",
+     "time": "2026-04-28T06:12:35Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 27: several assignments equally supported (rival cases for account_9993: ['case_301'])",
+   "resource_id": "account_9993",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_299",
+   "edges": [
+    {
+     "case_id": "case_299",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1733",
+     "source_id": "activity_1627",
+     "strength": "SECONDARY",
+     "time": "2026-04-28T06:31:14Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1627 lies in the burst windows of cases ['case_299', 'case_301']",
+   "resource_id": "analytics_1733",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_299",
+   "edges": [
+    {
+     "case_id": "case_299",
+     "identifier": "user_id:user_297",
+     "kind": "HARD",
+     "resource_id": "audit_record_5194",
+     "source_id": "evidence_75",
+     "strength": "HARD",
+     "time": "2026-05-24T06:39:55Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_5194",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_75",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_299",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1629",
+   "reason": "hard-linked to ['user_298']",
+   "resource_id": "export_6623"
+  },
+  {
+   "activity_id": "activity_1630",
+   "reason": "hard-linked to ['user_299']",
+   "resource_id": "search_5268"
+  },
+  {
+   "activity_id": "activity_1631",
+   "reason": "hard-linked to ['user_298']",
+   "resource_id": "search_4299"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 27: several assignments equally supported (rival cases for account_1618: ['case_301'])",
+   "resource_id": "account_1618"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 27: several assignments equally supported (rival cases for account_7249: ['case_301'])",
+   "resource_id": "account_7249"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 27: several assignments equally supported (rival cases for account_9993: ['case_301'])",
+   "resource_id": "account_9993"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1627 lies in the burst windows of cases ['case_299', 'case_301']",
+   "resource_id": "analytics_1733"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-24T07:00:00Z",
+  "email": "yuki-takahashi@proton.me",
+  "reported_at": "2026-04-28T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-27T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_75",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5194",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_75#security_audit_records:2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_75",
+    "resource_id": "audit_record_5194",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_75",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5194",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "yuki-takahashi@proton.me": "request.email"
+   },
+   "email_hash": {
+    "d55b19046b9d2a1aaf29881dbe22e51c7a20f83ba2f57363319d1fa6735ff347": "user_identities.email_hash"
+   },
+   "name": {
+    "Yuki Takahashi": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 7084 1570": "user_identities.phone"
+   },
+   "user_id": {
+    "user_297": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_297 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_297"
+  ]
+ },
+ "validation_errors": []
+}

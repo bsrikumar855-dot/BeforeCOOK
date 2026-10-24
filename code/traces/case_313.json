@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_313",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-14T12:00:00Z",
+  "email": "seoyeon.l7538@zoho.com",
+  "reported_at": "2026-04-26T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-04-23T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "seoyeon.l7538@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "dbb011e9a94504769080a98f9c8401d9cb66fed5de8ab5bfe5f6bdb6cdebd4a0": "user_identities.email_hash"
+   },
+   "name": {
+    "Seo-yeon Lim": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 6054 7162": "user_identities.phone"
+   },
+   "user_id": {
+    "user_311": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_311 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_311"
+  ]
+ }
+}

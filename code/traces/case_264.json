@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_264",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-08T10:00:00Z",
+  "email": "mrios950798@fastmail.com",
+  "reported_at": "2026-05-29T10:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-05-27T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mrios950798@fastmail.com": "request.email",
+    "mrios9507@fastmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "21adc4efb2afb62529f60acf94873852fe7044684b092bfeb6204facae92acc2": "user_audit_log.old_value audit_183",
+    "b1e7764ddba7d80bb6f46c537ad5d9d42df27e19ea74ea3466d8f52c1c5c7888": "user_identities.email_hash"
+   },
+   "name": {
+    "Mateo Ríos": "user_identities.name"
+   },
+   "phone": {
+    "+34 720 474 294": "user_identities.phone"
+   },
+   "user_id": {
+    "user_262": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_262 via user_audit_log.old_value audit_182"
+  ],
+  "user_ids": [
+   "user_262"
+  ]
+ }
+}

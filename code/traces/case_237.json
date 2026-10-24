@@ -1,0 +1,361 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_237",
+   "edges": [
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "account_2788",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:44:28Z"
+    },
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "account_2788",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:44:28Z"
+    },
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "account_2788",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:44:28Z"
+    },
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "account_2788",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:44:28Z"
+    },
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "account_2788",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_2788",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_79",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_237",
+   "edges": [
+    {
+     "case_id": "case_237",
+     "identifier": "user_id:user_235",
+     "kind": "HARD",
+     "resource_id": "audit_record_2859",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_2859",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_22",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_237",
+   "edges": [
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "search_2433",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:15:07Z"
+    },
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "search_2433",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:15:07Z"
+    },
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "search_2433",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:15:07Z"
+    },
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "search_2433",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:15:07Z"
+    },
+    {
+     "case_id": "case_237",
+     "identifier": "email:p.kapoor94@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "search_2433",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_2433",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_79",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_237",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2141",
+   "reason": "hard-linked to ['user_236']",
+   "resource_id": "account_945"
+  },
+  {
+   "activity_id": "activity_2144",
+   "reason": "hard-linked to ['user_234']",
+   "resource_id": "account_629"
+  },
+  {
+   "activity_id": "activity_2147",
+   "reason": "hard-linked to ['user_234']",
+   "resource_id": "data_flow_7352"
+  },
+  {
+   "activity_id": "activity_2151",
+   "reason": "hard-linked to ['user_234']",
+   "resource_id": "search_5385"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-06-23T06:00:00Z",
+  "email": "p.kapoor94@yahoo.com",
+  "reported_at": "2026-05-31T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-29T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "DELETE",
+   "resource_id": "account_2788",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_79#L23"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "account_2788",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_2859",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_78",
+    "resource_id": "audit_record_2859",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "DELETE",
+   "resource_id": "search_2433",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_79#L17"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "search_2433",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_79",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "account_2788",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_79",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_2433",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "account_2788",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_2433",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_2788",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_2433",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_2859",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "p.kapoor94@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "4e655dd934d91ec613a2b673b16806622e471cf24d153f0d686ed9fcb666e8d6": "user_identities.email_hash"
+   },
+   "name": {
+    "Priya Kapoor": "user_identities.name"
+   },
+   "phone": {
+    "+91 91418 86576": "user_identities.phone",
+    "+91 95916 32548": "user_audit_log.old_value audit_166"
+   },
+   "user_id": {
+    "user_235": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_235 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_235"
+  ]
+ },
+ "validation_errors": []
+}

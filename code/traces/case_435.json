@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_435",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-15T07:00:00Z",
+  "email": "l.bernard56@gmail.com",
+  "reported_at": "2026-02-22T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-02-20T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "l.bernard56@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "4ed7135521935a8c529dec1590a3be025182b73acff605e3be54e419a78e15b9": "user_identities.email_hash"
+   },
+   "name": {
+    "Louis Bernard": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 01 24 69 07": "user_identities.phone"
+   },
+   "user_id": {
+    "user_433": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_433 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_433"
+  ]
+ }
+}

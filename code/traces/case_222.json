@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_222",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-03T08:00:00Z",
+  "email": "dchoi6909@gmail.com",
+  "reported_at": "2026-06-25T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-23T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "dchoi6909@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "fbc98b0f56e53053c276beb1fd4a3e2cfe2e3a659180c3c4d466779d98378a9d": "user_identities.email_hash"
+   },
+   "name": {
+    "Do-yun Choi": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 6151 7330": "user_identities.phone",
+    "+82 10 9430 4887": "user_audit_log.old_value audit_92"
+   },
+   "user_id": {
+    "user_220": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_220 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_220"
+  ]
+ }
+}

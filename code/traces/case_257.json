@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_257",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-13T11:00:00Z",
+  "email": "yetunde-nwosu@gmail.com",
+  "reported_at": "2026-05-20T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-19T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "yetunde-nwosu@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "47dbc43341eae9626b2c4e3ed47b216bf368cd5a32eefa432b3fd71bb266420c": "user_identities.email_hash"
+   },
+   "name": {
+    "Yetunde Nwosu": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 836 6074": "user_identities.phone",
+    "+234 803 966 1847": "user_audit_log.old_value audit_176"
+   },
+   "user_id": {
+    "user_255": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_255 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_255"
+  ]
+ }
+}

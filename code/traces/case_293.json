@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_293",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-24T07:00:00Z",
+  "email": "erik-johansson@gmail.com",
+  "reported_at": "2026-05-04T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-03T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "erik-johansson@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "6a1d845c584bbd3ae96fcef0729f77f0723b850d867a226fc62c03eee0f8a26a": "user_identities.email_hash"
+   },
+   "name": {
+    "Erik Johansson": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 223 21 45": "user_identities.phone"
+   },
+   "user_id": {
+    "user_291": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_291 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_291"
+  ]
+ }
+}

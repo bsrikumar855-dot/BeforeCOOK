@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_216",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-03T08:00:00Z",
+  "email": "mnovak939594@fastmail.com",
+  "reported_at": "2026-06-11T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-09T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mnovak939594@fastmail.com": "request.email",
+    "mnovak9395@fastmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "270ece554a5978e7e73dff976210bd71b6efb40d1f7af993e25c1c1b33534f5d": "user_audit_log.old_value audit_202",
+    "864a74bd739921c818e302ccf2d97f41c672a47051c6cf5546afe2576809f4cf": "user_identities.email_hash"
+   },
+   "name": {
+    "Marek Novak": "user_identities.name"
+   },
+   "phone": {
+    "+48 695 102 996": "user_identities.phone"
+   },
+   "user_id": {
+    "user_214": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_214 via user_audit_log.old_value audit_201"
+  ],
+  "user_ids": [
+   "user_214"
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_336",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-04T10:00:00Z",
+  "email": "aboateng9675@fastmail.com",
+  "reported_at": "2026-04-12T10:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-04-10T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "aboateng9675@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "0ee16484555f03e7e3f6e7fe111c05aa0407b569a4edae4f73782ec0f2f05f80": "user_identities.email_hash"
+   },
+   "name": {
+    "Ama Boateng": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 286 3559": "user_identities.phone"
+   },
+   "user_id": {
+    "user_334": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_334 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_334"
+  ]
+ }
+}

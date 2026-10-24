@@ -1,0 +1,257 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_238",
+   "edges": [
+    {
+     "case_id": "case_238",
+     "identifier": "email:romero.valeria94@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_945",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T05:28:47Z"
+    },
+    {
+     "case_id": "case_238",
+     "identifier": "email:romero.valeria94@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_945",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T05:28:47Z"
+    },
+    {
+     "case_id": "case_238",
+     "identifier": "email:romero.valeria94@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_945",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-17T06:00:00Z"
+    },
+    {
+     "case_id": "case_238",
+     "identifier": "email:romero.valeria94@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_945",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_945",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_79",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_238",
+   "edges": [
+    {
+     "case_id": "case_238",
+     "identifier": "user_id:user_236",
+     "kind": "HARD",
+     "resource_id": "audit_record_6797",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:58:14Z"
+    },
+    {
+     "case_id": "case_238",
+     "identifier": "user_id:user_236",
+     "kind": "HARD",
+     "resource_id": "audit_record_6797",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:58:14Z"
+    },
+    {
+     "case_id": "case_238",
+     "identifier": "user_id:user_236",
+     "kind": "HARD",
+     "resource_id": "audit_record_6797",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:58:14Z"
+    },
+    {
+     "case_id": "case_238",
+     "identifier": "user_id:user_236",
+     "kind": "HARD",
+     "resource_id": "audit_record_6797",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_6797",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_79",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_238",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2143",
+   "reason": "hard-linked to ['user_235']",
+   "resource_id": "account_2788"
+  },
+  {
+   "activity_id": "activity_2144",
+   "reason": "hard-linked to ['user_234']",
+   "resource_id": "account_629"
+  },
+  {
+   "activity_id": "activity_2147",
+   "reason": "hard-linked to ['user_234']",
+   "resource_id": "data_flow_7352"
+  },
+  {
+   "activity_id": "activity_2151",
+   "reason": "hard-linked to ['user_234']",
+   "resource_id": "search_5385"
+  },
+  {
+   "activity_id": "activity_2152",
+   "reason": "hard-linked to ['user_235']",
+   "resource_id": "search_2433"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-06-23T06:00:00Z",
+  "email": "romero.valeria94@icloud.com",
+  "reported_at": "2026-05-31T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-28T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "DELETE",
+   "resource_id": "account_945",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_79#L55"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "account_945",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_6797",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_79#L31"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "audit_record_6797",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_79",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_945",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_79",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_6797",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "romero.valeria94@icloud.com": "request.email",
+    "romero.valeria@icloud.com": "user_identities.email"
+   },
+   "email_hash": {
+    "1359f3f0227e4b86fc42ffbc2e09c44652246b6b1a1933faffa6da595124ee72": "user_audit_log.old_value audit_190",
+    "caa1c5446d648228badb7c8dc28118c006a7597f821f8964461141a66dfaf846": "user_identities.email_hash"
+   },
+   "name": {
+    "Valeria Romero": "user_identities.name"
+   },
+   "phone": {
+    "+34 797 579 850": "user_identities.phone"
+   },
+   "user_id": {
+    "user_236": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_236 via user_audit_log.old_value audit_189"
+  ],
+  "user_ids": [
+   "user_236"
+  ]
+ },
+ "validation_errors": []
+}

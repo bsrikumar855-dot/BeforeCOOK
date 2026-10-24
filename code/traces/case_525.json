@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_525",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-01-29T12:00:00Z",
+  "email": "o.walker6695@yahoo.com",
+  "reported_at": "2026-01-18T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-16T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "o.walker6695@yahoo.com": "request.email",
+    "o.walker66@yahoo.com": "user_identities.email"
+   },
+   "email_hash": {
+    "6570536e0f14e7262d2b39a7d7968f30a4f7ee35f260591a95a3a54c313363a8": "user_audit_log.old_value audit_60",
+    "9c40bdbab4944a7f0e06bb210e8990ff340ee998813b17e432000a70f5dfe554": "user_identities.email_hash"
+   },
+   "name": {
+    "Oliver Walker": "user_identities.name"
+   },
+   "phone": {
+    "+1 (646) 555-0123": "user_identities.phone"
+   },
+   "user_id": {
+    "user_523": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_523 via user_audit_log.old_value audit_59"
+  ],
+  "user_ids": [
+   "user_523"
+  ]
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "batch_size": 1,
+ "call_id": "1259fe1833a049f9",
+ "call_usage": {
+  "input_tokens": 1236,
+  "model_version": "gemini-2.5-flash",
+  "output_tokens": 601,
+  "thinking_tokens": 0,
+  "total_tokens": 1837
+ },
+ "file_id": "evidence_28",
+ "input_sha256": "542b7aec17e6b2f38827896e7eb52c70e4bfaaca22433621be1f80f54884e944",
+ "key": "0c2ef519b48af1056b7448c0a263442f216f40d83aa55a04d47c54c6286eb248",
+ "key_slot": "primary",
+ "model": "gemini-2.5-flash",
+ "prompt_version": "pb1da0fa903ab",
+ "provider": "gemini",
+ "response": {
+  "captured_at_text": null,
+  "records": [
+   {
+    "direct_identifiers_visible": true,
+    "email": "kagyeman8947@fastmail.com",
+    "email_hash": null,
+    "enabled": null,
+    "name": "Kofi Agyeman",
+    "observed_at": null,
+    "other_fields": {
+     "Assigned": "Maya Chen",
+     "Tags": "Delivery · Tracking · Order update"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "SUPPORT_MESSAGE",
+    "resource_id": "support_1034",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "support_platform",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": null,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "SLA": "01:42"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "UNKNOWN",
+    "resource_id": "CS-5034",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "support_platform",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": false,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Assigned agent": "Maya Chen",
+     "Carrier": "SwiftShip",
+     "Expected": "26 May 2026",
+     "Product": "Running shoes",
+     "Tracking": "SWF-884103"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "UNKNOWN",
+    "resource_id": "ORD-20265034",
+    "restore_allowed": null,
+    "status_text": "In transit",
+    "system_id": null,
+    "user_id": null
+   }
+  ],
+  "screen_title": "Helpline Console"
+ },
+ "task": "vision"
+}

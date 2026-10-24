@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_243",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-18T12:00:00Z",
+  "email": "s.hamdan08@gmail.com",
+  "reported_at": "2026-06-09T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-07T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "s.hamdan08@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "13cf66da011b67bb6ee4935e8a2e1a7835f0fa4e3a0130d829476e225218ddc2": "user_identities.email_hash"
+   },
+   "name": {
+    "Sami Hamdan": "user_identities.name"
+   },
+   "phone": {
+    "+971 55 580 6240": "user_identities.phone"
+   },
+   "user_id": {
+    "user_241": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_241 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_241"
+  ]
+ }
+}

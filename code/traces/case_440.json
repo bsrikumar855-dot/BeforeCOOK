@@ -1,0 +1,338 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_440",
+   "edges": [
+    {
+     "case_id": "case_440",
+     "identifier": "email:akosua.owusu@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_790",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_790",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_440",
+   "edges": [
+    {
+     "case_id": "case_440",
+     "identifier": "user_id:user_438",
+     "kind": "HARD",
+     "resource_id": "audit_record_5488",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_5488",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_440",
+   "edges": [
+    {
+     "case_id": "case_440",
+     "identifier": "email:akosua.owusu@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_5967",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_5967",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_440",
+   "edges": [
+    {
+     "case_id": "case_440",
+     "identifier": "email:akosua.owusu@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_2922",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_2922",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_440",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_587",
+   "reason": "hard-linked to ['user_439']",
+   "resource_id": "account_1538"
+  },
+  {
+   "activity_id": "activity_593",
+   "reason": "hard-linked to ['user_439']",
+   "resource_id": "search_3058"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-03-15T07:00:00Z",
+  "email": "akosua.owusu@outlook.com",
+  "reported_at": "2026-02-16T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-02-15T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "DELETE",
+   "resource_id": "account_790",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L9"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "account_790",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5488",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L31"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "audit_record_5488",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_5967",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_41#L17"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "data_flow_5967",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "DELETE",
+   "resource_id": "search_2922",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L21"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "search_2922",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_41",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_2922",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_41",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_5967",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_5967",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_2922",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_790",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_2922",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5488",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_5967",
+   "state": "DISABLED",
+   "step_no": 8,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "akosua.owusu@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "0e5a475d2e606800bcb884ff702dc82415178c87180c0fb2195dfd616ff9d93d": "user_identities.email_hash"
+   },
+   "name": {
+    "Akosua Owusu": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 825 5731": "user_identities.phone"
+   },
+   "user_id": {
+    "user_438": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_438 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_438"
+  ]
+ },
+ "validation_errors": []
+}

@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_375",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-14T06:00:00Z",
+  "email": "n.mensah16@gmail.com",
+  "reported_at": "2026-03-24T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-22T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "n.mensah16@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "554823ef69b823f1b39e28c021e866d41c222e1befd1e7f648d374bf9f172828": "user_identities.email_hash"
+   },
+   "name": {
+    "Nana Mensah": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 163 2855": "user_identities.phone"
+   },
+   "user_id": {
+    "user_373": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_373 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_373"
+  ]
+ }
+}

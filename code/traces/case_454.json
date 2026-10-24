@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_454",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-05T12:00:00Z",
+  "email": "masuku.lindiwe@icloud.com",
+  "reported_at": "2026-02-14T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-02-11T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "masuku.lindiwe@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "93cf683a70e84593dc7ff80aa6d3f72c89c78728f39f8025b0ccf7a72a9fd28c": "user_identities.email_hash"
+   },
+   "name": {
+    "Lindiwe Masuku": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 216 5277": "user_identities.phone"
+   },
+   "user_id": {
+    "user_452": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_452 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_452"
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_535",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3741"
+  ],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-29T12:00:00Z",
+  "email": "gabriel.l5556@outlook.com",
+  "reported_at": "2026-09-09T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-06T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "gabriel.l5556@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "1fd65eaa523ab37172167d09cacc277eb669286d85374fe0427953205435b019": "user_identities.email_hash"
+   },
+   "name": {
+    "Gabriel Lima": "user_identities.name"
+   },
+   "phone": {
+    "+55 51 92293-7952": "user_identities.phone"
+   },
+   "user_id": {
+    "user_533": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_533 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_533"
+  ]
+ }
+}

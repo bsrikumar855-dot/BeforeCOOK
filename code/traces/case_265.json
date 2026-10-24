@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_265",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-08T10:00:00Z",
+  "email": "oliver.w7426@zoho.com",
+  "reported_at": "2026-05-29T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-26T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "oliver.w7426@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "d56ce0b916c65ac560d2871e78ef8dac201ab37cb686f5cb6ec1bdff1e5c1340": "user_identities.email_hash"
+   },
+   "name": {
+    "Oliver Wright": "user_identities.name"
+   },
+   "phone": {
+    "+1 (718) 555-0163": "user_identities.phone"
+   },
+   "user_id": {
+    "user_263": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_263 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_263"
+  ]
+ }
+}

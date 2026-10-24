@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_372",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-19T07:00:00Z",
+  "email": "ppetrescu4759@fastmail.com",
+  "reported_at": "2026-04-01T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-30T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ppetrescu4759@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "a1370ad33b64a6f71affa2dfd2af3a52f036fe182a940fb0f0aae351ab5e62cc": "user_identities.email_hash"
+   },
+   "name": {
+    "Pavel Petrescu": "user_identities.name"
+   },
+   "phone": {
+    "+48 737 061 639": "user_audit_log.old_value audit_38",
+    "+48 783 608 913": "user_identities.phone"
+   },
+   "user_id": {
+    "user_370": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_370 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_370"
+  ]
+ }
+}

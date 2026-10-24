@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_518",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-03T06:00:00Z",
+  "email": "adwoa.boateng@gmail.com",
+  "reported_at": "2026-01-09T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-08T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "adwoa.boateng@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "b4160570d923d5ccfd047e5bbf39a02cc85a798ac32b2cb026d653dccd4f569a": "user_identities.email_hash"
+   },
+   "name": {
+    "Adwoa Boateng": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 074 6981": "user_identities.phone"
+   },
+   "user_id": {
+    "user_516": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_516 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_516"
+  ]
+ }
+}

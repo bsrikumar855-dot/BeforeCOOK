@@ -1,0 +1,275 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_252",
+   "edges": [
+    {
+     "case_id": "case_252",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4643",
+     "source_id": "activity_2154",
+     "strength": "SECONDARY",
+     "time": "2026-05-31T10:53:11Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 19: several assignments equally supported (rival cases for account_4643: [])",
+   "resource_id": "account_4643",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_252",
+   "edges": [
+    {
+     "case_id": "case_252",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7518",
+     "source_id": "activity_2156",
+     "strength": "SECONDARY",
+     "time": "2026-05-31T11:04:25Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 19: several assignments equally supported (rival cases for account_7518: [])",
+   "resource_id": "account_7518",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_252",
+   "edges": [
+    {
+     "case_id": "case_252",
+     "identifier": "email:hcollins447986@fastmail.com",
+     "kind": "HARD",
+     "resource_id": "export_8598",
+     "source_id": "evidence_78",
+     "strength": "HARD",
+     "time": "2026-06-18T11:44:03Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "export_8598",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_78",
+   "system_id": "export_service"
+  },
+  {
+   "case_id": "case_252",
+   "edges": [
+    {
+     "case_id": "case_252",
+     "identifier": "email:hcollins447986@fastmail.com",
+     "kind": "HARD",
+     "resource_id": "search_2936",
+     "source_id": "evidence_78",
+     "strength": "HARD",
+     "time": "2026-06-18T11:44:03Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_2936",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_78",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_252",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2158",
+   "reason": "hard-linked to ['user_249']",
+   "resource_id": "support_4541"
+  },
+  {
+   "activity_id": "activity_2160",
+   "reason": "hard-linked to ['user_249']",
+   "resource_id": "search_730"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 19: several assignments equally supported (rival cases for account_4643: [])",
+   "resource_id": "account_4643"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 19: several assignments equally supported (rival cases for account_7518: [])",
+   "resource_id": "account_7518"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-06-18T12:00:00Z",
+  "email": "hcollins447986@fastmail.com",
+  "reported_at": "2026-05-31T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-29T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_EXPORT",
+   "category_basis": "default category for export_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_78",
+   "required_action": "DELETE",
+   "resource_id": "export_8598",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_78#customer_exports:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_78",
+    "resource_id": "export_8598",
+    "restore_state": null,
+    "system_id": "export_service"
+   },
+   "system_id": "export_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_78",
+   "required_action": "DELETE",
+   "resource_id": "search_2936",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_78#customer_search_documents:1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_78",
+    "resource_id": "search_2936",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_78",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "export_8598",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "evidence_78",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_2936",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "export_8598",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_2936",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "export_8598",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_2936",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "hcollins447986@fastmail.com": "request.email",
+    "hcollins4479@fastmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "78293e5036b7c240a39090d9b56978bf9566ae9cb691fa3b1d97ba99e084c53f": "user_identities.email_hash",
+    "c4130f8a319a31e09f93582bddc199e4e09e351b5b988c2a898cdb8c8f5fda03": "user_audit_log.old_value audit_186"
+   },
+   "name": {
+    "Hannah Collins": "user_identities.name"
+   },
+   "phone": {
+    "+44 7700 900250": "user_identities.phone"
+   },
+   "user_id": {
+    "user_250": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_250 via user_audit_log.old_value audit_185"
+  ],
+  "user_ids": [
+   "user_250"
+  ]
+ },
+ "validation_errors": []
+}

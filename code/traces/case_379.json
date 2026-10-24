@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_379",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-14T06:00:00Z",
+  "email": "joao.s192@outlook.com",
+  "reported_at": "2026-03-21T06:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-03-18T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "joao.s192@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "52f4827ca1482846238d0a1992b8f51dafdfcd37932854d2b5361c9e5260bdb8": "user_identities.email_hash"
+   },
+   "name": {
+    "João Silva": "user_identities.name"
+   },
+   "phone": {
+    "+55 51 93633-0841": "user_identities.phone"
+   },
+   "user_id": {
+    "user_377": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_377 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_377"
+  ]
+ }
+}

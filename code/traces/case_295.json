@@ -1,0 +1,535 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1235",
+     "source_id": "activity_1716",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T05:06:27Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 25: several assignments equally supported (rival cases for account_1235: [])",
+   "resource_id": "account_1235",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4319",
+     "source_id": "activity_1714",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T04:46:11Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 25: several assignments equally supported (rival cases for account_4319: [])",
+   "resource_id": "account_4319",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6996",
+     "source_id": "activity_1723",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T05:56:44Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 25: several assignments equally supported (rival cases for account_6996: [])",
+   "resource_id": "account_6996",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_8353",
+     "source_id": "activity_1724",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T06:07:28Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 25: several assignments equally supported (rival cases for account_8353: [])",
+   "resource_id": "account_8353",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_8647",
+     "source_id": "activity_1715",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T04:57:26Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 25: several assignments equally supported (rival cases for account_8647: [])",
+   "resource_id": "account_8647",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_9091",
+     "source_id": "activity_1720",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T05:45:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 25: several assignments equally supported (rival cases for account_9091: [])",
+   "resource_id": "account_9091",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_061",
+     "source_id": "activity_1725",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T06:31:25Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1725; no identity link to anyone else",
+   "resource_id": "analytics_061",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_096",
+     "source_id": "activity_1717",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T05:31:07Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1717; no identity link to anyone else",
+   "resource_id": "analytics_096",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_3678",
+     "source_id": "activity_1718",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T05:31:51Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1718; no identity link to anyone else",
+   "resource_id": "analytics_3678",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_7575",
+     "source_id": "activity_1726",
+     "strength": "SECONDARY",
+     "time": "2026-05-04T06:31:41Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1726; no identity link to anyone else",
+   "resource_id": "analytics_7575",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_295",
+   "edges": [
+    {
+     "case_id": "case_295",
+     "identifier": "user_id:user_293",
+     "kind": "HARD",
+     "resource_id": "audit_record_1269",
+     "source_id": "evidence_75",
+     "strength": "HARD",
+     "time": "2026-05-24T06:39:55Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_1269",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_75",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_295",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1719",
+   "reason": "hard-linked to ['user_306']",
+   "resource_id": "support_6046"
+  },
+  {
+   "activity_id": "activity_1721",
+   "reason": "hard-linked to ['user_306']",
+   "resource_id": "data_flow_8933"
+  },
+  {
+   "activity_id": "activity_1722",
+   "reason": "hard-linked to ['user_306']",
+   "resource_id": "backup_4917"
+  },
+  {
+   "activity_id": "activity_1727",
+   "reason": "hard-linked to ['user_308']",
+   "resource_id": "search_6265"
+  },
+  {
+   "activity_id": "activity_1728",
+   "reason": "hard-linked to ['user_308']",
+   "resource_id": "support_4263"
+  },
+  {
+   "activity_id": "activity_1729",
+   "reason": "hard-linked to ['user_291']",
+   "resource_id": "analytics_5854"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 25: several assignments equally supported (rival cases for account_1235: [])",
+   "resource_id": "account_1235"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 25: several assignments equally supported (rival cases for account_4319: [])",
+   "resource_id": "account_4319"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 25: several assignments equally supported (rival cases for account_6996: [])",
+   "resource_id": "account_6996"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 25: several assignments equally supported (rival cases for account_8353: [])",
+   "resource_id": "account_8353"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 25: several assignments equally supported (rival cases for account_8647: [])",
+   "resource_id": "account_8647"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 25: several assignments equally supported (rival cases for account_9091: [])",
+   "resource_id": "account_9091"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-24T07:00:00Z",
+  "email": "noor.m4996@outlook.com",
+  "reported_at": "2026-05-04T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-01T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_75",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_061",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_75#customer_analytics_profiles:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_75",
+    "resource_id": "analytics_061",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_29",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_096",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_29#customer_data_primary:0",
+     "evidence_29#customer_data_replica_ap_south:1",
+     "evidence_29#customer_data_replica_eu_west:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_29",
+    "resource_id": "analytics_096",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_29",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_3678",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_29#customer_data_primary:1",
+     "evidence_29#customer_data_replica_ap_south:2",
+     "evidence_29#customer_data_replica_eu_west:1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_29",
+    "resource_id": "analytics_3678",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_75",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_7575",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_75#customer_analytics_profiles:5"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_75",
+    "resource_id": "analytics_7575",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_75",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_1269",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_75#security_audit_records:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_75",
+    "resource_id": "audit_record_1269",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_75",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_1269",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_75",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_061",
+   "state": "ANONYMIZED",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "evidence_29",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_096",
+   "state": "ANONYMIZED",
+   "step_no": 3,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "evidence_29",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_3678",
+   "state": "ANONYMIZED",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "evidence_75",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_7575",
+   "state": "ANONYMIZED",
+   "step_no": 5,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "noor.m4996@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "61bb9ecfa9e0aee816e6339a6155def5af25974406300583088b9cba161675f7": "user_identities.email_hash"
+   },
+   "name": {
+    "Noor Mansour": "user_identities.name"
+   },
+   "phone": {
+    "+971 54 987 0677": "user_identities.phone"
+   },
+   "user_id": {
+    "user_293": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_293 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_293"
+  ]
+ },
+ "validation_errors": []
+}

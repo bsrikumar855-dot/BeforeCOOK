@@ -1,0 +1,247 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_399",
+   "edges": [
+    {
+     "case_id": "case_399",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1140",
+     "source_id": "activity_939",
+     "strength": "SECONDARY",
+     "time": "2026-03-10T09:59:34Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 42: several assignments equally supported (rival cases for account_1140: ['case_398', 'case_400'])",
+   "resource_id": "account_1140",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_399",
+   "edges": [
+    {
+     "case_id": "case_399",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_2138",
+     "source_id": "activity_937",
+     "strength": "SECONDARY",
+     "time": "2026-03-10T09:48:50Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 42: several assignments equally supported (rival cases for account_2138: ['case_398', 'case_400'])",
+   "resource_id": "account_2138",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_399",
+   "edges": [
+    {
+     "case_id": "case_399",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_928",
+     "source_id": "activity_940",
+     "strength": "SECONDARY",
+     "time": "2026-03-10T10:08:07Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 42: several assignments equally supported (rival cases for account_928: ['case_398', 'case_400'])",
+   "resource_id": "account_928",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_399",
+   "edges": [
+    {
+     "case_id": "case_399",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_4455",
+     "source_id": "activity_941",
+     "strength": "SECONDARY",
+     "time": "2026-03-10T10:31:15Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_941 lies in the burst windows of cases ['case_398', 'case_399', 'case_400']",
+   "resource_id": "analytics_4455",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_399",
+   "edges": [
+    {
+     "case_id": "case_399",
+     "identifier": "email:f.rahman72@gmail.com",
+     "kind": "HARD",
+     "resource_id": "backup_2642",
+     "source_id": "evidence_69",
+     "strength": "HARD",
+     "time": "2026-04-04T10:04:19Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "backup_2642",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_69",
+   "system_id": "backup_service"
+  }
+ ],
+ "case_id": "case_399",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_942",
+   "reason": "hard-linked to ['user_398']",
+   "resource_id": "support_4521"
+  },
+  {
+   "activity_id": "activity_944",
+   "reason": "hard-linked to ['user_398']",
+   "resource_id": "search_4649"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 42: several assignments equally supported (rival cases for account_1140: ['case_398', 'case_400'])",
+   "resource_id": "account_1140"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 42: several assignments equally supported (rival cases for account_2138: ['case_398', 'case_400'])",
+   "resource_id": "account_2138"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 42: several assignments equally supported (rival cases for account_928: ['case_398', 'case_400'])",
+   "resource_id": "account_928"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_941 lies in the burst windows of cases ['case_398', 'case_399', 'case_400']",
+   "resource_id": "analytics_4455"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-04-04T11:00:00Z",
+  "email": "f.rahman72@gmail.com",
+  "reported_at": "2026-03-10T11:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-03-08T11:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "BACKUP_ARCHIVE",
+   "category_basis": "default category for backup_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_RESTORE_RISK",
+    "BLOCK_RESTORE",
+    "VERIFY_RESTORE_BLOCKED"
+   ],
+   "proof_file_id": "evidence_69",
+   "required_action": "RETAIN",
+   "resource_id": "backup_2642",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_69#backup_restore_entries:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_69",
+    "resource_id": "backup_2642",
+    "restore_state": "RESTORABLE",
+    "system_id": "backup_service"
+   },
+   "system_id": "backup_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_69",
+   "operation": "REPORT_RESTORE_RISK",
+   "phase": "FINDING",
+   "resource_id": "backup_2642",
+   "state": "ACTIVE",
+   "step_no": 1,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "BLOCK_RESTORE",
+   "phase": "REMEDIATION",
+   "resource_id": "backup_2642",
+   "state": "BLOCKED",
+   "step_no": 2,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "phase": "VERIFICATION",
+   "resource_id": "backup_2642",
+   "state": "BLOCKED",
+   "step_no": 3,
+   "system_id": "backup_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "f.rahman72@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "e3f6431dcf5be997925d307511835065641ad1aa78f88fac45ff2c5bc34c9da7": "user_identities.email_hash"
+   },
+   "name": {
+    "Farah Rahman": "user_identities.name"
+   },
+   "phone": {
+    "+971 50 525 6079": "user_identities.phone"
+   },
+   "user_id": {
+    "user_397": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_397 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_397"
+  ]
+ },
+ "validation_errors": []
+}

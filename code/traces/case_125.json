@@ -1,0 +1,456 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_125",
+   "edges": [
+    {
+     "case_id": "case_125",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7637",
+     "source_id": "activity_3112",
+     "strength": "SECONDARY",
+     "time": "2026-08-05T08:55:14Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_3112 is in every maximum one-to-one assignment of batch 6 (cases ['case_125'], rows ['account_7637']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_7637",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_125",
+   "edges": [
+    {
+     "case_id": "case_125",
+     "identifier": "email:katarina-stojanovic91@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_1103",
+     "source_id": "evidence_87",
+     "strength": "HARD",
+     "time": "2026-08-17T09:42:50Z"
+    },
+    {
+     "case_id": "case_125",
+     "identifier": "user_id:user_123",
+     "kind": "HARD",
+     "resource_id": "analytics_1103",
+     "source_id": "evidence_12",
+     "strength": "HARD",
+     "time": "2026-08-17T10:00:00Z"
+    },
+    {
+     "case_id": "case_125",
+     "identifier": "email:katarina-stojanovic@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_1103",
+     "source_id": "evidence_12",
+     "strength": "HARD",
+     "time": "2026-08-17T10:00:00Z"
+    },
+    {
+     "case_id": "case_125",
+     "identifier": "phone:+48 722 221 044",
+     "kind": "HARD",
+     "resource_id": "analytics_1103",
+     "source_id": "evidence_12",
+     "strength": "HARD",
+     "time": "2026-08-17T10:00:00Z"
+    },
+    {
+     "case_id": "case_125",
+     "identifier": "email_hash:18c3311ea8c24068c6620702467d8564efc234ed1a9c790eeceaee4fc0eeed0d",
+     "kind": "HARD",
+     "resource_id": "analytics_1103",
+     "source_id": "evidence_12",
+     "strength": "HARD",
+     "time": "2026-08-17T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_1103",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_87",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_125",
+   "edges": [
+    {
+     "case_id": "case_125",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1402",
+     "source_id": "activity_3115",
+     "strength": "SECONDARY",
+     "time": "2026-08-05T09:31:40Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3115 lies in the burst windows of cases ['case_125', 'case_126', 'case_127', 'case_142']",
+   "resource_id": "analytics_1402",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_125",
+   "edges": [
+    {
+     "case_id": "case_125",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_7150",
+     "source_id": "activity_3116",
+     "strength": "SECONDARY",
+     "time": "2026-08-05T09:31:56Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3116 lies in the burst windows of cases ['case_125', 'case_126', 'case_127', 'case_142']",
+   "resource_id": "analytics_7150",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_125",
+   "edges": [
+    {
+     "case_id": "case_125",
+     "identifier": "user_id:user_123",
+     "kind": "HARD",
+     "resource_id": "audit_record_023",
+     "source_id": "evidence_12",
+     "strength": "HARD",
+     "time": "2026-08-17T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_023",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_12",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_125",
+   "edges": [
+    {
+     "case_id": "case_125",
+     "identifier": "email:katarina-stojanovic91@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_9752",
+     "source_id": "evidence_87",
+     "strength": "HARD",
+     "time": "2026-08-17T09:42:50Z"
+    },
+    {
+     "case_id": "case_125",
+     "identifier": "email:katarina-stojanovic91@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_9752",
+     "source_id": "evidence_12",
+     "strength": "HARD",
+     "time": "2026-08-17T10:00:00Z"
+    },
+    {
+     "case_id": "case_125",
+     "identifier": "user_id:user_123",
+     "kind": "HARD",
+     "resource_id": "search_9752",
+     "source_id": "evidence_12",
+     "strength": "HARD",
+     "time": "2026-08-17T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_9752",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_87",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_125",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3111",
+   "reason": "hard-linked to ['user_140']",
+   "resource_id": "account_2434"
+  },
+  {
+   "activity_id": "activity_3113",
+   "reason": "hard-linked to ['user_125']",
+   "resource_id": "account_6805"
+  },
+  {
+   "activity_id": "activity_3114",
+   "reason": "hard-linked to ['user_124']",
+   "resource_id": "account_8819"
+  },
+  {
+   "activity_id": "activity_3117",
+   "reason": "hard-linked to ['user_140']",
+   "resource_id": "search_2024"
+  },
+  {
+   "activity_id": "activity_3118",
+   "reason": "hard-linked to ['user_140']",
+   "resource_id": "support_771"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3115 lies in the burst windows of cases ['case_125', 'case_126', 'case_127', 'case_142']",
+   "resource_id": "analytics_1402"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3116 lies in the burst windows of cases ['case_125', 'case_126', 'case_127', 'case_142']",
+   "resource_id": "analytics_7150"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-17T10:00:00Z",
+  "email": "katarina-stojanovic91@gmail.com",
+  "reported_at": "2026-08-05T10:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-04T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_87",
+   "required_action": "DELETE",
+   "resource_id": "account_7637",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_87",
+    "resource_id": "account_7637",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_87",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_1103",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_87#customer_analytics_profiles:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_87",
+    "resource_id": "analytics_1103",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_023",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_87",
+    "resource_id": "audit_record_023",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_87",
+   "required_action": "DELETE",
+   "resource_id": "search_9752",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_87#customer_search_documents:4"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_87",
+    "resource_id": "search_9752",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_87",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_9752",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_87",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_1103",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_9752",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_1103",
+   "state": "ANONYMIZED",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_7637",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_9752",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_023",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_1103",
+   "state": "ANONYMIZED",
+   "step_no": 8,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "katarina-stojanovic91@gmail.com": "request.email",
+    "katarina-stojanovic@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "18c3311ea8c24068c6620702467d8564efc234ed1a9c790eeceaee4fc0eeed0d": "user_identities.email_hash",
+    "5de27a927827b24caaf689c35d28efe019feca2c01a7e0a6f387a00800a9bace": "user_audit_log.old_value audit_247"
+   },
+   "name": {
+    "Katarina Stojanović": "user_identities.name"
+   },
+   "phone": {
+    "+48 722 221 044": "user_identities.phone"
+   },
+   "user_id": {
+    "user_123": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_123 via user_audit_log.old_value audit_246"
+  ],
+  "user_ids": [
+   "user_123"
+  ]
+ },
+ "validation_errors": []
+}

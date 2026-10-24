@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_23",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-15T12:00:00Z",
+  "email": "thandiwe.m6866@zoho.com",
+  "reported_at": "2026-09-05T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-02T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "thandiwe.m6866@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "5a2cb16db260ce9c10ffddc80e9ebc9b56ace8b3160a15ffe71887ca431c04d3": "user_identities.email_hash"
+   },
+   "name": {
+    "Thandiwe Mthembu": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 861 6082": "user_identities.phone"
+   },
+   "user_id": {
+    "user_23": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_23 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_23"
+  ]
+ }
+}

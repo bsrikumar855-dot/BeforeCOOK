@@ -1,0 +1,2 @@
+activity_id,event_time,event_type,source_system,target_system,resource_id,reported_result,details
+activity_x101,2026-09-02T09:30:00Z,DELETE_RECORD,deletion_worker,search_service,search_990001,SUCCESS,Deletion worker received the final result for search_990001 from search_service.

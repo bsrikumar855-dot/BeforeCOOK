@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_64",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-16T09:00:00Z",
+  "email": "zulu.lindiwe@gmail.com",
+  "reported_at": "2026-09-07T09:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-09-04T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "zulu.lindiwe@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "ac33caed775e297963244cc131a270cbbc45323652bab606455463b8c6c5cba3": "user_identities.email_hash"
+   },
+   "name": {
+    "Lindiwe Zulu": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 145 6210": "user_identities.phone"
+   },
+   "user_id": {
+    "user_62": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_62 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_62"
+  ]
+ }
+}

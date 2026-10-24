@@ -1,0 +1,509 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_109",
+   "edges": [
+    {
+     "case_id": "case_109",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6750",
+     "source_id": "activity_3239",
+     "strength": "SECONDARY",
+     "time": "2026-08-13T10:56:13Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 5: several assignments equally supported (rival cases for account_6750: [])",
+   "resource_id": "account_6750",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_109",
+   "edges": [
+    {
+     "case_id": "case_109",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_687",
+     "source_id": "activity_3238",
+     "strength": "SECONDARY",
+     "time": "2026-08-13T10:45:29Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 5: several assignments equally supported (rival cases for account_687: [])",
+   "resource_id": "account_687",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_109",
+   "edges": [
+    {
+     "case_id": "case_109",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7510",
+     "source_id": "activity_3240",
+     "strength": "SECONDARY",
+     "time": "2026-08-13T11:07:56Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 5: several assignments equally supported (rival cases for account_7510: [])",
+   "resource_id": "account_7510",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_109",
+   "edges": [
+    {
+     "case_id": "case_109",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_2777",
+     "source_id": "activity_3242",
+     "strength": "SECONDARY",
+     "time": "2026-08-13T11:31:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_3242; no identity link to anyone else",
+   "resource_id": "analytics_2777",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_109",
+   "edges": [
+    {
+     "case_id": "case_109",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_5001",
+     "source_id": "activity_3243",
+     "strength": "SECONDARY",
+     "time": "2026-08-13T11:31:53Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_3243; no identity link to anyone else",
+   "resource_id": "analytics_5001",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_109",
+   "edges": [
+    {
+     "case_id": "case_109",
+     "identifier": "user_id:user_107",
+     "kind": "HARD",
+     "resource_id": "audit_record_2718",
+     "source_id": "evidence_10",
+     "strength": "HARD",
+     "time": "2026-08-27T12:00:00Z"
+    },
+    {
+     "case_id": "case_109",
+     "identifier": "user_id:user_107",
+     "kind": "HARD",
+     "resource_id": "audit_record_2718",
+     "source_id": "evidence_10",
+     "strength": "HARD",
+     "time": "2026-08-27T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_2718",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_10",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_109",
+   "edges": [
+    {
+     "case_id": "case_109",
+     "identifier": "email:daniel.c2062@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_9949",
+     "source_id": "evidence_10",
+     "strength": "HARD",
+     "time": "2026-08-27T12:00:00Z"
+    },
+    {
+     "case_id": "case_109",
+     "identifier": "email:daniel.c2062@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_9949",
+     "source_id": "evidence_10",
+     "strength": "HARD",
+     "time": "2026-08-27T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_9949",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_10",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_109",
+   "edges": [
+    {
+     "case_id": "case_109",
+     "identifier": "email:daniel.c2062@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_2016",
+     "source_id": "evidence_10",
+     "strength": "HARD",
+     "time": "2026-08-27T12:00:00Z"
+    },
+    {
+     "case_id": "case_109",
+     "identifier": "email:daniel.c2062@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_2016",
+     "source_id": "evidence_10",
+     "strength": "HARD",
+     "time": "2026-08-27T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_2016",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_10",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_109",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3237",
+   "reason": "hard-linked to ['user_120']",
+   "resource_id": "account_9580"
+  },
+  {
+   "activity_id": "activity_3245",
+   "reason": "hard-linked to ['user_120']",
+   "resource_id": "data_flow_3199"
+  },
+  {
+   "activity_id": "activity_3246",
+   "reason": "hard-linked to ['user_120']",
+   "resource_id": "search_1752"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 5: several assignments equally supported (rival cases for account_6750: [])",
+   "resource_id": "account_6750"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 5: several assignments equally supported (rival cases for account_687: [])",
+   "resource_id": "account_687"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 5: several assignments equally supported (rival cases for account_7510: [])",
+   "resource_id": "account_7510"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-27T12:00:00Z",
+  "email": "daniel.c2062@zoho.com",
+  "reported_at": "2026-08-13T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-10T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_2777",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_10#customer_data_primary:0",
+     "evidence_10#customer_data_read_replica:1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_10",
+    "resource_id": "analytics_2777",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_5001",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_10#customer_data_primary:3",
+     "evidence_10#customer_data_read_replica:4"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_10",
+    "resource_id": "analytics_5001",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_2718",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_10#customer_data_primary:7",
+     "evidence_10#customer_data_read_replica:8"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_10",
+    "resource_id": "audit_record_2718",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_9949",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_10#customer_data_primary:20",
+     "evidence_10#customer_data_read_replica:21"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_10",
+    "resource_id": "data_flow_9949",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "DELETE",
+   "resource_id": "search_2016",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_10#customer_data_primary:21",
+     "evidence_10#customer_data_read_replica:22"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_10",
+    "resource_id": "search_2016",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_10",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_2016",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_10",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_9949",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_9949",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_2016",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_2016",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_2718",
+   "state": "PRESENT",
+   "step_no": 6,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_2777",
+   "state": "ANONYMIZED",
+   "step_no": 7,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_5001",
+   "state": "ANONYMIZED",
+   "step_no": 8,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_9949",
+   "state": "DISABLED",
+   "step_no": 9,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "daniel.c2062@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "d83107512bb25336d8561c870f5418b1ee685eb71be431dc626bfc1ae6aaa913": "user_identities.email_hash"
+   },
+   "name": {
+    "Daniel Carter": "user_identities.name"
+   },
+   "phone": {
+    "+1 (212) 555-0107": "user_identities.phone"
+   },
+   "user_id": {
+    "user_107": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_107 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_107"
+  ]
+ },
+ "validation_errors": []
+}

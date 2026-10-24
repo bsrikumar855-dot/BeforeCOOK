@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_550",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-20T12:00:00Z",
+  "email": "cmoreau0179@fastmail.com",
+  "reported_at": "2026-09-02T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-31T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "cmoreau0179@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "2a2f4423e4c6bf31171176c97fc49139a90fbd3832c244fea3a92b50735bee2f": "user_identities.email_hash"
+   },
+   "name": {
+    "Camille Moreau": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 36 39 01 06": "user_audit_log.old_value audit_30",
+    "+33 6 46 28 67 05": "user_identities.phone"
+   },
+   "user_id": {
+    "user_550": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_550 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_550"
+  ]
+ }
+}

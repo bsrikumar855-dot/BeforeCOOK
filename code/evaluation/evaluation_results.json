@@ -1,0 +1,1644 @@
+{
+ "samples": {
+  "cases": 32,
+  "status_correct": 31,
+  "sequence_exact": 16,
+  "steps_expected": 193,
+  "steps_predicted": 171,
+  "steps_matched": 171,
+  "steps_exact_including_step_no": 134,
+  "field_correct": {
+   "step_no": 171,
+   "phase": 171,
+   "system_id": 134,
+   "resource_id": 134,
+   "operation": 142,
+   "state": 142,
+   "evidence_id": 171
+  },
+  "field_denominator": 193,
+  "keyed_correct": {
+   "operation": 171,
+   "state": 171,
+   "evidence_id": 171
+  },
+  "keyed_total": 171,
+  "missing": [
+   [
+    "case_03",
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_9406",
+     "operation": "VERIFY_RECORD_ANONYMIZED",
+     "state": "ANONYMIZED",
+     "evidence_id": "evidence_94"
+    }
+   ],
+   [
+    "case_04",
+    {
+     "evidence_id": "evidence_54",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "phase": "VERIFICATION",
+     "resource_id": "account_004",
+     "state": "ABSENT",
+     "step_no": 1,
+     "system_id": "account_service"
+    }
+   ],
+   [
+    "case_04",
+    {
+     "evidence_id": "evidence_56",
+     "operation": "VERIFY_RECORD_ANONYMIZED",
+     "phase": "VERIFICATION",
+     "resource_id": "analytics_901",
+     "state": "ANONYMIZED",
+     "step_no": 2,
+     "system_id": "analytics_platform"
+    }
+   ],
+   [
+    "case_10",
+    {
+     "evidence_id": "",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "phase": "VERIFICATION",
+     "resource_id": "account_010",
+     "state": "ABSENT",
+     "step_no": 3,
+     "system_id": "account_service"
+    }
+   ],
+   [
+    "case_18",
+    {
+     "step_no": 9,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_5521",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    }
+   ],
+   [
+    "case_18",
+    {
+     "step_no": 11,
+     "phase": "VERIFICATION",
+     "system_id": "security_service",
+     "resource_id": "audit_record_6645",
+     "operation": "VERIFY_RECORD_PRESENT",
+     "state": "PRESENT",
+     "evidence_id": ""
+    }
+   ],
+   [
+    "case_20",
+    {
+     "step_no": 5,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_5037",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    }
+   ],
+   [
+    "case_20",
+    {
+     "step_no": 7,
+     "phase": "VERIFICATION",
+     "system_id": "security_service",
+     "resource_id": "audit_record_5569",
+     "operation": "VERIFY_RECORD_PRESENT",
+     "state": "PRESENT",
+     "evidence_id": ""
+    }
+   ],
+   [
+    "case_21",
+    {
+     "step_no": 1,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_6440",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_92"
+    }
+   ],
+   [
+    "case_21",
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_5335",
+     "operation": "VERIFY_RECORD_ANONYMIZED",
+     "state": "ANONYMIZED",
+     "evidence_id": "evidence_92"
+    }
+   ],
+   [
+    "case_22",
+    {
+     "step_no": 5,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_4990",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    }
+   ],
+   [
+    "case_23",
+    {
+     "step_no": 5,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_410",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    }
+   ],
+   [
+    "case_25",
+    {
+     "step_no": 1,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_3136",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_92"
+    }
+   ],
+   [
+    "case_25",
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_1895",
+     "operation": "VERIFY_RECORD_ANONYMIZED",
+     "state": "ANONYMIZED",
+     "evidence_id": "evidence_92"
+    }
+   ],
+   [
+    "case_26",
+    {
+     "step_no": 4,
+     "phase": "VERIFICATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_4566",
+     "operation": "VERIFY_RECORD_ANONYMIZED",
+     "state": "ANONYMIZED",
+     "evidence_id": "evidence_92"
+    }
+   ],
+   [
+    "case_27",
+    {
+     "step_no": 4,
+     "phase": "VERIFICATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_4574",
+     "operation": "VERIFY_RECORD_ANONYMIZED",
+     "state": "ANONYMIZED",
+     "evidence_id": "evidence_92"
+    }
+   ],
+   [
+    "case_28",
+    {
+     "step_no": 1,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_5482",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_92"
+    }
+   ],
+   [
+    "case_28",
+    {
+     "step_no": 4,
+     "phase": "VERIFICATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_6077",
+     "operation": "VERIFY_RECORD_ANONYMIZED",
+     "state": "ANONYMIZED",
+     "evidence_id": "evidence_92"
+    }
+   ],
+   [
+    "case_29",
+    {
+     "step_no": 9,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_7012",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    }
+   ],
+   [
+    "case_30",
+    {
+     "step_no": 9,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_4163",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    }
+   ],
+   [
+    "case_31",
+    {
+     "step_no": 1,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_4857",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_51"
+    }
+   ],
+   [
+    "case_32",
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_8858",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    }
+   ]
+  ],
+  "extra": [],
+  "invalid": []
+ },
+ "attribution": {
+  "labelled_pairs": 111,
+  "correct": 89,
+  "rows": [
+   {
+    "case_id": "case_01",
+    "resource_id": "account_001",
+    "label": "INFERRED",
+    "link": "timing-only",
+    "correct": true
+   },
+   {
+    "case_id": "case_02",
+    "resource_id": "account_002",
+    "label": "INFERRED",
+    "link": "timing-only",
+    "correct": true
+   },
+   {
+    "case_id": "case_03",
+    "resource_id": "account_7566",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_03",
+    "resource_id": "analytics_9406",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_03",
+    "resource_id": "audit_record_2016",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_04",
+    "resource_id": "account_004",
+    "label": "NOT_ATTRIBUTED",
+    "link": "none",
+    "correct": false
+   },
+   {
+    "case_id": "case_04",
+    "resource_id": "analytics_901",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_05",
+    "resource_id": "account_005",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_06",
+    "resource_id": "account_006",
+    "label": "INFERRED",
+    "link": "timing-only",
+    "correct": true
+   },
+   {
+    "case_id": "case_06",
+    "resource_id": "search_001",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_07",
+    "resource_id": "account_007",
+    "label": "INFERRED",
+    "link": "timing-only",
+    "correct": true
+   },
+   {
+    "case_id": "case_07",
+    "resource_id": "support_001",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_08",
+    "resource_id": "account_008",
+    "label": "INFERRED",
+    "link": "timing-only",
+    "correct": true
+   },
+   {
+    "case_id": "case_08",
+    "resource_id": "export_001",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_09",
+    "resource_id": "account_3960",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_09",
+    "resource_id": "audit_record_4902",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_09",
+    "resource_id": "backup_4978",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_10",
+    "resource_id": "account_010",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_10",
+    "resource_id": "support_002",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_11",
+    "resource_id": "account_4248",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_11",
+    "resource_id": "analytics_2034",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_11",
+    "resource_id": "audit_record_9394",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_11",
+    "resource_id": "data_flow_9522",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_11",
+    "resource_id": "search_052",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_11",
+    "resource_id": "support_864",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_12",
+    "resource_id": "account_9797",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_12",
+    "resource_id": "analytics_9914",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_12",
+    "resource_id": "audit_record_2945",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_13",
+    "resource_id": "account_9335",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_13",
+    "resource_id": "audit_record_4816",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_13",
+    "resource_id": "search_1308",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_13",
+    "resource_id": "support_4218",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_14",
+    "resource_id": "account_3677",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_14",
+    "resource_id": "audit_record_987",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_14",
+    "resource_id": "backup_3870",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_15",
+    "resource_id": "account_4745",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_15",
+    "resource_id": "audit_record_1596",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_15",
+    "resource_id": "data_flow_9846",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_16",
+    "resource_id": "account_994",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_16",
+    "resource_id": "audit_record_9528",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_16",
+    "resource_id": "search_1007",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_17",
+    "resource_id": "account_4092",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_17",
+    "resource_id": "audit_record_1797",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_17",
+    "resource_id": "backup_3245",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_18",
+    "resource_id": "account_5521",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_18",
+    "resource_id": "analytics_037",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_18",
+    "resource_id": "audit_record_6645",
+    "label": "NOT_ATTRIBUTED",
+    "link": "none",
+    "correct": false
+   },
+   {
+    "case_id": "case_18",
+    "resource_id": "data_flow_4890",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_18",
+    "resource_id": "search_4013",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_18",
+    "resource_id": "support_5569",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_19",
+    "resource_id": "account_9102",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_19",
+    "resource_id": "audit_record_6793",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_19",
+    "resource_id": "search_6083",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_19",
+    "resource_id": "support_9553",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_20",
+    "resource_id": "account_5037",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_20",
+    "resource_id": "audit_record_5569",
+    "label": "NOT_ATTRIBUTED",
+    "link": "none",
+    "correct": false
+   },
+   {
+    "case_id": "case_20",
+    "resource_id": "data_flow_1770",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_20",
+    "resource_id": "search_4262",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_21",
+    "resource_id": "account_6440",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_21",
+    "resource_id": "analytics_5335",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_21",
+    "resource_id": "audit_record_3737",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_22",
+    "resource_id": "account_4990",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_22",
+    "resource_id": "analytics_4440",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_22",
+    "resource_id": "audit_record_3482",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_22",
+    "resource_id": "search_8911",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_23",
+    "resource_id": "account_410",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_23",
+    "resource_id": "audit_record_4128",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_23",
+    "resource_id": "export_7364",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_23",
+    "resource_id": "search_898",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_24",
+    "resource_id": "account_5334",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_24",
+    "resource_id": "audit_record_7095",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_24",
+    "resource_id": "search_5577",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_25",
+    "resource_id": "account_3136",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_25",
+    "resource_id": "analytics_1895",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_25",
+    "resource_id": "audit_record_451",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_26",
+    "resource_id": "account_5684",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_26",
+    "resource_id": "analytics_4566",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_26",
+    "resource_id": "audit_record_5416",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_26",
+    "resource_id": "backup_3120",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_26",
+    "resource_id": "data_flow_6244",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_26",
+    "resource_id": "support_4715",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_27",
+    "resource_id": "account_3866",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_27",
+    "resource_id": "analytics_4574",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_27",
+    "resource_id": "audit_record_3830",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_27",
+    "resource_id": "backup_5970",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_27",
+    "resource_id": "data_flow_2295",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_27",
+    "resource_id": "support_4707",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_28",
+    "resource_id": "account_5482",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_28",
+    "resource_id": "analytics_6077",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_28",
+    "resource_id": "audit_record_9265",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_28",
+    "resource_id": "backup_838",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_28",
+    "resource_id": "data_flow_2337",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_28",
+    "resource_id": "support_2351",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_29",
+    "resource_id": "account_7012",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_29",
+    "resource_id": "analytics_5208",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_29",
+    "resource_id": "audit_record_3954",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_29",
+    "resource_id": "data_flow_3827",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_29",
+    "resource_id": "search_1993",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_29",
+    "resource_id": "support_5281",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_30",
+    "resource_id": "account_4163",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_30",
+    "resource_id": "analytics_3697",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_30",
+    "resource_id": "audit_record_1707",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_30",
+    "resource_id": "data_flow_8524",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_30",
+    "resource_id": "search_9359",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_30",
+    "resource_id": "support_6477",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_31",
+    "resource_id": "account_4857",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_31",
+    "resource_id": "audit_record_6909",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_31",
+    "resource_id": "tombstone_440",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_32",
+    "resource_id": "account_8858",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_32",
+    "resource_id": "audit_record_7068",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   },
+   {
+    "case_id": "case_32",
+    "resource_id": "tombstone_9178",
+    "label": "CONFIRMED",
+    "link": "direct",
+    "correct": true
+   }
+  ],
+  "by_link": {
+   "direct": {
+    "total": 84,
+    "correct": 84,
+    "CONFIRMED": 84
+   },
+   "none": {
+    "total": 3,
+    "correct": 0,
+    "NOT_ATTRIBUTED": 3
+   },
+   "timing-only": {
+    "total": 24,
+    "correct": 5,
+    "INFERRED": 5,
+    "AMBIGUOUS": 19
+   }
+  },
+  "labels_samples": {
+   "AMBIGUOUS": 61,
+   "CONFIRMED": 84,
+   "CONFIRMED/OUT_OF_SCOPE": 3,
+   "INFERRED": 5
+  },
+  "labels_eval": {
+   "AMBIGUOUS": 1247,
+   "CONFIRMED": 1435,
+   "CONFIRMED/OUT_OF_SCOPE": 36,
+   "INFERRED": 40
+  },
+  "coverage_samples": [
+   89,
+   153
+  ],
+  "coverage_eval": [
+   1475,
+   2758
+  ],
+  "inferred_evaluable": [
+   [
+    "case_01",
+    "account_001",
+    true
+   ],
+   [
+    "case_02",
+    "account_002",
+    true
+   ],
+   [
+    "case_06",
+    "account_006",
+    true
+   ],
+   [
+    "case_07",
+    "account_007",
+    true
+   ],
+   [
+    "case_08",
+    "account_008",
+    true
+   ]
+  ],
+  "inferred_unevaluable": [
+   [
+    "case_41",
+    "analytics_6830"
+   ],
+   [
+    "case_78",
+    "account_8754"
+   ],
+   [
+    "case_94",
+    "account_4037"
+   ],
+   [
+    "case_101",
+    "account_7169"
+   ],
+   [
+    "case_102",
+    "account_2056"
+   ],
+   [
+    "case_103",
+    "account_4070"
+   ],
+   [
+    "case_125",
+    "account_7637"
+   ],
+   [
+    "case_152",
+    "account_8854"
+   ],
+   [
+    "case_154",
+    "account_7680"
+   ],
+   [
+    "case_161",
+    "account_5501"
+   ],
+   [
+    "case_182",
+    "account_2322"
+   ],
+   [
+    "case_200",
+    "account_1964"
+   ],
+   [
+    "case_260",
+    "account_7811"
+   ],
+   [
+    "case_281",
+    "account_4985"
+   ],
+   [
+    "case_283",
+    "analytics_8408"
+   ],
+   [
+    "case_284",
+    "account_8322"
+   ],
+   [
+    "case_322",
+    "analytics_4229"
+   ],
+   [
+    "case_325",
+    "account_2595"
+   ],
+   [
+    "case_328",
+    "account_206"
+   ],
+   [
+    "case_332",
+    "account_5992"
+   ],
+   [
+    "case_343",
+    "account_1949"
+   ],
+   [
+    "case_343",
+    "analytics_4751"
+   ],
+   [
+    "case_373",
+    "account_8684"
+   ],
+   [
+    "case_376",
+    "account_5454"
+   ],
+   [
+    "case_377",
+    "account_1824"
+   ],
+   [
+    "case_382",
+    "account_2041"
+   ],
+   [
+    "case_392",
+    "analytics_4328"
+   ],
+   [
+    "case_401",
+    "account_9820"
+   ],
+   [
+    "case_402",
+    "account_3370"
+   ],
+   [
+    "case_403",
+    "account_1246"
+   ],
+   [
+    "case_403",
+    "analytics_7090"
+   ],
+   [
+    "case_424",
+    "account_2696"
+   ],
+   [
+    "case_428",
+    "account_2157"
+   ],
+   [
+    "case_452",
+    "account_6294"
+   ],
+   [
+    "case_461",
+    "account_4490"
+   ],
+   [
+    "case_462",
+    "account_1881"
+   ],
+   [
+    "case_463",
+    "analytics_689"
+   ],
+   [
+    "case_500",
+    "account_5738"
+   ],
+   [
+    "case_502",
+    "account_2554"
+   ],
+   [
+    "case_521",
+    "analytics_7277"
+   ]
+  ],
+  "inferred_recall": [
+   5,
+   27
+  ],
+  "dropped_by_policy": [
+   {
+    "case_id": "case_03",
+    "resource_id": "analytics_9406",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_04",
+    "resource_id": "analytics_901",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_10",
+    "resource_id": "account_010",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_18",
+    "resource_id": "account_5521",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_20",
+    "resource_id": "account_5037",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_21",
+    "resource_id": "account_6440",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_21",
+    "resource_id": "analytics_5335",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_22",
+    "resource_id": "account_4990",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_23",
+    "resource_id": "account_410",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_25",
+    "resource_id": "account_3136",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_25",
+    "resource_id": "analytics_1895",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_26",
+    "resource_id": "analytics_4566",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_27",
+    "resource_id": "analytics_4574",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_28",
+    "resource_id": "account_5482",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_28",
+    "resource_id": "analytics_6077",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_29",
+    "resource_id": "account_7012",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_30",
+    "resource_id": "account_4163",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_31",
+    "resource_id": "account_4857",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   },
+   {
+    "case_id": "case_32",
+    "resource_id": "account_8858",
+    "label": "AMBIGUOUS",
+    "link": "timing-only",
+    "correct": false
+   }
+  ],
+  "confirmed_without_direct_link": []
+ },
+ "custom": [
+  {
+   "case": "X1",
+   "failure_mode": "Negated, limited-scope, non-English non-deletion request",
+   "expected_status": "NOT_APPLICABLE",
+   "predicted_status": "NOT_APPLICABLE",
+   "status_ok": true,
+   "steps_ok": true,
+   "pass": true,
+   "expected_steps": [],
+   "predicted_steps": [],
+   "intent_path": "model_failure->NOT_APPLICABLE",
+   "error": ""
+  },
+  {
+   "case": "X2",
+   "failure_mode": "Historical-identifier-only linkage; record shape decides the category",
+   "expected_status": "INCOMPLETE",
+   "predicted_status": "NOT_APPLICABLE",
+   "status_ok": false,
+   "steps_ok": false,
+   "pass": false,
+   "expected_steps": [
+    {
+     "step_no": 1,
+     "phase": "FINDING",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_990002",
+     "operation": "REPORT_REMAINING_RECORD",
+     "state": "PRESENT",
+     "evidence_id": "evidence_x201"
+    },
+    {
+     "step_no": 2,
+     "phase": "REMEDIATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_990002",
+     "operation": "DELETE_RECORD",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_990002",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 4,
+     "phase": "VERIFICATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_990002",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 5,
+     "phase": "VERIFICATION",
+     "system_id": "security_service",
+     "resource_id": "audit_record_990002",
+     "operation": "VERIFY_RECORD_PRESENT",
+     "state": "PRESENT",
+     "evidence_id": ""
+    }
+   ],
+   "predicted_steps": [],
+   "intent_path": "model_failure->NOT_APPLICABLE",
+   "error": ""
+  },
+  {
+   "case": "X3",
+   "failure_mode": "Post-delete replication recreation (replica drift) under reported_status=COMPLETE",
+   "expected_status": "INCOMPLETE",
+   "predicted_status": "NOT_APPLICABLE",
+   "status_ok": false,
+   "steps_ok": false,
+   "pass": false,
+   "expected_steps": [
+    {
+     "step_no": 1,
+     "phase": "FINDING",
+     "system_id": "account_service",
+     "resource_id": "account_990003",
+     "operation": "REPORT_REMAINING_RECORD",
+     "state": "PRESENT",
+     "evidence_id": "evidence_x301"
+    },
+    {
+     "step_no": 2,
+     "phase": "REMEDIATION",
+     "system_id": "account_service",
+     "resource_id": "account_990003",
+     "operation": "DELETE_RECORD",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_990003",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 4,
+     "phase": "VERIFICATION",
+     "system_id": "security_service",
+     "resource_id": "audit_record_990003",
+     "operation": "VERIFY_RECORD_PRESENT",
+     "state": "PRESENT",
+     "evidence_id": ""
+    }
+   ],
+   "predicted_steps": [],
+   "intent_path": "model_failure->NOT_APPLICABLE",
+   "error": ""
+  },
+  {
+   "case": "X4",
+   "failure_mode": "Inclusive audit_at boundary; a resurrection dated after audit_at inside an admissible file",
+   "expected_status": "COMPLETE",
+   "predicted_status": "NOT_APPLICABLE",
+   "status_ok": false,
+   "steps_ok": false,
+   "pass": false,
+   "expected_steps": [
+    {
+     "step_no": 1,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_990004",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_x401"
+    },
+    {
+     "step_no": 2,
+     "phase": "VERIFICATION",
+     "system_id": "search_service",
+     "resource_id": "search_990004",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_x401"
+    },
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "security_service",
+     "resource_id": "audit_record_990004",
+     "operation": "VERIFY_RECORD_PRESENT",
+     "state": "PRESENT",
+     "evidence_id": "evidence_x401"
+    }
+   ],
+   "predicted_steps": [],
+   "intent_path": "model_failure->NOT_APPLICABLE",
+   "error": ""
+  },
+  {
+   "case": "X5",
+   "failure_mode": "Absence by omission next to a near-name decoy",
+   "expected_status": "COMPLETE",
+   "predicted_status": "NOT_APPLICABLE",
+   "status_ok": false,
+   "steps_ok": false,
+   "pass": false,
+   "expected_steps": [
+    {
+     "step_no": 1,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_990005",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_x501"
+    }
+   ],
+   "predicted_steps": [],
+   "intent_path": "model_failure->NOT_APPLICABLE",
+   "error": ""
+  }
+ ],
+ "determinism": null,
+ "usage": {
+  "rows": [],
+  "total": {},
+  "estimated_paid_usd": 0,
+  "requests": 518,
+  "live_calls_this_run": 0,
+  "cache_hits_this_run": 0,
+  "events": [],
+  "models_verified": {}
+ }
+}

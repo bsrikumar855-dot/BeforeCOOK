@@ -1,0 +1,111 @@
+{
+ "batch_size": 1,
+ "call_id": "3344701fbe0a47ea",
+ "call_usage": {
+  "input_tokens": 1236,
+  "model_version": "gemini-2.5-flash",
+  "output_tokens": 883,
+  "thinking_tokens": 0,
+  "total_tokens": 2119
+ },
+ "file_id": "evidence_14",
+ "input_sha256": "e81fabc93ea1b5f4c918d934cdb2bea05d61737adfcc29f281494f5d8ec46355",
+ "key": "8eaaf5ad856c27d13d87b81dad81fa747bbc615532f5ac3ed1312486f7f7e863",
+ "key_slot": "primary",
+ "model": "gemini-2.5-flash",
+ "prompt_version": "pb1da0fa903ab",
+ "provider": "gemini",
+ "response": {
+  "captured_at_text": "07 Aug 2026 08:00 UTC",
+  "records": [
+   {
+    "direct_identifiers_visible": true,
+    "email": "jain.aditi@gmail.com",
+    "email_hash": null,
+    "enabled": true,
+    "name": null,
+    "observed_at": "2026-08-07T07:59:42Z",
+    "other_fields": {
+     "Destination": "customer_analytics_warehouse",
+     "Events/hour": "1,284",
+     "Mode": "Continuous"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "DATA_FLOW",
+    "resource_id": "data_flow_1121",
+    "restore_allowed": null,
+    "status_text": "Healthy",
+    "system_id": "integration_service",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": "lucia-torres@gmail.com",
+    "email_hash": null,
+    "enabled": true,
+    "name": null,
+    "observed_at": "2026-08-07T07:59:36Z",
+    "other_fields": {
+     "Destination": "customer_analytics_warehouse",
+     "Events/hour": "842",
+     "Mode": "Continuous"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "DATA_FLOW",
+    "resource_id": "data_flow_9846",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "integration_service",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": false,
+    "email": null,
+    "email_hash": null,
+    "enabled": true,
+    "name": null,
+    "observed_at": "2026-08-07T07:59:28Z",
+    "other_fields": {
+     "Destination": "notification_service",
+     "Events/hour": "650",
+     "Mode": "Continuous",
+     "Selector": "order events"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "DATA_FLOW",
+    "resource_id": "order_notifications",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "integration_service",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": false,
+    "email": null,
+    "email_hash": null,
+    "enabled": true,
+    "name": null,
+    "observed_at": "2026-08-07T07:59:13Z",
+    "other_fields": {
+     "Destination": "logistics_warehouse",
+     "Events/hour": "420",
+     "Mode": "Continuous",
+     "Selector": "shipment events"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "DATA_FLOW",
+    "resource_id": "delivery_tracking",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "integration_service",
+    "user_id": null
+   }
+  ],
+  "screen_title": "Connections"
+ },
+ "task": "vision"
+}

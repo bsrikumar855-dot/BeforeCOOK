@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_205",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-08T09:00:00Z",
+  "email": "nneka.o2286@zoho.com",
+  "reported_at": "2026-06-28T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-25T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "nneka.o2286@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "ffa1044e024cf58e501246172fc06d2bf0e740483533b452553cf95d14f77122": "user_identities.email_hash"
+   },
+   "name": {
+    "Nneka Okeke": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 640 1873": "user_identities.phone"
+   },
+   "user_id": {
+    "user_203": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_203 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_203"
+  ]
+ }
+}

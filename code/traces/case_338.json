@@ -1,0 +1,420 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_338",
+   "edges": [
+    {
+     "case_id": "case_338",
+     "identifier": "email:sota.suzuki@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_4231",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_4231",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_31",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_338",
+   "edges": [
+    {
+     "case_id": "case_338",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_2079",
+     "source_id": "activity_1350",
+     "strength": "SECONDARY",
+     "time": "2026-04-09T09:31:15Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1350; no identity link to anyone else",
+   "resource_id": "analytics_2079",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_338",
+   "edges": [
+    {
+     "case_id": "case_338",
+     "identifier": "user_id:user_336",
+     "kind": "HARD",
+     "resource_id": "audit_record_9226",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_9226",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_31",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_338",
+   "edges": [
+    {
+     "case_id": "case_338",
+     "identifier": "email:sota.suzuki@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_9392",
+     "source_id": "evidence_72",
+     "strength": "HARD",
+     "time": "2026-05-04T09:41:47Z"
+    },
+    {
+     "case_id": "case_338",
+     "identifier": "email:sota.suzuki@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_9392",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_9392",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_72",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_338",
+   "edges": [
+    {
+     "case_id": "case_338",
+     "identifier": "email:sota.suzuki@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_1392",
+     "source_id": "evidence_72",
+     "strength": "HARD",
+     "time": "2026-05-04T09:41:47Z"
+    },
+    {
+     "case_id": "case_338",
+     "identifier": "email:sota.suzuki@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_1392",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_1392",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_72",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_338",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1347",
+   "reason": "hard-linked to ['user_338']",
+   "resource_id": "account_1015"
+  },
+  {
+   "activity_id": "activity_1348",
+   "reason": "hard-linked to ['user_337']",
+   "resource_id": "account_1340"
+  },
+  {
+   "activity_id": "activity_1353",
+   "reason": "hard-linked to ['user_338']",
+   "resource_id": "data_flow_5916"
+  },
+  {
+   "activity_id": "activity_1355",
+   "reason": "hard-linked to ['user_338']",
+   "resource_id": "search_5411"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-04T10:00:00Z",
+  "email": "sota.suzuki@gmail.com",
+  "reported_at": "2026-04-09T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-08T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "DELETE",
+   "resource_id": "account_4231",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_72",
+    "resource_id": "account_4231",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_2079",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_72#customer_analytics_profiles:1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_72",
+    "resource_id": "analytics_2079",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_9226",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_72",
+    "resource_id": "audit_record_9226",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_9392",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_72#connector_subscriptions:3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_72",
+    "resource_id": "data_flow_9392",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "DELETE",
+   "resource_id": "search_1392",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_72#customer_search_documents:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_72",
+    "resource_id": "search_1392",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_72",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_1392",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_72",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_9392",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_9392",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_1392",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4231",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_1392",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_9226",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_2079",
+   "state": "ANONYMIZED",
+   "step_no": 8,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_9392",
+   "state": "DISABLED",
+   "step_no": 9,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "sota.suzuki@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "4a15c27d1ad4c629b17d665b5e1fec5c98ac256b023c0d2312a594f3ef6b4273": "user_identities.email_hash"
+   },
+   "name": {
+    "Sota Suzuki": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 3264 5742": "user_identities.phone"
+   },
+   "user_id": {
+    "user_336": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_336 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_336"
+  ]
+ },
+ "validation_errors": []
+}

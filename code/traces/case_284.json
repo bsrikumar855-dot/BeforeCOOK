@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_284",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-29T08:00:00Z",
+  "email": "kofi.appiah96@outlook.com",
+  "reported_at": "2026-05-18T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-17T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "kofi.appiah96@outlook.com": "request.email",
+    "kofi.appiah@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "b5d4717ca30cca101b072414b76ab16055a338dadc63f5eed1abb91029d1bb35": "user_audit_log.old_value audit_171",
+    "db9864e1fdb5cef9f33c25aa018ae9e017c0447dde217c5ee321377ce62dadf8": "user_identities.email_hash"
+   },
+   "name": {
+    "Kofi Appiah": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 734 6692": "user_identities.phone"
+   },
+   "user_id": {
+    "user_282": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_282 via user_audit_log.old_value audit_170"
+  ],
+  "user_ids": [
+   "user_282"
+  ]
+ }
+}

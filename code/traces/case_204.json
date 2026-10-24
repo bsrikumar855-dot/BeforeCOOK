@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_204",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-08T09:00:00Z",
+  "email": "sdarwish4367@fastmail.com",
+  "reported_at": "2026-06-28T09:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-06-26T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "sdarwish4367@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "8c1feb5f664f3ed7d14f31441a8f0c2e19b6cd131963452f0b1a3580d37e86fe": "user_identities.email_hash"
+   },
+   "name": {
+    "Salma Darwish": "user_identities.name"
+   },
+   "phone": {
+    "+971 50 070 7476": "user_identities.phone"
+   },
+   "user_id": {
+    "user_202": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_202 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_202"
+  ]
+ }
+}

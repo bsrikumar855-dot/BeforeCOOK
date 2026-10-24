@@ -1,0 +1,473 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_3897",
+     "source_id": "activity_2903",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T06:59:49Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 8: several assignments equally supported (rival cases for account_3897: ['case_149', 'case_150'])",
+   "resource_id": "account_3897",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_874",
+     "source_id": "activity_2901",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T06:48:06Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 8: several assignments equally supported (rival cases for account_874: ['case_149', 'case_150'])",
+   "resource_id": "account_874",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_9505",
+     "source_id": "activity_2904",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T07:10:04Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 8: several assignments equally supported (rival cases for account_9505: ['case_149', 'case_150'])",
+   "resource_id": "account_9505",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1626",
+     "source_id": "activity_2907",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T07:31:46Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_2907 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "resource_id": "analytics_1626",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_7254",
+     "source_id": "activity_2906",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T07:31:30Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_2906 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "resource_id": "analytics_7254",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "user_id:user_149",
+     "kind": "HARD",
+     "resource_id": "audit_record_8905",
+     "source_id": "evidence_86",
+     "strength": "HARD",
+     "time": "2026-08-07T04:48:17Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_8905",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_86",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "user_id:user_149",
+     "kind": "HARD",
+     "resource_id": "backup_9557",
+     "source_id": "evidence_86",
+     "strength": "HARD",
+     "time": "2026-08-07T06:27:21Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "backup_9557",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_86",
+   "system_id": "backup_service"
+  },
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "user_id:user_149",
+     "kind": "HARD",
+     "resource_id": "data_flow_2437",
+     "source_id": "evidence_86",
+     "strength": "HARD",
+     "time": "2026-08-07T06:10:12Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_2437",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_86",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_151",
+   "edges": [
+    {
+     "case_id": "case_151",
+     "identifier": "user_id:user_149",
+     "kind": "HARD",
+     "resource_id": "support_5400",
+     "source_id": "evidence_86",
+     "strength": "HARD",
+     "time": "2026-08-07T06:50:56Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "support_5400",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_86",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_151",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2910",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "account_1084"
+  },
+  {
+   "activity_id": "activity_2912",
+   "reason": "hard-linked to ['user_134']",
+   "resource_id": "account_4079"
+  },
+  {
+   "activity_id": "activity_2913",
+   "reason": "hard-linked to ['user_133']",
+   "resource_id": "account_1417"
+  },
+  {
+   "activity_id": "activity_2914",
+   "reason": "hard-linked to ['user_147']",
+   "resource_id": "analytics_5886"
+  },
+  {
+   "activity_id": "activity_2915",
+   "reason": "hard-linked to ['user_147']",
+   "resource_id": "search_7672"
+  },
+  {
+   "activity_id": "activity_2916",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "data_flow_7812"
+  },
+  {
+   "activity_id": "activity_2917",
+   "reason": "hard-linked to ['user_134']",
+   "resource_id": "support_4442"
+  },
+  {
+   "activity_id": "activity_2918",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "search_7941"
+  },
+  {
+   "activity_id": "activity_2920",
+   "reason": "hard-linked to ['user_134']",
+   "resource_id": "search_1110"
+  },
+  {
+   "activity_id": "activity_2921",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "support_4410"
+  },
+  {
+   "activity_id": "activity_2922",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "analytics_7772"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_3897: ['case_149', 'case_150'])",
+   "resource_id": "account_3897"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_874: ['case_149', 'case_150'])",
+   "resource_id": "account_874"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_9505: ['case_149', 'case_150'])",
+   "resource_id": "account_9505"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_2907 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "resource_id": "analytics_1626"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_2906 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "resource_id": "analytics_7254"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-07T08:00:00Z",
+  "email": "elena.i4660@outlook.com",
+  "reported_at": "2026-07-22T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-19T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_86",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_8905",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_86#security_service.audit_records.2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_86",
+    "resource_id": "audit_record_8905",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "BACKUP_ARCHIVE",
+   "category_basis": "default category for backup_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RESTORE_BLOCKED"
+   ],
+   "proof_file_id": "evidence_86",
+   "required_action": "RETAIN",
+   "resource_id": "backup_9557",
+   "state": {
+    "exposure": "STABLE_REFERENCE_ONLY",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_86#backup_service.restore_entries.1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_86",
+    "resource_id": "backup_9557",
+    "restore_state": "BLOCKED",
+    "system_id": "backup_service"
+   },
+   "system_id": "backup_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_86",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_2437",
+   "state": {
+    "exposure": "STABLE_REFERENCE_ONLY",
+    "flow_state": "DISABLED",
+    "observation_ids": [
+     "evidence_86#integration_service.connectors.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_86",
+    "resource_id": "data_flow_2437",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_86",
+   "required_action": "REDACT",
+   "resource_id": "support_5400",
+   "state": {
+    "exposure": "STABLE_REFERENCE_ONLY",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_86#support_platform.tickets.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_86",
+    "resource_id": "support_5400",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_86",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_8905",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_86",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_5400",
+   "state": "REDACTED",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "evidence_86",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_2437",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "evidence_86",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "phase": "VERIFICATION",
+   "resource_id": "backup_9557",
+   "state": "BLOCKED",
+   "step_no": 4,
+   "system_id": "backup_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "elena.i4660@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "100c56bb311ad3b36460ad720fa690d25e23a17e11fa0284650c6032c330f7f5": "user_identities.email_hash"
+   },
+   "name": {
+    "Elena Ionescu": "user_identities.name"
+   },
+   "phone": {
+    "+48 714 169 201": "user_identities.phone"
+   },
+   "user_id": {
+    "user_149": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_149 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_149"
+  ]
+ },
+ "validation_errors": []
+}

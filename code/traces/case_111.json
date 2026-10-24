@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_111",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-27T12:00:00Z",
+  "email": "O.ANDERSSON00@GMAIL.COM",
+  "reported_at": "2026-08-10T12:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-08T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "o.andersson00@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "0825a72aee9a82d2e82c5a48f90ffcabd7a7f75d33d88ae3c69f8ac534f74f08": "user_identities.email_hash"
+   },
+   "name": {
+    "Oskar Andersson": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 171 63 48": "user_identities.phone"
+   },
+   "user_id": {
+    "user_109": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_109 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_109"
+  ]
+ }
+}

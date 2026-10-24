@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_98",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-01T06:00:00Z",
+  "email": "maja.eriksen86@gmail.com",
+  "reported_at": "2026-08-07T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-06T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "maja.eriksen86@gmail.com": "request.email",
+    "maja.eriksen@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "1d4f8cdcb5b9be2e4f7328c895e3ae296356f1ecc71224d3adec7001c69d373a": "user_audit_log.old_value audit_255",
+    "cc009487604f6f57b71e79b264f5b95432d2dfcf9b0ea02f95116e97a0eb2cc2": "user_identities.email_hash"
+   },
+   "name": {
+    "Maja Eriksen": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 564 09 30": "user_identities.phone"
+   },
+   "user_id": {
+    "user_96": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_96 via user_audit_log.old_value audit_254"
+  ],
+  "user_ids": [
+   "user_96"
+  ]
+ }
+}

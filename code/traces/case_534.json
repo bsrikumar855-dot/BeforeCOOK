@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_534",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3778"
+  ],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-30T12:00:00Z",
+  "email": "mlim7637@gmail.com",
+  "reported_at": "2026-09-10T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-08T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mlim7637@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "5b2e4080237b1e85a953f04b8648b9e0fdea7f9b502ce8af02e0f301dec2dd14": "user_identities.email_hash"
+   },
+   "name": {
+    "Min-jun Lim": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 7909 3874": "user_identities.phone"
+   },
+   "user_id": {
+    "user_532": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_532 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_532"
+  ]
+ }
+}

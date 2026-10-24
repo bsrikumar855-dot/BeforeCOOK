@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_92",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-06T07:00:00Z",
+  "email": "doyun.lim@outlook.com",
+  "reported_at": "2026-08-18T07:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-08-17T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "doyun.lim@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "db6b5ab5a95162a05bcf8b15ce995a76f76ab1aee40d9ccf1dc26ec142a39240": "user_identities.email_hash"
+   },
+   "name": {
+    "Do-yun Lim": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 1007 3954": "user_audit_log.old_value audit_184",
+    "+82 10 5963 1958": "user_identities.phone"
+   },
+   "user_id": {
+    "user_90": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_90 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_90"
+  ]
+ }
+}

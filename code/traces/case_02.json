@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_02",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-04T15:00:00Z",
+  "email": "mateo.rios@outlook.com",
+  "reported_at": "2026-08-22T07:25:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-21T18:06:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mateo.rios@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "fad1c282b6b8ff346ee92e617331f69c2b6bb345af954eeb44581c57529eab9d": "user_identities.email_hash"
+   },
+   "name": {
+    "Mateo Ríos": "user_identities.name"
+   },
+   "phone": {
+    "+34 612 847 593": "user_identities.phone"
+   },
+   "user_id": {
+    "user_02": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_02 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_02"
+  ]
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "attribution": [],
+ "case_id": "case_537",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3648"
+  ],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-27T12:00:00Z",
+  "email": "l.alvarez94@yahoo.com",
+  "reported_at": "2026-09-04T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-02T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "l.alvarez94@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "8a28de8e72f61c736f21e4557cf52c2a94000c0dabfe51fc750a34573bbe0e40": "user_identities.email_hash"
+   },
+   "name": {
+    "Lucía Alvarez": "user_identities.name"
+   },
+   "phone": {
+    "+34 665 047 466": "user_audit_log.old_value audit_200",
+    "+34 778 833 175": "user_identities.phone"
+   },
+   "user_id": {
+    "user_535": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_535 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_535"
+  ]
+ }
+}

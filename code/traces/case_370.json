@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_370",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-19T07:00:00Z",
+  "email": "dubois.ines94@icloud.com",
+  "reported_at": "2026-04-04T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-04-01T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "dubois.ines94@icloud.com": "request.email",
+    "dubois.ines@icloud.com": "user_identities.email"
+   },
+   "email_hash": {
+    "528e98f656618b3fa9fa5c5c75a4b531162a236ecca7c0629ca5e8da60246e64": "user_identities.email_hash",
+    "8d4587d13a19abba3fe0118d656d762df891efc99847f854488bc51cfa95ca78": "user_audit_log.old_value audit_135"
+   },
+   "name": {
+    "Inès Dubois": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 96 40 04 68": "user_identities.phone"
+   },
+   "user_id": {
+    "user_368": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_368 via user_audit_log.old_value audit_134"
+  ],
+  "user_ids": [
+   "user_368"
+  ]
+ }
+}

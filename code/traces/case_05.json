@@ -1,0 +1,159 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_05",
+   "edges": [
+    {
+     "case_id": "case_05",
+     "identifier": "user_id:user_05",
+     "kind": "HARD",
+     "resource_id": "account_005",
+     "source_id": "evidence_54",
+     "strength": "HARD",
+     "time": "2026-09-02T23:00:00Z"
+    },
+    {
+     "case_id": "case_05",
+     "identifier": "email:leila.haddad@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "account_005",
+     "source_id": "evidence_54",
+     "strength": "HARD",
+     "time": "2026-09-02T23:00:00Z"
+    },
+    {
+     "case_id": "case_05",
+     "identifier": "phone:+212 6 48 27 15 93",
+     "kind": "HARD",
+     "resource_id": "account_005",
+     "source_id": "evidence_54",
+     "strength": "HARD",
+     "time": "2026-09-02T23:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_005",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_54",
+   "system_id": "account_service"
+  }
+ ],
+ "case_id": "case_05",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3485",
+   "reason": "hard-linked to ['user_11']",
+   "resource_id": "account_5762"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-08T13:40:00Z",
+  "email": "leila.haddad@yahoo.com",
+  "reported_at": "2026-08-28T09:03:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-27T14:17:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_54",
+   "required_action": "DELETE",
+   "resource_id": "account_005",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_54#customer_profiles_failover_replica:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_54",
+    "resource_id": "account_005",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_54",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "account_005",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "account_005",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_005",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "leila.haddad@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "62667ed065b846a842474f916da51b658edb0f9754ab2da6bf38e68779ff0d08": "user_identities.email_hash"
+   },
+   "name": {
+    "Leila Haddad": "user_identities.name"
+   },
+   "phone": {
+    "+212 6 48 27 15 93": "user_identities.phone"
+   },
+   "user_id": {
+    "user_05": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_05 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_05"
+  ]
+ },
+ "validation_errors": []
+}

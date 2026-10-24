@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_524",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-01-29T12:00:00Z",
+  "email": "mateo.castillo@outlook.com",
+  "reported_at": "2026-01-18T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-01-17T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mateo.castillo@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "6ba69020119b7f5cd1a261eb4536de9bb1fa65a9150037ef9cfa7d36a6e64111": "user_identities.email_hash"
+   },
+   "name": {
+    "Mateo Castillo": "user_identities.name"
+   },
+   "phone": {
+    "+34 629 765 457": "user_identities.phone"
+   },
+   "user_id": {
+    "user_522": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_522 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_522"
+  ]
+ }
+}

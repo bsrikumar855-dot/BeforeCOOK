@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_139",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-12T09:00:00Z",
+  "email": "farah.n963283@outlook.com",
+  "reported_at": "2026-07-19T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-07-16T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "farah.n963283@outlook.com": "request.email",
+    "farah.n9632@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "28d6de3b001e37a42104ab541f45cf87ecf2f7556246aca14cc919ece40c1337": "user_identities.email_hash",
+    "f7a98fd673dd3964039c9f4db0998a06b900eb85486ac170cbda11ed9fd7f46b": "user_audit_log.old_value audit_241"
+   },
+   "name": {
+    "Farah Nasser": "user_identities.name"
+   },
+   "phone": {
+    "+971 50 016 2006": "user_identities.phone"
+   },
+   "user_id": {
+    "user_137": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_137 via user_audit_log.old_value audit_240"
+  ],
+  "user_ids": [
+   "user_137"
+  ]
+ }
+}

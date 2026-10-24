@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_538",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3618"
+  ],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-26T12:00:00Z",
+  "email": "morgan.amelia@icloud.com",
+  "reported_at": "2026-09-03T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-08-31T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "morgan.amelia@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "898808c8f9b5097b82e19f21f41e9862e58f0aa8b85d7768f40896175c2488fa": "user_identities.email_hash"
+   },
+   "name": {
+    "Amelia Morgan": "user_identities.name"
+   },
+   "phone": {
+    "+44 7700 900536": "user_identities.phone"
+   },
+   "user_id": {
+    "user_536": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_536 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_536"
+  ]
+ }
+}

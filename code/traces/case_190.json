@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_190",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-18T11:00:00Z",
+  "email": "PETRESCU.ANDREI@ICLOUD.COM",
+  "reported_at": "2026-07-03T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-30T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "petrescu.andrei@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "0d9530e9f968ea7ccc96dd553e5aae1df2f78b2e5158289ee23d821c2c514948": "user_identities.email_hash"
+   },
+   "name": {
+    "Andrei Petrescu": "user_identities.name"
+   },
+   "phone": {
+    "+48 719 961 702": "user_identities.phone"
+   },
+   "user_id": {
+    "user_188": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_188 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_188"
+  ]
+ }
+}

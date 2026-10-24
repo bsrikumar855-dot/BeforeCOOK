@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_539",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3531"
+  ],
+  "error": "",
+  "is_deletion": false,
+  "label": "NON_DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": true,
+  "path": "model_non_deletion+classify_corroborates->NOT_APPLICABLE",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-25T12:00:00Z",
+  "email": "leonie-rousseau@proton.me",
+  "reported_at": "2026-08-30T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-08-29T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "leonie-rousseau@proton.me": "request.email"
+   },
+   "email_hash": {
+    "6a2958b096cfa86d0ea81a52ab03b3d1d5e43997a7582452ac930a74ad891173": "user_identities.email_hash"
+   },
+   "name": {
+    "Léonie Rousseau": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 87 01 36 75": "user_identities.phone"
+   },
+   "user_id": {
+    "user_537": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_537 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_537"
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_185",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-18T11:00:00Z",
+  "email": "diya-sharma85@gmail.com",
+  "reported_at": "2026-07-06T11:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-07-05T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "diya-sharma85@gmail.com": "request.email",
+    "diya-sharma@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "73b8e6124856302114a003598629070fc1f8306c9bb5b95849631c98988b7975": "user_identities.email_hash",
+    "93c6728aadfd0dec64438b77c08e489f605fdf4462ba7ee4d50f8dae21c973e2": "user_audit_log.old_value audit_217"
+   },
+   "name": {
+    "Diya Sharma": "user_identities.name"
+   },
+   "phone": {
+    "+91 91881 07822": "user_identities.phone"
+   },
+   "user_id": {
+    "user_183": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_183 via user_audit_log.old_value audit_216"
+  ],
+  "user_ids": [
+   "user_183"
+  ]
+ }
+}

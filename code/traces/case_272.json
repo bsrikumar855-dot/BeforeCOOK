@@ -1,0 +1,375 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_272",
+   "edges": [
+    {
+     "case_id": "case_272",
+     "identifier": "email:thabo.masuku@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_4226",
+     "source_id": "evidence_25",
+     "strength": "HARD",
+     "time": "2026-06-08T09:53:48Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_4226",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_25",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_272",
+   "edges": [
+    {
+     "case_id": "case_272",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_2977",
+     "source_id": "activity_1982",
+     "strength": "SECONDARY",
+     "time": "2026-05-20T10:31:41Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1982 lies in the burst windows of cases ['case_258', 'case_259', 'case_272']",
+   "resource_id": "analytics_2977",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_272",
+   "edges": [
+    {
+     "case_id": "case_272",
+     "identifier": "user_id:user_270",
+     "kind": "HARD",
+     "resource_id": "audit_record_4646",
+     "source_id": "evidence_25",
+     "strength": "HARD",
+     "time": "2026-06-08T09:57:07Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_4646",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_25",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_272",
+   "edges": [
+    {
+     "case_id": "case_272",
+     "identifier": "email:thabo.masuku@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_2010",
+     "source_id": "evidence_25",
+     "strength": "HARD",
+     "time": "2026-06-08T09:51:18Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "data_flow_2010",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_25",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_272",
+   "edges": [
+    {
+     "case_id": "case_272",
+     "identifier": "email:thabo.masuku@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_3875",
+     "source_id": "evidence_25",
+     "strength": "HARD",
+     "time": "2026-06-08T09:56:27Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "search_3875",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_25",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_272",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1981",
+   "reason": "hard-linked to ['user_257']",
+   "resource_id": "account_9608"
+  },
+  {
+   "activity_id": "activity_1986",
+   "reason": "hard-linked to ['user_256']",
+   "resource_id": "support_3834"
+  },
+  {
+   "activity_id": "activity_1987",
+   "reason": "hard-linked to ['user_257']",
+   "resource_id": "search_6990"
+  },
+  {
+   "activity_id": "activity_1988",
+   "reason": "hard-linked to ['user_256']",
+   "resource_id": "search_5296"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1982 lies in the burst windows of cases ['case_258', 'case_259', 'case_272']",
+   "resource_id": "analytics_2977"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-06-08T10:00:00Z",
+  "email": "thabo.masuku@outlook.com",
+  "reported_at": "2026-05-20T10:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-05-19T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_25",
+   "required_action": "DELETE",
+   "resource_id": "account_4226",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_25#L66"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_25",
+    "resource_id": "account_4226",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_25",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_4646",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_25#L116"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_25",
+    "resource_id": "audit_record_4646",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_25",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_2010",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_25#L12"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_25",
+    "resource_id": "data_flow_2010",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_25",
+   "required_action": "DELETE",
+   "resource_id": "search_3875",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_25#L112"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_25",
+    "resource_id": "search_3875",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_25",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_3875",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_25",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_2010",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_2010",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_3875",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4226",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_3875",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_4646",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_2010",
+   "state": "DISABLED",
+   "step_no": 8,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "thabo.masuku@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "442a3ee4d7c9dbe8784a6956a6f051053efc76e4e8f3d990c9c689d69b6eebc9": "user_identities.email_hash"
+   },
+   "name": {
+    "Thabo Masuku": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 141 6256": "user_identities.phone",
+    "+27 72 976 7606": "user_audit_log.old_value audit_23"
+   },
+   "user_id": {
+    "user_270": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_270 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_270"
+  ]
+ },
+ "validation_errors": []
+}

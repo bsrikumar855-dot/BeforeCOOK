@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_42",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-10-01T12:00:00Z",
+  "email": "asingh1489@gmail.com",
+  "reported_at": "2026-09-23T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-09-21T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "asingh1489@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "aa5ecc7ea9e148d86f95e25ab0aaa968f1104d84db232a06106a0f901d3f38a0": "user_identities.email_hash"
+   },
+   "name": {
+    "Arjun Singh": "user_identities.name"
+   },
+   "phone": {
+    "+91 95003 52326": "user_audit_log.old_value audit_42",
+    "+91 95707 17770": "user_identities.phone"
+   },
+   "user_id": {
+    "user_40": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_40 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_40"
+  ]
+ }
+}

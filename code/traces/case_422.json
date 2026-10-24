@@ -1,0 +1,406 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_422",
+   "edges": [
+    {
+     "case_id": "case_422",
+     "identifier": "email:camille.girard80@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_4087",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:58:44Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_4087",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_422",
+   "edges": [
+    {
+     "case_id": "case_422",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_542",
+     "source_id": "activity_1003",
+     "strength": "SECONDARY",
+     "time": "2026-03-16T09:31:51Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1003 lies in the burst windows of cases ['case_393', 'case_407', 'case_422']",
+   "resource_id": "analytics_542",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_422",
+   "edges": [
+    {
+     "case_id": "case_422",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_8973",
+     "source_id": "activity_1002",
+     "strength": "SECONDARY",
+     "time": "2026-03-16T09:31:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1002 lies in the burst windows of cases ['case_393', 'case_407', 'case_422']",
+   "resource_id": "analytics_8973",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_422",
+   "edges": [
+    {
+     "case_id": "case_422",
+     "identifier": "user_id:user_420",
+     "kind": "HARD",
+     "resource_id": "audit_record_4218",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:56:26Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_4218",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_422",
+   "edges": [
+    {
+     "case_id": "case_422",
+     "identifier": "email:camille.girard80@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_8871",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:59:09Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_8871",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_422",
+   "edges": [
+    {
+     "case_id": "case_422",
+     "identifier": "email:camille.girard80@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_7614",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:56:22Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "search_7614",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_422",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1008",
+   "reason": "hard-linked to ['user_405']",
+   "resource_id": "support_3802"
+  },
+  {
+   "activity_id": "activity_1009",
+   "reason": "hard-linked to ['user_405']",
+   "resource_id": "search_5146"
+  },
+  {
+   "activity_id": "activity_1010",
+   "reason": "hard-linked to ['user_405']",
+   "resource_id": "support_6569"
+  },
+  {
+   "activity_id": "activity_1012",
+   "reason": "hard-linked to ['user_405']",
+   "resource_id": "analytics_1922"
+  },
+  {
+   "activity_id": "activity_1013",
+   "reason": "hard-linked to ['user_392']",
+   "resource_id": "search_195"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1003 lies in the burst windows of cases ['case_393', 'case_407', 'case_422']",
+   "resource_id": "analytics_542"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1002 lies in the burst windows of cases ['case_393', 'case_407', 'case_422']",
+   "resource_id": "analytics_8973"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-03-25T09:00:00Z",
+  "email": "camille.girard80@gmail.com",
+  "reported_at": "2026-03-16T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-15T09:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "DELETE",
+   "resource_id": "account_4087",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L99"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "account_4087",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_4218",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L57"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "audit_record_4218",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_8871",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_39#L104"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "data_flow_8871",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "DELETE",
+   "resource_id": "search_7614",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L55"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "search_7614",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_39",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_7614",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_39",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_8871",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_8871",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_7614",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4087",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_7614",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_4218",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_8871",
+   "state": "DISABLED",
+   "step_no": 8,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "camille.girard80@gmail.com": "request.email",
+    "camille.girard@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "3557d3b473450c59a06ec6961e4f7dc617d70da60be92706cc0bf01766aff8dd": "user_audit_log.old_value audit_111",
+    "86e3be7fc01d3bc47f922ff348d815463a66a28bbcb165361c6e18a6ee8ef7d3": "user_identities.email_hash"
+   },
+   "name": {
+    "Camille Girard": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 59 04 57 83": "user_identities.phone"
+   },
+   "user_id": {
+    "user_420": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_420 via user_audit_log.old_value audit_110"
+  ],
+  "user_ids": [
+   "user_420"
+  ]
+ },
+ "validation_errors": []
+}

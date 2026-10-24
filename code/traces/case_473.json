@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_473",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-23T10:00:00Z",
+  "email": "liam-collins@gmail.com",
+  "reported_at": "2026-02-03T10:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-02-02T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "liam-collins@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "20152a419bcca09af1676ab02a6fbeaedb6c396aa90f8d354c1ab67d40f03ab1": "user_identities.email_hash"
+   },
+   "name": {
+    "Liam Collins": "user_identities.name"
+   },
+   "phone": {
+    "+1 (212) 555-0171": "user_identities.phone"
+   },
+   "user_id": {
+    "user_471": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_471 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_471"
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_409",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-30T10:00:00Z",
+  "email": "leonie.d7762@zoho.com",
+  "reported_at": "2026-03-16T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-13T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "leonie.d7762@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "4d0121f462a1e1f6e5fc299c5764e501d51865e1d125461acca46a4b625937cf": "user_identities.email_hash"
+   },
+   "name": {
+    "Léonie Dubois": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 76 77 59 85": "user_identities.phone"
+   },
+   "user_id": {
+    "user_407": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_407 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_407"
+  ]
+ }
+}

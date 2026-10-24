@@ -1,0 +1,476 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_241",
+   "edges": [
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "account_1789",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_1789",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_22",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_241",
+   "edges": [
+    {
+     "case_id": "case_241",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1964",
+     "source_id": "activity_2097",
+     "strength": "SECONDARY",
+     "time": "2026-05-28T05:31:54Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_2097; no identity link to anyone else",
+   "resource_id": "analytics_1964",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_241",
+   "edges": [
+    {
+     "case_id": "case_241",
+     "identifier": "user_id:user_239",
+     "kind": "HARD",
+     "resource_id": "audit_record_436",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_436",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_22",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_241",
+   "edges": [
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_4568",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T05:15:38Z"
+    },
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_4568",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T05:15:38Z"
+    },
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_4568",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T05:15:38Z"
+    },
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_4568",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T05:15:38Z"
+    },
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_4568",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "data_flow_4568",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_79",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_241",
+   "edges": [
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_5659",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T02:59:55Z"
+    },
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_5659",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T02:59:55Z"
+    },
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_5659",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T02:59:55Z"
+    },
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_5659",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T02:59:55Z"
+    },
+    {
+     "case_id": "case_241",
+     "identifier": "email:oskar.n737097@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_5659",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_5659",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_79",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_241",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2095",
+   "reason": "hard-linked to ['user_238']",
+   "resource_id": "account_6013"
+  },
+  {
+   "activity_id": "activity_2096",
+   "reason": "hard-linked to ['user_237']",
+   "resource_id": "account_2838"
+  },
+  {
+   "activity_id": "activity_2099",
+   "reason": "hard-linked to ['user_238']",
+   "resource_id": "export_5242"
+  },
+  {
+   "activity_id": "activity_2101",
+   "reason": "hard-linked to ['user_238']",
+   "resource_id": "search_9335"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-06-23T06:00:00Z",
+  "email": "oskar.n737097@zoho.com",
+  "reported_at": "2026-05-28T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-25T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_78",
+   "required_action": "DELETE",
+   "resource_id": "account_1789",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_78",
+    "resource_id": "account_1789",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_1964",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_79#L3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "analytics_1964",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_436",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_78",
+    "resource_id": "audit_record_436",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_4568",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_79#L49"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "data_flow_4568",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "DELETE",
+   "resource_id": "search_5659",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_79#L9"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "search_5659",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_79",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_5659",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_79",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_4568",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_4568",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_5659",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_1789",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5659",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_436",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_1964",
+   "state": "ANONYMIZED",
+   "step_no": 8,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_4568",
+   "state": "DISABLED",
+   "step_no": 9,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "oskar.n737097@zoho.com": "request.email",
+    "oskar.n7370@zoho.com": "user_identities.email"
+   },
+   "email_hash": {
+    "3928b57d8e6707b9d61497935008c88865479721f222bf81e35ecc2146846d2c": "user_identities.email_hash",
+    "df55236daeb0404c406d422e2c221706b9982c064d150c64267aa60b35b10688": "user_audit_log.old_value audit_196"
+   },
+   "name": {
+    "Oskar Nielsen": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 034 53 62": "user_identities.phone"
+   },
+   "user_id": {
+    "user_239": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_239 via user_audit_log.old_value audit_195"
+  ],
+  "user_ids": [
+   "user_239"
+  ]
+ },
+ "validation_errors": []
+}

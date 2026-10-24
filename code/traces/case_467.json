@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_467",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-28T11:00:00Z",
+  "email": "kabelo-zulu81@proton.me",
+  "reported_at": "2026-02-14T11:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-02-13T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "kabelo-zulu81@proton.me": "request.email",
+    "kabelo-zulu@proton.me": "user_identities.email"
+   },
+   "email_hash": {
+    "3b6aa382aa04abef0238ff1add4a08597e67814eb2e8d20ffcc46ec06577acc5": "user_audit_log.old_value audit_87",
+    "bbb0c4d178705b1c9224807a5ca238d8168bcc65df71eafb89564b528d7dad2b": "user_identities.email_hash"
+   },
+   "name": {
+    "Kabelo Zulu": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 342 5752": "user_identities.phone"
+   },
+   "user_id": {
+    "user_465": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_465 via user_audit_log.old_value audit_86"
+  ],
+  "user_ids": [
+   "user_465"
+  ]
+ }
+}

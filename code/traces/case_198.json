@@ -1,0 +1,372 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_198",
+   "edges": [
+    {
+     "case_id": "case_198",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_2210",
+     "source_id": "activity_2427",
+     "strength": "SECONDARY",
+     "time": "2026-06-19T08:58:29Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 15: several assignments equally supported (rival cases for account_2210: ['case_197', 'case_212'])",
+   "resource_id": "account_2210",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_198",
+   "edges": [
+    {
+     "case_id": "case_198",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_2952",
+     "source_id": "activity_2428",
+     "strength": "SECONDARY",
+     "time": "2026-06-19T09:09:43Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 15: several assignments equally supported (rival cases for account_2952: ['case_197', 'case_212'])",
+   "resource_id": "account_2952",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_198",
+   "edges": [
+    {
+     "case_id": "case_198",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_418",
+     "source_id": "activity_2425",
+     "strength": "SECONDARY",
+     "time": "2026-06-19T07:59:38Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 15: several assignments equally supported (rival cases for account_418: ['case_197', 'case_212'])",
+   "resource_id": "account_418",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_198",
+   "edges": [
+    {
+     "case_id": "case_198",
+     "identifier": "email:ijain6853@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_1414",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T09:10:03Z"
+    },
+    {
+     "case_id": "case_198",
+     "identifier": "email:ijain6853@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_1414",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T09:10:03Z"
+    },
+    {
+     "case_id": "case_198",
+     "identifier": "email:ijain6853@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_1414",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T09:10:03Z"
+    },
+    {
+     "case_id": "case_198",
+     "identifier": "email:ijain6853@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_1414",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T09:10:03Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_1414",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_82",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_198",
+   "edges": [
+    {
+     "case_id": "case_198",
+     "identifier": "email:ijain6853@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_6131",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T09:13:20Z"
+    },
+    {
+     "case_id": "case_198",
+     "identifier": "email:ijain6853@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_6131",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T09:13:20Z"
+    },
+    {
+     "case_id": "case_198",
+     "identifier": "email:ijain6853@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_6131",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T09:13:20Z"
+    },
+    {
+     "case_id": "case_198",
+     "identifier": "email:ijain6853@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_6131",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T09:13:20Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_6131",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_82",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_198",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2426",
+   "reason": "hard-linked to ['user_197']",
+   "resource_id": "account_9917"
+  },
+  {
+   "activity_id": "activity_2429",
+   "reason": "hard-linked to ['user_210']",
+   "resource_id": "data_flow_8676"
+  },
+  {
+   "activity_id": "activity_2431",
+   "reason": "hard-linked to ['user_210']",
+   "resource_id": "search_2274"
+  },
+  {
+   "activity_id": "activity_2432",
+   "reason": "hard-linked to ['user_195']",
+   "resource_id": "analytics_6093"
+  },
+  {
+   "activity_id": "activity_2435",
+   "reason": "hard-linked to ['user_195']",
+   "resource_id": "search_6762"
+  },
+  {
+   "activity_id": "activity_2437",
+   "reason": "hard-linked to ['user_197']",
+   "resource_id": "search_9161"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 15: several assignments equally supported (rival cases for account_2210: ['case_197', 'case_212'])",
+   "resource_id": "account_2210"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 15: several assignments equally supported (rival cases for account_2952: ['case_197', 'case_212'])",
+   "resource_id": "account_2952"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 15: several assignments equally supported (rival cases for account_418: ['case_197', 'case_212'])",
+   "resource_id": "account_418"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-07-13T10:00:00Z",
+  "email": "ijain6853@gmail.com",
+  "reported_at": "2026-06-19T10:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-06-17T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "DELETE",
+   "resource_id": "search_1414",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_82#L47"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "search_1414",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "REDACT",
+   "resource_id": "support_6131",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_82#L49"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "support_6131",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_82",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_1414",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_82",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_6131",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_1414",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_6131",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_1414",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_6131",
+   "state": "REDACTED",
+   "step_no": 6,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ijain6853@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "3192a8360760403e8854c38f0fa8ef54cc693835ebab94be3270de741c44ea36": "user_identities.email_hash"
+   },
+   "name": {
+    "Ishaan Jain": "user_identities.name"
+   },
+   "phone": {
+    "+91 99220 90656": "user_identities.phone"
+   },
+   "user_id": {
+    "user_196": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_196 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_196"
+  ]
+ },
+ "validation_errors": []
+}

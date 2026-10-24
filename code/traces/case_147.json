@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_147",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-07T08:00:00Z",
+  "email": "l.fernandez84@gmail.com",
+  "reported_at": "2026-07-25T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-23T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "l.fernandez84@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "0c02dab8cd949dc8c60f0f502ccfbbf7af8f0c41a6f74bc3acadcc51447bc4e7": "user_identities.email_hash"
+   },
+   "name": {
+    "Lucía Fernández": "user_identities.name"
+   },
+   "phone": {
+    "+34 691 583 526": "user_audit_log.old_value audit_33",
+    "+34 776 829 829": "user_identities.phone"
+   },
+   "user_id": {
+    "user_145": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_145 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_145"
+  ]
+ }
+}

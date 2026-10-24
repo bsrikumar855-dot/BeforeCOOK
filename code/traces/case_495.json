@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_495",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-13T08:00:00Z",
+  "email": "H.LIM96@GMAIL.COM",
+  "reported_at": "2026-01-23T08:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-01-21T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "h.lim96@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "44c2059965c4c11d1d59b81a7f852403810b9835a1140caa3586488f02ebc193": "user_identities.email_hash"
+   },
+   "name": {
+    "Ha-eun Lim": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 4492 4143": "user_identities.phone"
+   },
+   "user_id": {
+    "user_493": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_493 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_493"
+  ]
+ }
+}

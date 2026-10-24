@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_171",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-28T06:00:00Z",
+  "email": "l.nascimento40@gmail.com",
+  "reported_at": "2026-07-11T06:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-07-09T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "l.nascimento40@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "93749c4ec1b500268f5fb2dc1e9ce7b1a6fadb8fd70150baab05bd4120ebb009": "user_identities.email_hash"
+   },
+   "name": {
+    "Lucas Nascimento": "user_identities.name"
+   },
+   "phone": {
+    "+55 11 99067-3405": "user_identities.phone"
+   },
+   "user_id": {
+    "user_169": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_169 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_169"
+  ]
+ }
+}

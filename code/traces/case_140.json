@@ -1,0 +1,490 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_140",
+   "edges": [
+    {
+     "case_id": "case_140",
+     "identifier": "email:chidi.eze@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_6372",
+     "source_id": "evidence_13",
+     "strength": "HARD",
+     "time": "2026-08-12T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_6372",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_13",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_140",
+   "edges": [
+    {
+     "case_id": "case_140",
+     "identifier": "email:chidi.eze@outlook.com",
+     "kind": "HARD",
+     "resource_id": "analytics_3006",
+     "source_id": "evidence_13",
+     "strength": "HARD",
+     "time": "2026-08-12T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_3006",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_13",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_140",
+   "edges": [
+    {
+     "case_id": "case_140",
+     "identifier": "user_id:user_138",
+     "kind": "HARD",
+     "resource_id": "audit_record_8086",
+     "source_id": "evidence_13",
+     "strength": "HARD",
+     "time": "2026-08-12T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_8086",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_13",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_140",
+   "edges": [
+    {
+     "case_id": "case_140",
+     "identifier": "email:chidi.eze@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_9030",
+     "source_id": "evidence_13",
+     "strength": "HARD",
+     "time": "2026-08-12T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_9030",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_13",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_140",
+   "edges": [
+    {
+     "case_id": "case_140",
+     "identifier": "email:chidi.eze@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_7363",
+     "source_id": "evidence_13",
+     "strength": "HARD",
+     "time": "2026-08-12T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_7363",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_13",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_140",
+   "edges": [
+    {
+     "case_id": "case_140",
+     "identifier": "email:chidi.eze@outlook.com",
+     "kind": "HARD",
+     "resource_id": "support_5323",
+     "source_id": "evidence_13",
+     "strength": "HARD",
+     "time": "2026-08-12T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "support_5323",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_13",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_140",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2834",
+   "reason": "hard-linked to ['user_139']",
+   "resource_id": "account_923"
+  },
+  {
+   "activity_id": "activity_2838",
+   "reason": "hard-linked to ['user_139']",
+   "resource_id": "search_460"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-12T09:00:00Z",
+  "email": "chidi.eze@outlook.com",
+  "reported_at": "2026-07-16T09:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-15T09:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_13",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_13",
+   "required_action": "DELETE",
+   "resource_id": "account_6372",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_13#r5"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_13",
+    "resource_id": "account_6372",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "record_type stated in evidence_13",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_13",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_3006",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_13#r10"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_13",
+    "resource_id": "analytics_3006",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_13",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_13",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_8086",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_13#r32"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_13",
+    "resource_id": "audit_record_8086",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_13",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_13",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_9030",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_13#r14"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_13",
+    "resource_id": "data_flow_9030",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_13",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_13",
+   "required_action": "DELETE",
+   "resource_id": "search_7363",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_13#r21"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_13",
+    "resource_id": "search_7363",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "record_type stated in evidence_13",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_13",
+   "required_action": "REDACT",
+   "resource_id": "support_5323",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_13#r36"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_13",
+    "resource_id": "support_5323",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_13",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_7363",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_13",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_3006",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "evidence_13",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_5323",
+   "state": "PRESENT",
+   "step_no": 3,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "evidence_13",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_9030",
+   "state": "ACTIVE",
+   "step_no": 4,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_9030",
+   "state": "DISABLED",
+   "step_no": 5,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_7363",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_5323",
+   "state": "REDACTED",
+   "step_no": 7,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_3006",
+   "state": "ANONYMIZED",
+   "step_no": 8,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_6372",
+   "state": "ABSENT",
+   "step_no": 9,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_7363",
+   "state": "ABSENT",
+   "step_no": 10,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_8086",
+   "state": "PRESENT",
+   "step_no": 11,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_5323",
+   "state": "REDACTED",
+   "step_no": 12,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_3006",
+   "state": "ANONYMIZED",
+   "step_no": 13,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_9030",
+   "state": "DISABLED",
+   "step_no": 14,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "chidi.eze@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "1368af67cb36fb97398ae991072a5121a382e62994fa8ecea794bd1800a0ed60": "user_identities.email_hash"
+   },
+   "name": {
+    "Chidi Eze": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 088 2674": "user_identities.phone"
+   },
+   "user_id": {
+    "user_138": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_138 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_138"
+  ]
+ },
+ "validation_errors": []
+}

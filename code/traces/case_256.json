@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_256",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-13T11:00:00Z",
+  "email": "mansour.yasmine@gmail.com",
+  "reported_at": "2026-05-23T11:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-05-20T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mansour.yasmine@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "9c0e9c0848296c88f659ccd0871e47fd034bfeceb9416b843c4cd371579fb0c6": "user_identities.email_hash"
+   },
+   "name": {
+    "Yasmine Mansour": "user_identities.name"
+   },
+   "phone": {
+    "+971 56 215 5606": "user_identities.phone"
+   },
+   "user_id": {
+    "user_254": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_254 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_254"
+  ]
+ }
+}

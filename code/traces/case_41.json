@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_41",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-10-01T12:00:00Z",
+  "email": "lucas-souza95@gmail.com",
+  "reported_at": "2026-09-03T12:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-09-02T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "lucas-souza95@gmail.com": "request.email",
+    "lucas-souza@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "061f7ec8b900d99d744f20b4ef7b91cd9eb48091028ed9c67d671688df6443ec": "user_identities.email_hash",
+    "6d2b0eb283a784006cba30084e5021ad5476d86e068025b9a61e4ef0e4a84517": "user_audit_log.old_value audit_302"
+   },
+   "name": {
+    "Lucas Souza": "user_identities.name"
+   },
+   "phone": {
+    "+55 31 92069-3017": "user_identities.phone"
+   },
+   "user_id": {
+    "user_39": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_39 via user_audit_log.old_value audit_301"
+  ],
+  "user_ids": [
+   "user_39"
+  ]
+ }
+}

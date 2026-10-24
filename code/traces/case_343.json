@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_343",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-29T09:00:00Z",
+  "email": "liam.s5108@outlook.com",
+  "reported_at": "2026-04-21T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-18T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "liam.s5108@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "8f6928e3250f6288cd860508f9db51870cde16cbc228f330cce20994ad68a251": "user_identities.email_hash"
+   },
+   "name": {
+    "Liam Sullivan": "user_identities.name"
+   },
+   "phone": {
+    "+1 (646) 555-0141": "user_identities.phone"
+   },
+   "user_id": {
+    "user_341": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_341 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_341"
+  ]
+ }
+}

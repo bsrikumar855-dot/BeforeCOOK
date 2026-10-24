@@ -1,0 +1,410 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_298",
+   "edges": [
+    {
+     "case_id": "case_298",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_3275",
+     "source_id": "activity_1664",
+     "strength": "SECONDARY",
+     "time": "2026-05-01T04:55:13Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 26: several assignments equally supported (rival cases for account_3275: ['case_311'])",
+   "resource_id": "account_3275",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_298",
+   "edges": [
+    {
+     "case_id": "case_298",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4267",
+     "source_id": "activity_1668",
+     "strength": "SECONDARY",
+     "time": "2026-05-01T06:05:17Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 26: several assignments equally supported (rival cases for account_4267: ['case_311'])",
+   "resource_id": "account_4267",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_298",
+   "edges": [
+    {
+     "case_id": "case_298",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4718",
+     "source_id": "activity_1665",
+     "strength": "SECONDARY",
+     "time": "2026-05-01T05:15:58Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 26: several assignments equally supported (rival cases for account_4718: ['case_311'])",
+   "resource_id": "account_4718",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_298",
+   "edges": [
+    {
+     "case_id": "case_298",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4880",
+     "source_id": "activity_1670",
+     "strength": "SECONDARY",
+     "time": "2026-05-01T06:14:47Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 26: several assignments equally supported (rival cases for account_4880: ['case_311'])",
+   "resource_id": "account_4880",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_298",
+   "edges": [
+    {
+     "case_id": "case_298",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6023",
+     "source_id": "activity_1666",
+     "strength": "SECONDARY",
+     "time": "2026-05-01T05:54:03Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 26: several assignments equally supported (rival cases for account_6023: ['case_311'])",
+   "resource_id": "account_6023",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_298",
+   "edges": [
+    {
+     "case_id": "case_298",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_7164",
+     "source_id": "activity_1671",
+     "strength": "SECONDARY",
+     "time": "2026-05-01T06:31:43Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1671 lies in the burst windows of cases ['case_298', 'case_311']",
+   "resource_id": "analytics_7164",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_298",
+   "edges": [
+    {
+     "case_id": "case_298",
+     "identifier": "email:nkosi.sipho88@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_6282",
+     "source_id": "evidence_75",
+     "strength": "HARD",
+     "time": "2026-05-24T06:39:55Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_6282",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_75",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_298",
+   "edges": [
+    {
+     "case_id": "case_298",
+     "identifier": "email:nkosi.sipho88@icloud.com",
+     "kind": "HARD",
+     "resource_id": "support_643",
+     "source_id": "evidence_75",
+     "strength": "HARD",
+     "time": "2026-05-24T06:39:55Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "support_643",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_75",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_298",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1672",
+   "reason": "hard-linked to ['user_295']",
+   "resource_id": "support_1983"
+  },
+  {
+   "activity_id": "activity_1673",
+   "reason": "hard-linked to ['user_309']",
+   "resource_id": "support_4952"
+  },
+  {
+   "activity_id": "activity_1674",
+   "reason": "hard-linked to ['user_295']",
+   "resource_id": "data_flow_3391"
+  },
+  {
+   "activity_id": "activity_1675",
+   "reason": "hard-linked to ['user_310']",
+   "resource_id": "export_9860"
+  },
+  {
+   "activity_id": "activity_1676",
+   "reason": "hard-linked to ['user_295']",
+   "resource_id": "backup_7308"
+  },
+  {
+   "activity_id": "activity_1677",
+   "reason": "hard-linked to ['user_309']",
+   "resource_id": "search_3004"
+  },
+  {
+   "activity_id": "activity_1678",
+   "reason": "hard-linked to ['user_310']",
+   "resource_id": "search_6805"
+  },
+  {
+   "activity_id": "activity_1680",
+   "reason": "hard-linked to ['user_294']",
+   "resource_id": "data_flow_085"
+  },
+  {
+   "activity_id": "activity_1682",
+   "reason": "hard-linked to ['user_294']",
+   "resource_id": "search_9631"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 26: several assignments equally supported (rival cases for account_3275: ['case_311'])",
+   "resource_id": "account_3275"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 26: several assignments equally supported (rival cases for account_4267: ['case_311'])",
+   "resource_id": "account_4267"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 26: several assignments equally supported (rival cases for account_4718: ['case_311'])",
+   "resource_id": "account_4718"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 26: several assignments equally supported (rival cases for account_4880: ['case_311'])",
+   "resource_id": "account_4880"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 26: several assignments equally supported (rival cases for account_6023: ['case_311'])",
+   "resource_id": "account_6023"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1671 lies in the burst windows of cases ['case_298', 'case_311']",
+   "resource_id": "analytics_7164"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-24T07:00:00Z",
+  "email": "nkosi.sipho88@icloud.com",
+  "reported_at": "2026-05-01T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-28T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_75",
+   "required_action": "DELETE",
+   "resource_id": "search_6282",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_75#customer_search_documents:3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_75",
+    "resource_id": "search_6282",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_75",
+   "required_action": "REDACT",
+   "resource_id": "support_643",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_75#support_records:2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_75",
+    "resource_id": "support_643",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_75",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_6282",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_75",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_643",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_6282",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_643",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_6282",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_643",
+   "state": "REDACTED",
+   "step_no": 6,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "nkosi.sipho88@icloud.com": "request.email",
+    "nkosi.sipho@icloud.com": "user_identities.email"
+   },
+   "email_hash": {
+    "6eac6ff1cad6eaefb8a28d29d1e86161ddc524312481da46657fdcc0ecd7c4b7": "user_audit_log.old_value audit_165",
+    "8c75ef02f3a009405ff56543dd300b9590db7736dbe2df1eed0f7467e1345ca9": "user_identities.email_hash"
+   },
+   "name": {
+    "Sipho Nkosi": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 249 8493": "user_identities.phone"
+   },
+   "user_id": {
+    "user_296": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_296 via user_audit_log.old_value audit_164"
+  ],
+  "user_ids": [
+   "user_296"
+  ]
+ },
+ "validation_errors": []
+}

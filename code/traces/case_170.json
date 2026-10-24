@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_170",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-28T06:00:00Z",
+  "email": "jihoon.jang@gmail.com",
+  "reported_at": "2026-07-11T06:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-07-10T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "jihoon.jang@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "8a6fe18cdaf828c71795ece7a591cfa7c1926bc7835615498c441a11cf2c209d": "user_identities.email_hash"
+   },
+   "name": {
+    "Ji-hoon Jang": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 9345 6085": "user_identities.phone"
+   },
+   "user_id": {
+    "user_168": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_168 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_168"
+  ]
+ }
+}

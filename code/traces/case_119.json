@@ -1,0 +1,425 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_119",
+   "edges": [
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "account_8058",
+     "source_id": "evidence_11",
+     "strength": "HARD",
+     "time": "2026-08-22T10:56:22Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_8058",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_11",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_119",
+   "edges": [
+    {
+     "case_id": "case_119",
+     "identifier": "user_id:user_117",
+     "kind": "HARD",
+     "resource_id": "audit_record_9445",
+     "source_id": "evidence_11",
+     "strength": "HARD",
+     "time": "2026-08-22T10:56:57Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_9445",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_11",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_119",
+   "edges": [
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_5259",
+     "source_id": "evidence_88",
+     "strength": "HARD",
+     "time": "2026-08-22T10:39:09Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_5259",
+     "source_id": "evidence_88",
+     "strength": "HARD",
+     "time": "2026-08-22T10:39:09Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_5259",
+     "source_id": "evidence_88",
+     "strength": "HARD",
+     "time": "2026-08-22T10:39:09Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_5259",
+     "source_id": "evidence_88",
+     "strength": "HARD",
+     "time": "2026-08-22T10:39:09Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_5259",
+     "source_id": "evidence_11",
+     "strength": "HARD",
+     "time": "2026-08-22T10:52:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_5259",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_88",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_119",
+   "edges": [
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_9309",
+     "source_id": "evidence_88",
+     "strength": "HARD",
+     "time": "2026-08-22T10:39:10Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_9309",
+     "source_id": "evidence_88",
+     "strength": "HARD",
+     "time": "2026-08-22T10:39:10Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_9309",
+     "source_id": "evidence_88",
+     "strength": "HARD",
+     "time": "2026-08-22T10:39:10Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_9309",
+     "source_id": "evidence_88",
+     "strength": "HARD",
+     "time": "2026-08-22T10:39:10Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_9309",
+     "source_id": "evidence_11",
+     "strength": "HARD",
+     "time": "2026-08-22T10:51:33Z"
+    },
+    {
+     "case_id": "case_119",
+     "identifier": "email:joao-santos@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_9309",
+     "source_id": "evidence_11",
+     "strength": "HARD",
+     "time": "2026-08-22T10:51:33Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_9309",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_88",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_119",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2975",
+   "reason": "hard-linked to ['user_118']",
+   "resource_id": "account_8656"
+  },
+  {
+   "activity_id": "activity_2977",
+   "reason": "hard-linked to ['user_119']",
+   "resource_id": "account_081"
+  },
+  {
+   "activity_id": "activity_2980",
+   "reason": "hard-linked to ['user_118']",
+   "resource_id": "export_4289"
+  },
+  {
+   "activity_id": "activity_2982",
+   "reason": "hard-linked to ['user_118']",
+   "resource_id": "search_943"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-22T11:00:00Z",
+  "email": "joao-santos@proton.me",
+  "reported_at": "2026-07-27T11:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-07-26T11:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_12",
+   "required_action": "DELETE",
+   "resource_id": "account_8058",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_12",
+    "resource_id": "account_8058",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_9445",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_12",
+    "resource_id": "audit_record_9445",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_88",
+   "required_action": "DELETE",
+   "resource_id": "search_5259",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_88#L43"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_88",
+    "resource_id": "search_5259",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_ATTACHMENT",
+   "category_basis": "shape: attachment",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_88",
+   "required_action": "DELETE",
+   "resource_id": "support_9309",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_88#L45"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_88",
+    "resource_id": "support_9309",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_88",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_5259",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_88",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "support_9309",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_5259",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_9309",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_8058",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5259",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "support_9309",
+   "state": "ABSENT",
+   "step_no": 7,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_9445",
+   "state": "PRESENT",
+   "step_no": 8,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "joao-santos@proton.me": "request.email"
+   },
+   "email_hash": {
+    "c1c6fd57078ef3889538c1d9b204efa1b624e97d25c7134a26bb598d6137cea8": "user_identities.email_hash"
+   },
+   "name": {
+    "João Santos": "user_identities.name"
+   },
+   "phone": {
+    "+55 31 99045-3014": "user_identities.phone"
+   },
+   "user_id": {
+    "user_117": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_117 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_117"
+  ]
+ },
+ "validation_errors": []
+}

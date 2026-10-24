@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_394",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-04T11:00:00Z",
+  "email": "rodriguez.mateo@icloud.com",
+  "reported_at": "2026-03-16T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-13T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "rodriguez.mateo@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "f2952afb7d9b9c54f8a743e1dffc01e55d7538a111d2fe5e0a0ca51cef80e34a": "user_identities.email_hash"
+   },
+   "name": {
+    "Mateo Rodríguez": "user_identities.name"
+   },
+   "phone": {
+    "+34 643 453 336": "user_identities.phone"
+   },
+   "user_id": {
+    "user_392": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_392 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_392"
+  ]
+ }
+}

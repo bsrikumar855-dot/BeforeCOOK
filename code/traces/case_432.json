@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_432",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-20T08:00:00Z",
+  "email": "anair9899@fastmail.com",
+  "reported_at": "2026-03-02T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-02-28T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "anair9899@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "bc57496f62881a74959a4081fd60e24f35549393161c6beab17074fec7f1da63": "user_identities.email_hash"
+   },
+   "name": {
+    "Arjun Nair": "user_identities.name"
+   },
+   "phone": {
+    "+91 95348 81179": "user_identities.phone",
+    "+91 97327 79221": "user_audit_log.old_value audit_43"
+   },
+   "user_id": {
+    "user_430": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_430 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_430"
+  ]
+ }
+}

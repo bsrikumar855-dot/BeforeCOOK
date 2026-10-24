@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_210",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-08T09:00:00Z",
+  "email": "ialmeida1881@gmail.com",
+  "reported_at": "2026-06-22T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-20T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ialmeida1881@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "01b863e977b0d79ede109d37c3fcc8ca565640aeb7ef39be3821b1cbeee2dcab": "user_identities.email_hash"
+   },
+   "name": {
+    "Isabela Almeida": "user_identities.name"
+   },
+   "phone": {
+    "+55 41 99079-0703": "user_identities.phone"
+   },
+   "user_id": {
+    "user_208": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_208 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_208"
+  ]
+ }
+}

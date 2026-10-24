@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_97",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-01T06:00:00Z",
+  "email": "arthur.r703485@zoho.com",
+  "reported_at": "2026-08-10T06:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-07T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "arthur.r703485@zoho.com": "request.email",
+    "arthur.r7034@zoho.com": "user_identities.email"
+   },
+   "email_hash": {
+    "5d5682c9c0bdba4fb56a5b0b6c750c2d722679ba5d60b8c5b9c898b84845000f": "user_identities.email_hash",
+    "66824ddbd25e0fc080044135a6e7ead4b3dedbdace2f9416d5aaa991ab56d878": "user_audit_log.old_value audit_261"
+   },
+   "name": {
+    "Arthur Rousseau": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 41 03 47 57": "user_identities.phone"
+   },
+   "user_id": {
+    "user_95": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_95 via user_audit_log.old_value audit_260"
+  ],
+  "user_ids": [
+   "user_95"
+  ]
+ }
+}

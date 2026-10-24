@@ -1,0 +1,273 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_103",
+   "edges": [
+    {
+     "case_id": "case_103",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4070",
+     "source_id": "activity_3322",
+     "strength": "SECONDARY",
+     "time": "2026-08-19T10:49:53Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_3322 is in every maximum one-to-one assignment of batch 3 (cases ['case_103'], rows ['account_4070']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_4070",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_103",
+   "edges": [
+    {
+     "case_id": "case_103",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_3264",
+     "source_id": "activity_3326",
+     "strength": "SECONDARY",
+     "time": "2026-08-19T11:31:34Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_3326; no identity link to anyone else",
+   "resource_id": "analytics_3264",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_103",
+   "edges": [
+    {
+     "case_id": "case_103",
+     "identifier": "user_id:user_101",
+     "kind": "HARD",
+     "resource_id": "audit_record_9522",
+     "source_id": "evidence_10",
+     "strength": "HARD",
+     "time": "2026-08-27T12:00:00Z"
+    },
+    {
+     "case_id": "case_103",
+     "identifier": "user_id:user_101",
+     "kind": "HARD",
+     "resource_id": "audit_record_9522",
+     "source_id": "evidence_10",
+     "strength": "HARD",
+     "time": "2026-08-27T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_9522",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_10",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_103",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3323",
+   "reason": "hard-linked to ['user_19']",
+   "resource_id": "account_9102"
+  },
+  {
+   "activity_id": "activity_3324",
+   "reason": "hard-linked to ['user_18']",
+   "resource_id": "account_2373"
+  },
+  {
+   "activity_id": "activity_3328",
+   "reason": "hard-linked to ['user_18']",
+   "resource_id": "export_1260"
+  },
+  {
+   "activity_id": "activity_3329",
+   "reason": "hard-linked to ['user_19']",
+   "resource_id": "support_9553"
+  },
+  {
+   "activity_id": "activity_3331",
+   "reason": "hard-linked to ['user_18']",
+   "resource_id": "search_2352"
+  },
+  {
+   "activity_id": "activity_3332",
+   "reason": "hard-linked to ['user_19']",
+   "resource_id": "search_6083"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-27T12:00:00Z",
+  "email": "mandla.m4548@outlook.com",
+  "reported_at": "2026-08-19T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-16T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "DELETE",
+   "resource_id": "account_4070",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_10",
+    "resource_id": "account_4070",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_3264",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_10#customer_data_primary:1",
+     "evidence_10#customer_data_read_replica:2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_10",
+    "resource_id": "analytics_3264",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_9522",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_10#customer_data_primary:15",
+     "evidence_10#customer_data_read_replica:16"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_10",
+    "resource_id": "audit_record_9522",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_10",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4070",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_10",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_9522",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_10",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_3264",
+   "state": "ANONYMIZED",
+   "step_no": 3,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mandla.m4548@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "742359c95b526d935d8d47066794f11096e8fc0d3d2aa8efd76c503e1019d2f2": "user_identities.email_hash"
+   },
+   "name": {
+    "Mandla Molefe": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 599 3929": "user_identities.phone"
+   },
+   "user_id": {
+    "user_101": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_101 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_101"
+  ]
+ },
+ "validation_errors": []
+}

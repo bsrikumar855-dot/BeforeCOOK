@@ -1,0 +1,275 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_12",
+   "edges": [
+    {
+     "case_id": "case_12",
+     "identifier": "email:minjun.kim@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_9797",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:56:57Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_9797",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_01",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_12",
+   "edges": [
+    {
+     "case_id": "case_12",
+     "identifier": "email_hash:44a65154bfd8e408852578fbd76813d094d1944f255ac1769ee81ba90492f10e",
+     "kind": "HARD",
+     "resource_id": "analytics_9914",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:58:26Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_9914",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_01",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_12",
+   "edges": [
+    {
+     "case_id": "case_12",
+     "identifier": "user_id:user_12",
+     "kind": "HARD",
+     "resource_id": "audit_record_2945",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:55:40Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_2945",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_01",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_12",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3430",
+   "reason": "hard-linked to ['user_14']",
+   "resource_id": "account_8926"
+  },
+  {
+   "activity_id": "activity_3431",
+   "reason": "hard-linked to ['user_13']",
+   "resource_id": "account_8491"
+  },
+  {
+   "activity_id": "activity_3436",
+   "reason": "hard-linked to ['user_13']",
+   "resource_id": "search_428"
+  },
+  {
+   "activity_id": "activity_3437",
+   "reason": "hard-linked to ['user_14']",
+   "resource_id": "search_4801"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-15T12:00:00Z",
+  "email": "minjun.kim@gmail.com",
+  "reported_at": "2026-08-25T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-24T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_01",
+   "required_action": "DELETE",
+   "resource_id": "account_9797",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_01#L76"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_01",
+    "resource_id": "account_9797",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "MARKETING_PROFILE",
+   "category_basis": "shape: email_opt_in",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_01",
+   "required_action": "DELETE",
+   "resource_id": "analytics_9914",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_01#L92"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_01",
+    "resource_id": "analytics_9914",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_01",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_2945",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_01#L63"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_01",
+    "resource_id": "audit_record_2945",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_01",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "analytics_9914",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_9914",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_9797",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_9914",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_2945",
+   "state": "PRESENT",
+   "step_no": 5,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "minjun.kim90@gmail.com": "user_audit_log.old_value audit_282",
+    "minjun.kim@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "44a65154bfd8e408852578fbd76813d094d1944f255ac1769ee81ba90492f10e": "user_audit_log.old_value audit_283",
+    "6e34ae5737be5401d915eb47a87a17264110c5a4e61c06f20b6a121f1520b9d2": "user_identities.email_hash"
+   },
+   "name": {
+    "Min-jun Kim": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 2466 4678": "user_identities.phone"
+   },
+   "user_id": {
+    "user_12": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_12 via user_identities.email (current)",
+   "user_12 via user_audit_log.new_value audit_282"
+  ],
+  "user_ids": [
+   "user_12"
+  ]
+ },
+ "validation_errors": []
+}

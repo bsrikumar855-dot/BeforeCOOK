@@ -1,0 +1,154 @@
+{
+ "batch_size": 1,
+ "call_id": "59df90bd91ed46a1",
+ "call_usage": {
+  "input_tokens": 1236,
+  "model_version": "gemini-2.5-flash",
+  "output_tokens": 1321,
+  "thinking_tokens": 0,
+  "total_tokens": 2557
+ },
+ "file_id": "evidence_37",
+ "input_sha256": "ca59f693f4e7002466b3fdeaf1bb6763618770963dd811b60003772d07b4b03b",
+ "key": "ffe60e4ea4cf1d7b4cfb36a5691cfbf1fd520dc5ea577a318d8ebf8fe745cc5a",
+ "key_slot": "primary",
+ "model": "gemini-2.5-flash",
+ "prompt_version": "pb1da0fa903ab",
+ "provider": "gemini",
+ "response": {
+  "captured_at_text": "Updated moments ago · 6 records",
+  "records": [
+   {
+    "direct_identifiers_visible": true,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-08-25T04:03:00Z",
+    "other_fields": {
+     "actor": "Automated workflow",
+     "category": "Account lifecycle",
+     "event": "Account closure recorded",
+     "event_type": "account_closure_recorded",
+     "fingerprint": "8f0c...31ad",
+     "journal": "2026-Q3"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "SECURITY_AUDIT_LOG",
+    "resource_id": "audit_record_003",
+    "restore_allowed": null,
+    "status_text": "Valid",
+    "system_id": "security_service",
+    "user_id": "user_03"
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-08-25T03:21:00Z",
+    "other_fields": {
+     "actor": "Security system",
+     "category": "Session management",
+     "event": "Session revoked"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "SECURITY_AUDIT_LOG",
+    "resource_id": "audit_record_002",
+    "restore_allowed": null,
+    "status_text": "Valid",
+    "system_id": "security_service",
+    "user_id": "user_03"
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-08-24T16:14:00Z",
+    "other_fields": {
+     "actor": "User (self)",
+     "category": "Authentication",
+     "event": "Recovery challenge completed"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "SECURITY_AUDIT_LOG",
+    "resource_id": "audit_record_001",
+    "restore_allowed": null,
+    "status_text": "Valid",
+    "system_id": "security_service",
+    "user_id": "user_03"
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-08-22T11:27:00Z",
+    "other_fields": {
+     "actor": "User (self)",
+     "category": "Profile update",
+     "event": "Email change confirmed"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "SECURITY_AUDIT_LOG",
+    "resource_id": "audit_record_006",
+    "restore_allowed": null,
+    "status_text": "Valid",
+    "system_id": "security_service",
+    "user_id": "user_03"
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-08-20T09:42:00Z",
+    "other_fields": {
+     "actor": "User (self)",
+     "category": "Authentication",
+     "event": "Login from new device"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "SECURITY_AUDIT_LOG",
+    "resource_id": "audit_record_005",
+    "restore_allowed": null,
+    "status_text": "Valid",
+    "system_id": "security_service",
+    "user_id": "user_03"
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-08-18T14:05:00Z",
+    "other_fields": {
+     "actor": "User (self)",
+     "category": "Authentication",
+     "event": "Password changed"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "SECURITY_AUDIT_LOG",
+    "resource_id": "audit_record_004",
+    "restore_allowed": null,
+    "status_text": "Valid",
+    "system_id": "security_service",
+    "user_id": "user_03"
+   }
+  ],
+  "screen_title": "Account events"
+ },
+ "task": "vision"
+}

@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_502",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-13T08:00:00Z",
+  "email": "horvat.pavel@icloud.com",
+  "reported_at": "2026-02-06T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-02-03T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "horvat.pavel@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "7d9dc5a03dd0bc1ced805ac25a2454afd79f9e5e39447b56455be158b4f9d93d": "user_identities.email_hash"
+   },
+   "name": {
+    "Pavel Horvat": "user_identities.name"
+   },
+   "phone": {
+    "+48 603 525 512": "user_identities.phone",
+    "+48 774 988 021": "user_audit_log.old_value audit_12"
+   },
+   "user_id": {
+    "user_500": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_500 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_500"
+  ]
+ }
+}

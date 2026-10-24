@@ -1,0 +1,236 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_383",
+   "edges": [
+    {
+     "case_id": "case_383",
+     "identifier": "email:mathis-girard@proton.me",
+     "kind": "HARD",
+     "resource_id": "account_5043",
+     "source_id": "evidence_36",
+     "strength": "HARD",
+     "time": "2026-04-09T12:00:00Z"
+    },
+    {
+     "case_id": "case_383",
+     "identifier": "email:mathis-girard@proton.me",
+     "kind": "HARD",
+     "resource_id": "account_5043",
+     "source_id": "evidence_36",
+     "strength": "HARD",
+     "time": "2026-04-11T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_5043",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_36",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_383",
+   "edges": [
+    {
+     "case_id": "case_383",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_9702",
+     "source_id": "activity_1216",
+     "strength": "SECONDARY",
+     "time": "2026-03-30T11:31:48Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1216 lies in the burst windows of cases ['case_383', 'case_385']",
+   "resource_id": "analytics_9702",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_383",
+   "edges": [
+    {
+     "case_id": "case_383",
+     "identifier": "user_id:user_381",
+     "kind": "HARD",
+     "resource_id": "audit_record_989",
+     "source_id": "evidence_36",
+     "strength": "HARD",
+     "time": "2026-04-09T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_989",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_36",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_383",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1213",
+   "reason": "hard-linked to ['user_383']",
+   "resource_id": "account_4844"
+  },
+  {
+   "activity_id": "activity_1214",
+   "reason": "hard-linked to ['user_382']",
+   "resource_id": "account_4441"
+  },
+  {
+   "activity_id": "activity_1219",
+   "reason": "hard-linked to ['user_382']",
+   "resource_id": "export_9989"
+  },
+  {
+   "activity_id": "activity_1221",
+   "reason": "hard-linked to ['user_382']",
+   "resource_id": "search_7562"
+  },
+  {
+   "activity_id": "activity_1222",
+   "reason": "hard-linked to ['user_383']",
+   "resource_id": "search_3355"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1216 lies in the burst windows of cases ['case_383', 'case_385']",
+   "resource_id": "analytics_9702"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-04-09T12:00:00Z",
+  "email": "mathis-girard@proton.me",
+  "reported_at": "2026-03-30T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-29T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_36",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_36",
+   "required_action": "DELETE",
+   "resource_id": "account_5043",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_36#r8"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_36",
+    "resource_id": "account_5043",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_36",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_36",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_989",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_36#r41"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_36",
+    "resource_id": "audit_record_989",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_36",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_5043",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_36",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_989",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mathis-girard@proton.me": "request.email"
+   },
+   "email_hash": {
+    "716038b485e3cfda88dd59473d344f7ca69f13dfb1cc34090f0507585ef59509": "user_identities.email_hash"
+   },
+   "name": {
+    "Mathis Girard": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 85 76 80 49": "user_identities.phone"
+   },
+   "user_id": {
+    "user_381": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_381 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_381"
+  ]
+ },
+ "validation_errors": []
+}

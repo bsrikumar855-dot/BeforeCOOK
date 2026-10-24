@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_521",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-03T06:00:00Z",
+  "email": "yuna-lee@gmail.com",
+  "reported_at": "2026-01-06T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-05T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "yuna-lee@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "2d41d39395e47d36e28151ecc055965ded8cb92465feaf2d0a00ec1cec6a6ec7": "user_identities.email_hash"
+   },
+   "name": {
+    "Yu-na Lee": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 8733 2776": "user_identities.phone"
+   },
+   "user_id": {
+    "user_519": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_519 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_519"
+  ]
+ }
+}

@@ -1,0 +1,309 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_484",
+   "edges": [
+    {
+     "case_id": "case_484",
+     "identifier": "email:rao.neel@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_2961",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-18T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_2961",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_45",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_484",
+   "edges": [
+    {
+     "case_id": "case_484",
+     "identifier": "user_id:user_482",
+     "kind": "HARD",
+     "resource_id": "audit_record_5270",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-18T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_5270",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_45",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_484",
+   "edges": [
+    {
+     "case_id": "case_484",
+     "identifier": "email:rao.neel@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_7973",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T06:44:21Z"
+    },
+    {
+     "case_id": "case_484",
+     "identifier": "email:rao.neel@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_7973",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T06:44:21Z"
+    },
+    {
+     "case_id": "case_484",
+     "identifier": "email:rao.neel@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_7973",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T06:44:21Z"
+    },
+    {
+     "case_id": "case_484",
+     "identifier": "email:rao.neel@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_7973",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T06:44:21Z"
+    },
+    {
+     "case_id": "case_484",
+     "identifier": "email:rao.neel@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_7973",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-18T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_7973",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_64",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_484",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_490",
+   "reason": "hard-linked to ['user_481']",
+   "resource_id": "account_9398"
+  },
+  {
+   "activity_id": "activity_492",
+   "reason": "hard-linked to ['user_481']",
+   "resource_id": "data_flow_3669"
+  },
+  {
+   "activity_id": "activity_494",
+   "reason": "hard-linked to ['user_481']",
+   "resource_id": "search_1613"
+  },
+  {
+   "activity_id": "activity_495",
+   "reason": "hard-linked to ['user_481']",
+   "resource_id": "backup_4600"
+  },
+  {
+   "activity_id": "activity_496",
+   "reason": "hard-linked to ['user_481']",
+   "resource_id": "support_4364"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-02-18T09:00:00Z",
+  "email": "rao.neel@gmail.com",
+  "reported_at": "2026-02-09T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-02-06T09:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_45",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_63",
+   "required_action": "DELETE",
+   "resource_id": "account_2961",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_63",
+    "resource_id": "account_2961",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_45",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5270",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_63",
+    "resource_id": "audit_record_5270",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "record_type stated in evidence_45",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_64",
+   "required_action": "REDACT",
+   "resource_id": "support_7973",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_64#L13"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_64",
+    "resource_id": "support_7973",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_64",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_7973",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_7973",
+   "state": "REDACTED",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_2961",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5270",
+   "state": "PRESENT",
+   "step_no": 4,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_7973",
+   "state": "REDACTED",
+   "step_no": 5,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "rao.neel@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "e04a28ea51afdeda586b65bc2ec7bd17f775a002e0d817a7f90d96aa7a96bf1c": "user_identities.email_hash"
+   },
+   "name": {
+    "Neel Rao": "user_identities.name"
+   },
+   "phone": {
+    "+91 93779 93032": "user_identities.phone"
+   },
+   "user_id": {
+    "user_482": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_482 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_482"
+  ]
+ },
+ "validation_errors": []
+}

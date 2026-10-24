@@ -1,0 +1,305 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_154",
+   "edges": [
+    {
+     "case_id": "case_154",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7680",
+     "source_id": "activity_2809",
+     "strength": "SECONDARY",
+     "time": "2026-07-14T05:46:23Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_2809 is in every maximum one-to-one assignment of batch 9 (cases ['case_154'], rows ['account_7680']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_7680",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_154",
+   "edges": [
+    {
+     "case_id": "case_154",
+     "identifier": "user_id:user_152",
+     "kind": "HARD",
+     "resource_id": "audit_record_2580",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    },
+    {
+     "case_id": "case_154",
+     "identifier": "user_id:user_152",
+     "kind": "HARD",
+     "resource_id": "audit_record_2580",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_2580",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_15",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_154",
+   "edges": [
+    {
+     "case_id": "case_154",
+     "identifier": "email:boateng.kofi@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_1446",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    },
+    {
+     "case_id": "case_154",
+     "identifier": "email:boateng.kofi@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_1446",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_1446",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_15",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_154",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2806",
+   "reason": "hard-linked to ['user_166']",
+   "resource_id": "account_8748"
+  },
+  {
+   "activity_id": "activity_2807",
+   "reason": "hard-linked to ['user_165']",
+   "resource_id": "account_5284"
+  },
+  {
+   "activity_id": "activity_2808",
+   "reason": "hard-linked to ['user_167']",
+   "resource_id": "account_7268"
+  },
+  {
+   "activity_id": "activity_2810",
+   "reason": "hard-linked to ['user_151']",
+   "resource_id": "account_8023"
+  },
+  {
+   "activity_id": "activity_2811",
+   "reason": "hard-linked to ['user_166']",
+   "resource_id": "export_4102"
+  },
+  {
+   "activity_id": "activity_2813",
+   "reason": "hard-linked to ['user_167']",
+   "resource_id": "search_2126"
+  },
+  {
+   "activity_id": "activity_2816",
+   "reason": "hard-linked to ['user_151']",
+   "resource_id": "search_9831"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-02T07:00:00Z",
+  "email": "boateng.kofi@icloud.com",
+  "reported_at": "2026-07-14T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-11T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "DELETE",
+   "resource_id": "account_7680",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_15",
+    "resource_id": "account_7680",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_2580",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_15#customer_data_primary:3",
+     "evidence_15#customer_data_read_replica:4"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_15",
+    "resource_id": "audit_record_2580",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "DELETE",
+   "resource_id": "search_1446",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_15#customer_data_primary:18",
+     "evidence_15#customer_data_read_replica:19"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_15",
+    "resource_id": "search_1446",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_15",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_1446",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_1446",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_7680",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_1446",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_2580",
+   "state": "PRESENT",
+   "step_no": 5,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "boateng.kofi@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "a5c1ef606638c2a1b6148f3a9002bf89885077e8ce736d8bdeb5be231500f730": "user_identities.email_hash"
+   },
+   "name": {
+    "Kofi Boateng": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 264 7521": "user_identities.phone"
+   },
+   "user_id": {
+    "user_152": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_152 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_152"
+  ]
+ },
+ "validation_errors": []
+}

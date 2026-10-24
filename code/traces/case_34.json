@@ -1,0 +1,199 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_34",
+   "edges": [
+    {
+     "case_id": "case_34",
+     "identifier": "email:haruka.s1838@zoho.com",
+     "kind": "HARD",
+     "resource_id": "account_5762",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:54:30Z"
+    },
+    {
+     "case_id": "case_34",
+     "identifier": "email:haruka.s1838@zoho.com",
+     "kind": "CATALOG",
+     "resource_id": "account_5762",
+     "source_id": "activity_4000",
+     "strength": "HARD",
+     "time": "2026-09-26T11:07:01Z"
+    },
+    {
+     "case_id": "case_34",
+     "identifier": "user_id:user_11",
+     "kind": "CATALOG",
+     "resource_id": "account_5762",
+     "source_id": "activity_4000",
+     "strength": "HARD",
+     "time": "2026-09-26T11:07:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via CATALOG_LINK, TRACE_JOIN",
+   "resource_id": "account_5762",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: activity_4000",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_34",
+   "edges": [
+    {
+     "case_id": "case_34",
+     "identifier": "user_id:user_11",
+     "kind": "HARD",
+     "resource_id": "audit_record_3753",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:54:47Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_3753",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_34",
+   "edges": [
+    {
+     "case_id": "case_34",
+     "identifier": "phone:+81 90 6156 0005",
+     "kind": "HARD",
+     "resource_id": "support_9538",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:51:46Z"
+    },
+    {
+     "case_id": "case_34",
+     "identifier": "phone:+81 90 6156 0005",
+     "kind": "HARD",
+     "resource_id": "support_9538",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:51:46Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_9538",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_34",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_3753"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "support_9538"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-27T13:00:00Z",
+  "email": "haruka.s1838@zoho.com",
+  "reported_at": "2026-09-26T02:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-09-24T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_01",
+   "required_action": "DELETE",
+   "resource_id": "account_5762",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_01#L40"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_01",
+    "resource_id": "account_5762",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_01",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_5762",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "haruka.s183889@zoho.com": "user_audit_log.old_value audit_277",
+    "haruka.s1838@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "532f8531fceba1d914b95e331ffb690ebb2a2d64611ea00361df48bd919544b7": "user_audit_log.old_value audit_278",
+    "db83a42f1f41508b4c44fc526100f9663ea8f72b347f16769ef3ac6975015fa2": "user_identities.email_hash"
+   },
+   "name": {
+    "Haruka Sato": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 6156 0005": "user_audit_log.old_value audit_279",
+    "+81 90 7610 2507": "user_identities.phone"
+   },
+   "user_id": {
+    "user_11": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_11 via user_identities.email (current)",
+   "user_11 via user_audit_log.new_value audit_277"
+  ],
+  "user_ids": [
+   "user_11"
+  ]
+ },
+ "validation_errors": []
+}

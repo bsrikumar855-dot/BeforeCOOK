@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_90",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-06T07:00:00Z",
+  "email": "zmahlangu160178@gmail.com",
+  "reported_at": "2026-08-21T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-19T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "zmahlangu160178@gmail.com": "request.email",
+    "zmahlangu1601@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "5fe4b542eee4148ffb7bbc960cee17c5b0bb83c00b8b4e2ade9ff1ce3f7af769": "user_audit_log.old_value audit_265",
+    "ab6a0b3de8a78f88f7a478bd2151747c07cc6f9365c4e4049c80477e8efaa937": "user_identities.email_hash"
+   },
+   "name": {
+    "Zanele Mahlangu": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 231 5546": "user_identities.phone"
+   },
+   "user_id": {
+    "user_88": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_88 via user_audit_log.old_value audit_264"
+  ],
+  "user_ids": [
+   "user_88"
+  ]
+ }
+}

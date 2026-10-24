@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_306",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-19T06:00:00Z",
+  "email": "flund2105@gmail.com",
+  "reported_at": "2026-05-07T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-05T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "flund2105@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "0155a5ec12b8d7a94b96df59e7aa6168711f046e69ca6b007208714acebd5620": "user_identities.email_hash"
+   },
+   "name": {
+    "Freja Lund": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 798 24 17": "user_identities.phone"
+   },
+   "user_id": {
+    "user_304": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_304 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_304"
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_297",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-24T07:00:00Z",
+  "email": "a.osei34@yahoo.com",
+  "reported_at": "2026-05-01T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-29T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "a.osei34@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "4b4a32020fe9c65d030904437e5b1fdec13bbcfb60977874b2f0d441ff28dfd9": "user_identities.email_hash"
+   },
+   "name": {
+    "Abena Osei": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 352 7302": "user_identities.phone",
+    "+233 24 863 3363": "user_audit_log.old_value audit_08"
+   },
+   "user_id": {
+    "user_295": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_295 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_295"
+  ]
+ }
+}

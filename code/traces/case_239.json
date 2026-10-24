@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_239",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-23T06:00:00Z",
+  "email": "daniel-parker@proton.me",
+  "reported_at": "2026-05-28T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-27T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "daniel-parker@proton.me": "request.email"
+   },
+   "email_hash": {
+    "44ebeb3dc4e29bd378527218e0f5f65af5daf505b4499c2b3563caec3f1fb1cf": "user_identities.email_hash"
+   },
+   "name": {
+    "Daniel Parker": "user_identities.name"
+   },
+   "phone": {
+    "+1 (617) 555-0137": "user_identities.phone"
+   },
+   "user_id": {
+    "user_237": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_237 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_237"
+  ]
+ }
+}

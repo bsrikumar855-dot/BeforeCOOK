@@ -1,0 +1,263 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_267",
+   "edges": [
+    {
+     "case_id": "case_267",
+     "identifier": "email:j.nystrom64@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_8384",
+     "source_id": "evidence_25",
+     "strength": "HARD",
+     "time": "2026-06-08T09:51:52Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_8384",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_25",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_267",
+   "edges": [
+    {
+     "case_id": "case_267",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_3793",
+     "source_id": "activity_2070",
+     "strength": "SECONDARY",
+     "time": "2026-05-26T09:31:19Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_2070 lies in the burst windows of cases ['case_267', 'case_268']",
+   "resource_id": "analytics_3793",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_267",
+   "edges": [
+    {
+     "case_id": "case_267",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_6136",
+     "source_id": "activity_2073",
+     "strength": "SECONDARY",
+     "time": "2026-05-26T10:31:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_2073 lies in the burst windows of cases ['case_267', 'case_268']",
+   "resource_id": "analytics_6136",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_267",
+   "edges": [
+    {
+     "case_id": "case_267",
+     "identifier": "user_id:user_265",
+     "kind": "HARD",
+     "resource_id": "audit_record_6621",
+     "source_id": "evidence_25",
+     "strength": "HARD",
+     "time": "2026-06-08T09:52:27Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_6621",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_25",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_267",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2066",
+   "reason": "hard-linked to ['user_264']",
+   "resource_id": "account_1057"
+  },
+  {
+   "activity_id": "activity_2067",
+   "reason": "hard-linked to ['user_266']",
+   "resource_id": "account_9179"
+  },
+  {
+   "activity_id": "activity_2071",
+   "reason": "hard-linked to ['user_280']",
+   "resource_id": "support_8370"
+  },
+  {
+   "activity_id": "activity_2075",
+   "reason": "hard-linked to ['user_264']",
+   "resource_id": "data_flow_8277"
+  },
+  {
+   "activity_id": "activity_2076",
+   "reason": "hard-linked to ['user_266']",
+   "resource_id": "support_8215"
+  },
+  {
+   "activity_id": "activity_2077",
+   "reason": "hard-linked to ['user_264']",
+   "resource_id": "search_8935"
+  },
+  {
+   "activity_id": "activity_2078",
+   "reason": "hard-linked to ['user_266']",
+   "resource_id": "search_3000"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_2070 lies in the burst windows of cases ['case_267', 'case_268']",
+   "resource_id": "analytics_3793"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_2073 lies in the burst windows of cases ['case_267', 'case_268']",
+   "resource_id": "analytics_6136"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-06-08T10:00:00Z",
+  "email": "j.nystrom64@gmail.com",
+  "reported_at": "2026-05-26T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-24T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_25",
+   "required_action": "DELETE",
+   "resource_id": "account_8384",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_25#L30"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_25",
+    "resource_id": "account_8384",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_25",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_6621",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_25#L41"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_25",
+    "resource_id": "audit_record_6621",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_25",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_8384",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_25",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_6621",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "j.nystrom64@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "10269c360846968776cb23a89d96e2b92b7557cfcbca50e6912b1ca57264b6e2": "user_identities.email_hash"
+   },
+   "name": {
+    "Jonas Nyström": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 146 34 42": "user_audit_log.old_value audit_45",
+    "+46 70 864 85 96": "user_identities.phone"
+   },
+   "user_id": {
+    "user_265": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_265 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_265"
+  ]
+ },
+ "validation_errors": []
+}

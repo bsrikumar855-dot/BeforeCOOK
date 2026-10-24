@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_522",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-03T06:00:00Z",
+  "email": "csantos2609@gmail.com",
+  "reported_at": "2026-01-26T06:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-01-24T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "csantos2609@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "266ca9201e0d49cd2e70e42bcb472f2342c4adbb446304c0fba4fc707e4a4ecd": "user_identities.email_hash"
+   },
+   "name": {
+    "Camila Santos": "user_identities.name"
+   },
+   "phone": {
+    "+55 21 93842-3428": "user_audit_log.old_value audit_15",
+    "+55 41 99624-2948": "user_identities.phone"
+   },
+   "user_id": {
+    "user_520": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_520 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_520"
+  ]
+ }
+}

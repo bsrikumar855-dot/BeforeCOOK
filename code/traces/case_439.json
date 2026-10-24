@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_439",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-15T07:00:00Z",
+  "email": "tunde.a533297@outlook.com",
+  "reported_at": "2026-02-19T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-02-16T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "tunde.a533297@outlook.com": "request.email",
+    "tunde.a5332@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "05f562f8165669d4374b8f2abce6cbc9c20ebab789c2122d343ca12ca7b62dbc": "user_identities.email_hash",
+    "060789c411ee094461c5c39d556da6c49c547b28d4de658aac5b648f4f2ee962": "user_audit_log.old_value audit_100"
+   },
+   "name": {
+    "Tunde Adebayo": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 268 6726": "user_identities.phone"
+   },
+   "user_id": {
+    "user_437": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_437 via user_audit_log.old_value audit_99"
+  ],
+  "user_ids": [
+   "user_437"
+  ]
+ }
+}

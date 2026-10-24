@@ -1,0 +1,373 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_197",
+   "edges": [
+    {
+     "case_id": "case_197",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_2210",
+     "source_id": "activity_2427",
+     "strength": "SECONDARY",
+     "time": "2026-06-19T08:58:29Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 15: several assignments equally supported (rival cases for account_2210: ['case_198', 'case_212'])",
+   "resource_id": "account_2210",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_197",
+   "edges": [
+    {
+     "case_id": "case_197",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_2952",
+     "source_id": "activity_2428",
+     "strength": "SECONDARY",
+     "time": "2026-06-19T09:09:43Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 15: several assignments equally supported (rival cases for account_2952: ['case_198', 'case_212'])",
+   "resource_id": "account_2952",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_197",
+   "edges": [
+    {
+     "case_id": "case_197",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_418",
+     "source_id": "activity_2425",
+     "strength": "SECONDARY",
+     "time": "2026-06-19T07:59:38Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 15: several assignments equally supported (rival cases for account_418: ['case_198', 'case_212'])",
+   "resource_id": "account_418",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_197",
+   "edges": [
+    {
+     "case_id": "case_197",
+     "identifier": "email:rafael-silva@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_6093",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:52:45Z"
+    },
+    {
+     "case_id": "case_197",
+     "identifier": "email:rafael-silva@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_6093",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:52:45Z"
+    },
+    {
+     "case_id": "case_197",
+     "identifier": "email:rafael-silva@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_6093",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:52:45Z"
+    },
+    {
+     "case_id": "case_197",
+     "identifier": "email:rafael-silva@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_6093",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:52:45Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "analytics_6093",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_82",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_197",
+   "edges": [
+    {
+     "case_id": "case_197",
+     "identifier": "email:rafael-silva@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_6762",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:57:23Z"
+    },
+    {
+     "case_id": "case_197",
+     "identifier": "email:rafael-silva@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_6762",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:57:23Z"
+    },
+    {
+     "case_id": "case_197",
+     "identifier": "email:rafael-silva@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_6762",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:57:23Z"
+    },
+    {
+     "case_id": "case_197",
+     "identifier": "email:rafael-silva@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_6762",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:57:23Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_6762",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_82",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_197",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2426",
+   "reason": "hard-linked to ['user_197']",
+   "resource_id": "account_9917"
+  },
+  {
+   "activity_id": "activity_2429",
+   "reason": "hard-linked to ['user_210']",
+   "resource_id": "data_flow_8676"
+  },
+  {
+   "activity_id": "activity_2431",
+   "reason": "hard-linked to ['user_210']",
+   "resource_id": "search_2274"
+  },
+  {
+   "activity_id": "activity_2433",
+   "reason": "hard-linked to ['user_196']",
+   "resource_id": "support_6131"
+  },
+  {
+   "activity_id": "activity_2436",
+   "reason": "hard-linked to ['user_196']",
+   "resource_id": "search_1414"
+  },
+  {
+   "activity_id": "activity_2437",
+   "reason": "hard-linked to ['user_197']",
+   "resource_id": "search_9161"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 15: several assignments equally supported (rival cases for account_2210: ['case_198', 'case_212'])",
+   "resource_id": "account_2210"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 15: several assignments equally supported (rival cases for account_2952: ['case_198', 'case_212'])",
+   "resource_id": "account_2952"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 15: several assignments equally supported (rival cases for account_418: ['case_198', 'case_212'])",
+   "resource_id": "account_418"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-07-13T10:00:00Z",
+  "email": "rafael-silva@gmail.com",
+  "reported_at": "2026-06-19T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-18T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_6093",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_82#L23"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "analytics_6093",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "DELETE",
+   "resource_id": "search_6762",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_82#L25"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "search_6762",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_82",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_6762",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_82",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_6093",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_6762",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_6093",
+   "state": "ANONYMIZED",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_6762",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_6093",
+   "state": "ANONYMIZED",
+   "step_no": 6,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "rafael-silva@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "b601f28c113b251cdc8b060aee8926381588d6aaa79fabca69d2c06fdd3742d8": "user_identities.email_hash"
+   },
+   "name": {
+    "Rafael Silva": "user_identities.name"
+   },
+   "phone": {
+    "+55 11 96656-0765": "user_audit_log.old_value audit_142",
+    "+55 31 92008-2626": "user_identities.phone"
+   },
+   "user_id": {
+    "user_195": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_195 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_195"
+  ]
+ },
+ "validation_errors": []
+}

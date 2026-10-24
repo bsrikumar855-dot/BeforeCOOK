@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_405",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-30T10:00:00Z",
+  "email": "g.pereira86@yahoo.com",
+  "reported_at": "2026-03-19T10:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-03-17T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "g.pereira86@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "e3f31250d7b04b44ce17819ad70f01084f14b7e77b52405c51509b4dca66e0ce": "user_identities.email_hash"
+   },
+   "name": {
+    "Gabriel Pereira": "user_identities.name"
+   },
+   "phone": {
+    "+55 11 98147-1572": "user_identities.phone"
+   },
+   "user_id": {
+    "user_403": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_403 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_403"
+  ]
+ }
+}

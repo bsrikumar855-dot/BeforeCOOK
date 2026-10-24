@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_364",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-19T07:00:00Z",
+  "email": "watanabe.kenta@gmail.com",
+  "reported_at": "2026-04-10T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-04-07T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "watanabe.kenta@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "9741d644d48d785bf0fe31d92023f6e02513ac9fa089c7d8a8b047b28cf4b9bf": "user_identities.email_hash"
+   },
+   "name": {
+    "Kenta Watanabe": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 9057 9494": "user_identities.phone"
+   },
+   "user_id": {
+    "user_362": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_362 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_362"
+  ]
+ }
+}

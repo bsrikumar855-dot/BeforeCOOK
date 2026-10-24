@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_511",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-08T07:00:00Z",
+  "email": "nicolas.f550081@outlook.com",
+  "reported_at": "2026-01-23T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-01-20T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "nicolas.f550081@outlook.com": "request.email",
+    "nicolas.f5500@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "fcd3f65f30c54b0be9a7ca24054c364b7f3a5586b11f1132d4ae20e9c31b84d3": "user_audit_log.old_value audit_70",
+    "ffcccdd81c7d5fbfe33fd37d71d01bc80b52049f246c0914f3d1ef8af4856e56": "user_identities.email_hash"
+   },
+   "name": {
+    "Nicolás Fernández": "user_identities.name"
+   },
+   "phone": {
+    "+34 733 038 927": "user_identities.phone"
+   },
+   "user_id": {
+    "user_509": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_509 via user_audit_log.old_value audit_69"
+  ],
+  "user_ids": [
+   "user_509"
+  ]
+ }
+}

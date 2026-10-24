@@ -1,0 +1,3 @@
+audit_id,user_id,event_time,field_name,old_value,new_value
+audit_x201,user_9902,2026-03-01T10:00:00Z,email,kai.noor.old@example.test,kai.noor@example.test
+audit_x202,user_9902,2026-03-01T10:00:00Z,email_hash,0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f,1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e

@@ -1,0 +1,407 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_149",
+   "edges": [
+    {
+     "case_id": "case_149",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_3897",
+     "source_id": "activity_2903",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T06:59:49Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 8: several assignments equally supported (rival cases for account_3897: ['case_150', 'case_151'])",
+   "resource_id": "account_3897",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_149",
+   "edges": [
+    {
+     "case_id": "case_149",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_874",
+     "source_id": "activity_2901",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T06:48:06Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 8: several assignments equally supported (rival cases for account_874: ['case_150', 'case_151'])",
+   "resource_id": "account_874",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_149",
+   "edges": [
+    {
+     "case_id": "case_149",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_9505",
+     "source_id": "activity_2904",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T07:10:04Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 8: several assignments equally supported (rival cases for account_9505: ['case_150', 'case_151'])",
+   "resource_id": "account_9505",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_149",
+   "edges": [
+    {
+     "case_id": "case_149",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1626",
+     "source_id": "activity_2907",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T07:31:46Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_2907 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "resource_id": "analytics_1626",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_149",
+   "edges": [
+    {
+     "case_id": "case_149",
+     "identifier": "email:leonie-moreau@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_5886",
+     "source_id": "evidence_86",
+     "strength": "HARD",
+     "time": "2026-08-07T04:45:16Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_5886",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_86",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_149",
+   "edges": [
+    {
+     "case_id": "case_149",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_7254",
+     "source_id": "activity_2906",
+     "strength": "SECONDARY",
+     "time": "2026-07-22T07:31:30Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_2906 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "resource_id": "analytics_7254",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_149",
+   "edges": [
+    {
+     "case_id": "case_149",
+     "identifier": "email:leonie-moreau@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_7672",
+     "source_id": "evidence_86",
+     "strength": "HARD",
+     "time": "2026-08-07T06:09:49Z"
+    },
+    {
+     "case_id": "case_149",
+     "identifier": "email:leonie-moreau@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_7672",
+     "source_id": "evidence_86",
+     "strength": "HARD",
+     "time": "2026-08-07T06:09:49Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_7672",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_86",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_149",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2908",
+   "reason": "hard-linked to ['user_149']",
+   "resource_id": "support_5400"
+  },
+  {
+   "activity_id": "activity_2909",
+   "reason": "hard-linked to ['user_149']",
+   "resource_id": "data_flow_2437"
+  },
+  {
+   "activity_id": "activity_2910",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "account_1084"
+  },
+  {
+   "activity_id": "activity_2911",
+   "reason": "hard-linked to ['user_149']",
+   "resource_id": "backup_9557"
+  },
+  {
+   "activity_id": "activity_2912",
+   "reason": "hard-linked to ['user_134']",
+   "resource_id": "account_4079"
+  },
+  {
+   "activity_id": "activity_2913",
+   "reason": "hard-linked to ['user_133']",
+   "resource_id": "account_1417"
+  },
+  {
+   "activity_id": "activity_2916",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "data_flow_7812"
+  },
+  {
+   "activity_id": "activity_2917",
+   "reason": "hard-linked to ['user_134']",
+   "resource_id": "support_4442"
+  },
+  {
+   "activity_id": "activity_2918",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "search_7941"
+  },
+  {
+   "activity_id": "activity_2920",
+   "reason": "hard-linked to ['user_134']",
+   "resource_id": "search_1110"
+  },
+  {
+   "activity_id": "activity_2921",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "support_4410"
+  },
+  {
+   "activity_id": "activity_2922",
+   "reason": "hard-linked to ['user_132']",
+   "resource_id": "analytics_7772"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_3897: ['case_150', 'case_151'])",
+   "resource_id": "account_3897"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_874: ['case_150', 'case_151'])",
+   "resource_id": "account_874"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_9505: ['case_150', 'case_151'])",
+   "resource_id": "account_9505"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_2907 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "resource_id": "analytics_1626"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_2906 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "resource_id": "analytics_7254"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-07T08:00:00Z",
+  "email": "leonie-moreau@gmail.com",
+  "reported_at": "2026-07-22T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-07-21T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_86",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_5886",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_86#analytics_platform.profiles.1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_86",
+    "resource_id": "analytics_5886",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_86",
+   "required_action": "DELETE",
+   "resource_id": "search_7672",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_86#search_service.index_queries.4.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_86",
+    "resource_id": "search_7672",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_86",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_7672",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_86",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_5886",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_7672",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_5886",
+   "state": "ANONYMIZED",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_7672",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_5886",
+   "state": "ANONYMIZED",
+   "step_no": 6,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "leonie-moreau@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "e6500ff2ff5f2db9497e5c08aeba97268555bd9c262b6162a922fb3f5dfffc3d": "user_identities.email_hash"
+   },
+   "name": {
+    "Léonie Moreau": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 38 04 78 34": "user_identities.phone"
+   },
+   "user_id": {
+    "user_147": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_147 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_147"
+  ]
+ },
+ "validation_errors": []
+}

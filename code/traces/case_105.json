@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_105",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-27T12:00:00Z",
+  "email": "h.kang86@yahoo.com",
+  "reported_at": "2026-08-16T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-14T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "h.kang86@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "54c34ef8c599d7ba67f11641ddd992837505364bd57b399d08846e167ad64157": "user_identities.email_hash"
+   },
+   "name": {
+    "Ha-eun Kang": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 2780 1520": "user_identities.phone"
+   },
+   "user_id": {
+    "user_103": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_103 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_103"
+  ]
+ }
+}

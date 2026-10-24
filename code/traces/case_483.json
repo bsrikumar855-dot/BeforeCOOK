@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_483",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-18T09:00:00Z",
+  "email": "t.oliveira6897@gmail.com",
+  "reported_at": "2026-02-09T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-02-07T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "t.oliveira6897@gmail.com": "request.email",
+    "t.oliveira68@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "555a1d562b1614bd183d72fec5cb6624a4fc6a4a0bcaf1b056d96676b73f8d2a": "user_identities.email_hash",
+    "973b929b9813e6c9cb4bfb6808d1d4c6e0548a85338561d89cfde552c344dc93": "user_audit_log.old_value audit_79"
+   },
+   "name": {
+    "Thiago Oliveira": "user_identities.name"
+   },
+   "phone": {
+    "+55 11 99965-5485": "user_identities.phone"
+   },
+   "user_id": {
+    "user_481": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_481 via user_audit_log.old_value audit_78"
+  ],
+  "user_ids": [
+   "user_481"
+  ]
+ }
+}

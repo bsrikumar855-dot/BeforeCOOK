@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_406",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-30T10:00:00Z",
+  "email": "sharma.aditi86@icloud.com",
+  "reported_at": "2026-03-19T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-16T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "sharma.aditi86@icloud.com": "request.email",
+    "sharma.aditi@icloud.com": "user_identities.email"
+   },
+   "email_hash": {
+    "081126f7f27cc5dab619f46f2d1fe4ffe84ab97b6cf10d373e01795bba205e60": "user_identities.email_hash",
+    "1ce57f8717744a51b25c06f7b74ae738524c2ea891a873854b6df5954006eaa0": "user_audit_log.old_value audit_116"
+   },
+   "name": {
+    "Aditi Sharma": "user_identities.name"
+   },
+   "phone": {
+    "+91 93419 31126": "user_identities.phone"
+   },
+   "user_id": {
+    "user_404": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_404 via user_audit_log.old_value audit_115"
+  ],
+  "user_ids": [
+   "user_404"
+  ]
+ }
+}

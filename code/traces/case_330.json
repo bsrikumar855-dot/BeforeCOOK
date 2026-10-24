@@ -1,0 +1,521 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_330",
+   "edges": [
+    {
+     "case_id": "case_330",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_2583",
+     "source_id": "activity_1556",
+     "strength": "SECONDARY",
+     "time": "2026-04-23T10:03:43Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 32: several assignments equally supported (rival cases for account_2583: [])",
+   "resource_id": "account_2583",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_330",
+   "edges": [
+    {
+     "case_id": "case_330",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6301",
+     "source_id": "activity_1557",
+     "strength": "SECONDARY",
+     "time": "2026-04-23T10:14:57Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 32: several assignments equally supported (rival cases for account_6301: [])",
+   "resource_id": "account_6301",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_330",
+   "edges": [
+    {
+     "case_id": "case_330",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_2022",
+     "source_id": "activity_1558",
+     "strength": "SECONDARY",
+     "time": "2026-04-23T10:31:10Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1558 lies in the burst windows of cases ['case_315', 'case_330']",
+   "resource_id": "analytics_2022",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_330",
+   "edges": [
+    {
+     "case_id": "case_330",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_5532",
+     "source_id": "activity_1565",
+     "strength": "SECONDARY",
+     "time": "2026-04-23T11:31:41Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1565 lies in the burst windows of cases ['case_315', 'case_330']",
+   "resource_id": "analytics_5532",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_330",
+   "edges": [
+    {
+     "case_id": "case_330",
+     "identifier": "user_id:user_328",
+     "kind": "HARD",
+     "resource_id": "audit_record_6629",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-09T11:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_6629",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_31",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_330",
+   "edges": [
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_4560",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:16:21Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_4560",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:16:21Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_4560",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:16:21Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_4560",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:16:21Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_4560",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-09T11:00:00Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "user_id:user_328",
+     "kind": "HARD",
+     "resource_id": "search_4560",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-09T11:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_4560",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_73",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_330",
+   "edges": [
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_4851",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:05:21Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_4851",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:05:21Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_4851",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:05:21Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_4851",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:05:21Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "user_id:user_328",
+     "kind": "HARD",
+     "resource_id": "support_4851",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-09T11:00:00Z"
+    },
+    {
+     "case_id": "case_330",
+     "identifier": "email:gcarter216198@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_4851",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-09T11:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_4851",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_73",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_330",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1555",
+   "reason": "hard-linked to ['user_329']",
+   "resource_id": "account_6814"
+  },
+  {
+   "activity_id": "activity_1559",
+   "reason": "hard-linked to ['user_329']",
+   "resource_id": "support_1403"
+  },
+  {
+   "activity_id": "activity_1560",
+   "reason": "hard-linked to ['user_329']",
+   "resource_id": "data_flow_8534"
+  },
+  {
+   "activity_id": "activity_1561",
+   "reason": "hard-linked to ['user_329']",
+   "resource_id": "backup_9376"
+  },
+  {
+   "activity_id": "activity_1562",
+   "reason": "hard-linked to ['user_312']",
+   "resource_id": "account_591"
+  },
+  {
+   "activity_id": "activity_1563",
+   "reason": "hard-linked to ['user_314']",
+   "resource_id": "account_9523"
+  },
+  {
+   "activity_id": "activity_1564",
+   "reason": "hard-linked to ['user_313']",
+   "resource_id": "account_782"
+  },
+  {
+   "activity_id": "activity_1566",
+   "reason": "hard-linked to ['user_327']",
+   "resource_id": "analytics_671"
+  },
+  {
+   "activity_id": "activity_1568",
+   "reason": "hard-linked to ['user_327']",
+   "resource_id": "search_5226"
+  },
+  {
+   "activity_id": "activity_1570",
+   "reason": "hard-linked to ['user_313']",
+   "resource_id": "backup_7421"
+  },
+  {
+   "activity_id": "activity_1571",
+   "reason": "hard-linked to ['user_314']",
+   "resource_id": "support_1176"
+  },
+  {
+   "activity_id": "activity_1572",
+   "reason": "hard-linked to ['user_314']",
+   "resource_id": "search_8583"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 32: several assignments equally supported (rival cases for account_2583: [])",
+   "resource_id": "account_2583"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 32: several assignments equally supported (rival cases for account_6301: [])",
+   "resource_id": "account_6301"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1558 lies in the burst windows of cases ['case_315', 'case_330']",
+   "resource_id": "analytics_2022"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1565 lies in the burst windows of cases ['case_315', 'case_330']",
+   "resource_id": "analytics_5532"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-09T11:00:00Z",
+  "email": "gcarter216198@gmail.com",
+  "reported_at": "2026-04-23T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-21T11:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_6629",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_72",
+    "resource_id": "audit_record_6629",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_73",
+   "required_action": "DELETE",
+   "resource_id": "search_4560",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_73#L55"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_73",
+    "resource_id": "search_4560",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_73",
+   "required_action": "REDACT",
+   "resource_id": "support_4851",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_73#L49"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_73",
+    "resource_id": "support_4851",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_73",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_4560",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_73",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_4851",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_4560",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_4851",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_4560",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_6629",
+   "state": "PRESENT",
+   "step_no": 6,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_4851",
+   "state": "REDACTED",
+   "step_no": 7,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "gcarter216198@gmail.com": "request.email",
+    "gcarter2161@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "13df863c266d05584af7a03be05bf3eeafb7fd5092398d8ed185355097a78f18": "user_identities.email_hash",
+    "2349802dbfed14b660397534a31b9df49e64f9d1ab8247d24b90b4a78a25b415": "user_audit_log.old_value audit_153"
+   },
+   "name": {
+    "Grace Carter": "user_identities.name"
+   },
+   "phone": {
+    "+44 7700 900328": "user_identities.phone"
+   },
+   "user_id": {
+    "user_328": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_328 via user_audit_log.old_value audit_152"
+  ],
+  "user_ids": [
+   "user_328"
+  ]
+ },
+ "validation_errors": []
+}

@@ -1,0 +1,411 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_236",
+   "edges": [
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_629",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_629",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_22",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_236",
+   "edges": [
+    {
+     "case_id": "case_236",
+     "identifier": "user_id:user_234",
+     "kind": "HARD",
+     "resource_id": "audit_record_9285",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_9285",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_22",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_236",
+   "edges": [
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_7352",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:56:07Z"
+    },
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_7352",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:56:07Z"
+    },
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_7352",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:56:07Z"
+    },
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_7352",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:56:07Z"
+    },
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_7352",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "data_flow_7352",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_79",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_236",
+   "edges": [
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_5385",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:55:37Z"
+    },
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_5385",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:55:37Z"
+    },
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_5385",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:55:37Z"
+    },
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_5385",
+     "source_id": "evidence_79",
+     "strength": "HARD",
+     "time": "2026-06-23T03:55:37Z"
+    },
+    {
+     "case_id": "case_236",
+     "identifier": "email:larissa.carvalho@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_5385",
+     "source_id": "evidence_22",
+     "strength": "HARD",
+     "time": "2026-06-23T06:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_5385",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_79",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_236",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2141",
+   "reason": "hard-linked to ['user_236']",
+   "resource_id": "account_945"
+  },
+  {
+   "activity_id": "activity_2143",
+   "reason": "hard-linked to ['user_235']",
+   "resource_id": "account_2788"
+  },
+  {
+   "activity_id": "activity_2152",
+   "reason": "hard-linked to ['user_235']",
+   "resource_id": "search_2433"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-06-23T06:00:00Z",
+  "email": "larissa.carvalho@outlook.com",
+  "reported_at": "2026-05-31T06:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-05-30T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_78",
+   "required_action": "DELETE",
+   "resource_id": "account_629",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_78",
+    "resource_id": "account_629",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_9285",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_78",
+    "resource_id": "audit_record_9285",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_7352",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_79#L29"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "data_flow_7352",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_22",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_79",
+   "required_action": "DELETE",
+   "resource_id": "search_5385",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_79#L27"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_79",
+    "resource_id": "search_5385",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_79",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_5385",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_79",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_7352",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_7352",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_5385",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_629",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5385",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_9285",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_7352",
+   "state": "DISABLED",
+   "step_no": 8,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "larissa.carvalho@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "151e43f4159f6444e20ca09f16b222a1fc4cb9592745d00cdf6a515d0ea2717e": "user_identities.email_hash"
+   },
+   "name": {
+    "Larissa Carvalho": "user_identities.name"
+   },
+   "phone": {
+    "+55 61 97701-8815": "user_identities.phone"
+   },
+   "user_id": {
+    "user_234": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_234 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_234"
+  ]
+ },
+ "validation_errors": []
+}

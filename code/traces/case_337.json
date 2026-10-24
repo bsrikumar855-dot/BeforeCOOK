@@ -1,0 +1,450 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_337",
+   "edges": [
+    {
+     "case_id": "case_337",
+     "identifier": "email:kabelo.d759483@zoho.com",
+     "kind": "HARD",
+     "resource_id": "account_767",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_767",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_31",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_337",
+   "edges": [
+    {
+     "case_id": "case_337",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1072",
+     "source_id": "activity_1400",
+     "strength": "SECONDARY",
+     "time": "2026-04-12T08:31:26Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1400 lies in the burst windows of cases ['case_335', 'case_337', 'case_352']",
+   "resource_id": "analytics_1072",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_337",
+   "edges": [
+    {
+     "case_id": "case_337",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_3108",
+     "source_id": "activity_1407",
+     "strength": "SECONDARY",
+     "time": "2026-04-12T09:31:12Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1407 lies in the burst windows of cases ['case_335', 'case_337', 'case_352']",
+   "resource_id": "analytics_3108",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_337",
+   "edges": [
+    {
+     "case_id": "case_337",
+     "identifier": "user_id:user_335",
+     "kind": "HARD",
+     "resource_id": "audit_record_1961",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_1961",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_31",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_337",
+   "edges": [
+    {
+     "case_id": "case_337",
+     "identifier": "email:kabelo.d759483@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_5200",
+     "source_id": "evidence_72",
+     "strength": "HARD",
+     "time": "2026-05-04T09:41:47Z"
+    },
+    {
+     "case_id": "case_337",
+     "identifier": "email:kabelo.d759483@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_5200",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_5200",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_72",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_337",
+   "edges": [
+    {
+     "case_id": "case_337",
+     "identifier": "email:kabelo.d759483@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_3773",
+     "source_id": "evidence_72",
+     "strength": "HARD",
+     "time": "2026-05-04T09:41:47Z"
+    },
+    {
+     "case_id": "case_337",
+     "identifier": "email:kabelo.d759483@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_3773",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_3773",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_72",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_337",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1401",
+   "reason": "hard-linked to ['user_349']",
+   "resource_id": "support_7137"
+  },
+  {
+   "activity_id": "activity_1402",
+   "reason": "hard-linked to ['user_349']",
+   "resource_id": "data_flow_4323"
+  },
+  {
+   "activity_id": "activity_1404",
+   "reason": "hard-linked to ['user_349']",
+   "resource_id": "backup_024"
+  },
+  {
+   "activity_id": "activity_1405",
+   "reason": "hard-linked to ['user_334']",
+   "resource_id": "account_2282"
+  },
+  {
+   "activity_id": "activity_1406",
+   "reason": "hard-linked to ['user_333']",
+   "resource_id": "account_8892"
+  },
+  {
+   "activity_id": "activity_1408",
+   "reason": "hard-linked to ['user_333']",
+   "resource_id": "support_4712"
+  },
+  {
+   "activity_id": "activity_1409",
+   "reason": "hard-linked to ['user_333']",
+   "resource_id": "data_flow_7452"
+  },
+  {
+   "activity_id": "activity_1410",
+   "reason": "hard-linked to ['user_350']",
+   "resource_id": "support_3980"
+  },
+  {
+   "activity_id": "activity_1411",
+   "reason": "hard-linked to ['user_333']",
+   "resource_id": "backup_3136"
+  },
+  {
+   "activity_id": "activity_1413",
+   "reason": "hard-linked to ['user_350']",
+   "resource_id": "search_5685"
+  },
+  {
+   "activity_id": "activity_1414",
+   "reason": "hard-linked to ['user_348']",
+   "resource_id": "data_flow_9775"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1400 lies in the burst windows of cases ['case_335', 'case_337', 'case_352']",
+   "resource_id": "analytics_1072"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1407 lies in the burst windows of cases ['case_335', 'case_337', 'case_352']",
+   "resource_id": "analytics_3108"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-04T10:00:00Z",
+  "email": "kabelo.d759483@zoho.com",
+  "reported_at": "2026-04-12T10:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-04-09T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "DELETE",
+   "resource_id": "account_767",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_72",
+    "resource_id": "account_767",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_1961",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_72",
+    "resource_id": "audit_record_1961",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_5200",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_72#connector_subscriptions:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_72",
+    "resource_id": "data_flow_5200",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "DELETE",
+   "resource_id": "search_3773",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_72#customer_search_documents:1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_72",
+    "resource_id": "search_3773",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_72",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_3773",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_72",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_5200",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_5200",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_3773",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_767",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_3773",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_1961",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_5200",
+   "state": "DISABLED",
+   "step_no": 8,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "kabelo.d759483@zoho.com": "request.email",
+    "kabelo.d7594@zoho.com": "user_identities.email"
+   },
+   "email_hash": {
+    "aecc2e30ffe2903fd40975b64bbdb414bf5ac7d1ca6792e597e8997bc9747cec": "user_identities.email_hash",
+    "ea06cf461b7c964c68961f4e0391d1135727f263993ec1987ed0f55221ad4147": "user_audit_log.old_value audit_149"
+   },
+   "name": {
+    "Kabelo Dlamini": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 503 9923": "user_identities.phone"
+   },
+   "user_id": {
+    "user_335": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_335 via user_audit_log.old_value audit_148"
+  ],
+  "user_ids": [
+   "user_335"
+  ]
+ },
+ "validation_errors": []
+}

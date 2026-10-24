@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_514",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-03T06:00:00Z",
+  "email": "andersson.linnea@icloud.com",
+  "reported_at": "2026-01-15T06:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-01-12T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "andersson.linnea@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "a84ee47ab3844671edf66b28f2824308b363fe216d1d498944bd51967954cfa8": "user_identities.email_hash"
+   },
+   "name": {
+    "Linnea Andersson": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 497 80 29": "user_identities.phone"
+   },
+   "user_id": {
+    "user_512": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_512 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_512"
+  ]
+ }
+}

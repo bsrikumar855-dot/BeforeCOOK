@@ -1,0 +1,199 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_499",
+   "edges": [
+    {
+     "case_id": "case_499",
+     "identifier": "email:daniel.m47291@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_3626",
+     "source_id": "evidence_63",
+     "strength": "HARD",
+     "time": "2026-02-13T07:43:27Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_3626",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_63",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_499",
+   "edges": [
+    {
+     "case_id": "case_499",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1558",
+     "source_id": "activity_227",
+     "strength": "SECONDARY",
+     "time": "2026-01-20T06:31:20Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_227 lies in the burst windows of cases ['case_497', 'case_499']",
+   "resource_id": "analytics_1558",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_499",
+   "edges": [
+    {
+     "case_id": "case_499",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_6565",
+     "source_id": "activity_231",
+     "strength": "SECONDARY",
+     "time": "2026-01-20T07:31:19Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_231 lies in the burst windows of cases ['case_497', 'case_499']",
+   "resource_id": "analytics_6565",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  }
+ ],
+ "case_id": "case_499",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_235",
+   "reason": "hard-linked to ['user_496']",
+   "resource_id": "support_9075"
+  },
+  {
+   "activity_id": "activity_236",
+   "reason": "hard-linked to ['user_496']",
+   "resource_id": "search_6093"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_227 lies in the burst windows of cases ['case_497', 'case_499']",
+   "resource_id": "analytics_1558"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_231 lies in the burst windows of cases ['case_497', 'case_499']",
+   "resource_id": "analytics_6565"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-02-13T08:00:00Z",
+  "email": "daniel.m47291@outlook.com",
+  "reported_at": "2026-01-20T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-17T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_63",
+   "required_action": "DELETE",
+   "resource_id": "account_3626",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_63#customer_profiles:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_63",
+    "resource_id": "account_3626",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_63",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "account_3626",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "account_3626",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_3626",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "daniel.m47291@outlook.com": "request.email",
+    "daniel.m472@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "0c3d36a5053b01823de8a8808f0d6ab12834b676d9347d60e9ad58c5e096de73": "user_audit_log.old_value audit_72",
+    "9783ee79c48521a5a5f133185c1af4d1e5f4f5ac616504c1487409a43f765ad7": "user_identities.email_hash"
+   },
+   "name": {
+    "Daniel Morgan": "user_identities.name"
+   },
+   "phone": {
+    "+1 (415) 555-0197": "user_identities.phone"
+   },
+   "user_id": {
+    "user_497": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_497 via user_audit_log.old_value audit_71"
+  ],
+  "user_ids": [
+   "user_497"
+  ]
+ },
+ "validation_errors": []
+}

@@ -1,0 +1,191 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_08",
+   "edges": [
+    {
+     "case_id": "case_08",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_008",
+     "source_id": "activity_3554",
+     "strength": "SECONDARY",
+     "time": "2026-08-31T13:48:58Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_3554 is in every maximum one-to-one assignment of batch 1 (cases ['case_08'], rows ['account_008']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_008",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_08",
+   "edges": [
+    {
+     "case_id": "case_08",
+     "identifier": "email:gabriel.costa@proton.me",
+     "kind": "HARD",
+     "resource_id": "export_001",
+     "source_id": "evidence_59",
+     "strength": "HARD",
+     "time": "2026-09-14T15:40:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "export_001",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_59",
+   "system_id": "export_service"
+  }
+ ],
+ "case_id": "case_08",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-14T16:10:00Z",
+  "email": "gabriel.costa@proton.me",
+  "reported_at": "2026-08-31T13:44:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-29T20:03:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_07",
+   "required_action": "DELETE",
+   "resource_id": "account_008",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_07",
+    "resource_id": "account_008",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_EXPORT",
+   "category_basis": "default category for export_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_59",
+   "required_action": "DELETE",
+   "resource_id": "export_001",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_59#r0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_59",
+    "resource_id": "export_001",
+    "restore_state": null,
+    "system_id": "export_service"
+   },
+   "system_id": "export_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_59",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "export_001",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "export_001",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_008",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "export_001",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "export_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "gabriel.costa@proton.me": "request.email"
+   },
+   "email_hash": {
+    "1301193d061e1845f5b6a27dbe60e896845339b5315c3a61b57d7e7636f78617": "user_identities.email_hash"
+   },
+   "name": {
+    "Gabriel Costa": "user_identities.name"
+   },
+   "phone": {
+    "+55 11 97284-3165": "user_identities.phone"
+   },
+   "user_id": {
+    "user_08": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_08 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_08"
+  ]
+ },
+ "validation_errors": []
+}

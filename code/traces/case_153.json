@@ -1,0 +1,340 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_153",
+   "edges": [
+    {
+     "case_id": "case_153",
+     "identifier": "user_id:user_151",
+     "kind": "HARD",
+     "resource_id": "account_8023",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    },
+    {
+     "case_id": "case_153",
+     "identifier": "email:a.adeyemi9897@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "account_8023",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    },
+    {
+     "case_id": "case_153",
+     "identifier": "phone:+234 803 226 3701",
+     "kind": "HARD",
+     "resource_id": "account_8023",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_8023",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_15",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_153",
+   "edges": [
+    {
+     "case_id": "case_153",
+     "identifier": "user_id:user_151",
+     "kind": "HARD",
+     "resource_id": "audit_record_5652",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    },
+    {
+     "case_id": "case_153",
+     "identifier": "user_id:user_151",
+     "kind": "HARD",
+     "resource_id": "audit_record_5652",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_5652",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_15",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_153",
+   "edges": [
+    {
+     "case_id": "case_153",
+     "identifier": "email:a.adeyemi9897@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "search_9831",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    },
+    {
+     "case_id": "case_153",
+     "identifier": "email:a.adeyemi9897@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "search_9831",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_9831",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_15",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_153",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2806",
+   "reason": "hard-linked to ['user_166']",
+   "resource_id": "account_8748"
+  },
+  {
+   "activity_id": "activity_2807",
+   "reason": "hard-linked to ['user_165']",
+   "resource_id": "account_5284"
+  },
+  {
+   "activity_id": "activity_2808",
+   "reason": "hard-linked to ['user_167']",
+   "resource_id": "account_7268"
+  },
+  {
+   "activity_id": "activity_2811",
+   "reason": "hard-linked to ['user_166']",
+   "resource_id": "export_4102"
+  },
+  {
+   "activity_id": "activity_2813",
+   "reason": "hard-linked to ['user_167']",
+   "resource_id": "search_2126"
+  },
+  {
+   "activity_id": "activity_2814",
+   "reason": "hard-linked to ['user_152']",
+   "resource_id": "search_1446"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-02T07:00:00Z",
+  "email": "a.adeyemi9897@yahoo.com",
+  "reported_at": "2026-07-14T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-12T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "DELETE",
+   "resource_id": "account_8023",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_15#customer_data_read_replica:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_15",
+    "resource_id": "account_8023",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5652",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_15#customer_data_primary:5",
+     "evidence_15#customer_data_read_replica:6"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_15",
+    "resource_id": "audit_record_5652",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "DELETE",
+   "resource_id": "search_9831",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_15#customer_data_primary:20",
+     "evidence_15#customer_data_read_replica:21"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_15",
+    "resource_id": "search_9831",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_15",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "account_8023",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_15",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_9831",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "account_8023",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_9831",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_8023",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_9831",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5652",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "a.adeyemi9897@yahoo.com": "request.email",
+    "a.adeyemi98@yahoo.com": "user_identities.email"
+   },
+   "email_hash": {
+    "b2a981db1eaf8bf2255e1d87fdbdb10e87b208d7c2a496ede61ecd16ee7864a3": "user_identities.email_hash",
+    "ee261f0beabfa3b4b1ff2a55960a5f2ea260adfa56e96c6115a8985b0df3398c": "user_audit_log.old_value audit_227"
+   },
+   "name": {
+    "Amara Adeyemi": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 226 3701": "user_identities.phone"
+   },
+   "user_id": {
+    "user_151": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_151 via user_audit_log.old_value audit_226"
+  ],
+  "user_ids": [
+   "user_151"
+  ]
+ },
+ "validation_errors": []
+}

@@ -1,0 +1,402 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_349",
+   "edges": [
+    {
+     "case_id": "case_349",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_3372",
+     "source_id": "activity_1441",
+     "strength": "SECONDARY",
+     "time": "2026-04-15T08:02:13Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 34: several assignments equally supported (rival cases for account_3372: ['case_347', 'case_362'])",
+   "resource_id": "account_3372",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_349",
+   "edges": [
+    {
+     "case_id": "case_349",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_421",
+     "source_id": "activity_1440",
+     "strength": "SECONDARY",
+     "time": "2026-04-15T07:51:58Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 34: several assignments equally supported (rival cases for account_421: ['case_347', 'case_362'])",
+   "resource_id": "account_421",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_349",
+   "edges": [
+    {
+     "case_id": "case_349",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_507",
+     "source_id": "activity_1438",
+     "strength": "SECONDARY",
+     "time": "2026-04-15T06:52:07Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 34: several assignments equally supported (rival cases for account_507: ['case_347', 'case_362'])",
+   "resource_id": "account_507",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_349",
+   "edges": [
+    {
+     "case_id": "case_349",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_9881",
+     "source_id": "activity_1442",
+     "strength": "SECONDARY",
+     "time": "2026-04-15T08:11:43Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 34: several assignments equally supported (rival cases for account_9881: ['case_347', 'case_362'])",
+   "resource_id": "account_9881",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_349",
+   "edges": [
+    {
+     "case_id": "case_349",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_4273",
+     "source_id": "activity_1439",
+     "strength": "SECONDARY",
+     "time": "2026-04-15T07:31:47Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1439 lies in the burst windows of cases ['case_333', 'case_334', 'case_347', 'case_349', 'case_362']",
+   "resource_id": "analytics_4273",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_349",
+   "edges": [
+    {
+     "case_id": "case_349",
+     "identifier": "email:yaw.f2622@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_3178",
+     "source_id": "evidence_71",
+     "strength": "HARD",
+     "time": "2026-04-29T05:55:41Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_3178",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_71",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_349",
+   "edges": [
+    {
+     "case_id": "case_349",
+     "identifier": "email:yaw.f2622@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_3944",
+     "source_id": "evidence_71",
+     "strength": "HARD",
+     "time": "2026-04-29T07:03:14Z"
+    },
+    {
+     "case_id": "case_349",
+     "identifier": "email:yaw.f2622@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_3944",
+     "source_id": "evidence_71",
+     "strength": "HARD",
+     "time": "2026-04-29T07:03:14Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_3944",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_71",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_349",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1444",
+   "reason": "hard-linked to ['user_332']",
+   "resource_id": "account_2255"
+  },
+  {
+   "activity_id": "activity_1445",
+   "reason": "hard-linked to ['user_331']",
+   "resource_id": "account_2475"
+  },
+  {
+   "activity_id": "activity_1446",
+   "reason": "hard-linked to ['user_345']",
+   "resource_id": "support_9474"
+  },
+  {
+   "activity_id": "activity_1447",
+   "reason": "hard-linked to ['user_346']",
+   "resource_id": "export_4871"
+  },
+  {
+   "activity_id": "activity_1449",
+   "reason": "hard-linked to ['user_345']",
+   "resource_id": "search_8185"
+  },
+  {
+   "activity_id": "activity_1450",
+   "reason": "hard-linked to ['user_346']",
+   "resource_id": "search_6170"
+  },
+  {
+   "activity_id": "activity_1452",
+   "reason": "hard-linked to ['user_346']",
+   "resource_id": "support_2897"
+  },
+  {
+   "activity_id": "activity_1453",
+   "reason": "hard-linked to ['user_332']",
+   "resource_id": "search_7348"
+  },
+  {
+   "activity_id": "activity_1454",
+   "reason": "hard-linked to ['user_346']",
+   "resource_id": "analytics_9196"
+  },
+  {
+   "activity_id": "activity_1456",
+   "reason": "hard-linked to ['user_332']",
+   "resource_id": "support_214"
+  },
+  {
+   "activity_id": "activity_1457",
+   "reason": "hard-linked to ['user_331']",
+   "resource_id": "search_5970"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 34: several assignments equally supported (rival cases for account_3372: ['case_347', 'case_362'])",
+   "resource_id": "account_3372"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 34: several assignments equally supported (rival cases for account_421: ['case_347', 'case_362'])",
+   "resource_id": "account_421"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 34: several assignments equally supported (rival cases for account_507: ['case_347', 'case_362'])",
+   "resource_id": "account_507"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 34: several assignments equally supported (rival cases for account_9881: ['case_347', 'case_362'])",
+   "resource_id": "account_9881"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1439 lies in the burst windows of cases ['case_333', 'case_334', 'case_347', 'case_349', 'case_362']",
+   "resource_id": "analytics_4273"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-04-29T09:00:00Z",
+  "email": "yaw.f2622@zoho.com",
+  "reported_at": "2026-04-15T09:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-04-12T09:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_71",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_3178",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_71#integration_service.connectors.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_71",
+    "resource_id": "data_flow_3178",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_71",
+   "required_action": "DELETE",
+   "resource_id": "search_3944",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_71#search_service.index_queries.0.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_71",
+    "resource_id": "search_3944",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_71",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_3944",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_71",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_3178",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_3178",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_3944",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_3944",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_3178",
+   "state": "DISABLED",
+   "step_no": 6,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "yaw.f2622@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "79c943e74eefcfe820932ce70a432981cc8884034cc287ba0b0ed430be247235": "user_identities.email_hash"
+   },
+   "name": {
+    "Yaw Frimpong": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 520 2185": "user_identities.phone"
+   },
+   "user_id": {
+    "user_347": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_347 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_347"
+  ]
+ },
+ "validation_errors": []
+}

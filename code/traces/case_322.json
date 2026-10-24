@@ -1,0 +1,243 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_322",
+   "edges": [
+    {
+     "case_id": "case_322",
+     "identifier": "email:eze.emeka@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_9354",
+     "source_id": "evidence_30",
+     "strength": "HARD",
+     "time": "2026-05-14T11:54:06Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_9354",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_30",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_322",
+   "edges": [
+    {
+     "case_id": "case_322",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_4229",
+     "source_id": "activity_1777",
+     "strength": "SECONDARY",
+     "time": "2026-05-07T11:31:18Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1777; no identity link to anyone else",
+   "resource_id": "analytics_4229",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_322",
+   "edges": [
+    {
+     "case_id": "case_322",
+     "identifier": "user_id:user_320",
+     "kind": "HARD",
+     "resource_id": "audit_record_3201",
+     "source_id": "evidence_74",
+     "strength": "HARD",
+     "time": "2026-05-14T11:35:50Z"
+    },
+    {
+     "case_id": "case_322",
+     "identifier": "user_id:user_320",
+     "kind": "HARD",
+     "resource_id": "audit_record_3201",
+     "source_id": "evidence_30",
+     "strength": "HARD",
+     "time": "2026-05-14T11:56:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_3201",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_74",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_322",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-14T12:00:00Z",
+  "email": "eze.emeka@icloud.com",
+  "reported_at": "2026-05-07T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-04T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_74",
+   "required_action": "DELETE",
+   "resource_id": "account_9354",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_74#account_service.profile_lookups.3"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_74",
+    "resource_id": "account_9354",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_74",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_4229",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_74#analytics_platform.profiles.2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_74",
+    "resource_id": "analytics_4229",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_74",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_3201",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_74#security_service.audit_records.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_74",
+    "resource_id": "audit_record_3201",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_74",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_9354",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_74",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_3201",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_74",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_4229",
+   "state": "ANONYMIZED",
+   "step_no": 3,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "eze.emeka@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "430fedaa7e633976ce36804c722163aa713b08f6f72520a4f6589a70c3b82e43": "user_identities.email_hash"
+   },
+   "name": {
+    "Emeka Eze": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 450 9724": "user_audit_log.old_value audit_138",
+    "+234 803 618 5938": "user_identities.phone"
+   },
+   "user_id": {
+    "user_320": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_320 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_320"
+  ]
+ },
+ "validation_errors": []
+}

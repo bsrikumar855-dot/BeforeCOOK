@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_476",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-23T10:00:00Z",
+  "email": "marek.kowalski@outlook.com",
+  "reported_at": "2026-01-31T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-30T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "marek.kowalski@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "6c4b5f635d2ebd896204b18b2480cacd602ec2a680b7a7409e4338b7df3174f0": "user_identities.email_hash"
+   },
+   "name": {
+    "Marek Kowalski": "user_identities.name"
+   },
+   "phone": {
+    "+48 875 661 022": "user_identities.phone"
+   },
+   "user_id": {
+    "user_474": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_474 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_474"
+  ]
+ }
+}

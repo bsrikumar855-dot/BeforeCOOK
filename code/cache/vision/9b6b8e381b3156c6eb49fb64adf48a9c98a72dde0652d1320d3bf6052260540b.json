@@ -1,0 +1,106 @@
+{
+ "batch_size": 1,
+ "call_id": "8840ec8177594915",
+ "call_usage": {
+  "input_tokens": 1236,
+  "model_version": "gemini-2.5-flash",
+  "output_tokens": 895,
+  "thinking_tokens": 0,
+  "total_tokens": 2131
+ },
+ "file_id": "evidence_23",
+ "input_sha256": "18b95c1bd8b8956e40216df935498a9f3c181ea2a69b5cd6d3c0841a816d5557",
+ "key": "9b6b8e381b3156c6eb49fb64adf48a9c98a72dde0652d1320d3bf6052260540b",
+ "key_slot": "primary",
+ "model": "gemini-2.5-flash",
+ "prompt_version": "pb1da0fa903ab",
+ "provider": "gemini",
+ "response": {
+  "captured_at_text": "Updated moments ago - 4 records",
+  "records": [
+   {
+    "direct_identifiers_visible": true,
+    "email": "marcus.lee@northstar.shop",
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-06-20T14:18:00Z",
+    "other_fields": {
+     "filename": "customer_export_1261.zip"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "USER_EXPORT",
+    "resource_id": "export_1261",
+    "restore_allowed": null,
+    "status_text": "Collecting",
+    "system_id": "export_service",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": "ingrid.dahl@outlook.com",
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-06-18T06:42:00Z",
+    "other_fields": {
+     "Checksum": "SHA-256 - 41ca09...",
+     "Download count": "0",
+     "Expires": "25 Jun 2026 06:42 UTC",
+     "Included": "Profile - Orders - Saved addresses",
+     "Size": "18.4 MB",
+     "filename": "customer_export_1260.zip"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "USER_EXPORT",
+    "resource_id": "export_1260",
+    "restore_allowed": null,
+    "status_text": "Ready",
+    "system_id": "export_service",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": "sara.kim@northstar.shop",
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-06-17T11:03:00Z",
+    "other_fields": {
+     "filename": "customer_export_1259.zip"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "USER_EXPORT",
+    "resource_id": "export_1259",
+    "restore_allowed": null,
+    "status_text": "Packaging",
+    "system_id": "export_service",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": true,
+    "email": "daniel.park@northstar.shop",
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-06-16T09:27:00Z",
+    "other_fields": {
+     "filename": "customer_export_1258.zip"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "USER_EXPORT",
+    "resource_id": "export_1258",
+    "restore_allowed": null,
+    "status_text": "Ready",
+    "system_id": "export_service",
+    "user_id": null
+   }
+  ],
+  "screen_title": "Data exports"
+ },
+ "task": "vision"
+}

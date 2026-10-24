@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_240",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-23T06:00:00Z",
+  "email": "ifournier945196@fastmail.com",
+  "reported_at": "2026-05-28T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-26T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ifournier945196@fastmail.com": "request.email",
+    "ifournier9451@fastmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "1c10eec9fd77d30dd9f28a636e5ed0ee308651f17962f0d5d07c456e0f47870e": "user_identities.email_hash",
+    "d0d121ce9e80195b095089343b5ce2d3ffc38c7250ba3cb98668203331968419": "user_audit_log.old_value audit_192"
+   },
+   "name": {
+    "Inès Fournier": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 14 50 06 86": "user_identities.phone"
+   },
+   "user_id": {
+    "user_238": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_238 via user_audit_log.old_value audit_191"
+  ],
+  "user_ids": [
+   "user_238"
+  ]
+ }
+}

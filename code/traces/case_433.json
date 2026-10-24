@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_433",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-15T07:00:00Z",
+  "email": "javier.m7818@zoho.com",
+  "reported_at": "2026-02-25T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-02-22T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "javier.m7818@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "0670d52fe44c7c49a198f03f0586792a307fbcf4a45eef57d09411e0cda51c74": "user_identities.email_hash"
+   },
+   "name": {
+    "Javier Martínez": "user_identities.name"
+   },
+   "phone": {
+    "+34 614 956 514": "user_identities.phone"
+   },
+   "user_id": {
+    "user_431": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_431 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_431"
+  ]
+ }
+}

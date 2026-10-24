@@ -1,0 +1,295 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_323",
+   "edges": [
+    {
+     "case_id": "case_323",
+     "identifier": "email:kojo-addo@proton.me",
+     "kind": "HARD",
+     "resource_id": "account_2917",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T07:55:18Z"
+    },
+    {
+     "case_id": "case_323",
+     "identifier": "email:kojo-addo@proton.me",
+     "kind": "HARD",
+     "resource_id": "account_2917",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T07:55:18Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_2917",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_73",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_323",
+   "edges": [
+    {
+     "case_id": "case_323",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_136",
+     "source_id": "activity_1642",
+     "strength": "SECONDARY",
+     "time": "2026-04-29T10:31:21Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1642; no identity link to anyone else",
+   "resource_id": "analytics_136",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_323",
+   "edges": [
+    {
+     "case_id": "case_323",
+     "identifier": "user_id:user_321",
+     "kind": "HARD",
+     "resource_id": "audit_record_3338",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:00:38Z"
+    },
+    {
+     "case_id": "case_323",
+     "identifier": "user_id:user_321",
+     "kind": "HARD",
+     "resource_id": "audit_record_3338",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:00:38Z"
+    },
+    {
+     "case_id": "case_323",
+     "identifier": "user_id:user_321",
+     "kind": "HARD",
+     "resource_id": "audit_record_3338",
+     "source_id": "evidence_73",
+     "strength": "HARD",
+     "time": "2026-05-09T10:00:38Z"
+    },
+    {
+     "case_id": "case_323",
+     "identifier": "user_id:user_321",
+     "kind": "HARD",
+     "resource_id": "audit_record_3338",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-09T11:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_3338",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_73",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_323",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1641",
+   "reason": "hard-linked to ['user_322']",
+   "resource_id": "account_1242"
+  },
+  {
+   "activity_id": "activity_1643",
+   "reason": "hard-linked to ['user_322']",
+   "resource_id": "support_7249"
+  },
+  {
+   "activity_id": "activity_1645",
+   "reason": "hard-linked to ['user_322']",
+   "resource_id": "data_flow_4769"
+  },
+  {
+   "activity_id": "activity_1646",
+   "reason": "hard-linked to ['user_322']",
+   "resource_id": "backup_6458"
+  },
+  {
+   "activity_id": "activity_1648",
+   "reason": "hard-linked to ['user_323']",
+   "resource_id": "search_4054"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-09T11:00:00Z",
+  "email": "kojo-addo@proton.me",
+  "reported_at": "2026-04-29T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-28T11:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_73",
+   "required_action": "DELETE",
+   "resource_id": "account_2917",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_73#L9"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_73",
+    "resource_id": "account_2917",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_73",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_136",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_73#L37"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_73",
+    "resource_id": "analytics_136",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_73",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_3338",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_73#L47"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_73",
+    "resource_id": "audit_record_3338",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_73",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_2917",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_73",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_3338",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_73",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_136",
+   "state": "ANONYMIZED",
+   "step_no": 3,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "kojo-addo@proton.me": "request.email"
+   },
+   "email_hash": {
+    "e788d3c04dbe9db4a2ac33a697abcb6f480b0519bd63827c907e3c7bb4b9ae8e": "user_identities.email_hash"
+   },
+   "name": {
+    "Kojo Addo": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 201 5343": "user_identities.phone"
+   },
+   "user_id": {
+    "user_321": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_321 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_321"
+  ]
+ },
+ "validation_errors": []
+}

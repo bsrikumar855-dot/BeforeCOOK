@@ -1,0 +1,263 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_46",
+   "edges": [
+    {
+     "case_id": "case_46",
+     "identifier": "email:leonie.g9352@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_4092",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:51:19Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_4092",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_46",
+   "edges": [
+    {
+     "case_id": "case_46",
+     "identifier": "email:leonie.g9352@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_6523",
+     "source_id": "evidence_67",
+     "strength": "HARD",
+     "time": "2026-03-10T06:18:01Z"
+    },
+    {
+     "case_id": "case_46",
+     "identifier": "email:leonie.g9352@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_6523",
+     "source_id": "evidence_67",
+     "strength": "HARD",
+     "time": "2026-03-10T06:18:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_6523",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_67",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_46",
+   "edges": [
+    {
+     "case_id": "case_46",
+     "identifier": "user_id:user_17",
+     "kind": "HARD",
+     "resource_id": "audit_record_1797",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:53:53Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_1797",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_46",
+   "edges": [
+    {
+     "case_id": "case_46",
+     "identifier": "email:leonie.g9352@outlook.com",
+     "kind": "HARD",
+     "resource_id": "backup_3245",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:54:41Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "backup_3245",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "backup_service"
+  },
+  {
+   "case_id": "case_46",
+   "edges": [
+    {
+     "case_id": "case_46",
+     "identifier": "email:leonie.g9352@outlook.com",
+     "kind": "CATALOG",
+     "resource_id": "tombstone_17",
+     "source_id": "activity_4011",
+     "strength": "HARD",
+     "time": "2026-03-10T06:07:01Z"
+    },
+    {
+     "case_id": "case_46",
+     "identifier": "user_id:user_17",
+     "kind": "CATALOG",
+     "resource_id": "tombstone_17",
+     "source_id": "activity_4011",
+     "strength": "HARD",
+     "time": "2026-03-10T06:07:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via CATALOG_LINK",
+   "resource_id": "tombstone_17",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: activity_4011",
+   "system_id": "identity_service"
+  }
+ ],
+ "case_id": "case_46",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "account_4092"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_1797"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "backup_3245"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "UNKNOWN_STATE: no admissible observation and no admissible full snapshot",
+   "resource_id": "tombstone_17"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-03-11T08:00:00Z",
+  "email": "leonie.g9352@outlook.com",
+  "reported_at": "2026-03-09T21:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-08T03:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_67",
+   "required_action": "DELETE",
+   "resource_id": "account_6523",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_67#L3"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_67",
+    "resource_id": "account_6523",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "ACCOUNT_TOMBSTONE",
+   "category_basis": "default category for identity_service",
+   "compliant": null,
+   "note": "UNKNOWN_STATE: no admissible observation and no admissible full snapshot",
+   "operations": [
+    null,
+    null,
+    null
+   ],
+   "proof_file_id": null,
+   "required_action": "REDACT",
+   "resource_id": "tombstone_17",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "UNKNOWN",
+    "proof_basis": "NONE",
+    "proof_file_id": null,
+    "resource_id": "tombstone_17",
+    "restore_state": null,
+    "system_id": "identity_service"
+   },
+   "system_id": "identity_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_67",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_6523",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "leonie.g9352@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "54cf4f530165a1f0cff508db09db2df1414e78cba6e83adb0e298515176b0989": "user_identities.email_hash"
+   },
+   "name": {
+    "Léonie Girard": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 50 56 17 06": "user_identities.phone"
+   },
+   "user_id": {
+    "user_17": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_17 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_17"
+  ]
+ },
+ "validation_errors": []
+}

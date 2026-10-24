@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_162",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-02T07:00:00Z",
+  "email": "cmercier1769@gmail.com",
+  "reported_at": "2026-07-25T07:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-07-23T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "cmercier1769@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "09ac440830074fa4959cf5d1e12261ce0745ac77da3ce60ea59490517a6d9e9b": "user_identities.email_hash"
+   },
+   "name": {
+    "Camille Mercier": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 69 34 42 56": "user_identities.phone",
+    "+33 6 90 58 29 67": "user_audit_log.old_value audit_67"
+   },
+   "user_id": {
+    "user_160": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_160 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_160"
+  ]
+ }
+}

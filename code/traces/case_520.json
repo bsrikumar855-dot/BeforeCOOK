@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_520",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-03T06:00:00Z",
+  "email": "suzuki.daichi90@gmail.com",
+  "reported_at": "2026-01-09T06:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-01-06T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "suzuki.daichi90@gmail.com": "request.email",
+    "suzuki.daichi@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "437adbd76c9c1cc0bcec823a9e44e48c817f64c43488cf740a069ed98fc1eb48": "user_audit_log.old_value audit_66",
+    "ed01c805bb0eebb48ea9a195a3816c768e5aa94a8e650ffe4469b34bee746d60": "user_identities.email_hash"
+   },
+   "name": {
+    "Daichi Suzuki": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 2773 3305": "user_identities.phone"
+   },
+   "user_id": {
+    "user_518": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_518 via user_audit_log.old_value audit_65"
+  ],
+  "user_ids": [
+   "user_518"
+  ]
+ }
+}

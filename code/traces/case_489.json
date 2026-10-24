@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_489",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-18T09:00:00Z",
+  "email": "i.zielinski8281@yahoo.com",
+  "reported_at": "2026-02-03T09:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-02-01T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "i.zielinski8281@yahoo.com": "request.email",
+    "i.zielinski82@yahoo.com": "user_identities.email"
+   },
+   "email_hash": {
+    "426a7cd798dd604550b5288784834dbcb0c73025a00c72f1ab9c9c5facaa5c2c": "user_identities.email_hash",
+    "43702abda367672e941303dc9bef252cca8af42fbc279504383e56a092012f30": "user_audit_log.old_value audit_81"
+   },
+   "name": {
+    "Iulia Zieliński": "user_identities.name"
+   },
+   "phone": {
+    "+48 873 957 386": "user_identities.phone"
+   },
+   "user_id": {
+    "user_487": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_487 via user_audit_log.old_value audit_80"
+  ],
+  "user_ids": [
+   "user_487"
+  ]
+ }
+}

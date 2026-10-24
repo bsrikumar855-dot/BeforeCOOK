@@ -1,0 +1,191 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_401",
+   "edges": [
+    {
+     "case_id": "case_401",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_9820",
+     "source_id": "activity_888",
+     "strength": "SECONDARY",
+     "time": "2026-03-07T09:57:52Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_888 is in every maximum one-to-one assignment of batch 43 (cases ['case_401'], rows ['account_9820']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_9820",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_401",
+   "edges": [
+    {
+     "case_id": "case_401",
+     "identifier": "email:kwame-asante@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_6872",
+     "source_id": "evidence_69",
+     "strength": "HARD",
+     "time": "2026-04-04T10:04:19Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_6872",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_69",
+   "system_id": "analytics_platform"
+  }
+ ],
+ "case_id": "case_401",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-04-04T11:00:00Z",
+  "email": "kwame-asante@gmail.com",
+  "reported_at": "2026-03-07T11:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-03-06T11:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_69",
+   "required_action": "DELETE",
+   "resource_id": "account_9820",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_69",
+    "resource_id": "account_9820",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_69",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_6872",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_69#customer_analytics_profiles:3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_69",
+    "resource_id": "analytics_6872",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_69",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_6872",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_6872",
+   "state": "ANONYMIZED",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_9820",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_6872",
+   "state": "ANONYMIZED",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "kwame-asante@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "a7e46c52df6c4eebaff410d77dd66813153bac69be158211fb7e1a830f9a59b7": "user_identities.email_hash"
+   },
+   "name": {
+    "Kwame Asante": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 383 0646": "user_identities.phone"
+   },
+   "user_id": {
+    "user_399": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_399 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_399"
+  ]
+ },
+ "validation_errors": []
+}

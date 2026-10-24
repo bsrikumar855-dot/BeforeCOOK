@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_110",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-27T12:00:00Z",
+  "email": "ines.moreau98@gmail.com",
+  "reported_at": "2026-08-10T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-09T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ines.moreau98@gmail.com": "request.email",
+    "ines.moreau@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "09d29d39dcc7a2ec4a47f61f80b01ffa85bfeffefff475165830154bb6c6b8cb": "user_identities.email_hash",
+    "68c08949714c6ae826f9f6b6f1b152f8df2213165b112adb9b60a782e9977862": "user_audit_log.old_value audit_251"
+   },
+   "name": {
+    "Inès Moreau": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 31 43 15 48": "user_identities.phone"
+   },
+   "user_id": {
+    "user_108": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_108 via user_audit_log.old_value audit_250"
+  ],
+  "user_ids": [
+   "user_108"
+  ]
+ }
+}

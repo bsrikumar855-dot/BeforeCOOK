@@ -1,0 +1,510 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_194",
+   "edges": [
+    {
+     "case_id": "case_194",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4362",
+     "source_id": "activity_2469",
+     "strength": "SECONDARY",
+     "time": "2026-06-22T07:50:07Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 14: several assignments equally supported (rival cases for account_4362: [])",
+   "resource_id": "account_4362",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_194",
+   "edges": [
+    {
+     "case_id": "case_194",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_660",
+     "source_id": "activity_2474",
+     "strength": "SECONDARY",
+     "time": "2026-06-22T09:11:25Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 14: several assignments equally supported (rival cases for account_660: [])",
+   "resource_id": "account_660",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_194",
+   "edges": [
+    {
+     "case_id": "case_194",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6934",
+     "source_id": "activity_2470",
+     "strength": "SECONDARY",
+     "time": "2026-06-22T08:01:22Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 14: several assignments equally supported (rival cases for account_6934: [])",
+   "resource_id": "account_6934",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_194",
+   "edges": [
+    {
+     "case_id": "case_194",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_3454",
+     "source_id": "activity_2476",
+     "strength": "SECONDARY",
+     "time": "2026-06-22T09:31:51Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_2476; no identity link to anyone else",
+   "resource_id": "analytics_3454",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_194",
+   "edges": [
+    {
+     "case_id": "case_194",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_5166",
+     "source_id": "activity_2475",
+     "strength": "SECONDARY",
+     "time": "2026-06-22T09:31:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_2475; no identity link to anyone else",
+   "resource_id": "analytics_5166",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_194",
+   "edges": [
+    {
+     "case_id": "case_194",
+     "identifier": "email:lindiwe.ndlovu94@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_3195",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:25:54Z"
+    },
+    {
+     "case_id": "case_194",
+     "identifier": "email:lindiwe.ndlovu94@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_3195",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:25:54Z"
+    },
+    {
+     "case_id": "case_194",
+     "identifier": "email:lindiwe.ndlovu94@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_3195",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:25:54Z"
+    },
+    {
+     "case_id": "case_194",
+     "identifier": "email:lindiwe.ndlovu94@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_3195",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:25:54Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "data_flow_3195",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_82",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_194",
+   "edges": [
+    {
+     "case_id": "case_194",
+     "identifier": "email:lindiwe.ndlovu94@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8302",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T08:03:45Z"
+    },
+    {
+     "case_id": "case_194",
+     "identifier": "email:lindiwe.ndlovu94@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8302",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T08:03:45Z"
+    },
+    {
+     "case_id": "case_194",
+     "identifier": "email:lindiwe.ndlovu94@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8302",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T08:03:45Z"
+    },
+    {
+     "case_id": "case_194",
+     "identifier": "email:lindiwe.ndlovu94@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8302",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T08:03:45Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_8302",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_82",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_194",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2471",
+   "reason": "hard-linked to ['user_209']",
+   "resource_id": "account_4348"
+  },
+  {
+   "activity_id": "activity_2472",
+   "reason": "hard-linked to ['user_194']",
+   "resource_id": "account_5599"
+  },
+  {
+   "activity_id": "activity_2473",
+   "reason": "hard-linked to ['user_193']",
+   "resource_id": "account_4320"
+  },
+  {
+   "activity_id": "activity_2477",
+   "reason": "hard-linked to ['user_207']",
+   "resource_id": "analytics_3156"
+  },
+  {
+   "activity_id": "activity_2478",
+   "reason": "hard-linked to ['user_208']",
+   "resource_id": "support_4491"
+  },
+  {
+   "activity_id": "activity_2480",
+   "reason": "hard-linked to ['user_207']",
+   "resource_id": "search_7288"
+  },
+  {
+   "activity_id": "activity_2481",
+   "reason": "hard-linked to ['user_208']",
+   "resource_id": "search_045"
+  },
+  {
+   "activity_id": "activity_2482",
+   "reason": "hard-linked to ['user_209']",
+   "resource_id": "search_9955"
+  },
+  {
+   "activity_id": "activity_2483",
+   "reason": "hard-linked to ['user_207']",
+   "resource_id": "support_8999"
+  },
+  {
+   "activity_id": "activity_2484",
+   "reason": "hard-linked to ['user_207']",
+   "resource_id": "data_flow_5196"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 14: several assignments equally supported (rival cases for account_4362: [])",
+   "resource_id": "account_4362"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 14: several assignments equally supported (rival cases for account_660: [])",
+   "resource_id": "account_660"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 14: several assignments equally supported (rival cases for account_6934: [])",
+   "resource_id": "account_6934"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-07-13T10:00:00Z",
+  "email": "lindiwe.ndlovu94@gmail.com",
+  "reported_at": "2026-06-22T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-21T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_3454",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_82#L35"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "analytics_3454",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_5166",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_82#L11"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "analytics_5166",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_3195",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_82#L17"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "data_flow_3195",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "DELETE",
+   "resource_id": "search_8302",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_82#L27"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "search_8302",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_82",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_8302",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_82",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_3195",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_3195",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_8302",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_8302",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_3454",
+   "state": "ANONYMIZED",
+   "step_no": 6,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_5166",
+   "state": "ANONYMIZED",
+   "step_no": 7,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_3195",
+   "state": "DISABLED",
+   "step_no": 8,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "lindiwe.ndlovu94@gmail.com": "request.email",
+    "lindiwe.ndlovu@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "5efe9b1851635282282e900624286ec082532262030cb413cb6734bf68bc624d": "user_audit_log.old_value audit_213",
+    "e69c5b6dbd5f84094413251741b3dfb9fe8227ea7052fab9459738f238f5b042": "user_identities.email_hash"
+   },
+   "name": {
+    "Lindiwe Ndlovu": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 670 7789": "user_identities.phone"
+   },
+   "user_id": {
+    "user_192": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_192 via user_audit_log.old_value audit_212"
+  ],
+  "user_ids": [
+   "user_192"
+  ]
+ },
+ "validation_errors": []
+}

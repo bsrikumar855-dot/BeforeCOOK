@@ -1,0 +1,169 @@
+{
+ "batch_size": 1,
+ "call_id": "986e32243d4e4c9e",
+ "call_usage": {
+  "input_tokens": 1268,
+  "model_version": "gemini-2.5-flash",
+  "output_tokens": 1342,
+  "thinking_tokens": 0,
+  "total_tokens": 2610
+ },
+ "file_id": "evidence_19",
+ "input_sha256": "4e4cb259bc2010b622b0c53fe5872258f994fefc23452a83bb27473758693484",
+ "key": "c554884114ff0224dd2f6207198f6cde13f182ee3469695c95140712c189acff",
+ "key_slot": "primary",
+ "model": "gemini-2.5-flash",
+ "prompt_version": "pb1da0fa903ab",
+ "provider": "gemini",
+ "response": {
+  "captured_at_text": null,
+  "records": [
+   {
+    "direct_identifiers_visible": true,
+    "email": "darwish.omar@icloud.com",
+    "email_hash": null,
+    "enabled": null,
+    "name": "Omar Darwish",
+    "observed_at": null,
+    "other_fields": {
+     "Acquisition": "Organic search",
+     "Audience": "Returning shopper",
+     "Completed orders": "2",
+     "First seen": "21 Apr 2026 09:14 UTC",
+     "Interest": "Coffee & dining",
+     "Last activity": "13 Jul 2026 14:22 UTC",
+     "Market": "AE",
+     "Mobile / Desktop": "67% / 33%",
+     "Products viewed": "19",
+     "Revenue": "USD 167.42",
+     "Sessions": "12"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "ANALYTICS_PROFILE",
+    "resource_id": "analytics_7438",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "analytics_platform",
+    "user_id": "user_20"
+   },
+   {
+    "direct_identifiers_visible": false,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Device": "Mobile",
+     "Event": "Order completed",
+     "Product / detail": "Ceramic coffee set",
+     "Time": "14:22",
+     "Value": "USD 84.21"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "PRODUCT_TELEMETRY",
+    "resource_id": "1",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "analytics_platform",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": false,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Device": "Mobile",
+     "Event": "Checkout started",
+     "Product / detail": "2 items",
+     "Time": "14:20",
+     "Value": "USD 84.21"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "PRODUCT_TELEMETRY",
+    "resource_id": "2",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "analytics_platform",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": false,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Device": "Mobile",
+     "Event": "Product viewed",
+     "Product / detail": "Ceramic coffee set",
+     "Time": "14:17",
+     "Value": "—"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "PRODUCT_TELEMETRY",
+    "resource_id": "3",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "analytics_platform",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": false,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Device": "Mobile",
+     "Event": "Added to cart",
+     "Product / detail": "Ceramic coffee set",
+     "Time": "14:16",
+     "Value": "USD 42.00"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "PRODUCT_TELEMETRY",
+    "resource_id": "4",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "analytics_platform",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": false,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Device": "Desktop",
+     "Event": "Product viewed",
+     "Product / detail": "Stoneware mug",
+     "Time": "14:12",
+     "Value": "USD 18.00"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "PRODUCT_TELEMETRY",
+    "resource_id": "5",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": "analytics_platform",
+    "user_id": null
+   }
+  ],
+  "screen_title": "Pulse Analytics"
+ },
+ "task": "vision"
+}

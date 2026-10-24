@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_496",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-13T08:00:00Z",
+  "email": "lima.larissa@gmail.com",
+  "reported_at": "2026-01-23T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-01-20T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "lima.larissa@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "b45617dff6c3e49d92bc4911f26ae5f100995a8086508192c9281a98923d4915": "user_identities.email_hash"
+   },
+   "name": {
+    "Larissa Lima": "user_identities.name"
+   },
+   "phone": {
+    "+55 21 95492-6917": "user_identities.phone"
+   },
+   "user_id": {
+    "user_494": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_494 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_494"
+  ]
+ }
+}

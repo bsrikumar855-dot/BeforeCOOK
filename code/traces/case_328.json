@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_328",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-09T11:00:00Z",
+  "email": "patel.ishaan@gmail.com",
+  "reported_at": "2026-04-26T11:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-04-23T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "patel.ishaan@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "e662c0f76e8518eeb8ce829391d2946aa8bf163a6ff878021d80dca1b1db39da": "user_identities.email_hash"
+   },
+   "name": {
+    "Ishaan Patel": "user_identities.name"
+   },
+   "phone": {
+    "+91 97574 10315": "user_identities.phone"
+   },
+   "user_id": {
+    "user_326": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_326 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_326"
+  ]
+ }
+}

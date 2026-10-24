@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_91",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-06T07:00:00Z",
+  "email": "mei.k952079@outlook.com",
+  "reported_at": "2026-08-21T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-18T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mei.k952079@outlook.com": "request.email",
+    "mei.k9520@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "9f5ee2f3cf9b94a2feaeafb2864f34d5a9a84e177f6973c107825da4c90c83ad": "user_audit_log.old_value audit_270",
+    "fa4b12e9860fcbbc972645888a79f4c2a563477ef1b24d30fa0f200eb377e941": "user_identities.email_hash"
+   },
+   "name": {
+    "Mei Kato": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 2308 2225": "user_identities.phone"
+   },
+   "user_id": {
+    "user_89": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_89 via user_audit_log.old_value audit_269"
+  ],
+  "user_ids": [
+   "user_89"
+  ]
+ }
+}

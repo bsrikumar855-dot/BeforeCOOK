@@ -1,0 +1,447 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_166",
+   "edges": [
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_1837",
+     "source_id": "evidence_16",
+     "strength": "HARD",
+     "time": "2026-07-28T05:53:19Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_1837",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_16",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_166",
+   "edges": [
+    {
+     "case_id": "case_166",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_6402",
+     "source_id": "activity_2849",
+     "strength": "SECONDARY",
+     "time": "2026-07-17T05:31:14Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_2849 lies in the burst windows of cases ['case_164', 'case_166']",
+   "resource_id": "analytics_6402",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_166",
+   "edges": [
+    {
+     "case_id": "case_166",
+     "identifier": "user_id:user_164",
+     "kind": "HARD",
+     "resource_id": "audit_record_7082",
+     "source_id": "evidence_16",
+     "strength": "HARD",
+     "time": "2026-07-28T05:54:33Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_7082",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_16",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_166",
+   "edges": [
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_5261",
+     "source_id": "evidence_85",
+     "strength": "HARD",
+     "time": "2026-07-28T02:49:32Z"
+    },
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_5261",
+     "source_id": "evidence_85",
+     "strength": "HARD",
+     "time": "2026-07-28T02:49:32Z"
+    },
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_5261",
+     "source_id": "evidence_85",
+     "strength": "HARD",
+     "time": "2026-07-28T02:49:32Z"
+    },
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_5261",
+     "source_id": "evidence_85",
+     "strength": "HARD",
+     "time": "2026-07-28T02:49:32Z"
+    },
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_5261",
+     "source_id": "evidence_16",
+     "strength": "HARD",
+     "time": "2026-07-28T05:54:04Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_5261",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_85",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_166",
+   "edges": [
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "support_3155",
+     "source_id": "evidence_85",
+     "strength": "HARD",
+     "time": "2026-07-28T05:03:37Z"
+    },
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "support_3155",
+     "source_id": "evidence_85",
+     "strength": "HARD",
+     "time": "2026-07-28T05:03:37Z"
+    },
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "support_3155",
+     "source_id": "evidence_85",
+     "strength": "HARD",
+     "time": "2026-07-28T05:03:37Z"
+    },
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "support_3155",
+     "source_id": "evidence_85",
+     "strength": "HARD",
+     "time": "2026-07-28T05:03:37Z"
+    },
+    {
+     "case_id": "case_166",
+     "identifier": "email:obi.adaeze@icloud.com",
+     "kind": "HARD",
+     "resource_id": "support_3155",
+     "source_id": "evidence_16",
+     "strength": "HARD",
+     "time": "2026-07-28T05:55:35Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_3155",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_85",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_166",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2845",
+   "reason": "hard-linked to ['user_163']",
+   "resource_id": "account_3064"
+  },
+  {
+   "activity_id": "activity_2846",
+   "reason": "hard-linked to ['user_162']",
+   "resource_id": "account_9549"
+  },
+  {
+   "activity_id": "activity_2853",
+   "reason": "hard-linked to ['user_163']",
+   "resource_id": "search_8678"
+  },
+  {
+   "activity_id": "activity_2856",
+   "reason": "hard-linked to ['user_163']",
+   "resource_id": "support_3586"
+  },
+  {
+   "activity_id": "activity_2857",
+   "reason": "hard-linked to ['user_163']",
+   "resource_id": "analytics_2713"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_2849 lies in the burst windows of cases ['case_164', 'case_166']",
+   "resource_id": "analytics_6402"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-07-28T06:00:00Z",
+  "email": "OBI.ADAEZE@ICLOUD.COM",
+  "reported_at": "2026-07-17T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-07-14T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_17",
+   "required_action": "DELETE",
+   "resource_id": "account_1837",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_17",
+    "resource_id": "account_1837",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_7082",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_17",
+    "resource_id": "audit_record_7082",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_85",
+   "required_action": "DELETE",
+   "resource_id": "search_5261",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_85#L3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_85",
+    "resource_id": "search_5261",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_85",
+   "required_action": "REDACT",
+   "resource_id": "support_3155",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_85#L35"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_85",
+    "resource_id": "support_3155",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_85",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_5261",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_85",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_3155",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_5261",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_3155",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_1837",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5261",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_7082",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_3155",
+   "state": "REDACTED",
+   "step_no": 8,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "obi.adaeze@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "526cadf55e07128a350ae7b7f397a3a7b286e64e9294f2891450b73dbcd20798": "user_identities.email_hash"
+   },
+   "name": {
+    "Adaeze Obi": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 283 3695": "user_identities.phone"
+   },
+   "user_id": {
+    "user_164": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_164 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_164"
+  ]
+ },
+ "validation_errors": []
+}

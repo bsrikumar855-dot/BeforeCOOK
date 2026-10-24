@@ -1,0 +1,1143 @@
+{
+ "cache_hits": [],
+ "calls": [
+  {
+   "call_id": "18dea73f7d7f4939",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 752,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 1988
+  },
+  {
+   "call_id": "710df7df7a564940",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 437,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 1673
+  },
+  {
+   "call_id": "3344701fbe0a47ea",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 883,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2119
+  },
+  {
+   "call_id": "e305a0e4b8e7417f",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 1233,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2469
+  },
+  {
+   "call_id": "986e32243d4e4c9e",
+   "input_tokens": 1268,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 1342,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2610
+  },
+  {
+   "call_id": "8840ec8177594915",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 895,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2131
+  },
+  {
+   "call_id": "1259fe1833a049f9",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 601,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 1837
+  },
+  {
+   "call_id": "ee84db104d4e443c",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 898,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2134
+  },
+  {
+   "call_id": "59df90bd91ed46a1",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 1321,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2557
+  },
+  {
+   "call_id": "605a2b381aee46ec",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 980,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2216
+  },
+  {
+   "call_id": "269607dab18247b3",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 1698,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2934
+  },
+  {
+   "call_id": "b1cc56ba6b4f4301",
+   "input_tokens": 1236,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 969,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2205
+  },
+  {
+   "call_id": "b5cedf4171cd4e45",
+   "input_tokens": 1268,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 961,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2229
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "input_tokens": 2015,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 607,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2622
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "input_tokens": 2056,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 872,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2928
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "input_tokens": 1985,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 603,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2588
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "input_tokens": 1927,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 876,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2803
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "input_tokens": 1987,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 872,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2859
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "input_tokens": 2001,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 872,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2873
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "input_tokens": 2001,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 872,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2873
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "input_tokens": 2002,
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "model_version": "gemini-2.5-flash",
+   "output_tokens": 603,
+   "provider": "gemini",
+   "thinking_tokens": 0,
+   "total_tokens": 2605
+  }
+ ],
+ "events": [
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_1"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_2"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_3"
+  },
+  {
+   "error": "record 1 must be an object with a string resource_id",
+   "event": "validation_failed",
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "task": "vision",
+   "try": 1
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "error": "record 1 must be an object with a string resource_id",
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "invalid_output"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "vision"
+  },
+  {
+   "error": "record 1 must be an object with a string resource_id",
+   "event": "validation_failed",
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "task": "vision",
+   "try": 1
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "error": "record 1 must be an object with a string resource_id",
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "invalid_output"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "vision"
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "intent"
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "intent"
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "intent"
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "intent"
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "intent"
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "intent"
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "intent"
+  },
+  {
+   "answered_by": "gemini-2.5-flash",
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "ok"
+    }
+   ],
+   "event": "fallback_used",
+   "key_slot": "primary",
+   "task": "intent"
+  },
+  {
+   "event": "quota_exhausted",
+   "key_slot": "primary",
+   "model": "gemini-2.5-flash",
+   "task": "intent"
+  },
+  {
+   "event": "quota_exhausted",
+   "key_slot": "fallback_1",
+   "model": "gemini-2.5-flash",
+   "task": "intent"
+  },
+  {
+   "event": "quota_exhausted",
+   "key_slot": "fallback_2",
+   "model": "gemini-2.5-flash",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "quota_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "quota_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "quota_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  },
+  {
+   "attempts": [
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash-lite",
+     "outcome": "http_404"
+    },
+    {
+     "key_slot": "primary",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_1",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_2",
+     "model": "gemini-2.5-flash",
+     "outcome": "skipped_exhausted"
+    },
+    {
+     "key_slot": "fallback_3",
+     "model": "gemini-2.5-flash",
+     "outcome": "http_404"
+    }
+   ],
+   "event": "all_providers_failed",
+   "task": "intent"
+  }
+ ],
+ "models_verified": {}
+}

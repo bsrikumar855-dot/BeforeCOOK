@@ -1,0 +1,4 @@
+2026-09-14T10:00:00Z level=DEBUG service=account_service trace_id=x2-1 event=profile_lookup_started resource_id=account_990002 lookup_key=kai.noor@example.test
+2026-09-14T10:00:01Z level=INFO service=account_service trace_id=x2-1 event=profile_lookup_completed resource_id=account_990002 rows=0 http_status=404
+2026-09-14T10:05:00Z level=DEBUG service=analytics_platform trace_id=x2-2 resource_id=analytics_990002 event=contact_lookup_completed rows=1 email_opt_in=true correlation_key="0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f"
+2026-09-14T10:10:00Z INFO service=fixture event=record_lookup seq=1 system="security_service" resource_id="audit_record_990002" record_type="SECURITY_AUDIT_LOG" result="FOUND" subject_reference="user_9902"

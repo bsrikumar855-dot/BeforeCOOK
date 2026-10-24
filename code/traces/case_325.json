@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_325",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-09T11:00:00Z",
+  "email": "aoi.i256693@zoho.com",
+  "reported_at": "2026-04-29T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-26T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "aoi.i256693@zoho.com": "request.email",
+    "aoi.i2566@zoho.com": "user_identities.email"
+   },
+   "email_hash": {
+    "1e97d8d186f6fd39042fdafde3e6aebc7bb8b2464d38bc12149c9253e7ec211a": "user_identities.email_hash",
+    "f2f036c962665bc66f0d4dbc4ca25648a786f730d480fa55c3be97d22ac0623c": "user_audit_log.old_value audit_155"
+   },
+   "name": {
+    "Aoi Ito": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 9494 7994": "user_identities.phone"
+   },
+   "user_id": {
+    "user_323": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_323 via user_audit_log.old_value audit_154"
+  ],
+  "user_ids": [
+   "user_323"
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_417",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-25T09:00:00Z",
+  "email": "s.kim14@yahoo.com",
+  "reported_at": "2026-03-02T09:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-02-28T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "s.kim14@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "62ed4c112200006390306974efe9c0c3b9b6d0b10d0622d99ae05b8cf8c9da7c": "user_identities.email_hash"
+   },
+   "name": {
+    "Soo-jin Kim": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 0494 3957": "user_identities.phone",
+    "+82 10 3992 7203": "user_audit_log.old_value audit_19"
+   },
+   "user_id": {
+    "user_415": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_415 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_415"
+  ]
+ }
+}

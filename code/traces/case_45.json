@@ -1,0 +1,270 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_45",
+   "edges": [
+    {
+     "case_id": "case_45",
+     "identifier": "user_id:user_03",
+     "kind": "HARD",
+     "resource_id": "audit_record_001",
+     "source_id": "evidence_37",
+     "strength": "HARD",
+     "time": "2026-08-24T16:14:00Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via MODEL_EXTRACTION",
+   "resource_id": "audit_record_001",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_45",
+   "edges": [
+    {
+     "case_id": "case_45",
+     "identifier": "user_id:user_03",
+     "kind": "HARD",
+     "resource_id": "audit_record_002",
+     "source_id": "evidence_37",
+     "strength": "HARD",
+     "time": "2026-08-25T03:21:00Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via MODEL_EXTRACTION",
+   "resource_id": "audit_record_002",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_45",
+   "edges": [
+    {
+     "case_id": "case_45",
+     "identifier": "user_id:user_03",
+     "kind": "HARD",
+     "resource_id": "audit_record_003",
+     "source_id": "evidence_55",
+     "strength": "HARD",
+     "time": "2026-09-05T06:30:00Z"
+    },
+    {
+     "case_id": "case_45",
+     "identifier": "user_id:user_03",
+     "kind": "HARD",
+     "resource_id": "audit_record_003",
+     "source_id": "evidence_37",
+     "strength": "HARD",
+     "time": "2026-08-25T04:03:00Z"
+    },
+    {
+     "case_id": "case_45",
+     "identifier": "email:oliver-bennett@gmail.com",
+     "kind": "CATALOG",
+     "resource_id": "audit_record_003",
+     "source_id": "activity_4010",
+     "strength": "HARD",
+     "time": "2026-09-05T07:07:01Z"
+    },
+    {
+     "case_id": "case_45",
+     "identifier": "user_id:user_03",
+     "kind": "CATALOG",
+     "resource_id": "audit_record_003",
+     "source_id": "activity_4010",
+     "strength": "HARD",
+     "time": "2026-09-05T07:07:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via CATALOG_LINK, DOCUMENT_COMENTION, MODEL_EXTRACTION",
+   "resource_id": "audit_record_003",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_55",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_45",
+   "edges": [
+    {
+     "case_id": "case_45",
+     "identifier": "user_id:user_03",
+     "kind": "HARD",
+     "resource_id": "audit_record_004",
+     "source_id": "evidence_37",
+     "strength": "HARD",
+     "time": "2026-08-18T14:05:00Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via MODEL_EXTRACTION",
+   "resource_id": "audit_record_004",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_45",
+   "edges": [
+    {
+     "case_id": "case_45",
+     "identifier": "user_id:user_03",
+     "kind": "HARD",
+     "resource_id": "audit_record_005",
+     "source_id": "evidence_37",
+     "strength": "HARD",
+     "time": "2026-08-20T09:42:00Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via MODEL_EXTRACTION",
+   "resource_id": "audit_record_005",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_45",
+   "edges": [
+    {
+     "case_id": "case_45",
+     "identifier": "user_id:user_03",
+     "kind": "HARD",
+     "resource_id": "audit_record_006",
+     "source_id": "evidence_37",
+     "strength": "HARD",
+     "time": "2026-08-22T11:27:00Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via MODEL_EXTRACTION",
+   "resource_id": "audit_record_006",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_45",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_001"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_002"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_004"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_005"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_006"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-06T09:00:00Z",
+  "email": "oliver-bennett@gmail.com",
+  "reported_at": "2026-09-04T22:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-09-03T04:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_37",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_37",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_003",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_37#img0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_37",
+    "resource_id": "audit_record_003",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_37",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_003",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "oliver-bennett@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "1fa7764c96e40e8570cbb7569f707f6d84c593cecbe5c1ed2b0a07a624dba039": "user_identities.email_hash"
+   },
+   "name": {
+    "Oliver Bennett": "user_identities.name"
+   },
+   "phone": {
+    "+1 (202) 555-0103": "user_identities.phone"
+   },
+   "user_id": {
+    "user_03": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_03 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_03"
+  ]
+ },
+ "validation_errors": []
+}

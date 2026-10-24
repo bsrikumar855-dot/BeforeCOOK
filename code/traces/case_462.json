@@ -1,0 +1,184 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_462",
+   "edges": [
+    {
+     "case_id": "case_462",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1881",
+     "source_id": "activity_736",
+     "strength": "SECONDARY",
+     "time": "2026-02-25T11:08:25Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_736 is in every maximum one-to-one assignment of batch 49 (cases ['case_462'], rows ['account_1881']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_1881",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_462",
+   "edges": [
+    {
+     "case_id": "case_462",
+     "identifier": "user_id:user_460",
+     "kind": "HARD",
+     "resource_id": "audit_record_641",
+     "source_id": "evidence_43",
+     "strength": "HARD",
+     "time": "2026-03-05T12:00:00Z"
+    },
+    {
+     "case_id": "case_462",
+     "identifier": "user_id:user_460",
+     "kind": "HARD",
+     "resource_id": "audit_record_641",
+     "source_id": "evidence_43",
+     "strength": "HARD",
+     "time": "2026-03-05T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_641",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_43",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_462",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-03-05T12:00:00Z",
+  "email": "anielsen7469@gmail.com",
+  "reported_at": "2026-02-25T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-02-23T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_43",
+   "required_action": "DELETE",
+   "resource_id": "account_1881",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_43",
+    "resource_id": "account_1881",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_43",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_641",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_43#customer_data_primary:11",
+     "evidence_43#customer_data_reporting_replica:12"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_43",
+    "resource_id": "audit_record_641",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_43",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_1881",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_43",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_641",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "anielsen7469@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "a9dc3f09db48722cacd6c93392c2443ece8aba50768e8f699ec9d7822bac5866": "user_identities.email_hash"
+   },
+   "name": {
+    "Astrid Nielsen": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 124 53 62": "user_identities.phone",
+    "+46 70 833 29 03": "user_audit_log.old_value audit_10"
+   },
+   "user_id": {
+    "user_460": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_460 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_460"
+  ]
+ },
+ "validation_errors": []
+}

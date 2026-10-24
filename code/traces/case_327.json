@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_327",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-09T11:00:00Z",
+  "email": "R.COSTA04@GMAIL.COM",
+  "reported_at": "2026-04-26T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-24T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "r.costa04@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "4321135dc0c475290a48f118b9d4e9d38d925f75cdc10b5cbcf6a84f499b8fe3": "user_identities.email_hash"
+   },
+   "name": {
+    "Rafael Costa": "user_identities.name"
+   },
+   "phone": {
+    "+55 11 92379-9963": "user_identities.phone",
+    "+55 51 90336-6532": "user_audit_log.old_value audit_56"
+   },
+   "user_id": {
+    "user_325": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_325 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_325"
+  ]
+ }
+}

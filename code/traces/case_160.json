@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_160",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-02T07:00:00Z",
+  "email": "navarro.sofia82@gmail.com",
+  "reported_at": "2026-07-08T07:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-07-05T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "navarro.sofia82@gmail.com": "request.email",
+    "navarro.sofia@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "6377857190a2ae7153918237cc9e21c9e385f70c1111df038a460cd06f9dd27c": "user_audit_log.old_value audit_225",
+    "d07d11273079b2c23f1126fce576af3b3c284fd4a82f867062117e1823454caa": "user_identities.email_hash"
+   },
+   "name": {
+    "Sofía Navarro": "user_identities.name"
+   },
+   "phone": {
+    "+34 659 731 854": "user_identities.phone"
+   },
+   "user_id": {
+    "user_158": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_158 via user_audit_log.old_value audit_224"
+  ],
+  "user_ids": [
+   "user_158"
+  ]
+ }
+}

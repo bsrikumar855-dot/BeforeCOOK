@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_107",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-27T12:00:00Z",
+  "email": "priya-patel@proton.me",
+  "reported_at": "2026-08-13T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-12T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "priya-patel@proton.me": "request.email"
+   },
+   "email_hash": {
+    "9abd47f9b8bd1d760c9695d208b1fd0a01201531b6d8426c2650dac7609c35d3": "user_identities.email_hash"
+   },
+   "name": {
+    "Priya Patel": "user_identities.name"
+   },
+   "phone": {
+    "+91 94167 97786": "user_identities.phone",
+    "+91 96105 28868": "user_audit_log.old_value audit_26"
+   },
+   "user_id": {
+    "user_105": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_105 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_105"
+  ]
+ }
+}

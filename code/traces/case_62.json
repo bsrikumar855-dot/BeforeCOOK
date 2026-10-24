@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_62",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-21T10:00:00Z",
+  "email": "emeka.ogunleye94@gmail.com",
+  "reported_at": "2026-09-12T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-09-11T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "emeka.ogunleye94@gmail.com": "request.email",
+    "emeka.ogunleye@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "3aa2eaca9d25583bc063dad5074e66336fc6f6d08bb4b07103136e0c1f3bef3c": "user_audit_log.old_value audit_292",
+    "6f658ec137c18a8c0122d2d4bb7f7460653a7cb95dac492aba9f30437df406c3": "user_identities.email_hash"
+   },
+   "name": {
+    "Emeka Ogunleye": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 456 1656": "user_identities.phone"
+   },
+   "user_id": {
+    "user_60": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_60 via user_audit_log.old_value audit_291"
+  ],
+  "user_ids": [
+   "user_60"
+  ]
+ }
+}

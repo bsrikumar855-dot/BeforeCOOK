@@ -1,0 +1,269 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_447",
+   "edges": [
+    {
+     "case_id": "case_447",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_3827",
+     "source_id": "activity_721",
+     "strength": "SECONDARY",
+     "time": "2026-02-25T04:58:12Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 45: several assignments equally supported (rival cases for account_3827: ['case_448'])",
+   "resource_id": "account_3827",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_447",
+   "edges": [
+    {
+     "case_id": "case_447",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6635",
+     "source_id": "activity_722",
+     "strength": "SECONDARY",
+     "time": "2026-02-25T05:07:13Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 45: several assignments equally supported (rival cases for account_6635: ['case_448'])",
+   "resource_id": "account_6635",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_447",
+   "edges": [
+    {
+     "case_id": "case_447",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7340",
+     "source_id": "activity_720",
+     "strength": "SECONDARY",
+     "time": "2026-02-25T04:47:56Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 45: several assignments equally supported (rival cases for account_7340: ['case_448'])",
+   "resource_id": "account_7340",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_447",
+   "edges": [
+    {
+     "case_id": "case_447",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_7270",
+     "source_id": "activity_724",
+     "strength": "SECONDARY",
+     "time": "2026-02-25T05:31:53Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_724 lies in the burst windows of cases ['case_447', 'case_448']",
+   "resource_id": "analytics_7270",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_447",
+   "edges": [
+    {
+     "case_id": "case_447",
+     "identifier": "email:e.wright8483@gmail.com",
+     "kind": "HARD",
+     "resource_id": "backup_5192",
+     "source_id": "evidence_66",
+     "strength": "HARD",
+     "time": "2026-03-10T05:38:48Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "backup_5192",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_66",
+   "system_id": "backup_service"
+  }
+ ],
+ "case_id": "case_447",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_725",
+   "reason": "hard-linked to ['user_431']",
+   "resource_id": "account_5817"
+  },
+  {
+   "activity_id": "activity_726",
+   "reason": "hard-linked to ['user_444']",
+   "resource_id": "data_flow_1068"
+  },
+  {
+   "activity_id": "activity_728",
+   "reason": "hard-linked to ['user_444']",
+   "resource_id": "search_3780"
+  },
+  {
+   "activity_id": "activity_729",
+   "reason": "hard-linked to ['user_444']",
+   "resource_id": "support_9938"
+  },
+  {
+   "activity_id": "activity_731",
+   "reason": "hard-linked to ['user_444']",
+   "resource_id": "analytics_195"
+  },
+  {
+   "activity_id": "activity_733",
+   "reason": "hard-linked to ['user_431']",
+   "resource_id": "search_9100"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 45: several assignments equally supported (rival cases for account_3827: ['case_448'])",
+   "resource_id": "account_3827"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 45: several assignments equally supported (rival cases for account_6635: ['case_448'])",
+   "resource_id": "account_6635"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 45: several assignments equally supported (rival cases for account_7340: ['case_448'])",
+   "resource_id": "account_7340"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_724 lies in the burst windows of cases ['case_447', 'case_448']",
+   "resource_id": "analytics_7270"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-03-10T06:00:00Z",
+  "email": "e.wright8483@gmail.com",
+  "reported_at": "2026-02-25T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-02-23T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "BACKUP_ARCHIVE",
+   "category_basis": "default category for backup_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_RESTORE_RISK",
+    "BLOCK_RESTORE",
+    "VERIFY_RESTORE_BLOCKED"
+   ],
+   "proof_file_id": "evidence_66",
+   "required_action": "RETAIN",
+   "resource_id": "backup_5192",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_66#backup_restore_entries:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_66",
+    "resource_id": "backup_5192",
+    "restore_state": "RESTORABLE",
+    "system_id": "backup_service"
+   },
+   "system_id": "backup_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_66",
+   "operation": "REPORT_RESTORE_RISK",
+   "phase": "FINDING",
+   "resource_id": "backup_5192",
+   "state": "ACTIVE",
+   "step_no": 1,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "BLOCK_RESTORE",
+   "phase": "REMEDIATION",
+   "resource_id": "backup_5192",
+   "state": "BLOCKED",
+   "step_no": 2,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "phase": "VERIFICATION",
+   "resource_id": "backup_5192",
+   "state": "BLOCKED",
+   "step_no": 3,
+   "system_id": "backup_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "e.wright8483@gmail.com": "request.email",
+    "e.wright84@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "7c923c4bb7836feee94cebb1b41ec13a0f02b373dc7bf30cb0e346b20e5f30b1": "user_audit_log.old_value audit_96",
+    "e8c1591b7bdfed663a1fe4f4cc5668f8f7b1452dfe1d69bbbb0989dd7ccecf67": "user_identities.email_hash"
+   },
+   "name": {
+    "Ethan Wright": "user_identities.name"
+   },
+   "phone": {
+    "+1 (718) 555-0145": "user_identities.phone"
+   },
+   "user_id": {
+    "user_445": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_445 via user_audit_log.old_value audit_95"
+  ],
+  "user_ids": [
+   "user_445"
+  ]
+ },
+ "validation_errors": []
+}

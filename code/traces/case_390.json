@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_390",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-09T12:00:00Z",
+  "email": "dnakamura7301@gmail.com",
+  "reported_at": "2026-03-24T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-22T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "dnakamura7301@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "21bb422cee2adc77b94bca151fe5cb5da11652aaa028addc0788a24d1d689a0f": "user_identities.email_hash"
+   },
+   "name": {
+    "Daichi Nakamura": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 3621 6819": "user_identities.phone"
+   },
+   "user_id": {
+    "user_388": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_388 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_388"
+  ]
+ }
+}

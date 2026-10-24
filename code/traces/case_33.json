@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_33",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-19T13:00:00Z",
+  "email": "ingrid.dahl@outlook.com",
+  "reported_at": "2026-07-18T02:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-07-16T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ingrid.dahl@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "0649eddaba37af918d82b64da379e6623d34cf290b2a26ecbe53bafc1484f8af": "user_identities.email_hash"
+   },
+   "name": {
+    "Ingrid Dahl": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 787 39 30": "user_identities.phone"
+   },
+   "user_id": {
+    "user_18": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_18 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_18"
+  ]
+ }
+}

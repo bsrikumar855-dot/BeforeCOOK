@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_122",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-22T11:00:00Z",
+  "email": "hannah.sullivan@gmail.com",
+  "reported_at": "2026-08-13T11:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-12T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "hannah.sullivan@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "2956cf1395c2863c7d75a86eb744b4d857a247411716c2cae71cfcc016da6c1d": "user_identities.email_hash"
+   },
+   "name": {
+    "Hannah Sullivan": "user_identities.name"
+   },
+   "phone": {
+    "+44 7700 900120": "user_identities.phone",
+    "+44 7700 900620": "user_audit_log.old_value audit_54"
+   },
+   "user_id": {
+    "user_120": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_120 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_120"
+  ]
+ }
+}

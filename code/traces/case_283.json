@@ -1,0 +1,260 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_283",
+   "edges": [
+    {
+     "case_id": "case_283",
+     "identifier": "email:amara.o9968@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_947",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T07:38:43Z"
+    },
+    {
+     "case_id": "case_283",
+     "identifier": "email:amara.o9968@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_947",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T07:38:43Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_947",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_76",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_283",
+   "edges": [
+    {
+     "case_id": "case_283",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_8408",
+     "source_id": "activity_2000",
+     "strength": "SECONDARY",
+     "time": "2026-05-21T07:31:30Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_2000; no identity link to anyone else",
+   "resource_id": "analytics_8408",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_283",
+   "edges": [
+    {
+     "case_id": "case_283",
+     "identifier": "user_id:user_281",
+     "kind": "HARD",
+     "resource_id": "audit_record_5680",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T07:28:05Z"
+    },
+    {
+     "case_id": "case_283",
+     "identifier": "user_id:user_281",
+     "kind": "HARD",
+     "resource_id": "audit_record_5680",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T07:28:05Z"
+    },
+    {
+     "case_id": "case_283",
+     "identifier": "user_id:user_281",
+     "kind": "HARD",
+     "resource_id": "audit_record_5680",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T07:28:05Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_5680",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_76",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_283",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-29T08:00:00Z",
+  "email": "amara.o9968@outlook.com",
+  "reported_at": "2026-05-21T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-05-18T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_76",
+   "required_action": "DELETE",
+   "resource_id": "account_947",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_76#L45"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_76",
+    "resource_id": "account_947",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_76",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_8408",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_76#L25"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_76",
+    "resource_id": "analytics_8408",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_76",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5680",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_76#L41"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_76",
+    "resource_id": "audit_record_5680",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_76",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_947",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_76",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5680",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_76",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_8408",
+   "state": "ANONYMIZED",
+   "step_no": 3,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "amara.o9968@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "1dd584af1655ff346296b766e6ede47dcdd441864a1c8bd26f09f9ea46150e51": "user_identities.email_hash"
+   },
+   "name": {
+    "Amara Ogunleye": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 760 6033": "user_identities.phone"
+   },
+   "user_id": {
+    "user_281": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_281 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_281"
+  ]
+ },
+ "validation_errors": []
+}

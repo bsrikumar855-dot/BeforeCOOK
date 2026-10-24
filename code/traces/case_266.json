@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_266",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-08T10:00:00Z",
+  "email": "hugo.fontaine@gmail.com",
+  "reported_at": "2026-05-26T10:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-05-25T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "hugo.fontaine@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "b72201036746a2a7af263e2c8a0363c2fd7530354651aff031b2817c30ccd5b7": "user_identities.email_hash"
+   },
+   "name": {
+    "Hugo Fontaine": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 78 74 61 75": "user_identities.phone"
+   },
+   "user_id": {
+    "user_264": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_264 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_264"
+  ]
+ }
+}

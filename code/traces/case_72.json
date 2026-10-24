@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_72",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-16T09:00:00Z",
+  "email": "ajohansson9059@fastmail.com",
+  "reported_at": "2026-08-29T09:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-27T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ajohansson9059@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "d3973ea31cd90828888d12575989de91dce510aea52730f608c3acb228fa8208": "user_identities.email_hash"
+   },
+   "name": {
+    "Astrid Johansson": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 422 31 74": "user_identities.phone",
+    "+46 70 843 18 10": "user_audit_log.old_value audit_181"
+   },
+   "user_id": {
+    "user_70": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_70 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_70"
+  ]
+ }
+}

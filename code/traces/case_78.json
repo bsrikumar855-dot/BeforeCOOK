@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_78",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-11T08:00:00Z",
+  "email": "stakahashi6573@gmail.com",
+  "reported_at": "2026-08-18T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-16T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "stakahashi6573@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "6ab240cbb42cf6b5f063d20aa00ac6ca2ea69f1362105ee8d047ff0c58219c2e": "user_identities.email_hash"
+   },
+   "name": {
+    "Sota Takahashi": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 9512 0157": "user_identities.phone"
+   },
+   "user_id": {
+    "user_76": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_76 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_76"
+  ]
+ }
+}

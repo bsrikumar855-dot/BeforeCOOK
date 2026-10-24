@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_285",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-29T08:00:00Z",
+  "email": "t.zulu0697@yahoo.com",
+  "reported_at": "2026-05-18T08:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-05-16T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "t.zulu0697@yahoo.com": "request.email",
+    "t.zulu06@yahoo.com": "user_identities.email"
+   },
+   "email_hash": {
+    "bab02bc47849334c6327ccb83ade522c9156888bcb26650a51d0973d4bbb288f": "user_identities.email_hash",
+    "e6b2a10141173a7987071b2cc2183541e95463fc543b75a3b93421260a929818": "user_audit_log.old_value audit_168"
+   },
+   "name": {
+    "Thandiwe Zulu": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 802 4326": "user_identities.phone"
+   },
+   "user_id": {
+    "user_283": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_283 via user_audit_log.old_value audit_167"
+  ],
+  "user_ids": [
+   "user_283"
+  ]
+ }
+}

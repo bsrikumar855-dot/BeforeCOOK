@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_180",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-23T12:00:00Z",
+  "email": "aasante4311@fastmail.com",
+  "reported_at": "2026-06-27T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-25T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "aasante4311@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "bbdf73e045932f95e2aea643c5c86186db3133d6ecc8fc7b3bbb9abeb06e70f7": "user_identities.email_hash"
+   },
+   "name": {
+    "Akosua Asante": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 638 0551": "user_identities.phone"
+   },
+   "user_id": {
+    "user_178": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_178 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_178"
+  ]
+ }
+}

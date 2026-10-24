@@ -1,0 +1,540 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_2512",
+     "source_id": "activity_267",
+     "strength": "SECONDARY",
+     "time": "2026-01-23T07:06:52Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 52: several assignments equally supported (rival cases for account_2512: ['case_494', 'case_510'])",
+   "resource_id": "account_2512",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_3479",
+     "source_id": "activity_266",
+     "strength": "SECONDARY",
+     "time": "2026-01-23T06:57:20Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 52: several assignments equally supported (rival cases for account_3479: ['case_494', 'case_510'])",
+   "resource_id": "account_3479",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6049",
+     "source_id": "activity_263",
+     "strength": "SECONDARY",
+     "time": "2026-01-23T06:07:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 52: several assignments equally supported (rival cases for account_6049: ['case_494', 'case_510'])",
+   "resource_id": "account_6049",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6623",
+     "source_id": "activity_261",
+     "strength": "SECONDARY",
+     "time": "2026-01-23T05:47:22Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 52: several assignments equally supported (rival cases for account_6623: ['case_494', 'case_510'])",
+   "resource_id": "account_6623",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_9784",
+     "source_id": "activity_265",
+     "strength": "SECONDARY",
+     "time": "2026-01-23T06:46:36Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 52: several assignments equally supported (rival cases for account_9784: ['case_494', 'case_510'])",
+   "resource_id": "account_9784",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_5443",
+     "source_id": "activity_268",
+     "strength": "SECONDARY",
+     "time": "2026-01-23T07:31:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_268 lies in the burst windows of cases ['case_494', 'case_509', 'case_510']",
+   "resource_id": "analytics_5443",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "user_id:user_507",
+     "kind": "HARD",
+     "resource_id": "analytics_784",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "email:joao-costa@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_784",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "phone:+55 31 94739-9361",
+     "kind": "HARD",
+     "resource_id": "analytics_784",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "email_hash:c83e1f4e40e9d75f9ece76834e6f3e91063b10bf96dd5cf82c198f3a4259aae3",
+     "kind": "HARD",
+     "resource_id": "analytics_784",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "user_id:user_507",
+     "kind": "HARD",
+     "resource_id": "analytics_784",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "email:joao-costa@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_784",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "phone:+55 31 94739-9361",
+     "kind": "HARD",
+     "resource_id": "analytics_784",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "email_hash:c83e1f4e40e9d75f9ece76834e6f3e91063b10bf96dd5cf82c198f3a4259aae3",
+     "kind": "HARD",
+     "resource_id": "analytics_784",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_784",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_47",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "user_id:user_507",
+     "kind": "HARD",
+     "resource_id": "audit_record_2323",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "user_id:user_507",
+     "kind": "HARD",
+     "resource_id": "audit_record_2323",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_2323",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_47",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_509",
+   "edges": [
+    {
+     "case_id": "case_509",
+     "identifier": "email:joao-costa@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_6246",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    },
+    {
+     "case_id": "case_509",
+     "identifier": "email:joao-costa@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_6246",
+     "source_id": "evidence_47",
+     "strength": "HARD",
+     "time": "2026-02-08T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_6246",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_47",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_509",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_262",
+   "reason": "hard-linked to ['user_509']",
+   "resource_id": "account_1035"
+  },
+  {
+   "activity_id": "activity_264",
+   "reason": "hard-linked to ['user_509']",
+   "resource_id": "legal_hold_4887"
+  },
+  {
+   "activity_id": "activity_270",
+   "reason": "hard-linked to ['user_508']",
+   "resource_id": "support_9648"
+  },
+  {
+   "activity_id": "activity_273",
+   "reason": "hard-linked to ['user_508']",
+   "resource_id": "search_6147"
+  },
+  {
+   "activity_id": "activity_274",
+   "reason": "hard-linked to ['user_493']",
+   "resource_id": "backup_5061"
+  },
+  {
+   "activity_id": "activity_275",
+   "reason": "hard-linked to ['user_494']",
+   "resource_id": "support_6391"
+  },
+  {
+   "activity_id": "activity_276",
+   "reason": "hard-linked to ['user_494']",
+   "resource_id": "search_3169"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_2512: ['case_494', 'case_510'])",
+   "resource_id": "account_2512"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_3479: ['case_494', 'case_510'])",
+   "resource_id": "account_3479"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_6049: ['case_494', 'case_510'])",
+   "resource_id": "account_6049"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_6623: ['case_494', 'case_510'])",
+   "resource_id": "account_6623"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_9784: ['case_494', 'case_510'])",
+   "resource_id": "account_9784"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_268 lies in the burst windows of cases ['case_494', 'case_509', 'case_510']",
+   "resource_id": "analytics_5443"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-02-08T07:00:00Z",
+  "email": "joao-costa@gmail.com",
+  "reported_at": "2026-01-23T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-22T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_47",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_784",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_47#customer_data_primary:1",
+     "evidence_47#customer_data_reporting_replica:2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_47",
+    "resource_id": "analytics_784",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_47",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_2323",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_47#customer_data_primary:3",
+     "evidence_47#customer_data_reporting_replica:4"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_47",
+    "resource_id": "audit_record_2323",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_47",
+   "required_action": "DELETE",
+   "resource_id": "search_6246",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_47#customer_data_primary:20",
+     "evidence_47#customer_data_reporting_replica:21"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_47",
+    "resource_id": "search_6246",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_47",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_6246",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_47",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_784",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_6246",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_784",
+   "state": "ANONYMIZED",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_6246",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_2323",
+   "state": "PRESENT",
+   "step_no": 6,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_784",
+   "state": "ANONYMIZED",
+   "step_no": 7,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "joao-costa@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "c83e1f4e40e9d75f9ece76834e6f3e91063b10bf96dd5cf82c198f3a4259aae3": "user_identities.email_hash"
+   },
+   "name": {
+    "João Costa": "user_identities.name"
+   },
+   "phone": {
+    "+55 31 94739-9361": "user_identities.phone"
+   },
+   "user_id": {
+    "user_507": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_507 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_507"
+  ]
+ },
+ "validation_errors": []
+}

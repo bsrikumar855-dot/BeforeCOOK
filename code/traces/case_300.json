@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_300",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-24T07:00:00Z",
+  "email": "jpark4591@fastmail.com",
+  "reported_at": "2026-04-28T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-26T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "jpark4591@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "fe59b5c94bd44b91074e005f5828893a5f19910f2855699af8a3a51d9c7aea15": "user_identities.email_hash"
+   },
+   "name": {
+    "Ji-hoon Park": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 5863 7465": "user_identities.phone"
+   },
+   "user_id": {
+    "user_298": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_298 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_298"
+  ]
+ }
+}

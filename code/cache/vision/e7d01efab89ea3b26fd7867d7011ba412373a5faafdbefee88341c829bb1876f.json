@@ -1,0 +1,131 @@
+{
+ "batch_size": 1,
+ "call_id": "b5cedf4171cd4e45",
+ "call_usage": {
+  "input_tokens": 1268,
+  "model_version": "gemini-2.5-flash",
+  "output_tokens": 961,
+  "thinking_tokens": 0,
+  "total_tokens": 2229
+ },
+ "file_id": "evidence_60",
+ "input_sha256": "51fa0e6a38f8fa3629ba1b0d0b90b4ed139715956b97bfd09a6f1a6232c15df5",
+ "key": "e7d01efab89ea3b26fd7867d7011ba412373a5faafdbefee88341c829bb1876f",
+ "key_slot": "primary",
+ "model": "gemini-2.5-flash",
+ "prompt_version": "pb1da0fa903ab",
+ "provider": "gemini",
+ "response": {
+  "captured_at_text": null,
+  "records": [
+   {
+    "direct_identifiers_visible": true,
+    "email": "sj.park@naver.com",
+    "email_hash": null,
+    "enabled": null,
+    "name": "Soo-jin Park",
+    "observed_at": "2026-09-15T23:40:00Z",
+    "other_fields": {
+     "Email opt-in": "Yes",
+     "Language": "Korean",
+     "Market": "South Korea",
+     "SMS opt-in": "No"
+    },
+    "phone": "+82 10-5837-9451",
+    "presence": "PRESENT",
+    "record_type": "MARKETING_PROFILE",
+    "resource_id": "marketing_001",
+    "restore_allowed": null,
+    "status_text": "Live",
+    "system_id": "marketing_platform",
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": null,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Activity": "Product-category update",
+     "Detail": "Desk accessories - Drinkware",
+     "Time": "23:40"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "UNKNOWN",
+    "resource_id": "1",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": null,
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": null,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Activity": "Campaign eligibility check",
+     "Detail": "Autumn offers - Eligible",
+     "Time": "23:38"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "UNKNOWN",
+    "resource_id": "2",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": null,
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": null,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Activity": "Profile refresh",
+     "Detail": "Live profile fields updated",
+     "Time": "23:35"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "UNKNOWN",
+    "resource_id": "3",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": null,
+    "user_id": null
+   },
+   {
+    "direct_identifiers_visible": null,
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": null,
+    "other_fields": {
+     "Activity": "Audience evaluation",
+     "Detail": "Returning customers — East Asia",
+     "Time": "23:32"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "UNKNOWN",
+    "resource_id": "4",
+    "restore_allowed": null,
+    "status_text": null,
+    "system_id": null,
+    "user_id": null
+   }
+  ],
+  "screen_title": "Audience Operations"
+ },
+ "task": "vision"
+}

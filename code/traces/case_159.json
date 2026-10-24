@@ -1,0 +1,307 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_159",
+   "edges": [
+    {
+     "case_id": "case_159",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1421",
+     "source_id": "activity_2711",
+     "strength": "SECONDARY",
+     "time": "2026-07-08T06:04:26Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 10: several assignments equally supported (rival cases for account_1421: ['case_158'])",
+   "resource_id": "account_1421",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_159",
+   "edges": [
+    {
+     "case_id": "case_159",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1688",
+     "source_id": "activity_2712",
+     "strength": "SECONDARY",
+     "time": "2026-07-08T06:13:28Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 10: several assignments equally supported (rival cases for account_1688: ['case_158'])",
+   "resource_id": "account_1688",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_159",
+   "edges": [
+    {
+     "case_id": "case_159",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4272",
+     "source_id": "activity_2710",
+     "strength": "SECONDARY",
+     "time": "2026-07-08T05:53:12Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 10: several assignments equally supported (rival cases for account_4272: ['case_158'])",
+   "resource_id": "account_4272",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_159",
+   "edges": [
+    {
+     "case_id": "case_159",
+     "identifier": "user_id:user_157",
+     "kind": "HARD",
+     "resource_id": "audit_record_8742",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    },
+    {
+     "case_id": "case_159",
+     "identifier": "user_id:user_157",
+     "kind": "HARD",
+     "resource_id": "audit_record_8742",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_8742",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_15",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_159",
+   "edges": [
+    {
+     "case_id": "case_159",
+     "identifier": "email:a.basu1281@gmail.com",
+     "kind": "HARD",
+     "resource_id": "backup_1214",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    },
+    {
+     "case_id": "case_159",
+     "identifier": "email:a.basu1281@gmail.com",
+     "kind": "HARD",
+     "resource_id": "backup_1214",
+     "source_id": "evidence_15",
+     "strength": "HARD",
+     "time": "2026-08-02T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "backup_1214",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_15",
+   "system_id": "backup_service"
+  }
+ ],
+ "case_id": "case_159",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2713",
+   "reason": "hard-linked to ['user_158']",
+   "resource_id": "support_4148"
+  },
+  {
+   "activity_id": "activity_2714",
+   "reason": "hard-linked to ['user_156']",
+   "resource_id": "data_flow_7704"
+  },
+  {
+   "activity_id": "activity_2716",
+   "reason": "hard-linked to ['user_156']",
+   "resource_id": "search_9834"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 10: several assignments equally supported (rival cases for account_1421: ['case_158'])",
+   "resource_id": "account_1421"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 10: several assignments equally supported (rival cases for account_1688: ['case_158'])",
+   "resource_id": "account_1688"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 10: several assignments equally supported (rival cases for account_4272: ['case_158'])",
+   "resource_id": "account_4272"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-08-02T07:00:00Z",
+  "email": "a.basu1281@gmail.com",
+  "reported_at": "2026-07-08T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-06T07:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_8742",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_15#customer_data_primary:9",
+     "evidence_15#customer_data_read_replica:10"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_15",
+    "resource_id": "audit_record_8742",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "BACKUP_ARCHIVE",
+   "category_basis": "default category for backup_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_RESTORE_RISK",
+    "BLOCK_RESTORE",
+    "VERIFY_RESTORE_BLOCKED"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "RETAIN",
+   "resource_id": "backup_1214",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_15#customer_data_primary:13",
+     "evidence_15#customer_data_read_replica:14"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_15",
+    "resource_id": "backup_1214",
+    "restore_state": "RESTORABLE",
+    "system_id": "backup_service"
+   },
+   "system_id": "backup_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_15",
+   "operation": "REPORT_RESTORE_RISK",
+   "phase": "FINDING",
+   "resource_id": "backup_1214",
+   "state": "ACTIVE",
+   "step_no": 1,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "BLOCK_RESTORE",
+   "phase": "REMEDIATION",
+   "resource_id": "backup_1214",
+   "state": "BLOCKED",
+   "step_no": 2,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_8742",
+   "state": "PRESENT",
+   "step_no": 3,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "phase": "VERIFICATION",
+   "resource_id": "backup_1214",
+   "state": "BLOCKED",
+   "step_no": 4,
+   "system_id": "backup_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "a.basu1281@gmail.com": "request.email",
+    "a.basu12@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "d0ae25a96189696f76034675ef540308002b68d1cbd2ca9402609392a9275ec8": "user_audit_log.old_value audit_231",
+    "e5d9db2558b93eaf5fc1731b4d7b1e21bc76e6c82e90633fd8675db1ccd1bc28": "user_identities.email_hash"
+   },
+   "name": {
+    "Ananya Basu": "user_identities.name"
+   },
+   "phone": {
+    "+91 94863 59898": "user_identities.phone"
+   },
+   "user_id": {
+    "user_157": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_157 via user_audit_log.old_value audit_230"
+  ],
+  "user_ids": [
+   "user_157"
+  ]
+ },
+ "validation_errors": []
+}

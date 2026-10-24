@@ -1,0 +1,348 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_477",
+   "edges": [
+    {
+     "case_id": "case_477",
+     "identifier": "user_id:user_475",
+     "kind": "HARD",
+     "resource_id": "account_3119",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-23T10:00:00Z"
+    },
+    {
+     "case_id": "case_477",
+     "identifier": "email:z.mansour54@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "account_3119",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-23T10:00:00Z"
+    },
+    {
+     "case_id": "case_477",
+     "identifier": "phone:+971 52 633 7051",
+     "kind": "HARD",
+     "resource_id": "account_3119",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-23T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_3119",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_45",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_477",
+   "edges": [
+    {
+     "case_id": "case_477",
+     "identifier": "user_id:user_475",
+     "kind": "HARD",
+     "resource_id": "audit_record_6405",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-23T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_6405",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_45",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_477",
+   "edges": [
+    {
+     "case_id": "case_477",
+     "identifier": "email:z.mansour54@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "search_5052",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-23T10:00:00Z"
+    },
+    {
+     "case_id": "case_477",
+     "identifier": "user_id:user_475",
+     "kind": "HARD",
+     "resource_id": "search_5052",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-23T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_5052",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_45",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_477",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_368",
+   "reason": "hard-linked to ['user_490']",
+   "resource_id": "account_3589"
+  },
+  {
+   "activity_id": "activity_369",
+   "reason": "hard-linked to ['user_489']",
+   "resource_id": "account_7455"
+  },
+  {
+   "activity_id": "activity_374",
+   "reason": "hard-linked to ['user_490']",
+   "resource_id": "export_6406"
+  },
+  {
+   "activity_id": "activity_375",
+   "reason": "hard-linked to ['user_490']",
+   "resource_id": "search_9733"
+  },
+  {
+   "activity_id": "activity_376",
+   "reason": "hard-linked to ['user_490']",
+   "resource_id": "support_6737"
+  },
+  {
+   "activity_id": "activity_377",
+   "reason": "hard-linked to ['user_490']",
+   "resource_id": "analytics_1575"
+  },
+  {
+   "activity_id": "activity_378",
+   "reason": "hard-linked to ['user_474']",
+   "resource_id": "data_flow_8899"
+  },
+  {
+   "activity_id": "activity_380",
+   "reason": "hard-linked to ['user_476']",
+   "resource_id": "search_5412"
+  },
+  {
+   "activity_id": "activity_381",
+   "reason": "hard-linked to ['user_474']",
+   "resource_id": "search_3759"
+  },
+  {
+   "activity_id": "activity_383",
+   "reason": "hard-linked to ['user_476']",
+   "resource_id": "support_3824"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-02-23T10:00:00Z",
+  "email": "z.mansour54@yahoo.com",
+  "reported_at": "2026-01-31T10:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-01-29T10:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_45",
+   "required_action": "DELETE",
+   "resource_id": "account_3119",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_45#s1r1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_45",
+    "resource_id": "account_3119",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_45",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_6405",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_45#s8r4"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_45",
+    "resource_id": "audit_record_6405",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_45",
+   "required_action": "DELETE",
+   "resource_id": "search_5052",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_45#s7r3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_45",
+    "resource_id": "search_5052",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_45",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "account_3119",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_45",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_5052",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "account_3119",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_5052",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_3119",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5052",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_6405",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "z.mansour54@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "1402209748f45559fa75736163dce94f504423b62315947e66d43652dcdb8de6": "user_identities.email_hash"
+   },
+   "name": {
+    "Zayd Mansour": "user_identities.name"
+   },
+   "phone": {
+    "+971 52 633 7051": "user_identities.phone",
+    "+971 52 708 9687": "user_audit_log.old_value audit_24"
+   },
+   "user_id": {
+    "user_475": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_475 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_475"
+  ]
+ },
+ "validation_errors": []
+}

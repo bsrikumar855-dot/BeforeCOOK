@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_167",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-28T06:00:00Z",
+  "email": "abena-frimpong@proton.me",
+  "reported_at": "2026-07-14T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-07-13T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "abena-frimpong@proton.me": "request.email"
+   },
+   "email_hash": {
+    "0a00cf10b1476b2ad539053acccee3dac321bf7105d77e055101900d4e082aef": "user_identities.email_hash"
+   },
+   "name": {
+    "Abena Frimpong": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 262 4576": "user_identities.phone",
+    "+233 24 539 2068": "user_audit_log.old_value audit_36"
+   },
+   "user_id": {
+    "user_165": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_165 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_165"
+  ]
+ }
+}

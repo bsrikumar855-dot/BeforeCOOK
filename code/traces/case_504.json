@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_504",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-08T07:00:00Z",
+  "email": "oeze0067@fastmail.com",
+  "reported_at": "2026-01-29T07:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-01-27T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "oeze0067@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "cb86b5f1d23cad9999ef69d4ba25b7b1feddb18e0ee0a56e6e10fff146835e52": "user_identities.email_hash"
+   },
+   "name": {
+    "Obinna Eze": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 127 0461": "user_identities.phone"
+   },
+   "user_id": {
+    "user_502": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_502 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_502"
+  ]
+ }
+}

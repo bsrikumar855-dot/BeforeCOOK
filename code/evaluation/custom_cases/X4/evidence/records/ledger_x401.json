@@ -1,0 +1,39 @@
+{
+  "exported_at": "2026-09-20T12:00:00Z",
+  "origin": "fixture_ledger",
+  "record_count": 4,
+  "records": [
+    {
+      "recorded_at": "2026-09-20T12:00:00Z",
+      "system": "account_service",
+      "resource_id": "account_990004",
+      "record_type": "USER_PROFILE",
+      "result": "NOT_FOUND",
+      "subject_reference": "ivo.reyes@example.test"
+    },
+    {
+      "recorded_at": "2026-09-20T12:00:00Z",
+      "system": "search_service",
+      "resource_id": "search_990004",
+      "record_type": "SEARCH_INDEX_ENTRY",
+      "result": "NOT_FOUND",
+      "subject_reference": "ivo.reyes@example.test"
+    },
+    {
+      "recorded_at": "2026-09-22T12:00:00Z",
+      "system": "search_service",
+      "resource_id": "search_990004",
+      "record_type": "SEARCH_INDEX_ENTRY",
+      "result": "FOUND",
+      "subject_reference": "ivo.reyes@example.test"
+    },
+    {
+      "recorded_at": "2026-09-20T12:00:00Z",
+      "system": "security_service",
+      "resource_id": "audit_record_990004",
+      "record_type": "SECURITY_AUDIT_LOG",
+      "result": "FOUND",
+      "subject_reference": "user_9904"
+    }
+  ]
+}

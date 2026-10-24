@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_548",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-20T12:00:00Z",
+  "email": "fernandez.sofia@icloud.com",
+  "reported_at": "2026-09-05T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-02T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "fernandez.sofia@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "33f407a3689b1b57bdb15b492e565867a507c27ce066c1d6a584f03f4dbb5565": "user_identities.email_hash"
+   },
+   "name": {
+    "Sofía Fernández": "user_identities.name"
+   },
+   "phone": {
+    "+34 668 324 642": "user_identities.phone"
+   },
+   "user_id": {
+    "user_548": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_548 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_548"
+  ]
+ }
+}

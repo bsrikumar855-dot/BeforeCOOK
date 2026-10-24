@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_529",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-01-29T12:00:00Z",
+  "email": "farah.s8042@zoho.com",
+  "reported_at": "2026-01-15T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-01-12T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "farah.s8042@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "46ac0458c517306b7c61d6aae5b9100c51fa15d43633d986c5000862009526f5": "user_identities.email_hash"
+   },
+   "name": {
+    "Farah Saleh": "user_identities.name"
+   },
+   "phone": {
+    "+971 50 548 6150": "user_identities.phone"
+   },
+   "user_id": {
+    "user_527": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_527 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_527"
+  ]
+ }
+}

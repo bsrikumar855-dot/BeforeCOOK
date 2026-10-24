@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_16",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-21T10:00:00Z",
+  "email": "diya.k4436@outlook.com",
+  "reported_at": "2026-09-01T10:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-08-29T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "diya.k4436@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "1ecc0a4afc62297c78d36eb27b889e059bec83609e3177b8bbd42ea7648ad46e": "user_identities.email_hash"
+   },
+   "name": {
+    "Diya Kapoor": "user_identities.name"
+   },
+   "phone": {
+    "+91 96023 32879": "user_identities.phone"
+   },
+   "user_id": {
+    "user_53": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_53 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_53"
+  ]
+ }
+}

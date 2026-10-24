@@ -1,0 +1,293 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_486",
+   "edges": [
+    {
+     "case_id": "case_486",
+     "identifier": "email:swalker752578@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_9031",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T07:22:31Z"
+    },
+    {
+     "case_id": "case_486",
+     "identifier": "email:swalker752578@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_9031",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T07:22:31Z"
+    },
+    {
+     "case_id": "case_486",
+     "identifier": "email:swalker752578@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_9031",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-12T09:00:00Z"
+    },
+    {
+     "case_id": "case_486",
+     "identifier": "email:swalker752578@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_9031",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-18T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_9031",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_64",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_486",
+   "edges": [
+    {
+     "case_id": "case_486",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_5948",
+     "source_id": "activity_446",
+     "strength": "SECONDARY",
+     "time": "2026-02-06T08:31:54Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_446 lies in the burst windows of cases ['case_485', 'case_486']",
+   "resource_id": "analytics_5948",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_486",
+   "edges": [
+    {
+     "case_id": "case_486",
+     "identifier": "user_id:user_484",
+     "kind": "HARD",
+     "resource_id": "audit_record_5451",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T06:55:54Z"
+    },
+    {
+     "case_id": "case_486",
+     "identifier": "user_id:user_484",
+     "kind": "HARD",
+     "resource_id": "audit_record_5451",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T06:55:54Z"
+    },
+    {
+     "case_id": "case_486",
+     "identifier": "user_id:user_484",
+     "kind": "HARD",
+     "resource_id": "audit_record_5451",
+     "source_id": "evidence_64",
+     "strength": "HARD",
+     "time": "2026-02-18T06:55:54Z"
+    },
+    {
+     "case_id": "case_486",
+     "identifier": "user_id:user_484",
+     "kind": "HARD",
+     "resource_id": "audit_record_5451",
+     "source_id": "evidence_45",
+     "strength": "HARD",
+     "time": "2026-02-18T09:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_5451",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_64",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_486",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_444",
+   "reason": "hard-linked to ['user_483']",
+   "resource_id": "account_3378"
+  },
+  {
+   "activity_id": "activity_445",
+   "reason": "hard-linked to ['user_485']",
+   "resource_id": "account_5293"
+  },
+  {
+   "activity_id": "activity_447",
+   "reason": "hard-linked to ['user_483']",
+   "resource_id": "analytics_1981"
+  },
+  {
+   "activity_id": "activity_449",
+   "reason": "hard-linked to ['user_483']",
+   "resource_id": "search_3582"
+  },
+  {
+   "activity_id": "activity_450",
+   "reason": "hard-linked to ['user_485']",
+   "resource_id": "search_901"
+  },
+  {
+   "activity_id": "activity_451",
+   "reason": "hard-linked to ['user_485']",
+   "resource_id": "support_5361"
+  },
+  {
+   "activity_id": "activity_452",
+   "reason": "hard-linked to ['user_485']",
+   "resource_id": "analytics_7818"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_446 lies in the burst windows of cases ['case_485', 'case_486']",
+   "resource_id": "analytics_5948"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-02-18T09:00:00Z",
+  "email": "swalker752578@gmail.com",
+  "reported_at": "2026-02-06T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-02-04T09:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_45",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_64",
+   "required_action": "DELETE",
+   "resource_id": "account_9031",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_64#L31"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_64",
+    "resource_id": "account_9031",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_45",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_64",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5451",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_64#L21"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_64",
+    "resource_id": "audit_record_5451",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_64",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_9031",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_64",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5451",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "swalker752578@gmail.com": "request.email",
+    "swalker7525@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "48972a13244bdf6d6793f53ded3a2901126e653e8e059c2ed570092411543e21": "user_audit_log.old_value audit_77",
+    "538746ebc77852947bebf5b1d95f4e3f8c4f99985f7313158a2e6865c5b1ec18": "user_identities.email_hash"
+   },
+   "name": {
+    "Sophie Walker": "user_identities.name"
+   },
+   "phone": {
+    "+44 7700 900484": "user_identities.phone"
+   },
+   "user_id": {
+    "user_484": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_484 via user_audit_log.old_value audit_76"
+  ],
+  "user_ids": [
+   "user_484"
+  ]
+ },
+ "validation_errors": []
+}

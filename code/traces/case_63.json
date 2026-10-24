@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_63",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-17T09:20:00Z",
+  "email": "kwame-mensah@proton.me",
+  "reported_at": "2026-09-15T22:20:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-14T04:20:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "kwame-mensah@proton.me": "request.email"
+   },
+   "email_hash": {
+    "e7ce7f1fd5cd4e5873576243ee7a0ca8599c51d0e9f2197f6184efc514e5bd2a": "user_identities.email_hash"
+   },
+   "name": {
+    "Kwame Mensah": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 456 1267": "user_identities.phone"
+   },
+   "user_id": {
+    "user_09": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_09 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_09"
+  ]
+ }
+}

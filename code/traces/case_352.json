@@ -1,0 +1,403 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_352",
+   "edges": [
+    {
+     "case_id": "case_352",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_5059",
+     "source_id": "activity_1397",
+     "strength": "SECONDARY",
+     "time": "2026-04-12T07:49:45Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 35: several assignments equally supported (rival cases for account_5059: [])",
+   "resource_id": "account_5059",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_352",
+   "edges": [
+    {
+     "case_id": "case_352",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_5202",
+     "source_id": "activity_1398",
+     "strength": "SECONDARY",
+     "time": "2026-04-12T08:00:29Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 35: several assignments equally supported (rival cases for account_5202: [])",
+   "resource_id": "account_5202",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_352",
+   "edges": [
+    {
+     "case_id": "case_352",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6215",
+     "source_id": "activity_1399",
+     "strength": "SECONDARY",
+     "time": "2026-04-12T08:09:30Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 35: several assignments equally supported (rival cases for account_6215: [])",
+   "resource_id": "account_6215",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_352",
+   "edges": [
+    {
+     "case_id": "case_352",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1072",
+     "source_id": "activity_1400",
+     "strength": "SECONDARY",
+     "time": "2026-04-12T08:31:26Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1400 lies in the burst windows of cases ['case_335', 'case_337', 'case_352']",
+   "resource_id": "analytics_1072",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_352",
+   "edges": [
+    {
+     "case_id": "case_352",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_3108",
+     "source_id": "activity_1407",
+     "strength": "SECONDARY",
+     "time": "2026-04-12T09:31:12Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1407 lies in the burst windows of cases ['case_335', 'case_337', 'case_352']",
+   "resource_id": "analytics_3108",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_352",
+   "edges": [
+    {
+     "case_id": "case_352",
+     "identifier": "email:jang.doyun@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_5685",
+     "source_id": "evidence_71",
+     "strength": "HARD",
+     "time": "2026-04-29T06:43:37Z"
+    },
+    {
+     "case_id": "case_352",
+     "identifier": "email:jang.doyun@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_5685",
+     "source_id": "evidence_71",
+     "strength": "HARD",
+     "time": "2026-04-29T06:43:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_5685",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_71",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_352",
+   "edges": [
+    {
+     "case_id": "case_352",
+     "identifier": "email:jang.doyun@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_3980",
+     "source_id": "evidence_71",
+     "strength": "HARD",
+     "time": "2026-04-29T06:20:30Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "support_3980",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_71",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_352",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1401",
+   "reason": "hard-linked to ['user_349']",
+   "resource_id": "support_7137"
+  },
+  {
+   "activity_id": "activity_1402",
+   "reason": "hard-linked to ['user_349']",
+   "resource_id": "data_flow_4323"
+  },
+  {
+   "activity_id": "activity_1403",
+   "reason": "hard-linked to ['user_335']",
+   "resource_id": "account_767"
+  },
+  {
+   "activity_id": "activity_1404",
+   "reason": "hard-linked to ['user_349']",
+   "resource_id": "backup_024"
+  },
+  {
+   "activity_id": "activity_1405",
+   "reason": "hard-linked to ['user_334']",
+   "resource_id": "account_2282"
+  },
+  {
+   "activity_id": "activity_1406",
+   "reason": "hard-linked to ['user_333']",
+   "resource_id": "account_8892"
+  },
+  {
+   "activity_id": "activity_1408",
+   "reason": "hard-linked to ['user_333']",
+   "resource_id": "support_4712"
+  },
+  {
+   "activity_id": "activity_1409",
+   "reason": "hard-linked to ['user_333']",
+   "resource_id": "data_flow_7452"
+  },
+  {
+   "activity_id": "activity_1411",
+   "reason": "hard-linked to ['user_333']",
+   "resource_id": "backup_3136"
+  },
+  {
+   "activity_id": "activity_1414",
+   "reason": "hard-linked to ['user_348']",
+   "resource_id": "data_flow_9775"
+  },
+  {
+   "activity_id": "activity_1416",
+   "reason": "hard-linked to ['user_335']",
+   "resource_id": "search_3773"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 35: several assignments equally supported (rival cases for account_5059: [])",
+   "resource_id": "account_5059"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 35: several assignments equally supported (rival cases for account_5202: [])",
+   "resource_id": "account_5202"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 35: several assignments equally supported (rival cases for account_6215: [])",
+   "resource_id": "account_6215"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1400 lies in the burst windows of cases ['case_335', 'case_337', 'case_352']",
+   "resource_id": "analytics_1072"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1407 lies in the burst windows of cases ['case_335', 'case_337', 'case_352']",
+   "resource_id": "analytics_3108"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-04-29T09:00:00Z",
+  "email": "jang.doyun@gmail.com",
+  "reported_at": "2026-04-12T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-09T09:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_71",
+   "required_action": "DELETE",
+   "resource_id": "search_5685",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_71#search_service.index_queries.2.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_71",
+    "resource_id": "search_5685",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_71",
+   "required_action": "REDACT",
+   "resource_id": "support_3980",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_71#support_platform.tickets.1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_71",
+    "resource_id": "support_3980",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_71",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_5685",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_71",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_3980",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_5685",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_3980",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5685",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_3980",
+   "state": "REDACTED",
+   "step_no": 6,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "jang.doyun@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "abf91c48ad42b6b2306cebeacbf6c315535f28fd7e4c4d314000db6605d8a3c4": "user_identities.email_hash"
+   },
+   "name": {
+    "Do-yun Jang": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 2389 0871": "user_identities.phone",
+    "+82 10 3871 0957": "user_audit_log.old_value audit_35"
+   },
+   "user_id": {
+    "user_350": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_350 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_350"
+  ]
+ },
+ "validation_errors": []
+}

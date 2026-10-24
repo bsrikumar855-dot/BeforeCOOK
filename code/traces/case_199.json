@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_199",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-13T10:00:00Z",
+  "email": "diego.t477299@outlook.com",
+  "reported_at": "2026-06-19T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-16T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "diego.t477299@outlook.com": "request.email",
+    "diego.t4772@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "14c460a1c5185518f0a0c64ae9e0d426f05c49dc52b7c902d8d627b5dbae00f6": "user_identities.email_hash",
+    "fe241c2e669c092fc8e234bb8bb12fcf3c257b8f382166d7dc01c840de1b26e7": "user_audit_log.old_value audit_209"
+   },
+   "name": {
+    "Diego Torres": "user_identities.name"
+   },
+   "phone": {
+    "+34 665 421 313": "user_identities.phone"
+   },
+   "user_id": {
+    "user_197": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_197 via user_audit_log.old_value audit_208"
+  ],
+  "user_ids": [
+   "user_197"
+  ]
+ }
+}

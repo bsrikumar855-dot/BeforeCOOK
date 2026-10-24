@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_339",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-04T10:00:00Z",
+  "email": "j.lee32@gmail.com",
+  "reported_at": "2026-04-09T10:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-04-07T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "j.lee32@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "df6d0db2d08aa62ad84e7dcd88a1ea99e42a1e5364f7dc603e9145903adeefd7": "user_identities.email_hash"
+   },
+   "name": {
+    "Ji-eun Lee": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 3469 4061": "user_identities.phone"
+   },
+   "user_id": {
+    "user_337": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_337 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_337"
+  ]
+ }
+}

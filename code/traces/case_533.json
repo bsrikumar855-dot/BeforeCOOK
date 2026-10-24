@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_533",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3789"
+  ],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-10-01T12:00:00Z",
+  "email": "haruka-kato@gmail.com",
+  "reported_at": "2026-09-11T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-10T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "haruka-kato@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "afb3d185785a7a8747c4e278c8113110c9a6b8492a75732ce013f35986f0dbe3": "user_identities.email_hash"
+   },
+   "name": {
+    "Haruka Kato": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 4757 3543": "user_identities.phone"
+   },
+   "user_id": {
+    "user_531": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_531 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_531"
+  ]
+ }
+}

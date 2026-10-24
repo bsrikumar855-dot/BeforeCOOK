@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_39",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-08T10:00:00Z",
+  "email": "jain.aditi@gmail.com",
+  "reported_at": "2026-08-06T23:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-05T05:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "jain.aditi@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "ea61073600454d4cb320cd63802b6e63ceb0a1398a7b4dd10049a71729471d00": "user_identities.email_hash"
+   },
+   "name": {
+    "Aditi Jain": "user_identities.name"
+   },
+   "phone": {
+    "+91 93947 58446": "user_identities.phone"
+   },
+   "user_id": {
+    "user_14": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_14 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_14"
+  ]
+ }
+}

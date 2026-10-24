@@ -1,0 +1,318 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_400",
+   "edges": [
+    {
+     "case_id": "case_400",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1140",
+     "source_id": "activity_939",
+     "strength": "SECONDARY",
+     "time": "2026-03-10T09:59:34Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 42: several assignments equally supported (rival cases for account_1140: ['case_398', 'case_399'])",
+   "resource_id": "account_1140",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_400",
+   "edges": [
+    {
+     "case_id": "case_400",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_2138",
+     "source_id": "activity_937",
+     "strength": "SECONDARY",
+     "time": "2026-03-10T09:48:50Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 42: several assignments equally supported (rival cases for account_2138: ['case_398', 'case_399'])",
+   "resource_id": "account_2138",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_400",
+   "edges": [
+    {
+     "case_id": "case_400",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_928",
+     "source_id": "activity_940",
+     "strength": "SECONDARY",
+     "time": "2026-03-10T10:08:07Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 42: several assignments equally supported (rival cases for account_928: ['case_398', 'case_399'])",
+   "resource_id": "account_928",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_400",
+   "edges": [
+    {
+     "case_id": "case_400",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_4455",
+     "source_id": "activity_941",
+     "strength": "SECONDARY",
+     "time": "2026-03-10T10:31:15Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_941 lies in the burst windows of cases ['case_398', 'case_399', 'case_400']",
+   "resource_id": "analytics_4455",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_400",
+   "edges": [
+    {
+     "case_id": "case_400",
+     "identifier": "email:balogun.chidi@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_4649",
+     "source_id": "evidence_69",
+     "strength": "HARD",
+     "time": "2026-04-04T10:04:19Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_4649",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_69",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_400",
+   "edges": [
+    {
+     "case_id": "case_400",
+     "identifier": "email:balogun.chidi@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_4521",
+     "source_id": "evidence_69",
+     "strength": "HARD",
+     "time": "2026-04-04T10:04:19Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "support_4521",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_69",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_400",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_943",
+   "reason": "hard-linked to ['user_397']",
+   "resource_id": "backup_2642"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 42: several assignments equally supported (rival cases for account_1140: ['case_398', 'case_399'])",
+   "resource_id": "account_1140"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 42: several assignments equally supported (rival cases for account_2138: ['case_398', 'case_399'])",
+   "resource_id": "account_2138"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 42: several assignments equally supported (rival cases for account_928: ['case_398', 'case_399'])",
+   "resource_id": "account_928"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_941 lies in the burst windows of cases ['case_398', 'case_399', 'case_400']",
+   "resource_id": "analytics_4455"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-04-04T11:00:00Z",
+  "email": "balogun.chidi@gmail.com",
+  "reported_at": "2026-03-10T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-07T11:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_69",
+   "required_action": "DELETE",
+   "resource_id": "search_4649",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_69#customer_search_documents:3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_69",
+    "resource_id": "search_4649",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_69",
+   "required_action": "REDACT",
+   "resource_id": "support_4521",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_69#support_records:1"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_69",
+    "resource_id": "support_4521",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_69",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_4649",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_69",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_4521",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_4649",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_4521",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_4649",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_4521",
+   "state": "REDACTED",
+   "step_no": 6,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "balogun.chidi@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "5ef4834d9b1cb203fe974f5a02227849b6a01e42e7f7ec2b3d646a053d707234": "user_identities.email_hash"
+   },
+   "name": {
+    "Chidi Balogun": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 954 7099": "user_identities.phone"
+   },
+   "user_id": {
+    "user_398": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_398 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_398"
+  ]
+ },
+ "validation_errors": []
+}

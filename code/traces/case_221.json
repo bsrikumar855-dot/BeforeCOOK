@@ -1,0 +1,182 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_221",
+   "edges": [
+    {
+     "case_id": "case_221",
+     "identifier": "email:mei-tanaka@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_4512",
+     "source_id": "evidence_21",
+     "strength": "HARD",
+     "time": "2026-07-03T07:52:15Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_4512",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_21",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_221",
+   "edges": [
+    {
+     "case_id": "case_221",
+     "identifier": "user_id:user_219",
+     "kind": "HARD",
+     "resource_id": "audit_record_3880",
+     "source_id": "evidence_81",
+     "strength": "HARD",
+     "time": "2026-07-03T07:43:56Z"
+    },
+    {
+     "case_id": "case_221",
+     "identifier": "user_id:user_219",
+     "kind": "HARD",
+     "resource_id": "audit_record_3880",
+     "source_id": "evidence_21",
+     "strength": "HARD",
+     "time": "2026-07-03T07:56:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_3880",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_81",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_221",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-07-03T08:00:00Z",
+  "email": "mei-tanaka@gmail.com",
+  "reported_at": "2026-06-05T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-06-04T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_81",
+   "required_action": "DELETE",
+   "resource_id": "account_4512",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_81",
+    "resource_id": "account_4512",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_81",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_3880",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_81#security_audit_records:2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_81",
+    "resource_id": "audit_record_3880",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_81",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4512",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_81",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_3880",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mei-tanaka@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "5a5f713ad187cff8b1ded523e52f03f4ca22af3d8a5117be4b3ef31d301ce498": "user_identities.email_hash"
+   },
+   "name": {
+    "Mei Tanaka": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 6305 6407": "user_identities.phone"
+   },
+   "user_id": {
+    "user_219": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_219 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_219"
+  ]
+ },
+ "validation_errors": []
+}

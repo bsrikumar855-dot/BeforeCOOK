@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_152",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-07T08:00:00Z",
+  "email": "omar.elsayed96@outlook.com",
+  "reported_at": "2026-07-19T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-07-18T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "omar.elsayed96@outlook.com": "request.email",
+    "omar.elsayed@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "2b6faeeebf5fb3044eb18afef0d13482c5a430003962642cb052a08fb1001a9d": "user_identities.email_hash",
+    "e444c124fe421f70d6847da3eae2d17611de903283ff3e64ee3d0989b18bacdc": "user_audit_log.old_value audit_234"
+   },
+   "name": {
+    "Omar El-Sayed": "user_identities.name"
+   },
+   "phone": {
+    "+971 52 404 1520": "user_identities.phone"
+   },
+   "user_id": {
+    "user_150": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_150 via user_audit_log.old_value audit_235"
+  ],
+  "user_ids": [
+   "user_150"
+  ]
+ }
+}

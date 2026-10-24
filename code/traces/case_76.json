@@ -1,0 +1,383 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_76",
+   "edges": [
+    {
+     "case_id": "case_76",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1495",
+     "source_id": "activity_3353",
+     "strength": "SECONDARY",
+     "time": "2026-08-21T06:47:31Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 59: several assignments equally supported (rival cases for account_1495: [])",
+   "resource_id": "account_1495",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_76",
+   "edges": [
+    {
+     "case_id": "case_76",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_9051",
+     "source_id": "activity_3354",
+     "strength": "SECONDARY",
+     "time": "2026-08-21T06:58:15Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 59: several assignments equally supported (rival cases for account_9051: [])",
+   "resource_id": "account_9051",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_76",
+   "edges": [
+    {
+     "case_id": "case_76",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_925",
+     "source_id": "activity_3355",
+     "strength": "SECONDARY",
+     "time": "2026-08-21T07:07:47Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 59: several assignments equally supported (rival cases for account_925: [])",
+   "resource_id": "account_925",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_76",
+   "edges": [
+    {
+     "case_id": "case_76",
+     "identifier": "user_id:user_74",
+     "kind": "HARD",
+     "resource_id": "audit_record_6766",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_6766",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_07",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_76",
+   "edges": [
+    {
+     "case_id": "case_76",
+     "identifier": "email:osei.ama@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9746",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T05:10:36Z"
+    },
+    {
+     "case_id": "case_76",
+     "identifier": "email:osei.ama@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9746",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T05:10:36Z"
+    },
+    {
+     "case_id": "case_76",
+     "identifier": "email:osei.ama@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9746",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T05:10:36Z"
+    },
+    {
+     "case_id": "case_76",
+     "identifier": "email:osei.ama@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9746",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T05:10:36Z"
+    },
+    {
+     "case_id": "case_76",
+     "identifier": "user_id:user_74",
+     "kind": "HARD",
+     "resource_id": "support_9746",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    },
+    {
+     "case_id": "case_76",
+     "identifier": "email:osei.ama@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9746",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_9746",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_91",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_76",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3348",
+   "reason": "hard-linked to ['user_87']",
+   "resource_id": "account_8764"
+  },
+  {
+   "activity_id": "activity_3350",
+   "reason": "hard-linked to ['user_89']",
+   "resource_id": "account_6075"
+  },
+  {
+   "activity_id": "activity_3351",
+   "reason": "hard-linked to ['user_88']",
+   "resource_id": "account_9673"
+  },
+  {
+   "activity_id": "activity_3357",
+   "reason": "hard-linked to ['user_87']",
+   "resource_id": "analytics_6499"
+  },
+  {
+   "activity_id": "activity_3358",
+   "reason": "hard-linked to ['user_88']",
+   "resource_id": "support_7460"
+  },
+  {
+   "activity_id": "activity_3359",
+   "reason": "hard-linked to ['user_89']",
+   "resource_id": "search_9156"
+  },
+  {
+   "activity_id": "activity_3360",
+   "reason": "hard-linked to ['user_87']",
+   "resource_id": "search_1839"
+  },
+  {
+   "activity_id": "activity_3361",
+   "reason": "hard-linked to ['user_88']",
+   "resource_id": "search_5561"
+  },
+  {
+   "activity_id": "activity_3362",
+   "reason": "hard-linked to ['user_89']",
+   "resource_id": "support_266"
+  },
+  {
+   "activity_id": "activity_3363",
+   "reason": "hard-linked to ['user_88']",
+   "resource_id": "analytics_3181"
+  },
+  {
+   "activity_id": "activity_3364",
+   "reason": "hard-linked to ['user_89']",
+   "resource_id": "analytics_8539"
+  },
+  {
+   "activity_id": "activity_3365",
+   "reason": "hard-linked to ['user_73']",
+   "resource_id": "backup_8673"
+  },
+  {
+   "activity_id": "activity_3367",
+   "reason": "hard-linked to ['user_88']",
+   "resource_id": "data_flow_2085"
+  },
+  {
+   "activity_id": "activity_3368",
+   "reason": "hard-linked to ['user_72']",
+   "resource_id": "data_flow_4595"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 59: several assignments equally supported (rival cases for account_1495: [])",
+   "resource_id": "account_1495"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 59: several assignments equally supported (rival cases for account_9051: [])",
+   "resource_id": "account_9051"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 59: several assignments equally supported (rival cases for account_925: [])",
+   "resource_id": "account_925"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-11T08:00:00Z",
+  "email": "osei.ama@gmail.com",
+  "reported_at": "2026-08-21T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-18T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_6766",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_10",
+    "resource_id": "audit_record_6766",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_91",
+   "required_action": "REDACT",
+   "resource_id": "support_9746",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_91#L11"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_91",
+    "resource_id": "support_9746",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_91",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_9746",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_9746",
+   "state": "REDACTED",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_6766",
+   "state": "PRESENT",
+   "step_no": 3,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_9746",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "osei.ama@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "c68d117e3474e6a2e8818d6cc1ad40db9ac0f6b8020e224a5fe4829e1343612b": "user_identities.email_hash"
+   },
+   "name": {
+    "Ama Osei": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 901 0733": "user_identities.phone"
+   },
+   "user_id": {
+    "user_74": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_74 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_74"
+  ]
+ },
+ "validation_errors": []
+}

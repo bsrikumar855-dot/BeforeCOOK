@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_526",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-01-29T12:00:00Z",
+  "email": "chevalier.hugo@icloud.com",
+  "reported_at": "2026-01-18T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-01-15T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "chevalier.hugo@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "7959c102c6852f4a8686afc816c451db299ab6b31f2aa053c2a1921af7427c14": "user_identities.email_hash"
+   },
+   "name": {
+    "Hugo Chevalier": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 75 22 36 69": "user_identities.phone"
+   },
+   "user_id": {
+    "user_524": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_524 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_524"
+  ]
+ }
+}

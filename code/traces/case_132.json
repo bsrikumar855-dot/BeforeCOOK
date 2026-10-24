@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_132",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-17T10:00:00Z",
+  "email": "cnascimento4199@fastmail.com",
+  "reported_at": "2026-07-30T10:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-28T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "cnascimento4199@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "98fef6e9c4f28477174e3bbdf1179ef4ee12f6c8ea32b80848da02a7633bed4d": "user_identities.email_hash"
+   },
+   "name": {
+    "Camila Nascimento": "user_identities.name"
+   },
+   "phone": {
+    "+55 21 96124-8878": "user_audit_log.old_value audit_207",
+    "+55 41 96521-0674": "user_identities.phone"
+   },
+   "user_id": {
+    "user_130": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_130 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_130"
+  ]
+ }
+}

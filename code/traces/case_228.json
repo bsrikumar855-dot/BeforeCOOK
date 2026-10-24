@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_228",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-28T07:00:00Z",
+  "email": "mnystrom4423@fastmail.com",
+  "reported_at": "2026-06-14T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-12T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mnystrom4423@fastmail.com": "request.email"
+   },
+   "email_hash": {
+    "329131385c818fe84837fba275531c6642c447064f809e1c5124a8407f32a170": "user_identities.email_hash"
+   },
+   "name": {
+    "Maja Nyström": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 023 59 04": "user_identities.phone"
+   },
+   "user_id": {
+    "user_226": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_226 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_226"
+  ]
+ }
+}

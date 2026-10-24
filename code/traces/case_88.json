@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_88",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-06T07:00:00Z",
+  "email": "oladipo.ikenna98@gmail.com",
+  "reported_at": "2026-08-24T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-21T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "oladipo.ikenna98@gmail.com": "request.email",
+    "oladipo.ikenna@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "30de6a7d8a938fb60879958dfcb9010864629953230c6b7a6eb9a1ceb8161fd3": "user_identities.email_hash",
+    "fa0b727dafea31a06ef3cab04b8160bdba38071adf9b10fcf4b7f4dcd9b44ce1": "user_audit_log.old_value audit_263"
+   },
+   "name": {
+    "Ikenna Oladipo": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 882 9733": "user_identities.phone"
+   },
+   "user_id": {
+    "user_86": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_86 via user_audit_log.old_value audit_262"
+  ],
+  "user_ids": [
+   "user_86"
+  ]
+ }
+}

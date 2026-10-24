@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_288",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-29T08:00:00Z",
+  "email": "mrodrigues956378@fastmail.com",
+  "reported_at": "2026-05-15T08:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-05-13T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mrodrigues956378@fastmail.com": "request.email",
+    "mrodrigues9563@fastmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "269961334d53cf2e12380de98d9ccc70035e782cb164eb2e0deb1d4d70b1a9f6": "user_identities.email_hash",
+    "41b9d56f025767260dcf20efd8ef2bbfed75e9008e238411cf3e90937fddf554": "user_audit_log.old_value audit_173"
+   },
+   "name": {
+    "Mariana Rodrigues": "user_identities.name"
+   },
+   "phone": {
+    "+55 41 94015-2754": "user_identities.phone"
+   },
+   "user_id": {
+    "user_286": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_286 via user_audit_log.old_value audit_172"
+  ],
+  "user_ids": [
+   "user_286"
+  ]
+ }
+}

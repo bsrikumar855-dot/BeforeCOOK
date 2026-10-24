@@ -1,0 +1,15 @@
+{
+  "exported_at": "2026-09-25T08:00:00Z",
+  "origin": "fixture_ledger",
+  "record_count": 1,
+  "records": [
+    {
+      "recorded_at": "2026-09-25T08:00:00Z",
+      "system": "search_service",
+      "resource_id": "search_990004",
+      "record_type": "SEARCH_INDEX_ENTRY",
+      "result": "FOUND",
+      "subject_reference": "ivo.reyes@example.test"
+    }
+  ]
+}

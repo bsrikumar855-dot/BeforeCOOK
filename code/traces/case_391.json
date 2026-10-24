@@ -1,0 +1,336 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_391",
+   "edges": [
+    {
+     "case_id": "case_391",
+     "identifier": "email:yuna.y5220@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_4446",
+     "source_id": "evidence_36",
+     "strength": "HARD",
+     "time": "2026-04-09T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_4446",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_36",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_391",
+   "edges": [
+    {
+     "case_id": "case_391",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_448",
+     "source_id": "activity_1121",
+     "strength": "SECONDARY",
+     "time": "2026-03-24T11:38:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1121 lies in the burst windows of cases ['case_389', 'case_391']",
+   "resource_id": "analytics_448",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_391",
+   "edges": [
+    {
+     "case_id": "case_391",
+     "identifier": "user_id:user_389",
+     "kind": "HARD",
+     "resource_id": "audit_record_5007",
+     "source_id": "evidence_36",
+     "strength": "HARD",
+     "time": "2026-04-09T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_5007",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_36",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_391",
+   "edges": [
+    {
+     "case_id": "case_391",
+     "identifier": "email:yuna.y5220@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_9470",
+     "source_id": "evidence_36",
+     "strength": "HARD",
+     "time": "2026-04-09T12:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_9470",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_36",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_391",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1117",
+   "reason": "hard-linked to ['user_388']",
+   "resource_id": "account_7618"
+  },
+  {
+   "activity_id": "activity_1118",
+   "reason": "hard-linked to ['user_387']",
+   "resource_id": "account_3206"
+  },
+  {
+   "activity_id": "activity_1120",
+   "reason": "hard-linked to ['user_388']",
+   "resource_id": "legal_hold_8049"
+  },
+  {
+   "activity_id": "activity_1122",
+   "reason": "hard-linked to ['user_388']",
+   "resource_id": "support_5720"
+  },
+  {
+   "activity_id": "activity_1123",
+   "reason": "hard-linked to ['user_388']",
+   "resource_id": "data_flow_5737"
+  },
+  {
+   "activity_id": "activity_1124",
+   "reason": "hard-linked to ['user_388']",
+   "resource_id": "backup_5165"
+  },
+  {
+   "activity_id": "activity_1126",
+   "reason": "hard-linked to ['user_387']",
+   "resource_id": "analytics_5354"
+  },
+  {
+   "activity_id": "activity_1128",
+   "reason": "hard-linked to ['user_387']",
+   "resource_id": "search_2794"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1121 lies in the burst windows of cases ['case_389', 'case_391']",
+   "resource_id": "analytics_448"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-04-09T12:00:00Z",
+  "email": "yuna.y5220@outlook.com",
+  "reported_at": "2026-03-24T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-21T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_36",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_36",
+   "required_action": "DELETE",
+   "resource_id": "account_4446",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_36#r6"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_36",
+    "resource_id": "account_4446",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_36",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_36",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5007",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_36#r36"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_36",
+    "resource_id": "audit_record_5007",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_36",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_36",
+   "required_action": "DELETE",
+   "resource_id": "search_9470",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_36#r31"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_36",
+    "resource_id": "search_9470",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_36",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "account_4446",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_36",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_9470",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "account_4446",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_9470",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4446",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_9470",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5007",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "yuna.y5220@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "99b9b109e7bd69ef138339e429516324ce89a5f76c517e40f9c044dc32a9801d": "user_identities.email_hash"
+   },
+   "name": {
+    "Yu-na Yoon": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 2073 8575": "user_identities.phone"
+   },
+   "user_id": {
+    "user_389": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_389 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_389"
+  ]
+ },
+ "validation_errors": []
+}

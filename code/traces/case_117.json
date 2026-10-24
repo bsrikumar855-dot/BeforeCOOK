@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_117",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-22T11:00:00Z",
+  "email": "r.suzuki14@yahoo.com",
+  "reported_at": "2026-07-30T11:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-28T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "r.suzuki14@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "12586c8ee47680a0fdcc0c7c02724e2bddb48790aaa659f493e997ad079585ad": "user_identities.email_hash"
+   },
+   "name": {
+    "Rina Suzuki": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 0549 7793": "user_identities.phone",
+    "+81 90 5548 3292": "user_audit_log.old_value audit_112"
+   },
+   "user_id": {
+    "user_115": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_115 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_115"
+  ]
+ }
+}

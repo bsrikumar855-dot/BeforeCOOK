@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_404",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-30T10:00:00Z",
+  "email": "minjun.jung@outlook.com",
+  "reported_at": "2026-03-19T10:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-18T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "minjun.jung@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "2971cbd0a4aafe50e6072eabc0990724073d1939fb2e409b950278d82807bc44": "user_identities.email_hash"
+   },
+   "name": {
+    "Min-jun Jung": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 8655 5230": "user_identities.phone"
+   },
+   "user_id": {
+    "user_402": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_402 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_402"
+  ]
+ }
+}

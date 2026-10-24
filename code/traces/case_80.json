@@ -1,0 +1,292 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_80",
+   "edges": [
+    {
+     "case_id": "case_80",
+     "identifier": "email:isabela.oliveira90@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_4006",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T05:39:16Z"
+    },
+    {
+     "case_id": "case_80",
+     "identifier": "email:isabela.oliveira90@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_4006",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T05:39:16Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_4006",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_91",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_80",
+   "edges": [
+    {
+     "case_id": "case_80",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_5059",
+     "source_id": "activity_3258",
+     "strength": "SECONDARY",
+     "time": "2026-08-15T07:31:48Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_3258; no identity link to anyone else",
+   "resource_id": "analytics_5059",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_80",
+   "edges": [
+    {
+     "case_id": "case_80",
+     "identifier": "user_id:user_78",
+     "kind": "HARD",
+     "resource_id": "audit_record_5681",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T06:19:44Z"
+    },
+    {
+     "case_id": "case_80",
+     "identifier": "user_id:user_78",
+     "kind": "HARD",
+     "resource_id": "audit_record_5681",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T06:19:44Z"
+    },
+    {
+     "case_id": "case_80",
+     "identifier": "user_id:user_78",
+     "kind": "HARD",
+     "resource_id": "audit_record_5681",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T06:19:44Z"
+    },
+    {
+     "case_id": "case_80",
+     "identifier": "user_id:user_78",
+     "kind": "HARD",
+     "resource_id": "audit_record_5681",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_5681",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_91",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_80",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3257",
+   "reason": "hard-linked to ['user_79']",
+   "resource_id": "account_9832"
+  },
+  {
+   "activity_id": "activity_3259",
+   "reason": "hard-linked to ['user_79']",
+   "resource_id": "support_5953"
+  },
+  {
+   "activity_id": "activity_3260",
+   "reason": "hard-linked to ['user_79']",
+   "resource_id": "data_flow_3255"
+  },
+  {
+   "activity_id": "activity_3261",
+   "reason": "hard-linked to ['user_79']",
+   "resource_id": "backup_3332"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-11T08:00:00Z",
+  "email": "isabela.oliveira90@outlook.com",
+  "reported_at": "2026-08-15T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-14T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_91",
+   "required_action": "DELETE",
+   "resource_id": "account_4006",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_91#L19"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_91",
+    "resource_id": "account_4006",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_91",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_5059",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_91#L5"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_91",
+    "resource_id": "analytics_5059",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_91",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_5681",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_91#L29"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_91",
+    "resource_id": "audit_record_5681",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_91",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4006",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_91",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_5681",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_91",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_5059",
+   "state": "ANONYMIZED",
+   "step_no": 3,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "isabela.oliveira90@outlook.com": "request.email",
+    "isabela.oliveira@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "3c718ddf5a7021fa74d562bffd5baf40816d38dff42f40f543b3ffb76548fee1": "user_identities.email_hash",
+    "c916f8dce5c021ba03719e9c584f83d9c9177ae44427f094d83bd1791367b83d": "user_audit_log.old_value audit_276"
+   },
+   "name": {
+    "Isabela Oliveira": "user_identities.name"
+   },
+   "phone": {
+    "+55 61 97714-1461": "user_identities.phone"
+   },
+   "user_id": {
+    "user_78": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_78 via user_audit_log.old_value audit_275"
+  ],
+  "user_ids": [
+   "user_78"
+  ]
+ },
+ "validation_errors": []
+}

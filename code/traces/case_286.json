@@ -1,0 +1,276 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_286",
+   "edges": [
+    {
+     "case_id": "case_286",
+     "identifier": "email:yamamoto.keiko@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_2016",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T07:43:13Z"
+    },
+    {
+     "case_id": "case_286",
+     "identifier": "email:yamamoto.keiko@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_2016",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T07:43:13Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_2016",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_76",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_286",
+   "edges": [
+    {
+     "case_id": "case_286",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_7283",
+     "source_id": "activity_1958",
+     "strength": "SECONDARY",
+     "time": "2026-05-18T07:31:48Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "only deletion case whose burst window contains activity_1958; no identity link to anyone else",
+   "resource_id": "analytics_7283",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_286",
+   "edges": [
+    {
+     "case_id": "case_286",
+     "identifier": "user_id:user_284",
+     "kind": "HARD",
+     "resource_id": "audit_record_1714",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T05:46:12Z"
+    },
+    {
+     "case_id": "case_286",
+     "identifier": "user_id:user_284",
+     "kind": "HARD",
+     "resource_id": "audit_record_1714",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T05:46:12Z"
+    },
+    {
+     "case_id": "case_286",
+     "identifier": "user_id:user_284",
+     "kind": "HARD",
+     "resource_id": "audit_record_1714",
+     "source_id": "evidence_76",
+     "strength": "HARD",
+     "time": "2026-05-29T05:46:12Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_1714",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_76",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_286",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1956",
+   "reason": "hard-linked to ['user_283']",
+   "resource_id": "account_285"
+  },
+  {
+   "activity_id": "activity_1961",
+   "reason": "hard-linked to ['user_282']",
+   "resource_id": "data_flow_6953"
+  },
+  {
+   "activity_id": "activity_1962",
+   "reason": "hard-linked to ['user_283']",
+   "resource_id": "search_036"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-05-29T08:00:00Z",
+  "email": "yamamoto.keiko@icloud.com",
+  "reported_at": "2026-05-18T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-15T08:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_76",
+   "required_action": "DELETE",
+   "resource_id": "account_2016",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_76#L47"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_76",
+    "resource_id": "account_2016",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "INFERRED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_76",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_7283",
+   "state": {
+    "exposure": "NO_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_76#L19"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_76",
+    "resource_id": "analytics_7283",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_76",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_1714",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_76#L13"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_76",
+    "resource_id": "audit_record_1714",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_76",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_2016",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_76",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_1714",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "evidence_76",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_7283",
+   "state": "ANONYMIZED",
+   "step_no": 3,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "yamamoto.keiko@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "d40e0117faf5f93e866ff2e89ad42fb5d5e81b65052b1f7b1697c53c1f187a70": "user_identities.email_hash"
+   },
+   "name": {
+    "Keiko Yamamoto": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 1869 6737": "user_identities.phone"
+   },
+   "user_id": {
+    "user_284": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_284 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_284"
+  ]
+ },
+ "validation_errors": []
+}

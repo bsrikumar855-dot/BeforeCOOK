@@ -1,0 +1,56 @@
+{
+ "attribution": [],
+ "case_id": "case_542",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3827"
+  ],
+  "error": "",
+  "is_deletion": false,
+  "label": "NON_DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": true,
+  "path": "model_non_deletion+classify_corroborates->NOT_APPLICABLE",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-22T12:00:00Z",
+  "email": "omar.nasser@gmail.com",
+  "reported_at": "2026-09-13T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-12T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "omar.nasser@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "793dd3dee976dd1b5edcd9882ac41e746920aaae228f5b9b51dce2e872bf61e6": "user_identities.email_hash"
+   },
+   "name": {
+    "Omar Nasser": "user_identities.name"
+   },
+   "phone": {
+    "+971 52 313 7148": "user_audit_log.old_value audit_131",
+    "+971 52 352 7550": "user_identities.phone"
+   },
+   "user_id": {
+    "user_540": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_540 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_540"
+  ]
+ }
+}

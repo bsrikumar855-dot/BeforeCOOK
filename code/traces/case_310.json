@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_310",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-19T06:00:00Z",
+  "email": "amponsah.akosua@icloud.com",
+  "reported_at": "2026-05-04T06:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-05-01T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "amponsah.akosua@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "9d6ef949642b78e8a8c4113626096716690f0ff5e1f57e63aeb8819203c36d65": "user_identities.email_hash"
+   },
+   "name": {
+    "Akosua Amponsah": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 931 1701": "user_identities.phone"
+   },
+   "user_id": {
+    "user_308": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_308 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_308"
+  ]
+ }
+}

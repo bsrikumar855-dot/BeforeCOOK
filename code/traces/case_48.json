@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_48",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-26T11:00:00Z",
+  "email": "lnajjar900380@fastmail.com",
+  "reported_at": "2026-09-12T11:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-09-10T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "lnajjar900380@fastmail.com": "request.email",
+    "lnajjar9003@fastmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "02ea464491aac58431e227ad72ec2fdca67b10b9150bd398f7d43baf182eaf94": "user_identities.email_hash",
+    "6cb13bdeecbaf6ab97d48ae18847593b577b6ca949aba51ab0769c6d276fa8b5": "user_audit_log.old_value audit_300"
+   },
+   "name": {
+    "Laila Najjar": "user_identities.name"
+   },
+   "phone": {
+    "+971 55 086 5116": "user_identities.phone"
+   },
+   "user_id": {
+    "user_46": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_46 via user_audit_log.old_value audit_299"
+  ],
+  "user_ids": [
+   "user_46"
+  ]
+ }
+}

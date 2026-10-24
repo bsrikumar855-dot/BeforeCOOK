@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_234",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-23T06:00:00Z",
+  "email": "kmori1937@gmail.com",
+  "reported_at": "2026-06-03T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-01T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "kmori1937@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "ef5e37a3372903b082413d80c1f179f18dd85069329ad441ed3f59aabc14932b": "user_identities.email_hash"
+   },
+   "name": {
+    "Kenta Mori": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 4012 0527": "user_identities.phone"
+   },
+   "user_id": {
+    "user_232": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_232 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_232"
+  ]
+ }
+}

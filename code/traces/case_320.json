@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_320",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-14T12:00:00Z",
+  "email": "andrei.horvat@outlook.com",
+  "reported_at": "2026-04-17T12:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-04-16T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "andrei.horvat@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "ad897887382d3abfb8af78f4be86ac12a7d9fb046ddd150078a7eb221f8e46a1": "user_identities.email_hash"
+   },
+   "name": {
+    "Andrei Horvat": "user_identities.name"
+   },
+   "phone": {
+    "+48 624 523 024": "user_identities.phone"
+   },
+   "user_id": {
+    "user_318": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_318 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_318"
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_206",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-08T09:00:00Z",
+  "email": "ama.agyeman84@gmail.com",
+  "reported_at": "2026-06-25T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-06-24T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ama.agyeman84@gmail.com": "request.email",
+    "ama.agyeman@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "908163b3492b567ceb89bd9259d1122b1432bedd1a32fda48923a817fa9f2337": "user_identities.email_hash",
+    "c11489e018fb46b5b8292da1f2eaa897fdddf55041ad45e8d79a8787e5aa6b21": "user_audit_log.old_value audit_206"
+   },
+   "name": {
+    "Ama Agyeman": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 151 8989": "user_identities.phone"
+   },
+   "user_id": {
+    "user_204": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_204 via user_audit_log.old_value audit_205"
+  ],
+  "user_ids": [
+   "user_204"
+  ]
+ }
+}

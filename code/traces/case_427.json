@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_427",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-20T08:00:00Z",
+  "email": "ABENA.A30485@OUTLOOK.COM",
+  "reported_at": "2026-03-08T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-05T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "abena.a30485@outlook.com": "request.email",
+    "abena.a304@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "23e79abe55484b645a5affcda7546ce408cd08b94f46a65bf1a724c1f9f712c6": "user_identities.email_hash",
+    "c4f5c73a4f0ad55c477ec57c71fe9f4c326bb6ec7b314a58250ddd8f4b9c0a01": "user_audit_log.old_value audit_106"
+   },
+   "name": {
+    "Abena Agyeman": "user_identities.name"
+   },
+   "phone": {
+    "+233 24 080 5214": "user_identities.phone"
+   },
+   "user_id": {
+    "user_425": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_425 via user_audit_log.old_value audit_105"
+  ],
+  "user_ids": [
+   "user_425"
+  ]
+ }
+}

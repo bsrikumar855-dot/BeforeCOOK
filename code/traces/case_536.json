@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_536",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [
+   "activity_3659"
+  ],
+  "error": "",
+  "is_deletion": false,
+  "label": "NON_DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": true,
+  "path": "model_non_deletion+classify_corroborates->NOT_APPLICABLE",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-28T12:00:00Z",
+  "email": "aditi.mehta@outlook.com",
+  "reported_at": "2026-09-05T12:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-09-04T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "aditi.mehta@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "85886349e9c9e2728cb33cc0e086d77ec755c2ac7aeb53b34e7ad9212df4e5fa": "user_identities.email_hash"
+   },
+   "name": {
+    "Aditi Mehta": "user_identities.name"
+   },
+   "phone": {
+    "+91 98886 03254": "user_identities.phone"
+   },
+   "user_id": {
+    "user_534": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_534 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_534"
+  ]
+ }
+}

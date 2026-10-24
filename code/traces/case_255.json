@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_255",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-06-13T11:00:00Z",
+  "email": "K.KOWALSKI36@GMAIL.COM",
+  "reported_at": "2026-05-23T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-05-21T11:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "k.kowalski36@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "bbe3d96d55b6c980122d80ece4f06d012f0a5a1b239ed137bb9f8ee4f03c7b6b": "user_identities.email_hash"
+   },
+   "name": {
+    "Katarina Kowalski": "user_identities.name"
+   },
+   "phone": {
+    "+48 789 951 500": "user_identities.phone"
+   },
+   "user_id": {
+    "user_253": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_253 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_253"
+  ]
+ }
+}

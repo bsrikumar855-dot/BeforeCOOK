@@ -1,0 +1,252 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_70",
+   "edges": [
+    {
+     "case_id": "case_70",
+     "identifier": "email:collins.grace@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_6633",
+     "source_id": "evidence_06",
+     "strength": "HARD",
+     "time": "2026-09-10T08:56:20Z"
+    },
+    {
+     "case_id": "case_70",
+     "identifier": "email:collins.grace@icloud.com",
+     "kind": "HARD",
+     "resource_id": "account_6633",
+     "source_id": "evidence_06",
+     "strength": "HARD",
+     "time": "2026-09-16T08:56:42Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_6633",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_06",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_70",
+   "edges": [
+    {
+     "case_id": "case_70",
+     "identifier": "user_id:user_68",
+     "kind": "HARD",
+     "resource_id": "audit_record_1738",
+     "source_id": "evidence_93",
+     "strength": "HARD",
+     "time": "2026-09-16T08:37:39Z"
+    },
+    {
+     "case_id": "case_70",
+     "identifier": "user_id:user_68",
+     "kind": "HARD",
+     "resource_id": "audit_record_1738",
+     "source_id": "evidence_06",
+     "strength": "HARD",
+     "time": "2026-09-16T08:52:11Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "audit_record_1738",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_93",
+   "system_id": "security_service"
+  }
+ ],
+ "case_id": "case_70",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3568",
+   "reason": "hard-linked to ['user_67']",
+   "resource_id": "account_6138"
+  },
+  {
+   "activity_id": "activity_3569",
+   "reason": "hard-linked to ['user_66']",
+   "resource_id": "account_902"
+  },
+  {
+   "activity_id": "activity_3571",
+   "reason": "hard-linked to ['user_53']",
+   "resource_id": "account_994"
+  },
+  {
+   "activity_id": "activity_3574",
+   "reason": "hard-linked to ['user_66']",
+   "resource_id": "data_flow_2406"
+  },
+  {
+   "activity_id": "activity_3575",
+   "reason": "hard-linked to ['user_66']",
+   "resource_id": "search_2568"
+  },
+  {
+   "activity_id": "activity_3578",
+   "reason": "hard-linked to ['user_51']",
+   "resource_id": "analytics_4440"
+  },
+  {
+   "activity_id": "activity_3579",
+   "reason": "hard-linked to ['user_52']",
+   "resource_id": "support_835"
+  },
+  {
+   "activity_id": "activity_3580",
+   "reason": "hard-linked to ['user_53']",
+   "resource_id": "search_1007"
+  },
+  {
+   "activity_id": "activity_3581",
+   "reason": "hard-linked to ['user_51']",
+   "resource_id": "search_8911"
+  },
+  {
+   "activity_id": "activity_3582",
+   "reason": "hard-linked to ['user_52']",
+   "resource_id": "search_3995"
+  },
+  {
+   "activity_id": "activity_3583",
+   "reason": "hard-linked to ['user_52']",
+   "resource_id": "analytics_1738"
+  },
+  {
+   "activity_id": "activity_3584",
+   "reason": "hard-linked to ['user_52']",
+   "resource_id": "data_flow_5080"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-16T09:00:00Z",
+  "email": "collins.grace@icloud.com",
+  "reported_at": "2026-09-01T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-29T09:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_93",
+   "required_action": "DELETE",
+   "resource_id": "account_6633",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_93",
+    "resource_id": "account_6633",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_93",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_1738",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_93#security_audit_records:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_93",
+    "resource_id": "audit_record_1738",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_93",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_6633",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_93",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_1738",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "collins.grace@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "90d09f3df13df7c987633adf915ab5624896522461d8ec7c3aae5e8164670686": "user_identities.email_hash"
+   },
+   "name": {
+    "Grace Collins": "user_identities.name"
+   },
+   "phone": {
+    "+44 7700 900068": "user_identities.phone"
+   },
+   "user_id": {
+    "user_68": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_68 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_68"
+  ]
+ },
+ "validation_errors": []
+}

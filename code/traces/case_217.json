@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_217",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-03T08:00:00Z",
+  "email": "zayd.k7314@zoho.com",
+  "reported_at": "2026-06-11T08:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-06-08T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "zayd.k7314@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "5bab6f6e5e27eaab7cb5dd49eae64eeab34b2005c7eb68940f20f2ac769d4fb7": "user_identities.email_hash"
+   },
+   "name": {
+    "Zayd Khalil": "user_identities.name"
+   },
+   "phone": {
+    "+971 52 190 4489": "user_identities.phone",
+    "+971 52 760 2782": "user_audit_log.old_value audit_156"
+   },
+   "user_id": {
+    "user_215": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_215 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_215"
+  ]
+ }
+}

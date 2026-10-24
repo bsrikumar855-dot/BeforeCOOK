@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_157",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-02T07:00:00Z",
+  "email": "soojin.l2174@zoho.com",
+  "reported_at": "2026-07-11T07:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-07-08T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "soojin.l2174@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "74249ed967034668ebe3ccb59ad17d6c6fd0d280d891c775f37462aa422e60d0": "user_identities.email_hash"
+   },
+   "name": {
+    "Soo-jin Lee": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 6264 3983": "user_audit_log.old_value audit_123",
+    "+82 10 8537 6129": "user_identities.phone"
+   },
+   "user_id": {
+    "user_155": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_155 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_155"
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_357",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-24T08:00:00Z",
+  "email": "a.lefevre74@yahoo.com",
+  "reported_at": "2026-04-01T08:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-30T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "a.lefevre74@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "0157f987b0fb5373a6b73db252169d109ab242f289c875be2509112ad1694927": "user_identities.email_hash"
+   },
+   "name": {
+    "Arthur Lefèvre": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 10 19 61 86": "user_identities.phone",
+    "+33 6 97 47 16 88": "user_audit_log.old_value audit_13"
+   },
+   "user_id": {
+    "user_355": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_355 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_355"
+  ]
+ }
+}

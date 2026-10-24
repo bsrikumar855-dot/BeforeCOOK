@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_392",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-09T12:00:00Z",
+  "email": "camila.almeida@outlook.com",
+  "reported_at": "2026-03-21T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-20T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "camila.almeida@outlook.com": "request.email"
+   },
+   "email_hash": {
+    "40a1d754be6606d3167461cc7fb033909d2c151e5e454c8086542fd8e65b7b45": "user_identities.email_hash"
+   },
+   "name": {
+    "Camila Almeida": "user_identities.name"
+   },
+   "phone": {
+    "+55 41 95357-7193": "user_audit_log.old_value audit_39",
+    "+55 61 97623-8256": "user_identities.phone"
+   },
+   "user_id": {
+    "user_390": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_390 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_390"
+  ]
+ }
+}

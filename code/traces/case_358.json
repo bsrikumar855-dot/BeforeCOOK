@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_358",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-24T08:00:00Z",
+  "email": "svensson.maja@icloud.com",
+  "reported_at": "2026-04-01T08:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-03-29T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "svensson.maja@icloud.com": "request.email"
+   },
+   "email_hash": {
+    "eaf4af328219a597197e75025806da72035a7523f2113b9f8fe5782bcc93617c": "user_identities.email_hash"
+   },
+   "name": {
+    "Maja Svensson": "user_identities.name"
+   },
+   "phone": {
+    "+46 70 813 73 30": "user_identities.phone"
+   },
+   "user_id": {
+    "user_356": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_356 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_356"
+  ]
+ }
+}

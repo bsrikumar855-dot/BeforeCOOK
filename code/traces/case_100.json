@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_100",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-09-01T06:00:00Z",
+  "email": "nasser.mariam88@gmail.com",
+  "reported_at": "2026-08-07T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-04T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "nasser.mariam88@gmail.com": "request.email",
+    "nasser.mariam@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "1fb889a86885d20c89078754af088be580a899073865e6991b42ce60333dcad4": "user_audit_log.old_value audit_257",
+    "f4e9abcb5082caba70103ebee3257753e7cbb75302913ab60b2af432c607eded": "user_identities.email_hash"
+   },
+   "name": {
+    "Mariam Nasser": "user_identities.name"
+   },
+   "phone": {
+    "+971 54 770 5148": "user_identities.phone"
+   },
+   "user_id": {
+    "user_98": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_98 via user_audit_log.old_value audit_256"
+  ],
+  "user_ids": [
+   "user_98"
+  ]
+ }
+}

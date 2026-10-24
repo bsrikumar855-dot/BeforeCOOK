@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_378",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-14T06:00:00Z",
+  "email": "jkim227380@gmail.com",
+  "reported_at": "2026-03-21T06:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-03-19T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "jkim227380@gmail.com": "request.email",
+    "jkim2273@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "b85c27d0a04c20aa2be4dbea96def68f86381fc664ea369b7c454cd552aa93bc": "user_identities.email_hash",
+    "f3c2d9f159780c594a58116eb7a0681d07e1d088cd28bcad5fd11d636e764b55": "user_audit_log.old_value audit_130"
+   },
+   "name": {
+    "Jun-seo Kim": "user_identities.name"
+   },
+   "phone": {
+    "+82 10 5281 7798": "user_identities.phone"
+   },
+   "user_id": {
+    "user_376": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_376 via user_audit_log.old_value audit_129"
+  ],
+  "user_ids": [
+   "user_376"
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_474",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-02-23T10:00:00Z",
+  "email": "claurent2497@gmail.com",
+  "reported_at": "2026-02-03T10:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-02-01T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "claurent2497@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "f7aa133f381574f66ad2ee89d86eea405916f8f5845a85df2b262a2ecf11a081": "user_identities.email_hash"
+   },
+   "name": {
+    "Chloé Laurent": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 00 99 66 51": "user_identities.phone"
+   },
+   "user_id": {
+    "user_472": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_472 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_472"
+  ]
+ }
+}

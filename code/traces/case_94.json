@@ -1,0 +1,299 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_94",
+   "edges": [
+    {
+     "case_id": "case_94",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4037",
+     "source_id": "activity_3227",
+     "strength": "SECONDARY",
+     "time": "2026-08-13T04:55:02Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_3227 is in every maximum one-to-one assignment of batch 60 (cases ['case_94'], rows ['account_4037']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_4037",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_94",
+   "edges": [
+    {
+     "case_id": "case_94",
+     "identifier": "email:mehta.neel82@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_7631",
+     "source_id": "evidence_89",
+     "strength": "HARD",
+     "time": "2026-09-01T02:59:37Z"
+    },
+    {
+     "case_id": "case_94",
+     "identifier": "email:mehta.neel82@icloud.com",
+     "kind": "HARD",
+     "resource_id": "search_7631",
+     "source_id": "evidence_89",
+     "strength": "HARD",
+     "time": "2026-09-01T02:59:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_7631",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_89",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_94",
+   "edges": [
+    {
+     "case_id": "case_94",
+     "identifier": "email:mehta.neel82@icloud.com",
+     "kind": "HARD",
+     "resource_id": "support_7691",
+     "source_id": "evidence_89",
+     "strength": "HARD",
+     "time": "2026-09-01T03:57:56Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "support_7691",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_89",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_94",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3228",
+   "reason": "hard-linked to ['user_91']",
+   "resource_id": "account_4421"
+  },
+  {
+   "activity_id": "activity_3234",
+   "reason": "hard-linked to ['user_91']",
+   "resource_id": "data_flow_047"
+  },
+  {
+   "activity_id": "activity_3235",
+   "reason": "hard-linked to ['user_91']",
+   "resource_id": "search_1310"
+  },
+  {
+   "activity_id": "activity_3236",
+   "reason": "hard-linked to ['user_91']",
+   "resource_id": "support_1824"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-01T06:00:00Z",
+  "email": "mehta.neel82@icloud.com",
+  "reported_at": "2026-08-13T06:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-08-10T06:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_10",
+   "required_action": "DELETE",
+   "resource_id": "account_4037",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_10",
+    "resource_id": "account_4037",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_89",
+   "required_action": "DELETE",
+   "resource_id": "search_7631",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_89#search_service.index_queries.4.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_89",
+    "resource_id": "search_7631",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_89",
+   "required_action": "REDACT",
+   "resource_id": "support_7691",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_89#support_platform.tickets.5"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_89",
+    "resource_id": "support_7691",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_89",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_7631",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_89",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_7691",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_7631",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_7691",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4037",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_7631",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_7691",
+   "state": "REDACTED",
+   "step_no": 7,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "mehta.neel82@icloud.com": "request.email",
+    "mehta.neel@icloud.com": "user_identities.email"
+   },
+   "email_hash": {
+    "b5b178db77ed5befe93e33f859d72b6031f667ab08beccbfcb642ae0163cf0aa": "user_audit_log.old_value audit_253",
+    "fa93cbb41d3f3dc6a7075ee5db30009d5841bc04961a58056a6db7cec4d0e256": "user_identities.email_hash"
+   },
+   "name": {
+    "Neel Mehta": "user_identities.name"
+   },
+   "phone": {
+    "+91 95801 62924": "user_identities.phone"
+   },
+   "user_id": {
+    "user_92": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_92 via user_audit_log.old_value audit_252"
+  ],
+  "user_ids": [
+   "user_92"
+  ]
+ },
+ "validation_errors": []
+}

@@ -1,0 +1,206 @@
+{
+ "account_batches": 62,
+ "conflicts": {},
+ "eval": {
+  "attribution_labels": {
+   "AMBIGUOUS": 403,
+   "CONFIRMED": 502,
+   "INFERRED": 47
+  },
+  "cases": 518,
+  "degraded": [],
+  "excluded_reasons": {
+   "AMBIGUOUS": 403,
+   "OUT_OF_SCOPE": 16,
+   "UNKNOWN_STATE": 1
+  },
+  "intent_paths": {
+   "model_deletion->DELETION": 172,
+   "model_failure->NOT_APPLICABLE": 342,
+   "model_non_deletion+classify_corroborates->NOT_APPLICABLE": 4
+  },
+  "status": {
+   "COMPLETE": 57,
+   "INCOMPLETE": 115,
+   "NOT_APPLICABLE": 346
+  }
+ },
+ "evidence_files": {
+  "EXTRACTED": 11,
+  "PARSED": 79,
+  "TEXT_LAYER": 4
+ },
+ "image_extraction": {
+  "accepted_rows": 21,
+  "dropped_rows": [
+   {
+    "file_id": "evidence_04",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "user_11_account_5762"
+   },
+   {
+    "file_id": "evidence_04",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "ORD-20265762"
+   },
+   {
+    "file_id": "evidence_04",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "ORD-20265518"
+   },
+   {
+    "file_id": "evidence_14",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "order_notifications"
+   },
+   {
+    "file_id": "evidence_14",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "delivery_tracking"
+   },
+   {
+    "file_id": "evidence_19",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "1"
+   },
+   {
+    "file_id": "evidence_19",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "2"
+   },
+   {
+    "file_id": "evidence_19",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "3"
+   },
+   {
+    "file_id": "evidence_19",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "4"
+   },
+   {
+    "file_id": "evidence_19",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "5"
+   },
+   {
+    "file_id": "evidence_28",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "CS-5034"
+   },
+   {
+    "file_id": "evidence_28",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "ORD-20265034"
+   },
+   {
+    "file_id": "evidence_42",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "user_17"
+   },
+   {
+    "file_id": "evidence_42",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "ORD-20263245"
+   },
+   {
+    "file_id": "evidence_42",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "CS-3245"
+   },
+   {
+    "file_id": "evidence_42",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "CS-3378"
+   },
+   {
+    "file_id": "evidence_42",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "FIN-7742"
+   },
+   {
+    "file_id": "evidence_46",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "delivery_confirmation_19.pdf"
+   },
+   {
+    "file_id": "evidence_46",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "delivery_confirmation_20.pdf"
+   },
+   {
+    "file_id": "evidence_46",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "return_label_4821.pdf"
+   },
+   {
+    "file_id": "evidence_46",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "return_label_4876.pdf"
+   },
+   {
+    "file_id": "evidence_46",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "invoice_NS-10493.pdf"
+   },
+   {
+    "file_id": "evidence_46",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "parcel_damage_7713.jpg"
+   },
+   {
+    "file_id": "evidence_46",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "customer_export_2026-02-10.zip"
+   },
+   {
+    "file_id": "evidence_46",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "customer_export_2026-02-12.zip"
+   },
+   {
+    "file_id": "evidence_60",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "1"
+   },
+   {
+    "file_id": "evidence_60",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "2"
+   },
+   {
+    "file_id": "evidence_60",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "3"
+   },
+   {
+    "file_id": "evidence_60",
+    "reason": "resource_id prefix is not a known system prefix",
+    "resource_id": "4"
+   }
+  ],
+  "failed_files": []
+ },
+ "samples": {
+  "attribution_labels": {
+   "AMBIGUOUS": 30,
+   "CONFIRMED": 49,
+   "INFERRED": 4
+  },
+  "cases": 32,
+  "degraded": [],
+  "excluded_reasons": {
+   "AMBIGUOUS": 30,
+   "OUT_OF_SCOPE": 2
+  },
+  "intent_paths": {
+   "model_deletion->DELETION": 16,
+   "model_failure->NOT_APPLICABLE": 16
+  },
+  "status": {
+   "COMPLETE": 5,
+   "INCOMPLETE": 11,
+   "NOT_APPLICABLE": 16
+  }
+ }
+}

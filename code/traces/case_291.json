@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_291",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-29T08:00:00Z",
+  "email": "n.collins20@gmail.com",
+  "reported_at": "2026-05-12T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-05-10T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "n.collins20@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "b3362154708ef1ce7bc131410bc2f39cf3f75cd8cec262bc607c3910a4ea94a9": "user_identities.email_hash"
+   },
+   "name": {
+    "Noah Collins": "user_identities.name"
+   },
+   "phone": {
+    "+1 (212) 555-0189": "user_identities.phone"
+   },
+   "user_id": {
+    "user_289": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_289 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_289"
+  ]
+ }
+}

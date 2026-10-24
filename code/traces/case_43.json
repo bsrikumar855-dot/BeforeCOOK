@@ -1,0 +1,164 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_43",
+   "edges": [
+    {
+     "case_id": "case_43",
+     "identifier": "email:javier.r940897@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_8681",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T09:21:55Z"
+    },
+    {
+     "case_id": "case_43",
+     "identifier": "email:javier.r940897@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_8681",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T09:21:55Z"
+    },
+    {
+     "case_id": "case_43",
+     "identifier": "email:javier.r940897@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_8681",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T09:21:55Z"
+    },
+    {
+     "case_id": "case_43",
+     "identifier": "email:javier.r940897@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_8681",
+     "source_id": "evidence_94",
+     "strength": "HARD",
+     "time": "2026-09-26T09:21:55Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "account_8681",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_94",
+   "system_id": "account_service"
+  }
+ ],
+ "case_id": "case_43",
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-26T11:00:00Z",
+  "email": "javier.r940897@outlook.com",
+  "reported_at": "2026-09-18T11:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-09-15T11:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_94",
+   "required_action": "DELETE",
+   "resource_id": "account_8681",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_94#L31"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_94",
+    "resource_id": "account_8681",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_94",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "account_8681",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "account_8681",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_8681",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "javier.r940897@outlook.com": "request.email",
+    "javier.r9408@outlook.com": "user_identities.email"
+   },
+   "email_hash": {
+    "2e0aabf7d2e6c922c1d59fe49b69d3d9874d2f83ccaf826538f48e84e0ef9515": "user_audit_log.old_value audit_294",
+    "5e3b9b928e5c07b78012b06e451a02a26789e1639766588b7b706b8bbecf89bd": "user_identities.email_hash"
+   },
+   "name": {
+    "Javier Ríos": "user_identities.name"
+   },
+   "phone": {
+    "+34 695 783 595": "user_identities.phone"
+   },
+   "user_id": {
+    "user_41": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_41 via user_audit_log.old_value audit_293"
+  ],
+  "user_ids": [
+   "user_41"
+  ]
+ },
+ "validation_errors": []
+}

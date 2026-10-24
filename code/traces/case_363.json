@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_363",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-19T07:00:00Z",
+  "email": "m.khumalo88@gmail.com",
+  "reported_at": "2026-04-10T07:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-04-08T07:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "m.khumalo88@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "fb4260a08815b2bb0fd9e4202dbac355f272c58c815da0aed1b81b0ad4384931": "user_identities.email_hash"
+   },
+   "name": {
+    "Mandla Khumalo": "user_identities.name"
+   },
+   "phone": {
+    "+27 72 837 5827": "user_identities.phone"
+   },
+   "user_id": {
+    "user_361": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_361 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_361"
+  ]
+ }
+}

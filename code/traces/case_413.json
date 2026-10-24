@@ -1,0 +1,397 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_413",
+   "edges": [
+    {
+     "case_id": "case_413",
+     "identifier": "email:amara-okafor@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_563",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:57:33Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_563",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_413",
+   "edges": [
+    {
+     "case_id": "case_413",
+     "identifier": "email:amara-okafor@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_4523",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:55:11Z"
+    },
+    {
+     "case_id": "case_413",
+     "identifier": "email:amara-okafor@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_4523",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:55:11Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "analytics_4523",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_413",
+   "edges": [
+    {
+     "case_id": "case_413",
+     "identifier": "user_id:user_411",
+     "kind": "HARD",
+     "resource_id": "audit_record_9099",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:53:50Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_9099",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_413",
+   "edges": [
+    {
+     "case_id": "case_413",
+     "identifier": "email:amara-okafor@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_6162",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:54:22Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "search_6162",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "search_service"
+  }
+ ],
+ "case_id": "case_413",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_847",
+   "reason": "hard-linked to ['user_428']",
+   "resource_id": "account_6006"
+  },
+  {
+   "activity_id": "activity_848",
+   "reason": "hard-linked to ['user_427']",
+   "resource_id": "account_4204"
+  },
+  {
+   "activity_id": "activity_851",
+   "reason": "hard-linked to ['user_413']",
+   "resource_id": "account_9975"
+  },
+  {
+   "activity_id": "activity_852",
+   "reason": "hard-linked to ['user_412']",
+   "resource_id": "account_5260"
+  },
+  {
+   "activity_id": "activity_853",
+   "reason": "hard-linked to ['user_426']",
+   "resource_id": "data_flow_2107"
+  },
+  {
+   "activity_id": "activity_855",
+   "reason": "hard-linked to ['user_426']",
+   "resource_id": "search_2625"
+  },
+  {
+   "activity_id": "activity_856",
+   "reason": "hard-linked to ['user_427']",
+   "resource_id": "search_1449"
+  },
+  {
+   "activity_id": "activity_859",
+   "reason": "hard-linked to ['user_412']",
+   "resource_id": "support_3768"
+  },
+  {
+   "activity_id": "activity_863",
+   "reason": "hard-linked to ['user_412']",
+   "resource_id": "search_8770"
+  },
+  {
+   "activity_id": "activity_864",
+   "reason": "hard-linked to ['user_413']",
+   "resource_id": "search_3864"
+  },
+  {
+   "activity_id": "activity_865",
+   "reason": "hard-linked to ['user_413']",
+   "resource_id": "support_1993"
+  },
+  {
+   "activity_id": "activity_866",
+   "reason": "hard-linked to ['user_413']",
+   "resource_id": "analytics_2102"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-03-25T09:00:00Z",
+  "email": "amara-okafor@gmail.com",
+  "reported_at": "2026-03-05T09:00:00Z",
+  "reported_status": "NOT_STARTED",
+  "requested_at": "2026-03-04T09:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "DELETE",
+   "resource_id": "account_563",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L73"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "account_563",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_4523",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L39"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "analytics_4523",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_9099",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L33"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "audit_record_9099",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "DELETE",
+   "resource_id": "search_6162",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L35"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "search_6162",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_39",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_6162",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_39",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_4523",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_6162",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_4523",
+   "state": "ANONYMIZED",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_563",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_6162",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_9099",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_4523",
+   "state": "ANONYMIZED",
+   "step_no": 8,
+   "system_id": "analytics_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "amara-okafor@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "cc96d982bb10e44633dc3df9e6544cf88ae77a7076546f489a5888386f70600b": "user_identities.email_hash"
+   },
+   "name": {
+    "Amara Okafor": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 830 1677": "user_identities.phone"
+   },
+   "user_id": {
+    "user_411": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_411 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_411"
+  ]
+ },
+ "validation_errors": []
+}

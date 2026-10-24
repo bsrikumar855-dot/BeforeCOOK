@@ -1,0 +1,282 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_15",
+   "edges": [
+    {
+     "case_id": "case_15",
+     "identifier": "email:lucia-torres@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_4745",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:51:20Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_4745",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_01",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_15",
+   "edges": [
+    {
+     "case_id": "case_15",
+     "identifier": "user_id:user_15",
+     "kind": "HARD",
+     "resource_id": "audit_record_1596",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:59:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_1596",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_01",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_15",
+   "edges": [
+    {
+     "case_id": "case_15",
+     "identifier": "email:lucia-torres@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_9846",
+     "source_id": "evidence_14",
+     "strength": "HARD",
+     "time": "2026-08-07T07:59:36Z"
+    },
+    {
+     "case_id": "case_15",
+     "identifier": "email:lucia-torres@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_9846",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:58:11Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via MODEL_EXTRACTION, TRACE_JOIN",
+   "resource_id": "data_flow_9846",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_01",
+   "system_id": "integration_service"
+  }
+ ],
+ "case_id": "case_15",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3381",
+   "reason": "hard-linked to ['user_16']",
+   "resource_id": "account_9494"
+  },
+  {
+   "activity_id": "activity_3383",
+   "reason": "hard-linked to ['user_17']",
+   "resource_id": "account_4092"
+  },
+  {
+   "activity_id": "activity_3385",
+   "reason": "hard-linked to ['user_17']",
+   "resource_id": "backup_3245"
+  },
+  {
+   "activity_id": "activity_3388",
+   "reason": "hard-linked to ['user_16']",
+   "resource_id": "search_4882"
+  }
+ ],
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-15T12:00:00Z",
+  "email": "lucia-torres@gmail.com",
+  "reported_at": "2026-08-22T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-21T12:00:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_01",
+   "required_action": "DELETE",
+   "resource_id": "account_4745",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_01#L22"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_01",
+    "resource_id": "account_4745",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_01",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_1596",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_01#L103"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_01",
+    "resource_id": "audit_record_1596",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_14",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_01",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_9846",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_01#L88"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_01",
+    "resource_id": "data_flow_9846",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_01",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_9846",
+   "state": "ACTIVE",
+   "step_no": 1,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_9846",
+   "state": "DISABLED",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4745",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_1596",
+   "state": "PRESENT",
+   "step_no": 4,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_9846",
+   "state": "DISABLED",
+   "step_no": 5,
+   "system_id": "integration_service"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "lucia-torres@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "3a998570469df6b3cf40bb58e9b2a55e4890cded9f801df993ed6584f990826c": "user_identities.email_hash"
+   },
+   "name": {
+    "Lucía Torres": "user_identities.name"
+   },
+   "phone": {
+    "+34 715 351 235": "user_identities.phone",
+    "+34 728 875 900": "user_audit_log.old_value audit_50"
+   },
+   "user_id": {
+    "user_15": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_15 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_15"
+  ]
+ },
+ "validation_errors": []
+}

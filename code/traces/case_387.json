@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_387",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-04-09T12:00:00Z",
+  "email": "y.okeke4489@gmail.com",
+  "reported_at": "2026-03-27T12:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-03-25T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "y.okeke4489@gmail.com": "request.email",
+    "y.okeke44@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "40883bc318a5d67ab39f9771426fa38872ac2f43523a8c8f282c6f380fe1a6ac": "user_audit_log.old_value audit_120",
+    "677ae6b93c50a3c0cc4b6934ad2d4bb42fa1fb15455870cc9687ce028927ae53": "user_identities.email_hash"
+   },
+   "name": {
+    "Yetunde Okeke": "user_identities.name"
+   },
+   "phone": {
+    "+234 803 653 7959": "user_identities.phone"
+   },
+   "user_id": {
+    "user_385": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_385 via user_audit_log.old_value audit_119"
+  ],
+  "user_ids": [
+   "user_385"
+  ]
+ }
+}

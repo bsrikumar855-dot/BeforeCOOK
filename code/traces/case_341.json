@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_341",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-05-04T10:00:00Z",
+  "email": "kavya-basu@gmail.com",
+  "reported_at": "2026-04-06T10:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-04-05T10:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "kavya-basu@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "6fbd144883a5ff092232b60c7b4635e82c4c672f9cc22c0a0ca83831492b5389": "user_identities.email_hash"
+   },
+   "name": {
+    "Kavya Basu": "user_identities.name"
+   },
+   "phone": {
+    "+91 96235 18616": "user_identities.phone"
+   },
+   "user_id": {
+    "user_339": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_339 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_339"
+  ]
+ }
+}

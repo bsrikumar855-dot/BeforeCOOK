@@ -1,0 +1,341 @@
+{
+ "attribution": [
+  {
+   "case_id": "case_10",
+   "edges": [
+    {
+     "case_id": "case_10",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_010",
+     "source_id": "activity_3595",
+     "strength": "SECONDARY",
+     "time": "2026-09-02T10:08:37Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 2: several assignments equally supported (rival cases for account_010: [])",
+   "resource_id": "account_010",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_10",
+   "edges": [
+    {
+     "case_id": "case_10",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_3136",
+     "source_id": "activity_3597",
+     "strength": "SECONDARY",
+     "time": "2026-09-02T10:48:27Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 2: several assignments equally supported (rival cases for account_3136: [])",
+   "resource_id": "account_3136",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_10",
+   "edges": [
+    {
+     "case_id": "case_10",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4842",
+     "source_id": "activity_3598",
+     "strength": "SECONDARY",
+     "time": "2026-09-02T10:50:09Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 2: several assignments equally supported (rival cases for account_4842: [])",
+   "resource_id": "account_4842",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_10",
+   "edges": [
+    {
+     "case_id": "case_10",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_7225",
+     "source_id": "activity_3601",
+     "strength": "SECONDARY",
+     "time": "2026-09-02T11:10:25Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 2: several assignments equally supported (rival cases for account_7225: [])",
+   "resource_id": "account_7225",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_10",
+   "edges": [
+    {
+     "case_id": "case_10",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_1895",
+     "source_id": "activity_3602",
+     "strength": "SECONDARY",
+     "time": "2026-09-02T11:31:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3602 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "resource_id": "analytics_1895",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_10",
+   "edges": [
+    {
+     "case_id": "case_10",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_4566",
+     "source_id": "activity_3603",
+     "strength": "SECONDARY",
+     "time": "2026-09-02T11:31:24Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3603 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "resource_id": "analytics_4566",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_10",
+   "edges": [
+    {
+     "case_id": "case_10",
+     "identifier": "email:nadia.ionescu@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "support_002",
+     "source_id": "evidence_61",
+     "strength": "HARD",
+     "time": "2026-09-17T22:00:05Z"
+    },
+    {
+     "case_id": "case_10",
+     "identifier": "email:nadia.ionescu@yahoo.com",
+     "kind": "HARD",
+     "resource_id": "support_002",
+     "source_id": "evidence_61",
+     "strength": "HARD",
+     "time": "2026-09-17T22:00:06Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "support_002",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_61",
+   "system_id": "support_platform"
+  }
+ ],
+ "case_id": "case_10",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3599",
+   "reason": "hard-linked to ['user_24']",
+   "resource_id": "account_5334"
+  },
+  {
+   "activity_id": "activity_3600",
+   "reason": "hard-linked to ['user_26']",
+   "resource_id": "account_5684"
+  },
+  {
+   "activity_id": "activity_3604",
+   "reason": "hard-linked to ['user_549']",
+   "resource_id": "tombstone_3963"
+  },
+  {
+   "activity_id": "activity_3605",
+   "reason": "hard-linked to ['user_26']",
+   "resource_id": "support_4715"
+  },
+  {
+   "activity_id": "activity_3606",
+   "reason": "hard-linked to ['user_26']",
+   "resource_id": "data_flow_6244"
+  },
+  {
+   "activity_id": "activity_3607",
+   "reason": "hard-linked to ['user_26']",
+   "resource_id": "backup_3120"
+  },
+  {
+   "activity_id": "activity_3609",
+   "reason": "hard-linked to ['user_550']",
+   "resource_id": "tombstone_7389"
+  },
+  {
+   "activity_id": "activity_3610",
+   "reason": "hard-linked to ['user_24']",
+   "resource_id": "search_5577"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_010: [])",
+   "resource_id": "account_010"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_3136: [])",
+   "resource_id": "account_3136"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_4842: [])",
+   "resource_id": "account_4842"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_7225: [])",
+   "resource_id": "account_7225"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3602 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "resource_id": "analytics_1895"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3603 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "resource_id": "analytics_4566"
+  }
+ ],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-2.5-flash",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
+ },
+ "request": {
+  "audit_at": "2026-09-18T12:25:00Z",
+  "email": "nadia.ionescu@yahoo.com",
+  "reported_at": "2026-09-02T10:08:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-31T15:42:00Z"
+ },
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_ATTACHMENT",
+   "category_basis": "shape ambiguous; deletion workflow attempted DELETE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_61",
+   "required_action": "DELETE",
+   "resource_id": "support_002",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_61#L5",
+     "evidence_61#L6"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_61",
+    "resource_id": "support_002",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_61",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "support_002",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_002",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "support_002",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "support_platform"
+  }
+ ],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "n.petrescu@yahoo.com": "user_identities.email",
+    "nadia.ionescu@yahoo.com": "request.email",
+    "nadia.petrescu@yahoo.com": "user_audit_log.new_value audit_121"
+   },
+   "email_hash": {
+    "6385b5b5e70720c197abedd379f714bb84330a9c7bc86bbb4bfbc4405bdba326": "user_identities.email_hash",
+    "708ef5640eec7c7aa89a6dc39793c5df6f9bca6968397f46a8f44ff1bdde75f5": "user_audit_log.old_value audit_122",
+    "e407f542e6f638d23b7efa7c74bacfb3ee6c3991ca6625ad36c8dcb7dffa144a": "user_audit_log.new_value audit_122"
+   },
+   "name": {
+    "Nadia Petrescu": "user_identities.name"
+   },
+   "phone": {
+    "+40 723 481 638": "user_identities.phone"
+   },
+   "user_id": {
+    "user_10": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_10 via user_audit_log.old_value audit_121"
+  ],
+  "user_ids": [
+   "user_10"
+  ]
+ },
+ "validation_errors": []
+}

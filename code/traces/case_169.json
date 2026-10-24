@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_169",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-07-28T06:00:00Z",
+  "email": "yuki.k7202@zoho.com",
+  "reported_at": "2026-07-14T06:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-07-11T06:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "yuki.k7202@zoho.com": "request.email"
+   },
+   "email_hash": {
+    "641a54045ac55811b92ca91faddb3409abfab7dcb4f9072e1080b56dc458baa3": "user_identities.email_hash"
+   },
+   "name": {
+    "Yuki Kobayashi": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 2903 3843": "user_identities.phone"
+   },
+   "user_id": {
+    "user_167": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_167 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_167"
+  ]
+ }
+}

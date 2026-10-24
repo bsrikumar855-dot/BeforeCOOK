@@ -1,0 +1,53 @@
+{
+ "attribution": [],
+ "case_id": "case_429",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-03-20T08:00:00Z",
+  "email": "y.nakamura42@yahoo.com",
+  "reported_at": "2026-03-05T08:00:00Z",
+  "reported_status": "PARTIALLY_COMPLETE",
+  "requested_at": "2026-03-03T08:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "y.nakamura42@yahoo.com": "request.email"
+   },
+   "email_hash": {
+    "13e0f92cb85e81a6e4fde3bac5810134a6d308291b0de45fdbb8a5a6e9152d04": "user_identities.email_hash"
+   },
+   "name": {
+    "Yuki Nakamura": "user_identities.name"
+   },
+   "phone": {
+    "+81 90 0412 8140": "user_identities.phone"
+   },
+   "user_id": {
+    "user_427": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_427 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_427"
+  ]
+ }
+}

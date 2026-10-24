@@ -1,0 +1,54 @@
+{
+ "attribution": [],
+ "case_id": "case_112",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-27T12:00:00Z",
+  "email": "ionescu.pavel@gmail.com",
+  "reported_at": "2026-08-10T12:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-08-07T12:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "ionescu.pavel@gmail.com": "request.email"
+   },
+   "email_hash": {
+    "61e2798729e535bb83986a1de0172e22780cc3b0ae46e748650edf922bc20b97": "user_identities.email_hash"
+   },
+   "name": {
+    "Pavel Ionescu": "user_identities.name"
+   },
+   "phone": {
+    "+48 580 245 825": "user_identities.phone",
+    "+48 842 819 569": "user_audit_log.old_value audit_199"
+   },
+   "user_id": {
+    "user_110": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_110 via user_identities.email (current)"
+  ],
+  "user_ids": [
+   "user_110"
+  ]
+ }
+}

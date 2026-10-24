@@ -1,0 +1,12 @@
+# secrets: API keys live only in the environment or in this uncommitted file
+.env
+
+# interpreter / tool caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# temporary output written before validation
+*.csv.tmp

@@ -1,0 +1,55 @@
+{
+ "attribution": [],
+ "case_id": "case_136",
+ "excluded": [],
+ "input_issues": [],
+ "intent": {
+  "cache_hit": false,
+  "classify_request_rows": [],
+  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
+  "is_deletion": false,
+  "label": null,
+  "language": null,
+  "model": null,
+  "negation_detected": null,
+  "path": "model_failure->NOT_APPLICABLE",
+  "provider": null
+ },
+ "request": {
+  "audit_at": "2026-08-12T09:00:00Z",
+  "email": "rousseau.hugo80@gmail.com",
+  "reported_at": "2026-07-22T09:00:00Z",
+  "reported_status": "COMPLETE",
+  "requested_at": "2026-07-19T09:00:00Z"
+ },
+ "resources": [],
+ "status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "identifiers": {
+   "email": {
+    "rousseau.hugo80@gmail.com": "request.email",
+    "rousseau.hugo@gmail.com": "user_identities.email"
+   },
+   "email_hash": {
+    "62f8c80035fed5dac88cc9d96fe352993a87bb375186a5e0820c004d6d85bcd4": "user_identities.email_hash",
+    "fd79d0865c75adee320c41a8a0019172f429d4c33d053df45f0573a06fdb53cb": "user_audit_log.old_value audit_245"
+   },
+   "name": {
+    "Hugo Rousseau": "user_identities.name"
+   },
+   "phone": {
+    "+33 6 25 80 78 18": "user_identities.phone"
+   },
+   "user_id": {
+    "user_134": "user_identities.user_id"
+   }
+  },
+  "resolution": [
+   "user_134 via user_audit_log.old_value audit_244"
+  ],
+  "user_ids": [
+   "user_134"
+  ]
+ }
+}
