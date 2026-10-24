@@ -59,7 +59,7 @@ class OcrReader:
         key = hashlib.sha256(raw + engine.encode()).hexdigest()
         (self.root / f"{key}.json").write_text(json.dumps({"file_id": file_id, "image_sha256": image_sha,
                                                             "engine": engine, "text": text}, indent=1) + "\n",
-                                               encoding="utf-8")
+                                               encoding="utf-8", newline="\n")
         self.engines_used.add(engine)
         return text
 

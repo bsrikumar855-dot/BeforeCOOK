@@ -191,6 +191,18 @@ deletion request became INCOMPLETE `[]` and the self-contradiction gate stopped 
 text was sent to the model. Now an empty text is NOT_APPLICABLE without a call, and a long text is classified on
 its first 5,000 characters (`truncated_to` in the trace). 0 eval rows changed.
 
+## 4b. Intent model comparison (C4)
+
+42 texts: the 32 sample requests (all DELETION per sample_output.csv) and the 10 eval texts the
+pipeline labels NON_DELETION (corroborated by CLASSIFY_REQUEST rows; that truth is an inference, not a label).
+
+| Model | Accuracy | DELETION | NON_DELETION | Calls | Tokens |
+|---|---|---|---|---|---|
+| gemini-3.5-flash-lite | 42/42 | 32/32 | 10/10 | 2 | 5711 |
+| gemini-3.5-flash | 42/42 | 32/32 | 10/10 | 2 | 12372 |
+
+Agreement 42/42. Kept `gemini-3.5-flash-lite`: equal accuracy at fewer tokens. Key probes (aliases only) are in `code/evaluation/models_verified.json`.
+
 ## 5. Determinism
 
 - Not run in this invocation (use `--determinism`).

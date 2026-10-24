@@ -102,5 +102,19 @@
   ],
   "screen_title": "Data exports"
  },
- "task": "vision"
+ "task": "vision",
+ "usage_metadata": {
+  "call_id": "8840ec8177594915",
+  "entries_sharing_call": 1,
+  "input_tokens": 1236,
+  "key_slot": "primary",
+  "model": "gemini-2.5-flash",
+  "model_version": "gemini-2.5-flash",
+  "output_tokens": 895,
+  "provider": "gemini",
+  "thinking_tokens": 0,
+  "timestamp": "UNKNOWN",
+  "timestamp_upper_bound": "2026-10-24T20:09:13+05:30",
+  "total_tokens": 2131
+ }
 }

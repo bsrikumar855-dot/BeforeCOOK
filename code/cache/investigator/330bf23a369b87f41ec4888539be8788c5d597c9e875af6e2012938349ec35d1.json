@@ -23,5 +23,19 @@
   "tool": "resource_observations"
  },
  "task": "investigator",
- "turn": 0
+ "turn": 0,
+ "usage_metadata": {
+  "call_id": "d0eb7877e1bc48df",
+  "entries_sharing_call": 1,
+  "input_tokens": 786,
+  "key_slot": "primary",
+  "model": "gemini-3.5-flash-lite",
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 55,
+  "provider": "gemini",
+  "thinking_tokens": 0,
+  "timestamp": "UNKNOWN",
+  "timestamp_upper_bound": "2026-10-25T00:20:01+05:30",
+  "total_tokens": 841
+ }
 }

@@ -302,60 +302,78 @@ def determinism_check() -> dict:
 
 # ----------------------------------------------------------------------------------- usage
 def usage_summary(ledger_path: Path, n_requests: int) -> dict:
+    """Usage of the run that wrote output.csv, built from the cache entries that run used (C8).
+
+    The run's ledger lists every cache entry it read (task, key) and every live call. Each entry carries the provider's
+    usage metadata of the call that produced it; a batched call is counted once per call_id."""
     import yaml
     cfg = yaml.safe_load((CODE_DIR / "config" / "models.yaml").read_text(encoding="utf-8"))
     prices = cfg.get("paid_list_price_usd_per_million_tokens", {})
     ledger = json.loads(ledger_path.read_text(encoding="utf-8")) if ledger_path.exists() else {}
     calls: dict[str, dict] = {}
     for c in ledger.get("calls", []):
-        calls[c["call_id"]] = {**c, "origin": "this run"}
-    hits_by_model = Counter()
+        calls[c["call_id"]] = {**c, "origin": "live"}
+    used_entries: set[Path] = set()
+    entries_by_model = Counter()
     for h in ledger.get("cache_hits", []):
-        hits_by_model[h.get("model")] += 1
-        entry = None
         p = CODE_DIR / "cache" / h["task"] / f"{h['key']}.json"
-        if p.exists():
-            entry = json.loads(p.read_text(encoding="utf-8"))
-        if entry and entry.get("call_id") and entry["call_id"] not in calls:
-            calls[entry["call_id"]] = {"call_id": entry["call_id"], "provider": entry.get("provider"),
-                                       "model": entry.get("model"), "key_slot": entry.get("key_slot"),
-                                       **entry.get("call_usage", {}), "origin": "earlier run (cached)"}
-    per_model = defaultdict(lambda: Counter())
+        if not p.exists():
+            continue
+        used_entries.add(p)
+        meta = json.loads(p.read_text(encoding="utf-8")).get("usage_metadata") or {}
+        entries_by_model[(h["task"], meta.get("model"))] += 1
+        if meta.get("call_id") and meta["call_id"] not in calls:
+            calls[meta["call_id"]] = {**meta, "task": h["task"], "origin": "cache"}
+    tok = ("input_tokens", "output_tokens", "thinking_tokens", "total_tokens")
+
+    def add(counter: Counter, c: dict) -> None:
+        counter["calls"] += 1
+        counter["live" if c["origin"] == "live" else "cached"] += 1
+        for k in tok:
+            counter[k] += int(c.get(k) or 0)
+
+    per_model, per_slot = defaultdict(Counter), defaultdict(Counter)
+    timestamps = Counter()
     for c in calls.values():
-        m = per_model[(c.get("provider"), c.get("model"))]
-        m["calls"] += 1
-        for k in ("input_tokens", "output_tokens", "thinking_tokens", "total_tokens"):
-            m[k] += int(c.get(k, 0) or 0)
+        add(per_model[(c.get("provider"), c.get("model"), c.get("task", "?"))], c)
+        add(per_slot[(c.get("provider"), c.get("key_slot"))], c)
+        timestamps["UNKNOWN" if (c.get("timestamp") or "UNKNOWN") == "UNKNOWN" else "recorded"] += 1
     rows = []
-    for (prov, model), m in sorted(per_model.items(), key=lambda kv: str(kv[0])):
-        price = prices.get(model, {})
-        est = (m["input_tokens"] * price.get("input", 0) + (m["output_tokens"] + m["thinking_tokens"]) *
-               price.get("output", 0)) / 1e6
-        rows.append({"provider": prov, "model": model, **m, "cache_hits_this_run": hits_by_model.get(model, 0),
-                     "estimated_paid_usd": est})
+    for (prov, model, task), m in sorted(per_model.items(), key=lambda kv: str(kv[0])):
+        price = prices.get(model)
+        est = None if price is None else (m["input_tokens"] * price["input"] +
+                                          (m["output_tokens"] + m["thinking_tokens"]) * price["output"]) / 1e6
+        rows.append({"provider": prov, "model": model, "task": task, **m,
+                     "entries_used": entries_by_model.get((task, model), 0), "estimated_paid_usd": est})
     total = Counter()
     for r in rows:
-        for k in ("calls", "input_tokens", "output_tokens", "thinking_tokens", "total_tokens"):
-            total[k] += r[k]
-    total_est = sum(r["estimated_paid_usd"] for r in rows)
-    # Experiment calls (not part of the dataset run): every cached investigator turn and every vision reply
-    # produced after the first full run (re-extraction under the current prompt).
-    experiments = Counter()
-    for task in ("investigator", "vision"):
-        root = CODE_DIR / "cache" / task
-        for p in sorted(root.glob("*.json")) if root.exists() else []:
-            e = json.loads(p.read_text(encoding="utf-8"))
-            if task == "vision" and e.get("call_id") in {c["call_id"] for c in calls.values()}:
-                continue
-            u = e.get("call_usage", {})
-            k = (task, e.get("model"))
-            experiments[(k, "calls")] += 1
-            experiments[(k, "tokens")] += int(u.get("total_tokens", 0) or 0)
-    return {"rows": rows, "total": dict(total), "estimated_paid_usd": total_est, "requests": n_requests,
+        for k in ("calls", "live", "cached") + tok:
+            total[k] += r.get(k, 0)
+    priced = [r["estimated_paid_usd"] for r in rows if r["estimated_paid_usd"] is not None]
+    # Experiment calls: model-reply cache entries this run did not read (fixtures, model comparison, E2, re-extraction).
+    experiments: dict[tuple, Counter] = defaultdict(Counter)
+    seen_exp: set[str] = set()
+    for p in sorted((CODE_DIR / "cache").rglob("*.json")):
+        if p.parent.name == "ocr" or p in used_entries:
+            continue
+        meta = json.loads(p.read_text(encoding="utf-8")).get("usage_metadata") or {}
+        cid = meta.get("call_id")
+        if not cid or cid in calls or cid in seen_exp:
+            continue
+        seen_exp.add(cid)
+        e = experiments[(p.parent.name, meta.get("model"))]
+        e["calls"] += 1
+        e["tokens"] += int(meta.get("total_tokens") or 0)
+    ocr_root = CODE_DIR / "cache" / "ocr"
+    ocr = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(ocr_root.glob("*.json"))] if ocr_root.exists() else []
+    return {"rows": rows, "total": dict(total), "requests": n_requests,
+            "estimated_paid_usd": sum(priced), "unpriced_models": sorted({r["model"] for r in rows if r["estimated_paid_usd"] is None}),
+            "per_slot": {f"{p}/{s}": dict(c) for (p, s), c in sorted(per_slot.items(), key=lambda kv: str(kv[0]))},
+            "timestamps": dict(timestamps), "cache_entries_used": len(used_entries),
             "live_calls_this_run": len(ledger.get("calls", [])), "cache_hits_this_run": len(ledger.get("cache_hits", [])),
-            "events": ledger.get("events", []), "models_verified": ledger.get("models_verified", {}),
-            "experiments": {f"{t}/{m}": {"calls": experiments[((t, m), "calls")], "tokens": experiments[((t, m), "tokens")]}
-                            for (t, m), kind in experiments if kind == "calls"}}
+            "events": ledger.get("events", []),
+            "ocr": {"engines": sorted({o["engine"] for o in ocr}), "images": len(ocr)},
+            "experiments": {f"{t}/{m}": dict(c) for (t, m), c in sorted(experiments.items(), key=lambda kv: str(kv[0]))}}
 
 
 # ----------------------------------------------------------------------------------- report
@@ -467,6 +485,17 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
           "deletion request became INCOMPLETE `[]` and the self-contradiction gate stopped the whole run (exit 2); an empty",
           "text was sent to the model. Now an empty text is NOT_APPLICABLE without a call, and a long text is classified on",
           "its first 5,000 characters (`truncated_to` in the trace). 0 eval rows changed.", ""]
+    cmp_path = EVAL_DIR / "intent_model_comparison.json"
+    if cmp_path.exists():
+        cmp = json.loads(cmp_path.read_text(encoding="utf-8"))
+        L += ["## 4b. Intent model comparison (C4)", "",
+              f"{cmp['texts']} texts: the 32 sample requests (all DELETION per sample_output.csv) and the 10 eval texts the",
+              "pipeline labels NON_DELETION (corroborated by CLASSIFY_REQUEST rows; that truth is an inference, not a label).", "",
+              "| Model | Accuracy | DELETION | NON_DELETION | Calls | Tokens |", "|---|---|---|---|---|---|"]
+        L += [f"| {m} | {r['accuracy']} | {r['by_truth']['DELETION']} | {r['by_truth']['NON_DELETION']} | {r['calls']} | {r['tokens']} |"
+              for m, r in cmp["models"].items()]
+        L += ["", f"Agreement {cmp['agreement']}. Kept `gemini-3.5-flash-lite`: equal accuracy at fewer tokens. Key probes "
+              "(aliases only) are in `code/evaluation/models_verified.json`.", ""]
     L += ["## 5. Determinism", ""]
     if det:
         for name, r in det.items():
@@ -478,46 +507,64 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
     L += [""] + appendix
     (EVAL_DIR / "evaluation_report.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 
-    U = ["# Usage report", "",
-         "Summarises the model usage behind the final full-dataset run that produced `output.csv`. Tokens come from the",
-         "provider's `usageMetadata` recorded on every call (live calls of this run plus the calls that produced the cache",
-         "entries this run reused). Provider: Google Gemini API, free tier (actual cost $0).", "",
-         f"- Requests in the eval run: {usage['requests']}",
-         f"- Live model calls in this run: {usage['live_calls_this_run']}; cache hits in this run: {usage['cache_hits_this_run']}", "",
-         "| Provider | Model | Calls | Cache hits (this run) | Input tokens | Output tokens | Thinking tokens | Total tokens | Est. paid-list cost (USD) |",
-         "|---|---|---|---|---|---|---|---|---|"]
-    for r in usage["rows"]:
-        U.append(f"| {r['provider']} | {r['model']} | {r['calls']} | {r['cache_hits_this_run']} | {r['input_tokens']} | "
-                 f"{r['output_tokens']} | {r['thinking_tokens']} | {r['total_tokens']} | {r['estimated_paid_usd']:.4f} |")
     t = usage["total"]
     n = max(1, usage["requests"])
-    U += [f"| **all** | | {t.get('calls', 0)} | {usage['cache_hits_this_run']} | {t.get('input_tokens', 0)} | "
-          f"{t.get('output_tokens', 0)} | {t.get('thinking_tokens', 0)} | {t.get('total_tokens', 0)} | {usage['estimated_paid_usd']:.4f} |", "",
-          f"- Average tokens per eval request: {t.get('total_tokens', 0) / n:.1f}",
-          f"- Actual cost: $0 (free tier). Estimated cost at paid list price: ${usage['estimated_paid_usd']:.4f} total, "
-          f"${usage['estimated_paid_usd'] / n:.6f} per request.",
-          f"- Price source: {PRICE_SOURCE}", "",
-          f"- Fallback / quota / validation events in this run: {dict(Counter(e.get('event') for e in usage['events']))}",
-          f"- Model ids listed by the provider for each key (`python3 code/main.py --check-models`): "
-          f"{json.dumps(_models_verified().get('by_slot', 'not checked'))}", "",
-          "## Notes on the counts", "",
-          "- Listed is not the same as callable. Probes on 2026-10-24 returned HTTP 404 \"no longer available to new users\" for",
-          "  `gemini-2.5-flash-lite` on every key and for `gemini-2.5-flash` on one key, and HTTP 429",
-          "  `GenerateRequestsPerDayPerProjectPerModel-FreeTier` (20 requests/day per project) for `gemini-2.5-flash` on two",
-          "  keys. The first live run therefore failed 12 intent batches; intent was switched to `gemini-3.5-flash-lite`",
-          "  (DESIGN.md D-MODEL-IDS) and the run repeated, reusing every cached reply.",
-          "- The table counts the calls whose replies are in the cache and were used by this run. Two earlier vision calls",
-          "  were rejected by the output validator and retried; their token usage was recorded only in the first run's",
-          "  ledger, which the rerun overwrote, so they are not included (UNKNOWN, at most two calls).",
-          "- The intent replies also cover the 32 sample requests (the pipeline runs samples and eval jointly for global",
-          "  attribution); averages divide by the 518 eval requests.",
-          "- Calls made while evaluating the custom fixtures (X1–X5) are not part of the dataset run and are not counted.", "",
+    usd = usage["estimated_paid_usd"]
+    unpriced = usage["unpriced_models"]
+    U = ["# Usage report", "",
+         "Model usage behind the final full-dataset run that produced `output.csv`, built by `code/evaluation/main.py`",
+         "from the cache entries that run read (listed in its ledger, `code/evaluation/usage_ledger.json`) plus its live",
+         "calls. Every cache entry stores the provider's usage metadata (`usage_metadata`: provider, model, served model",
+         "version, key alias, input/output/thinking tokens, timestamp) of the call that produced it. A batched intent call",
+         "produced up to 40 entries; it is counted once (by call_id).", "",
+         f"- Requests in the eval run: {usage['requests']} (the pipeline also classifies the 32 sample requests in the same batches)",
+         f"- Cache entries read by this run: {usage['cache_entries_used']}; live calls in this run: {usage['live_calls_this_run']}",
+         f"- Distinct provider calls behind the run: {t.get('calls', 0)} ({t.get('cached', 0)} replayed from cache, "
+         f"{t.get('live', 0)} live)", "",
+         "## Per model", "",
+         "| Provider | Model | Task | Calls | Cache entries used | Input tokens | Output tokens | Thinking tokens | Total tokens | Est. paid-list cost (USD) |",
+         "|---|---|---|---|---|---|---|---|---|---|"]
+    for r in usage["rows"]:
+        cost = "UNKNOWN (no published price)" if r["estimated_paid_usd"] is None else f"{r['estimated_paid_usd']:.4f}"
+        U.append(f"| {r['provider']} | {r['model']} | {r['task']} | {r['calls']} | {r['entries_used']} | {r['input_tokens']} | "
+                 f"{r['output_tokens']} | {r['thinking_tokens']} | {r['total_tokens']} | {cost} |")
+    U += [f"| **all** | | | {t.get('calls', 0)} | {usage['cache_entries_used']} | {t.get('input_tokens', 0)} | "
+          f"{t.get('output_tokens', 0)} | {t.get('thinking_tokens', 0)} | {t.get('total_tokens', 0)} | {usd:.4f}"
+          f"{' + UNKNOWN' if unpriced else ''} |",
+          f"| local OCR | {', '.join(usage['ocr']['engines']) or 'not used'} | screenshot id grounding | {usage['ocr']['images']} images | "
+          f"| 0 | 0 | 0 | 0 | 0.0000 (local, no API) |", "",
+          "## Per key alias", "",
+          "Aliases only (`primary`, `fallback_1` …); key values never appear in any file. Keys of one Google Cloud project",
+          "share a quota pool and the API does not reveal the project, so pools are UNKNOWN.", "",
+          "| Provider / alias | Calls | Live | From cache | Total tokens |", "|---|---|---|---|---|"]
+    U += [f"| {k} | {v.get('calls', 0)} | {v.get('live', 0)} | {v.get('cached', 0)} | {v.get('total_tokens', 0)} |"
+          for k, v in usage["per_slot"].items()]
+    U += ["", "## Totals and cost", "",
+          f"- Total tokens: {t.get('total_tokens', 0)}; average per eval request: {t.get('total_tokens', 0) / n:.1f} "
+          f"(input {t.get('input_tokens', 0) / n:.1f}, output {t.get('output_tokens', 0) / n:.1f}); calls per request {t.get('calls', 0) / n:.3f}",
+          "- Actual cost: $0. Every call used the Gemini API free tier; the OCR engine runs locally.",
+          f"- Estimated cost at paid list price: ${usd:.4f} total, ${usd / n:.6f} per request"
+          + (f" (excluding {', '.join(unpriced)}: no published price, UNKNOWN)" if unpriced else "") + ".",
+          f"- Price source: {PRICE_SOURCE}",
+          f"- Fallback / quota / validation events in this run: {dict(Counter(e.get('event') for e in usage['events'])) or 'none'}",
+          f"- Call timestamps: {usage['timestamps']}. Calls made before C8 did not store their time; their entries carry",
+          "  `timestamp: UNKNOWN` and `timestamp_upper_bound` (the commit that first added the entry). Calls made after C8",
+          "  store the provider-call time.", "",
+          "## Disclosures", "",
+          "- **Lost early ledger.** The first live run (2026-10-24) failed 12 intent batches (`gemini-2.5-flash-lite` HTTP 404 on",
+          "  every key, `gemini-2.5-flash` 20 requests/day cap) and two vision replies failed the output validator and were",
+          "  retried. Those failed or rejected calls produced no cache entry, and their ledger was overwritten by the rerun, so",
+          "  their tokens are not in this report (UNKNOWN; at most 12 intent and 2 vision calls). Intent was switched to",
+          "  `gemini-3.5-flash-lite` (DESIGN.md D-MODEL-IDS).",
+          "- The provider may serve a different version than the requested id: the served `model_version` is kept in every",
+          "  entry (for example, requests to `gemini-3.5-flash` reported `gemini-3.6-flash`).",
+          "- The ledger of this run lists cache entries, not new calls: a `--from-cache` run makes no network call.", "",
           "## Experiment calls (not part of the dataset run)", "",
-          "Counted from the cached replies: E2 investigator turns, and screenshot replies produced after the dataset run",
-          "(the evidence_42 re-extraction under the tri-state prompt). Groq was never called: no GROQ_API_KEY is set,",
-          "so every investigator turn fell back to Gemini (one `fallback_used` event per turn).", "",
-          "| Task / model | Calls | Total tokens |", "|---|---|---|"] + [
-          f"| {k} | {v['calls']} | {v['tokens']} |" for k, v in sorted(usage.get("experiments", {}).items())]
+          "Model-reply cache entries the final run did not read, one row per cache folder and model, counted once per call:",
+          "custom and adversarial fixtures, the C4 intent-model comparison, the E2 investigator turns and screenshot",
+          "re-extractions. Groq was never called (no GROQ_API_KEY).", "",
+          "| Cache folder / model | Calls | Total tokens |", "|---|---|---|"]
+    U += [f"| {k} | {v.get('calls', 0)} | {v.get('tokens', 0)} |" for k, v in usage["experiments"].items()]
     (EVAL_DIR / "usage_report.md").write_text("\n".join(U) + "\n", encoding="utf-8")
 
 

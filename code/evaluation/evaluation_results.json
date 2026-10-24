@@ -2666,58 +2666,109 @@
    {
     "provider": "gemini",
     "model": "gemini-2.5-flash",
+    "task": "intent",
     "calls": 8,
+    "cached": 8,
     "input_tokens": 15974,
     "output_tokens": 6177,
     "thinking_tokens": 0,
     "total_tokens": 22151,
-    "cache_hits_this_run": 170,
+    "entries_used": 160,
     "estimated_paid_usd": 0.0202347
    },
    {
     "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "task": "vision",
+    "calls": 10,
+    "cached": 10,
+    "input_tokens": 12424,
+    "output_tokens": 9788,
+    "thinking_tokens": 0,
+    "total_tokens": 22212,
+    "entries_used": 10,
+    "estimated_paid_usd": 0.028197200000000002
+   },
+   {
+    "provider": "gemini",
     "model": "gemini-3.5-flash",
+    "task": "vision",
     "calls": 1,
+    "cached": 1,
     "input_tokens": 2176,
     "output_tokens": 281,
     "thinking_tokens": 3502,
     "total_tokens": 5959,
-    "cache_hits_this_run": 1,
-    "estimated_paid_usd": 0.0
+    "entries_used": 1,
+    "estimated_paid_usd": null
    },
    {
     "provider": "gemini",
     "model": "gemini-3.5-flash-lite",
+    "task": "intent",
     "calls": 6,
+    "cached": 6,
     "input_tokens": 20048,
     "output_tokens": 9873,
     "thinking_tokens": 0,
     "total_tokens": 29921,
-    "cache_hits_this_run": 238,
+    "entries_used": 238,
     "estimated_paid_usd": 0.030696900000000003
    }
   ],
   "total": {
-   "calls": 15,
-   "input_tokens": 38198,
-   "output_tokens": 16331,
+   "calls": 25,
+   "live": 0,
+   "cached": 25,
+   "input_tokens": 50622,
+   "output_tokens": 26119,
    "thinking_tokens": 3502,
-   "total_tokens": 58031
+   "total_tokens": 80243
   },
-  "estimated_paid_usd": 0.05093160000000001,
   "requests": 518,
+  "estimated_paid_usd": 0.0791288,
+  "unpriced_models": [
+   "gemini-3.5-flash"
+  ],
+  "per_slot": {
+   "gemini/primary": {
+    "calls": 25,
+    "cached": 25,
+    "input_tokens": 50622,
+    "output_tokens": 26119,
+    "thinking_tokens": 3502,
+    "total_tokens": 80243
+   }
+  },
+  "timestamps": {
+   "UNKNOWN": 25
+  },
+  "cache_entries_used": 409,
   "live_calls_this_run": 0,
   "cache_hits_this_run": 409,
   "events": [],
-  "models_verified": {},
+  "ocr": {
+   "engines": [
+    "tesseract 5.5.3.20260724"
+   ],
+   "images": 11
+  },
   "experiments": {
+   "intent/gemini-3.5-flash": {
+    "calls": 2,
+    "tokens": 12372
+   },
+   "intent/gemini-3.5-flash-lite": {
+    "calls": 11,
+    "tokens": 13301
+   },
    "investigator/gemini-3.5-flash-lite": {
     "calls": 28,
     "tokens": 41780
    },
    "vision/gemini-2.5-flash": {
-    "calls": 11,
-    "tokens": 24428
+    "calls": 1,
+    "tokens": 2216
    }
   }
  }

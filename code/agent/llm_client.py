@@ -19,6 +19,7 @@ import urllib.error
 import urllib.request
 import uuid
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
@@ -102,7 +103,24 @@ class ResponseCache:
     def put(self, task: str, key: str, record: dict) -> None:
         p = self.path(task, key)
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(json.dumps(record, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+        record = {**record, "usage_metadata": usage_metadata(record)}
+        p.write_text(json.dumps(record, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8",
+                     newline="\n")                       # LF on every OS: cache files are byte-compared (C3)
+
+
+def _now() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def usage_metadata(record: dict) -> dict:
+    """The provider usage behind a cache entry, in one place (C8). A batched call's usage is the whole call's and is
+    repeated in every entry it produced; reports count each call_id once."""
+    u = record.get("call_usage") or {}
+    return {"provider": record.get("provider"), "model": record.get("model"), "model_version": u.get("model_version"),
+            "key_slot": record.get("key_slot"), "call_id": record.get("call_id"),
+            "input_tokens": u.get("input_tokens"), "output_tokens": u.get("output_tokens"),
+            "thinking_tokens": u.get("thinking_tokens"), "total_tokens": u.get("total_tokens"),
+            "timestamp": u.get("timestamp") or "UNKNOWN", "entries_sharing_call": record.get("batch_size", 1)}
 
 
 class LLMClient:
@@ -293,7 +311,8 @@ class LLMClient:
         if provider == "groq":
             u = body.get("usage", {})
             usage = {"input_tokens": u.get("prompt_tokens", 0), "output_tokens": u.get("completion_tokens", 0),
-                     "thinking_tokens": 0, "total_tokens": u.get("total_tokens", 0), "model_version": body.get("model")}
+                     "thinking_tokens": 0, "total_tokens": u.get("total_tokens", 0), "model_version": body.get("model"),
+                     "timestamp": _now()}
             self.ledger.calls.append({"call_id": call_id, "provider": provider, "model": model_cfg["id"],
                                       "key_slot": slot, **usage})
             text = ((body.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
@@ -303,7 +322,7 @@ class LLMClient:
                  "output_tokens": meta.get("candidatesTokenCount", 0),
                  "thinking_tokens": meta.get("thoughtsTokenCount", 0),
                  "total_tokens": meta.get("totalTokenCount", 0),
-                 "model_version": body.get("modelVersion", model_cfg["id"])}
+                 "model_version": body.get("modelVersion", model_cfg["id"]), "timestamp": _now()}
         self.ledger.calls.append({"call_id": call_id, "provider": "gemini", "model": model_cfg["id"],
                                   "key_slot": slot, **usage})
         parts = (body.get("candidates") or [{}])[0].get("content", {}).get("parts", [])

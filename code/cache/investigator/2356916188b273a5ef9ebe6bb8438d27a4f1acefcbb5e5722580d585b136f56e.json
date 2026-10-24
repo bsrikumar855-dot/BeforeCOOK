@@ -66,5 +66,19 @@
   ]
  },
  "task": "investigator",
- "turn": 1
+ "turn": 1,
+ "usage_metadata": {
+  "call_id": "fb3b8a6168d44e38",
+  "entries_sharing_call": 1,
+  "input_tokens": 1116,
+  "key_slot": "primary",
+  "model": "gemini-3.5-flash-lite",
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 323,
+  "provider": "gemini",
+  "thinking_tokens": 0,
+  "timestamp": "UNKNOWN",
+  "timestamp_upper_bound": "2026-10-25T00:20:01+05:30",
+  "total_tokens": 1439
+ }
 }

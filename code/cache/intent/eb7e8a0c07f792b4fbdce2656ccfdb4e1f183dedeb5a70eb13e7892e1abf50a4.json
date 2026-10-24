@@ -19,5 +19,19 @@
   "language": "pt",
   "negation_detected": false
  },
- "task": "intent"
+ "task": "intent",
+ "usage_metadata": {
+  "call_id": "e59817939fa44041",
+  "entries_sharing_call": 38,
+  "input_tokens": 3230,
+  "key_slot": "primary",
+  "model": "gemini-3.5-flash-lite",
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 1648,
+  "provider": "gemini",
+  "thinking_tokens": 0,
+  "timestamp": "UNKNOWN",
+  "timestamp_upper_bound": "2026-10-24T23:40:03+05:30",
+  "total_tokens": 4878
+ }
 }

@@ -71,3 +71,17 @@ def test_normal_run_exits_0_and_writes_output(tmp_path, accepted, monkeypatch):
     monkeypatch.setattr(pipeline, "IntentClassifier", DeletionClassifier)
     assert entry.main(_args(tmp_path)) == 0
     assert "case_x04,COMPLETE" in accepted.read_text(encoding="utf-8")
+
+
+def test_cache_entries_carry_usage_metadata(tmp_path):
+    from agent.llm_client import ResponseCache
+    c = ResponseCache(tmp_path)
+    c.put("intent", "k1", {"provider": "gemini", "model": "m", "key_slot": "fallback_2", "call_id": "abc", "batch_size": 3,
+                           "call_usage": {"input_tokens": 10, "output_tokens": 4, "thinking_tokens": 0, "total_tokens": 14,
+                                          "timestamp": "2026-10-25T10:00:00Z"}, "response": {}})
+    raw = (tmp_path / "intent" / "k1.json").read_bytes()
+    assert b"\r\n" not in raw                                  # LF on every OS (cache files are byte-compared)
+    meta = c.get("intent", "k1")["usage_metadata"]
+    assert (meta["key_slot"], meta["total_tokens"], meta["timestamp"], meta["entries_sharing_call"]) == ("fallback_2", 14, "2026-10-25T10:00:00Z", 3)
+    c.put("intent", "k2", {"call_usage": {}, "response": {}})
+    assert c.get("intent", "k2")["usage_metadata"]["timestamp"] == "UNKNOWN"

@@ -44,5 +44,19 @@
   ],
   "screen_title": "Customer Reference Registry"
  },
- "task": "vision"
+ "task": "vision",
+ "usage_metadata": {
+  "call_id": "6563b0bf27804411",
+  "entries_sharing_call": 1,
+  "input_tokens": 2176,
+  "key_slot": "primary",
+  "model": "gemini-3.5-flash",
+  "model_version": "gemini-3.6-flash",
+  "output_tokens": 281,
+  "provider": "gemini",
+  "thinking_tokens": 3502,
+  "timestamp": "UNKNOWN",
+  "timestamp_upper_bound": "2026-10-25T00:14:05+05:30",
+  "total_tokens": 5959
+ }
 }

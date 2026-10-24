@@ -193,5 +193,19 @@
   ],
   "screen_title": "Nimbus Object Storage"
  },
- "task": "vision"
+ "task": "vision",
+ "usage_metadata": {
+  "call_id": "269607dab18247b3",
+  "entries_sharing_call": 1,
+  "input_tokens": 1236,
+  "key_slot": "primary",
+  "model": "gemini-2.5-flash",
+  "model_version": "gemini-2.5-flash",
+  "output_tokens": 1698,
+  "provider": "gemini",
+  "thinking_tokens": 0,
+  "timestamp": "UNKNOWN",
+  "timestamp_upper_bound": "2026-10-24T20:09:13+05:30",
+  "total_tokens": 2934
+ }
 }

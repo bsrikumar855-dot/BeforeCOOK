@@ -87,7 +87,8 @@ class ImageExtractor:
             hit = self._legacy_entry(ef)
         if hit is not None:
             reply = hit["response"]
-            self.client.ledger.cache_hits.append({"task": TASK, "key": key, "provider": hit.get("provider"),
+            # the entry actually read (a legacy reply lives under its own, older key)
+            self.client.ledger.cache_hits.append({"task": TASK, "key": hit.get("key", key), "provider": hit.get("provider"),
                                                   "model": hit.get("model"), "call_id": hit.get("call_id")})
         else:
             try:
