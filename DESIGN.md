@@ -35,6 +35,72 @@ Step object: exactly the keys `step_no, phase, system_id, resource_id, operation
 
 ## 3. Architecture
 
+### Architecture as built (G9)
+
+A **deterministic decision core** with **Gemini perception behind a typed seam**. The model does two jobs only:
+it labels request intent (`agent.intent`) and reads the 11 screenshots into enum-validated observations
+(`agent.parsers.png_vlm`). Everything that reaches the CSV (status, every step, every id, every citation) is
+computed by code from typed records (Observation, Identifier, ActivityClaim, Attribution, ResourceState, Verdict).
+Code verifiers sit on both sides of the seam: evidence admission checks before parsing (`file_checks`), multi-pass
+OCR grounding after extraction (an id is accepted only if it is visibly on the screen, `ocr_grounding`), schema and
+id validation of every model reply, and row/file validators before output.csv is replaced (`validation`).
+
+**Why there is no free-form agent loop in the decision path.** One was built and measured: experiment E2, a
+tool-calling investigator with five read-only tools and a deterministic verifier
+([`code/analysis/e2_investigator.py`](code/analysis/e2_investigator.py),
+[`e2_investigator_tools.py`](code/analysis/e2_investigator_tools.py),
+[`e2_investigator_verifier.py`](code/analysis/e2_investigator_verifier.py)). On the samples it made 126 proposals,
+all AMBIGUOUS; 0 were accepted. The ceiling is structural: the verifier may accept only identity-link support, and
+any identity link the tools can reach is already a hard link that attribution marks CONFIRMED, so the loop can add
+cost and risk but no correct decisions. It was removed from the pipeline and archived under `code/analysis/`.
+
+Import graph of the shipped code (every arrow is an import, importer → imported; `agent.schema`, `agent.loaders` and
+`agent.identity` are shared utilities and only their non-trivial edges are drawn; checked against the AST imports by
+`code/tests/test_architecture_diagram.py`):
+
+```mermaid
+flowchart LR
+    main["main"] --> pipeline["agent.pipeline"]
+    main --> explain["agent.explain"]
+    main --> validation["agent.validation"]
+    main --> llm["agent.llm_client"]
+    explain --> intent["agent.intent"]
+    pipeline --> parsers["agent.parsers"]
+    pipeline --> filechecks["agent.parsers.file_checks"]
+    pipeline --> vlm["agent.parsers.png_vlm"]
+    pipeline --> ocr["agent.parsers.ocr_grounding"]
+    pipeline --> intent
+    pipeline --> attribution["agent.attribution"]
+    pipeline --> state["agent.state"]
+    pipeline --> rules["agent.rules"]
+    pipeline --> steps["agent.steps"]
+    pipeline --> validation
+    pipeline --> llm
+    parsers --> filechecks
+    parsers --> sql["agent.parsers.sql_snapshots"]
+    parsers --> jsonr["agent.parsers.json_records"]
+    parsers --> logs["agent.parsers.log_lines"]
+    parsers --> handover["agent.parsers.handover_text"]
+    parsers --> pdf["agent.parsers.pdf_text"]
+    parsers --> semantics["agent.parsers.record_semantics"]
+    vlm --> ocr
+    vlm --> llm
+    intent --> llm
+    attribution --> parsers
+    attribution --> identity["agent.identity"]
+    state --> parsers
+    rules --> parsers
+    validation --> steps
+    steps --> schema["agent.schema"]
+    classDef perception fill:#fde2c8,stroke:#b5651d
+    classDef verifier fill:#d6ecd2,stroke:#3b7a2e
+    class intent,vlm,llm perception
+    class filechecks,ocr,validation verifier
+```
+
+Orange: the only components that call a model (perception). Green: code verifiers. Everything else is the
+deterministic core.
+
 - Entry point: `code/main.py` (Phase 1). Forensics: `code/analysis/profile_dataset.py` (this phase).
 - Stages, in order:
   `load CSVs` → `validate inputs` → `parse evidence → Observations` (deterministic; PNG via model, cached) → `intent` (model, cached per distinct text) → `identity resolution` → `resource discovery` → `state reconstruction at audit_at` → `category + treatment` → `step generation` → `output validation` → `write CSV`.
@@ -394,6 +460,7 @@ The contract assertions above already pass on `sample_output.csv` itself (sort r
 | G3 (shipped) | CONSTANTS.md completed: 31-row main table (value, file:line, purpose, label, evidence or rejected alternative, what breaks), typed spec enums, a generated register of every numeric literal in code/ and every config key (`code/analysis/constants_register.py`; an unclassified literal stops it), and `code/tests/test_constants_coverage.py` (literals, config keys, enums vs schema, labels). Four labels corrected (±3 h, OCR underscore, scope window, provider limits) | Hand-maintained list only | Skill CONSTANTS-template: every number gets a provenance; MEASURED only where a sweep is on record (citation rule C, intent model) |
 | G5 (shipped, audit only) | `code/evaluation/spec_audit.py`: constants typed from problem_statement.md, no imports from our code; 0 violations on output.csv (518 rows, 2,913 steps); negative control 17/17 defect classes caught; standing test `code/tests/test_spec_audit.py` | Validate with our own schema module | Skill spec-auditor: a checker importing our constants only proves the code agrees with itself. Open question recorded: the spec does not define case_id sort order; we follow the input file's numeric order (a plain string sort would differ) |
 | G8 (shipped) | Evidence admission checks (`code/agent/parsers/file_checks.py`: path escape, missing, wrong type by magic bytes, corrupt PNG/PDF, truncated SQL), fail-closed rule for verifications whose proof predates a rejected file, any DEGRADE → exit 4; seven quadratic regexes bounded. Fixtures: 5/5 hostile-file classes pass (exit 4, a row per case, output.csv untouched, no COMPLETE row cites a pre-drop proof) | Note the problem and parse anyway | Skills security-auditor and robustness: every hostile input must still produce a valid row, and a swallowed failure is a silent wrong answer. 0 output rows changed |
+| G9 (shipped, docs) | Architecture described as built in README and DESIGN §3: deterministic core, Gemini perception behind the typed seam, multi-pass OCR grounding, code verifiers; why no agent loop (E2: 126 proposals, all AMBIGUOUS, 0 accepted, structural ceiling 0; archived in code/analysis/). Mermaid import graph checked against the AST by `code/tests/test_architecture_diagram.py` | A hand-drawn diagram | A diagram that is not checked drifts from the code |
 | D-E2 | Do not ship the investigator; do not run it on eval | Ship (the SHIP rule is met vacuously: 0 accepted, 0 incorrect) | 0 of 126 sample proposals accepted, so no number moves (P1). Ceiling argument: the verifier accepts only identity-link support, and any identity link the tools can reach is already a hard link that attribution marks CONFIRMED. Running eval would cost about 300 calls for an expected 0 |
 | D-E1 | Ship neither ordering strategy (see rejection log) | Ship A (4 correct resolutions) | Both made one incorrect resolution on the samples; timing/ordering cannot meet the zero-incorrect bar. The E2 verifier therefore does not accept ordering-only support either |
 | D-TRACE-NORMAL | Traces hold decision facts only; run metadata (cache hits, call ids, latency) lives in the usage ledger | Keep `cache_hit` in traces | The flag made 358 traces differ between a live and a cached run with identical decisions |

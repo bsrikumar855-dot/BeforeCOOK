@@ -11,6 +11,72 @@ Design, decisions and rejected alternatives: [`DESIGN.md`](DESIGN.md). Measured 
 
 ## How it works
 
+### Architecture
+
+A **deterministic decision core** with **Gemini perception behind a typed seam**. The model does two jobs only:
+it labels request intent (`agent.intent`) and reads the 11 screenshots into enum-validated observations
+(`agent.parsers.png_vlm`). Everything that reaches the CSV (status, every step, every id, every citation) is
+computed by code from typed records (Observation, Identifier, ActivityClaim, Attribution, ResourceState, Verdict).
+Code verifiers sit on both sides of the seam: evidence admission checks before parsing (`file_checks`), multi-pass
+OCR grounding after extraction (an id is accepted only if it is visibly on the screen, `ocr_grounding`), schema and
+id validation of every model reply, and row/file validators before output.csv is replaced (`validation`).
+
+**Why there is no free-form agent loop in the decision path.** One was built and measured: experiment E2, a
+tool-calling investigator with five read-only tools and a deterministic verifier
+([`code/analysis/e2_investigator.py`](code/analysis/e2_investigator.py),
+[`e2_investigator_tools.py`](code/analysis/e2_investigator_tools.py),
+[`e2_investigator_verifier.py`](code/analysis/e2_investigator_verifier.py)). On the samples it made 126 proposals,
+all AMBIGUOUS; 0 were accepted. The ceiling is structural: the verifier may accept only identity-link support, and
+any identity link the tools can reach is already a hard link that attribution marks CONFIRMED, so the loop can add
+cost and risk but no correct decisions. It was removed from the pipeline and archived under `code/analysis/`.
+
+Import graph of the shipped code (every arrow is an import, importer → imported; `agent.schema`, `agent.loaders` and
+`agent.identity` are shared utilities and only their non-trivial edges are drawn; checked against the AST imports by
+`code/tests/test_architecture_diagram.py`):
+
+```mermaid
+flowchart LR
+    main["main"] --> pipeline["agent.pipeline"]
+    main --> explain["agent.explain"]
+    main --> validation["agent.validation"]
+    main --> llm["agent.llm_client"]
+    explain --> intent["agent.intent"]
+    pipeline --> parsers["agent.parsers"]
+    pipeline --> filechecks["agent.parsers.file_checks"]
+    pipeline --> vlm["agent.parsers.png_vlm"]
+    pipeline --> ocr["agent.parsers.ocr_grounding"]
+    pipeline --> intent
+    pipeline --> attribution["agent.attribution"]
+    pipeline --> state["agent.state"]
+    pipeline --> rules["agent.rules"]
+    pipeline --> steps["agent.steps"]
+    pipeline --> validation
+    pipeline --> llm
+    parsers --> filechecks
+    parsers --> sql["agent.parsers.sql_snapshots"]
+    parsers --> jsonr["agent.parsers.json_records"]
+    parsers --> logs["agent.parsers.log_lines"]
+    parsers --> handover["agent.parsers.handover_text"]
+    parsers --> pdf["agent.parsers.pdf_text"]
+    parsers --> semantics["agent.parsers.record_semantics"]
+    vlm --> ocr
+    vlm --> llm
+    intent --> llm
+    attribution --> parsers
+    attribution --> identity["agent.identity"]
+    state --> parsers
+    rules --> parsers
+    validation --> steps
+    steps --> schema["agent.schema"]
+    classDef perception fill:#fde2c8,stroke:#b5651d
+    classDef verifier fill:#d6ecd2,stroke:#3b7a2e
+    class intent,vlm,llm perception
+    class filechecks,ocr,validation verifier
+```
+
+Orange: the only components that call a model (perception). Green: code verifiers. Everything else is the
+deterministic core.
+
 The model does exactly two jobs; code decides everything that reaches the CSV.
 
 | Stage | Module | Model? |
