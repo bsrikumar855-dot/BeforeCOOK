@@ -1,0 +1,31 @@
+{
+ "violations": [],
+ "status_counts": {
+  "INCOMPLETE": 355,
+  "COMPLETE": 153,
+  "NOT_APPLICABLE": 10
+ },
+ "steps": 2913,
+ "incomplete_empty": [
+  "case_63"
+ ],
+ "negative_control": {
+  "header": true,
+  "row_count": true,
+  "id_set": true,
+  "row_order": true,
+  "status": true,
+  "json": true,
+  "not_applicable_steps": true,
+  "incomplete_empty": true,
+  "step_keys": true,
+  "step_no": true,
+  "triple": true,
+  "complete_phase": true,
+  "citation_missing": true,
+  "future_step_cited": true,
+  "citation_unknown": true,
+  "citation_after_audit": true,
+  "ordering": true
+ }
+}

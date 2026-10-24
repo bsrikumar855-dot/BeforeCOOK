@@ -222,6 +222,17 @@ Corpus literals in executable code: 0. Rules firing on exactly one case (reviewe
 
 Defects found: (1) the probe's own renamer missed ids joined to another token in a model reply (`user_11_account_5762`); fixed in the probe. (2) Traceability: an elimination entry named the other person but not the evidence that linked them, so an INFERRED pick's dependency on that evidence was invisible (dropping evidence_08 changed case_78 and case_102 outside the trace-derived dependents). Eliminations now record their `sources`; 0 output rows changed.
 
+## 4d. Literal spec audit (G5, `code/evaluation/spec_audit.py`)
+
+Constants typed from problem_statement.md, nothing imported from the code. Checks header, 518 rows and ids,
+statuses, NOT_APPLICABLE = [], the 7 step keys, phase/operation/state triples, consecutive step_no, ordering,
+COMPLETE = verification only and cited, INCOMPLETE future steps uncited, citations exist and are <= audit_at,
+INCOMPLETE [] only with NO_ATTRIBUTABLE_RESOURCE.
+
+- output.csv: 518 rows {'INCOMPLETE': 355, 'COMPLETE': 153, 'NOT_APPLICABLE': 10}, 2913 steps; violations: 0
+- INCOMPLETE [] rows: ['case_63']
+- Negative control: 17/17 injected defect classes caught (header, row_count, id_set, row_order, status, json, not_applicable_steps, incomplete_empty, step_keys, step_no, triple, complete_phase, citation_missing, future_step_cited, citation_unknown, citation_after_audit, ordering)
+
 ## 5. Determinism
 
 - Not run in this invocation (use `--determinism`).

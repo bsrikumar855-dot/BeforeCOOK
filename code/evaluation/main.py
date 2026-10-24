@@ -525,6 +525,18 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
               "not the evidence that linked them, so an INFERRED pick's dependency on that evidence was invisible (dropping "
               "evidence_08 changed case_78 and case_102 outside the trace-derived dependents). Eliminations now record their "
               "`sources`; 0 output rows changed.", ""]
+    sa = EVAL_DIR / "spec_audit.json"
+    if sa.exists():
+        a = json.loads(sa.read_text(encoding="utf-8"))
+        nc = a["negative_control"]
+        L += ["## 4d. Literal spec audit (G5, `code/evaluation/spec_audit.py`)", "",
+              "Constants typed from problem_statement.md, nothing imported from the code. Checks header, 518 rows and ids,",
+              "statuses, NOT_APPLICABLE = [], the 7 step keys, phase/operation/state triples, consecutive step_no, ordering,",
+              "COMPLETE = verification only and cited, INCOMPLETE future steps uncited, citations exist and are <= audit_at,",
+              "INCOMPLETE [] only with NO_ATTRIBUTABLE_RESOURCE.", "",
+              f"- output.csv: {sum(a['status_counts'].values())} rows {a['status_counts']}, {a['steps']} steps; violations: {len(a['violations'])}",
+              f"- INCOMPLETE [] rows: {a['incomplete_empty']}",
+              f"- Negative control: {sum(nc.values())}/{len(nc)} injected defect classes caught ({', '.join(nc)})", ""]
     L += ["## 5. Determinism", ""]
     if det:
         for name, r in det.items():
