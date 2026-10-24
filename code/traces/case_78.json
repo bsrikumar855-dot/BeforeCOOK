@@ -1,19 +1,253 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_78",
+   "edges": [
+    {
+     "case_id": "case_78",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_8754",
+     "source_id": "activity_3302",
+     "strength": "SECONDARY",
+     "time": "2026-08-18T06:45:48Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_3302 is in every maximum one-to-one assignment of batch 115 (cases ['case_78'], rows ['account_8754']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_8754",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_78",
+   "edges": [
+    {
+     "case_id": "case_78",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_5859",
+     "source_id": "activity_3305",
+     "strength": "SECONDARY",
+     "time": "2026-08-18T07:31:44Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3305 lies in the burst windows of cases ['case_77', 'case_78', 'case_79', 'case_92']",
+   "resource_id": "analytics_5859",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_78",
+   "edges": [
+    {
+     "case_id": "case_78",
+     "identifier": "user_id:user_76",
+     "kind": "HARD",
+     "resource_id": "audit_record_6593",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_6593",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_07",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_78",
+   "edges": [
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8295",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T06:58:48Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8295",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T06:58:48Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8295",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T06:58:48Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8295",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T06:58:48Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8295",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "user_id:user_76",
+     "kind": "HARD",
+     "resource_id": "search_8295",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_8295",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_91",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_78",
+   "edges": [
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9652",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T07:42:53Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9652",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T07:42:53Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9652",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T07:42:53Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9652",
+     "source_id": "evidence_91",
+     "strength": "HARD",
+     "time": "2026-09-11T07:42:53Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "user_id:user_76",
+     "kind": "HARD",
+     "resource_id": "support_9652",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    },
+    {
+     "case_id": "case_78",
+     "identifier": "email:stakahashi6573@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_9652",
+     "source_id": "evidence_07",
+     "strength": "HARD",
+     "time": "2026-09-11T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_9652",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_91",
+   "system_id": "support_platform"
+  }
+ ],
  "case_id": "case_78",
- "excluded": [],
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3301",
+   "reason": "hard-linked to ['user_90']",
+   "resource_id": "account_3609"
+  },
+  {
+   "activity_id": "activity_3303",
+   "reason": "hard-linked to ['user_75']",
+   "resource_id": "account_9334"
+  },
+  {
+   "activity_id": "activity_3304",
+   "reason": "hard-linked to ['user_77']",
+   "resource_id": "account_5186"
+  },
+  {
+   "activity_id": "activity_3306",
+   "reason": "hard-linked to ['user_75']",
+   "resource_id": "support_008"
+  },
+  {
+   "activity_id": "activity_3307",
+   "reason": "hard-linked to ['user_75']",
+   "resource_id": "data_flow_7773"
+  },
+  {
+   "activity_id": "activity_3308",
+   "reason": "hard-linked to ['user_90']",
+   "resource_id": "data_flow_7535"
+  },
+  {
+   "activity_id": "activity_3309",
+   "reason": "hard-linked to ['user_75']",
+   "resource_id": "backup_7303"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3305 lies in the burst windows of cases ['case_77', 'case_78', 'case_79', 'case_92']",
+   "resource_id": "analytics_5859"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "ja",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-09-11T08:00:00Z",
@@ -22,9 +256,195 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-08-16T08:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_90",
+   "required_action": "DELETE",
+   "resource_id": "account_8754",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_90",
+    "resource_id": "account_8754",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_6593",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_10",
+    "resource_id": "audit_record_6593",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_91",
+   "required_action": "DELETE",
+   "resource_id": "search_8295",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_91#L43"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_91",
+    "resource_id": "search_8295",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "shape ambiguous; deletion workflow attempted REDACT (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_91",
+   "required_action": "REDACT",
+   "resource_id": "support_9652",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_91#L61"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_91",
+    "resource_id": "support_9652",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_91",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_8295",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_91",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_9652",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_8295",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_9652",
+   "state": "REDACTED",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_8754",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_8295",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_6593",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_9652",
+   "state": "REDACTED",
+   "step_no": 8,
+   "system_id": "support_platform"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +469,6 @@
   "user_ids": [
    "user_76"
   ]
- }
+ },
+ "validation_errors": []
 }

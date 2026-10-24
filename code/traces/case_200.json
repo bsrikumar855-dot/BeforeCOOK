@@ -1,19 +1,156 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_200",
+   "edges": [
+    {
+     "case_id": "case_200",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_1964",
+     "source_id": "activity_2387",
+     "strength": "SECONDARY",
+     "time": "2026-06-16T09:07:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_2387 is in every maximum one-to-one assignment of batch 35 (cases ['case_200'], rows ['account_1964']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_1964",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_200",
+   "edges": [
+    {
+     "case_id": "case_200",
+     "identifier": "email:grace.reed@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_2310",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:13:44Z"
+    },
+    {
+     "case_id": "case_200",
+     "identifier": "email:grace.reed@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_2310",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:13:44Z"
+    },
+    {
+     "case_id": "case_200",
+     "identifier": "email:grace.reed@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_2310",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:13:44Z"
+    },
+    {
+     "case_id": "case_200",
+     "identifier": "email:grace.reed@outlook.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_2310",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:13:44Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "data_flow_2310",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_82",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_200",
+   "edges": [
+    {
+     "case_id": "case_200",
+     "identifier": "email:grace.reed@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_7472",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:24:22Z"
+    },
+    {
+     "case_id": "case_200",
+     "identifier": "email:grace.reed@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_7472",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:24:22Z"
+    },
+    {
+     "case_id": "case_200",
+     "identifier": "email:grace.reed@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_7472",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:24:22Z"
+    },
+    {
+     "case_id": "case_200",
+     "identifier": "email:grace.reed@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_7472",
+     "source_id": "evidence_82",
+     "strength": "HARD",
+     "time": "2026-07-13T07:24:22Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "search_7472",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_82",
+   "system_id": "search_service"
+  }
+ ],
  "case_id": "case_200",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_2386",
+   "reason": "hard-linked to ['user_199']",
+   "resource_id": "account_2933"
+  },
+  {
+   "activity_id": "activity_2391",
+   "reason": "hard-linked to ['user_199']",
+   "resource_id": "data_flow_5688"
+  },
+  {
+   "activity_id": "activity_2392",
+   "reason": "hard-linked to ['user_199']",
+   "resource_id": "search_5135"
+  },
+  {
+   "activity_id": "activity_2393",
+   "reason": "hard-linked to ['user_199']",
+   "resource_id": "support_2863"
+  }
+ ],
  "excluded": [],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-07-13T10:00:00Z",
@@ -22,9 +159,159 @@
   "reported_status": "PARTIALLY_COMPLETE",
   "requested_at": "2026-06-15T10:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_20",
+   "required_action": "DELETE",
+   "resource_id": "account_1964",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_20",
+    "resource_id": "account_1964",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_2310",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_82#L9"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "data_flow_2310",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_82",
+   "required_action": "DELETE",
+   "resource_id": "search_7472",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_82#L15"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_82",
+    "resource_id": "search_7472",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_82",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_7472",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_82",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_2310",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_2310",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_7472",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_1964",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_7472",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_2310",
+   "state": "DISABLED",
+   "step_no": 7,
+   "system_id": "integration_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +336,6 @@
   "user_ids": [
    "user_198"
   ]
- }
+ },
+ "validation_errors": []
 }

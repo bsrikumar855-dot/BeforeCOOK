@@ -51,6 +51,24 @@ def test_image_rows_are_validated_and_joined_identifiers_salvaged():
     assert len(ex.dropped) == 3
 
 
+def test_image_rows_resolve_exact_catalog_aliases_only():
+    from agent.parsers.png_vlm import ImageExtractor
+    ex = ImageExtractor(None, None, universe(), ["ACCOUNT_TOMBSTONE"])
+    ex.aliases = {"receipt_19.pdf": "object_19", "user_901": "tombstone_4"}
+    ef = EvidenceFile("ev_img", "evidence/images/x.png", "t", "2026-02-13T08:00:00Z", "png")
+    prefix = {"object": "object_storage", "tombstone": "identity_service"}
+    reply = {"records": [
+        {"resource_id": "receipt_19.pdf", "system_id": "object_storage", "presence": "PRESENT"},
+        {"resource_id": "user_901", "system_id": "account_service", "presence": "PRESENT"},   # wrong system claim
+        {"resource_id": "receipt_20.pdf", "system_id": "object_storage", "presence": "PRESENT"}]}  # no alias
+    obs = ex._to_observations(ef, reply, prefix)
+    assert [(o.resource_id, o.system_id) for o in obs] == [("object_19", "object_storage"),
+                                                           ("tombstone_4", "identity_service")]
+    assert obs[1].fields["model_system_claim_overridden"] == "account_service"
+    assert any(i.kind == "user_id" and i.value == "user_901" for i in obs[1].identifiers)
+    assert [d["resource_id"] for d in ex.dropped] == ["receipt_20.pdf"]
+
+
 def test_intent_validator_rejects_unknown_labels_and_missing_ids():
     v = make_validator(2)
     ok = v({"results": [{"id": "t01", "label": "DELETION", "language": "en", "negation_detected": False},

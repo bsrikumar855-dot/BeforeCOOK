@@ -35,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_524 lies in the burst windows of cases ['case_455', 'case_472']",
+   "rationale": "activity_524 lies in the burst windows of cases ['case_455', 'case_456', 'case_457', 'case_470', 'case_471', 'case_472']",
    "resource_id": "analytics_1126",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -55,7 +55,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_518 lies in the burst windows of cases ['case_455', 'case_472']",
+   "rationale": "activity_518 lies in the burst windows of cases ['case_455', 'case_456', 'case_457', 'case_470', 'case_471', 'case_472']",
    "resource_id": "analytics_4066",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -75,7 +75,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_523 lies in the burst windows of cases ['case_455', 'case_472']",
+   "rationale": "activity_523 lies in the burst windows of cases ['case_455', 'case_456', 'case_457', 'case_470', 'case_471', 'case_472']",
    "resource_id": "analytics_6750",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -209,23 +209,22 @@
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_524 lies in the burst windows of cases ['case_455', 'case_472']",
+   "reason": "AMBIGUOUS: activity_524 lies in the burst windows of cases ['case_455', 'case_456', 'case_457', 'case_470', 'case_471', 'case_472']",
    "resource_id": "analytics_1126"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_518 lies in the burst windows of cases ['case_455', 'case_472']",
+   "reason": "AMBIGUOUS: activity_518 lies in the burst windows of cases ['case_455', 'case_456', 'case_457', 'case_470', 'case_471', 'case_472']",
    "resource_id": "analytics_4066"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_523 lies in the burst windows of cases ['case_455', 'case_472']",
+   "reason": "AMBIGUOUS: activity_523 lies in the burst windows of cases ['case_455', 'case_456', 'case_457', 'case_470', 'case_471', 'case_472']",
    "resource_id": "analytics_6750"
   }
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,

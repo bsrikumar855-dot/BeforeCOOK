@@ -1,0 +1,23 @@
+{
+ "batch_size": 38,
+ "call_id": "e59817939fa44041",
+ "call_usage": {
+  "input_tokens": 3230,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 1648,
+  "thinking_tokens": 0,
+  "total_tokens": 4878
+ },
+ "input_sha256": "49c9b9f6ab21c5d477e670fa9b50cd613a07a27a04704af7f8a3e0e5a87a70f0",
+ "key": "3421d8880f1361863bdcc22545d64dfe535757bd242038cd73b71e7349152b77",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "pfb7d2f0c21e6",
+ "provider": "gemini",
+ "response": {
+  "label": "DELETION",
+  "language": "en",
+  "negation_detected": false
+ },
+ "task": "intent"
+}

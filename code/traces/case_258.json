@@ -15,7 +15,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 20: several assignments equally supported (rival cases for account_3601: [])",
+   "rationale": "batch 49: several assignments equally supported (rival cases for account_3601: ['case_257'])",
    "resource_id": "account_3601",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -35,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 20: several assignments equally supported (rival cases for account_7942: [])",
+   "rationale": "batch 49: several assignments equally supported (rival cases for account_7942: ['case_257'])",
    "resource_id": "account_7942",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -55,7 +55,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_1982 lies in the burst windows of cases ['case_258', 'case_259', 'case_272']",
+   "rationale": "activity_1982 lies in the burst windows of cases ['case_257', 'case_258', 'case_259', 'case_272']",
    "resource_id": "analytics_2977",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -198,23 +198,22 @@
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 20: several assignments equally supported (rival cases for account_3601: [])",
+   "reason": "AMBIGUOUS: batch 49: several assignments equally supported (rival cases for account_3601: ['case_257'])",
    "resource_id": "account_3601"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 20: several assignments equally supported (rival cases for account_7942: [])",
+   "reason": "AMBIGUOUS: batch 49: several assignments equally supported (rival cases for account_7942: ['case_257'])",
    "resource_id": "account_7942"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_1982 lies in the burst windows of cases ['case_258', 'case_259', 'case_272']",
+   "reason": "AMBIGUOUS: activity_1982 lies in the burst windows of cases ['case_257', 'case_258', 'case_259', 'case_272']",
    "resource_id": "analytics_2977"
   }
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,

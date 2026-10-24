@@ -1,19 +1,127 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_339",
+   "edges": [
+    {
+     "case_id": "case_339",
+     "identifier": "email:j.lee32@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_1340",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_1340",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_31",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_339",
+   "edges": [
+    {
+     "case_id": "case_339",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_2079",
+     "source_id": "activity_1350",
+     "strength": "SECONDARY",
+     "time": "2026-04-09T09:31:15Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_1350 lies in the burst windows of cases ['case_338', 'case_339', 'case_340']",
+   "resource_id": "analytics_2079",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_339",
+   "edges": [
+    {
+     "case_id": "case_339",
+     "identifier": "user_id:user_337",
+     "kind": "HARD",
+     "resource_id": "audit_record_2922",
+     "source_id": "evidence_72",
+     "strength": "HARD",
+     "time": "2026-05-04T09:41:47Z"
+    },
+    {
+     "case_id": "case_339",
+     "identifier": "user_id:user_337",
+     "kind": "HARD",
+     "resource_id": "audit_record_2922",
+     "source_id": "evidence_31",
+     "strength": "HARD",
+     "time": "2026-05-04T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_2922",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_72",
+   "system_id": "security_service"
+  }
+ ],
  "case_id": "case_339",
- "excluded": [],
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1347",
+   "reason": "hard-linked to ['user_338']",
+   "resource_id": "account_1015"
+  },
+  {
+   "activity_id": "activity_1349",
+   "reason": "hard-linked to ['user_336']",
+   "resource_id": "account_4231"
+  },
+  {
+   "activity_id": "activity_1352",
+   "reason": "hard-linked to ['user_336']",
+   "resource_id": "data_flow_9392"
+  },
+  {
+   "activity_id": "activity_1353",
+   "reason": "hard-linked to ['user_338']",
+   "resource_id": "data_flow_5916"
+  },
+  {
+   "activity_id": "activity_1354",
+   "reason": "hard-linked to ['user_336']",
+   "resource_id": "search_1392"
+  },
+  {
+   "activity_id": "activity_1355",
+   "reason": "hard-linked to ['user_338']",
+   "resource_id": "search_5411"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_1350 lies in the burst windows of cases ['case_338', 'case_339', 'case_340']",
+   "resource_id": "analytics_2079"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "ko",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-05-04T10:00:00Z",
@@ -22,9 +130,85 @@
   "reported_status": "NOT_STARTED",
   "requested_at": "2026-04-07T10:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "DELETE",
+   "resource_id": "account_1340",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_72",
+    "resource_id": "account_1340",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_31",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_2922",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_72#security_audit_records:0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_72",
+    "resource_id": "audit_record_2922",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_72",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_1340",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_72",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_2922",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "security_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +233,6 @@
   "user_ids": [
    "user_337"
   ]
- }
+ },
+ "validation_errors": []
 }

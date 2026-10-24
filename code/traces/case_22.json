@@ -1,19 +1,269 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_22",
+   "edges": [
+    {
+     "case_id": "case_22",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4990",
+     "source_id": "activity_3573",
+     "strength": "SECONDARY",
+     "time": "2026-09-01T09:12:11Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 39: several assignments equally supported (rival cases for account_4990: ['case_54'])",
+   "resource_id": "account_4990",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_22",
+   "edges": [
+    {
+     "case_id": "case_22",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6829",
+     "source_id": "activity_3572",
+     "strength": "SECONDARY",
+     "time": "2026-09-01T09:01:56Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 39: several assignments equally supported (rival cases for account_6829: ['case_54'])",
+   "resource_id": "account_6829",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_22",
+   "edges": [
+    {
+     "case_id": "case_22",
+     "identifier": "user_id:user_51",
+     "kind": "HARD",
+     "resource_id": "analytics_4440",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "email:seoyeon-han@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_4440",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "phone:+82 10 8943 9310",
+     "kind": "HARD",
+     "resource_id": "analytics_4440",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "email_hash:bbd5522cc42afd8c0bacf9b557d5e0e057c24e7b113936bd98c541e92583a0e7",
+     "kind": "HARD",
+     "resource_id": "analytics_4440",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "user_id:user_51",
+     "kind": "HARD",
+     "resource_id": "analytics_4440",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "email:seoyeon-han@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_4440",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "phone:+82 10 8943 9310",
+     "kind": "HARD",
+     "resource_id": "analytics_4440",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "email_hash:bbd5522cc42afd8c0bacf9b557d5e0e057c24e7b113936bd98c541e92583a0e7",
+     "kind": "HARD",
+     "resource_id": "analytics_4440",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_4440",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_05",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_22",
+   "edges": [
+    {
+     "case_id": "case_22",
+     "identifier": "user_id:user_51",
+     "kind": "HARD",
+     "resource_id": "audit_record_3482",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "user_id:user_51",
+     "kind": "HARD",
+     "resource_id": "audit_record_3482",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_3482",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_05",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_22",
+   "edges": [
+    {
+     "case_id": "case_22",
+     "identifier": "email:seoyeon-han@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8911",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_22",
+     "identifier": "email:seoyeon-han@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_8911",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_8911",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_05",
+   "system_id": "search_service"
+  }
+ ],
  "case_id": "case_22",
- "excluded": [],
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3568",
+   "reason": "hard-linked to ['user_67']",
+   "resource_id": "account_6138"
+  },
+  {
+   "activity_id": "activity_3569",
+   "reason": "hard-linked to ['user_66']",
+   "resource_id": "account_902"
+  },
+  {
+   "activity_id": "activity_3570",
+   "reason": "hard-linked to ['user_68']",
+   "resource_id": "account_6633"
+  },
+  {
+   "activity_id": "activity_3571",
+   "reason": "hard-linked to ['user_53']",
+   "resource_id": "account_994"
+  },
+  {
+   "activity_id": "activity_3574",
+   "reason": "hard-linked to ['user_66']",
+   "resource_id": "data_flow_2406"
+  },
+  {
+   "activity_id": "activity_3575",
+   "reason": "hard-linked to ['user_66']",
+   "resource_id": "search_2568"
+  },
+  {
+   "activity_id": "activity_3579",
+   "reason": "hard-linked to ['user_52']",
+   "resource_id": "support_835"
+  },
+  {
+   "activity_id": "activity_3580",
+   "reason": "hard-linked to ['user_53']",
+   "resource_id": "search_1007"
+  },
+  {
+   "activity_id": "activity_3582",
+   "reason": "hard-linked to ['user_52']",
+   "resource_id": "search_3995"
+  },
+  {
+   "activity_id": "activity_3583",
+   "reason": "hard-linked to ['user_52']",
+   "resource_id": "analytics_1738"
+  },
+  {
+   "activity_id": "activity_3584",
+   "reason": "hard-linked to ['user_52']",
+   "resource_id": "data_flow_5080"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 39: several assignments equally supported (rival cases for account_4990: ['case_54'])",
+   "resource_id": "account_4990"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 39: several assignments equally supported (rival cases for account_6829: ['case_54'])",
+   "resource_id": "account_6829"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-09-21T10:00:00Z",
@@ -22,9 +272,164 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-08-31T10:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_05",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_4440",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_05#customer_data_primary:2",
+     "evidence_05#customer_data_read_replica:3"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_05",
+    "resource_id": "analytics_4440",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_05",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_3482",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_05#customer_data_primary:6",
+     "evidence_05#customer_data_read_replica:7"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_05",
+    "resource_id": "audit_record_3482",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_05",
+   "required_action": "DELETE",
+   "resource_id": "search_8911",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_05#customer_data_primary:26",
+     "evidence_05#customer_data_read_replica:27"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_05",
+    "resource_id": "search_8911",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_05",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_8911",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_05",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_4440",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_8911",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_4440",
+   "state": "ANONYMIZED",
+   "step_no": 4,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_8911",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_3482",
+   "state": "PRESENT",
+   "step_no": 6,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_4440",
+   "state": "ANONYMIZED",
+   "step_no": 7,
+   "system_id": "analytics_platform"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +454,6 @@
   "user_ids": [
    "user_51"
   ]
- }
+ },
+ "validation_errors": []
 }

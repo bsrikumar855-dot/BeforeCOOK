@@ -1,19 +1,88 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_04",
+   "edges": [
+    {
+     "case_id": "case_04",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_4163",
+     "source_id": "activity_3465",
+     "strength": "SECONDARY",
+     "time": "2026-08-27T10:55:42Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 2: several assignments equally supported (rival cases for account_4163: ['case_30'])",
+   "resource_id": "account_4163",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_04",
+   "edges": [
+    {
+     "case_id": "case_04",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_901",
+     "source_id": "activity_3463",
+     "strength": "SECONDARY",
+     "time": "2026-08-27T08:47:41Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3463 lies in the burst windows of cases ['case_04', 'case_83', 'case_84', 'case_85']",
+   "resource_id": "analytics_901",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  }
+ ],
  "case_id": "case_04",
- "excluded": [],
+ "degraded": "no resource could be verified",
+ "eliminated": [
+  {
+   "activity_id": "activity_3459",
+   "reason": "hard-linked to ['user_83']",
+   "resource_id": "account_4911"
+  },
+  {
+   "activity_id": "activity_3460",
+   "reason": "hard-linked to ['user_82']",
+   "resource_id": "account_2387"
+  },
+  {
+   "activity_id": "activity_3462",
+   "reason": "hard-linked to ['user_83']",
+   "resource_id": "search_6302"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_4163: ['case_30'])",
+   "resource_id": "account_4163"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3463 lies in the burst windows of cases ['case_04', 'case_83', 'case_84', 'case_85']",
+   "resource_id": "analytics_901"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-09-07T10:20:00Z",
@@ -23,7 +92,7 @@
   "requested_at": "2026-08-25T12:32:00Z"
  },
  "resources": [],
- "status": "NOT_APPLICABLE",
+ "status": "INCOMPLETE",
  "steps": [],
  "subject": {
   "identifiers": {
@@ -49,5 +118,6 @@
   "user_ids": [
    "user_04"
   ]
- }
+ },
+ "validation_errors": []
 }

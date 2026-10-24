@@ -39,6 +39,9 @@ class ImageExtractor:
         self.dropped: list[dict] = []
         self.accepted: list[dict] = []
         self.failures: list[dict] = []
+        # Data-catalog aliases (external reference -> resource id). A screen may show a record under its
+        # alias, e.g. a file name or the customer key the catalog maps to the resource.
+        self.aliases: dict[str, str] = {}
 
     def __call__(self, ef: EvidenceFile, raw: bytes, prefix_system: dict[str, str]) -> list[Observation]:
         template, _ = self.client.prompt(TASK)
@@ -73,6 +76,9 @@ class ImageExtractor:
         out: list[Observation] = []
         for i, rec in enumerate(reply.get("records", [])):
             rid = str(rec.get("resource_id", "")).strip()
+            alias_of = None
+            if rid in self.aliases:                    # exact match on a catalog alias only
+                alias_of, rid = rid, self.aliases[rid]
             m = RESOURCE_RE.match(rid)
             salvaged = None
             if not m or m.group(1) not in prefix_system:
@@ -92,10 +98,19 @@ class ImageExtractor:
                     continue
             system = prefix_system[m.group(1)]
             claimed = rec.get("system_id")
+            overridden = None
             if claimed not in (None, "", system):
-                self._drop(ef, rid, f"system_id {claimed!r} contradicts prefix map ({system})")
-                continue
+                if not alias_of:
+                    self._drop(ef, rid, f"system_id {claimed!r} contradicts prefix map ({system})")
+                    continue
+                overridden = claimed                   # the catalog names the resource, so its system wins
             fields: dict[str, object] = {}
+            if alias_of:
+                fields["catalog_alias"] = alias_of
+                if alias_of in self.universe.user_ids:
+                    fields["subject_reference"] = alias_of
+                if overridden:
+                    fields["model_system_claim_overridden"] = overridden
             presence = str(rec.get("presence") or "UNKNOWN").upper()
             fields["presence"] = presence if presence in PRESENCE else "UNKNOWN"
             rtype = rec.get("record_type")
@@ -126,11 +141,13 @@ class ImageExtractor:
             obs = Observation(f"{ef.file_id}#img{i}", ef.file_id, ef.captured_at, observed_at, "IMAGE_EXTRACTION",
                               system, "SINGLE", "image_row", rid, fields, extraction="MODEL")
             for k, v in fields.items():
-                if k in ("email", "phone", "full_name", "email_hash", "customer_reference"):
+                if k in ("email", "phone", "full_name", "email_hash", "customer_reference", "subject_reference"):
                     obs.identifiers.extend(self.universe.classify(k, v, "MODEL_EXTRACTION"))
             out.append(obs)
             self.accepted.append({"file_id": ef.file_id, "resource_id": rid, "system_id": system,
-                                  **({"salvaged_from": salvaged} if salvaged else {})})
+                                  **({"salvaged_from": salvaged} if salvaged else {}),
+                                  **({"catalog_alias": alias_of} if alias_of else {}),
+                                  **({"system_claim_overridden": overridden} if overridden else {})})
         return out
 
     def _drop(self, ef: EvidenceFile, rid: str, reason: str) -> None:

@@ -1,19 +1,144 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_39",
+   "edges": [
+    {
+     "case_id": "case_39",
+     "identifier": "email:jain.aditi@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_8926",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:57:27Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_8926",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_39",
+   "edges": [
+    {
+     "case_id": "case_39",
+     "identifier": "user_id:user_14",
+     "kind": "HARD",
+     "resource_id": "audit_record_7301",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:53:56Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_7301",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_39",
+   "edges": [
+    {
+     "case_id": "case_39",
+     "identifier": "email:jain.aditi@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_1121",
+     "source_id": "evidence_14",
+     "strength": "HARD",
+     "time": "2026-08-07T07:59:42Z"
+    },
+    {
+     "case_id": "case_39",
+     "identifier": "email:jain.aditi@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_1121",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:54:45Z"
+    },
+    {
+     "case_id": "case_39",
+     "identifier": "email:jain.aditi@gmail.com",
+     "kind": "CATALOG",
+     "resource_id": "data_flow_1121",
+     "source_id": "activity_4002",
+     "strength": "HARD",
+     "time": "2026-08-07T08:07:01Z"
+    },
+    {
+     "case_id": "case_39",
+     "identifier": "user_id:user_14",
+     "kind": "CATALOG",
+     "resource_id": "data_flow_1121",
+     "source_id": "activity_4002",
+     "strength": "HARD",
+     "time": "2026-08-07T08:07:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via CATALOG_LINK, MODEL_EXTRACTION, TRACE_JOIN",
+   "resource_id": "data_flow_1121",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_14",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_39",
+   "edges": [
+    {
+     "case_id": "case_39",
+     "identifier": "email:jain.aditi@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_4801",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:53:09Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_4801",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "search_service"
+  }
+ ],
  "case_id": "case_39",
- "excluded": [],
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "account_8926"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_7301"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "search_4801"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-08-08T10:00:00Z",
@@ -22,9 +147,67 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-08-05T05:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_14",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_14",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_1121",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_14#img0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_14",
+    "resource_id": "data_flow_1121",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_14",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_1121",
+   "state": "ACTIVE",
+   "step_no": 1,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_1121",
+   "state": "DISABLED",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_1121",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +232,6 @@
   "user_ids": [
    "user_14"
   ]
- }
+ },
+ "validation_errors": []
 }

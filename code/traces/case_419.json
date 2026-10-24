@@ -1,19 +1,136 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_419",
+   "edges": [
+    {
+     "case_id": "case_419",
+     "identifier": "email:ananya-jain@proton.me",
+     "kind": "HARD",
+     "resource_id": "account_1966",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:58:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_1966",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_419",
+   "edges": [
+    {
+     "case_id": "case_419",
+     "identifier": "user_id:user_417",
+     "kind": "HARD",
+     "resource_id": "audit_record_7716",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:56:17Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_7716",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_419",
+   "edges": [
+    {
+     "case_id": "case_419",
+     "identifier": "email:ananya-jain@proton.me",
+     "kind": "HARD",
+     "resource_id": "search_5797",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:57:08Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_5797",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_419",
+   "edges": [
+    {
+     "case_id": "case_419",
+     "identifier": "email:ananya-jain@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_2944",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:51:55Z"
+    },
+    {
+     "case_id": "case_419",
+     "identifier": "email:ananya-jain@proton.me",
+     "kind": "HARD",
+     "resource_id": "support_2944",
+     "source_id": "evidence_39",
+     "strength": "HARD",
+     "time": "2026-03-25T08:51:55Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "support_2944",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_39",
+   "system_id": "support_platform"
+  }
+ ],
  "case_id": "case_419",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_748",
+   "reason": "hard-linked to ['user_419']",
+   "resource_id": "account_8482"
+  },
+  {
+   "activity_id": "activity_749",
+   "reason": "hard-linked to ['user_418']",
+   "resource_id": "account_7606"
+  },
+  {
+   "activity_id": "activity_753",
+   "reason": "hard-linked to ['user_418']",
+   "resource_id": "export_389"
+  },
+  {
+   "activity_id": "activity_756",
+   "reason": "hard-linked to ['user_418']",
+   "resource_id": "search_8472"
+  },
+  {
+   "activity_id": "activity_757",
+   "reason": "hard-linked to ['user_419']",
+   "resource_id": "search_3251"
+  }
+ ],
  "excluded": [],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-03-25T09:00:00Z",
@@ -22,9 +139,199 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-02-26T09:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "DELETE",
+   "resource_id": "account_1966",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L82"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "account_1966",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_7716",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L49"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "audit_record_7716",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "DELETE",
+   "resource_id": "search_5797",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L68"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "search_5797",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_ATTACHMENT",
+   "category_basis": "shape: attachment",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_39",
+   "required_action": "DELETE",
+   "resource_id": "support_2944",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_39#L7"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_39",
+    "resource_id": "support_2944",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_39",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_5797",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_39",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "support_2944",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_5797",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_2944",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_1966",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5797",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "support_2944",
+   "state": "ABSENT",
+   "step_no": 7,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_7716",
+   "state": "PRESENT",
+   "step_no": 8,
+   "system_id": "security_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +356,6 @@
   "user_ids": [
    "user_417"
   ]
- }
+ },
+ "validation_errors": []
 }

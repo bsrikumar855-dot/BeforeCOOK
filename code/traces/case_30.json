@@ -14,8 +14,8 @@
     }
    ],
    "in_scope": true,
-   "label": "INFERRED",
-   "rationale": "account delete activity_3465 is in every maximum one-to-one assignment of batch 28 (cases ['case_30'], rows ['account_4163']) after eliminating rows hard-linked to other people",
+   "label": "AMBIGUOUS",
+   "rationale": "batch 2: several assignments equally supported (rival cases for account_4163: ['case_04'])",
    "resource_id": "account_4163",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -214,10 +214,15 @@
  "case_id": "case_30",
  "degraded": null,
  "eliminated": [],
- "excluded": [],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_4163: ['case_04'])",
+   "resource_id": "account_4163"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,
@@ -236,33 +241,6 @@
   "requested_at": "2026-08-26T12:00:00Z"
  },
  "resources": [
-  {
-   "attribution": "INFERRED",
-   "category": "USER_PROFILE",
-   "category_basis": "default category for account_service",
-   "compliant": true,
-   "note": "",
-   "operations": [
-    null,
-    null,
-    "VERIFY_RECORD_ABSENT"
-   ],
-   "proof_file_id": "evidence_51",
-   "required_action": "DELETE",
-   "resource_id": "account_4163",
-   "state": {
-    "exposure": "UNKNOWN",
-    "flow_state": null,
-    "observation_ids": [],
-    "presence": "ABSENT",
-    "proof_basis": "FULL_SNAPSHOT",
-    "proof_file_id": "evidence_51",
-    "resource_id": "account_4163",
-    "restore_state": null,
-    "system_id": "account_service"
-   },
-   "system_id": "account_service"
-  },
   {
    "attribution": "CONFIRMED",
    "category": "ANALYTICS_PROFILE",
@@ -485,18 +463,9 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "account_4163",
-   "state": "ABSENT",
-   "step_no": 9,
-   "system_id": "account_service"
-  },
-  {
-   "evidence_id": "",
-   "operation": "VERIFY_RECORD_ABSENT",
-   "phase": "VERIFICATION",
    "resource_id": "search_9359",
    "state": "ABSENT",
-   "step_no": 10,
+   "step_no": 9,
    "system_id": "search_service"
   },
   {
@@ -505,7 +474,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_1707",
    "state": "PRESENT",
-   "step_no": 11,
+   "step_no": 10,
    "system_id": "security_service"
   },
   {
@@ -514,7 +483,7 @@
    "phase": "VERIFICATION",
    "resource_id": "support_6477",
    "state": "REDACTED",
-   "step_no": 12,
+   "step_no": 11,
    "system_id": "support_platform"
   },
   {
@@ -523,7 +492,7 @@
    "phase": "VERIFICATION",
    "resource_id": "analytics_3697",
    "state": "ANONYMIZED",
-   "step_no": 13,
+   "step_no": 12,
    "system_id": "analytics_platform"
   },
   {
@@ -532,7 +501,7 @@
    "phase": "VERIFICATION",
    "resource_id": "data_flow_8524",
    "state": "DISABLED",
-   "step_no": 14,
+   "step_no": 13,
    "system_id": "integration_service"
   }
  ],

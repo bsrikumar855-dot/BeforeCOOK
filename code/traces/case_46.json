@@ -94,6 +94,15 @@
    "edges": [
     {
      "case_id": "case_46",
+     "identifier": "user_id:user_17",
+     "kind": "HARD",
+     "resource_id": "tombstone_17",
+     "source_id": "evidence_42",
+     "strength": "HARD",
+     "time": "2026-03-10T06:00:00Z"
+    },
+    {
+     "case_id": "case_46",
      "identifier": "email:leonie.g9352@outlook.com",
      "kind": "CATALOG",
      "resource_id": "tombstone_17",
@@ -113,9 +122,9 @@
    ],
    "in_scope": true,
    "label": "CONFIRMED",
-   "rationale": "direct identity link via CATALOG_LINK",
+   "rationale": "direct identity link via CATALOG_LINK, MODEL_EXTRACTION",
    "resource_id": "tombstone_17",
-   "scope_reason": "identity evidence within [requested_at, audit_at]: activity_4011",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_42",
    "system_id": "identity_service"
   }
  ],
@@ -140,13 +149,12 @@
   },
   {
    "label": "CONFIRMED",
-   "reason": "UNKNOWN_STATE: no admissible observation and no admissible full snapshot",
+   "reason": "EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields",
    "resource_id": "tombstone_17"
   }
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,
@@ -199,22 +207,24 @@
    "category": "ACCOUNT_TOMBSTONE",
    "category_basis": "default category for identity_service",
    "compliant": null,
-   "note": "UNKNOWN_STATE: no admissible observation and no admissible full snapshot",
+   "note": "EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields",
    "operations": [
     null,
     null,
     null
    ],
-   "proof_file_id": null,
+   "proof_file_id": "evidence_42",
    "required_action": "REDACT",
    "resource_id": "tombstone_17",
    "state": {
     "exposure": "UNKNOWN",
     "flow_state": null,
-    "observation_ids": [],
-    "presence": "UNKNOWN",
-    "proof_basis": "NONE",
-    "proof_file_id": null,
+    "observation_ids": [
+     "evidence_42#img0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_42",
     "resource_id": "tombstone_17",
     "restore_state": null,
     "system_id": "identity_service"

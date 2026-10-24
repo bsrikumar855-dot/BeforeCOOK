@@ -1,28 +1,48 @@
 {
- "account_batches": 62,
+ "account_batches": 118,
  "conflicts": {},
+ "content_conflicts": {
+  "marketing_001": {
+   "linked_by": [
+    "CATALOG_LINK"
+   ],
+   "own_identifiers": [
+    "email:sj.park@naver.com",
+    "phone:+82 10-5837-9451"
+   ],
+   "subject_user_ids": [
+    "user_09"
+   ]
+  }
+ },
  "eval": {
   "attribution_labels": {
-   "AMBIGUOUS": 403,
-   "CONFIRMED": 502,
-   "INFERRED": 47
+   "AMBIGUOUS": 1247,
+   "CONFIRMED": 1475,
+   "CONFLICT": 1,
+   "INFERRED": 40
   },
   "cases": 518,
-  "degraded": [],
+  "degraded": [
+   "case_55",
+   "case_63"
+  ],
   "excluded_reasons": {
-   "AMBIGUOUS": 403,
-   "OUT_OF_SCOPE": 16,
-   "UNKNOWN_STATE": 1
+   "AMBIGUOUS": 1247,
+   "CONFLICT": 1,
+   "EXPOSURE_UNKNOWN": 1,
+   "OUT_OF_SCOPE": 41,
+   "RESTORE_STATE_UNKNOWN": 1
   },
   "intent_paths": {
-   "model_deletion->DELETION": 172,
-   "model_failure->NOT_APPLICABLE": 342,
-   "model_non_deletion+classify_corroborates->NOT_APPLICABLE": 4
+   "model_deletion->DELETION": 508,
+   "model_non_deletion+classify_corroborates->NOT_APPLICABLE": 10
   },
+  "model_failures": [],
   "status": {
-   "COMPLETE": 57,
-   "INCOMPLETE": 115,
-   "NOT_APPLICABLE": 346
+   "COMPLETE": 153,
+   "INCOMPLETE": 355,
+   "NOT_APPLICABLE": 10
   }
  },
  "evidence_files": {
@@ -31,13 +51,8 @@
   "TEXT_LAYER": 4
  },
  "image_extraction": {
-  "accepted_rows": 21,
+  "accepted_rows": 24,
   "dropped_rows": [
-   {
-    "file_id": "evidence_04",
-    "reason": "resource_id prefix is not a known system prefix",
-    "resource_id": "user_11_account_5762"
-   },
    {
     "file_id": "evidence_04",
     "reason": "resource_id prefix is not a known system prefix",
@@ -96,11 +111,6 @@
    {
     "file_id": "evidence_42",
     "reason": "resource_id prefix is not a known system prefix",
-    "resource_id": "user_17"
-   },
-   {
-    "file_id": "evidence_42",
-    "reason": "resource_id prefix is not a known system prefix",
     "resource_id": "ORD-20263245"
    },
    {
@@ -117,11 +127,6 @@
     "file_id": "evidence_42",
     "reason": "resource_id prefix is not a known system prefix",
     "resource_id": "FIN-7742"
-   },
-   {
-    "file_id": "evidence_46",
-    "reason": "resource_id prefix is not a known system prefix",
-    "resource_id": "delivery_confirmation_19.pdf"
    },
    {
     "file_id": "evidence_46",
@@ -181,26 +186,157 @@
   ],
   "failed_files": []
  },
+ "image_rows_accepted": [
+  {
+   "file_id": "evidence_04",
+   "resource_id": "account_5762",
+   "salvaged_from": "user_11_account_5762",
+   "system_id": "account_service"
+  },
+  {
+   "file_id": "evidence_09",
+   "resource_id": "search_428",
+   "system_id": "search_service"
+  },
+  {
+   "file_id": "evidence_09",
+   "resource_id": "search_1874",
+   "system_id": "search_service"
+  },
+  {
+   "file_id": "evidence_14",
+   "resource_id": "data_flow_1121",
+   "system_id": "integration_service"
+  },
+  {
+   "file_id": "evidence_14",
+   "resource_id": "data_flow_9846",
+   "system_id": "integration_service"
+  },
+  {
+   "file_id": "evidence_19",
+   "resource_id": "analytics_7438",
+   "system_id": "analytics_platform"
+  },
+  {
+   "file_id": "evidence_23",
+   "resource_id": "export_1261",
+   "system_id": "export_service"
+  },
+  {
+   "file_id": "evidence_23",
+   "resource_id": "export_1260",
+   "system_id": "export_service"
+  },
+  {
+   "file_id": "evidence_23",
+   "resource_id": "export_1259",
+   "system_id": "export_service"
+  },
+  {
+   "file_id": "evidence_23",
+   "resource_id": "export_1258",
+   "system_id": "export_service"
+  },
+  {
+   "file_id": "evidence_28",
+   "resource_id": "support_1034",
+   "system_id": "support_platform"
+  },
+  {
+   "file_id": "evidence_32",
+   "resource_id": "backup_9291",
+   "system_id": "backup_service"
+  },
+  {
+   "file_id": "evidence_32",
+   "resource_id": "backup_9288",
+   "system_id": "backup_service"
+  },
+  {
+   "file_id": "evidence_32",
+   "resource_id": "backup_9287",
+   "system_id": "backup_service"
+  },
+  {
+   "file_id": "evidence_32",
+   "resource_id": "backup_9286",
+   "system_id": "backup_service"
+  },
+  {
+   "file_id": "evidence_37",
+   "resource_id": "audit_record_003",
+   "system_id": "security_service"
+  },
+  {
+   "file_id": "evidence_37",
+   "resource_id": "audit_record_002",
+   "system_id": "security_service"
+  },
+  {
+   "file_id": "evidence_37",
+   "resource_id": "audit_record_001",
+   "system_id": "security_service"
+  },
+  {
+   "file_id": "evidence_37",
+   "resource_id": "audit_record_006",
+   "system_id": "security_service"
+  },
+  {
+   "file_id": "evidence_37",
+   "resource_id": "audit_record_005",
+   "system_id": "security_service"
+  },
+  {
+   "file_id": "evidence_37",
+   "resource_id": "audit_record_004",
+   "system_id": "security_service"
+  },
+  {
+   "catalog_alias": "user_17",
+   "file_id": "evidence_42",
+   "resource_id": "tombstone_17",
+   "system_claim_overridden": "account_service",
+   "system_id": "identity_service"
+  },
+  {
+   "catalog_alias": "delivery_confirmation_19.pdf",
+   "file_id": "evidence_46",
+   "resource_id": "object_19",
+   "system_id": "object_storage"
+  },
+  {
+   "file_id": "evidence_60",
+   "resource_id": "marketing_001",
+   "system_id": "marketing_platform"
+  }
+ ],
+ "model_failures": {
+  "intent_cases": 0,
+  "vlm_files_skipped": 0
+ },
  "samples": {
   "attribution_labels": {
-   "AMBIGUOUS": 30,
-   "CONFIRMED": 49,
-   "INFERRED": 4
+   "AMBIGUOUS": 61,
+   "CONFIRMED": 87,
+   "INFERRED": 5
   },
   "cases": 32,
-  "degraded": [],
+  "degraded": [
+   "case_04"
+  ],
   "excluded_reasons": {
-   "AMBIGUOUS": 30,
-   "OUT_OF_SCOPE": 2
+   "AMBIGUOUS": 61,
+   "OUT_OF_SCOPE": 3
   },
   "intent_paths": {
-   "model_deletion->DELETION": 16,
-   "model_failure->NOT_APPLICABLE": 16
+   "model_deletion->DELETION": 32
   },
+  "model_failures": [],
   "status": {
-   "COMPLETE": 5,
-   "INCOMPLETE": 11,
-   "NOT_APPLICABLE": 16
+   "COMPLETE": 9,
+   "INCOMPLETE": 23
   }
  }
 }

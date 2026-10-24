@@ -1,19 +1,97 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_363",
+   "edges": [
+    {
+     "case_id": "case_363",
+     "identifier": "email:m.khumalo88@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_9205",
+     "source_id": "evidence_34",
+     "strength": "HARD",
+     "time": "2026-04-19T06:58:59Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_9205",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_34",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_363",
+   "edges": [
+    {
+     "case_id": "case_363",
+     "identifier": "user_id:user_361",
+     "kind": "HARD",
+     "resource_id": "audit_record_9777",
+     "source_id": "evidence_34",
+     "strength": "HARD",
+     "time": "2026-04-19T06:54:14Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_9777",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_34",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_363",
+   "edges": [
+    {
+     "case_id": "case_363",
+     "identifier": "email:m.khumalo88@gmail.com",
+     "kind": "HARD",
+     "resource_id": "backup_7253",
+     "source_id": "evidence_34",
+     "strength": "HARD",
+     "time": "2026-04-19T06:51:41Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "backup_7253",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_34",
+   "system_id": "backup_service"
+  }
+ ],
  "case_id": "case_363",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_1367",
+   "reason": "hard-linked to ['user_362']",
+   "resource_id": "account_7653"
+  },
+  {
+   "activity_id": "activity_1370",
+   "reason": "hard-linked to ['user_362']",
+   "resource_id": "support_9699"
+  },
+  {
+   "activity_id": "activity_1372",
+   "reason": "hard-linked to ['user_362']",
+   "resource_id": "search_8198"
+  }
+ ],
  "excluded": [],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-04-19T07:00:00Z",
@@ -22,9 +100,143 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-04-08T07:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_34",
+   "required_action": "DELETE",
+   "resource_id": "account_9205",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_34#L131"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_34",
+    "resource_id": "account_9205",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_34",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_9777",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_34#L67"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_34",
+    "resource_id": "audit_record_9777",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "BACKUP_ARCHIVE",
+   "category_basis": "default category for backup_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_RESTORE_RISK",
+    "BLOCK_RESTORE",
+    "VERIFY_RESTORE_BLOCKED"
+   ],
+   "proof_file_id": "evidence_34",
+   "required_action": "RETAIN",
+   "resource_id": "backup_7253",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_34#L15"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_34",
+    "resource_id": "backup_7253",
+    "restore_state": "RESTORABLE",
+    "system_id": "backup_service"
+   },
+   "system_id": "backup_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_34",
+   "operation": "REPORT_RESTORE_RISK",
+   "phase": "FINDING",
+   "resource_id": "backup_7253",
+   "state": "ACTIVE",
+   "step_no": 1,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "BLOCK_RESTORE",
+   "phase": "REMEDIATION",
+   "resource_id": "backup_7253",
+   "state": "BLOCKED",
+   "step_no": 2,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_9205",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_9777",
+   "state": "PRESENT",
+   "step_no": 4,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "phase": "VERIFICATION",
+   "resource_id": "backup_7253",
+   "state": "BLOCKED",
+   "step_no": 5,
+   "system_id": "backup_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +261,6 @@
   "user_ids": [
    "user_361"
   ]
- }
+ },
+ "validation_errors": []
 }

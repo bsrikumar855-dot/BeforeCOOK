@@ -43,8 +43,8 @@
     }
    ],
    "in_scope": true,
-   "label": "INFERRED",
-   "rationale": "only deletion case whose burst window contains activity_3258; no identity link to anyone else",
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3258 lies in the burst windows of cases ['case_80', 'case_81']",
    "resource_id": "analytics_5059",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -121,10 +121,15 @@
    "resource_id": "backup_3332"
   }
  ],
- "excluded": [],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3258 lies in the burst windows of cases ['case_80', 'case_81']",
+   "resource_id": "analytics_5059"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,
@@ -171,35 +176,6 @@
     "system_id": "account_service"
    },
    "system_id": "account_service"
-  },
-  {
-   "attribution": "INFERRED",
-   "category": "ANALYTICS_PROFILE",
-   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
-   "compliant": true,
-   "note": "",
-   "operations": [
-    null,
-    null,
-    "VERIFY_RECORD_ANONYMIZED"
-   ],
-   "proof_file_id": "evidence_91",
-   "required_action": "ANONYMIZE",
-   "resource_id": "analytics_5059",
-   "state": {
-    "exposure": "NO_IDENTIFIERS",
-    "flow_state": null,
-    "observation_ids": [
-     "evidence_91#L5"
-    ],
-    "presence": "PRESENT",
-    "proof_basis": "MENTION",
-    "proof_file_id": "evidence_91",
-    "resource_id": "analytics_5059",
-    "restore_state": null,
-    "system_id": "analytics_platform"
-   },
-   "system_id": "analytics_platform"
   },
   {
    "attribution": "CONFIRMED",
@@ -250,15 +226,6 @@
    "state": "PRESENT",
    "step_no": 2,
    "system_id": "security_service"
-  },
-  {
-   "evidence_id": "evidence_91",
-   "operation": "VERIFY_RECORD_ANONYMIZED",
-   "phase": "VERIFICATION",
-   "resource_id": "analytics_5059",
-   "state": "ANONYMIZED",
-   "step_no": 3,
-   "system_id": "analytics_platform"
   }
  ],
  "subject": {

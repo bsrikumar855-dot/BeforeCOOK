@@ -1,19 +1,187 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_33",
+   "edges": [
+    {
+     "case_id": "case_33",
+     "identifier": "email:ingrid.dahl@outlook.com",
+     "kind": "HARD",
+     "resource_id": "account_2373",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:56:34Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_2373",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_33",
+   "edges": [
+    {
+     "case_id": "case_33",
+     "identifier": "user_id:user_18",
+     "kind": "HARD",
+     "resource_id": "audit_record_8486",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:56:52Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_8486",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_33",
+   "edges": [
+    {
+     "case_id": "case_33",
+     "identifier": "email:ingrid.dahl@outlook.com",
+     "kind": "HARD",
+     "resource_id": "export_1260",
+     "source_id": "evidence_23",
+     "strength": "HARD",
+     "time": "2026-06-18T06:42:00Z"
+    },
+    {
+     "case_id": "case_33",
+     "identifier": "email:ingrid.dahl@outlook.com",
+     "kind": "CATALOG",
+     "resource_id": "export_1260",
+     "source_id": "activity_4004",
+     "strength": "HARD",
+     "time": "2026-06-18T12:07:01Z"
+    },
+    {
+     "case_id": "case_33",
+     "identifier": "user_id:user_18",
+     "kind": "CATALOG",
+     "resource_id": "export_1260",
+     "source_id": "activity_4004",
+     "strength": "HARD",
+     "time": "2026-06-18T12:07:01Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via CATALOG_LINK, MODEL_EXTRACTION",
+   "resource_id": "export_1260",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "export_service"
+  },
+  {
+   "case_id": "case_33",
+   "edges": [
+    {
+     "case_id": "case_33",
+     "identifier": "email:ingrid.dahl@outlook.com",
+     "kind": "HARD",
+     "resource_id": "export_1842",
+     "source_id": "evidence_18",
+     "strength": "HARD",
+     "time": "2026-07-18T11:00:00Z"
+    },
+    {
+     "case_id": "case_33",
+     "identifier": "user_id:user_18",
+     "kind": "HARD",
+     "resource_id": "export_1842",
+     "source_id": "evidence_18",
+     "strength": "HARD",
+     "time": "2026-07-18T11:00:00Z"
+    },
+    {
+     "case_id": "case_33",
+     "identifier": "email:ingrid.dahl@outlook.com",
+     "kind": "CATALOG",
+     "resource_id": "export_1842",
+     "source_id": "activity_4009",
+     "strength": "HARD",
+     "time": "2026-07-18T11:07:01Z"
+    },
+    {
+     "case_id": "case_33",
+     "identifier": "user_id:user_18",
+     "kind": "CATALOG",
+     "resource_id": "export_1842",
+     "source_id": "activity_4009",
+     "strength": "HARD",
+     "time": "2026-07-18T11:07:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via CATALOG_LINK, DOCUMENT_COMENTION",
+   "resource_id": "export_1842",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_18",
+   "system_id": "export_service"
+  },
+  {
+   "case_id": "case_33",
+   "edges": [
+    {
+     "case_id": "case_33",
+     "identifier": "email:ingrid.dahl@outlook.com",
+     "kind": "HARD",
+     "resource_id": "search_2352",
+     "source_id": "evidence_01",
+     "strength": "HARD",
+     "time": "2026-09-15T11:53:13Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_2352",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "search_service"
+  }
+ ],
  "case_id": "case_33",
- "excluded": [],
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "account_2373"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "audit_record_8486"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "export_1260"
+  },
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "search_2352"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-07-19T13:00:00Z",
@@ -22,9 +190,67 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-07-16T08:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_EXPORT",
+   "category_basis": "default category for export_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_18",
+   "required_action": "DELETE",
+   "resource_id": "export_1842",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_18#pdf0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_18",
+    "resource_id": "export_1842",
+    "restore_state": null,
+    "system_id": "export_service"
+   },
+   "system_id": "export_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_18",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "export_1842",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "export_1842",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "export_1842",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "export_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +275,6 @@
   "user_ids": [
    "user_18"
   ]
- }
+ },
+ "validation_errors": []
 }

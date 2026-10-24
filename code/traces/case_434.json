@@ -1,19 +1,207 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_434",
+   "edges": [
+    {
+     "case_id": "case_434",
+     "identifier": "email:charlotte.foster@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_4813",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_4813",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_434",
+   "edges": [
+    {
+     "case_id": "case_434",
+     "identifier": "email:charlotte.foster@gmail.com",
+     "kind": "HARD",
+     "resource_id": "analytics_2354",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "analytics_2354",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_434",
+   "edges": [
+    {
+     "case_id": "case_434",
+     "identifier": "user_id:user_432",
+     "kind": "HARD",
+     "resource_id": "audit_record_4043",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_4043",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_434",
+   "edges": [
+    {
+     "case_id": "case_434",
+     "identifier": "email:charlotte.foster@gmail.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_9854",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "data_flow_9854",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_434",
+   "edges": [
+    {
+     "case_id": "case_434",
+     "identifier": "email:charlotte.foster@gmail.com",
+     "kind": "HARD",
+     "resource_id": "search_5626",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_5626",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "search_service"
+  },
+  {
+   "case_id": "case_434",
+   "edges": [
+    {
+     "case_id": "case_434",
+     "identifier": "email:charlotte.foster@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_3364",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "support_3364",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "support_platform"
+  }
+ ],
  "case_id": "case_434",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_682",
+   "reason": "hard-linked to ['user_433']",
+   "resource_id": "account_9194"
+  },
+  {
+   "activity_id": "activity_684",
+   "reason": "hard-linked to ['user_434']",
+   "resource_id": "account_3078"
+  },
+  {
+   "activity_id": "activity_685",
+   "reason": "hard-linked to ['user_447']",
+   "resource_id": "analytics_1138"
+  },
+  {
+   "activity_id": "activity_686",
+   "reason": "hard-linked to ['user_448']",
+   "resource_id": "support_7245"
+  },
+  {
+   "activity_id": "activity_687",
+   "reason": "hard-linked to ['user_449']",
+   "resource_id": "data_flow_7263"
+  },
+  {
+   "activity_id": "activity_688",
+   "reason": "hard-linked to ['user_447']",
+   "resource_id": "search_1685"
+  },
+  {
+   "activity_id": "activity_689",
+   "reason": "hard-linked to ['user_448']",
+   "resource_id": "search_2365"
+  },
+  {
+   "activity_id": "activity_690",
+   "reason": "hard-linked to ['user_449']",
+   "resource_id": "search_360"
+  },
+  {
+   "activity_id": "activity_691",
+   "reason": "hard-linked to ['user_448']",
+   "resource_id": "analytics_8202"
+  },
+  {
+   "activity_id": "activity_692",
+   "reason": "hard-linked to ['user_434']",
+   "resource_id": "support_165"
+  },
+  {
+   "activity_id": "activity_693",
+   "reason": "hard-linked to ['user_448']",
+   "resource_id": "data_flow_9755"
+  },
+  {
+   "activity_id": "activity_695",
+   "reason": "hard-linked to ['user_433']",
+   "resource_id": "backup_5237"
+  },
+  {
+   "activity_id": "activity_696",
+   "reason": "hard-linked to ['user_434']",
+   "resource_id": "search_6599"
+  }
+ ],
  "excluded": [],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-03-15T07:00:00Z",
@@ -22,9 +210,311 @@
   "reported_status": "NOT_STARTED",
   "requested_at": "2026-02-21T07:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "DELETE",
+   "resource_id": "account_4813",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L7"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "account_4813",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "ANALYTICS_PROFILE",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "ANONYMIZE_RECORD",
+    "VERIFY_RECORD_ANONYMIZED"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "ANONYMIZE",
+   "resource_id": "analytics_2354",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L11"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "analytics_2354",
+    "restore_state": null,
+    "system_id": "analytics_platform"
+   },
+   "system_id": "analytics_platform"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_4043",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L29"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "audit_record_4043",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_9854",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_41#L18"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "data_flow_9854",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "DELETE",
+   "resource_id": "search_5626",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L23"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "search_5626",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_MESSAGE",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_EXPOSED_PII",
+    "REDACT_RECORD",
+    "VERIFY_RECORD_REDACTED"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "REDACT",
+   "resource_id": "support_3364",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L37"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "support_3364",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_41",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_5626",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_41",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "analytics_2354",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "evidence_41",
+   "operation": "REPORT_EXPOSED_PII",
+   "phase": "FINDING",
+   "resource_id": "support_3364",
+   "state": "PRESENT",
+   "step_no": 3,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "evidence_41",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_9854",
+   "state": "ACTIVE",
+   "step_no": 4,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_9854",
+   "state": "DISABLED",
+   "step_no": 5,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_5626",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "REDACT_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_3364",
+   "state": "REDACTED",
+   "step_no": 7,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "ANONYMIZE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "analytics_2354",
+   "state": "ANONYMIZED",
+   "step_no": 8,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4813",
+   "state": "ABSENT",
+   "step_no": 9,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5626",
+   "state": "ABSENT",
+   "step_no": 10,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_4043",
+   "state": "PRESENT",
+   "step_no": 11,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "support_3364",
+   "state": "REDACTED",
+   "step_no": 12,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "phase": "VERIFICATION",
+   "resource_id": "analytics_2354",
+   "state": "ANONYMIZED",
+   "step_no": 13,
+   "system_id": "analytics_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_9854",
+   "state": "DISABLED",
+   "step_no": 14,
+   "system_id": "integration_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +539,6 @@
   "user_ids": [
    "user_432"
   ]
- }
+ },
+ "validation_errors": []
 }

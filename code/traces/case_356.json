@@ -15,7 +15,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 36: several assignments equally supported (rival cases for account_1850: [])",
+   "rationale": "batch 72: several assignments equally supported (rival cases for account_1850: ['case_358'])",
    "resource_id": "account_1850",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -35,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 36: several assignments equally supported (rival cases for account_6093: [])",
+   "rationale": "batch 72: several assignments equally supported (rival cases for account_6093: ['case_358'])",
    "resource_id": "account_6093",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -391,18 +391,17 @@
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 36: several assignments equally supported (rival cases for account_1850: [])",
+   "reason": "AMBIGUOUS: batch 72: several assignments equally supported (rival cases for account_1850: ['case_358'])",
    "resource_id": "account_1850"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 36: several assignments equally supported (rival cases for account_6093: [])",
+   "reason": "AMBIGUOUS: batch 72: several assignments equally supported (rival cases for account_6093: ['case_358'])",
    "resource_id": "account_6093"
   }
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,

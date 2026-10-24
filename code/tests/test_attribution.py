@@ -62,6 +62,39 @@ def test_conflicting_hard_links_are_conflict():
     assert labels(r, "c1") == {"support_3": "CONFLICT"}
 
 
+def _catalog(resource_id: str, email: str, user: str):
+    from agent.schema import ActivityClaim
+    return ActivityClaim("activity_c1", "2026-09-05T10:00:00Z", "LINK_RESOURCE_IDENTITY", "data_catalog",
+                         "marketing_platform", resource_id, "SUCCESS",
+                         f"Data catalog linked {resource_id} ({resource_id}) to {email} and {user}.")
+
+
+def test_catalog_link_contradicted_by_record_content_is_conflict():
+    img = obs("ev1", "2026-09-06T00:00:00Z", "marketing_1", "marketing_platform",
+              {"email": "someone.else@example.test", "phone": "+82 10 0000 0000"}, kind="IMAGE_EXTRACTION",
+              container="image_row")
+    r = attribute([ctx("c1", "rhea.vale@example.test")], index([img], {"ev1": "2026-09-06T00:00:00Z"}),
+                  [_catalog("marketing_1", "rhea.vale@example.test", "user_901")], universe())
+    att = r.per_case["c1"][0]
+    assert att.label == "CONFLICT" and "do not belong to the subject" in att.rationale
+    assert "marketing_1" in r.content_conflicts
+
+
+def test_catalog_link_corroborated_by_record_content_is_confirmed():
+    img = obs("ev1", "2026-09-06T00:00:00Z", "marketing_1", "marketing_platform",
+              {"email": "rhea.vale@example.test"}, kind="IMAGE_EXTRACTION", container="image_row")
+    r = attribute([ctx("c1", "rhea.vale@example.test")], index([img], {"ev1": "2026-09-06T00:00:00Z"}),
+                  [_catalog("marketing_1", "rhea.vale@example.test", "user_901")], universe())
+    assert labels(r, "c1") == {"marketing_1": "CONFIRMED"} and not r.content_conflicts
+
+
+def test_shared_context_record_naming_subject_and_another_person_is_not_conflict():
+    o = obs("ev1", "2026-09-06T00:00:00Z", "support_9", "support_platform",
+            {"customer_reference": "user_901", "message_text": "cc someone.else@example.test"})
+    r = attribute([ctx("c1", "rhea.vale@example.test")], index([o], {"ev1": "2026-09-06T00:00:00Z"}), [], universe())
+    assert labels(r, "c1") == {"support_9": "CONFIRMED"}
+
+
 def test_link_outside_request_lifecycle_is_out_of_scope():
     o = obs("ev1", "2026-03-01T00:00:00Z", "tombstone_1", "identity_service", {"subject_reference": "user_901"})
     r = attribute([ctx("c1", "rhea.vale@example.test")], index([o], {"ev1": "2026-03-01T00:00:00Z"}), [], universe())

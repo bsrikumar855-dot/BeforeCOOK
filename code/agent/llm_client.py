@@ -185,9 +185,10 @@ class LLMClient:
                 outcome, payload = self._call_with_backoff(model_cfg, slot, key, prompt + feedback, image, image_mime)
                 if outcome != "ok":
                     attempts_log.append({"model": model_id, "key_slot": slot, "outcome": outcome})
-                    if outcome == "quota_exhausted":
+                    if outcome in ("quota_exhausted", "model_unavailable"):
+                        # Both are permanent for this run: skip this (model, key) for every later request.
                         self.exhausted.add((slot, model_id))
-                        self.ledger.events.append({"event": "quota_exhausted", "task": task, "model": model_id,
+                        self.ledger.events.append({"event": outcome, "task": task, "model": model_id,
                                                    "key_slot": slot})
                     break
                 text, usage, call_id = payload
@@ -237,6 +238,8 @@ class LLMClient:
                 time.sleep(min(delay, limits["backoff_max_seconds"]))
                 delay *= 2
                 continue
+            if status == 404:
+                return "model_unavailable", None       # e.g. "no longer available to new users"
             return f"http_{status}", None
         return "retries_exhausted", None
 

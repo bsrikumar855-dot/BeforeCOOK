@@ -10,3 +10,4 @@ venv/
 
 # temporary output written before validation
 *.csv.tmp
+output.degraded.csv

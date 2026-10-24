@@ -15,7 +15,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 2: several assignments equally supported (rival cases for account_010: [])",
+   "rationale": "batch 6: several assignments equally supported (rival cases for account_010: ['case_25', 'case_549', 'case_550'])",
    "resource_id": "account_010",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -35,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 2: several assignments equally supported (rival cases for account_3136: [])",
+   "rationale": "batch 6: several assignments equally supported (rival cases for account_3136: ['case_25', 'case_549', 'case_550'])",
    "resource_id": "account_3136",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -55,7 +55,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 2: several assignments equally supported (rival cases for account_4842: [])",
+   "rationale": "batch 6: several assignments equally supported (rival cases for account_4842: ['case_25', 'case_549', 'case_550'])",
    "resource_id": "account_4842",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -75,7 +75,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 2: several assignments equally supported (rival cases for account_7225: [])",
+   "rationale": "batch 6: several assignments equally supported (rival cases for account_7225: ['case_25', 'case_549', 'case_550'])",
    "resource_id": "account_7225",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -95,7 +95,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_3602 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "rationale": "activity_3602 lies in the burst windows of cases ['case_10', 'case_24', 'case_25', 'case_26', 'case_549', 'case_550']",
    "resource_id": "analytics_1895",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -115,7 +115,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_3603 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "rationale": "activity_3603 lies in the burst windows of cases ['case_10', 'case_24', 'case_25', 'case_26', 'case_549', 'case_550']",
    "resource_id": "analytics_4566",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -197,38 +197,37 @@
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_010: [])",
+   "reason": "AMBIGUOUS: batch 6: several assignments equally supported (rival cases for account_010: ['case_25', 'case_549', 'case_550'])",
    "resource_id": "account_010"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_3136: [])",
+   "reason": "AMBIGUOUS: batch 6: several assignments equally supported (rival cases for account_3136: ['case_25', 'case_549', 'case_550'])",
    "resource_id": "account_3136"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_4842: [])",
+   "reason": "AMBIGUOUS: batch 6: several assignments equally supported (rival cases for account_4842: ['case_25', 'case_549', 'case_550'])",
    "resource_id": "account_4842"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 2: several assignments equally supported (rival cases for account_7225: [])",
+   "reason": "AMBIGUOUS: batch 6: several assignments equally supported (rival cases for account_7225: ['case_25', 'case_549', 'case_550'])",
    "resource_id": "account_7225"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_3602 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "reason": "AMBIGUOUS: activity_3602 lies in the burst windows of cases ['case_10', 'case_24', 'case_25', 'case_26', 'case_549', 'case_550']",
    "resource_id": "analytics_1895"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_3603 lies in the burst windows of cases ['case_10', 'case_24', 'case_26']",
+   "reason": "AMBIGUOUS: activity_3603 lies in the burst windows of cases ['case_10', 'case_24', 'case_25', 'case_26', 'case_549', 'case_550']",
    "resource_id": "analytics_4566"
   }
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,

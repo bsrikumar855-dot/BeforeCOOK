@@ -15,7 +15,7 @@
    ],
    "in_scope": true,
    "label": "INFERRED",
-   "rationale": "account delete activity_3227 is in every maximum one-to-one assignment of batch 60 (cases ['case_94'], rows ['account_4037']) after eliminating rows hard-linked to other people",
+   "rationale": "account delete activity_3227 is in every maximum one-to-one assignment of batch 116 (cases ['case_94'], rows ['account_4037']) after eliminating rows hard-linked to other people",
    "resource_id": "account_4037",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -97,7 +97,6 @@
  "excluded": [],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,

@@ -145,3 +145,49 @@ repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
 
+## [2026-10-24T23:24:00+05:30] Phase 1 gate: model fix, alias + conflict rules, evaluation, determinism
+
+User Prompt (verbatim, secrets redacted):
+Resume: add catalog-alias resolution for screenshot rows and the content-contradiction CONFLICT rule, rerun main.py (from cache where possible), then the evaluation with --determinism and --from-cache, and report the acceptance gate.
+Try again
+Try again
+Try again
+
+Agent Response Summary:
+I diagnosed the 358 NOT_APPLICABLE fallbacks from the provider's error bodies. gemini-2.5-flash-lite returned HTTP 404 "no longer available to new users" on every key, and gemini-2.5-flash hit a 20-requests/day free-tier cap. Intent was moved to gemini-3.5-flash-lite (with no thinkingBudget, which it rejects), and a 404 now retires that (model, key) for the run. I added catalog-alias resolution for screenshot rows, a guarded salvage for joined ids, and the content-contradiction CONFLICT rule (marketing_001), each with unit tests (60 pass). I also removed the run-dependent cache_hit flag from traces. The rerun used 6 new calls plus cache and gave 153 COMPLETE / 355 INCOMPLETE / 10 NOT_APPLICABLE. Samples: status 31/32, step recall 171/193, precision 171/171, sequence 16/32. X1-X5 pass 5/5. Repeat and keyless --from-cache runs are byte-identical across 553 files. Gate checks: 0 CONFIRMED without a direct link, 0 unexplained contradictions (1 explained content conflict), and all 1,248 AMBIGUOUS/CONFLICT eval pairs are listed in the evaluation report appendix.
+
+Actions:
+* Probed generateContent per model and key slot (scratch script; keys never printed)
+* Edited code/config/models.yaml, code/agent/llm_client.py, code/agent/parsers/png_vlm.py, code/agent/parsers/__init__.py, code/agent/attribution.py, code/agent/pipeline.py, code/main.py, code/evaluation/main.py, DESIGN.md
+* Added tests in code/tests/test_attribution.py and code/tests/test_parsers_and_intent.py (60 pass)
+* Ran python code/main.py (live, 6 calls), python code/main.py --check-models, python code/main.py --from-cache
+* Ran python code/evaluation/main.py --determinism and --from-cache --determinism; regenerated evaluation_report.md and usage_report.md
+* Secret scan of code/, DESIGN.md, README.md, log.txt: no key strings; .env gitignored; nothing committed
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none
+
+## [2026-10-25T00:10:00+05:30] STEP 0 verification: stopped, exit-code-4 guard missing
+
+User Prompt (verbatim, secrets redacted):
+CHECKPOINT + MEASUREMENT + ATTRIBUTION EXPERIMENTS E1/E2 — LOCAL ONLY. [Full pasted instruction block: STEP 0 verify and checkpoint; STEP 1 measurements M1/M2; STEP 2 experiment E1 (anchored monotone matching vs burst segmentation); STEP 3 tombstone extraction semantics; STEP 4 experiment E2 (investigator agent plus deterministic verifier); STEP 5 validation; report then stop. Never push; do not modify CLAUDE.md; never log keys.]
+
+Agent Response Summary:
+I ran STEP 0 read-only. Verified: git repo on branch main, HEAD 9989e92; 60 tests pass; output.csv sha256 ef0cc990239aebc670a8c9885ed1cd063501e15d4047fdac3d3f61106bea3018 matches; catalog-alias resolution present; content-CONFLICT fires only on marketing_001; gemini-3.5-flash-lite configured for intent. NOT present: a model-failure exit code 4 guard. main.py exits only with 0, 2 (invalid output) and 3 (cache miss), so I stopped as STEP 0 requires, with no commit and no logic changes. A remote named origin (github.com/bsrikumar855-dot/COOKED---October) is configured, contrary to "no GitHub repo"; nothing was pushed.
+
+Actions:
+* git status, git log, git remote -v; pytest code/tests (60 passed); sha256sum output.csv; grep for exit-code guard
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none
+

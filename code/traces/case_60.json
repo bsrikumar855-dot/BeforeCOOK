@@ -1,19 +1,157 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_60",
+   "edges": [
+    {
+     "case_id": "case_60",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_3865",
+     "source_id": "activity_3443",
+     "strength": "SECONDARY",
+     "time": "2026-08-26T08:46:47Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 113: several assignments equally supported (rival cases for account_3865: ['case_59'])",
+   "resource_id": "account_3865",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_60",
+   "edges": [
+    {
+     "case_id": "case_60",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_5661",
+     "source_id": "activity_3445",
+     "strength": "SECONDARY",
+     "time": "2026-08-26T09:08:44Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 113: several assignments equally supported (rival cases for account_5661: ['case_59'])",
+   "resource_id": "account_5661",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_60",
+   "edges": [
+    {
+     "case_id": "case_60",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_631",
+     "source_id": "activity_3444",
+     "strength": "SECONDARY",
+     "time": "2026-08-26T08:57:31Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 113: several assignments equally supported (rival cases for account_631: ['case_59'])",
+   "resource_id": "account_631",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_60",
+   "edges": [
+    {
+     "case_id": "case_60",
+     "identifier": "deletion_worker:ANONYMIZE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "analytics_9069",
+     "source_id": "activity_3447",
+     "strength": "SECONDARY",
+     "time": "2026-08-26T09:31:12Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3447 lies in the burst windows of cases ['case_59', 'case_60']",
+   "resource_id": "analytics_9069",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "analytics_platform"
+  },
+  {
+   "case_id": "case_60",
+   "edges": [
+    {
+     "case_id": "case_60",
+     "identifier": "user_id:user_58",
+     "kind": "HARD",
+     "resource_id": "audit_record_629",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    },
+    {
+     "case_id": "case_60",
+     "identifier": "user_id:user_58",
+     "kind": "HARD",
+     "resource_id": "audit_record_629",
+     "source_id": "evidence_05",
+     "strength": "HARD",
+     "time": "2026-09-21T10:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_629",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_05",
+   "system_id": "security_service"
+  }
+ ],
  "case_id": "case_60",
- "excluded": [],
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_3449",
+   "reason": "hard-linked to ['user_59']",
+   "resource_id": "search_7455"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 113: several assignments equally supported (rival cases for account_3865: ['case_59'])",
+   "resource_id": "account_3865"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 113: several assignments equally supported (rival cases for account_5661: ['case_59'])",
+   "resource_id": "account_5661"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 113: several assignments equally supported (rival cases for account_631: ['case_59'])",
+   "resource_id": "account_631"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3447 lies in the burst windows of cases ['case_59', 'case_60']",
+   "resource_id": "analytics_9069"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-09-21T10:00:00Z",
@@ -22,9 +160,50 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-08-24T10:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_05",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_629",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_05#customer_data_primary:10",
+     "evidence_05#customer_data_read_replica:11"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_05",
+    "resource_id": "audit_record_629",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  }
+ ],
+ "status": "COMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_05",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_629",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "security_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +228,6 @@
   "user_ids": [
    "user_58"
   ]
- }
+ },
+ "validation_errors": []
 }

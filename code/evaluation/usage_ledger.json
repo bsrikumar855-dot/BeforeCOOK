@@ -1,1143 +1,2870 @@
 {
- "cache_hits": [],
- "calls": [
+ "cache_hits": [
   {
    "call_id": "18dea73f7d7f4939",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "1bbc06c93d186a5e94b7fae07de4c38f2652ec7c325a44ca16200ab91d196bf5",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 752,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 1988
+   "task": "vision"
   },
   {
    "call_id": "710df7df7a564940",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "6540f153bac2f33d6b7f057df9399cad3f654f3ac0f22f4bc77e54d9eeb52719",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 437,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 1673
+   "task": "vision"
   },
   {
    "call_id": "3344701fbe0a47ea",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "8eaaf5ad856c27d13d87b81dad81fa747bbc615532f5ac3ed1312486f7f7e863",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 883,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2119
-  },
-  {
-   "call_id": "e305a0e4b8e7417f",
-   "input_tokens": 1236,
-   "key_slot": "primary",
-   "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 1233,
-   "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2469
+   "task": "vision"
   },
   {
    "call_id": "986e32243d4e4c9e",
-   "input_tokens": 1268,
-   "key_slot": "primary",
+   "key": "c554884114ff0224dd2f6207198f6cde13f182ee3469695c95140712c189acff",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 1342,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2610
+   "task": "vision"
   },
   {
    "call_id": "8840ec8177594915",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "9b6b8e381b3156c6eb49fb64adf48a9c98a72dde0652d1320d3bf6052260540b",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 895,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2131
+   "task": "vision"
   },
   {
    "call_id": "1259fe1833a049f9",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "0c2ef519b48af1056b7448c0a263442f216f40d83aa55a04d47c54c6286eb248",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 601,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 1837
+   "task": "vision"
   },
   {
    "call_id": "ee84db104d4e443c",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "ba4787cd2818753502716c0a72deb7822658ebd38b153a9508ad370c712ba655",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 898,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2134
+   "task": "vision"
   },
   {
    "call_id": "59df90bd91ed46a1",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "ffe60e4ea4cf1d7b4cfb36a5691cfbf1fd520dc5ea577a318d8ebf8fe745cc5a",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 1321,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2557
+   "task": "vision"
   },
   {
    "call_id": "605a2b381aee46ec",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "cb6237ead4b4d6799aa1ef1a08a1e1354eef7741d1ccf70733b722adae27ef13",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 980,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2216
+   "task": "vision"
   },
   {
    "call_id": "269607dab18247b3",
-   "input_tokens": 1236,
-   "key_slot": "primary",
+   "key": "5bed08ac10ae83ae089823b18e9f700a076569739c98f27f93020d7f7e7d93d5",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 1698,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2934
-  },
-  {
-   "call_id": "b1cc56ba6b4f4301",
-   "input_tokens": 1236,
-   "key_slot": "primary",
-   "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 969,
-   "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2205
+   "task": "vision"
   },
   {
    "call_id": "b5cedf4171cd4e45",
-   "input_tokens": 1268,
-   "key_slot": "primary",
+   "key": "e7d01efab89ea3b26fd7867d7011ba412373a5faafdbefee88341c829bb1876f",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 961,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2229
+   "task": "vision"
   },
   {
    "call_id": "3f7362de180147bc",
-   "input_tokens": 2015,
-   "key_slot": "primary",
+   "key": "b2a7a4244b3d56f59388ed71cac8e4eb3931292af0e74a29ff59b17ecef888de",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 607,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2622
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "6ddcf0d573655d91ebf967151103b10dcd19de8eff6d62d4e25cb1617a7783f2",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "1e44442a42019d6492ac1d128a72205f65e86f4902ca25c182d63a3cdbd0b968",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "87287611a758bfdca2861974710f7d26c3ae3949d65a18e0b68ba8b09a43e252",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "2247356794a9ec8f046af81dbe43b5e9467e38854cd2675007231d6d5487dc0c",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "b0467a7843272e4b31f39ef175173456545933a0c8380623dd0c9527a90e55eb",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "e670a49d2ac5c5244500db7e4804e2c546cf0d01f596301856b3ec15291bf1f0",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "85a980383e4c5d71627b91b9a64049a989afc3f4e3fa69552f23eb81339c4082",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "f9d16e4eb8483b3f56f7a73c8b734e3e7e78341ddb5b506748069079dd894921",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "28b05faecb2a4bd7fde95b7c2d1c5aa861f21d6e46595c3a9bcbc5cb9b05b72c",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "9885d8ffcb9f66ea56fa7197b4ce06be592f3d77c147cbdf9cc303c1a3bfb071",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "35738b1155220bebdc5bc86ee3a562cfb39d8f2af4681ae5b4f8637ab0ff15dd",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "468355e9efbe83ba3f38eaa0314ec63cee722881d977623367b31e1b63158398",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "25c5c71401e0ba0649c29293de3c50ecb4f5fe090d0afe12250b5351a188dee2",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "135666f86ba8607b16d7d3a31852559c8bf8c76f6d8e1425befabafcf0740bea",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "1ed9bd33d969b57666b373d17933b8b1180903b996c9cdf432f2ec55896bb901",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "f2948fedad90e41077d6c28bd982b62aa2c0a7fb9a63746ce311bb2b7085a8d8",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "2c6fd08ab4359102f373847b07694b778127836136e005a7a39b2a8ffe9ce1fd",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "7847fb0fbde4b07be956ddb0bc453869941ce0f2582664de9aa332b55325b336",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "3f7362de180147bc",
+   "key": "11da0843a3a63aabaa477db4dfab4abeff4df7e9888548fe8e1a459ae7791391",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
   },
   {
    "call_id": "abe7001c99ee455e",
-   "input_tokens": 2056,
-   "key_slot": "primary",
+   "key": "0bd23a87f1a0c6998f4cbf72517a6239b62b6cc1d7ccd6caedfbce50f9e233e3",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 872,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2928
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "d726d5a2566989e57ddd80b0e7d5c161adda9cf75fa4a5cabf44bb42422b1f61",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "b12c2164e14848f308b31b579ef473e3679da5a19affd3b20d860fdc1309370a",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "fe2f2d9c7134f10f57db35d0718f67b0aff811045b98974fa7155f9fc018857d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "ee04cc8c819746203f43e8ac8a98f29b49a0818fbe991a26fd2fab2274e34bef",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "31fdaff7680158f3baa7163fecfde81d396fd2eed82eecba3642e5e60cf768dc",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "85a8ab3673461e3379ca4bf30a739a3871fdb63c93de2a662bc2e70006ec09b1",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "cfa4c2a7e58edf5efadc1275bd975d2aea842a5a47e709577be490b94887d62e",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "a0597e15e60032c7ba18bfe28f8ab7ceb4b9e547c8754f0ae7ce0539ec4f91a8",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "73c471cf0de9843dfce053b71a149ce4c6285d0b7f60a8eaa7e0dfbb599503a5",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "6161cac998f0703b5acb2aabce1e8d3d05cc88b6ce59e6ac48674aaa8f4de6da",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "36bbf8eba3db8a1d0557ac7f37dda05b5f5a6e86b3fc3104180f63ff2189216e",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "d65fa22368c1598904cbf70742ce40f1ae8b1c5db57aa19d6274ee6e32ddaa94",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "ef222a57e05825701c261a30fcdd21a0bf90910d453827159b4c6c33c938e455",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "85c0cf37d6b2031da012c034d2498ac00a7054d0d48263f84a5d97adc67cd9db",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "fe4bdeaa747da5f48533a2c694fbc74c3643f5922e67effd3462751cb8c82fd1",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "688158523a7bfa3c9df0b8a32574e062ceb3dae8ebba1ede3d9077be1e7fbbff",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "8da462da8cb723474adc706b82275884d92e6f13839974aa025c3534f63e8d20",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "38cee980c849f23f111fea705e54289a7a3303776a753ef90659392888d04d83",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "abe7001c99ee455e",
+   "key": "cfcfc67a46fba7d9d8f928455e275c5f15d2cbba5013b359b0cc480eb0d00a0c",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
   },
   {
    "call_id": "6adcf2db3a47422c",
-   "input_tokens": 1985,
-   "key_slot": "primary",
+   "key": "3901606ea2ad2de469a231784fe71b1193480e3a7fc47284a09821aa95949ba2",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 603,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2588
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "dc855d9f7ae7a9a03df2b655aacd81a7d17d07059829d6325337befbccff8ce1",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "437d512a46ed97567b879d348662c0667bf50df3e275613587bc96d058e2bd00",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "606b8959b1107e869edb64b5789cbfb742a4c4bd5b4b1752089a81b43e98a5cd",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "6864e666521505a311efc37f6057274b005d2964ea07771534f93f9c8f4df274",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "0ed9939f26f21e977dd2c5a2af7926881b104c973abaf4b38d0250689ff3614d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "8c0416bd0d699312e534b25b01ff6201b74c085f3670d8af344ae49cb3746a5a",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "173af706d9b20c6b434137129e99544ed029d2feae6d0e15b99fde47916714d8",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "a5729366eb0393837a891a9289e64c3a17ec97fe5b2b3b5e15aafe202342c142",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "efcd9cd1bfedc6d9c67c8b5c0a924ad0651f85b170e32f119e53d19c6ede8cbb",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "14f1ff447691a74a136861959faefbe1fc67cfe0b2e48a6d278f3260d6b9d64b",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "8a30fd3ed5d933e3c24bde37150deb0c1df36b2d65d11ec7eaf3925a70723627",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "8b20337567da1bc2b1237c2dd5c7340520965e7105a1ad56434fa4221415f2fa",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "5c13f1d65101213b49c73c93cce025c68701156e40fec8c85f3bd326c6716e65",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "76cd84ec77c8baad18e8488c4c66509460a71e90127b3b1937df580211bea0ad",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "cac0b53b31374691faf9ce28d9388dcb8c6ff692f610cf5bbd88abce4461ee57",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "543a36d9e3674543615b9fdd71f712dbf64687d5b8187ceaf8387838198e2c02",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "790326988ab80951b01adb60a720d03d5ce52f6acd5d756a6cc38621f4db0d5d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "c7a8cc3f39aa2d9d825a9ebc091273107940438c3ba1f3cf32b67df314c5ff42",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "6adcf2db3a47422c",
+   "key": "a08a15429731ba47dc16517c2af76e725ce4302517e6673e1ab2c16b4e429007",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
   },
   {
    "call_id": "f393863dec5142fb",
-   "input_tokens": 1927,
-   "key_slot": "primary",
+   "key": "37b5220fbb16c22e5d9e63c3bbbbfd2744070bad6deb9a6fffdb43dfbb178dc9",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 876,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2803
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "ebaa349dd99c63df29fe20de9a06746951dd14c68889fea5529088f6579cf99d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "a2edd680fcbee5b16f24305b9dd21da08218a2e01d77756093765c034ed9a5c1",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "49183e5283fc87c530a999cfa38db11f090e7a8793abcb925c761779f9f9a619",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "bcab4555a5fdd2a7366aa5bc21c0142b4b1d65fdfe7e2c5e910f78556fa5110b",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "62ec8e66a4e6ff8194554d48ddf3ae3fdd89298419bdde20510932eb2050fb0b",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "afe90cd6a914e8065050c4c3747de47ff69ad0f6dd703fdba8ab52c089bf995d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "21f1a306271cc941f9154047212a50e9ae2f1ca84c0af2265e0c5a5c6a973700",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "08bee800e617de0c1a423b62cca5b69010b13a77a5b5bc32b67477cf62f582aa",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "b46508e5e30f1e83f60836985c3b8bbad6b007a2f74c7b66e3a6776693ef3445",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "a010fcfccfb2afcd86385ed5ce2538dc7a6ad0321633e71960dfc34012abb139",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "96f923ba9c5c65b3c11208345d8843227f323c1045e0624b075617375dbb4801",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "f5b6933f15589b5b357b34ded7de1c015cfde224d2cf3a99c2c0759a0ce204bf",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "fa6a50bc474811fec1945dbeec770190fcc408ebca10cbef1ce2bf7e13d2c189",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "9b7112029e08f11d1096a5a30b5e012c58deed40a99e598e186db87263ca6c87",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "d6c99b4ecac0acf87f44d47737aa4f5f2f996d503bdcaad8770962ccb0da988c",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "a7c28155a16afb76ef99847f6e21a588fae9bdd5f4e201fb3ed96e9244f83c02",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "52d2d3bfd6c181e80f92efccbd63b2077f6e2967e8ae24a7eaf3ebbd23b14c37",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "16251d9e89c3c687778811f887766d41b61a41ce3825393998b209a4a7d67a10",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f393863dec5142fb",
+   "key": "74a07476928a25731ff8b7c436d166caddf7dc8b897f68ca4a38ae2a91b3aba5",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
   },
   {
    "call_id": "d2b061da190a4261",
-   "input_tokens": 1987,
-   "key_slot": "primary",
+   "key": "891710b94ee31103dc6c8e8ce30b7efbf176d14116741e6544a7a5480d52ab35",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 872,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2859
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "92c45494f047efd4fa031d6da23befdf61ad156a31cf568c20ac37c8d18240c7",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "297824bd964f0db53819ac051be74ff36855a42c351b02f7a15a9eda9905394b",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "b74ee8fcf2868b644b1b7f8389b76040713972e54bac2053a4068f813c349304",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "6974ca03a95ff9d2793e786d38ea4708e84d2c5fc2ee4bc7e19ce138fa012f43",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "9c87f30272ca6b3ce7dcd6258a07364e01ee57b570240a472c98ffa3b5e5ed58",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "45c501d897e1dec3bd5a59e76f9c2daa1095620f7864c19991e4cdbc699d06e4",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "696c3e3a61e930a748488243a82ecfe0c30535290de0ec260ce20dfd30c02981",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "63b3ecb96654c7f4a225934127ade6ddb36d2a0cd2a3f3b4378a971c394d5c1a",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "6edb3e868a1bcc3a85e95ba5c899a1f083e366ba821a23a1d6510b8bc25161ed",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "c68dfff01b662a1fb031b2ff45940e6204fdee81b5ed97ee8efbcc904a0bcf2f",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "319f17c0d376f972d8e3957ccca7ef6a16019c757bd1beacedf87e212b8af4ae",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "6be3ed33f0eecf54a6674cd32e11a1c748c67aa52d1738656772f82b03803c58",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "a02dcd2efed61de1e130ffa1bdcd6593ec0d858d41e30ce80912539072c7598d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "d266d4cdc3388ac8a3fb51c71ce7ff67d9db42fcd354bf98dc27f638d0aad350",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "e700d3a049a59a0483ea9f07f7366f4189b63270849b68e62bb428616dc814d9",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "7806d4e5c2ae2e5fa072d7140c90713dd014b7206ae7f9e031eaa6cc3a698bd3",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "eab1c3ff01e69786def4a6e5a5214e4d8f504ee765bb73a5f7b0e467648abaeb",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "b2d2f51b780a74e3f725ce77b56f9d66e981563ef9a94d83db312b825ed02d7c",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "d2b061da190a4261",
+   "key": "08e5e4d2a580da91034296c1e35bb0c7dbd2b7c28ac0511974e790b12f9f6bac",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
   },
   {
    "call_id": "f90f794db4194bd5",
-   "input_tokens": 2001,
-   "key_slot": "primary",
+   "key": "580645b3e4a3e425d29ca2034e299a739ef2db1178fa2b289d6e9c0bdb67c410",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 872,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2873
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "d06a1f772d25da61000ed3324ae26f59eb7c86c7e7123181e72990fe23c72a05",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "e6f92f5e432fed6c2769a1b2a385e1150dd106fd92f634b4828ebf7e468d44d3",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "cbe4752863eb90c8430aae03e12578da5751afaee3c4b28dab3d483e4e3dbe4f",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "e8eeb39a0a36c40d42a043ad9fa1f856a6386a3af4b287c4e6d2d080dffab4e0",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "bcf38dc615db4e36935811b8a3067e5865202bf8d9f5f7ed964205dd4b953904",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "1e312874750ae737f5797a3b115c6aa671b02533f30e2ed9bf24adcc1e1e7341",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "840a9134e06a7999254f95be73a706be4672ea6cbbf7a64bc2fdbb08567d54ae",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "c0773fde66023da3336abdf90909247d955c4825354d42ecd5700a0df4ad875d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "0bdf899ddda78833edecbeef6f59267855877a181b29fb285fbdc512b40cbb9d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "da087503efa5a002cfc449d7ba7fbc0ac33559986c53d4a2515e61bb45eb2992",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "691d192eb7f0925c3bd66ab56261019f4fb23b78c6c0d7e91cb78116ffc6d6de",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "37f6dacdb7ed035958fd719f10882471ae88c5007f4115b89273ec07a47b8696",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "d5038431d7a683e8a98f76d012d6000416b48b69b25ca150f35e4c501b66bde5",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "ec14c6fe8ee8916f6b687560f075add7b59eb1d22ecfd03704bf795d45e56f66",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "8598742b091f1310b1550b6176b3a6d0688a18ce529c60fd9707ea81b2126860",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "427b1a3120a3165defa086bc494c1de4cbc05525526d88c806d17f6605de2a71",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "3cba5d003e17f68b72f350247658f1224baf023e52ad5161571df314b4e3d324",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "2f29a9d34e83d458c746eb1d7cb181e7b2027b63a5089d371213d838b499ad5b",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "f90f794db4194bd5",
+   "key": "b719cdd2c4b14d6b9e887687223542c0de4b77332f4e654c6d3e3b6b7ba58f67",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
   },
   {
    "call_id": "4c8f0886dc644063",
-   "input_tokens": 2001,
-   "key_slot": "primary",
+   "key": "f7ccf62be43320858da3e0ecc0cded53f73d64c3a4f07260303a3eb0e423f38d",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 872,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2873
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "ae5ce74a2055bd91694166770ae2e8172d402d52620ef1cb18899705a2b1fe01",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "23c4801515e9a632f51c53cf2877789ad622b61c537643bfb4b093dc1dc4c3f7",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "d08907433613d5511f084d7f801607e43fdbe86e02ae1d3c9f427ac6cf44c7f1",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "828e8131bb199871d924e6624e55d98f9ec8cad958d601b84ad2ffac91713ef5",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "bf04f6fa7e10da01b03c3efa9e27e037702dd1639b5eee6b50b862ef871c559a",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "9e9d60de936be00d4fb1711857af4ea838e20164755311a788c42766dd208688",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "0862ce86606d81e10211a5759008b67185f0ea36af6ef693633cad4cbd7266f1",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "0de11b182a4bf117798dd0e38dbbe55ab5ced8c19fd93d13b2e0d6921b830dc4",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "dc6d572e4ccd6c47032c74ca4c8014312a581b258fb63a17524e64067f5be515",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "1709affbc4665694939d2241d9322a1ff5f6449059c948ccde258a52710ab9b7",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "6a6c8748954181306b5a63fed092b838e788ba90b11b9713ddf7d129ce44b0bd",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "e7bca8d2070ccfae62c90d453911349e6e4a763922232f06db7db0be7c28353c",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "4ac2234b105606fe2164f0b2ea6426a20b3d24dad80ffcbadda62eb74f37e9af",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "298cdd9c1953ea6259230be582b7cdf6a957d05bf289c817e8676bc220c7685a",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "46b4d4d0e5804da30e37657a344f8115407e02e1befba858eb363252c86f6875",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "4c4d337e0429c384301686a303922019e1c2553c73836f7b20045fc24f5cfd3d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "1fb02399d043b0f9230a6aaf1281974a3424e381dadca368e4d095778fd9117d",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "751ded4e9708df2ee8f253168fcb21e104e05eb921953f9513ceb6190d3c78ec",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "4c8f0886dc644063",
+   "key": "91074ea5d628177dcc357898e1264a04328629f6b59f10feac5a8fc2d26a5368",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
   },
   {
    "call_id": "8fbc80832dcc4916",
-   "input_tokens": 2002,
-   "key_slot": "primary",
+   "key": "ee2abaf6652d52a61d217c3913704b034370050927cbd32f840c623b3cf98e52",
    "model": "gemini-2.5-flash",
-   "model_version": "gemini-2.5-flash",
-   "output_tokens": 603,
    "provider": "gemini",
-   "thinking_tokens": 0,
-   "total_tokens": 2605
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "3b8c30f465380ef1d6aea3458a3a36d5679e1ddd18b2aa5d86c34235835894cc",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "dabdb325a1fca9a299e94775744e807f1e083010fbb0e7e576b665f567999773",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "1619af3906fd326e0edc19ce9ee58e99d1330416992b5e454c6fc70d641bbddf",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "93c224f40371366d0514531396b88e1b6e5f2a273a0d6ff3e79d4b9580dadfb9",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "5c4017dc7ab33eb0064e1f7337514f0e817a5ea3a902ff390a614c5a501683c4",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "7a946278cea396cfed5928f98ad5e87c5d2ff04926bf424914dae3613f758c14",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "b29e4be8eca124951a64238ae3a515fd56e6521cb1a4c1a5780e0f6675344705",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "ee69376fe22d0e7e7b3672e3a347d29e6ee7e441e7d8fc629eaeebb444018a6f",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "bca902b1df7739e1cac6daa257fd419469331ed54d961a492c41b7c143b541ed",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "18a3656f19bc7a803bf67ea4d7186fb8f851c21518e3fa09d12ea67022835269",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "b2a30f0a9649a1d022502cc1c1d5f9fccda4710fe8eba39e781255f49d57024b",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "2043b7c3f41c8fcf782762e21435cdeb2134960c36834ba300da07470135435f",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "7087e133cb4181adbb2a76e737f8d538d579e26fa3609c4bbe5f08c7f7ec1fd4",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "a72c42f8661878c9a3e8b464808042ebcf29667f47723b8a85f9a3fb2348ebac",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "ab42092bbf4a83f31a11b8bb273d930b72c632b76cff96de9ec46788979fb803",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "f03ed370e49b1cbf7970d4852b7bd630a2da63d6cf6962cc238ba2b1ff497c61",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "68626267354b7b703632901c4a19be45d6fb78e49ab16180198cdfdc0857e5bf",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "630d3318fc19ba2997d333082fd720d6105e6c99ba58889bba6375a332f996b5",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "8fbc80832dcc4916",
+   "key": "6e00888e7b3a0f28c8992cf1726cd37ccf6046aacaaea4d2eef05719d988ca47",
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "b296de6cc941388e06b8c3c16f80bc77b4c64ec3534ac6a94690a87fb152e3a8",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "7c34c873f6fd7e6e86e487435d982d19208a703e6b2714dd08af76b8cfaec0d5",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "06536fccca76e6bac816862c75c7224a35dc428205d462796f92de2baa170f34",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "bdb04c7d2757e5feabe5a6c656eae51d33b5c4dc13a4bd0cb83d39f430b5f2cc",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "77db47e1e4661966a84e41cfbade1ac769463526057715349963717204f458ab",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "b05427462c42c068fa2099fc23c394f7da5ed5407a03532a77dd3341d864b0c9",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "52132d354fcad942b63ba714dbd496034f0d1d00440dc38d692ccd68d8d6979f",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "180935b7071c8156a7eca9ff97a9b28d1e4e7ec6f1b763e2f425aab417f90cc7",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "bf1f80da42d39bdccaf8193316946fbee7e7ddac0636bc583512a7163361e508",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "a5c1eaedae82ac629be2f8e5f1943cd9dbaeac4f29c8d8bfbbc0b9d07930f466",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "4a4d65182c0fa0b07e95aa2e06c2c24494cff8bf16618bd9e60949bdde1eb201",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "112d66389d96bdaf42d9b17c0b0c8b196e5d2f80194e3aa83fe6987b2a9502cf",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "06cd11fe41f48cf741608a8ee427d812f5b977c57b2cdd1e7f2695d2acdc179c",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "b10400b73ac2c7f306a665d01711f559b69852775efc877a3123c115e6d81cb4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "5b8e2659b7a0ac99db1c489f080b8d72f87b036d6aafba4e1d05f205b5f8d35b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "41ab5b579c1bcc9965e922be805dc2eef86f048f421ca4876f66781d0afa3378",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "f79a295bb7455a2da70733234adbc0a13af206e7d891ab2b9c7dafabb7fdd134",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "64ce01a1c8190ca268ab2fb63ad824c89c053bb13a6f14258451ca49fcb60bdb",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "cb48e0b55177490be8a16beaa722ae1d4eb04589cc07a2cb32a41e1bb7a691ad",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "01b6169e526bb8f066b2c09055009c2303f40b607738ccac2ba748ca1cb6efb6",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "fc9b23b0e0a6ada8bb5d43ab24a34098dc837be736e83042afd176847a814547",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "1c3aba95c131959815c91d2713cbdcd365c13b2b22015bdb4fc80d5e4eb5d916",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "d24c7c4110d13b27bfae90819085197740777c80a73b7e4b5d51bd1743d731f7",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "d3c7d321fa5bc13fc185158fbc32b77f7e67356e2faf2986530fba23721a5323",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "bb27109f0e07cf8a052cd39be66643a38cfbf78ce1b048dea97f0e758eded24e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "153923d46ca6d6ecabd758a5308f2ddabbfe7922518b255e6bb2528087fed652",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "205499095486158941191fc1b52b396b123ad3a6eb1fcecbd09752ba07763c50",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "3e39d17834fbe8720993d4b68eae4c1ad1ffee2b159287ac364ac33e1461a4ce",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "cfa8ee6d8e22d300e8abe629307ea0ec118da523856ac02b4d036bf8c8b33296",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "4afcdbe64499a26e895648fa76eb9c6aa4650da6473bce93e9de8de63e923610",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "7bfe2f04c599246118567041aa0829c8669d54836c14d1728887c9cee613b0ac",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "084bcefa93e78b9fbf616499c781a1e8a97e19f76d3ea55242311628c1572a8d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "08dcf0915f492b63e45439b0c60b73f37f23e73bf1cbb9a2bf41bf5d64c4f408",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "a9c2173f1ae080e6a306cd8ec2bdf07dd13b923115b728ada98dd9d72ad1bf38",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "e35c0f4b0c7412a3a98242848b30a4c1f118441376b669173c814cccbe6b111b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "6243d901f60bc0ad1f6660b45f49ec582cd2a28903775f81c0e335d86ae1a996",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "4b77c3c11bf57090e5521f119bf9f25aa3c0e240ae5997dd32d8016b115ef147",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "b52cc834e435cc878723953722bef5dc03b012653e0d348d19379a0e9235fb11",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "380bdabcc8c239582b82dad266514a4340298c0bea038d8f034c536b06b60d04",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "c130482662cf48e2",
+   "key": "3cc31de6edf98f023de4cda61428f6ccf489c0f8ddd4b7dc9974a32383782682",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "3415792ef9fec5de12842166fa113cbcbd97d58ee9b9a0919d7dde7033c94c49",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "a16ee114d08810906f86993a9295b7f23fcae67ce513243d344d91b7117ca21f",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "1be1d6ba95810cc57b19adb3bf7568056bdc094605e9e71a995563107a619351",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "a29210b92e55af43734234d342d3aa572c5b40c4b28cbdcac52d2fc0eac42bc2",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "fdedfdbc04ab01d454db00603525da7e9d9b55e31dcc957494d93fc04ced9451",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "b652a5913f480887154ca4c98f39351cd688b65f69085f32f777dbbd3044b3e2",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "946216d19637628af354686665b7f902c3ef1f7c27d96846e6cd32a24c3298ac",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "9e0e7dca0e859a2372115f91485ddbd1fec501154047f207d83409623da20215",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "e3c823a227b4a10711078f067b8d493a9732a4ee08ddfcb10e56ee5bcb1fe8f3",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "0ab1f5993850667df2795da90b8d4de01073080bba6f2ad9abf6213b498e8b44",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "6b12f2e159f861b7e6d19d95ac5fa81d44044ed5d99b7a49b893eedfca8eea6e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "d57fdc704702f6c994f6852f0a95eb7cbe0d44aff3f07bdfb218d63f09faa42e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "65f859478461801e07b259a3c02d231972ada0d759fc4abd72f3727fa0099ac3",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "224a3fe3c97f59a41dd627a368aa013dbec72e33b8f7a7f74b6f95e051c7ae12",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "c6d2729919f01e5bb0b4fd4b241b10e741c88acb5d58c55d1ea41617bdb6a52d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "88b5c7b68549af6c20c4852926f017996a7d1085029025abbf8b76ac74999376",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "8ef7c57bab3a277d17a88ec2ecc6b2a5fb68e246109174fbfca23ef27e9f3e4c",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "84989bc3f021a834dd825d7d3c6b408a746b31b3fe774a7abdc147c8fc89501b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "ce2251cebb46af425daa29f5e460e67853fee30babe5672fadc3b6397335912a",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "df3ed39ab0f5ab1c51d4104eb85aa82c6900c0811bf74b8bc1ed200243772e09",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "bcaafcfd581910035c3ddb702cb5edb8f44401c20a743aa93b016022c86014af",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "60c21da2eec08f4a1cd8cc154b1e8340d8b677935ae676846dcaa5cdb0ba949b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "0b9d7ec6f9a1cadeaf3c8f3be93888150f6bdb1ae02c5086c42a458d67ea35d7",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "1e0100901cc06cd1295ea8341632bcbe373301266e22a496e19ba1acb7eb4a95",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "41073d01ca37e840016c80ea1e3cd5e50feea122754c9fe330a04be868bf48d8",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "2422c92f0d17d42db3b76c273583bdfb8a1d805ad2e7e3eb5d1fe3a5ee52d8c4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "5b4661e6eb91ecdb301d7bf937c2a7e062af14342a3f00f963bc0cd6bb98d8a1",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "b9d12c1b130a2dcbb3beeb6e2ab49b17d5f6df5b7ee0359062c951f799975fb2",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "582436d6c3c204a53cdc3906a4b08b121cdbe64c79e8c7bee8c5d95c575aa369",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "882b50c204fa5ab360a288567f5729519beee93e4a5031669b3bb1504f7d5f5e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "ed4383dc691588dc5185ec74f1e698eaacd2268a07478a9001ab9c1cd40cfb6d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "dda560c9d49d34a5982f41502aba9432a9932b094d04462a8eabce367b8ceb14",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "fcaf9db3a366bc5b751af058ae1328cf6b48ba0fde7c26983f7a2cb2eceafc6d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "52e6c15e7e45da67d42fefbf38d6cefef92e0726f482b3f1469b94d4b08d4b9a",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "7585cae63036df0c9fc0c22816a39616c9f76873f47315ae302f44d352f794f7",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "af24fb29774041fc0d2278eb5958b91b5facdbe40108729f388e89566df3523f",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "d37ce2b5c4b35ae339442208104bddd2660044e73314331aa526f839950025ef",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "b78ca73562f40bfbbd92663174fd2caffddc20aeefbee75a5f5dd2c628b14510",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "878135f9cf631be1a3b299f4a3a097fb47730a3eabc9120922c3c293ab9afcd4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "35baceb0ae1f4d0e",
+   "key": "3cac7c7eb76bccab372acb2add40c05741886fe6414d9cf407b1dae0d6b34cec",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "fdff740552a4d29703aab6c2110ecc9d15f9c01fde17242f2d282246aeeb9fe7",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "2b7f7951ca9aff7efc05d2fa573dcd7be817aba6b012581fc5e42ed29ca6a8ac",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "271b92bb567c2500f2bb2b252ee2b01b8f4485a5e15ef097afc8506bb4b31312",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "4455498c16f7ef36ee2b55c7e05c06a98ee54de93843313ffaf936db36f5b6f5",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "fc1cd3489f4305d19b7e5d4dddd0ddba90b87c65dca462aefb4f74da7dbc2ded",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "83de43063172a30ff81cf8128bf2be2fe49ba40ee31646ca7f967cc81aa395d3",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "6d74c17f54f858272fca5183e23a9bba7bf3ae9281440a2787f6584c6ddc3c7a",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "7ad70ca64640dd20ef7068f6e1b5ab7376d5839f174b57fc8a4af1de04e9bae6",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "8739d149bf7cc8ac30f0ac03f94cd590def8312403db0eebb557180c7a2a8f11",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "a9b405c938d751153f8d20599531f7278fec421462f13d92e140640d79cbe805",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "7fda3b6acd8c9efe21c84c94659a5a98d0b0df2ea1f0cbb00c783de8bc452329",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "3b8b041a8839109d01bd761207fa3208b0fc7d5ae10758d340dfecb74a35562e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "ceff23c12b2cde56ebc55221b84ff876716e797de735b68403ad4a6d2332996f",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "625eef32d4422deddfeb97be5dedaab97154b131794f786307a3f48f0741512a",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "96f6992faf143a62d73a11503d3aeecde17afb665f9362774b7c5fb8bb049ea1",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "f02f6e9b3aeca6fb2428d3e9a5de770363355938117403e907ead9c06b6d0a32",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "335bf8c3d5bab109a88cb2d66979d30879b0a63ab5533e7913d41538e0ab0001",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "a565bd7410c3faaaa8fa1e78e96a06d0af546cb0849b531fe9e319a0f83f5c45",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "3c699a856fda81a6948b6d89ca44d4867a510b18f71f0758e01851ffaaf102c9",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "fc1f2f129ff5f4ec94cde0eb4c93bbf7775bf3c93e01124dd64353097d1c29a4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "83b9ab62e8a832fe1b6392738a11b96506a3f4376bf3bd7ac0abddd31fa0684c",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "54d74bcf23614935cca0f706ccfdae55344bba2a97861df287aa9a20f80e8c8f",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "cfdf55ac3f0947b13b8570f9d170bc69d74686a2c932f2494f4591b33d8dcbee",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "501cd80ead829ec985fab89a8709e939bfdc0774ccf019a493e6a218154914b3",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "be61eb45be126b883e9af4af956b07175c596503b201d78b51d6de45ee3bbbff",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "f048b91bc1f9b6406be23ee9cc8c99405ad08a0c7000adc331691a915b5234bc",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "9b183ee7b59e5d87268d8f9cf9b35dd5b5deb0ed85add797509325e7db457beb",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "5fd6ac59bb8cd48b5ad28cf4639859049d8e30cc4a318596de80f32b9b34208a",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "8aae34569baebc03e34cb59e7a246fbfa7cebf3d8a9d3266eb956afa6a93d699",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "5b5a9a982b6b8bf56718f491ce81caf31d40333d75d64da3f4adfc626f25804f",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "1583c7afe9d34df1ad139265b8ae00b5d87a02e88ec92de095e6f0ecef66cd16",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "449df0a577c997ae67d05e1849d173edac1e49ea13994264341494f988692c78",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "d2ab51a9b13585579644da00423d04b4b3bbfa74e0553cabe4111bb381e8de8c",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "fc33643e7a7139069c51681a1b0b0191284624b01e326bbb17cc617099fea32d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "af8132e735f3e9191bda2904b16414d8bb6b4c3dda7acc531159225bb1896597",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "837886f26db99b500491c0cf720bc95d7c3258b6405771829a98ed2a9ba54c53",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "2e68315dc3e5701a517fe58d47887c0a10c63293a81bc0a2ca77a3bdec5fd701",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "7da90f4514ec890a6a997ef5efe50cfc842c384590d388d455221e52e0973993",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "d92d7a40f50856321329187e2d04c41de693f0c1efabd192f23acf5157b04030",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "807f58d949d04ed0",
+   "key": "fc37d6a2f538dff0f61e79350472926527607c7060eef6b9811b46e13476e6a4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "b5dbfd012673a68bc667a974d516cce310fd009d7ae246437aabfb531e43fb25",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "8b63fa1620b06d18bbe436bf8a1a487f0cd50b5c8b6d5457da1cdcbfa13b9156",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "cd0fc63ce03efd80900968c731c439604848d229f5f94bcca0fc9ad7118fbfc1",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "22e22f37b03eaa305c8d5b4db103ccb9d0119b6fa0b9bb576109dd458ec2c76e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "f6ec290c04d68305421811bfb55c921db1be80d5a6eb09696f2a330d39fc4efb",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "7ac940f3d3f788e86a18e6ae9723e0eb7ec96fe9d29d70b26241495f1955e1d7",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "eed2ea0b6a783707d4f6701924d0ddb2d2d5f2edcba6d0cae00dc37dbcf18600",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "2d195c636731cd97d550875ca264a62c5bdd09fc2ecd1c7d7d488bb2f30062ba",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "264475376079a425e9c120159fb54fc35ec43d3264f0995d7cf6b98f56e22489",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "a659125b6eee1cd47eebf1f79a4978cea597bbe65c1ed1f9fcef99dd28dd77ca",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "c875d14711fbea0f16e6f34adcac2d4c0e68ea4fb469e2ce5ec5e33b6da07d92",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "e1b42f65fe053126d85b5d3df226972e347167b3d03b858259340c1c75b60b4e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "4aace28d4b44c3a577558256e33b4797745ad712bc20df65fe3ee317a3ec886c",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "32830f19c1c2f8483e7a56540fb988175f376c2cee8b93904aa4da4ab0dea63d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "3261972688acb4fbbfc0d5fed4b8529b58459f32d95ddf024ca3e57c8c0a4626",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "d577b03cf1835f55d6e512f4b9e3308f535a96d22f9a468d47dd7414de6046e9",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "e622c0c70c58a53b81d89e45b4db9319304db14d43416dd6d38c2e6fc93b61d8",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "0e9122eb73c59938aa250fab1a4d91e7789e633dc6e78ee326ecebd52b5ea3bc",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "27444b2420cccf17a41bec4cbe137937428f20f9debe8dca93aba67c50473f07",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "f2e31076e02984bdef616330d343a6b9b1f4d2bc8863bb7bfe2b12e4f781ec64",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "a23fbdea9a836a285b668f34169860ed054c8676a2640e4b65942e551b780017",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "d09e79739929b6a0ea2786b0c15dcab38494c42316227989c5adc1e93e6a744d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "1e787f6346fa451573b544f9daf2b3341e97ff6cc7ae3f2fc3b267a8b893d10e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "b51a304d9db12c5100af77819dab3b40065202fcd4ac530078a98fdab02d9695",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "219494cd010631e6dc34023729d2c3640695a20828a7998bbb3682190f05db75",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "947df4c52136dfbb180624dab8646e15031bf82d000d5e8bc2e154494506ca65",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "110e8c4b2085b59169d8a5dcf74c670f520bb5abcbdf62f0f1519d8e023d3a7d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "88ed101f6fa1c8a6a2b3be321943aff4c3841ca5c70a912e9a6256be81523cf1",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "5428ece0d7d6cbffe9e8411e7ca87be6d9e15930c5c29b39f5aa676bc10eb599",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "7a1d848f2d8b58554faae1203fb3f38e855104b399dd471195895883957cbfc2",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "eeb1680d278c7392c5cebe7456a6d5051f00fa2c0a973b6869005392e348f95f",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "1f5aa09b638fff4da7755d5ab3cb338ea9df46831869cf7072ba82ef7e77ae3d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "4f1012c1bb59dc355c03c339369ad08129d6b64b76b64cc50b9cd96660863134",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "a445c0f5bb81fe7d915e7f01d38453fbbf92e3219c2b03d4eb1c90399c012d16",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "bc895a8dc06f6ebc71dc55193fc2e565ea15cb0bf0495e28d8717eda077e181b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "f3242a0b86d78f7a674d59186c851d90a928774ddfb7de0f8d09d97a23af029e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "ecf8382b82bfb9e62d2181f83f68d7334a3cf3684e8da45fad494dd237e71373",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "35024180056e4e4c69d2b1e036eeeeaf44f54b524c7c88ac10faadbe3677561b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "207e9fae8eab18159e958d54fa6c20ab933f7c48eabddc5a2bd9c2856331f1fa",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "14be5cfe9f324ec1",
+   "key": "5c9bd98dca78fc0031ff1f98df18477421b27595b83c8189305a91aed4bfbfa0",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "a85246e98323f90decb81d1315ba44c32239a4561882f109c211c33e9c3835d7",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "7329ba5894311110f88a6f637695ae3c2655d53aeef62599a06028615e99451b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "60eb167308b74447f1511158d2fb1606a7c0cf4fae32c8023a89b092c4537ece",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "b84bfb8a66e0da650d1e72771da5dc70b1303c3a31367d5a68d3953ea34a1ee4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "de3dfd9098fbb2bc07d4e0dda393b89db5fb74aae742990fe2e5d552828915ff",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "65f89e8262a9daa9f977a7ddcdc496f7087ce0c959967953dcea46e3943483c1",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "c9c94123014f822753dd3ef958ec2f9cb4eb1c57a7b9114577fe891ab302e6b6",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "ea6bd34352ddfc5fd70106dedd14e8615d364557567eda533332900413152996",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "360caed53c93f7d03a5ed3b5f91ba84fbb286e1b8069444d6ce4aa44f8099554",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "a90f1a1c126387c3acc42ca821242c74a4670ef60a89ab6dd2683711295fef46",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "1a447869a06f4fe50781fe323995dd324e983e9e5d2af71f526c7c19bfceae1e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "e3ddd368b82561d869cb80a9c236fbf72165aed7d3d0f5d2050985c4451f27a3",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "8bebcb42fc92c6a45193349ce2d39c83fcb3ce58b227b159fde6cdc3da694296",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "a5f08526816968ce784924b6216a8fb58ffd827641f56f54f731c31cb82890b3",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "d90b556998c09d6b834b26973294617749b724a32e4dc97c400d05f60c3e8851",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "c5bd7f4ce79e659ca3a1677d87b38567bb91db02baf87abaceac225c0f106d2e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "38dce7c0ecf6317ebb774c9c09d984886a3ae43cf1d4c9eb1f3ec6111837e0ee",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "4b5c21c49d11445a2998732a2af4888d83ebd77bcefc507afd8f2a7a5d7644f9",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "18729289cc4e6d6482ac928ccad974cace85291cec158626d94d99566d0dc807",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "f0f7817cbd8bb4c9022c86092858b0431b7e14dba32a603ab096cd5401b4335f",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "c83ec6a953a3fd5b3f11f45adb0e4195d68686de9a16fda4cd13d2af8e928ce4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "5a34e12cb9165f00fab4d033856d726dc2f0fc93f4e23b811c85e22c04677c12",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "a925e2b0ec7c891e555c337975550230dadd820225978673c373ec1d31db41da",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "1ae47b68f6f4db4d42f25f7f8a9ec5db0e70280ad704e069658732385ea200cf",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "02852b23d172fc95d8bead89606c6893fd2713ebbc1d8e25498d2192f3bcb707",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "185e9e56a5f9d57a9e30d262a8303da4c8cc28582ab25a56123d09d95945aebd",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "8f88395f6b9ff6236d836766f662ac01a534d12f4f498f9d8142f21af74573ae",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "25c98de081081406124597d6e88330a1a5954f47c32ff30d64ca6f7cf2defad9",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "ff600bcad5c066ef3477f1666a54e7419c8ac4ff2e72222b2fd293475e91c482",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "bedc168eb85d71f3e256e8378a89e3efa3c9339991b75244bacc2994cea714e8",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "4f10ce0b221c1b4da0adeaca89cc61d27a88591220eff1614be0585c3ba6e7f5",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "bb611ec3eccba2c1f4baebab6d200f1268288691d935de119eab1467c8c23b89",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "fe9d7666bd934f54f6e30c0ad33a75b21dbf2fcf4070ed06162c886af4d5d1f4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "d72851596f9bae3cbf863c2ec985f0e483ae8073c1af6fa424fb5dfee17e9bbb",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "991865d2f0f928ac8ae75d62800d530db82d1ba80bfd2b3015e8adb38abba765",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "e9c56e05b3311834a064339187668004361eee5a4c0a84fb2d3ca725c4d169ad",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "724e9a7caf852bf7cb40896be2d29852cdd8f5670266e0752af58aa1848b5a99",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "0531f60bc2dc5cf5ee4796af9c155b54a1fe58f20f94a9ed99dd2a5f2c64884d",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "7246ac2f718299f23d100bd8de789e3b8b55ffa3561c1baa0a3cc8033135e1f7",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "5a10e73647b1406c",
+   "key": "00c896df66771e1ad9ae2899e32f974e7ca5f32d1405c87969e4d45e1963e948",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "5eacb3c0b5b9bee7a8350e22643edd63f620f2e9972ebe2af190825d2611ee04",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "19d909b07a7c88840e29b9df51774ab00f6b5429559b1121bc835a33059a7371",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "c6e91af33e49994175a1a8afa68cdc770cfc49acf4da95d1fa0d7526d2f06091",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "51c0769e33aa9fefbac34edc20af2d242aeb2054ac12ec03d38f6b95e465c889",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "a17136e59076f5395ea054dcc02f7eeced594d796e4ca6925c6a1fd04ee94cfb",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "c2c1372a196a8700cee02df662c8a5285d9bec9f7682249442a647d3725f894a",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "ecddb876eb212facbd9c32015fb7f076e10bdb16837ddda3c8d54f469ced7676",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "3614ddd03c6e19e593f48bd207e864b6f8e8dce6a5dc626db40178e006ea242a",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "a555d5fb0b1d3bcb4a95b79462efe509b8c61e74f3e3baac3cd181b9bcb275c6",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "33b33162d78b88338708a32f89255368d7eac0d858633950fb7223558af5fecb",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "dcb025cbb40b1030bf15d0e22020cbda987579fc04544fa312a022f3feda16d5",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "9b6fb3828bd9f1fe0d835b411dc408ce49df1feb44c727e9c51aed70183600ff",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "f4fa04d53142a8b7deba7f37806225baad0e9b315a52522954caf65d35646208",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "1c7f50c54d1790534ed393faccf5a4367320129267bf9178b8cd771390900b74",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "f4ebbe271827f984e0ef14595cb32df6fc044b034a256731f1d5d1c98132d858",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "67e6810d2ffabb13852b5347fd2d30fde06383e7ca86ff314c31e5b50ca5f7b6",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "eee6da96375cc78e8b524cc953a4b149c87eaa39d22778ca6815f0abe4620148",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "4c5c729cd5ff4b94115375218090a5419e14448864418ccad8ff862a7500bb91",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "037f57722c6ac99a770b52cad7e9f30f620a86cedffc9993ef9aceadf1dc2aef",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "409d711b0e7868321c8d12424e34b7033e2bdee87e26ba7e403db7205f1b246c",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "cdf3055ac9700f47ed99663ba234a662c0d0f5ac62e838ed6bdb5ef34bcf5012",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "6bb8acd4ff7d91e6b3e9fe26b6cae7b051a021a2fb9a1b1bbf4bd452063fc0d1",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "2fa07d2bc583664b009e19368586b9d4b4361ad321c2b7add8cce2f51dcbc241",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "10b3fc2b18886e3e6d16f91364ba8eaa5bb31decb3cae47419b9d3941a99f05b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "357799cb76fe07741e4cf1588981c09feec833e0bb313e95a4ea0f6bfe0771e3",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "b68f4d0dc28eae1d549e28db9d83c99432ff43f5906aa46734f592a43c27c54b",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "f72bf437af03654c62988193300f5131d4997a0a7070c60ece89f94bc1bd6693",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "213d7db32f7e30048ef780bb5ab81f906bdb84dac0c5b12ddeed6635b14dbe88",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "833b1bef263bb6cfe16502a8e2e72bc033eb82d23669bb225fbc4dfb39fee101",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "85b78fe83840e46dacf5c981560ebfb6172630606900a665b02bb8c290c21eb1",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "43ad0453f48e411c9e5a418ec5cd50499f6e3cab0fc267c4795eac0646680f20",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "eb7e8a0c07f792b4fbdce2656ccfdb4e1f183dedeb5a70eb13e7892e1abf50a4",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "4f72ba620b2441cd581cadfe45de55077de06b7568d9c5535cff208419596ecd",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "c28f5a502e5d25f947d181afe8c397204aad01b914a1dec97209fdbe37f917f3",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "b9345a790e345352e01d9f86942dc0e6f51bc0725a2508518b0672935da4a78e",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "3421d8880f1361863bdcc22545d64dfe535757bd242038cd73b71e7349152b77",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "8628f3f63e43f6de947ffbcb1f0764a3d07e24e88a7006f85337eaf263cd1ad1",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
+  },
+  {
+   "call_id": "e59817939fa44041",
+   "key": "68ef33b982fe5f45afade83c9d2fd5aa9511277fba8afa8332fa41bb60db8bc2",
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "task": "intent"
   }
  ],
- "events": [
-  {
-   "event": "env_file_loaded",
-   "variable": "GEMINI_API_KEY"
-  },
-  {
-   "event": "env_file_loaded",
-   "variable": "GEMINI_API_KEY_FALLBACK_1"
-  },
-  {
-   "event": "env_file_loaded",
-   "variable": "GEMINI_API_KEY_FALLBACK_2"
-  },
-  {
-   "event": "env_file_loaded",
-   "variable": "GEMINI_API_KEY_FALLBACK_3"
-  },
-  {
-   "error": "record 1 must be an object with a string resource_id",
-   "event": "validation_failed",
-   "key_slot": "primary",
-   "model": "gemini-2.5-flash",
-   "task": "vision",
-   "try": 1
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "error": "record 1 must be an object with a string resource_id",
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "invalid_output"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "vision"
-  },
-  {
-   "error": "record 1 must be an object with a string resource_id",
-   "event": "validation_failed",
-   "key_slot": "primary",
-   "model": "gemini-2.5-flash",
-   "task": "vision",
-   "try": 1
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "error": "record 1 must be an object with a string resource_id",
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "invalid_output"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "vision"
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "intent"
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "intent"
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "intent"
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "intent"
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "intent"
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "intent"
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "intent"
-  },
-  {
-   "answered_by": "gemini-2.5-flash",
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "ok"
-    }
-   ],
-   "event": "fallback_used",
-   "key_slot": "primary",
-   "task": "intent"
-  },
-  {
-   "event": "quota_exhausted",
-   "key_slot": "primary",
-   "model": "gemini-2.5-flash",
-   "task": "intent"
-  },
-  {
-   "event": "quota_exhausted",
-   "key_slot": "fallback_1",
-   "model": "gemini-2.5-flash",
-   "task": "intent"
-  },
-  {
-   "event": "quota_exhausted",
-   "key_slot": "fallback_2",
-   "model": "gemini-2.5-flash",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "quota_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "quota_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "quota_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  },
-  {
-   "attempts": [
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash-lite",
-     "outcome": "http_404"
-    },
-    {
-     "key_slot": "primary",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_1",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_2",
-     "model": "gemini-2.5-flash",
-     "outcome": "skipped_exhausted"
-    },
-    {
-     "key_slot": "fallback_3",
-     "model": "gemini-2.5-flash",
-     "outcome": "http_404"
-    }
-   ],
-   "event": "all_providers_failed",
-   "task": "intent"
-  }
- ],
+ "calls": [],
+ "events": [],
  "models_verified": {}
 }

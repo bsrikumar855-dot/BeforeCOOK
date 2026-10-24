@@ -15,7 +15,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 8: several assignments equally supported (rival cases for account_3897: ['case_149', 'case_150'])",
+   "rationale": "batch 20: several assignments equally supported (rival cases for account_3897: ['case_149', 'case_150'])",
    "resource_id": "account_3897",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -35,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 8: several assignments equally supported (rival cases for account_874: ['case_149', 'case_150'])",
+   "rationale": "batch 20: several assignments equally supported (rival cases for account_874: ['case_149', 'case_150'])",
    "resource_id": "account_874",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -55,7 +55,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 8: several assignments equally supported (rival cases for account_9505: ['case_149', 'case_150'])",
+   "rationale": "batch 20: several assignments equally supported (rival cases for account_9505: ['case_149', 'case_150'])",
    "resource_id": "account_9505",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -75,7 +75,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_2907 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "rationale": "activity_2907 lies in the burst windows of cases ['case_134', 'case_135', 'case_136', 'case_149', 'case_150', 'case_151']",
    "resource_id": "analytics_1626",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -95,7 +95,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_2906 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "rationale": "activity_2906 lies in the burst windows of cases ['case_134', 'case_135', 'case_136', 'case_149', 'case_150', 'case_151']",
    "resource_id": "analytics_7254",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -243,33 +243,32 @@
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_3897: ['case_149', 'case_150'])",
+   "reason": "AMBIGUOUS: batch 20: several assignments equally supported (rival cases for account_3897: ['case_149', 'case_150'])",
    "resource_id": "account_3897"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_874: ['case_149', 'case_150'])",
+   "reason": "AMBIGUOUS: batch 20: several assignments equally supported (rival cases for account_874: ['case_149', 'case_150'])",
    "resource_id": "account_874"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 8: several assignments equally supported (rival cases for account_9505: ['case_149', 'case_150'])",
+   "reason": "AMBIGUOUS: batch 20: several assignments equally supported (rival cases for account_9505: ['case_149', 'case_150'])",
    "resource_id": "account_9505"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_2907 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "reason": "AMBIGUOUS: activity_2907 lies in the burst windows of cases ['case_134', 'case_135', 'case_136', 'case_149', 'case_150', 'case_151']",
    "resource_id": "analytics_1626"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_2906 lies in the burst windows of cases ['case_149', 'case_150', 'case_151']",
+   "reason": "AMBIGUOUS: activity_2906 lies in the burst windows of cases ['case_134', 'case_135', 'case_136', 'case_149', 'case_150', 'case_151']",
    "resource_id": "analytics_7254"
   }
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,

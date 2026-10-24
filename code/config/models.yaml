@@ -16,6 +16,10 @@ providers:
       fallback_2: GEMINI_API_KEY_FALLBACK_2
       fallback_3: GEMINI_API_KEY_FALLBACK_3
 
+# Probed 2026-10-24: gemini-2.5-flash-lite returns 404 "no longer available to new users" on every key
+# (the provider recommends gemini-3.5-flash-lite); gemini-2.5-flash allows 20 requests/day per project on
+# the free tier and is unavailable to one key's project. Gemini 3.x rejects thinkingBudget (HTTP 400),
+# so thinking_budget is null (field not sent) for those models.
 models:
   flash:
     provider: gemini
@@ -24,9 +28,14 @@ models:
     thinking_budget: 0
   flash_lite:
     provider: gemini
-    id: gemini-2.5-flash-lite
-    requests_per_minute: 12         # free-tier limit is 15 RPM; stay under it
-    thinking_budget: 0
+    id: gemini-3.5-flash-lite
+    requests_per_minute: 12
+    thinking_budget: null
+  flash_new:
+    provider: gemini
+    id: gemini-3.8-flash
+    requests_per_minute: 8
+    thinking_budget: null
 
 # Ordered (model, key slot) attempts per task. The next entry is tried on HTTP 429/5xx,
 # timeout, or output that still fails schema validation after 2 retries.
@@ -38,13 +47,13 @@ tasks:
       - {model: flash, key_slot: fallback_1}
       - {model: flash, key_slot: fallback_2}
       - {model: flash, key_slot: fallback_3}
-      - {model: flash_lite, key_slot: primary}
-      - {model: flash_lite, key_slot: fallback_1}
-      - {model: flash_lite, key_slot: fallback_2}
-      - {model: flash_lite, key_slot: fallback_3}
+      - {model: flash_new, key_slot: primary}
+      - {model: flash_new, key_slot: fallback_1}
+      - {model: flash_new, key_slot: fallback_2}
+      - {model: flash_new, key_slot: fallback_3}
   intent:
     prompt_file: intent.md
-    batch_size: 20
+    batch_size: 40
     attempts:
       - {model: flash_lite, key_slot: primary}
       - {model: flash_lite, key_slot: fallback_1}
@@ -54,6 +63,8 @@ tasks:
       - {model: flash, key_slot: fallback_1}
       - {model: flash, key_slot: fallback_2}
       - {model: flash, key_slot: fallback_3}
+      - {model: flash_new, key_slot: primary}
+      - {model: flash_new, key_slot: fallback_1}
 
 limits:
   timeout_seconds: 90

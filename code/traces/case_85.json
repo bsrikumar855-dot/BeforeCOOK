@@ -34,8 +34,8 @@
     }
    ],
    "in_scope": true,
-   "label": "INFERRED",
-   "rationale": "only deletion case whose burst window contains activity_3463; no identity link to anyone else",
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3463 lies in the burst windows of cases ['case_04', 'case_83', 'case_84', 'case_85']",
    "resource_id": "analytics_901",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -115,10 +115,15 @@
    "resource_id": "account_2387"
   }
  ],
- "excluded": [],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3463 lies in the burst windows of cases ['case_04', 'case_83', 'case_84', 'case_85']",
+   "resource_id": "analytics_901"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,
@@ -165,33 +170,6 @@
     "system_id": "account_service"
    },
    "system_id": "account_service"
-  },
-  {
-   "attribution": "INFERRED",
-   "category": "ANALYTICS_PROFILE",
-   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
-   "compliant": true,
-   "note": "",
-   "operations": [
-    null,
-    null,
-    "VERIFY_RECORD_ABSENT"
-   ],
-   "proof_file_id": "evidence_10",
-   "required_action": "ANONYMIZE",
-   "resource_id": "analytics_901",
-   "state": {
-    "exposure": "UNKNOWN",
-    "flow_state": null,
-    "observation_ids": [],
-    "presence": "ABSENT",
-    "proof_basis": "FULL_SNAPSHOT",
-    "proof_file_id": "evidence_10",
-    "resource_id": "analytics_901",
-    "restore_state": null,
-    "system_id": "analytics_platform"
-   },
-   "system_id": "analytics_platform"
   },
   {
    "attribution": "CONFIRMED",
@@ -332,18 +310,9 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "analytics_901",
-   "state": "ABSENT",
-   "step_no": 6,
-   "system_id": "analytics_platform"
-  },
-  {
-   "evidence_id": "",
-   "operation": "VERIFY_RECORD_ABSENT",
-   "phase": "VERIFICATION",
    "resource_id": "search_6302",
    "state": "ABSENT",
-   "step_no": 7,
+   "step_no": 6,
    "system_id": "search_service"
   },
   {
@@ -352,7 +321,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_8094",
    "state": "PRESENT",
-   "step_no": 8,
+   "step_no": 7,
    "system_id": "security_service"
   },
   {
@@ -361,7 +330,7 @@
    "phase": "VERIFICATION",
    "resource_id": "data_flow_9927",
    "state": "DISABLED",
-   "step_no": 9,
+   "step_no": 8,
    "system_id": "integration_service"
   }
  ],

@@ -1100,8 +1100,9 @@
   },
   "labels_eval": {
    "AMBIGUOUS": 1247,
-   "CONFIRMED": 1435,
-   "CONFIRMED/OUT_OF_SCOPE": 36,
+   "CONFIRMED": 1434,
+   "CONFIRMED/OUT_OF_SCOPE": 41,
+   "CONFLICT": 1,
    "INFERRED": 40
   },
   "coverage_samples": [
@@ -1109,8 +1110,8 @@
    153
   ],
   "coverage_eval": [
-   1475,
-   2758
+   1474,
+   2763
   ],
   "inferred_evaluable": [
    [
@@ -1440,7 +1441,29 @@
     "correct": false
    }
   ],
-  "confirmed_without_direct_link": []
+  "confirmed_without_direct_link": [],
+  "confirmed_only_via_model_extraction": [
+   [
+    "case_45",
+    "audit_record_001"
+   ],
+   [
+    "case_45",
+    "audit_record_002"
+   ],
+   [
+    "case_45",
+    "audit_record_004"
+   ],
+   [
+    "case_45",
+    "audit_record_005"
+   ],
+   [
+    "case_45",
+    "audit_record_006"
+   ]
+  ]
  },
  "custom": [
   {
@@ -1453,17 +1476,17 @@
    "pass": true,
    "expected_steps": [],
    "predicted_steps": [],
-   "intent_path": "model_failure->NOT_APPLICABLE",
+   "intent_path": "model_non_deletion->NOT_APPLICABLE",
    "error": ""
   },
   {
    "case": "X2",
    "failure_mode": "Historical-identifier-only linkage; record shape decides the category",
    "expected_status": "INCOMPLETE",
-   "predicted_status": "NOT_APPLICABLE",
-   "status_ok": false,
-   "steps_ok": false,
-   "pass": false,
+   "predicted_status": "INCOMPLETE",
+   "status_ok": true,
+   "steps_ok": true,
+   "pass": true,
    "expected_steps": [
     {
      "step_no": 1,
@@ -1511,18 +1534,64 @@
      "evidence_id": ""
     }
    ],
-   "predicted_steps": [],
-   "intent_path": "model_failure->NOT_APPLICABLE",
+   "predicted_steps": [
+    {
+     "step_no": 1,
+     "phase": "FINDING",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_990002",
+     "operation": "REPORT_REMAINING_RECORD",
+     "state": "PRESENT",
+     "evidence_id": "evidence_x201"
+    },
+    {
+     "step_no": 2,
+     "phase": "REMEDIATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_990002",
+     "operation": "DELETE_RECORD",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_990002",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 4,
+     "phase": "VERIFICATION",
+     "system_id": "analytics_platform",
+     "resource_id": "analytics_990002",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 5,
+     "phase": "VERIFICATION",
+     "system_id": "security_service",
+     "resource_id": "audit_record_990002",
+     "operation": "VERIFY_RECORD_PRESENT",
+     "state": "PRESENT",
+     "evidence_id": ""
+    }
+   ],
+   "intent_path": "model_deletion->DELETION",
    "error": ""
   },
   {
    "case": "X3",
    "failure_mode": "Post-delete replication recreation (replica drift) under reported_status=COMPLETE",
    "expected_status": "INCOMPLETE",
-   "predicted_status": "NOT_APPLICABLE",
-   "status_ok": false,
-   "steps_ok": false,
-   "pass": false,
+   "predicted_status": "INCOMPLETE",
+   "status_ok": true,
+   "steps_ok": true,
+   "pass": true,
    "expected_steps": [
     {
      "step_no": 1,
@@ -1561,18 +1630,55 @@
      "evidence_id": ""
     }
    ],
-   "predicted_steps": [],
-   "intent_path": "model_failure->NOT_APPLICABLE",
+   "predicted_steps": [
+    {
+     "step_no": 1,
+     "phase": "FINDING",
+     "system_id": "account_service",
+     "resource_id": "account_990003",
+     "operation": "REPORT_REMAINING_RECORD",
+     "state": "PRESENT",
+     "evidence_id": "evidence_x301"
+    },
+    {
+     "step_no": 2,
+     "phase": "REMEDIATION",
+     "system_id": "account_service",
+     "resource_id": "account_990003",
+     "operation": "DELETE_RECORD",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_990003",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": ""
+    },
+    {
+     "step_no": 4,
+     "phase": "VERIFICATION",
+     "system_id": "security_service",
+     "resource_id": "audit_record_990003",
+     "operation": "VERIFY_RECORD_PRESENT",
+     "state": "PRESENT",
+     "evidence_id": ""
+    }
+   ],
+   "intent_path": "model_deletion->DELETION",
    "error": ""
   },
   {
    "case": "X4",
    "failure_mode": "Inclusive audit_at boundary; a resurrection dated after audit_at inside an admissible file",
    "expected_status": "COMPLETE",
-   "predicted_status": "NOT_APPLICABLE",
-   "status_ok": false,
-   "steps_ok": false,
-   "pass": false,
+   "predicted_status": "COMPLETE",
+   "status_ok": true,
+   "steps_ok": true,
+   "pass": true,
    "expected_steps": [
     {
      "step_no": 1,
@@ -1602,18 +1708,46 @@
      "evidence_id": "evidence_x401"
     }
    ],
-   "predicted_steps": [],
-   "intent_path": "model_failure->NOT_APPLICABLE",
+   "predicted_steps": [
+    {
+     "step_no": 1,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_990004",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_x401"
+    },
+    {
+     "step_no": 2,
+     "phase": "VERIFICATION",
+     "system_id": "search_service",
+     "resource_id": "search_990004",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_x401"
+    },
+    {
+     "step_no": 3,
+     "phase": "VERIFICATION",
+     "system_id": "security_service",
+     "resource_id": "audit_record_990004",
+     "operation": "VERIFY_RECORD_PRESENT",
+     "state": "PRESENT",
+     "evidence_id": "evidence_x401"
+    }
+   ],
+   "intent_path": "model_deletion->DELETION",
    "error": ""
   },
   {
    "case": "X5",
    "failure_mode": "Absence by omission next to a near-name decoy",
    "expected_status": "COMPLETE",
-   "predicted_status": "NOT_APPLICABLE",
-   "status_ok": false,
-   "steps_ok": false,
-   "pass": false,
+   "predicted_status": "COMPLETE",
+   "status_ok": true,
+   "steps_ok": true,
+   "pass": true,
    "expected_steps": [
     {
      "step_no": 1,
@@ -1625,19 +1759,84 @@
      "evidence_id": "evidence_x501"
     }
    ],
-   "predicted_steps": [],
-   "intent_path": "model_failure->NOT_APPLICABLE",
+   "predicted_steps": [
+    {
+     "step_no": 1,
+     "phase": "VERIFICATION",
+     "system_id": "account_service",
+     "resource_id": "account_990005",
+     "operation": "VERIFY_RECORD_ABSENT",
+     "state": "ABSENT",
+     "evidence_id": "evidence_x501"
+    }
+   ],
+   "intent_path": "model_deletion->DELETION",
    "error": ""
   }
  ],
- "determinism": null,
+ "determinism": {
+  "run_1": {
+   "returncode": 0,
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmp9wxms52i\\run_1\\output.csv",
+   "stderr": "",
+   "model_calls": 0,
+   "files_compared": 553
+  },
+  "run_2": {
+   "returncode": 0,
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmp9wxms52i\\run_2\\output.csv",
+   "stderr": "",
+   "model_calls": 0,
+   "identical_to_run_1": true,
+   "differences": [],
+   "files_compared": 553
+  },
+  "from_cache_no_keys": {
+   "returncode": 0,
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmp9wxms52i\\from_cache_no_keys\\output.csv",
+   "stderr": "",
+   "model_calls": 0,
+   "identical_to_run_1": true,
+   "differences": [],
+   "files_compared": 553
+  }
+ },
  "usage": {
-  "rows": [],
-  "total": {},
-  "estimated_paid_usd": 0,
+  "rows": [
+   {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "calls": 19,
+    "input_tokens": 29634,
+    "output_tokens": 16945,
+    "thinking_tokens": 0,
+    "total_tokens": 46579,
+    "cache_hits_this_run": 171,
+    "estimated_paid_usd": 0.0512527
+   },
+   {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "calls": 6,
+    "input_tokens": 20048,
+    "output_tokens": 9873,
+    "thinking_tokens": 0,
+    "total_tokens": 29921,
+    "cache_hits_this_run": 238,
+    "estimated_paid_usd": 0.030696900000000003
+   }
+  ],
+  "total": {
+   "calls": 25,
+   "input_tokens": 49682,
+   "output_tokens": 26818,
+   "thinking_tokens": 0,
+   "total_tokens": 76500
+  },
+  "estimated_paid_usd": 0.0819496,
   "requests": 518,
   "live_calls_this_run": 0,
-  "cache_hits_this_run": 0,
+  "cache_hits_this_run": 409,
   "events": [],
   "models_verified": {}
  }

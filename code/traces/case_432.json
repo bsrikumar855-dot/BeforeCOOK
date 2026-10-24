@@ -1,19 +1,239 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_432",
+   "edges": [
+    {
+     "case_id": "case_432",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6101",
+     "source_id": "activity_799",
+     "strength": "SECONDARY",
+     "time": "2026-03-02T07:08:46Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 88: several assignments equally supported (rival cases for account_6101: ['case_431'])",
+   "resource_id": "account_6101",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_432",
+   "edges": [
+    {
+     "case_id": "case_432",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_6489",
+     "source_id": "activity_798",
+     "strength": "SECONDARY",
+     "time": "2026-03-02T06:57:32Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "AMBIGUOUS",
+   "rationale": "batch 88: several assignments equally supported (rival cases for account_6489: ['case_431'])",
+   "resource_id": "account_6489",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_432",
+   "edges": [
+    {
+     "case_id": "case_432",
+     "identifier": "user_id:user_430",
+     "kind": "HARD",
+     "resource_id": "audit_record_3548",
+     "source_id": "evidence_40",
+     "strength": "HARD",
+     "time": "2026-03-20T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_3548",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_40",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_432",
+   "edges": [
+    {
+     "case_id": "case_432",
+     "identifier": "email:anair9899@fastmail.com",
+     "kind": "HARD",
+     "resource_id": "export_9343",
+     "source_id": "evidence_68",
+     "strength": "HARD",
+     "time": "2026-03-20T07:07:10Z"
+    },
+    {
+     "case_id": "case_432",
+     "identifier": "email:anair9899@fastmail.com",
+     "kind": "HARD",
+     "resource_id": "export_9343",
+     "source_id": "evidence_40",
+     "strength": "HARD",
+     "time": "2026-03-20T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "export_9343",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_68",
+   "system_id": "export_service"
+  },
+  {
+   "case_id": "case_432",
+   "edges": [
+    {
+     "case_id": "case_432",
+     "identifier": "user_id:user_430",
+     "kind": "HARD",
+     "resource_id": "legal_hold_438",
+     "source_id": "evidence_40",
+     "strength": "HARD",
+     "time": "2026-03-20T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "legal_hold_438",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_40",
+   "system_id": "legal_service"
+  },
+  {
+   "case_id": "case_432",
+   "edges": [
+    {
+     "case_id": "case_432",
+     "identifier": "email:anair9899@fastmail.com",
+     "kind": "HARD",
+     "resource_id": "search_3844",
+     "source_id": "evidence_68",
+     "strength": "HARD",
+     "time": "2026-03-20T04:53:49Z"
+    },
+    {
+     "case_id": "case_432",
+     "identifier": "email:anair9899@fastmail.com",
+     "kind": "HARD",
+     "resource_id": "search_3844",
+     "source_id": "evidence_68",
+     "strength": "HARD",
+     "time": "2026-03-20T04:53:49Z"
+    },
+    {
+     "case_id": "case_432",
+     "identifier": "email:anair9899@fastmail.com",
+     "kind": "HARD",
+     "resource_id": "search_3844",
+     "source_id": "evidence_40",
+     "strength": "HARD",
+     "time": "2026-03-20T08:00:00Z"
+    },
+    {
+     "case_id": "case_432",
+     "identifier": "user_id:user_430",
+     "kind": "HARD",
+     "resource_id": "search_3844",
+     "source_id": "evidence_40",
+     "strength": "HARD",
+     "time": "2026-03-20T08:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_3844",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_68",
+   "system_id": "search_service"
+  }
+ ],
  "case_id": "case_432",
- "excluded": [],
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_803",
+   "reason": "hard-linked to ['user_414']",
+   "resource_id": "account_3075"
+  },
+  {
+   "activity_id": "activity_804",
+   "reason": "hard-linked to ['user_416']",
+   "resource_id": "account_9120"
+  },
+  {
+   "activity_id": "activity_805",
+   "reason": "hard-linked to ['user_415']",
+   "resource_id": "account_4921"
+  },
+  {
+   "activity_id": "activity_806",
+   "reason": "hard-linked to ['user_429']",
+   "resource_id": "support_3615"
+  },
+  {
+   "activity_id": "activity_808",
+   "reason": "hard-linked to ['user_429']",
+   "resource_id": "search_7427"
+  },
+  {
+   "activity_id": "activity_810",
+   "reason": "hard-linked to ['user_414']",
+   "resource_id": "data_flow_1412"
+  },
+  {
+   "activity_id": "activity_812",
+   "reason": "hard-linked to ['user_416']",
+   "resource_id": "search_8686"
+  },
+  {
+   "activity_id": "activity_813",
+   "reason": "hard-linked to ['user_414']",
+   "resource_id": "search_6600"
+  },
+  {
+   "activity_id": "activity_814",
+   "reason": "hard-linked to ['user_415']",
+   "resource_id": "search_5479"
+  },
+  {
+   "activity_id": "activity_815",
+   "reason": "hard-linked to ['user_416']",
+   "resource_id": "support_9464"
+  }
+ ],
+ "excluded": [
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 88: several assignments equally supported (rival cases for account_6101: ['case_431'])",
+   "resource_id": "account_6101"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: batch 88: several assignments equally supported (rival cases for account_6489: ['case_431'])",
+   "resource_id": "account_6489"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-03-20T08:00:00Z",
@@ -22,9 +242,195 @@
   "reported_status": "PARTIALLY_COMPLETE",
   "requested_at": "2026-02-28T08:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_3548",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_66",
+    "resource_id": "audit_record_3548",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_EXPORT",
+   "category_basis": "default category for export_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_68",
+   "required_action": "DELETE",
+   "resource_id": "export_9343",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_68#export_service.exports.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_68",
+    "resource_id": "export_9343",
+    "restore_state": null,
+    "system_id": "export_service"
+   },
+   "system_id": "export_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "LEGAL_HOLD_RECORD",
+   "category_basis": "default category for legal_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "legal_hold_438",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_43",
+    "resource_id": "legal_hold_438",
+    "restore_state": null,
+    "system_id": "legal_service"
+   },
+   "system_id": "legal_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_68",
+   "required_action": "DELETE",
+   "resource_id": "search_3844",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_68#search_service.index_queries.3.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_68",
+    "resource_id": "search_3844",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_68",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "export_9343",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "evidence_68",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_3844",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "export_9343",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_3844",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "export_9343",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "export_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_3844",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "legal_hold_438",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "legal_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_3548",
+   "state": "PRESENT",
+   "step_no": 8,
+   "system_id": "security_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -50,5 +456,6 @@
   "user_ids": [
    "user_430"
   ]
- }
+ },
+ "validation_errors": []
 }

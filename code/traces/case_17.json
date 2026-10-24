@@ -94,6 +94,15 @@
    "edges": [
     {
      "case_id": "case_17",
+     "identifier": "user_id:user_17",
+     "kind": "HARD",
+     "resource_id": "tombstone_17",
+     "source_id": "evidence_42",
+     "strength": "HARD",
+     "time": "2026-03-10T06:00:00Z"
+    },
+    {
+     "case_id": "case_17",
      "identifier": "email:leonie.g9352@outlook.com",
      "kind": "CATALOG",
      "resource_id": "tombstone_17",
@@ -113,7 +122,7 @@
    ],
    "in_scope": false,
    "label": "CONFIRMED",
-   "rationale": "direct identity link via CATALOG_LINK",
+   "rationale": "direct identity link via CATALOG_LINK, MODEL_EXTRACTION",
    "resource_id": "tombstone_17",
    "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
    "system_id": "identity_service"
@@ -157,7 +166,6 @@
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,

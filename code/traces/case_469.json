@@ -1,19 +1,174 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_469",
+   "edges": [
+    {
+     "case_id": "case_469",
+     "identifier": "email:jieun.c2902@zoho.com",
+     "kind": "HARD",
+     "resource_id": "account_6645",
+     "source_id": "evidence_44",
+     "strength": "HARD",
+     "time": "2026-02-28T10:53:18Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "account_6645",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_44",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_469",
+   "edges": [
+    {
+     "case_id": "case_469",
+     "identifier": "user_id:user_467",
+     "kind": "HARD",
+     "resource_id": "audit_record_7723",
+     "source_id": "evidence_44",
+     "strength": "HARD",
+     "time": "2026-02-28T10:53:56Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via TRACE_JOIN",
+   "resource_id": "audit_record_7723",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_44",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_469",
+   "edges": [
+    {
+     "case_id": "case_469",
+     "identifier": "email:jieun.c2902@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_8730",
+     "source_id": "evidence_65",
+     "strength": "HARD",
+     "time": "2026-02-28T10:15:34Z"
+    },
+    {
+     "case_id": "case_469",
+     "identifier": "email:jieun.c2902@zoho.com",
+     "kind": "HARD",
+     "resource_id": "data_flow_8730",
+     "source_id": "evidence_44",
+     "strength": "HARD",
+     "time": "2026-02-28T10:57:11Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
+   "resource_id": "data_flow_8730",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_65",
+   "system_id": "integration_service"
+  },
+  {
+   "case_id": "case_469",
+   "edges": [
+    {
+     "case_id": "case_469",
+     "identifier": "email:jieun.c2902@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_8450",
+     "source_id": "evidence_65",
+     "strength": "HARD",
+     "time": "2026-02-28T10:00:30Z"
+    },
+    {
+     "case_id": "case_469",
+     "identifier": "email:jieun.c2902@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_8450",
+     "source_id": "evidence_65",
+     "strength": "HARD",
+     "time": "2026-02-28T10:00:30Z"
+    },
+    {
+     "case_id": "case_469",
+     "identifier": "email:jieun.c2902@zoho.com",
+     "kind": "HARD",
+     "resource_id": "search_8450",
+     "source_id": "evidence_44",
+     "strength": "HARD",
+     "time": "2026-02-28T10:57:35Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "search_8450",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_65",
+   "system_id": "search_service"
+  }
+ ],
  "case_id": "case_469",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_562",
+   "reason": "hard-linked to ['user_466']",
+   "resource_id": "account_641"
+  },
+  {
+   "activity_id": "activity_563",
+   "reason": "hard-linked to ['user_465']",
+   "resource_id": "account_2437"
+  },
+  {
+   "activity_id": "activity_564",
+   "reason": "hard-linked to ['user_480']",
+   "resource_id": "data_flow_8519"
+  },
+  {
+   "activity_id": "activity_565",
+   "reason": "hard-linked to ['user_480']",
+   "resource_id": "search_3728"
+  },
+  {
+   "activity_id": "activity_567",
+   "reason": "hard-linked to ['user_451']",
+   "resource_id": "account_3183"
+  },
+  {
+   "activity_id": "activity_569",
+   "reason": "hard-linked to ['user_466']",
+   "resource_id": "export_9399"
+  },
+  {
+   "activity_id": "activity_571",
+   "reason": "hard-linked to ['user_466']",
+   "resource_id": "search_9827"
+  },
+  {
+   "activity_id": "activity_573",
+   "reason": "hard-linked to ['user_452']",
+   "resource_id": "search_892"
+  },
+  {
+   "activity_id": "activity_574",
+   "reason": "hard-linked to ['user_451']",
+   "resource_id": "search_1317"
+  }
+ ],
  "excluded": [],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-02-28T11:00:00Z",
@@ -22,9 +177,195 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-02-11T11:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_45",
+   "required_action": "DELETE",
+   "resource_id": "account_6645",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_45",
+    "resource_id": "account_6645",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "default category for security_service",
+   "compliant": true,
+   "note": "RETAIN_UNPROVEN: no admissible observation shows the retained record",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": null,
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_7723",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_45",
+    "resource_id": "audit_record_7723",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "DATA_FLOW",
+   "category_basis": "default category for integration_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_ACTIVE_DATA_FLOW",
+    "DISABLE_DATA_FLOW",
+    "VERIFY_DATA_FLOW_DISABLED"
+   ],
+   "proof_file_id": "evidence_65",
+   "required_action": "DISABLE",
+   "resource_id": "data_flow_8730",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": "ENABLED",
+    "observation_ids": [
+     "evidence_65#integration_service.connectors.2"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_65",
+    "resource_id": "data_flow_8730",
+    "restore_state": null,
+    "system_id": "integration_service"
+   },
+   "system_id": "integration_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SEARCH_INDEX_ENTRY",
+   "category_basis": "default category for search_service",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_65",
+   "required_action": "DELETE",
+   "resource_id": "search_8450",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_65#search_service.index_queries.2.0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_65",
+    "resource_id": "search_8450",
+    "restore_state": null,
+    "system_id": "search_service"
+   },
+   "system_id": "search_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_65",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "search_8450",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "evidence_65",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "phase": "FINDING",
+   "resource_id": "data_flow_8730",
+   "state": "ACTIVE",
+   "step_no": 2,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DISABLE_DATA_FLOW",
+   "phase": "REMEDIATION",
+   "resource_id": "data_flow_8730",
+   "state": "DISABLED",
+   "step_no": 3,
+   "system_id": "integration_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "search_8450",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_6645",
+   "state": "ABSENT",
+   "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_8450",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "search_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_7723",
+   "state": "PRESENT",
+   "step_no": 7,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "phase": "VERIFICATION",
+   "resource_id": "data_flow_8730",
+   "state": "DISABLED",
+   "step_no": 8,
+   "system_id": "integration_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +390,6 @@
   "user_ids": [
    "user_467"
   ]
- }
+ },
+ "validation_errors": []
 }

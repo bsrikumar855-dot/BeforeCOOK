@@ -1,19 +1,96 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_07",
+   "edges": [
+    {
+     "case_id": "case_07",
+     "identifier": "deletion_worker:DELETE_RECORD",
+     "kind": "TIMING",
+     "resource_id": "account_007",
+     "source_id": "activity_3590",
+     "strength": "SECONDARY",
+     "time": "2026-09-01T19:28:39Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "INFERRED",
+   "rationale": "account delete activity_3590 is in every maximum one-to-one assignment of batch 4 (cases ['case_07'], rows ['account_007']) after eliminating rows hard-linked to other people",
+   "resource_id": "account_007",
+   "scope_reason": "resource is in the case's own deletion burst",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_07",
+   "edges": [
+    {
+     "case_id": "case_07",
+     "identifier": "email:priya.raman@gmail.com",
+     "kind": "CATALOG",
+     "resource_id": "object_19",
+     "source_id": "activity_4007",
+     "strength": "HARD",
+     "time": "2026-02-13T08:07:01Z"
+    },
+    {
+     "case_id": "case_07",
+     "identifier": "user_id:user_07",
+     "kind": "CATALOG",
+     "resource_id": "object_19",
+     "source_id": "activity_4007",
+     "strength": "HARD",
+     "time": "2026-02-13T08:07:01Z"
+    }
+   ],
+   "in_scope": false,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via CATALOG_LINK",
+   "resource_id": "object_19",
+   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "system_id": "object_storage"
+  },
+  {
+   "case_id": "case_07",
+   "edges": [
+    {
+     "case_id": "case_07",
+     "identifier": "email:priya.raman@gmail.com",
+     "kind": "HARD",
+     "resource_id": "support_001",
+     "source_id": "evidence_58",
+     "strength": "HARD",
+     "time": "2026-09-12T07:30:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via DOCUMENT_COMENTION",
+   "resource_id": "support_001",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_58",
+   "system_id": "support_platform"
+  }
+ ],
  "case_id": "case_07",
- "excluded": [],
+ "degraded": null,
+ "eliminated": [],
+ "excluded": [
+  {
+   "label": "CONFIRMED",
+   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
+   "resource_id": "object_19"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-09-12T08:00:00Z",
@@ -22,9 +99,103 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-08-31T11:26:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "INFERRED",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_90",
+   "required_action": "DELETE",
+   "resource_id": "account_007",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_90",
+    "resource_id": "account_007",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_ATTACHMENT",
+   "category_basis": "shape: attachment",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_58",
+   "required_action": "DELETE",
+   "resource_id": "support_001",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_58#pdf0"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_58",
+    "resource_id": "support_001",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_58",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "support_001",
+   "state": "PRESENT",
+   "step_no": 1,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_001",
+   "state": "ABSENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_007",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "support_001",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "support_platform"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +220,6 @@
   "user_ids": [
    "user_07"
   ]
- }
+ },
+ "validation_errors": []
 }

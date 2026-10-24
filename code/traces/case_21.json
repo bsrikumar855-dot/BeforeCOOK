@@ -15,7 +15,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 17: several assignments equally supported (rival cases for account_294: [])",
+   "rationale": "batch 38: several assignments equally supported (rival cases for account_294: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_294",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -35,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 17: several assignments equally supported (rival cases for account_410: [])",
+   "rationale": "batch 38: several assignments equally supported (rival cases for account_410: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_410",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -55,7 +55,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 17: several assignments equally supported (rival cases for account_6440: [])",
+   "rationale": "batch 38: several assignments equally supported (rival cases for account_6440: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_6440",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -75,7 +75,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 17: several assignments equally supported (rival cases for account_7015: [])",
+   "rationale": "batch 38: several assignments equally supported (rival cases for account_7015: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_7015",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -95,7 +95,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 17: several assignments equally supported (rival cases for account_8832: [])",
+   "rationale": "batch 38: several assignments equally supported (rival cases for account_8832: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_8832",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -115,7 +115,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 17: several assignments equally supported (rival cases for account_9155: [])",
+   "rationale": "batch 38: several assignments equally supported (rival cases for account_9155: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_9155",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -134,8 +134,8 @@
     }
    ],
    "in_scope": true,
-   "label": "INFERRED",
-   "rationale": "only deletion case whose burst window contains activity_3665; no identity link to anyone else",
+   "label": "AMBIGUOUS",
+   "rationale": "activity_3665 lies in the burst windows of cases ['case_21', 'case_23', 'case_546', 'case_547', 'case_548']",
    "resource_id": "analytics_5335",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -212,38 +212,42 @@
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 17: several assignments equally supported (rival cases for account_294: [])",
+   "reason": "AMBIGUOUS: batch 38: several assignments equally supported (rival cases for account_294: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_294"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 17: several assignments equally supported (rival cases for account_410: [])",
+   "reason": "AMBIGUOUS: batch 38: several assignments equally supported (rival cases for account_410: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_410"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 17: several assignments equally supported (rival cases for account_6440: [])",
+   "reason": "AMBIGUOUS: batch 38: several assignments equally supported (rival cases for account_6440: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_6440"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 17: several assignments equally supported (rival cases for account_7015: [])",
+   "reason": "AMBIGUOUS: batch 38: several assignments equally supported (rival cases for account_7015: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_7015"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 17: several assignments equally supported (rival cases for account_8832: [])",
+   "reason": "AMBIGUOUS: batch 38: several assignments equally supported (rival cases for account_8832: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_8832"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 17: several assignments equally supported (rival cases for account_9155: [])",
+   "reason": "AMBIGUOUS: batch 38: several assignments equally supported (rival cases for account_9155: ['case_23', 'case_546', 'case_547', 'case_548'])",
    "resource_id": "account_9155"
+  },
+  {
+   "label": "AMBIGUOUS",
+   "reason": "AMBIGUOUS: activity_3665 lies in the burst windows of cases ['case_21', 'case_23', 'case_546', 'case_547', 'case_548']",
+   "resource_id": "analytics_5335"
   }
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,
@@ -262,35 +266,6 @@
   "requested_at": "2026-09-04T12:00:00Z"
  },
  "resources": [
-  {
-   "attribution": "INFERRED",
-   "category": "ANALYTICS_PROFILE",
-   "category_basis": "shape ambiguous; deletion workflow attempted ANONYMIZE (hint)",
-   "compliant": true,
-   "note": "",
-   "operations": [
-    null,
-    null,
-    "VERIFY_RECORD_ANONYMIZED"
-   ],
-   "proof_file_id": "evidence_92",
-   "required_action": "ANONYMIZE",
-   "resource_id": "analytics_5335",
-   "state": {
-    "exposure": "NO_IDENTIFIERS",
-    "flow_state": null,
-    "observation_ids": [
-     "evidence_92#analytics_platform.profiles.5"
-    ],
-    "presence": "PRESENT",
-    "proof_basis": "MENTION",
-    "proof_file_id": "evidence_92",
-    "resource_id": "analytics_5335",
-    "restore_state": null,
-    "system_id": "analytics_platform"
-   },
-   "system_id": "analytics_platform"
-  },
   {
    "attribution": "CONFIRMED",
    "category": "SECURITY_AUDIT_LOG",
@@ -331,15 +306,6 @@
    "state": "PRESENT",
    "step_no": 1,
    "system_id": "security_service"
-  },
-  {
-   "evidence_id": "evidence_92",
-   "operation": "VERIFY_RECORD_ANONYMIZED",
-   "phase": "VERIFICATION",
-   "resource_id": "analytics_5335",
-   "state": "ANONYMIZED",
-   "step_no": 2,
-   "system_id": "analytics_platform"
   }
  ],
  "subject": {

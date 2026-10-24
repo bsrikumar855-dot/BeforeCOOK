@@ -1,19 +1,56 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_63",
+   "edges": [
+    {
+     "case_id": "case_63",
+     "identifier": "email:kwame-mensah@proton.me",
+     "kind": "CATALOG",
+     "resource_id": "marketing_001",
+     "source_id": "activity_4008",
+     "strength": "HARD",
+     "time": "2026-09-16T07:27:01Z"
+    },
+    {
+     "case_id": "case_63",
+     "identifier": "user_id:user_09",
+     "kind": "CATALOG",
+     "resource_id": "marketing_001",
+     "source_id": "activity_4008",
+     "strength": "HARD",
+     "time": "2026-09-16T07:27:01Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFLICT",
+   "rationale": "record's own identifiers ['email:sj.park@naver.com', 'phone:+82 10-5837-9451'] do not belong to the subject, while CATALOG_LINK links it to the subject",
+   "resource_id": "marketing_001",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: activity_4008",
+   "system_id": "marketing_platform"
+  }
+ ],
  "case_id": "case_63",
- "excluded": [],
+ "degraded": "no resource could be verified",
+ "eliminated": [],
+ "excluded": [
+  {
+   "label": "CONFLICT",
+   "reason": "CONFLICT: record's own identifiers ['email:sj.park@naver.com', 'phone:+82 10-5837-9451'] do not belong to the subject, while CATALOG_LINK links it to the subject",
+   "resource_id": "marketing_001"
+  }
+ ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "en",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-09-17T09:20:00Z",
@@ -23,7 +60,7 @@
   "requested_at": "2026-09-14T04:20:00Z"
  },
  "resources": [],
- "status": "NOT_APPLICABLE",
+ "status": "INCOMPLETE",
  "steps": [],
  "subject": {
   "identifiers": {
@@ -49,5 +86,6 @@
   "user_ids": [
    "user_09"
   ]
- }
+ },
+ "validation_errors": []
 }

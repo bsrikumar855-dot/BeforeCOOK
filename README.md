@@ -81,6 +81,15 @@ Outputs:
 - `code/traces/<case_id>.json`: identifiers with provenance, candidate edges, attribution labels with rationale, state per resource with cited evidence, the rule that fired, the intent path and provider. `code/traces/_run_summary.json` holds the counts.
 - `code/evaluation/usage_ledger.json`: calls, cache hits, tokens and fallback events for the run.
 
+Exit codes (also in `python3 code/main.py --help`):
+
+| Code | Meaning | output.csv |
+|---|---|---|
+| 0 | ok | replaced with the new rows |
+| 2 | output validation failed | untouched |
+| 3 | cache miss under `--from-cache` | untouched |
+| 4 | model failure (an intent call or a screenshot extraction failed) | untouched; `--allow-degraded` writes the diagnostic rows to `output.degraded.csv` |
+
 Evaluate (sample metrics, attribution metrics, root causes, custom cases X1–X5, usage report):
 
 ```bash

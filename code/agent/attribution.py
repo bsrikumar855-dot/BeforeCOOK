@@ -55,6 +55,12 @@ class OwnerEdge:
     identifier: str
     time: str
     provenance: str
+    field: str = ""
+
+    @property
+    def is_content(self) -> bool:
+        """The identifier is part of the record itself, not the key it was looked up with or a catalog claim."""
+        return self.provenance in ("SAME_RECORD", "MODEL_EXTRACTION") and self.field not in LOOKUP_FIELDS
 
 
 @dataclass
@@ -63,6 +69,17 @@ class AttributionResult:
     eliminated: dict[str, list[dict]] = field(default_factory=dict)
     batches: list[dict] = field(default_factory=list)
     conflicts: dict[str, list[str]] = field(default_factory=dict)      # resource -> users
+    content_conflicts: dict[str, dict] = field(default_factory=dict)   # resource -> {content ids, linked users}
+
+
+def record_content(index: EvidenceIndex) -> dict[str, set[str]]:
+    """resource -> identifiers found in the record's own fields (email/phone/hash/user_id), any known owner or none."""
+    content: dict[str, set[str]] = defaultdict(set)
+    for o in index.observations:
+        for i in o.identifiers:
+            if i.kind != "name" and i.field not in LOOKUP_FIELDS and i.provenance in ("SAME_RECORD", "MODEL_EXTRACTION"):
+                content[o.resource_id].add(f"{i.kind}:{i.value}")
+    return content
 
 
 def resource_owners(index: EvidenceIndex, activity: list[ActivityClaim],
@@ -80,7 +97,8 @@ def resource_owners(index: EvidenceIndex, activity: list[ActivityClaim],
                 continue
             prov = "MODEL_EXTRACTION" if o.extraction == "MODEL" else i.provenance
             for u in users:
-                owners[o.resource_id].append(OwnerEdge(o.resource_id, u, o.file_id, f"{i.kind}:{i.value}", o.time, prov))
+                owners[o.resource_id].append(OwnerEdge(o.resource_id, u, o.file_id, f"{i.kind}:{i.value}", o.time,
+                                                       prov, i.field))
     for a in activity:
         if a.event_type != "LINK_RESOURCE_IDENTITY":
             continue
@@ -118,6 +136,7 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
     owners = resource_owners(index, activity, universe)
     owner_users = {rid: sorted({e.user_id for e in edges}) for rid, edges in owners.items()}
     result.conflicts = {rid: us for rid, us in owner_users.items() if len(us) > 1}
+    content = record_content(index)
 
     worker_rows = sorted((a for a in activity if a.source_system == WORKER),
                          key=lambda a: (a.event_time, a.activity_id))
@@ -149,8 +168,18 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
                 scope, reason = True, "resource is in the case's own deletion burst"
             else:
                 scope, reason = False, "identity evidence only outside the request lifecycle (earlier/later episode)"
+            own = content.get(rid, set())
             if rid in result.conflicts:
                 label, rationale = "CONFLICT", f"hard links to different users {result.conflicts[rid]}"
+            elif own and not any(e.is_content for e in mine):
+                # The record's own identifiers name someone else (possibly a person absent from the identity
+                # tables) while only a catalog claim or a lookup key ties it to this subject: contradiction.
+                provs = sorted({e.provenance for e in mine})
+                label = "CONFLICT"
+                rationale = (f"record's own identifiers {sorted(own)[:3]} do not belong to the subject, while "
+                             f"{', '.join(provs)} links it to the subject")
+                result.content_conflicts[rid] = {"own_identifiers": sorted(own), "linked_by": provs,
+                                                 "subject_user_ids": sorted(users)}
             else:
                 provs = sorted({e.provenance for e in mine})
                 label, rationale = "CONFIRMED", f"direct identity link via {', '.join(provs)}"

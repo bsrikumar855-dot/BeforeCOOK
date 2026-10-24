@@ -57,18 +57,21 @@ Root-cause totals (one tag per mismatched resource): ATTRIBUTION 19, MISREAD 3
 ## 2. Attribution
 
 - Labelled (case, resource) pairs from the sample answers: 111; correctly attributed (CONFIRMED or INFERRED, in scope): 89/111 (80.2%).
-- Coverage (non-ambiguous share of candidate pairs): samples 89/153 (58.2%); eval 1475/2758 (53.5%).
+- Coverage (non-ambiguous share of candidate pairs): samples 89/153 (58.2%); eval 1474/2763 (53.3%).
 - INFERRED precision (pairs whose resource appears in some sample answer): 5/5 (100.0%); UNEVALUABLE INFERRED pairs (resource in no sample answer): 40.
 - INFERRED recall over labelled pairs without a direct identity link: 5/27 (18.5%).
 - Expected sample pairs dropped by the AMBIGUOUS/CONFLICT output policy: 19.
 - CONFIRMED attributions without a direct identity edge (gate: must be 0): 0.
-- Hard-link contradictions (resources linked to >1 person): 0.
+- CONFIRMED attributions whose only identity edge was read from a screenshot by the model (validated against known identifiers): 5 [('case_45', 'audit_record_001'), ('case_45', 'audit_record_002'), ('case_45', 'audit_record_004'), ('case_45', 'audit_record_005'), ('case_45', 'audit_record_006')].
+- Hard-link contradictions (resources linked to >1 known person): 0 {}.
+- Content contradictions (record's own identifiers name someone else while a catalog claim or lookup key links it to the subject): 1 {'marketing_001': {'linked_by': ['CATALOG_LINK'], 'own_identifiers': ['email:sj.park@naver.com', 'phone:+82 10-5837-9451'], 'subject_user_ids': ['user_09']}}.
 
 | Label | Samples | Eval (518) |
 |---|---|---|
 | AMBIGUOUS | 61 | 1247 |
-| CONFIRMED | 84 | 1435 |
-| CONFIRMED/OUT_OF_SCOPE | 3 | 36 |
+| CONFIRMED | 84 | 1434 |
+| CONFIRMED/OUT_OF_SCOPE | 3 | 41 |
+| CONFLICT | 0 | 1 |
 | INFERRED | 5 | 40 |
 
 Labelled pairs grouped by the kind of link available:
@@ -83,27 +86,29 @@ Expected pairs dropped by the policy: case_03/analytics_9406, case_04/analytics_
 
 ## 3. Eval run (518 cases)
 
-- Status distribution: {'COMPLETE': 158, 'INCOMPLETE': 350, 'NOT_APPLICABLE': 10}
-- Intent paths: {'model_deletion->DELETION': 508, 'model_deletion_but_classify_non_deletion->NOT_APPLICABLE': 10}
-- Excluded resource reasons: {'AMBIGUOUS': 1247, 'FLOW_STATE_UNKNOWN': 1, 'OUT_OF_SCOPE': 36, 'RESTORE_STATE_UNKNOWN': 1, 'UNKNOWN_STATE': 3}
-- Degraded cases (INCOMPLETE,[]): 4 ['case_39', 'case_55', 'case_61', 'case_63']
-- Evidence files: {'NEEDS_EXTRACTION': 11, 'PARSED': 79, 'TEXT_LAYER': 4}; image rows accepted 0, dropped 0, failed files 0
+- Status distribution: {'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10}
+- Intent paths: {'model_deletion->DELETION': 508, 'model_non_deletion+classify_corroborates->NOT_APPLICABLE': 10}
+- Excluded resource reasons: {'AMBIGUOUS': 1247, 'CONFLICT': 1, 'EXPOSURE_UNKNOWN': 1, 'OUT_OF_SCOPE': 41, 'RESTORE_STATE_UNKNOWN': 1}
+- Degraded cases (INCOMPLETE,[]): 2 ['case_55', 'case_63']
+- Evidence files: {'EXTRACTED': 11, 'PARSED': 79, 'TEXT_LAYER': 4}; image rows accepted 24, dropped 26, failed files 0
 
 ## 4. Custom evaluation cases (X1–X5, fixtures in `code/evaluation/custom_cases/`)
 
 | Case | Failure mode tested | Expected | Predicted | Steps exact | Result |
 |---|---|---|---|---|---|
 | X1 | Negated, limited-scope, non-English non-deletion request | NOT_APPLICABLE | NOT_APPLICABLE | True | PASS |
-| X2 | Historical-identifier-only linkage; record shape decides the category | INCOMPLETE | NOT_APPLICABLE | False | FAIL |
-| X3 | Post-delete replication recreation (replica drift) under reported_status=COMPLETE | INCOMPLETE | NOT_APPLICABLE | False | FAIL |
-| X4 | Inclusive audit_at boundary; a resurrection dated after audit_at inside an admissible file | COMPLETE | NOT_APPLICABLE | False | FAIL |
-| X5 | Absence by omission next to a near-name decoy | COMPLETE | NOT_APPLICABLE | False | FAIL |
+| X2 | Historical-identifier-only linkage; record shape decides the category | INCOMPLETE | INCOMPLETE | True | PASS |
+| X3 | Post-delete replication recreation (replica drift) under reported_status=COMPLETE | INCOMPLETE | INCOMPLETE | True | PASS |
+| X4 | Inclusive audit_at boundary; a resurrection dated after audit_at inside an admissible file | COMPLETE | COMPLETE | True | PASS |
+| X5 | Absence by omission next to a near-name decoy | COMPLETE | COMPLETE | True | PASS |
 
 Why each case exists (expected output, why naive logic fails, spec rule) is documented in DESIGN.md §10 and in `code/evaluation/custom_cases/build_fixtures.py`.
 
 ## 5. Determinism
 
-- Not run in this invocation (use `--determinism`).
+- run_1: exit 0, live model calls 0, files compared 553
+- run_2: exit 0, live model calls 0, files compared 553, identical to run_1: True, differences: []
+- from_cache_no_keys: exit 0, live model calls 0, files compared 553, identical to run_1: True, differences: []
 
 ## 6. Failures found and improvements made
 
@@ -115,5 +120,407 @@ Why each case exists (expected output, why naive logic fails, spec rule) is docu
   cases and dropped (and logged) in COMPLETE cases, where a step must cite proof.
 - **Scope.** Three users filed two requests each; resources from the other request leaked in until scope was limited to
   identity evidence inside [requested_at, audit_at] or the case's own deletion burst.
-- **Known remaining failure class.** Most remaining misses are AMBIGUOUS attributions (interleaved deletion bursts),
-  which by policy produce no steps. Individual wrong rows are not fixed until reviewed.
+- **Model availability (found in the first live run).** 358 of 550 cases fell back to NOT_APPLICABLE through
+  `model_failure`: `gemini-2.5-flash-lite` answered HTTP 404 ("no longer available to new users") on every key and
+  `gemini-2.5-flash` hit its 20-requests/day free-tier cap. Diagnosed from the provider's error bodies; intent moved
+  to `gemini-3.5-flash-lite` (which rejects `thinkingBudget`, so the field is no longer sent), and a 404 now retires
+  that (model, key) for the run. After the rerun: 508 DELETION, 10 NON_DELETION, 0 model failures.
+- **Screenshot rows.** The model joined two visible ids once (`user_11_account_5762`) and showed two records under
+  their data-catalog aliases (a file name; a customer key). Joined ids are salvaged only when exactly one token has a
+  known resource prefix; aliases resolve only on an exact catalog match. Both are logged per row.
+- **Content contradiction.** A catalog row linked `marketing_001` to one subject while the record itself shows another
+  person absent from the identity tables. It is now CONFLICT (no steps) instead of a CONFIRMED attribution.
+- **Trace determinism.** Traces carried a `cache_hit` flag, so a live run and a cached run differed in 358 traces; the
+  flag now lives only in the usage ledger and traces are byte-identical across live, repeat and keyless runs.
+- **Known remaining failure class.** 19 of 22 missing sample steps are AMBIGUOUS attributions (interleaved deletion
+  bursts), which by policy produce no steps; 3 are records found in no parsed source. Individual wrong rows are not
+  fixed until reviewed.
+
+## Appendix A. AMBIGUOUS / CONFLICT pairs on the eval set
+
+Effect on output: none of these pairs produces a step (output policy D-ATTR). 382 eval cases carry at least one such pair; 352 distinct resources; pairs by system: {'account_service': 752, 'analytics_platform': 486, 'legal_service': 9, 'marketing_platform': 1}. Per-pair rationale (rival cases, batch) is in `code/traces/<case_id>.json` under `attribution` and `excluded`.
+
+| Case | Output status | Pairs | Resources withheld |
+|---|---|---|---|
+| case_36 | INCOMPLETE | 1 | analytics_2265 |
+| case_37 | INCOMPLETE | 1 | analytics_2265 |
+| case_44 | COMPLETE | 2 | analytics_5589, analytics_9406 |
+| case_47 | INCOMPLETE | 5 | account_034, account_483, account_617, account_7119, analytics_9447 |
+| case_48 | INCOMPLETE | 5 | account_034, account_483, account_617, account_7119, analytics_9447 |
+| case_49 | INCOMPLETE | 5 | account_034, account_483, account_617, account_7119, analytics_9447 |
+| case_51 | COMPLETE | 1 | analytics_2265 |
+| case_54 | INCOMPLETE | 2 | account_4990, account_6829 |
+| case_56 | INCOMPLETE | 5 | account_1298, account_5715, account_9862, analytics_2572, analytics_8858 |
+| case_57 | COMPLETE | 5 | account_1298, account_5715, account_9862, analytics_2572, analytics_8858 |
+| case_58 | COMPLETE | 5 | account_1298, account_5715, account_9862, analytics_2572, analytics_8858 |
+| case_59 | COMPLETE | 4 | account_3865, account_5661, account_631, analytics_9069 |
+| case_60 | COMPLETE | 4 | account_3865, account_5661, account_631, analytics_9069 |
+| case_62 | INCOMPLETE | 5 | account_034, account_483, account_617, account_7119, analytics_9447 |
+| case_63 | INCOMPLETE | 1 | marketing_001 (CONFLICT) |
+| case_64 | COMPLETE | 1 | analytics_5718 |
+| case_65 | INCOMPLETE | 1 | analytics_2176 |
+| case_66 | INCOMPLETE | 1 | analytics_2176 |
+| case_67 | INCOMPLETE | 1 | analytics_2176 |
+| case_71 | INCOMPLETE | 2 | analytics_2572, analytics_8858 |
+| case_72 | INCOMPLETE | 2 | analytics_2572, analytics_8858 |
+| case_73 | COMPLETE | 2 | analytics_1161, analytics_9500 |
+| case_74 | INCOMPLETE | 3 | account_1495, account_9051, account_925 |
+| case_75 | INCOMPLETE | 3 | account_1495, account_9051, account_925 |
+| case_76 | INCOMPLETE | 3 | account_1495, account_9051, account_925 |
+| case_77 | COMPLETE | 1 | analytics_5859 |
+| case_78 | INCOMPLETE | 1 | analytics_5859 |
+| case_79 | COMPLETE | 1 | analytics_5859 |
+| case_80 | COMPLETE | 1 | analytics_5059 |
+| case_81 | COMPLETE | 1 | analytics_5059 |
+| case_82 | COMPLETE | 1 | analytics_2176 |
+| case_83 | COMPLETE | 1 | analytics_901 |
+| case_84 | COMPLETE | 1 | analytics_901 |
+| case_85 | INCOMPLETE | 1 | analytics_901 |
+| case_86 | COMPLETE | 2 | analytics_1161, analytics_9500 |
+| case_87 | INCOMPLETE | 2 | analytics_1161, analytics_9500 |
+| case_88 | INCOMPLETE | 2 | analytics_1161, analytics_9500 |
+| case_92 | INCOMPLETE | 1 | analytics_5859 |
+| case_95 | INCOMPLETE | 4 | account_4176, account_5815, account_6813, analytics_9103 |
+| case_96 | INCOMPLETE | 4 | account_4176, account_5815, account_6813, analytics_9103 |
+| case_97 | COMPLETE | 4 | account_4176, account_5815, account_6813, analytics_9103 |
+| case_98 | INCOMPLETE | 4 | account_1034, account_7927, account_9511, legal_hold_668 |
+| case_99 | INCOMPLETE | 4 | account_1034, account_7927, account_9511, legal_hold_668 |
+| case_100 | INCOMPLETE | 4 | account_1034, account_7927, account_9511, legal_hold_668 |
+| case_102 | INCOMPLETE | 2 | analytics_1161, analytics_9500 |
+| case_103 | COMPLETE | 1 | analytics_3264 |
+| case_104 | INCOMPLETE | 2 | account_4514, account_8804 |
+| case_106 | INCOMPLETE | 2 | account_4514, account_8804 |
+| case_107 | COMPLETE | 5 | account_6750, account_687, account_7510, analytics_2777, analytics_5001 |
+| case_108 | COMPLETE | 5 | account_6750, account_687, account_7510, analytics_2777, analytics_5001 |
+| case_109 | INCOMPLETE | 5 | account_6750, account_687, account_7510, analytics_2777, analytics_5001 |
+| case_110 | INCOMPLETE | 5 | account_2259, account_7578, account_9314, analytics_800, analytics_9875 |
+| case_111 | COMPLETE | 5 | account_2259, account_7578, account_9314, analytics_800, analytics_9875 |
+| case_112 | COMPLETE | 5 | account_2259, account_7578, account_9314, analytics_800, analytics_9875 |
+| case_113 | COMPLETE | 1 | analytics_4800 |
+| case_114 | INCOMPLETE | 1 | analytics_4800 |
+| case_115 | INCOMPLETE | 1 | analytics_4800 |
+| case_116 | INCOMPLETE | 1 | analytics_8698 |
+| case_117 | COMPLETE | 1 | analytics_8698 |
+| case_118 | INCOMPLETE | 1 | analytics_8698 |
+| case_122 | INCOMPLETE | 2 | analytics_2777, analytics_5001 |
+| case_123 | INCOMPLETE | 2 | account_2988, account_8951 |
+| case_124 | INCOMPLETE | 2 | account_2988, account_8951 |
+| case_125 | INCOMPLETE | 2 | analytics_1402, analytics_7150 |
+| case_126 | COMPLETE | 2 | analytics_1402, analytics_7150 |
+| case_127 | COMPLETE | 2 | analytics_1402, analytics_7150 |
+| case_128 | INCOMPLETE | 3 | account_7878, account_8729, analytics_4800 |
+| case_129 | INCOMPLETE | 1 | analytics_4800 |
+| case_130 | INCOMPLETE | 3 | account_7878, account_8729, analytics_4800 |
+| case_131 | INCOMPLETE | 3 | account_426, account_4395, analytics_8698 |
+| case_132 | INCOMPLETE | 3 | account_426, account_4395, analytics_8698 |
+| case_134 | INCOMPLETE | 2 | analytics_1626, analytics_7254 |
+| case_135 | COMPLETE | 2 | analytics_1626, analytics_7254 |
+| case_136 | INCOMPLETE | 2 | analytics_1626, analytics_7254 |
+| case_142 | INCOMPLETE | 2 | analytics_1402, analytics_7150 |
+| case_143 | INCOMPLETE | 3 | account_2900, account_5572, account_6826 |
+| case_144 | INCOMPLETE | 3 | account_2900, account_5572, account_6826 |
+| case_145 | INCOMPLETE | 3 | account_2900, account_5572, account_6826 |
+| case_146 | INCOMPLETE | 4 | account_5023, account_5983, account_7864, account_8632 |
+| case_147 | INCOMPLETE | 4 | account_5023, account_5983, account_7864, account_8632 |
+| case_148 | INCOMPLETE | 4 | account_5023, account_5983, account_7864, account_8632 |
+| case_149 | INCOMPLETE | 5 | account_3897, account_874, account_9505, analytics_1626, analytics_7254 |
+| case_150 | COMPLETE | 5 | account_3897, account_874, account_9505, analytics_1626, analytics_7254 |
+| case_151 | COMPLETE | 5 | account_3897, account_874, account_9505, analytics_1626, analytics_7254 |
+| case_155 | COMPLETE | 6 | account_1992, account_2154, account_2362, analytics_6980, analytics_7372, analytics_8425 |
+| case_156 | INCOMPLETE | 6 | account_1992, account_2154, account_2362, analytics_6980, analytics_7372, analytics_8425 |
+| case_157 | COMPLETE | 6 | account_1992, account_2154, account_2362, analytics_6980, analytics_7372, analytics_8425 |
+| case_158 | INCOMPLETE | 3 | account_1421, account_1688, account_4272 |
+| case_159 | INCOMPLETE | 3 | account_1421, account_1688, account_4272 |
+| case_160 | INCOMPLETE | 3 | account_1421, account_1688, account_4272 |
+| case_162 | COMPLETE | 4 | account_5023, account_5983, account_7864, account_8632 |
+| case_164 | COMPLETE | 1 | analytics_6402 |
+| case_165 | INCOMPLETE | 1 | analytics_6402 |
+| case_166 | INCOMPLETE | 1 | analytics_6402 |
+| case_170 | COMPLETE | 3 | analytics_6980, analytics_7372, analytics_8425 |
+| case_171 | INCOMPLETE | 3 | analytics_6980, analytics_7372, analytics_8425 |
+| case_172 | INCOMPLETE | 3 | analytics_6980, analytics_7372, analytics_8425 |
+| case_173 | INCOMPLETE | 6 | account_6554, account_6659, account_7063, account_796, analytics_8767, analytics_9505 |
+| case_174 | INCOMPLETE | 6 | account_6554, account_6659, account_7063, account_796, analytics_8767, analytics_9505 |
+| case_175 | COMPLETE | 2 | analytics_8767, analytics_9505 |
+| case_176 | INCOMPLETE | 6 | account_1090, account_6608, account_9317, account_9877, analytics_2414, analytics_5614 |
+| case_177 | INCOMPLETE | 2 | analytics_2414, analytics_5614 |
+| case_178 | COMPLETE | 6 | account_1090, account_6608, account_9317, account_9877, analytics_2414, analytics_5614 |
+| case_179 | INCOMPLETE | 3 | account_3482, account_5309, account_9876 |
+| case_180 | INCOMPLETE | 3 | account_3482, account_5309, account_9876 |
+| case_181 | INCOMPLETE | 3 | account_3482, account_5309, account_9876 |
+| case_183 | COMPLETE | 2 | account_4854, account_9620 |
+| case_184 | INCOMPLETE | 2 | account_4854, account_9620 |
+| case_185 | INCOMPLETE | 3 | account_3878, account_9579, analytics_349 |
+| case_186 | INCOMPLETE | 3 | account_3878, account_9579, analytics_349 |
+| case_187 | INCOMPLETE | 1 | analytics_349 |
+| case_188 | INCOMPLETE | 6 | account_6554, account_6659, account_7063, account_796, analytics_8767, analytics_9505 |
+| case_189 | INCOMPLETE | 2 | analytics_8767, analytics_9505 |
+| case_190 | COMPLETE | 6 | account_6554, account_6659, account_7063, account_796, analytics_8767, analytics_9505 |
+| case_191 | COMPLETE | 6 | account_1090, account_6608, account_9317, account_9877, analytics_2414, analytics_5614 |
+| case_192 | INCOMPLETE | 6 | account_1090, account_6608, account_9317, account_9877, analytics_2414, analytics_5614 |
+| case_193 | COMPLETE | 2 | analytics_8037, analytics_9580 |
+| case_194 | INCOMPLETE | 5 | account_4362, account_660, account_6934, analytics_3454, analytics_5166 |
+| case_195 | COMPLETE | 2 | analytics_3454, analytics_5166 |
+| case_196 | COMPLETE | 2 | analytics_3454, analytics_5166 |
+| case_197 | INCOMPLETE | 3 | account_2210, account_2952, account_418 |
+| case_198 | INCOMPLETE | 3 | account_2210, account_2952, account_418 |
+| case_202 | COMPLETE | 1 | analytics_349 |
+| case_203 | INCOMPLETE | 4 | account_2399, account_6726, account_9268, analytics_2463 |
+| case_204 | COMPLETE | 4 | account_2399, account_6726, account_9268, analytics_2463 |
+| case_205 | INCOMPLETE | 4 | account_2399, account_6726, account_9268, analytics_2463 |
+| case_206 | COMPLETE | 5 | account_3685, account_4522, account_5678, analytics_8037, analytics_9580 |
+| case_207 | INCOMPLETE | 5 | account_3685, account_4522, account_5678, analytics_8037, analytics_9580 |
+| case_208 | INCOMPLETE | 5 | account_3685, account_4522, account_5678, analytics_8037, analytics_9580 |
+| case_209 | INCOMPLETE | 5 | account_4362, account_660, account_6934, analytics_3454, analytics_5166 |
+| case_210 | INCOMPLETE | 5 | account_4362, account_660, account_6934, analytics_3454, analytics_5166 |
+| case_211 | INCOMPLETE | 2 | analytics_3454, analytics_5166 |
+| case_212 | INCOMPLETE | 3 | account_2210, account_2952, account_418 |
+| case_213 | COMPLETE | 1 | analytics_4460 |
+| case_214 | INCOMPLETE | 1 | analytics_4460 |
+| case_215 | COMPLETE | 2 | analytics_1544, analytics_2504 |
+| case_216 | INCOMPLETE | 2 | analytics_1544, analytics_2504 |
+| case_217 | INCOMPLETE | 2 | analytics_1544, analytics_2504 |
+| case_218 | COMPLETE | 2 | analytics_257, analytics_7004 |
+| case_219 | COMPLETE | 2 | analytics_257, analytics_7004 |
+| case_220 | INCOMPLETE | 2 | analytics_257, analytics_7004 |
+| case_222 | INCOMPLETE | 2 | analytics_8037, analytics_9580 |
+| case_224 | INCOMPLETE | 5 | account_392, account_669, account_7605, analytics_2501, analytics_8127 |
+| case_225 | COMPLETE | 5 | account_392, account_669, account_7605, analytics_2501, analytics_8127 |
+| case_226 | COMPLETE | 5 | account_392, account_669, account_7605, analytics_2501, analytics_8127 |
+| case_227 | INCOMPLETE | 4 | account_4552, account_5549, account_7146, analytics_4460 |
+| case_228 | INCOMPLETE | 4 | account_4552, account_5549, account_7146, analytics_4460 |
+| case_229 | INCOMPLETE | 4 | account_4552, account_5549, account_7146, analytics_4460 |
+| case_230 | INCOMPLETE | 4 | account_8165, account_8936, analytics_1544, analytics_2504 |
+| case_231 | COMPLETE | 2 | analytics_1544, analytics_2504 |
+| case_232 | INCOMPLETE | 4 | account_8165, account_8936, analytics_1544, analytics_2504 |
+| case_233 | COMPLETE | 2 | analytics_6723, analytics_8565 |
+| case_234 | INCOMPLETE | 2 | analytics_6723, analytics_8565 |
+| case_235 | COMPLETE | 2 | analytics_6723, analytics_8565 |
+| case_239 | COMPLETE | 1 | analytics_1964 |
+| case_240 | INCOMPLETE | 1 | analytics_1964 |
+| case_241 | INCOMPLETE | 1 | analytics_1964 |
+| case_242 | INCOMPLETE | 1 | analytics_4460 |
+| case_243 | COMPLETE | 4 | account_4264, account_7650, analytics_5891, analytics_9166 |
+| case_244 | COMPLETE | 4 | account_4264, account_7650, analytics_5891, analytics_9166 |
+| case_245 | INCOMPLETE | 3 | account_1264, account_2481, account_5072 |
+| case_246 | INCOMPLETE | 3 | account_1264, account_2481, account_5072 |
+| case_248 | INCOMPLETE | 2 | account_3631, account_7010 |
+| case_250 | INCOMPLETE | 2 | account_3631, account_7010 |
+| case_251 | INCOMPLETE | 2 | account_4643, account_7518 |
+| case_252 | INCOMPLETE | 2 | account_4643, account_7518 |
+| case_253 | COMPLETE | 4 | account_6073, account_9763, analytics_3793, analytics_6136 |
+| case_254 | INCOMPLETE | 3 | account_5047, account_5091, account_7542 |
+| case_255 | INCOMPLETE | 3 | account_5047, account_5091, account_7542 |
+| case_256 | INCOMPLETE | 3 | account_5047, account_5091, account_7542 |
+| case_257 | COMPLETE | 3 | account_3601, account_7942, analytics_2977 |
+| case_258 | INCOMPLETE | 3 | account_3601, account_7942, analytics_2977 |
+| case_259 | INCOMPLETE | 1 | analytics_2977 |
+| case_260 | COMPLETE | 1 | analytics_5053 |
+| case_261 | INCOMPLETE | 1 | analytics_5053 |
+| case_262 | INCOMPLETE | 3 | account_1264, account_2481, account_5072 |
+| case_263 | INCOMPLETE | 1 | analytics_1851 |
+| case_264 | COMPLETE | 1 | analytics_1851 |
+| case_265 | COMPLETE | 1 | analytics_1851 |
+| case_266 | INCOMPLETE | 2 | analytics_3793, analytics_6136 |
+| case_267 | COMPLETE | 2 | analytics_3793, analytics_6136 |
+| case_268 | INCOMPLETE | 2 | analytics_3793, analytics_6136 |
+| case_272 | INCOMPLETE | 1 | analytics_2977 |
+| case_273 | INCOMPLETE | 2 | analytics_4051, legal_hold_1745 |
+| case_274 | COMPLETE | 7 | account_4232, account_4485, account_4835, account_6575, account_6988, analytics_4051, legal_hold_1745 |
+| case_275 | INCOMPLETE | 8 | account_2352, account_4853, account_7177, account_731, account_8914, analytics_2322, analytics_5923, analytics_6191 |
+| case_276 | COMPLETE | 8 | account_2352, account_4853, account_7177, account_731, account_8914, analytics_2322, analytics_5923, analytics_6191 |
+| case_277 | COMPLETE | 8 | account_2352, account_4853, account_7177, account_731, account_8914, analytics_2322, analytics_5923, analytics_6191 |
+| case_278 | INCOMPLETE | 3 | account_2430, account_4664, account_6306 |
+| case_279 | INCOMPLETE | 3 | account_2430, account_4664, account_6306 |
+| case_280 | INCOMPLETE | 3 | account_2430, account_4664, account_6306 |
+| case_282 | INCOMPLETE | 4 | account_6073, account_9763, analytics_3793, analytics_6136 |
+| case_284 | INCOMPLETE | 1 | analytics_7283 |
+| case_285 | INCOMPLETE | 1 | analytics_7283 |
+| case_286 | COMPLETE | 1 | analytics_7283 |
+| case_287 | INCOMPLETE | 7 | account_4232, account_4485, account_4835, account_6575, account_6988, analytics_4051, legal_hold_1745 |
+| case_288 | INCOMPLETE | 7 | account_4232, account_4485, account_4835, account_6575, account_6988, analytics_4051, legal_hold_1745 |
+| case_289 | INCOMPLETE | 7 | account_4232, account_4485, account_4835, account_6575, account_6988, analytics_4051, legal_hold_1745 |
+| case_290 | INCOMPLETE | 8 | account_2352, account_4853, account_7177, account_731, account_8914, analytics_2322, analytics_5923, analytics_6191 |
+| case_291 | INCOMPLETE | 8 | account_2352, account_4853, account_7177, account_731, account_8914, analytics_2322, analytics_5923, analytics_6191 |
+| case_292 | COMPLETE | 3 | analytics_2322, analytics_5923, analytics_6191 |
+| case_293 | INCOMPLETE | 10 | account_1235, account_4319, account_6996, account_8353, account_8647, account_9091, analytics_061, analytics_096, analytics_3678, analytics_7575 |
+| case_294 | COMPLETE | 10 | account_1235, account_4319, account_6996, account_8353, account_8647, account_9091, analytics_061, analytics_096, analytics_3678, analytics_7575 |
+| case_295 | COMPLETE | 10 | account_1235, account_4319, account_6996, account_8353, account_8647, account_9091, analytics_061, analytics_096, analytics_3678, analytics_7575 |
+| case_296 | INCOMPLETE | 6 | account_3275, account_4267, account_4718, account_4880, account_6023, analytics_7164 |
+| case_297 | COMPLETE | 6 | account_3275, account_4267, account_4718, account_4880, account_6023, analytics_7164 |
+| case_298 | INCOMPLETE | 6 | account_3275, account_4267, account_4718, account_4880, account_6023, analytics_7164 |
+| case_299 | COMPLETE | 4 | account_1618, account_7249, account_9993, analytics_1733 |
+| case_300 | INCOMPLETE | 4 | account_1618, account_7249, account_9993, analytics_1733 |
+| case_301 | INCOMPLETE | 4 | account_1618, account_7249, account_9993, analytics_1733 |
+| case_302 | INCOMPLETE | 7 | account_4232, account_4485, account_4835, account_6575, account_6988, analytics_4051, legal_hold_1745 |
+| case_303 | INCOMPLETE | 2 | account_4771, account_7907 |
+| case_304 | COMPLETE | 2 | account_4771, account_7907 |
+| case_305 | INCOMPLETE | 2 | account_6680, account_7248 |
+| case_306 | INCOMPLETE | 2 | account_6680, account_7248 |
+| case_308 | COMPLETE | 10 | account_1235, account_4319, account_6996, account_8353, account_8647, account_9091, analytics_061, analytics_096, analytics_3678, analytics_7575 |
+| case_309 | COMPLETE | 10 | account_1235, account_4319, account_6996, account_8353, account_8647, account_9091, analytics_061, analytics_096, analytics_3678, analytics_7575 |
+| case_310 | INCOMPLETE | 10 | account_1235, account_4319, account_6996, account_8353, account_8647, account_9091, analytics_061, analytics_096, analytics_3678, analytics_7575 |
+| case_311 | INCOMPLETE | 6 | account_3275, account_4267, account_4718, account_4880, account_6023, analytics_7164 |
+| case_312 | INCOMPLETE | 6 | account_3275, account_4267, account_4718, account_4880, account_6023, analytics_7164 |
+| case_313 | COMPLETE | 3 | analytics_2072, analytics_6099, analytics_9681 |
+| case_314 | COMPLETE | 2 | analytics_2022, analytics_5532 |
+| case_315 | INCOMPLETE | 2 | analytics_2022, analytics_5532 |
+| case_316 | INCOMPLETE | 2 | analytics_2022, analytics_5532 |
+| case_317 | INCOMPLETE | 1 | analytics_2601 |
+| case_318 | INCOMPLETE | 1 | analytics_2601 |
+| case_319 | COMPLETE | 1 | analytics_2601 |
+| case_323 | COMPLETE | 1 | analytics_136 |
+| case_324 | COMPLETE | 1 | analytics_136 |
+| case_325 | INCOMPLETE | 1 | analytics_136 |
+| case_326 | COMPLETE | 3 | analytics_2072, analytics_6099, analytics_9681 |
+| case_327 | COMPLETE | 3 | analytics_2072, analytics_6099, analytics_9681 |
+| case_328 | INCOMPLETE | 3 | analytics_2072, analytics_6099, analytics_9681 |
+| case_329 | INCOMPLETE | 4 | account_2583, account_6301, analytics_2022, analytics_5532 |
+| case_330 | INCOMPLETE | 4 | account_2583, account_6301, analytics_2022, analytics_5532 |
+| case_331 | COMPLETE | 2 | analytics_2022, analytics_5532 |
+| case_332 | INCOMPLETE | 1 | analytics_2601 |
+| case_333 | INCOMPLETE | 1 | analytics_4273 |
+| case_334 | INCOMPLETE | 1 | analytics_4273 |
+| case_335 | COMPLETE | 2 | analytics_1072, analytics_3108 |
+| case_336 | COMPLETE | 2 | analytics_1072, analytics_3108 |
+| case_337 | INCOMPLETE | 2 | analytics_1072, analytics_3108 |
+| case_338 | INCOMPLETE | 1 | analytics_2079 |
+| case_339 | COMPLETE | 1 | analytics_2079 |
+| case_340 | INCOMPLETE | 1 | analytics_2079 |
+| case_342 | INCOMPLETE | 3 | analytics_2072, analytics_6099, analytics_9681 |
+| case_344 | INCOMPLETE | 5 | account_486, account_5214, account_8834, analytics_3990, analytics_7102 |
+| case_345 | COMPLETE | 5 | account_486, account_5214, account_8834, analytics_3990, analytics_7102 |
+| case_346 | COMPLETE | 5 | account_486, account_5214, account_8834, analytics_3990, analytics_7102 |
+| case_347 | INCOMPLETE | 5 | account_3372, account_421, account_507, account_9881, analytics_4273 |
+| case_348 | INCOMPLETE | 5 | account_3372, account_421, account_507, account_9881, analytics_4273 |
+| case_349 | INCOMPLETE | 5 | account_3372, account_421, account_507, account_9881, analytics_4273 |
+| case_350 | INCOMPLETE | 5 | account_5059, account_5202, account_6215, analytics_1072, analytics_3108 |
+| case_351 | COMPLETE | 5 | account_5059, account_5202, account_6215, analytics_1072, analytics_3108 |
+| case_352 | INCOMPLETE | 5 | account_5059, account_5202, account_6215, analytics_1072, analytics_3108 |
+| case_353 | INCOMPLETE | 4 | account_3918, account_9056, analytics_2807, analytics_439 |
+| case_354 | COMPLETE | 4 | account_3918, account_9056, analytics_2807, analytics_439 |
+| case_355 | INCOMPLETE | 2 | analytics_2807, analytics_439 |
+| case_356 | INCOMPLETE | 2 | account_1850, account_6093 |
+| case_358 | INCOMPLETE | 2 | account_1850, account_6093 |
+| case_359 | INCOMPLETE | 3 | account_6312, account_6445, account_7118 |
+| case_360 | INCOMPLETE | 3 | account_6312, account_6445, account_7118 |
+| case_361 | INCOMPLETE | 3 | account_6312, account_6445, account_7118 |
+| case_362 | COMPLETE | 5 | account_3372, account_421, account_507, account_9881, analytics_4273 |
+| case_368 | INCOMPLETE | 2 | analytics_2807, analytics_439 |
+| case_369 | COMPLETE | 2 | analytics_2807, analytics_439 |
+| case_370 | INCOMPLETE | 2 | analytics_2807, analytics_439 |
+| case_374 | COMPLETE | 2 | analytics_5779, analytics_9394 |
+| case_375 | COMPLETE | 2 | analytics_5779, analytics_9394 |
+| case_376 | INCOMPLETE | 2 | analytics_5779, analytics_9394 |
+| case_377 | INCOMPLETE | 1 | analytics_3234 |
+| case_378 | COMPLETE | 1 | analytics_3234 |
+| case_379 | INCOMPLETE | 1 | analytics_3234 |
+| case_380 | COMPLETE | 1 | analytics_9326 |
+| case_381 | INCOMPLETE | 1 | analytics_9326 |
+| case_383 | COMPLETE | 1 | analytics_9702 |
+| case_384 | INCOMPLETE | 1 | analytics_9702 |
+| case_385 | INCOMPLETE | 1 | analytics_9702 |
+| case_389 | INCOMPLETE | 1 | analytics_448 |
+| case_390 | COMPLETE | 1 | analytics_448 |
+| case_391 | INCOMPLETE | 1 | analytics_448 |
+| case_393 | COMPLETE | 7 | account_1093, account_2191, account_5754, account_7174, account_9087, analytics_542, analytics_8973 |
+| case_394 | INCOMPLETE | 7 | account_1093, account_2191, account_5754, account_7174, account_9087, analytics_542, analytics_8973 |
+| case_395 | COMPLETE | 8 | account_163, account_2464, account_2775, account_3492, account_6443, account_8985, analytics_298, analytics_4651 |
+| case_396 | INCOMPLETE | 8 | account_163, account_2464, account_2775, account_3492, account_6443, account_8985, analytics_298, analytics_4651 |
+| case_397 | INCOMPLETE | 8 | account_163, account_2464, account_2775, account_3492, account_6443, account_8985, analytics_298, analytics_4651 |
+| case_398 | COMPLETE | 4 | account_1140, account_2138, account_928, analytics_4455 |
+| case_399 | INCOMPLETE | 4 | account_1140, account_2138, account_928, analytics_4455 |
+| case_400 | INCOMPLETE | 4 | account_1140, account_2138, account_928, analytics_4455 |
+| case_404 | INCOMPLETE | 2 | account_1759, account_8997 |
+| case_406 | INCOMPLETE | 2 | account_1759, account_8997 |
+| case_407 | INCOMPLETE | 7 | account_1093, account_2191, account_5754, account_7174, account_9087, analytics_542, analytics_8973 |
+| case_408 | COMPLETE | 7 | account_1093, account_2191, account_5754, account_7174, account_9087, analytics_542, analytics_8973 |
+| case_409 | COMPLETE | 7 | account_1093, account_2191, account_5754, account_7174, account_9087, analytics_542, analytics_8973 |
+| case_410 | INCOMPLETE | 8 | account_163, account_2464, account_2775, account_3492, account_6443, account_8985, analytics_298, analytics_4651 |
+| case_411 | COMPLETE | 8 | account_163, account_2464, account_2775, account_3492, account_6443, account_8985, analytics_298, analytics_4651 |
+| case_412 | COMPLETE | 8 | account_163, account_2464, account_2775, account_3492, account_6443, account_8985, analytics_298, analytics_4651 |
+| case_422 | INCOMPLETE | 2 | analytics_542, analytics_8973 |
+| case_423 | COMPLETE | 2 | analytics_3845, analytics_6249 |
+| case_424 | COMPLETE | 2 | analytics_3845, analytics_6249 |
+| case_425 | INCOMPLETE | 4 | account_1576, account_8461, account_9633, analytics_8091 |
+| case_426 | INCOMPLETE | 4 | account_1576, account_8461, account_9633, analytics_8091 |
+| case_427 | COMPLETE | 4 | account_1576, account_8461, account_9633, analytics_8091 |
+| case_431 | INCOMPLETE | 2 | account_6101, account_6489 |
+| case_432 | INCOMPLETE | 2 | account_6101, account_6489 |
+| case_433 | INCOMPLETE | 1 | analytics_7270 |
+| case_437 | INCOMPLETE | 1 | analytics_4031 |
+| case_438 | INCOMPLETE | 1 | analytics_4031 |
+| case_439 | INCOMPLETE | 1 | analytics_4031 |
+| case_442 | INCOMPLETE | 1 | analytics_8091 |
+| case_443 | INCOMPLETE | 3 | account_1736, account_1776, account_4042 |
+| case_444 | INCOMPLETE | 3 | account_1736, account_1776, account_4042 |
+| case_445 | INCOMPLETE | 3 | account_1736, account_1776, account_4042 |
+| case_446 | INCOMPLETE | 4 | account_3827, account_6635, account_7340, analytics_7270 |
+| case_447 | INCOMPLETE | 4 | account_3827, account_6635, account_7340, analytics_7270 |
+| case_448 | COMPLETE | 4 | account_3827, account_6635, account_7340, analytics_7270 |
+| case_449 | INCOMPLETE | 3 | account_1895, account_5718, account_9275 |
+| case_450 | INCOMPLETE | 3 | account_1895, account_5718, account_9275 |
+| case_451 | INCOMPLETE | 3 | account_1895, account_5718, account_9275 |
+| case_452 | COMPLETE | 1 | analytics_4031 |
+| case_454 | INCOMPLETE | 2 | account_3024, account_9394 |
+| case_455 | INCOMPLETE | 6 | account_2761, account_3584, account_6373, analytics_1126, analytics_4066, analytics_6750 |
+| case_456 | COMPLETE | 6 | account_2761, account_3584, account_6373, analytics_1126, analytics_4066, analytics_6750 |
+| case_457 | COMPLETE | 6 | account_2761, account_3584, account_6373, analytics_1126, analytics_4066, analytics_6750 |
+| case_458 | COMPLETE | 4 | account_077, account_5167, account_5892, analytics_5221 |
+| case_459 | INCOMPLETE | 4 | account_077, account_5167, account_5892, analytics_5221 |
+| case_460 | INCOMPLETE | 4 | account_077, account_5167, account_5892, analytics_5221 |
+| case_464 | COMPLETE | 1 | analytics_8746 |
+| case_465 | INCOMPLETE | 1 | analytics_8746 |
+| case_466 | INCOMPLETE | 1 | analytics_8746 |
+| case_470 | COMPLETE | 3 | analytics_1126, analytics_4066, analytics_6750 |
+| case_471 | INCOMPLETE | 3 | analytics_1126, analytics_4066, analytics_6750 |
+| case_472 | INCOMPLETE | 3 | analytics_1126, analytics_4066, analytics_6750 |
+| case_473 | INCOMPLETE | 2 | account_6474, account_9904 |
+| case_474 | INCOMPLETE | 2 | account_6474, account_9904 |
+| case_476 | INCOMPLETE | 2 | account_3510, account_5934 |
+| case_478 | INCOMPLETE | 2 | account_3510, account_5934 |
+| case_479 | INCOMPLETE | 4 | account_2465, account_5582, account_9449, analytics_1794 |
+| case_480 | COMPLETE | 4 | account_2465, account_5582, account_9449, analytics_1794 |
+| case_481 | INCOMPLETE | 4 | account_2465, account_5582, account_9449, analytics_1794 |
+| case_482 | INCOMPLETE | 2 | account_3024, account_9394 |
+| case_485 | INCOMPLETE | 1 | analytics_5948 |
+| case_486 | COMPLETE | 1 | analytics_5948 |
+| case_487 | INCOMPLETE | 1 | analytics_5948 |
+| case_493 | COMPLETE | 5 | account_3772, account_5423, account_6161, account_7766, analytics_5893 |
+| case_494 | COMPLETE | 6 | account_2512, account_3479, account_6049, account_6623, account_9784, analytics_5443 |
+| case_495 | INCOMPLETE | 6 | account_2512, account_3479, account_6049, account_6623, account_9784, analytics_5443 |
+| case_496 | INCOMPLETE | 6 | account_2512, account_3479, account_6049, account_6623, account_9784, analytics_5443 |
+| case_497 | COMPLETE | 5 | account_282, account_445, account_5281, analytics_1558, analytics_6565 |
+| case_498 | INCOMPLETE | 5 | account_282, account_445, account_5281, analytics_1558, analytics_6565 |
+| case_499 | INCOMPLETE | 2 | analytics_1558, analytics_6565 |
+| case_502 | COMPLETE | 1 | analytics_5948 |
+| case_503 | INCOMPLETE | 3 | account_5394, account_7244, account_8136 |
+| case_504 | INCOMPLETE | 3 | account_5394, account_7244, account_8136 |
+| case_505 | INCOMPLETE | 3 | account_5394, account_7244, account_8136 |
+| case_506 | COMPLETE | 5 | account_3772, account_5423, account_6161, account_7766, analytics_5893 |
+| case_507 | INCOMPLETE | 5 | account_3772, account_5423, account_6161, account_7766, analytics_5893 |
+| case_508 | INCOMPLETE | 5 | account_3772, account_5423, account_6161, account_7766, analytics_5893 |
+| case_509 | INCOMPLETE | 6 | account_2512, account_3479, account_6049, account_6623, account_9784, analytics_5443 |
+| case_510 | INCOMPLETE | 6 | account_2512, account_3479, account_6049, account_6623, account_9784, analytics_5443 |
+| case_511 | INCOMPLETE | 1 | analytics_5443 |
+| case_512 | COMPLETE | 5 | account_282, account_445, account_5281, analytics_1558, analytics_6565 |
+| case_515 | INCOMPLETE | 1 | analytics_4804 |
+| case_516 | COMPLETE | 1 | analytics_4804 |
+| case_517 | INCOMPLETE | 1 | analytics_4804 |
+| case_522 | INCOMPLETE | 1 | analytics_5893 |
+| case_524 | COMPLETE | 2 | account_1400, account_704 |
+| case_526 | INCOMPLETE | 2 | account_1400, account_704 |
+| case_527 | INCOMPLETE | 3 | account_1184, account_3693, account_4063 |
+| case_528 | INCOMPLETE | 3 | account_1184, account_3693, account_4063 |
+| case_529 | INCOMPLETE | 3 | account_1184, account_3693, account_4063 |
+| case_530 | COMPLETE | 5 | account_3146, account_470, account_6169, analytics_3744, analytics_893 |
+| case_531 | INCOMPLETE | 5 | account_3146, account_470, account_6169, analytics_3744, analytics_893 |
+| case_532 | COMPLETE | 5 | account_3146, account_470, account_6169, analytics_3744, analytics_893 |
+| case_543 | COMPLETE | 3 | account_2577, account_7320, account_8931 |
+| case_544 | INCOMPLETE | 3 | account_2577, account_7320, account_8931 |
+| case_545 | COMPLETE | 3 | account_2577, account_7320, account_8931 |
+| case_546 | INCOMPLETE | 7 | account_294, account_410, account_6440, account_7015, account_8832, account_9155, analytics_5335 |
+| case_547 | COMPLETE | 7 | account_294, account_410, account_6440, account_7015, account_8832, account_9155, analytics_5335 |
+| case_548 | INCOMPLETE | 7 | account_294, account_410, account_6440, account_7015, account_8832, account_9155, analytics_5335 |
+| case_549 | COMPLETE | 6 | account_010, account_3136, account_4842, account_7225, analytics_1895, analytics_4566 |
+| case_550 | INCOMPLETE | 6 | account_010, account_3136, account_4842, account_7225, analytics_1895, analytics_4566 |

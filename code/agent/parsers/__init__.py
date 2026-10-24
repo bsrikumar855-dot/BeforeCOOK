@@ -57,8 +57,13 @@ class EvidenceIndex:
         return self.prefix_system.get(prefix_of(resource_id))
 
 
-def catalog_aliases(dataset: Dataset) -> dict[str, str]:
-    """Data-catalog rows map an external reference (e.g. a statement number) to a resource id."""
+def catalog_aliases(dataset: Dataset, include_user_ids: bool = False) -> dict[str, str]:
+    """Data-catalog rows map an external reference (e.g. a statement number) to a resource id.
+
+    Aliases that are user ids are excluded by default: in free text a user id names a person, not a record.
+    Screenshot rows use them (include_user_ids=True) because there the alias is the row's identifier.
+    """
+    user_ids = {u["user_id"] for u in dataset.users}
     aliases = {}
     for a in dataset.activity:
         if a.event_type != "LINK_RESOURCE_IDENTITY":
@@ -67,7 +72,7 @@ def catalog_aliases(dataset: Dataset) -> dict[str, str]:
         if not m:
             continue
         rid, alias = (m.group(1), m.group(2)) if m.group(1) else (m.group(5), m.group(6))
-        if alias != rid and not alias.startswith("user_"):
+        if alias != rid and (include_user_ids or alias not in user_ids):
             aliases[alias] = rid
     return aliases
 

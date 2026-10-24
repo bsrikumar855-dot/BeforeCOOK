@@ -35,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "activity_80 lies in the burst windows of cases ['case_516', 'case_517']",
+   "rationale": "activity_80 lies in the burst windows of cases ['case_515', 'case_516', 'case_517']",
    "resource_id": "analytics_4804",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "analytics_platform"
@@ -93,13 +93,12 @@
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: activity_80 lies in the burst windows of cases ['case_516', 'case_517']",
+   "reason": "AMBIGUOUS: activity_80 lies in the burst windows of cases ['case_515', 'case_516', 'case_517']",
    "resource_id": "analytics_4804"
   }
  ],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
   "error": "",
   "is_deletion": true,

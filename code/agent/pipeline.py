@@ -17,7 +17,7 @@ from .identity import IdentityUniverse
 from .intent import IntentClassifier, IntentResult, decide
 from .llm_client import LLMClient, ResponseCache, UsageLedger
 from .loaders import Dataset, load_dataset
-from .parsers import EvidenceIndex, build_evidence_index
+from .parsers import EvidenceIndex, build_evidence_index, catalog_aliases
 from .parsers.png_vlm import ImageExtractor
 from .rules import DATA_FLOW, Policy
 from .state import reconstruct
@@ -56,6 +56,8 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
     policy = Policy(ds.rules)
     categories = sorted(set(policy.action) - {DATA_FLOW}) + [DATA_FLOW]
     extractor = ImageExtractor(client, cache, universe, categories) if image_extraction else None
+    if extractor is not None:
+        extractor.aliases = catalog_aliases(ds, include_user_ids=True)
     index = build_evidence_index(ds, universe, extractor)
 
     requests = ds.all_requests
@@ -75,8 +77,10 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
         rows = classify_request_rows(ds.activity, owner_users, ctx)
         ctx.is_deletion, path = decide(result, rows)
         contexts.append(ctx)
-        intent_trace[cid] = {**asdict(result), "classify_request_rows": rows, "path": path,
-                             "is_deletion": ctx.is_deletion}
+        # cache_hit is run metadata (kept in the usage ledger); traces hold only decision facts, so they are
+        # byte-identical whether a reply came from the network or the cache.
+        intent_trace[cid] = {**{k: v for k, v in asdict(result).items() if k != "cache_hit"},
+                             "classify_request_rows": rows, "path": path, "is_deletion": ctx.is_deletion}
 
     # ---- attribution (global, all cases jointly) ----
     attribution = attribute(contexts, index, ds.activity, universe)
@@ -167,6 +171,10 @@ def audit_case(ctx: CaseContext, ds: Dataset, index: EvidenceIndex, attribution:
     return CaseOutcome(ctx.case_id, status, steps, trace, degraded)
 
 
+def is_model_failure(outcome: CaseOutcome) -> bool:
+    return str((outcome.trace.get("intent") or {}).get("path", "")).startswith("model_failure")
+
+
 def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
     ds = rr.dataset
     eval_ids = [r["case_id"] for r in ds.requests]
@@ -188,7 +196,9 @@ def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
                                                 for c in ids).items())),
             "attribution_labels": dict(sorted(labels.items())),
             "excluded_reasons": dict(sorted(excluded.items())),
-            "degraded": sorted(c for c in ids if rr.outcomes[c].degraded),
+            # A case whose intent call failed is degraded too: it fell back to NOT_APPLICABLE without a decision.
+            "model_failures": sorted(c for c in ids if is_model_failure(rr.outcomes[c])),
+            "degraded": sorted(c for c in ids if rr.outcomes[c].degraded or is_model_failure(rr.outcomes[c])),
         }
     files = Counter(f.status for f in rr.index.files.values())
     return {
@@ -197,7 +207,11 @@ def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
         "image_extraction": {"accepted_rows": len(extractor.accepted) if extractor else 0,
                              "dropped_rows": extractor.dropped if extractor else [],
                              "failed_files": extractor.failures if extractor else []},
+        "model_failures": {"intent_cases": len(counts(eval_ids + sample_ids)["model_failures"]),
+                           "vlm_files_skipped": len(extractor.failures) if extractor else 0},
         "conflicts": rr.attribution.conflicts,
+        "content_conflicts": rr.attribution.content_conflicts,
+        "image_rows_accepted": extractor.accepted if extractor else [],
         "account_batches": len(rr.attribution.batches),
     }
 

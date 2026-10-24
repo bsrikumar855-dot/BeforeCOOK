@@ -1,19 +1,162 @@
 {
- "attribution": [],
+ "attribution": [
+  {
+   "case_id": "case_435",
+   "edges": [
+    {
+     "case_id": "case_435",
+     "identifier": "email:l.bernard56@gmail.com",
+     "kind": "HARD",
+     "resource_id": "account_9194",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "account_9194",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "account_service"
+  },
+  {
+   "case_id": "case_435",
+   "edges": [
+    {
+     "case_id": "case_435",
+     "identifier": "user_id:user_433",
+     "kind": "HARD",
+     "resource_id": "audit_record_9695",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "audit_record_9695",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "security_service"
+  },
+  {
+   "case_id": "case_435",
+   "edges": [
+    {
+     "case_id": "case_435",
+     "identifier": "email:l.bernard56@gmail.com",
+     "kind": "HARD",
+     "resource_id": "backup_5237",
+     "source_id": "evidence_41",
+     "strength": "HARD",
+     "time": "2026-03-15T07:00:00Z"
+    }
+   ],
+   "in_scope": true,
+   "label": "CONFIRMED",
+   "rationale": "direct identity link via SAME_RECORD",
+   "resource_id": "backup_5237",
+   "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_41",
+   "system_id": "backup_service"
+  }
+ ],
  "case_id": "case_435",
+ "degraded": null,
+ "eliminated": [
+  {
+   "activity_id": "activity_683",
+   "reason": "hard-linked to ['user_432']",
+   "resource_id": "account_4813"
+  },
+  {
+   "activity_id": "activity_684",
+   "reason": "hard-linked to ['user_434']",
+   "resource_id": "account_3078"
+  },
+  {
+   "activity_id": "activity_685",
+   "reason": "hard-linked to ['user_447']",
+   "resource_id": "analytics_1138"
+  },
+  {
+   "activity_id": "activity_686",
+   "reason": "hard-linked to ['user_448']",
+   "resource_id": "support_7245"
+  },
+  {
+   "activity_id": "activity_687",
+   "reason": "hard-linked to ['user_449']",
+   "resource_id": "data_flow_7263"
+  },
+  {
+   "activity_id": "activity_688",
+   "reason": "hard-linked to ['user_447']",
+   "resource_id": "search_1685"
+  },
+  {
+   "activity_id": "activity_689",
+   "reason": "hard-linked to ['user_448']",
+   "resource_id": "search_2365"
+  },
+  {
+   "activity_id": "activity_690",
+   "reason": "hard-linked to ['user_449']",
+   "resource_id": "search_360"
+  },
+  {
+   "activity_id": "activity_691",
+   "reason": "hard-linked to ['user_448']",
+   "resource_id": "analytics_8202"
+  },
+  {
+   "activity_id": "activity_692",
+   "reason": "hard-linked to ['user_434']",
+   "resource_id": "support_165"
+  },
+  {
+   "activity_id": "activity_693",
+   "reason": "hard-linked to ['user_448']",
+   "resource_id": "data_flow_9755"
+  },
+  {
+   "activity_id": "activity_694",
+   "reason": "hard-linked to ['user_432']",
+   "resource_id": "data_flow_9854"
+  },
+  {
+   "activity_id": "activity_696",
+   "reason": "hard-linked to ['user_434']",
+   "resource_id": "search_6599"
+  },
+  {
+   "activity_id": "activity_697",
+   "reason": "hard-linked to ['user_432']",
+   "resource_id": "search_5626"
+  },
+  {
+   "activity_id": "activity_698",
+   "reason": "hard-linked to ['user_432']",
+   "resource_id": "support_3364"
+  },
+  {
+   "activity_id": "activity_700",
+   "reason": "hard-linked to ['user_432']",
+   "resource_id": "analytics_2354"
+  }
+ ],
  "excluded": [],
  "input_issues": [],
  "intent": {
-  "cache_hit": false,
   "classify_request_rows": [],
-  "error": "model_failure: intent: every configured attempt failed: [{'model': 'gemini-2.5-flash-lite', 'key_slot': 'primary', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_1', 'outcome': 'http_404'}, {'model': 'gemini-2.5-flash-lite', 'key_slot': 'fallback_2', 'outcome': 'htt",
-  "is_deletion": false,
-  "label": null,
-  "language": null,
-  "model": null,
-  "negation_detected": null,
-  "path": "model_failure->NOT_APPLICABLE",
-  "provider": null
+  "error": "",
+  "is_deletion": true,
+  "label": "DELETION",
+  "language": "fr",
+  "model": "gemini-3.5-flash-lite",
+  "negation_detected": false,
+  "path": "model_deletion->DELETION",
+  "provider": "gemini"
  },
  "request": {
   "audit_at": "2026-03-15T07:00:00Z",
@@ -22,9 +165,143 @@
   "reported_status": "COMPLETE",
   "requested_at": "2026-02-20T07:00:00Z"
  },
- "resources": [],
- "status": "NOT_APPLICABLE",
- "steps": [],
+ "resources": [
+  {
+   "attribution": "CONFIRMED",
+   "category": "USER_PROFILE",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "DELETE",
+   "resource_id": "account_9194",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L10"
+    ],
+    "presence": "ABSENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "account_9194",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SECURITY_AUDIT_LOG",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_PRESENT"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "RETAIN",
+   "resource_id": "audit_record_9695",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L35"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "audit_record_9695",
+    "restore_state": null,
+    "system_id": "security_service"
+   },
+   "system_id": "security_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "BACKUP_ARCHIVE",
+   "category_basis": "record_type stated in evidence_41",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_RESTORE_RISK",
+    "BLOCK_RESTORE",
+    "VERIFY_RESTORE_BLOCKED"
+   ],
+   "proof_file_id": "evidence_41",
+   "required_action": "RETAIN",
+   "resource_id": "backup_5237",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_41#L14"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_41",
+    "resource_id": "backup_5237",
+    "restore_state": "RESTORABLE",
+    "system_id": "backup_service"
+   },
+   "system_id": "backup_service"
+  }
+ ],
+ "status": "INCOMPLETE",
+ "steps": [
+  {
+   "evidence_id": "evidence_41",
+   "operation": "REPORT_RESTORE_RISK",
+   "phase": "FINDING",
+   "resource_id": "backup_5237",
+   "state": "ACTIVE",
+   "step_no": 1,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "BLOCK_RESTORE",
+   "phase": "REMEDIATION",
+   "resource_id": "backup_5237",
+   "state": "BLOCKED",
+   "step_no": 2,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_9194",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "phase": "VERIFICATION",
+   "resource_id": "audit_record_9695",
+   "state": "PRESENT",
+   "step_no": 4,
+   "system_id": "security_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "phase": "VERIFICATION",
+   "resource_id": "backup_5237",
+   "state": "BLOCKED",
+   "step_no": 5,
+   "system_id": "backup_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {
@@ -49,5 +326,6 @@
   "user_ids": [
    "user_433"
   ]
- }
+ },
+ "validation_errors": []
 }
