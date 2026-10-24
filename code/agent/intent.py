@@ -13,6 +13,7 @@ from .llm_client import AllProvidersFailed, CacheMiss, LLMClient, ResponseCache,
 from .schema import INTENT_LABELS
 
 TASK = "intent"
+MAX_CLASSIFY_CHARS = 5000      # longer texts are classified on their first 5,000 characters (C7)
 
 
 @dataclass
@@ -114,6 +115,15 @@ class IntentClassifier:
                 results[text] = IntentResult(r["label"], r["language"], r["negation_detected"], reply.provider,
                                              reply.model, False)
         return results
+
+
+def model_text(text: str) -> str | None:
+    """What the model sees: None for an empty/whitespace text (it authorizes nothing, so no call is made);
+    otherwise the text capped at MAX_CLASSIFY_CHARS, so padding cannot inflate a batch or push an appended
+    instruction past the cap into the prompt."""
+    if not (text or "").strip():
+        return None
+    return text[:MAX_CLASSIFY_CHARS]
 
 
 def decide(result: IntentResult, classify_rows: list[str]) -> tuple[bool, str]:

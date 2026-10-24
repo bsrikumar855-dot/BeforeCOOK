@@ -62,8 +62,6 @@ def validate_request(row: dict[str, str]) -> list[str]:
             problems.append(f"unparsable {col}")
     if row.get("reported_status") and row["reported_status"] not in REPORTED_STATUSES:
         problems.append("unknown reported_status")
-    if len(row.get("request_text") or "") > 5000:
-        problems.append("request_text over 5000 chars")
     return problems
 
 

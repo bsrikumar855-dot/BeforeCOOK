@@ -1,0 +1,1 @@
+2026-09-14T10:00:01Z level=INFO service=account_service trace_id=x15-1 event=profile_lookup_completed resource_id=account_990015 rows=1 http_status=200 lookup_key=omar.15@example.test

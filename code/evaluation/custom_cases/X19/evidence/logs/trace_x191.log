@@ -1,0 +1,1 @@
+2026-09-14T10:00:01Z level=INFO service=account_service trace_id=x19-1 event=profile_lookup_completed resource_id=account_990019 rows=1 http_status=200 lookup_key=aiko.19@example.test

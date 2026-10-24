@@ -14,7 +14,7 @@ from pathlib import Path
 
 from .attribution import AttributionResult, CaseContext, attribute, classify_request_rows, resource_owners
 from .identity import IdentityUniverse
-from .intent import IntentClassifier, IntentResult, decide
+from .intent import MAX_CLASSIFY_CHARS, IntentClassifier, IntentResult, decide, model_text
 from .llm_client import LLMClient, ResponseCache, UsageLedger
 from .loaders import Dataset, load_dataset
 from .parsers import EvidenceIndex, build_evidence_index, catalog_aliases
@@ -69,7 +69,8 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
 
     # ---- intent (the model's first job) ----
     classifier = IntentClassifier(client, cache)
-    intents: dict[str, IntentResult] = classifier.classify([r["request_text"] for r in requests])
+    texts = {r["case_id"]: model_text(r["request_text"]) for r in requests}
+    intents: dict[str, IntentResult] = classifier.classify([t for t in texts.values() if t is not None])
     owners = resource_owners(index, ds.activity, universe)
     owner_users = {rid: sorted({e.user_id for e in edges}) for rid, edges in owners.items()}
     contexts: list[CaseContext] = []
@@ -77,14 +78,19 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
     for r in requests:
         cid = r["case_id"]
         ctx = CaseContext(cid, r, subjects[cid], False)
-        result = intents[r["request_text"]]
         rows = classify_request_rows(ds.activity, owner_users, ctx)
-        ctx.is_deletion, path = decide(result, rows)
+        if texts[cid] is None:                     # empty text: nothing to authorize, no model call
+            result = IntentResult(None, None, None, None, None, False)
+            ctx.is_deletion, path = False, "empty_request_text->NOT_APPLICABLE"
+        else:
+            result = intents[texts[cid]]
+            ctx.is_deletion, path = decide(result, rows)
         contexts.append(ctx)
         # cache_hit is run metadata (kept in the usage ledger); traces hold only decision facts, so they are
         # byte-identical whether a reply came from the network or the cache.
         intent_trace[cid] = {**{k: v for k, v in asdict(result).items() if k != "cache_hit"},
-                             "classify_request_rows": rows, "path": path, "is_deletion": ctx.is_deletion}
+                             "classify_request_rows": rows, "path": path, "is_deletion": ctx.is_deletion,
+                             **({"truncated_to": MAX_CLASSIFY_CHARS} if len(r["request_text"]) > MAX_CLASSIFY_CHARS else {})}
 
     # ---- attribution (global, all cases jointly) ----
     attribution = attribute(contexts, index, ds.activity, universe)

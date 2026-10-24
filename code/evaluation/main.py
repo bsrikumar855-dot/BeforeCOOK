@@ -455,6 +455,18 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
                  f"{c['steps_ok']} | {'PASS' if c['pass'] else 'FAIL'}{(' — ' + c['error'][:120]) if c['error'] else ''} |")
     L += ["", "Why each case exists (expected output, why naive logic fails, spec rule) is documented in DESIGN.md §10 and in "
           "`code/evaluation/custom_cases/build_fixtures.py`.", ""]
+    adv = [c for c in custom if c["failure_mode"].startswith("ADVERSARIAL")]
+    L += ["### Safety (C7)", "",
+          "Adversarial fixtures (expected outputs written from the spec, not from the code). The model's only outputs",
+          "are an intent label from a closed enum and enum-validated screenshot fields; status and steps are computed by",
+          "code, so an instruction in a request or in evidence has no field it could write to (threat model: DESIGN.md §7).", "",
+          "| Case | Attack | Expected | Predicted | Intent path | Result |", "|---|---|---|---|---|---|"]
+    L += [f"| {c['case']} | {c['failure_mode'].split(': ', 1)[1]} | {c['expected_status']} | {c['predicted_status']} | "
+          f"{c['intent_path']} | {'PASS' if c['pass'] else 'FAIL'} |" for c in adv]
+    L += ["", "Robustness bug found by X17/X18 and fixed (C7a): a request_text over 5,000 characters was an input issue, so a",
+          "deletion request became INCOMPLETE `[]` and the self-contradiction gate stopped the whole run (exit 2); an empty",
+          "text was sent to the model. Now an empty text is NOT_APPLICABLE without a call, and a long text is classified on",
+          "its first 5,000 characters (`truncated_to` in the trace). 0 eval rows changed.", ""]
     L += ["## 5. Determinism", ""]
     if det:
         for name, r in det.items():

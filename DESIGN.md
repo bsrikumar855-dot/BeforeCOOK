@@ -233,6 +233,23 @@ The remediation order "disable flows and block restores before changing dependen
 
 ---
 
+### 7.1 Threat model (C7)
+
+Untrusted inputs are `request_text` (written by the requester), every evidence file (logs, JSON, SQL, PDFs and
+screenshots can carry text written by anyone who touched the source system) and model replies. The asset is the
+output row: an attacker wins by turning a deletion request into COMPLETE or NOT_APPLICABLE, by suppressing a finding,
+or by getting another person's record deleted. Controls: (1) the model never decides status or steps; it returns an
+intent label from a closed enum (anything else fails validation) and enum-checked screenshot fields, and code maps
+those to the output; (2) request texts are fenced with a per-text nonce tag and the prompt declares them data;
+(3) empty texts make no call and texts are capped at 5,000 characters, so padding cannot hide an instruction in a
+huge prompt or inflate cost; (4) logs, JSON, SQL and PDF text are parsed by deterministic code and never shown to a
+model, so an instruction in a log line is just an unknown field; (5) screenshot ids must appear in local OCR text
+(C9) and identifiers must exactly match a known identity, so a model misled by an image cannot invent a record or
+link one to the subject; (6) the validator rejects any row that contradicts itself. Residual risks: an injected
+text may still flip the intent label (DELETION ↔ UNCLEAR) because that label *is* the model's job; X14/X15 show the
+label held on these attacks, not that it always will. A screenshot could show a fake id in its pixels; OCR grounding
+proves only that the id is visible, not that it is genuine. Measured by fixtures X14–X19 (6/6 pass).
+
 ## 8. Failure handling
 
 | Failure | What happens to the row | Logged where | Run continues? |
@@ -342,6 +359,7 @@ The contract assertions above already pass on `sample_output.csv` itself (sort r
 | C4 (shipped) | Three new Gemini key aliases (`GEMINI_API_KEY_FALLBACK_4..6`) probed per (provider, alias, model) and wired as fallbacks; results in `code/evaluation/models_verified.json` (aliases only, never values). `gemini-3.5-flash-lite` answers text, vision and tool calls on all 7 aliases. Quota pools are UNKNOWN (the API does not reveal the project), so extra keys are failover, not proven capacity. No GROQ_API_KEY, so Groq stays unwired. Intent model kept by measurement: 3.5-flash-lite 42/42 (5,711 tokens) vs 3.5-flash 42/42 (12,372 tokens) on 32 samples + 10 non-deletion texts, 42/42 agreement | Switch intent to 3.5-flash | Same accuracy at 46% of the tokens; 0 rows changed |
 | C9 (shipped) | A screenshot resource id from the vision model is kept only when the exact token appears in local OCR text of the same image (Tesseract 5.5.3 via pytesseract 0.3.13, cached by sha256(image + engine)); otherwise UNGROUNDED, dropped and counted. OCR never adds ids. An extracted email/phone not matching a known identity is stored as `unknown_identifiers` and never links | Let OCR add ids it reads; trust the model's ids | Measured: 5 of 32 VLM ids are absent from the OCR text (search_1874, data_flow_9846, export_1261, export_1258, audit_record_002); OCR-only reads include false hits, so adding is unsafe. Effect: 0 eval rows, 0 sample steps changed; one model-only CONFIRMED pair (case_45/audit_record_002) removed. `account_004`, `audit_record_6645`, `audit_record_5569` are NOT_DERIVABLE_FROM_INPUTS and were not pursued |
 | C6 (shipped, tests only) | Category coverage measured (`code/analysis/category_coverage.py` → `code/evaluation/category_coverage.json`): eval traces hold 0 UNMAPPED resources; SECONDARY_IDENTIFIER, CACHE_ENTRY, PRODUCT_TELEMETRY, EMAIL_DELIVERY_LOG have 0 eval resources and LEGAL_HOLD_RECORD has 8 eval / 0 sample. Fixtures X6–X13 add one case per uncovered category (plus USER_EXPORT, MARKETING_PROFILE, BACKUP_ARCHIVE), expected steps written from the rule text. 13/13 pass; no rule bug exposed | Assume the category table is right because the samples pass | The samples never reach five of the fifteen rules. Limit: the fixtures state `record_type`, so they test category → treatment → steps, not category inference from shape. cache_* and email_delivery_* ids occur only in activity rows (no evidence, no identity link), which is why the eval has none |
+| C7 / C7a (shipped) | Six adversarial fixtures X14–X19 (injection only; genuine request + injection; evidence line addressed to the auditor; empty text; 55k-character text with a trailing injection; invalid UTF-8 bytes) and a threat model (§7.1). C7a: an empty request_text is NOT_APPLICABLE with no model call; a long text is classified on its first 5,000 characters instead of being an input issue | Keep the 5,000-character input issue | Under C1 the old rule turned one oversize deletion request into INCOMPLETE `[]` and stopped the whole run with exit 2. 0 eval rows changed; 6/6 adversarial fixtures pass |
 | D-E2 | Do not ship the investigator; do not run it on eval | Ship (the SHIP rule is met vacuously: 0 accepted, 0 incorrect) | 0 of 126 sample proposals accepted, so no number moves (P1). Ceiling argument: the verifier accepts only identity-link support, and any identity link the tools can reach is already a hard link that attribution marks CONFIRMED. Running eval would cost about 300 calls for an expected 0 |
 | D-E1 | Ship neither ordering strategy (see rejection log) | Ship A (4 correct resolutions) | Both made one incorrect resolution on the samples; timing/ordering cannot meet the zero-incorrect bar. The E2 verifier therefore does not accept ordering-only support either |
 | D-TRACE-NORMAL | Traces hold decision facts only; run metadata (cache hits, call ids, latency) lives in the usage ledger | Keep `cache_hit` in traces | The flag made 358 traces differ between a live and a cached run with identical decisions |
