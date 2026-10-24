@@ -19,7 +19,7 @@ from .llm_client import LLMClient, ResponseCache, UsageLedger
 from .loaders import Dataset, load_dataset
 from .parsers import EvidenceIndex, build_evidence_index, catalog_aliases
 from .parsers.png_vlm import ImageExtractor
-from .rules import DATA_FLOW, Policy
+from .rules import DATA_FLOW, SYSTEM_CATEGORIES, Policy
 from .state import reconstruct
 from .steps import build_steps, serialize
 from .validation import HEADER, EvidenceCatalog, case_sort_key, validate_row
@@ -47,7 +47,7 @@ class RunResult:
 
 
 def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
-        image_extraction: bool = True) -> RunResult:
+        image_extraction: bool = True, reextract: set[str] | None = None) -> RunResult:
     ds = load_dataset(dataset_dir, include_samples=include_samples)
     universe = IdentityUniverse(ds.users, ds.audit_log)
     ledger = UsageLedger()
@@ -58,6 +58,8 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
     extractor = ImageExtractor(client, cache, universe, categories) if image_extraction else None
     if extractor is not None:
         extractor.aliases = catalog_aliases(ds, include_user_ids=True)
+        extractor.reextract = set(reextract or ())
+        extractor.system_categories = SYSTEM_CATEGORIES
     index = build_evidence_index(ds, universe, extractor)
 
     requests = ds.all_requests
@@ -212,6 +214,8 @@ def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
         "conflicts": rr.attribution.conflicts,
         "content_conflicts": rr.attribution.content_conflicts,
         "image_rows_accepted": extractor.accepted if extractor else [],
+        "image_legacy_replies_upgraded": extractor.legacy_used if extractor else [],
+        "image_record_type_claims_rejected": extractor.rejected_categories if extractor else [],
         "account_batches": len(rr.attribution.batches),
     }
 

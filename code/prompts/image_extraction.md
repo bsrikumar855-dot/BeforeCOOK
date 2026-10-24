@@ -22,8 +22,13 @@ values.
   `null` when not shown or masked.
 - `enabled`: `true`/`false` if the row shows whether a connector or data flow is enabled, else `null`.
 - `restore_allowed`: `true`/`false` if the row shows whether a backup can be restored, else `null`.
-- `direct_identifiers_visible`: `true` if the row displays a person's email, phone, name or hash,
-  `false` if those fields are shown as empty, removed or anonymized, `null` if not shown.
+- `direct_identifiers_visible`: exactly one of
+  - `true`: the row visibly shows a person's email, phone, name or email hash;
+  - `false`: the image supports that those identifiers are absent (the fields are shown and are empty,
+    masked, removed or marked anonymized/redacted);
+  - `"UNKNOWN"`: the image does not let you decide (for example the fields are not part of this view).
+  Never use `null` here, and never answer `false` just because you did not see identifiers.
+- `direct_identifiers_reason`: one short sentence saying what in the image supports that value.
 - `observed_at`: a timestamp shown for this record, as ISO-8601 (`YYYY-MM-DDTHH:MM:SSZ`), or `null`.
 - `other_fields`: other visible label/value pairs for this row that describe its state, as an object.
 
@@ -47,5 +52,6 @@ Return only JSON in this shape:
 {"screen_title": "...", "captured_at_text": null, "records": [{"resource_id": "account_1", "system_id": "account_service",
   "record_type": "USER_PROFILE", "presence": "PRESENT", "status_text": "Active", "email": null, "phone": null,
   "name": null, "user_id": null, "email_hash": null, "enabled": null, "restore_allowed": null,
-  "direct_identifiers_visible": null, "observed_at": null, "other_fields": {}}]}
+  "direct_identifiers_visible": "UNKNOWN", "direct_identifiers_reason": "the view shows no contact fields",
+  "observed_at": null, "other_fields": {}}]}
 ```

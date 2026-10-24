@@ -1,0 +1,48 @@
+{
+ "batch_size": 1,
+ "call_id": "6563b0bf27804411",
+ "call_usage": {
+  "input_tokens": 2176,
+  "model_version": "gemini-3.6-flash",
+  "output_tokens": 281,
+  "thinking_tokens": 3502,
+  "total_tokens": 5959
+ },
+ "file_id": "evidence_42",
+ "input_sha256": "68c28a72afd6ed184d5990d15c543f8a516face204f0360f732755a8a63c28be",
+ "key": "626a5fd91bb07347f20f79a5be71f86927f244e0e3cb2737c83d7280d0b21294",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash",
+ "prompt_version": "p3a6e61c90ba3",
+ "provider": "gemini",
+ "response": {
+  "captured_at_text": null,
+  "records": [
+   {
+    "direct_identifiers_reason": " The view does not display personal contact or direct identifier fields.",
+    "direct_identifiers_visible": "UNKNOWN",
+    "email": null,
+    "email_hash": null,
+    "enabled": null,
+    "name": null,
+    "observed_at": "2026-03-10T07:18:00Z",
+    "other_fields": {
+     "created": "11 Jan 2024 08:42 UTC",
+     "owner_team": "Account Platform",
+     "reference_type": "Customer key",
+     "region": "eu-west"
+    },
+    "phone": null,
+    "presence": "PRESENT",
+    "record_type": "USER_PROFILE",
+    "resource_id": "user_17",
+    "restore_allowed": null,
+    "status_text": "Retained reference",
+    "system_id": "account_service",
+    "user_id": null
+   }
+  ],
+  "screen_title": "Customer Reference Registry"
+ },
+ "task": "vision"
+}

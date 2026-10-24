@@ -94,3 +94,40 @@ def test_batch_prompt_fences_each_message():
 ])
 def test_intent_decision_paths(label, rows, expected):
     assert decide(IntentResult(label, "en", False, "p", "m", True), rows) == expected
+
+
+def test_visibility_is_tri_state_and_null_is_rejected():
+    from agent.parsers.png_vlm import _validate_reply
+    ok = {"records": [{"resource_id": "a_1", "direct_identifiers_visible": "UNKNOWN", "direct_identifiers_reason": "x"}]}
+    assert _validate_reply(ok)
+    for bad in (None, "unknown", 0):
+        with pytest.raises(ValidationFailed):
+            _validate_reply({"records": [{"resource_id": "a_1", "direct_identifiers_visible": bad,
+                                          "direct_identifiers_reason": "x"}]})
+    with pytest.raises(ValidationFailed):
+        _validate_reply({"records": [{"resource_id": "a_1", "direct_identifiers_visible": True}]})
+
+
+def test_legacy_null_becomes_unknown_never_false():
+    from agent.parsers.png_vlm import ImageExtractor, upgrade_legacy
+    up = upgrade_legacy({"records": [{"resource_id": "tombstone_4", "direct_identifiers_visible": None},
+                                     {"resource_id": "tombstone_5", "direct_identifiers_visible": False}]}, "p0")
+    assert [r["direct_identifiers_visible"] for r in up["records"]] == ["UNKNOWN", False]
+    ex = ImageExtractor(None, None, universe(), ["ACCOUNT_TOMBSTONE"])
+    ef = EvidenceFile("ev_img", "evidence/images/x.png", "t", "2026-03-10T06:00:00Z", "png")
+    from agent.parsers.record_semantics import annotate
+    obs = [annotate(o) for o in ex._to_observations(ef, up, {"tombstone": "identity_service"})]
+    assert obs[0].exposure == "UNKNOWN" and obs[0].fields["direct_identifiers_visible"] == "UNKNOWN"
+    assert obs[1].exposure == "NO_IDENTIFIERS"
+
+
+def test_image_category_claim_must_fit_the_system():
+    from agent.parsers.png_vlm import ImageExtractor
+    ex = ImageExtractor(None, None, universe(), ["USER_PROFILE", "ACCOUNT_TOMBSTONE"])
+    ex.system_categories = {"identity_service": ["ACCOUNT_TOMBSTONE"]}
+    ef = EvidenceFile("ev_img", "evidence/images/x.png", "t", "2026-03-10T06:00:00Z", "png")
+    obs = ex._to_observations(ef, {"records": [{"resource_id": "tombstone_4", "record_type": "USER_PROFILE",
+                                                 "direct_identifiers_visible": "UNKNOWN"}]},
+                              {"tombstone": "identity_service"})
+    assert "record_type" not in obs[0].fields and obs[0].fields["model_record_type_rejected"] == "USER_PROFILE"
+    assert ex.rejected_categories[0]["claimed"] == "USER_PROFILE"

@@ -8,6 +8,7 @@ counted and logged. Replies are cached by sha256(task + prompt_version + image b
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 
 from ..identity import EMAIL_RE, IdentityUniverse
@@ -21,13 +22,36 @@ TOKEN_RE = re.compile(r"(?<![a-z0-9])[a-z]+(?:_[a-z]+)*_\d+")
 PRESENCE = {"PRESENT", "ABSENT", "UNKNOWN"}
 
 
+def valid_visibility(value: object) -> bool:
+    """Exactly true, false or "UNKNOWN" (0/1 and null are rejected: 0 == False in Python)."""
+    return value is True or value is False or value == "UNKNOWN"
+
+
 def _validate_reply(payload: object) -> dict:
     if not isinstance(payload, dict) or not isinstance(payload.get("records"), list):
         raise ValidationFailed('top level must be {"screen_title": ..., "records": [...]}')
     for i, rec in enumerate(payload["records"]):
         if not isinstance(rec, dict) or not isinstance(rec.get("resource_id"), str):
             raise ValidationFailed(f"record {i} must be an object with a string resource_id")
+        if not valid_visibility(rec.get("direct_identifiers_visible")):
+            raise ValidationFailed(f'record {i}: direct_identifiers_visible must be true, false or "UNKNOWN" (not null)')
+        if not isinstance(rec.get("direct_identifiers_reason"), str):
+            raise ValidationFailed(f"record {i}: direct_identifiers_reason must be a string")
     return payload
+
+
+def upgrade_legacy(reply: dict, version: str) -> dict:
+    """Replies cached under the earlier prompt allowed null visibility. Null means 'not decided', so it becomes
+    "UNKNOWN" (never false); true/false keep their meaning."""
+    records = []
+    for rec in reply.get("records", []):
+        rec = dict(rec)
+        if not valid_visibility(rec.get("direct_identifiers_visible")):
+            rec["direct_identifiers_visible"] = "UNKNOWN"
+            rec.setdefault("direct_identifiers_reason", f"legacy extraction ({version}) returned null")
+        rec.setdefault("direct_identifiers_reason", f"legacy extraction ({version})")
+        records.append(rec)
+    return {**reply, "records": records}
 
 
 class ImageExtractor:
@@ -42,6 +66,10 @@ class ImageExtractor:
         # Data-catalog aliases (external reference -> resource id). A screen may show a record under its
         # alias, e.g. a file name or the customer key the catalog maps to the resource.
         self.aliases: dict[str, str] = {}
+        self.reextract: set[str] = set()          # file ids to send to the model again (operator flag)
+        self.legacy_used: list[dict] = []
+        self.system_categories: dict[str, list[str]] = {}   # system -> categories a stated record_type may take
+        self.rejected_categories: list[dict] = []
 
     def __call__(self, ef: EvidenceFile, raw: bytes, prefix_system: dict[str, str]) -> list[Observation]:
         template, _ = self.client.prompt(TASK)
@@ -51,6 +79,8 @@ class ImageExtractor:
         version = "p" + hashlib.sha256(prompt.encode("utf-8")).hexdigest()[:12]
         key = content_key(TASK, version, raw)
         hit = self.cache.get(TASK, key)
+        if hit is None and ef.file_id not in self.reextract:
+            hit = self._legacy_entry(ef)
         if hit is not None:
             reply = hit["response"]
             self.client.ledger.cache_hits.append({"task": TASK, "key": key, "provider": hit.get("provider"),
@@ -71,6 +101,17 @@ class ImageExtractor:
                                        "batch_size": 1, "call_usage": r.usage})
         ef.status = "EXTRACTED"
         return self._to_observations(ef, reply, prefix_system)
+
+    def _legacy_entry(self, ef: EvidenceFile) -> dict | None:
+        """A reply cached under an earlier prompt version for these exact image bytes, upgraded to the schema."""
+        root = self.cache.root / TASK
+        entries = sorted(root.glob("*.json")) if root.exists() else []
+        for p in entries:
+            entry = json.loads(p.read_text(encoding="utf-8"))
+            if entry.get("input_sha256") == ef.sha256:
+                self.legacy_used.append({"file_id": ef.file_id, "prompt_version": entry.get("prompt_version")})
+                return {**entry, "response": upgrade_legacy(entry["response"], entry.get("prompt_version", "?"))}
+        return None
 
     def _to_observations(self, ef: EvidenceFile, reply: dict, prefix_system: dict[str, str]) -> list[Observation]:
         out: list[Observation] = []
@@ -114,8 +155,16 @@ class ImageExtractor:
             presence = str(rec.get("presence") or "UNKNOWN").upper()
             fields["presence"] = presence if presence in PRESENCE else "UNKNOWN"
             rtype = rec.get("record_type")
-            if rtype in self.categories:
+            # A category claim is kept only if it is one of the resolved system's categories: the category picks
+            # the treatment, so an inconsistent claim (e.g. USER_PROFILE on an identity_service tombstone) would
+            # let the model choose the operation.
+            allowed = self.system_categories.get(system, self.categories)
+            if rtype in self.categories and rtype in allowed:
                 fields["record_type"] = rtype
+            elif rtype not in (None, "", "UNKNOWN"):
+                fields["model_record_type_rejected"] = str(rtype)[:40]
+                self.rejected_categories.append({"file_id": ef.file_id, "resource_id": rid, "claimed": rtype,
+                                                 "system_id": system})
             for k in ("enabled", "restore_allowed"):
                 if isinstance(rec.get(k), bool):
                     fields[k] = rec[k]
@@ -128,9 +177,16 @@ class ImageExtractor:
             uid = rec.get("user_id")
             if isinstance(uid, str) and uid.strip() in self.universe.user_ids:
                 fields["customer_reference"] = uid.strip()
-            if rec.get("direct_identifiers_visible") is False and not any(
-                    k in fields for k in ("email", "phone", "full_name", "email_hash")):
+            visible = rec.get("direct_identifiers_visible")
+            visible = visible if valid_visibility(visible) else "UNKNOWN"
+            if visible is True:
+                fields["direct_identifiers"] = "1"
+            elif visible is False and not any(k in fields for k in ("email", "phone", "full_name", "email_hash")):
                 fields["direct_identifiers"] = "0"
+            # "UNKNOWN" (or a legacy null) sets nothing: exposure stays UNKNOWN unless captured fields decide it.
+            fields["direct_identifiers_visible"] = visible
+            if isinstance(rec.get("direct_identifiers_reason"), str):
+                fields["direct_identifiers_reason"] = rec["direct_identifiers_reason"][:160]
             if isinstance(rec.get("status_text"), str):
                 fields["status_text"] = rec["status_text"][:120]
             if salvaged:

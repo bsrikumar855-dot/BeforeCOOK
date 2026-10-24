@@ -15,6 +15,10 @@ providers:
       fallback_1: GEMINI_API_KEY_FALLBACK_1
       fallback_2: GEMINI_API_KEY_FALLBACK_2
       fallback_3: GEMINI_API_KEY_FALLBACK_3
+  groq:
+    endpoint: https://api.groq.com/openai/v1
+    key_slots:
+      primary: GROQ_API_KEY          # not set on this machine on 2026-10-25: the provider is skipped and logged
 
 # Probed 2026-10-24: gemini-2.5-flash-lite returns 404 "no longer available to new users" on every key
 # (the provider recommends gemini-3.5-flash-lite); gemini-2.5-flash allows 20 requests/day per project on
@@ -31,9 +35,13 @@ models:
     id: gemini-3.5-flash-lite
     requests_per_minute: 12
     thinking_budget: null
+  groq_oss:
+    provider: groq
+    id: openai/gpt-oss-120b         # UNVERIFIED: no GROQ_API_KEY, so the Groq model list could not be checked
+    requests_per_minute: 20
   flash_new:
     provider: gemini
-    id: gemini-3.8-flash
+    id: gemini-3.5-flash            # gemini-3.8-flash timed out on a one-line probe (2026-10-25); 3.5-flash answered
     requests_per_minute: 8
     thinking_budget: null
 
@@ -65,6 +73,15 @@ tasks:
       - {model: flash, key_slot: fallback_3}
       - {model: flash_new, key_slot: primary}
       - {model: flash_new, key_slot: fallback_1}
+  investigator:                    # experiment E2
+    prompt_file: investigator.md
+    max_tool_calls: 8
+    attempts:
+      - {model: groq_oss, key_slot: primary}
+      - {model: flash_lite, key_slot: primary}
+      - {model: flash_lite, key_slot: fallback_1}
+      - {model: flash_lite, key_slot: fallback_2}
+      - {model: flash_lite, key_slot: fallback_3}
 
 limits:
   timeout_seconds: 90

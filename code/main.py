@@ -44,6 +44,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--ledger", type=Path, default=CODE_DIR / "evaluation" / "usage_ledger.json")
     ap.add_argument("--allow-degraded", action="store_true",
                     help="on exit 2 or 4, write the diagnostic rows to <output>.degraded.csv (never to output.csv)")
+    ap.add_argument("--reextract", action="append", default=[], metavar="FILE_ID",
+                    help="send this screenshot to the vision model again under the current prompt (repeatable)")
     ap.add_argument("--check-models", action="store_true")
     args = ap.parse_args(argv)
 
@@ -54,7 +56,7 @@ def main(argv: list[str] | None = None) -> int:
         return EXIT_OK
 
     try:
-        rr = pipeline.run(args.dataset, from_cache=args.from_cache)
+        rr = pipeline.run(args.dataset, from_cache=args.from_cache, reextract=set(args.reextract))
     except CacheMiss as exc:
         print(f"ERROR (--from-cache): {exc}", file=sys.stderr)
         return EXIT_CACHE_MISS
