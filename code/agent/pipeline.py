@@ -18,6 +18,7 @@ from .intent import IntentClassifier, IntentResult, decide
 from .llm_client import LLMClient, ResponseCache, UsageLedger
 from .loaders import Dataset, load_dataset
 from .parsers import EvidenceIndex, build_evidence_index, catalog_aliases
+from .parsers.ocr_grounding import OcrReader
 from .parsers.png_vlm import ImageExtractor
 from .rules import DATA_FLOW, SYSTEM_CATEGORIES, Policy
 from .state import reconstruct
@@ -60,6 +61,7 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
         extractor.aliases = catalog_aliases(ds, include_user_ids=True)
         extractor.reextract = set(reextract or ())
         extractor.system_categories = SYSTEM_CATEGORIES
+        extractor.ocr = OcrReader()                       # C9: ids must appear in the image's OCR text
     index = build_evidence_index(ds, universe, extractor)
 
     requests = ds.all_requests
@@ -224,6 +226,9 @@ def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
         "image_rows_accepted": extractor.accepted if extractor else [],
         "image_legacy_replies_upgraded": extractor.legacy_used if extractor else [],
         "image_record_type_claims_rejected": extractor.rejected_categories if extractor else [],
+        "ocr_grounding": {"engines": sorted(extractor.ocr.engines_used) if extractor and extractor.ocr else [],
+                          "ungrounded": extractor.ungrounded if extractor else [],
+                          "per_image": extractor.grounding_report if extractor else {}},
         "account_batches": len(rr.attribution.batches),
     }
 

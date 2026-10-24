@@ -27,26 +27,6 @@
      "case_id": "case_45",
      "identifier": "user_id:user_03",
      "kind": "HARD",
-     "resource_id": "audit_record_002",
-     "source_id": "evidence_37",
-     "strength": "HARD",
-     "time": "2026-08-25T03:21:00Z"
-    }
-   ],
-   "in_scope": false,
-   "label": "CONFIRMED",
-   "rationale": "direct identity link via MODEL_EXTRACTION",
-   "resource_id": "audit_record_002",
-   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
-   "system_id": "security_service"
-  },
-  {
-   "case_id": "case_45",
-   "edges": [
-    {
-     "case_id": "case_45",
-     "identifier": "user_id:user_03",
-     "kind": "HARD",
      "resource_id": "audit_record_003",
      "source_id": "evidence_55",
      "strength": "HARD",
@@ -156,11 +136,6 @@
    "label": "CONFIRMED",
    "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
    "resource_id": "audit_record_001"
-  },
-  {
-   "label": "CONFIRMED",
-   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
-   "resource_id": "audit_record_002"
   },
   {
    "label": "CONFIRMED",

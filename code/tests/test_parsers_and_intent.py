@@ -131,3 +131,26 @@ def test_image_category_claim_must_fit_the_system():
                               {"tombstone": "identity_service"})
     assert "record_type" not in obs[0].fields and obs[0].fields["model_record_type_rejected"] == "USER_PROFILE"
     assert ex.rejected_categories[0]["claimed"] == "USER_PROFILE"
+
+
+def test_ocr_grounding_rejects_an_injected_resource_id():
+    """Negative control (C9): an id the vision model 'saw' but that is absent from the OCR text is dropped."""
+    from agent.parsers.png_vlm import ImageExtractor
+    ex = ImageExtractor(None, None, universe(), ["USER_PROFILE"])
+    ef = EvidenceFile("ev_img", "evidence/images/x.png", "t", "2026-09-26T11:00:00Z", "png")
+    reply = {"records": [{"resource_id": "account_77", "direct_identifiers_visible": "UNKNOWN"},
+                         {"resource_id": "account_999999", "direct_identifiers_visible": "UNKNOWN"}]}   # injected
+    ocr = "Customer Operations\naccount_77  Silver  Tokyo\nsupport_12"
+    obs = ex._to_observations(ef, reply, {"account": "account_service", "support": "support_platform"}, ocr)
+    assert [o.resource_id for o in obs] == ["account_77"]
+    assert ex.ungrounded == [{"file_id": "ev_img", "resource_id": "account_999999", "shown_as": "account_999999"}]
+    assert ex.grounding_report["ev_img"]["ocr_only"] == ["support_12"]
+
+
+def test_unknown_identifier_is_flagged_not_linked():
+    from agent.parsers.png_vlm import ImageExtractor
+    ex = ImageExtractor(None, None, universe(), ["USER_PROFILE"])
+    ef = EvidenceFile("ev_img", "evidence/images/x.png", "t", "2026-09-26T11:00:00Z", "png")
+    obs = ex._to_observations(ef, {"records": [{"resource_id": "account_77", "email": "nobody@example.test",
+                                                 "direct_identifiers_visible": True}]}, {"account": "account_service"})
+    assert obs[0].fields["unknown_identifiers"] == ["email:nobody@example.test"]

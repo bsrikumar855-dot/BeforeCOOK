@@ -1,3 +1,5 @@
 # Python >= 3.10. Everything else is the standard library (sqlite3, csv, json, zlib, urllib).
 PyYAML==6.0.3        # reads code/config/models.yaml
+pytesseract==0.3.13  # OCR grounding of screenshot ids (needs the tesseract binary, 5.5.3 used)
+Pillow==12.2.0       # image decoding for OCR
 pytest==9.0.3        # unit tests only (code/tests)

@@ -48,15 +48,6 @@
      "identifier": "email:lucia-torres@gmail.com",
      "kind": "HARD",
      "resource_id": "data_flow_9846",
-     "source_id": "evidence_14",
-     "strength": "HARD",
-     "time": "2026-08-07T07:59:36Z"
-    },
-    {
-     "case_id": "case_15",
-     "identifier": "email:lucia-torres@gmail.com",
-     "kind": "HARD",
-     "resource_id": "data_flow_9846",
      "source_id": "evidence_01",
      "strength": "HARD",
      "time": "2026-09-15T11:58:11Z"
@@ -64,7 +55,7 @@
    ],
    "in_scope": true,
    "label": "CONFIRMED",
-   "rationale": "direct identity link via MODEL_EXTRACTION, TRACE_JOIN",
+   "rationale": "direct identity link via TRACE_JOIN",
    "resource_id": "data_flow_9846",
    "scope_reason": "identity evidence within [requested_at, audit_at]: evidence_01",
    "system_id": "integration_service"
@@ -177,7 +168,7 @@
   {
    "attribution": "CONFIRMED",
    "category": "DATA_FLOW",
-   "category_basis": "record_type stated in evidence_14",
+   "category_basis": "default category for integration_service",
    "compliant": false,
    "note": "",
    "operations": [
@@ -189,7 +180,7 @@
    "required_action": "DISABLE",
    "resource_id": "data_flow_9846",
    "state": {
-    "exposure": "DIRECT_IDENTIFIERS",
+    "exposure": "UNKNOWN",
     "flow_state": "ENABLED",
     "observation_ids": [
      "evidence_01#L88"

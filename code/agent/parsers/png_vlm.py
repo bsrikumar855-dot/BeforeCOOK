@@ -15,6 +15,7 @@ from ..identity import EMAIL_RE, IdentityUniverse
 from ..llm_client import AllProvidersFailed, CacheMiss, LLMClient, ResponseCache, ValidationFailed, content_key
 from ..loaders import parse_ts
 from ..schema import EvidenceFile, Observation
+from .ocr_grounding import grounded, ocr_ids
 
 TASK = "vision"
 RESOURCE_RE = re.compile(r"^([a-z]+(?:_[a-z]+)*)_(\d+)$")
@@ -70,6 +71,9 @@ class ImageExtractor:
         self.legacy_used: list[dict] = []
         self.system_categories: dict[str, list[str]] = {}   # system -> categories a stated record_type may take
         self.rejected_categories: list[dict] = []
+        self.ocr = None                      # OcrReader: grounding check for resource ids (C9); None = off
+        self.ungrounded: list[dict] = []
+        self.grounding_report: dict[str, dict] = {}
 
     def __call__(self, ef: EvidenceFile, raw: bytes, prefix_system: dict[str, str]) -> list[Observation]:
         template, _ = self.client.prompt(TASK)
@@ -100,7 +104,8 @@ class ImageExtractor:
                                        "model": r.model, "key_slot": r.key_slot, "call_id": r.call_id,
                                        "batch_size": 1, "call_usage": r.usage})
         ef.status = "EXTRACTED"
-        return self._to_observations(ef, reply, prefix_system)
+        ocr_text = self.ocr.text(ef.file_id, raw) if self.ocr is not None else None
+        return self._to_observations(ef, reply, prefix_system, ocr_text)
 
     def _legacy_entry(self, ef: EvidenceFile) -> dict | None:
         """A reply cached under an earlier prompt version for these exact image bytes, upgraded to the schema."""
@@ -113,8 +118,10 @@ class ImageExtractor:
                 return {**entry, "response": upgrade_legacy(entry["response"], entry.get("prompt_version", "?"))}
         return None
 
-    def _to_observations(self, ef: EvidenceFile, reply: dict, prefix_system: dict[str, str]) -> list[Observation]:
+    def _to_observations(self, ef: EvidenceFile, reply: dict, prefix_system: dict[str, str],
+                         ocr_text: str | None = None) -> list[Observation]:
         out: list[Observation] = []
+        report = {"vlm_ids": [], "grounded": [], "ungrounded": [], "ocr_ids": [], "ocr_only": []}
         for i, rec in enumerate(reply.get("records", [])):
             rid = str(rec.get("resource_id", "")).strip()
             alias_of = None
@@ -138,6 +145,14 @@ class ImageExtractor:
                     self._drop(ef, rid, "resource_id prefix is not a known system prefix")
                     continue
             system = prefix_system[m.group(1)]
+            shown = alias_of or rid            # the token the screen actually shows
+            report["vlm_ids"].append(shown)
+            if ocr_text is not None and not grounded(shown, ocr_text):
+                report["ungrounded"].append(shown)
+                self.ungrounded.append({"file_id": ef.file_id, "resource_id": rid, "shown_as": shown})
+                self._drop(ef, rid, "UNGROUNDED: token absent from the image's OCR text")
+                continue
+            report["grounded"].append(shown)
             claimed = rec.get("system_id")
             overridden = None
             if claimed not in (None, "", system):
@@ -174,6 +189,12 @@ class ImageExtractor:
             for k in ("phone", "name", "email_hash"):
                 if isinstance(rec.get(k), str) and rec[k].strip():
                     fields[k if k != "name" else "full_name"] = rec[k].strip()
+            # Identifier values are not checked against OCR (it mangles them); only an exact match against the
+            # identity tables links anyone. Others are kept as content but flagged as unknown identifiers.
+            unknown = [f"{k}:{fields[k]}" for k in ("email", "phone", "email_hash") if k in fields
+                       and not self.universe.owners_of(k, fields[k].lower() if k == "email" else fields[k])]
+            if unknown:
+                fields["unknown_identifiers"] = unknown
             uid = rec.get("user_id")
             if isinstance(uid, str) and uid.strip() in self.universe.user_ids:
                 fields["customer_reference"] = uid.strip()
@@ -204,6 +225,11 @@ class ImageExtractor:
                                   **({"salvaged_from": salvaged} if salvaged else {}),
                                   **({"catalog_alias": alias_of} if alias_of else {}),
                                   **({"system_claim_overridden": overridden} if overridden else {})})
+        if ocr_text is not None:
+            report["ocr_ids"] = sorted(ocr_ids(ocr_text, set(prefix_system)))
+            report["ocr_only"] = sorted(set(report["ocr_ids"]) - set(report["vlm_ids"]) -
+                                        {self.aliases.get(x, x) for x in report["vlm_ids"]})
+            self.grounding_report[ef.file_id] = report
         return out
 
     def _drop(self, ef: EvidenceFile, rid: str, reason: str) -> None:
