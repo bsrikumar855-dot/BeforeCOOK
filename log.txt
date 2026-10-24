@@ -213,3 +213,25 @@ repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
 
+
+## [2026-10-25T00:58:57+05:30] Round 3: C3, C4, C5, C9, C6, C7, C8 shipped with change records
+
+User Prompt (verbatim, secrets redacted):
+ROUND 3. Execute C3, C4, C5, C9, C6, C7, C8 in that order. [Full pasted block: one change at a time with a change record (CHANGE / requirement / rows fixed / rows at risk / cost / VERDICT) and a local commit naming the change; SHIP only with 0 incorrect sample rows, 0 broken sample steps, no sample-specific logic and all tests + determinism passing, else REVERT and log; E1/E2 stay reverted. C3 .gitattributes; C4 probe 3 new keys by alias, wire fallbacks, model comparison, per-alias usage; C5 approved M2 policy; C9 local OCR grounding of screenshot ids with negative control; C6 category coverage + fixtures; C7 adversarial fixtures + Safety section + threat model; C8 usage metadata in every cache entry and usage report from the entries used; full validation after each change; final report then STOP. Local only, never push; never print or commit key values; do not modify CLAUDE.md.]
+
+Agent Response Summary:
+All seven changes shipped; none reverted. Only C5 changed an eval row (case_55 now reports the undeterminable restore control as open, then BLOCK_RESTORE and VERIFY_RESTORE_BLOCKED); C3, C4, C9, C6, C7 and C8 changed 0 rows. Sample metrics are unchanged from the baseline: status 31/32, precision 171/171, recall 171/193, sequence 16/32. C9 dropped 5 screenshot ids that were not in the OCR text. C7 found and fixed a robustness bug: an oversize request text stopped the whole run at exit 2. C8 found that legacy screenshot cache hits were logged under the wrong key. README merge-conflict markers left by an old merge were removed. 79 tests pass, custom cases 19/19 pass, and 3 processes give 553 byte-identical files; final output.csv sha256 e176b22d...
+
+Actions:
+* Commits ed12ebb C3, e05bc17 C4, 620eae3 C5, 8ce6a07 + 34ea5a8 C9, ff459f1 C6, 01f2881 C7, a600ab2 C8, 91bae6d docs, 76baf17 final validation (local only, never pushed)
+* Added code/agent/parsers/ocr_grounding.py, code/analysis/{probe_keys,compare_intent,category_coverage,backfill_usage_metadata}.py, fixtures X6-X19 in code/evaluation/custom_cases/build_fixtures.py, tests (79 pass)
+* Edited code/agent/{pipeline,intent,loaders,rules,validation,llm_client}.py, code/agent/parsers/png_vlm.py, code/main.py, code/evaluation/main.py, requirements.txt (pytesseract 0.3.13, Pillow 12.2.0), DESIGN.md, README.md
+* Live calls this round: C4 key probes and 4 intent comparison calls, plus 4 adversarial-fixture intent calls (gemini-3.5-flash-lite); the dataset run itself made 0 live calls
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none
