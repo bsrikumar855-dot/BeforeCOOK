@@ -1,0 +1,13 @@
+{
+ "zip_sha256": "f31df141bcf08209b9364e86e64fa597e1127c9564e1dd8d2d2236c50ebaad3b",
+ "repo_output_sha256": "e176b22d8a1e452823b9f6d9c1ce874fe70543eb2f7635ffcef75220d17133c8",
+ "pip_install_exit": 0,
+ "run_exit": 0,
+ "run_summary": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409",
+ "clean_output_sha256": "e176b22d8a1e452823b9f6d9c1ce874fe70543eb2f7635ffcef75220d17133c8",
+ "output_byte_identical": true,
+ "evaluation_exit": 0,
+ "evaluation_metrics": "status 31/32 (96.9%); steps recall 171/193 (88.6%); precision 171/171 (100.0%); sequence 16/32 (50.0%); custom 19/19 pass",
+ "repo_metrics": "status 31/32 (96.9%); steps recall 171/193 (88.6%); precision 171/171 (100.0%); sequence 16/32 (50.0%); custom 19/19 pass",
+ "metrics_identical": true
+}

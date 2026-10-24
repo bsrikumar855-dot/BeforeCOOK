@@ -144,7 +144,8 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/evaluation/cache_audit.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/evaluation/cache_audit.py` | 300, 800 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/clean_room.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
-| `code/evaluation/clean_room.py` | 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/evaluation/clean_room.py` | 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/evaluation/clean_room.py` | 100.0 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
 | `code/evaluation/coupling_probes.py` | 30 | changed cases listed in the probe report | JUDGEMENT | report length |
 | `code/evaluation/coupling_probes.py` | 60 | characters of a rationale kept as a rule kind | JUDGEMENT | rule grouping |
 | `code/evaluation/coupling_probes.py` | 10 | examples listed in the probe report | JUDGEMENT | report length |

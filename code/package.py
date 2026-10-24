@@ -1,8 +1,8 @@
 """Build code.zip: the stdlib equivalent of the README's packaging command, for machines without `zip`.
 
-    zip -r code.zip README.md code evaluation -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "*/node_modules/*" "*/.git/*" "*/.DS_Store"
+    zip -r code.zip README.md requirements.txt code evaluation -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "*/node_modules/*" "*/.git/*" "*/.DS_Store"
 
-Same inputs (README.md, code/, evaluation/) and the same exclusions, plus the release rules: no dataset/, no .env, no
+Same inputs (README.md, requirements.txt, code/, evaluation/) and the same exclusions, plus the release rules: no dataset/, no .env, no
 nested archives, no temporary or degraded outputs. Entries are written in sorted order with a fixed timestamp, so the
 archive is byte-identical for identical inputs. Prints the archive's sha256.
 
@@ -17,7 +17,7 @@ import zipfile
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-INCLUDE = ["README.md", "code", "evaluation"]
+INCLUDE = ["README.md", "requirements.txt", "code", "evaluation"]
 EXCLUDE_DIRS = {"__pycache__", ".venv", "venv", "node_modules", ".git", ".pytest_cache", "dataset"}
 EXCLUDE_NAMES = {".DS_Store", ".env"}
 EXCLUDE_SUFFIXES = {".zip", ".pyc", ".tmp"}

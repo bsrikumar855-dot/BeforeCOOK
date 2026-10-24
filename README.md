@@ -209,11 +209,11 @@ committed; reports name key aliases only.
 
 ## Packaging
 
-`code.zip` holds README.md, `code/` (including `code/DESIGN.md`, `code/CONSTANTS.md`, the committed cache and the
+`code.zip` holds README.md, requirements.txt, `code/` (including `code/DESIGN.md`, `code/CONSTANTS.md`, the committed cache and the
 evaluation scripts) and `evaluation/` (the two reports at the path the problem statement names). With `zip`:
 
 ```bash
-zip -r code.zip README.md code evaluation -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "*/node_modules/*" "*/.git/*" "*/.DS_Store"
+zip -r code.zip README.md requirements.txt code evaluation -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "*/node_modules/*" "*/.git/*" "*/.DS_Store"
 ```
 
 Without `zip` (stdlib, same inputs and exclusions, byte-identical for identical inputs, prints the sha256):

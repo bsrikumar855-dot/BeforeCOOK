@@ -25,4 +25,4 @@ Both are graded mechanically, not by judgment call — which makes them the chea
 
 ## Why this belongs in the code-quality 30%, specifically
 
-This is exactly the kind of check a code reviewer runs first, before reading a single line of business logic — grep for `sk-`, `api_key = "`, `/Users/`, and unseeded `random.` calls. Failing any of these signals "this wasn't built with the assumption that someone else would run it," which is a bad first impression to make on 30% of your score before the interesting engineering is even evaluated.
+This is exactly the kind of check a code reviewer runs first, before reading a single line of business logic — grep for `sk-`, `api_key = '...'`, `/Users/`, and unseeded `random.` calls. Failing any of these signals "this wasn't built with the assumption that someone else would run it," which is a bad first impression to make on 30% of your score before the interesting engineering is even evaluated.
