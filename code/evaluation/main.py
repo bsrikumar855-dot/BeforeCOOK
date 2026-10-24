@@ -55,6 +55,16 @@ def pct(n: int, d: int) -> str:
     return f"{n}/{d} ({100.0 * n / d:.1f}%)" if d else f"{n}/0"
 
 
+REPO_PATH = REPO_ROOT
+
+def redact(text: str, *dirs) -> str:
+    """Captured subprocess output without local paths (temp dirs, the repo, the home directory)."""
+    for d in sorted({str(x) for x in dirs} | {str(REPO_PATH), str(Path.home())}, key=len, reverse=True):
+        text = text.replace(d, "<" + ("repo" if d == str(REPO_PATH) else "home" if d == str(Path.home()) else "tmp") + ">")
+        text = text.replace(d.replace("\\", "\\\\"), "<path>")
+    return text
+
+
 # ----------------------------------------------------------------------------------- samples
 def sample_metrics(expected: dict[str, dict], predicted: dict[str, dict], ds, traces: dict[str, dict]) -> dict:
     catalog = EvidenceCatalog(ds.manifest, ds.activity, ds.audit_log)
@@ -287,8 +297,8 @@ def determinism_check() -> dict:
                     env.pop(var)                                  # --from-cache never reads .env either
             proc = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=str(REPO_ROOT))
             ledger = json.loads((tmp / f"{name}_ledger.json").read_text()) if (tmp / f"{name}_ledger.json").exists() else {}
-            out[name] = {"returncode": proc.returncode, "pythonhashseed": opt["seed"], "stdout": proc.stdout.strip()[-300:],
-                         "stderr": proc.stderr.strip()[-300:], "model_calls": len(ledger.get("calls", [])),
+            out[name] = {"returncode": proc.returncode, "pythonhashseed": opt["seed"], "stdout": redact(proc.stdout.strip(), tmp)[-300:],
+                         "stderr": redact(proc.stderr.strip(), tmp)[-300:], "model_calls": len(ledger.get("calls", [])),
                          "digests": _digest_dir(d) if d.exists() else {}}
         base = out["run_1"]["digests"]
         for name in ("run_2", "from_cache_no_keys"):
@@ -565,7 +575,9 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
         L.append("- Not run in this invocation (use `--determinism`).")
     L += ["", "## 6. Failures found and improvements made", ""] + NARRATIVE
     L += [""] + appendix
-    (EVAL_DIR / "evaluation_report.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+    for target in (EVAL_DIR, REPO_ROOT / "evaluation"):     # code/evaluation and the zip-root evaluation/ the spec names
+        target.mkdir(exist_ok=True)
+        (target / "evaluation_report.md").write_text("\n".join(L) + "\n", encoding="utf-8", newline="\n")
 
     t = usage["total"]
     n = max(1, usage["requests"])
@@ -625,7 +637,9 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
           "re-extractions. Groq was never called (no GROQ_API_KEY).", "",
           "| Cache folder / model | Calls | Total tokens |", "|---|---|---|"]
     U += [f"| {k} | {v.get('calls', 0)} | {v.get('tokens', 0)} |" for k, v in usage["experiments"].items()]
-    (EVAL_DIR / "usage_report.md").write_text("\n".join(U) + "\n", encoding="utf-8")
+    for target in (EVAL_DIR, REPO_ROOT / "evaluation"):     # code/evaluation and the zip-root evaluation/ the spec names
+        target.mkdir(exist_ok=True)
+        (target / "usage_report.md").write_text("\n".join(U) + "\n", encoding="utf-8", newline="\n")
 
 
 def _category_coverage() -> dict:

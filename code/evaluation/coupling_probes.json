@@ -106,17 +106,34 @@
   "changed_outside_dependents": [],
   "pass": true
  },
+ "media_and_rules": {
+  "cases_depending_on_png_or_pdf": 26,
+  "of_cases": 550,
+  "png_pdf_cases_changed_under_a": [],
+  "single_case_rules": [
+   "attribution:CONFIRMED:CATALOG_LINK, DOCUMENT_COMENTION, MODEL_EXTRACTION",
+   "attribution:CONFIRMED:CATALOG_LINK, MODEL_EXTRACTION, SAME_RECORD",
+   "attribution:CONFIRMED:CATALOG_LINK, MODEL_EXTRACTION, SAME_RECORD, TRACE_JOIN",
+   "attribution:CONFIRMED:MODEL_EXTRACTION",
+   "attribution:CONFIRMED:MODEL_EXTRACTION, TRACE_JOIN",
+   "attribution:CONFLICT:,        ,  CATALOG_LINK",
+   "category_basis:default category for object_storage",
+   "category_basis:shape: email_opt_in",
+   "note:CONTROL_UNDETERMINABLE",
+   "note:EXPOSURE_UNKNOWN"
+  ]
+ },
  "literals": {
   "hits": [
    {
     "file": "code/agent/validation.py",
-    "line": 124,
+    "line": 126,
     "literal": "case_33",
     "kind": "comment/docstring/prompt"
    },
    {
     "file": "code/agent/validation.py",
-    "line": 124,
+    "line": 126,
     "literal": "case_100",
     "kind": "comment/docstring/prompt"
    },
@@ -210,23 +227,6 @@
     "literal": "account_1",
     "kind": "comment/docstring/prompt"
    }
-  ]
- },
- "media_and_rules": {
-  "cases_depending_on_png_or_pdf": 26,
-  "of_cases": 550,
-  "png_pdf_cases_changed_under_a": [],
-  "single_case_rules": [
-   "attribution:CONFIRMED:CATALOG_LINK, DOCUMENT_COMENTION, MODEL_EXTRACTION",
-   "attribution:CONFIRMED:CATALOG_LINK, MODEL_EXTRACTION, SAME_RECORD",
-   "attribution:CONFIRMED:CATALOG_LINK, MODEL_EXTRACTION, SAME_RECORD, TRACE_JOIN",
-   "attribution:CONFIRMED:MODEL_EXTRACTION",
-   "attribution:CONFIRMED:MODEL_EXTRACTION, TRACE_JOIN",
-   "attribution:CONFLICT:,        ,  CATALOG_LINK",
-   "category_basis:default category for object_storage",
-   "category_basis:shape: email_opt_in",
-   "note:CONTROL_UNDETERMINABLE",
-   "note:EXPOSURE_UNKNOWN"
   ]
  }
 }

@@ -1,0 +1,73 @@
+{
+ "dataset_run": {
+  "exit": 0,
+  "live_calls": 0,
+  "cache_hits": 409,
+  "output_identical_to_repo": true,
+  "stderr": ""
+ },
+ "fixtures": {
+  "exit": 0,
+  "cases": 19,
+  "ok": 19,
+  "misses": {},
+  "stderr": ""
+ },
+ "coupling_probes": {
+  "exit": 0,
+  "child_exits": {
+   "baseline": 0,
+   "a_id_bijection": 0,
+   "b_row_order": 0,
+   "c_timestamp_format": 0,
+   "d_email_case": 0,
+   "e_drop_evidence_file": 0
+  }
+ },
+ "prompt_versions": {
+  "current_text_prompts": {
+   "intent": "pfb7d2f0c21e6",
+   "investigator": "p15424f9426dd"
+  },
+  "entries": {
+   "compare_gemini-3.5-flash": {
+    "pfb7d2f0c21e6": 42
+   },
+   "compare_gemini-3.5-flash-lite": {
+    "pfb7d2f0c21e6": 42
+   },
+   "intent": {
+    "pfb7d2f0c21e6": 407
+   },
+   "investigator": {
+    "p15424f9426dd": 28
+   },
+   "vision": {
+    "pb1da0fa903ab": 10,
+    "p3a6e61c90ba3": 1
+   }
+  },
+  "text_entries_not_matching_current_prompt": [],
+  "vision_versions_read_by_the_run": [
+   "p3a6e61c90ba3",
+   "pb1da0fa903ab"
+  ]
+ },
+ "ocr": {
+  "entries": 44,
+  "images": 11,
+  "passes": [
+   "base",
+   "x2",
+   "x2_psm11",
+   "x3_autocontrast_psm6"
+  ],
+  "engines": [
+   "tesseract 5.5.3.20260724"
+  ]
+ },
+ "orphans": [],
+ "cache_files": 574,
+ "cache_bytes": 642818,
+ "cache_misses": 0
+}

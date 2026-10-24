@@ -38,6 +38,16 @@ LINE_BYTES = 1_000_000
 RE_FUNCS = {"compile", "search", "match", "fullmatch", "finditer", "findall", "sub", "subn", "split"}
 
 
+REPO_PATH = REPO
+
+def redact(text: str, *dirs) -> str:
+    """Captured subprocess output without local paths (temp dirs, the repo, the home directory)."""
+    for d in sorted({str(x) for x in dirs} | {str(REPO_PATH), str(Path.home())}, key=len, reverse=True):
+        text = text.replace(d, "<" + ("repo" if d == str(REPO_PATH) else "home" if d == str(Path.home()) else "tmp") + ">")
+        text = text.replace(d.replace("\\", "\\\\"), "<path>")
+    return text
+
+
 # ----------------------------------------------------------------------------------- part 1: regexes
 def product_files() -> list[Path]:
     return [CODE / "main.py"] + sorted((CODE / "agent").rglob("*.py"))
@@ -131,7 +141,7 @@ def run_regex_battery() -> list[dict]:
             times = json.loads(proc.stdout.strip().splitlines()[-1]) if proc.returncode == 0 else {}
             worst = max(times.values()) if times else None
             ok = proc.returncode == 0 and worst is not None and worst <= BOUND_SECONDS
-            res = "PASS" if ok else (f"FAIL: {proc.stderr.strip()[-200:]}" if proc.returncode else "FAIL: over bound")
+            res = "PASS" if ok else (f"FAIL: {redact(proc.stderr.strip())[-200:]}" if proc.returncode else "FAIL: over bound")
         except subprocess.TimeoutExpired:
             times, worst, res = {}, None, f"FAIL: timeout > {BOUND_SECONDS * n_inputs + 10:.0f}s"
         shown = spec.get("pattern")
@@ -254,7 +264,7 @@ def run_fixture(name: str, ds: Path, expected: dict[str, str], tmp: Path) -> dic
     return {"expected": expected, "rejected": rejected, "exit": proc.returncode, "rows": len(rows),
             "cases_failed_closed": len(fail_closed), "fail_closed_examples": fail_closed[:5],
             "complete_rows_citing_pre_drop_proof": violations[:5], "checks": checks, "pass": all(checks.values()),
-            "stderr": proc.stderr.strip()[-300:]}
+            "stderr": redact(proc.stderr.strip(), tmp)[-300:]}
 
 
 def main() -> int:

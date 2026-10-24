@@ -49,6 +49,16 @@ OPS = ["REPORT_REMAINING_RECORD", "REPORT_EXPOSED_PII", "REPORT_ACTIVE_DATA_FLOW
        "VERIFY_DATA_FLOW_DISABLED", "VERIFY_RESTORE_BLOCKED"]
 
 
+REPO_PATH = REPO
+
+def redact(text: str, *dirs) -> str:
+    """Captured subprocess output without local paths (temp dirs, the repo, the home directory)."""
+    for d in sorted({str(x) for x in dirs} | {str(REPO_PATH), str(Path.home())}, key=len, reverse=True):
+        text = text.replace(d, "<" + ("repo" if d == str(REPO_PATH) else "home" if d == str(Path.home()) else "tmp") + ">")
+        text = text.replace(d.replace("\\", "\\\\"), "<path>")
+    return text
+
+
 # ----------------------------------------------------------------------------------- id bijection
 def id_prefixes() -> set[str]:
     """Prefixes of the values in the dataset's id columns (the values, not a guessed pattern)."""
@@ -265,7 +275,7 @@ def run_child(out: Path, ds: Path, cache: Path, pdf_map: dict | None = None, pdf
     path = out / "output.csv"
     if not path.exists():
         path = out / "output.csv.degraded.csv" if (out / "output.csv.degraded.csv").exists() else out / "output.degraded.csv"
-    return {"returncode": proc.returncode, "stderr": proc.stderr.strip()[-400:], "output": path, "traces": out / "traces"}
+    return {"returncode": proc.returncode, "stderr": redact(proc.stderr.strip(), out.parent)[-400:], "output": path, "traces": out / "traces"}
 
 
 def child_main(argv: list[str]) -> int:
@@ -369,10 +379,6 @@ def main() -> int:
         base_rows = canonical(read_output(base["output"]))
         base_samples = canonical(read_output(tmp / "base_out" / "samples.csv"))
         results["baseline"] = {"returncode": base["returncode"], "rows": len(base_rows)}
-        keep_traces = REPO / "code" / "evaluation" / ".probe_base_traces"
-        shutil.rmtree(keep_traces, ignore_errors=True)
-        shutil.copytree(base["traces"], keep_traces)
-        results["_base_traces"] = str(keep_traces)
         mapping = build_bijection(id_prefixes())
         inverse = {v: k for k, v in mapping.items()}
         cites = Counter()
@@ -403,9 +409,9 @@ def main() -> int:
                   f"samples_changed={len(changed_s)} fixture={fx['fixture']}")
             if keep is None:
                 shutil.rmtree(tmp / name, ignore_errors=True)
+        # computed while the temp dir (with the baseline traces) still exists; nothing is written under code/
+        results["media_and_rules"] = media_and_rule_firings(base["traces"], set(results["a_id_bijection"]["changed_cases"]))
     results["literals"] = literal_audit()
-    results["media_and_rules"] = media_and_rule_firings(Path(results.pop("_base_traces")),
-                                                        set(results["a_id_bijection"]["changed_cases"]))
     print("media/rules:", json.dumps(results["media_and_rules"])[:900])
     code_hits = [h for h in results["literals"]["hits"] if h["kind"] == "code"]
     print(f"corpus literals in executable code: {len(code_hits)} {code_hits[:10]}")

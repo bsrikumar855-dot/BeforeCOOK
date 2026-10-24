@@ -113,7 +113,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/category_coverage.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/compare_intent.py` | 2 | a sentence used <= 2 times marks a free-text (non-template) request | JUDGEMENT | which texts the C4 comparison treats as free text |
 | `code/analysis/compare_intent.py` | 90 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
-| `code/analysis/constants_register.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 24, 25, 30, 40, 60.0, 64, 100, 200, 255, 400, 401, 403, 404, 429, 500, 502, 503, 504, 518, 5000, 40000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
+| `code/analysis/constants_register.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 20, 24, 25, 30, 40, 60.0, 64, 100, 200, 255, 400, 401, 403, 404, 420, 429, 500, 502, 503, 504, 518, 2026, 5000, 40000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
 | `code/analysis/e1_order_inference.py` | 25 | E1-B burst gap in minutes (first trough of the unlabelled gap histogram) | JUDGEMENT | rejected experiment only; see main table |
 | `code/analysis/e1_order_inference.py` | 10 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/e1_order_inference.py` | 60 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
@@ -139,6 +139,12 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/profile_dataset.py` | 10 | regex capture-group index | STANDARD | the wrong capture is read |
 | `code/analysis/profile_dataset.py` | 12, 30, 140 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/profile_dataset.py` | 60, 3600, 86400 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
+| `code/evaluation/cache_audit.py` | 2500 | JSON pretty-print indent | STANDARD | only file formatting (cache files are byte-compared) |
+| `code/evaluation/cache_audit.py` | 3 | exit code of a cache miss | SPEC | README exit-code table: 3 = cache miss |
+| `code/evaluation/cache_audit.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
+| `code/evaluation/cache_audit.py` | 300, 800 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/evaluation/clean_room.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
+| `code/evaluation/clean_room.py` | 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/coupling_probes.py` | 30 | changed cases listed in the probe report | JUDGEMENT | report length |
 | `code/evaluation/coupling_probes.py` | 60 | characters of a rationale kept as a rule kind | JUDGEMENT | rule grouping |
 | `code/evaluation/coupling_probes.py` | 10 | examples listed in the probe report | JUDGEMENT | report length |
@@ -169,6 +175,9 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/main.py` | 3 | exit code: cache miss under --from-cache | JUDGEMENT | callers' exit-code handling (README table) |
 | `code/main.py` | 4 | exit code: model failure / degraded run | JUDGEMENT | callers' exit-code handling (README table) |
 | `code/main.py` | 2 | exit code: output validation failed / invalid explain input | JUDGEMENT | callers' exit-code handling (README table) |
+| `code/package.py` | 420 | file mode 0o644 for zip entries | STANDARD | extracted file permissions |
+| `code/package.py` | 2026 | fixed zip entry timestamp (year) for a reproducible archive | JUDGEMENT | only the archive bytes; any fixed date works |
+| `code/package.py` | 16 | shift of the Unix mode into external_attr | BOUND | ZIP APPNOTE 4.4.15: modes unreadable |
 
 ### Config keys (generated from `code/config/*.yaml`; list items collapsed to `[]`)
 

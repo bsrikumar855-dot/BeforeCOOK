@@ -63,4 +63,3 @@ re-extractions. Groq was never called (no GROQ_API_KEY).
 | intent/gemini-3.5-flash | 2 | 12372 |
 | intent/gemini-3.5-flash-lite | 11 | 13301 |
 | investigator/gemini-3.5-flash-lite | 28 | 41780 |
-| vision/gemini-2.5-flash | 1 | 2216 |
