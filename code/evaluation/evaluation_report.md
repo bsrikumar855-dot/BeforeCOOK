@@ -204,11 +204,27 @@ pipeline labels NON_DELETION (corroborated by CLASSIFY_REQUEST rows; that truth 
 
 Agreement 42/42. Kept `gemini-3.5-flash-lite`: equal accuracy at fewer tokens. Key probes (aliases only) are in `code/evaluation/models_verified.json`.
 
+## 4c. Dataset-coupling probes (G1, `code/evaluation/coupling_probes.py`)
+
+Perturbed copies of dataset/ and code/cache/ in a temp dir, each run with --from-cache in a child process;
+outputs compared after mapping ids back and canonicalising step order with the spec ordering rule.
+
+| Probe | Result | Eval rows changed | Sample rows changed | Fixture |
+|---|---|---|---|---|
+| a_id_bijection | PASS | 0 | 0 | {'ids_in_bijection': 10558, 'renamed_tokens': 19760, 'unrenamed_tokens': 0, 'coverage': '19760/19760'} |
+| b_row_order | PASS | 0 | 0 | {'csv_files': 9, 'json_files': 28} |
+| c_timestamp_format | PASS | 0 | 0 | {'timestamps_rewritten': 6911, 'scope': 'top-level CSV files only'} |
+| d_email_case | PASS | 0 | 0 | {'request_emails': 550, 'files': 86} |
+| e_drop_evidence_file | PASS | 12 | 0 | {'dropped': 'evidence_08'}; dependent cases 19, changed outside them [] |
+
+Cases depending on PNG/PDF content (renamed through the cached extraction, OCR text and a PDF text hook): 26/550; changed under (a): [].
+Corpus literals in executable code: 0. Rules firing on exactly one case (reviewed: general mechanisms, rare in this data, none copied wording): 10.
+
+Defects found: (1) the probe's own renamer missed ids joined to another token in a model reply (`user_11_account_5762`); fixed in the probe. (2) Traceability: an elimination entry named the other person but not the evidence that linked them, so an INFERRED pick's dependency on that evidence was invisible (dropping evidence_08 changed case_78 and case_102 outside the trace-derived dependents). Eliminations now record their `sources`; 0 output rows changed.
+
 ## 5. Determinism
 
-- run_1: PYTHONHASHSEED=1, exit 0, live model calls 0, files compared 553
-- run_2: PYTHONHASHSEED=2, exit 0, live model calls 0, files compared 553, identical to run_1: True, differences: []
-- from_cache_no_keys: PYTHONHASHSEED=3, exit 0, live model calls 0, files compared 553, identical to run_1: True, differences: []
+- Not run in this invocation (use `--determinism`).
 
 ## 6. Failures found and improvements made
 

@@ -96,52 +96,86 @@
   {
    "activity_id": "activity_801",
    "reason": "hard-linked to ['user_430']",
-   "resource_id": "legal_hold_438"
+   "resource_id": "legal_hold_438",
+   "sources": [
+    "evidence_40"
+   ]
   },
   {
    "activity_id": "activity_803",
    "reason": "hard-linked to ['user_414']",
-   "resource_id": "account_3075"
+   "resource_id": "account_3075",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_805",
    "reason": "hard-linked to ['user_415']",
-   "resource_id": "account_4921"
+   "resource_id": "account_4921",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_806",
    "reason": "hard-linked to ['user_429']",
-   "resource_id": "support_3615"
+   "resource_id": "support_3615",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_807",
    "reason": "hard-linked to ['user_430']",
-   "resource_id": "export_9343"
+   "resource_id": "export_9343",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_808",
    "reason": "hard-linked to ['user_429']",
-   "resource_id": "search_7427"
+   "resource_id": "search_7427",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_809",
    "reason": "hard-linked to ['user_430']",
-   "resource_id": "search_3844"
+   "resource_id": "search_3844",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_810",
    "reason": "hard-linked to ['user_414']",
-   "resource_id": "data_flow_1412"
+   "resource_id": "data_flow_1412",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_813",
    "reason": "hard-linked to ['user_414']",
-   "resource_id": "search_6600"
+   "resource_id": "search_6600",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_814",
    "reason": "hard-linked to ['user_415']",
-   "resource_id": "search_5479"
+   "resource_id": "search_5479",
+   "sources": [
+    "evidence_39"
+   ]
   }
  ],
  "excluded": [],

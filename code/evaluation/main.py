@@ -500,6 +500,31 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
               for m, r in cmp["models"].items()]
         L += ["", f"Agreement {cmp['agreement']}. Kept `gemini-3.5-flash-lite`: equal accuracy at fewer tokens. Key probes "
               "(aliases only) are in `code/evaluation/models_verified.json`.", ""]
+    cp = EVAL_DIR / "coupling_probes.json"
+    if cp.exists():
+        pr = json.loads(cp.read_text(encoding="utf-8"))
+        L += ["## 4c. Dataset-coupling probes (G1, `code/evaluation/coupling_probes.py`)", "",
+              "Perturbed copies of dataset/ and code/cache/ in a temp dir, each run with --from-cache in a child process;",
+              "outputs compared after mapping ids back and canonicalising step order with the spec ordering rule.", "",
+              "| Probe | Result | Eval rows changed | Sample rows changed | Fixture |", "|---|---|---|---|---|"]
+        for k in ("a_id_bijection", "b_row_order", "c_timestamp_format", "d_email_case", "e_drop_evidence_file"):
+            r = pr.get(k, {})
+            fx = {kk: vv for kk, vv in r.get("fixture", {}).items() if kk not in ("prefixes", "unrenamed_examples")}
+            extra = (f"; dependent cases {r['dependent_cases']}, changed outside them {r['changed_outside_dependents']}"
+                     if k.startswith("e_") else "")
+            L.append(f"| {k} | {'PASS' if r.get('pass') else 'FAIL'} | {r.get('eval_rows_changed')} | "
+                     f"{r.get('sample_rows_changed')} | {fx}{extra} |")
+        mr = pr.get("media_and_rules", {})
+        L += ["", f"Cases depending on PNG/PDF content (renamed through the cached extraction, OCR text and a PDF text hook): "
+              f"{mr.get('cases_depending_on_png_or_pdf')}/{mr.get('of_cases')}; changed under (a): {mr.get('png_pdf_cases_changed_under_a')}.",
+              f"Corpus literals in executable code: {len([h for h in pr.get('literals', {}).get('hits', []) if h['kind'] == 'code'])}. "
+              f"Rules firing on exactly one case (reviewed: general mechanisms, rare in this data, none copied wording): "
+              f"{len(mr.get('single_case_rules', []))}.", "",
+              "Defects found: (1) the probe's own renamer missed ids joined to another token in a model reply "
+              "(`user_11_account_5762`); fixed in the probe. (2) Traceability: an elimination entry named the other person but "
+              "not the evidence that linked them, so an INFERRED pick's dependency on that evidence was invisible (dropping "
+              "evidence_08 changed case_78 and case_102 outside the trace-derived dependents). Eliminations now record their "
+              "`sources`; 0 output rows changed.", ""]
     L += ["## 5. Determinism", ""]
     if det:
         for name, r in det.items():

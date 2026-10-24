@@ -136,12 +136,18 @@
   {
    "activity_id": "activity_3141",
    "reason": "hard-linked to ['user_96']",
-   "resource_id": "data_flow_3165"
+   "resource_id": "data_flow_3165",
+   "sources": [
+    "evidence_89"
+   ]
   },
   {
    "activity_id": "activity_3142",
    "reason": "hard-linked to ['user_97']",
-   "resource_id": "backup_7804"
+   "resource_id": "backup_7804",
+   "sources": [
+    "evidence_89"
+   ]
   }
  ],
  "excluded": [

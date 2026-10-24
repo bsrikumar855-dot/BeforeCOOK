@@ -1,0 +1,232 @@
+{
+ "baseline": {
+  "returncode": 0,
+  "rows": 518
+ },
+ "a_id_bijection": {
+  "returncode": 0,
+  "fixture": {
+   "ids_in_bijection": 10558,
+   "prefixes": [
+    "account",
+    "activity",
+    "analytics",
+    "audit",
+    "audit_record",
+    "backup",
+    "cache",
+    "case",
+    "data_flow",
+    "email_delivery",
+    "evidence",
+    "export",
+    "legal_hold",
+    "marketing",
+    "object",
+    "search",
+    "support",
+    "tombstone",
+    "user"
+   ],
+   "renamed_tokens": 19760,
+   "unrenamed_tokens": 0,
+   "unrenamed_examples": [],
+   "coverage": "19760/19760"
+  },
+  "eval_rows_changed": 0,
+  "changed_cases": [],
+  "sample_rows_changed": 0,
+  "changed_samples": [],
+  "stderr": "",
+  "pass": true
+ },
+ "b_row_order": {
+  "returncode": 0,
+  "fixture": {
+   "csv_files": 9,
+   "json_files": 28
+  },
+  "eval_rows_changed": 0,
+  "changed_cases": [],
+  "sample_rows_changed": 0,
+  "changed_samples": [],
+  "stderr": "",
+  "pass": true
+ },
+ "c_timestamp_format": {
+  "returncode": 0,
+  "fixture": {
+   "timestamps_rewritten": 6911,
+   "scope": "top-level CSV files only"
+  },
+  "eval_rows_changed": 0,
+  "changed_cases": [],
+  "sample_rows_changed": 0,
+  "changed_samples": [],
+  "stderr": "",
+  "pass": true
+ },
+ "d_email_case": {
+  "returncode": 0,
+  "fixture": {
+   "request_emails": 550,
+   "files": 86
+  },
+  "eval_rows_changed": 0,
+  "changed_cases": [],
+  "sample_rows_changed": 0,
+  "changed_samples": [],
+  "stderr": "",
+  "pass": true
+ },
+ "e_drop_evidence_file": {
+  "returncode": 0,
+  "fixture": {
+   "dropped": "evidence_08"
+  },
+  "eval_rows_changed": 12,
+  "changed_cases": [
+   "case_102",
+   "case_78",
+   "case_83",
+   "case_84",
+   "case_85",
+   "case_86",
+   "case_87",
+   "case_88",
+   "case_89",
+   "case_90",
+   "case_91",
+   "case_92"
+  ],
+  "sample_rows_changed": 0,
+  "changed_samples": [],
+  "stderr": "",
+  "dependent_cases": 19,
+  "changed_outside_dependents": [],
+  "pass": true
+ },
+ "literals": {
+  "hits": [
+   {
+    "file": "code/agent/validation.py",
+    "line": 124,
+    "literal": "case_33",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/agent/validation.py",
+    "line": 124,
+    "literal": "case_100",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 10,
+    "literal": "account_1234",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 10,
+    "literal": "search_88",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 11,
+    "literal": "support_7",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 11,
+    "literal": "analytics_12",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 11,
+    "literal": "export_5",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 11,
+    "literal": "data_flow_9",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 11,
+    "literal": "backup_3",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 11,
+    "literal": "audit_record_4",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 11,
+    "literal": "tombstone_2",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 12,
+    "literal": "legal_hold_6",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 12,
+    "literal": "marketing_1",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 12,
+    "literal": "object_8",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction.md",
+    "line": 52,
+    "literal": "account_1",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/investigator.md",
+    "line": 42,
+    "literal": "case_1",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/investigator.md",
+    "line": 42,
+    "literal": "account_1",
+    "kind": "comment/docstring/prompt"
+   }
+  ]
+ },
+ "media_and_rules": {
+  "cases_depending_on_png_or_pdf": 26,
+  "of_cases": 550,
+  "png_pdf_cases_changed_under_a": [],
+  "single_case_rules": [
+   "attribution:CONFIRMED:CATALOG_LINK, DOCUMENT_COMENTION, MODEL_EXTRACTION",
+   "attribution:CONFIRMED:CATALOG_LINK, MODEL_EXTRACTION, SAME_RECORD",
+   "attribution:CONFIRMED:CATALOG_LINK, MODEL_EXTRACTION, SAME_RECORD, TRACE_JOIN",
+   "attribution:CONFIRMED:MODEL_EXTRACTION",
+   "attribution:CONFIRMED:MODEL_EXTRACTION, TRACE_JOIN",
+   "attribution:CONFLICT:,        ,  CATALOG_LINK",
+   "category_basis:default category for object_storage",
+   "category_basis:shape: email_opt_in",
+   "note:CONTROL_UNDETERMINABLE",
+   "note:EXPOSURE_UNKNOWN"
+  ]
+ }
+}

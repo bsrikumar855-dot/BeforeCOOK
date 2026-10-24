@@ -286,12 +286,20 @@
   {
    "activity_id": "activity_1804",
    "reason": "hard-linked to ['user_277']",
-   "resource_id": "backup_8588"
+   "resource_id": "backup_8588",
+   "sources": [
+    "evidence_26",
+    "evidence_77"
+   ]
   },
   {
    "activity_id": "activity_1805",
    "reason": "hard-linked to ['user_278']",
-   "resource_id": "support_7073"
+   "resource_id": "support_7073",
+   "sources": [
+    "evidence_26",
+    "evidence_77"
+   ]
   }
  ],
  "excluded": [

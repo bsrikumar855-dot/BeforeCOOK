@@ -241,62 +241,103 @@
   {
    "activity_id": "activity_2637",
    "reason": "hard-linked to ['user_187']",
-   "resource_id": "account_5848"
+   "resource_id": "account_5848",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2642",
    "reason": "hard-linked to ['user_173']",
-   "resource_id": "account_246"
+   "resource_id": "account_246",
+   "sources": [
+    "evidence_17"
+   ]
   },
   {
    "activity_id": "activity_2645",
    "reason": "hard-linked to ['user_173']",
-   "resource_id": "support_8164"
+   "resource_id": "support_8164",
+   "sources": [
+    "evidence_17",
+    "evidence_84"
+   ]
   },
   {
    "activity_id": "activity_2646",
    "reason": "hard-linked to ['user_173']",
-   "resource_id": "data_flow_4319"
+   "resource_id": "data_flow_4319",
+   "sources": [
+    "evidence_17",
+    "evidence_84"
+   ]
   },
   {
    "activity_id": "activity_2647",
    "reason": "hard-linked to ['user_173']",
-   "resource_id": "backup_549"
+   "resource_id": "backup_549",
+   "sources": [
+    "evidence_17",
+    "evidence_84"
+   ]
   },
   {
    "activity_id": "activity_2648",
    "reason": "hard-linked to ['user_186']",
-   "resource_id": "data_flow_707"
+   "resource_id": "data_flow_707",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2650",
    "reason": "hard-linked to ['user_186']",
-   "resource_id": "search_3223"
+   "resource_id": "search_3223",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2651",
    "reason": "hard-linked to ['user_187']",
-   "resource_id": "search_4334"
+   "resource_id": "search_4334",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2652",
    "reason": "hard-linked to ['user_187']",
-   "resource_id": "support_8447"
+   "resource_id": "support_8447",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2654",
    "reason": "hard-linked to ['user_172']",
-   "resource_id": "support_1887"
+   "resource_id": "support_1887",
+   "sources": [
+    "evidence_17",
+    "evidence_84"
+   ]
   },
   {
    "activity_id": "activity_2655",
    "reason": "hard-linked to ['user_187']",
-   "resource_id": "analytics_1120"
+   "resource_id": "analytics_1120",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2657",
    "reason": "hard-linked to ['user_172']",
-   "resource_id": "search_2138"
+   "resource_id": "search_2138",
+   "sources": [
+    "evidence_17",
+    "evidence_84"
+   ]
   }
  ],
  "excluded": [

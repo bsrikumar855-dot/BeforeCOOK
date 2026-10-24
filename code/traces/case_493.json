@@ -127,17 +127,26 @@
   {
    "activity_id": "activity_296",
    "reason": "hard-linked to ['user_520']",
-   "resource_id": "support_8538"
+   "resource_id": "support_8538",
+   "sources": [
+    "evidence_48"
+   ]
   },
   {
    "activity_id": "activity_299",
    "reason": "hard-linked to ['user_506']",
-   "resource_id": "support_2691"
+   "resource_id": "support_2691",
+   "sources": [
+    "evidence_47"
+   ]
   },
   {
    "activity_id": "activity_300",
    "reason": "hard-linked to ['user_505']",
-   "resource_id": "backup_369"
+   "resource_id": "backup_369",
+   "sources": [
+    "evidence_47"
+   ]
   }
  ],
  "excluded": [

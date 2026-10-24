@@ -194,7 +194,9 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
                 if not set(owner_users[a.resource_id]) & set(c.subject.user_ids):
                     result.eliminated.setdefault(c.case_id, []).append(
                         {"resource_id": a.resource_id, "activity_id": a.activity_id,
-                         "reason": f"hard-linked to {owner_users[a.resource_id]}"})
+                         "reason": f"hard-linked to {owner_users[a.resource_id]}",
+                         # the evidence behind the elimination: an INFERRED pick in this batch depends on it (G1)
+                         "sources": sorted({e.source_id for e in owners[a.resource_id]})})
                 continue                                  # owned resources were handled by hard edges
             timing_cands[a.resource_id].append((c.case_id, a))
 

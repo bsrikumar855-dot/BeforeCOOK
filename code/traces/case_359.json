@@ -181,17 +181,26 @@
   {
    "activity_id": "activity_1200",
    "reason": "hard-linked to ['user_358']",
-   "resource_id": "export_350"
+   "resource_id": "export_350",
+   "sources": [
+    "evidence_33"
+   ]
   },
   {
    "activity_id": "activity_1201",
    "reason": "hard-linked to ['user_359']",
-   "resource_id": "search_496"
+   "resource_id": "search_496",
+   "sources": [
+    "evidence_33"
+   ]
   },
   {
    "activity_id": "activity_1203",
    "reason": "hard-linked to ['user_358']",
-   "resource_id": "search_957"
+   "resource_id": "search_957",
+   "sources": [
+    "evidence_33"
+   ]
   }
  ],
  "excluded": [

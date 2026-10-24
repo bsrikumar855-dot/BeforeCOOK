@@ -167,17 +167,26 @@
   {
    "activity_id": "activity_725",
    "reason": "hard-linked to ['user_431']",
-   "resource_id": "account_5817"
+   "resource_id": "account_5817",
+   "sources": [
+    "evidence_41"
+   ]
   },
   {
    "activity_id": "activity_727",
    "reason": "hard-linked to ['user_445']",
-   "resource_id": "backup_5192"
+   "resource_id": "backup_5192",
+   "sources": [
+    "evidence_66"
+   ]
   },
   {
    "activity_id": "activity_733",
    "reason": "hard-linked to ['user_431']",
-   "resource_id": "search_9100"
+   "resource_id": "search_9100",
+   "sources": [
+    "evidence_41"
+   ]
   }
  ],
  "excluded": [

@@ -127,7 +127,10 @@
   {
    "activity_id": "activity_1630",
    "reason": "hard-linked to ['user_299']",
-   "resource_id": "search_5268"
+   "resource_id": "search_5268",
+   "sources": [
+    "evidence_75"
+   ]
   }
  ],
  "excluded": [

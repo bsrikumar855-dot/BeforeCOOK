@@ -199,7 +199,10 @@
   {
    "activity_id": "activity_3248",
    "reason": "hard-linked to ['user_107']",
-   "resource_id": "search_2016"
+   "resource_id": "search_2016",
+   "sources": [
+    "evidence_10"
+   ]
   }
  ],
  "excluded": [

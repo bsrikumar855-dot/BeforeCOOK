@@ -192,7 +192,10 @@
   {
    "activity_id": "activity_479",
    "reason": "hard-linked to ['user_457']",
-   "resource_id": "backup_1140"
+   "resource_id": "backup_1140",
+   "sources": [
+    "evidence_43"
+   ]
   }
  ],
  "excluded": [

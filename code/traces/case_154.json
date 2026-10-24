@@ -85,37 +85,60 @@
   {
    "activity_id": "activity_2806",
    "reason": "hard-linked to ['user_166']",
-   "resource_id": "account_8748"
+   "resource_id": "account_8748",
+   "sources": [
+    "evidence_16"
+   ]
   },
   {
    "activity_id": "activity_2807",
    "reason": "hard-linked to ['user_165']",
-   "resource_id": "account_5284"
+   "resource_id": "account_5284",
+   "sources": [
+    "evidence_16",
+    "evidence_85"
+   ]
   },
   {
    "activity_id": "activity_2808",
    "reason": "hard-linked to ['user_167']",
-   "resource_id": "account_7268"
+   "resource_id": "account_7268",
+   "sources": [
+    "evidence_16"
+   ]
   },
   {
    "activity_id": "activity_2810",
    "reason": "hard-linked to ['user_151']",
-   "resource_id": "account_8023"
+   "resource_id": "account_8023",
+   "sources": [
+    "evidence_15"
+   ]
   },
   {
    "activity_id": "activity_2811",
    "reason": "hard-linked to ['user_166']",
-   "resource_id": "export_4102"
+   "resource_id": "export_4102",
+   "sources": [
+    "evidence_85"
+   ]
   },
   {
    "activity_id": "activity_2813",
    "reason": "hard-linked to ['user_167']",
-   "resource_id": "search_2126"
+   "resource_id": "search_2126",
+   "sources": [
+    "evidence_16",
+    "evidence_85"
+   ]
   },
   {
    "activity_id": "activity_2816",
    "reason": "hard-linked to ['user_151']",
-   "resource_id": "search_9831"
+   "resource_id": "search_9831",
+   "sources": [
+    "evidence_15"
+   ]
   }
  ],
  "excluded": [],

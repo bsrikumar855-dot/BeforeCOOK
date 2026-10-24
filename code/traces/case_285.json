@@ -121,12 +121,18 @@
   {
    "activity_id": "activity_1954",
    "reason": "hard-linked to ['user_284']",
-   "resource_id": "account_2016"
+   "resource_id": "account_2016",
+   "sources": [
+    "evidence_76"
+   ]
   },
   {
    "activity_id": "activity_1961",
    "reason": "hard-linked to ['user_282']",
-   "resource_id": "data_flow_6953"
+   "resource_id": "data_flow_6953",
+   "sources": [
+    "evidence_76"
+   ]
   }
  ],
  "excluded": [

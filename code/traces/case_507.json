@@ -165,17 +165,26 @@
   {
    "activity_id": "activity_290",
    "reason": "hard-linked to ['user_520']",
-   "resource_id": "account_1096"
+   "resource_id": "account_1096",
+   "sources": [
+    "evidence_48"
+   ]
   },
   {
    "activity_id": "activity_296",
    "reason": "hard-linked to ['user_520']",
-   "resource_id": "support_8538"
+   "resource_id": "support_8538",
+   "sources": [
+    "evidence_48"
+   ]
   },
   {
    "activity_id": "activity_299",
    "reason": "hard-linked to ['user_506']",
-   "resource_id": "support_2691"
+   "resource_id": "support_2691",
+   "sources": [
+    "evidence_47"
+   ]
   }
  ],
  "excluded": [

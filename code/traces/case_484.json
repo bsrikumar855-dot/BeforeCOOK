@@ -103,27 +103,46 @@
   {
    "activity_id": "activity_490",
    "reason": "hard-linked to ['user_481']",
-   "resource_id": "account_9398"
+   "resource_id": "account_9398",
+   "sources": [
+    "evidence_45"
+   ]
   },
   {
    "activity_id": "activity_492",
    "reason": "hard-linked to ['user_481']",
-   "resource_id": "data_flow_3669"
+   "resource_id": "data_flow_3669",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   },
   {
    "activity_id": "activity_494",
    "reason": "hard-linked to ['user_481']",
-   "resource_id": "search_1613"
+   "resource_id": "search_1613",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   },
   {
    "activity_id": "activity_495",
    "reason": "hard-linked to ['user_481']",
-   "resource_id": "backup_4600"
+   "resource_id": "backup_4600",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   },
   {
    "activity_id": "activity_496",
    "reason": "hard-linked to ['user_481']",
-   "resource_id": "support_4364"
+   "resource_id": "support_4364",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   }
  ],
  "excluded": [],

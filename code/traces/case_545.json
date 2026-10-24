@@ -125,27 +125,44 @@
   {
    "activity_id": "activity_3719",
    "reason": "hard-linked to ['user_20']",
-   "resource_id": "account_3270"
+   "resource_id": "account_3270",
+   "sources": [
+    "evidence_01"
+   ]
   },
   {
    "activity_id": "activity_3721",
    "reason": "hard-linked to ['user_543']",
-   "resource_id": "tombstone_205"
+   "resource_id": "tombstone_205",
+   "sources": [
+    "evidence_52"
+   ]
   },
   {
    "activity_id": "activity_3723",
    "reason": "hard-linked to ['user_20']",
-   "resource_id": "analytics_7438"
+   "resource_id": "analytics_7438",
+   "sources": [
+    "activity_4003",
+    "evidence_01",
+    "evidence_19"
+   ]
   },
   {
    "activity_id": "activity_3724",
    "reason": "hard-linked to ['user_544']",
-   "resource_id": "tombstone_8648"
+   "resource_id": "tombstone_8648",
+   "sources": [
+    "evidence_52"
+   ]
   },
   {
    "activity_id": "activity_3725",
    "reason": "hard-linked to ['user_20']",
-   "resource_id": "search_4639"
+   "resource_id": "search_4639",
+   "sources": [
+    "evidence_01"
+   ]
   }
  ],
  "excluded": [

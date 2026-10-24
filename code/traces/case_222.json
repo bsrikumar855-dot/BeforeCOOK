@@ -154,22 +154,34 @@
   {
    "activity_id": "activity_2513",
    "reason": "hard-linked to ['user_191']",
-   "resource_id": "account_1065"
+   "resource_id": "account_1065",
+   "sources": [
+    "evidence_82"
+   ]
   },
   {
    "activity_id": "activity_2517",
    "reason": "hard-linked to ['user_205']",
-   "resource_id": "backup_6407"
+   "resource_id": "backup_6407",
+   "sources": [
+    "evidence_20"
+   ]
   },
   {
    "activity_id": "activity_2518",
    "reason": "hard-linked to ['user_206']",
-   "resource_id": "support_2134"
+   "resource_id": "support_2134",
+   "sources": [
+    "evidence_20"
+   ]
   },
   {
    "activity_id": "activity_2519",
    "reason": "hard-linked to ['user_206']",
-   "resource_id": "search_1118"
+   "resource_id": "search_1118",
+   "sources": [
+    "evidence_20"
+   ]
   }
  ],
  "excluded": [

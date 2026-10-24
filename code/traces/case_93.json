@@ -96,12 +96,18 @@
   {
    "activity_id": "activity_3230",
    "reason": "hard-linked to ['user_92']",
-   "resource_id": "search_7631"
+   "resource_id": "search_7631",
+   "sources": [
+    "evidence_89"
+   ]
   },
   {
    "activity_id": "activity_3232",
    "reason": "hard-linked to ['user_92']",
-   "resource_id": "support_7691"
+   "resource_id": "support_7691",
+   "sources": [
+    "evidence_89"
+   ]
   }
  ],
  "excluded": [],

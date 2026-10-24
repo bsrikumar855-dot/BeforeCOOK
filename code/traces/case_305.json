@@ -242,22 +242,34 @@
   {
    "activity_id": "activity_1765",
    "reason": "hard-linked to ['user_305']",
-   "resource_id": "account_585"
+   "resource_id": "account_585",
+   "sources": [
+    "evidence_29"
+   ]
   },
   {
    "activity_id": "activity_1767",
    "reason": "hard-linked to ['user_304']",
-   "resource_id": "support_450"
+   "resource_id": "support_450",
+   "sources": [
+    "evidence_29"
+   ]
   },
   {
    "activity_id": "activity_1770",
    "reason": "hard-linked to ['user_304']",
-   "resource_id": "search_8250"
+   "resource_id": "search_8250",
+   "sources": [
+    "evidence_29"
+   ]
   },
   {
    "activity_id": "activity_1771",
    "reason": "hard-linked to ['user_305']",
-   "resource_id": "search_7660"
+   "resource_id": "search_7660",
+   "sources": [
+    "evidence_29"
+   ]
   }
  ],
  "excluded": [

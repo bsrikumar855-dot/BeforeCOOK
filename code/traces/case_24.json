@@ -161,37 +161,61 @@
   {
    "activity_id": "activity_3596",
    "reason": "hard-linked to ['user_10']",
-   "resource_id": "support_002"
+   "resource_id": "support_002",
+   "sources": [
+    "evidence_61"
+   ]
   },
   {
    "activity_id": "activity_3600",
    "reason": "hard-linked to ['user_26']",
-   "resource_id": "account_5684"
+   "resource_id": "account_5684",
+   "sources": [
+    "evidence_02"
+   ]
   },
   {
    "activity_id": "activity_3604",
    "reason": "hard-linked to ['user_549']",
-   "resource_id": "tombstone_3963"
+   "resource_id": "tombstone_3963",
+   "sources": [
+    "evidence_52"
+   ]
   },
   {
    "activity_id": "activity_3605",
    "reason": "hard-linked to ['user_26']",
-   "resource_id": "support_4715"
+   "resource_id": "support_4715",
+   "sources": [
+    "evidence_02",
+    "evidence_92"
+   ]
   },
   {
    "activity_id": "activity_3606",
    "reason": "hard-linked to ['user_26']",
-   "resource_id": "data_flow_6244"
+   "resource_id": "data_flow_6244",
+   "sources": [
+    "evidence_02",
+    "evidence_92"
+   ]
   },
   {
    "activity_id": "activity_3607",
    "reason": "hard-linked to ['user_26']",
-   "resource_id": "backup_3120"
+   "resource_id": "backup_3120",
+   "sources": [
+    "evidence_02",
+    "evidence_92"
+   ]
   },
   {
    "activity_id": "activity_3609",
    "reason": "hard-linked to ['user_550']",
-   "resource_id": "tombstone_7389"
+   "resource_id": "tombstone_7389",
+   "sources": [
+    "evidence_52"
+   ]
   }
  ],
  "excluded": [

@@ -223,12 +223,18 @@
   {
    "activity_id": "activity_3209",
    "reason": "hard-linked to ['user_108']",
-   "resource_id": "data_flow_8857"
+   "resource_id": "data_flow_8857",
+   "sources": [
+    "evidence_10"
+   ]
   },
   {
    "activity_id": "activity_3210",
    "reason": "hard-linked to ['user_108']",
-   "resource_id": "search_3993"
+   "resource_id": "search_3993",
+   "sources": [
+    "evidence_10"
+   ]
   }
  ],
  "excluded": [

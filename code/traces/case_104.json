@@ -264,17 +264,26 @@
   {
    "activity_id": "activity_3273",
    "reason": "hard-linked to ['user_103']",
-   "resource_id": "account_6345"
+   "resource_id": "account_6345",
+   "sources": [
+    "evidence_10"
+   ]
   },
   {
    "activity_id": "activity_3277",
    "reason": "hard-linked to ['user_104']",
-   "resource_id": "search_7223"
+   "resource_id": "search_7223",
+   "sources": [
+    "evidence_10"
+   ]
   },
   {
    "activity_id": "activity_3279",
    "reason": "hard-linked to ['user_103']",
-   "resource_id": "search_4618"
+   "resource_id": "search_4618",
+   "sources": [
+    "evidence_10"
+   ]
   }
  ],
  "excluded": [

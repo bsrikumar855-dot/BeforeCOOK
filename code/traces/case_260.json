@@ -76,17 +76,26 @@
   {
    "activity_id": "activity_1938",
    "reason": "hard-linked to ['user_259']",
-   "resource_id": "account_3150"
+   "resource_id": "account_3150",
+   "sources": [
+    "evidence_24"
+   ]
   },
   {
    "activity_id": "activity_1942",
    "reason": "hard-linked to ['user_259']",
-   "resource_id": "legal_hold_8017"
+   "resource_id": "legal_hold_8017",
+   "sources": [
+    "evidence_24"
+   ]
   },
   {
    "activity_id": "activity_1944",
    "reason": "hard-linked to ['user_259']",
-   "resource_id": "search_6781"
+   "resource_id": "search_6781",
+   "sources": [
+    "evidence_24"
+   ]
   }
  ],
  "excluded": [

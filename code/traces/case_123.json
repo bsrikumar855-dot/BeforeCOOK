@@ -96,7 +96,11 @@
   {
    "activity_id": "activity_3169",
    "reason": "hard-linked to ['user_122']",
-   "resource_id": "support_9126"
+   "resource_id": "support_9126",
+   "sources": [
+    "evidence_12",
+    "evidence_87"
+   ]
   }
  ],
  "excluded": [

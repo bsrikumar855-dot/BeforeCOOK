@@ -116,7 +116,10 @@
   {
    "activity_id": "activity_3449",
    "reason": "hard-linked to ['user_59']",
-   "resource_id": "search_7455"
+   "resource_id": "search_7455",
+   "sources": [
+    "evidence_05"
+   ]
   }
  ],
  "excluded": [

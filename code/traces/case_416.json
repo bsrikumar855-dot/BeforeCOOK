@@ -87,52 +87,86 @@
   {
    "activity_id": "activity_801",
    "reason": "hard-linked to ['user_430']",
-   "resource_id": "legal_hold_438"
+   "resource_id": "legal_hold_438",
+   "sources": [
+    "evidence_40"
+   ]
   },
   {
    "activity_id": "activity_804",
    "reason": "hard-linked to ['user_416']",
-   "resource_id": "account_9120"
+   "resource_id": "account_9120",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_805",
    "reason": "hard-linked to ['user_415']",
-   "resource_id": "account_4921"
+   "resource_id": "account_4921",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_806",
    "reason": "hard-linked to ['user_429']",
-   "resource_id": "support_3615"
+   "resource_id": "support_3615",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_807",
    "reason": "hard-linked to ['user_430']",
-   "resource_id": "export_9343"
+   "resource_id": "export_9343",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_808",
    "reason": "hard-linked to ['user_429']",
-   "resource_id": "search_7427"
+   "resource_id": "search_7427",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_809",
    "reason": "hard-linked to ['user_430']",
-   "resource_id": "search_3844"
+   "resource_id": "search_3844",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_812",
    "reason": "hard-linked to ['user_416']",
-   "resource_id": "search_8686"
+   "resource_id": "search_8686",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_814",
    "reason": "hard-linked to ['user_415']",
-   "resource_id": "search_5479"
+   "resource_id": "search_5479",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_815",
    "reason": "hard-linked to ['user_416']",
-   "resource_id": "support_9464"
+   "resource_id": "support_9464",
+   "sources": [
+    "evidence_39"
+   ]
   }
  ],
  "excluded": [],

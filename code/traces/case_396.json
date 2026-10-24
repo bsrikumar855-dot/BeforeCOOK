@@ -207,17 +207,26 @@
   {
    "activity_id": "activity_973",
    "reason": "hard-linked to ['user_408']",
-   "resource_id": "data_flow_8300"
+   "resource_id": "data_flow_8300",
+   "sources": [
+    "evidence_38"
+   ]
   },
   {
    "activity_id": "activity_974",
    "reason": "hard-linked to ['user_408']",
-   "resource_id": "search_9987"
+   "resource_id": "search_9987",
+   "sources": [
+    "evidence_38"
+   ]
   },
   {
    "activity_id": "activity_977",
    "reason": "hard-linked to ['user_395']",
-   "resource_id": "search_3232"
+   "resource_id": "search_3232",
+   "sources": [
+    "evidence_69"
+   ]
   }
  ],
  "excluded": [

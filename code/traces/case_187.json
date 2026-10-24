@@ -76,27 +76,42 @@
   {
    "activity_id": "activity_2686",
    "reason": "hard-linked to ['user_200']",
-   "resource_id": "account_5547"
+   "resource_id": "account_5547",
+   "sources": [
+    "evidence_82"
+   ]
   },
   {
    "activity_id": "activity_2692",
    "reason": "hard-linked to ['user_184']",
-   "resource_id": "data_flow_7428"
+   "resource_id": "data_flow_7428",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2694",
    "reason": "hard-linked to ['user_183']",
-   "resource_id": "analytics_1950"
+   "resource_id": "analytics_1950",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2695",
    "reason": "hard-linked to ['user_184']",
-   "resource_id": "search_4062"
+   "resource_id": "search_4062",
+   "sources": [
+    "evidence_83"
+   ]
   },
   {
    "activity_id": "activity_2697",
    "reason": "hard-linked to ['user_183']",
-   "resource_id": "search_8463"
+   "resource_id": "search_8463",
+   "sources": [
+    "evidence_83"
+   ]
   }
  ],
  "excluded": [

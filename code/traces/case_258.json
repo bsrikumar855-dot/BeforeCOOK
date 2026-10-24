@@ -172,27 +172,42 @@
   {
    "activity_id": "activity_1976",
    "reason": "hard-linked to ['user_270']",
-   "resource_id": "account_4226"
+   "resource_id": "account_4226",
+   "sources": [
+    "evidence_25"
+   ]
   },
   {
    "activity_id": "activity_1981",
    "reason": "hard-linked to ['user_257']",
-   "resource_id": "account_9608"
+   "resource_id": "account_9608",
+   "sources": [
+    "evidence_24"
+   ]
   },
   {
    "activity_id": "activity_1983",
    "reason": "hard-linked to ['user_270']",
-   "resource_id": "data_flow_2010"
+   "resource_id": "data_flow_2010",
+   "sources": [
+    "evidence_25"
+   ]
   },
   {
    "activity_id": "activity_1984",
    "reason": "hard-linked to ['user_270']",
-   "resource_id": "search_3875"
+   "resource_id": "search_3875",
+   "sources": [
+    "evidence_25"
+   ]
   },
   {
    "activity_id": "activity_1987",
    "reason": "hard-linked to ['user_257']",
-   "resource_id": "search_6990"
+   "resource_id": "search_6990",
+   "sources": [
+    "evidence_24"
+   ]
   }
  ],
  "excluded": [

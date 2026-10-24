@@ -281,17 +281,26 @@
   {
    "activity_id": "activity_976",
    "reason": "hard-linked to ['user_394']",
-   "resource_id": "export_4664"
+   "resource_id": "export_4664",
+   "sources": [
+    "evidence_69"
+   ]
   },
   {
    "activity_id": "activity_977",
    "reason": "hard-linked to ['user_395']",
-   "resource_id": "search_3232"
+   "resource_id": "search_3232",
+   "sources": [
+    "evidence_69"
+   ]
   },
   {
    "activity_id": "activity_978",
    "reason": "hard-linked to ['user_394']",
-   "resource_id": "search_7293"
+   "resource_id": "search_7293",
+   "sources": [
+    "evidence_69"
+   ]
   }
  ],
  "excluded": [

@@ -2664,36 +2664,7 @@
    "error": ""
   }
  ],
- "determinism": {
-  "run_1": {
-   "returncode": 0,
-   "pythonhashseed": "1",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpmexu_0dy\\run_1\\output.csv",
-   "stderr": "",
-   "model_calls": 0,
-   "files_compared": 553
-  },
-  "run_2": {
-   "returncode": 0,
-   "pythonhashseed": "2",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpmexu_0dy\\run_2\\output.csv",
-   "stderr": "",
-   "model_calls": 0,
-   "identical_to_run_1": true,
-   "differences": [],
-   "files_compared": 553
-  },
-  "from_cache_no_keys": {
-   "returncode": 0,
-   "pythonhashseed": "3",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpmexu_0dy\\from_cache_no_keys\\output.csv",
-   "stderr": "",
-   "model_calls": 0,
-   "identical_to_run_1": true,
-   "differences": [],
-   "files_compared": 553
-  }
- },
+ "determinism": null,
  "usage": {
   "rows": [
    {

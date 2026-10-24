@@ -127,7 +127,10 @@
   {
    "activity_id": "activity_943",
    "reason": "hard-linked to ['user_397']",
-   "resource_id": "backup_2642"
+   "resource_id": "backup_2642",
+   "sources": [
+    "evidence_69"
+   ]
   }
  ],
  "excluded": [

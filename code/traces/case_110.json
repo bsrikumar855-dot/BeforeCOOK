@@ -194,17 +194,26 @@
   {
    "activity_id": "activity_3206",
    "reason": "hard-linked to ['user_110']",
-   "resource_id": "support_2859"
+   "resource_id": "support_2859",
+   "sources": [
+    "evidence_10"
+   ]
   },
   {
    "activity_id": "activity_3207",
    "reason": "hard-linked to ['user_110']",
-   "resource_id": "data_flow_3444"
+   "resource_id": "data_flow_3444",
+   "sources": [
+    "evidence_10"
+   ]
   },
   {
    "activity_id": "activity_3208",
    "reason": "hard-linked to ['user_110']",
-   "resource_id": "backup_4863"
+   "resource_id": "backup_4863",
+   "sources": [
+    "evidence_10"
+   ]
   }
  ],
  "excluded": [

@@ -125,52 +125,87 @@
   {
    "activity_id": "activity_368",
    "reason": "hard-linked to ['user_490']",
-   "resource_id": "account_3589"
+   "resource_id": "account_3589",
+   "sources": [
+    "evidence_45"
+   ]
   },
   {
    "activity_id": "activity_369",
    "reason": "hard-linked to ['user_489']",
-   "resource_id": "account_7455"
+   "resource_id": "account_7455",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   },
   {
    "activity_id": "activity_371",
    "reason": "hard-linked to ['user_475']",
-   "resource_id": "account_3119"
+   "resource_id": "account_3119",
+   "sources": [
+    "evidence_45"
+   ]
   },
   {
    "activity_id": "activity_374",
    "reason": "hard-linked to ['user_490']",
-   "resource_id": "export_6406"
+   "resource_id": "export_6406",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   },
   {
    "activity_id": "activity_375",
    "reason": "hard-linked to ['user_490']",
-   "resource_id": "search_9733"
+   "resource_id": "search_9733",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   },
   {
    "activity_id": "activity_376",
    "reason": "hard-linked to ['user_490']",
-   "resource_id": "support_6737"
+   "resource_id": "support_6737",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   },
   {
    "activity_id": "activity_377",
    "reason": "hard-linked to ['user_490']",
-   "resource_id": "analytics_1575"
+   "resource_id": "analytics_1575",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   },
   {
    "activity_id": "activity_378",
    "reason": "hard-linked to ['user_474']",
-   "resource_id": "data_flow_8899"
+   "resource_id": "data_flow_8899",
+   "sources": [
+    "evidence_45"
+   ]
   },
   {
    "activity_id": "activity_381",
    "reason": "hard-linked to ['user_474']",
-   "resource_id": "search_3759"
+   "resource_id": "search_3759",
+   "sources": [
+    "evidence_45"
+   ]
   },
   {
    "activity_id": "activity_382",
    "reason": "hard-linked to ['user_475']",
-   "resource_id": "search_5052"
+   "resource_id": "search_5052",
+   "sources": [
+    "evidence_45"
+   ]
   }
  ],
  "excluded": [

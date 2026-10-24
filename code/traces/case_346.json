@@ -127,12 +127,18 @@
   {
    "activity_id": "activity_1495",
    "reason": "hard-linked to ['user_342']",
-   "resource_id": "data_flow_5544"
+   "resource_id": "data_flow_5544",
+   "sources": [
+    "evidence_71"
+   ]
   },
   {
    "activity_id": "activity_1496",
    "reason": "hard-linked to ['user_342']",
-   "resource_id": "search_5267"
+   "resource_id": "search_5267",
+   "sources": [
+    "evidence_71"
+   ]
   }
  ],
  "excluded": [

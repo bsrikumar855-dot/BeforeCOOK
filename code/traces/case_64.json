@@ -172,12 +172,19 @@
   {
    "activity_id": "activity_3703",
    "reason": "hard-linked to ['user_61']",
-   "resource_id": "account_3960"
+   "resource_id": "account_3960",
+   "sources": [
+    "evidence_06"
+   ]
   },
   {
    "activity_id": "activity_3709",
    "reason": "hard-linked to ['user_61']",
-   "resource_id": "backup_4978"
+   "resource_id": "backup_4978",
+   "sources": [
+    "evidence_06",
+    "evidence_93"
+   ]
   }
  ],
  "excluded": [

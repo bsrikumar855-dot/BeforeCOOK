@@ -179,52 +179,91 @@
   {
    "activity_id": "activity_3017",
    "reason": "hard-linked to ['user_115']",
-   "resource_id": "account_1220"
+   "resource_id": "account_1220",
+   "sources": [
+    "evidence_11",
+    "evidence_88"
+   ]
   },
   {
    "activity_id": "activity_3019",
    "reason": "hard-linked to ['user_116']",
-   "resource_id": "account_5785"
+   "resource_id": "account_5785",
+   "sources": [
+    "evidence_11"
+   ]
   },
   {
    "activity_id": "activity_3021",
    "reason": "hard-linked to ['user_129']",
-   "resource_id": "support_2315"
+   "resource_id": "support_2315",
+   "sources": [
+    "evidence_12",
+    "evidence_87"
+   ]
   },
   {
    "activity_id": "activity_3022",
    "reason": "hard-linked to ['user_130']",
-   "resource_id": "export_9157"
+   "resource_id": "export_9157",
+   "sources": [
+    "evidence_12",
+    "evidence_87"
+   ]
   },
   {
    "activity_id": "activity_3023",
    "reason": "hard-linked to ['user_129']",
-   "resource_id": "search_538"
+   "resource_id": "search_538",
+   "sources": [
+    "evidence_12",
+    "evidence_87"
+   ]
   },
   {
    "activity_id": "activity_3024",
    "reason": "hard-linked to ['user_130']",
-   "resource_id": "search_3112"
+   "resource_id": "search_3112",
+   "sources": [
+    "evidence_12",
+    "evidence_87"
+   ]
   },
   {
    "activity_id": "activity_3025",
    "reason": "hard-linked to ['user_129']",
-   "resource_id": "support_7208"
+   "resource_id": "support_7208",
+   "sources": [
+    "evidence_12",
+    "evidence_87"
+   ]
   },
   {
    "activity_id": "activity_3026",
    "reason": "hard-linked to ['user_129']",
-   "resource_id": "analytics_514"
+   "resource_id": "analytics_514",
+   "sources": [
+    "evidence_12",
+    "evidence_87"
+   ]
   },
   {
    "activity_id": "activity_3027",
    "reason": "hard-linked to ['user_116']",
-   "resource_id": "search_9556"
+   "resource_id": "search_9556",
+   "sources": [
+    "evidence_11",
+    "evidence_88"
+   ]
   },
   {
    "activity_id": "activity_3030",
    "reason": "hard-linked to ['user_116']",
-   "resource_id": "support_036"
+   "resource_id": "support_036",
+   "sources": [
+    "evidence_11",
+    "evidence_88"
+   ]
   }
  ],
  "excluded": [

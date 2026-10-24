@@ -163,52 +163,84 @@
   {
    "activity_id": "activity_803",
    "reason": "hard-linked to ['user_414']",
-   "resource_id": "account_3075"
+   "resource_id": "account_3075",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_804",
    "reason": "hard-linked to ['user_416']",
-   "resource_id": "account_9120"
+   "resource_id": "account_9120",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_805",
    "reason": "hard-linked to ['user_415']",
-   "resource_id": "account_4921"
+   "resource_id": "account_4921",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_806",
    "reason": "hard-linked to ['user_429']",
-   "resource_id": "support_3615"
+   "resource_id": "support_3615",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_808",
    "reason": "hard-linked to ['user_429']",
-   "resource_id": "search_7427"
+   "resource_id": "search_7427",
+   "sources": [
+    "evidence_40",
+    "evidence_68"
+   ]
   },
   {
    "activity_id": "activity_810",
    "reason": "hard-linked to ['user_414']",
-   "resource_id": "data_flow_1412"
+   "resource_id": "data_flow_1412",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_812",
    "reason": "hard-linked to ['user_416']",
-   "resource_id": "search_8686"
+   "resource_id": "search_8686",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_813",
    "reason": "hard-linked to ['user_414']",
-   "resource_id": "search_6600"
+   "resource_id": "search_6600",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_814",
    "reason": "hard-linked to ['user_415']",
-   "resource_id": "search_5479"
+   "resource_id": "search_5479",
+   "sources": [
+    "evidence_39"
+   ]
   },
   {
    "activity_id": "activity_815",
    "reason": "hard-linked to ['user_416']",
-   "resource_id": "support_9464"
+   "resource_id": "support_9464",
+   "sources": [
+    "evidence_39"
+   ]
   }
  ],
  "excluded": [

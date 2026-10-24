@@ -103,22 +103,37 @@
   {
    "activity_id": "activity_3257",
    "reason": "hard-linked to ['user_79']",
-   "resource_id": "account_9832"
+   "resource_id": "account_9832",
+   "sources": [
+    "evidence_91"
+   ]
   },
   {
    "activity_id": "activity_3259",
    "reason": "hard-linked to ['user_79']",
-   "resource_id": "support_5953"
+   "resource_id": "support_5953",
+   "sources": [
+    "evidence_07",
+    "evidence_91"
+   ]
   },
   {
    "activity_id": "activity_3260",
    "reason": "hard-linked to ['user_79']",
-   "resource_id": "data_flow_3255"
+   "resource_id": "data_flow_3255",
+   "sources": [
+    "evidence_07",
+    "evidence_91"
+   ]
   },
   {
    "activity_id": "activity_3261",
    "reason": "hard-linked to ['user_79']",
-   "resource_id": "backup_3332"
+   "resource_id": "backup_3332",
+   "sources": [
+    "evidence_07",
+    "evidence_91"
+   ]
   }
  ],
  "excluded": [

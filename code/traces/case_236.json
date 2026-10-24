@@ -159,17 +159,29 @@
   {
    "activity_id": "activity_2141",
    "reason": "hard-linked to ['user_236']",
-   "resource_id": "account_945"
+   "resource_id": "account_945",
+   "sources": [
+    "evidence_22",
+    "evidence_79"
+   ]
   },
   {
    "activity_id": "activity_2143",
    "reason": "hard-linked to ['user_235']",
-   "resource_id": "account_2788"
+   "resource_id": "account_2788",
+   "sources": [
+    "evidence_22",
+    "evidence_79"
+   ]
   },
   {
    "activity_id": "activity_2152",
    "reason": "hard-linked to ['user_235']",
-   "resource_id": "search_2433"
+   "resource_id": "search_2433",
+   "sources": [
+    "evidence_22",
+    "evidence_79"
+   ]
   }
  ],
  "excluded": [],

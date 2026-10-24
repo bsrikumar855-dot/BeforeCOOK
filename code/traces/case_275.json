@@ -263,52 +263,85 @@
   {
    "activity_id": "activity_1841",
    "reason": "hard-linked to ['user_290']",
-   "resource_id": "account_1125"
+   "resource_id": "account_1125",
+   "sources": [
+    "evidence_76"
+   ]
   },
   {
    "activity_id": "activity_1845",
    "reason": "hard-linked to ['user_290']",
-   "resource_id": "support_1526"
+   "resource_id": "support_1526",
+   "sources": [
+    "evidence_76"
+   ]
   },
   {
    "activity_id": "activity_1846",
    "reason": "hard-linked to ['user_290']",
-   "resource_id": "data_flow_5598"
+   "resource_id": "data_flow_5598",
+   "sources": [
+    "evidence_76"
+   ]
   },
   {
    "activity_id": "activity_1848",
    "reason": "hard-linked to ['user_290']",
-   "resource_id": "backup_1825"
+   "resource_id": "backup_1825",
+   "sources": [
+    "evidence_76"
+   ]
   },
   {
    "activity_id": "activity_1854",
    "reason": "hard-linked to ['user_275']",
-   "resource_id": "support_2036"
+   "resource_id": "support_2036",
+   "sources": [
+    "evidence_26",
+    "evidence_77"
+   ]
   },
   {
    "activity_id": "activity_1855",
    "reason": "hard-linked to ['user_275']",
-   "resource_id": "data_flow_2439"
+   "resource_id": "data_flow_2439",
+   "sources": [
+    "evidence_26",
+    "evidence_77"
+   ]
   },
   {
    "activity_id": "activity_1856",
    "reason": "hard-linked to ['user_275']",
-   "resource_id": "backup_9728"
+   "resource_id": "backup_9728",
+   "sources": [
+    "evidence_26",
+    "evidence_77"
+   ]
   },
   {
    "activity_id": "activity_1857",
    "reason": "hard-linked to ['user_288']",
-   "resource_id": "data_flow_179"
+   "resource_id": "data_flow_179",
+   "sources": [
+    "evidence_76"
+   ]
   },
   {
    "activity_id": "activity_1858",
    "reason": "hard-linked to ['user_289']",
-   "resource_id": "backup_7079"
+   "resource_id": "backup_7079",
+   "sources": [
+    "evidence_76"
+   ]
   },
   {
    "activity_id": "activity_1859",
    "reason": "hard-linked to ['user_288']",
-   "resource_id": "search_3144"
+   "resource_id": "search_3144",
+   "sources": [
+    "evidence_76"
+   ]
   }
  ],
  "excluded": [

@@ -271,12 +271,19 @@
   {
    "activity_id": "activity_491",
    "reason": "hard-linked to ['user_482']",
-   "resource_id": "account_2961"
+   "resource_id": "account_2961",
+   "sources": [
+    "evidence_45"
+   ]
   },
   {
    "activity_id": "activity_493",
    "reason": "hard-linked to ['user_482']",
-   "resource_id": "support_7973"
+   "resource_id": "support_7973",
+   "sources": [
+    "evidence_45",
+    "evidence_64"
+   ]
   }
  ],
  "excluded": [],

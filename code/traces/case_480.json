@@ -167,12 +167,18 @@
   {
    "activity_id": "activity_324",
    "reason": "hard-linked to ['user_477']",
-   "resource_id": "support_4665"
+   "resource_id": "support_4665",
+   "sources": [
+    "evidence_45"
+   ]
   },
   {
    "activity_id": "activity_327",
    "reason": "hard-linked to ['user_479']",
-   "resource_id": "search_8587"
+   "resource_id": "search_8587",
+   "sources": [
+    "evidence_45"
+   ]
   }
  ],
  "excluded": [

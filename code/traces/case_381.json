@@ -121,7 +121,10 @@
   {
    "activity_id": "activity_1032",
    "reason": "hard-linked to ['user_378']",
-   "resource_id": "account_4001"
+   "resource_id": "account_4001",
+   "sources": [
+    "evidence_70"
+   ]
   }
  ],
  "excluded": [

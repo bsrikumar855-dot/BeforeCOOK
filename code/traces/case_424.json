@@ -96,7 +96,10 @@
   {
    "activity_id": "activity_952",
    "reason": "hard-linked to ['user_421']",
-   "resource_id": "account_2420"
+   "resource_id": "account_2420",
+   "sources": [
+    "evidence_40"
+   ]
   }
  ],
  "excluded": [

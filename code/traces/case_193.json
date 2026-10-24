@@ -114,32 +114,52 @@
   {
    "activity_id": "activity_2505",
    "reason": "hard-linked to ['user_220']",
-   "resource_id": "account_7237"
+   "resource_id": "account_7237",
+   "sources": [
+    "evidence_21"
+   ]
   },
   {
    "activity_id": "activity_2514",
    "reason": "hard-linked to ['user_220']",
-   "resource_id": "support_111"
+   "resource_id": "support_111",
+   "sources": [
+    "evidence_21",
+    "evidence_81"
+   ]
   },
   {
    "activity_id": "activity_2515",
    "reason": "hard-linked to ['user_220']",
-   "resource_id": "search_6405"
+   "resource_id": "search_6405",
+   "sources": [
+    "evidence_21",
+    "evidence_81"
+   ]
   },
   {
    "activity_id": "activity_2517",
    "reason": "hard-linked to ['user_205']",
-   "resource_id": "backup_6407"
+   "resource_id": "backup_6407",
+   "sources": [
+    "evidence_20"
+   ]
   },
   {
    "activity_id": "activity_2518",
    "reason": "hard-linked to ['user_206']",
-   "resource_id": "support_2134"
+   "resource_id": "support_2134",
+   "sources": [
+    "evidence_20"
+   ]
   },
   {
    "activity_id": "activity_2519",
    "reason": "hard-linked to ['user_206']",
-   "resource_id": "search_1118"
+   "resource_id": "search_1118",
+   "sources": [
+    "evidence_20"
+   ]
   }
  ],
  "excluded": [

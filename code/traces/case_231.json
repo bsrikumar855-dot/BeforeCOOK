@@ -201,57 +201,97 @@
   {
    "activity_id": "activity_2304",
    "reason": "hard-linked to ['user_214']",
-   "resource_id": "account_9682"
+   "resource_id": "account_9682",
+   "sources": [
+    "evidence_21"
+   ]
   },
   {
    "activity_id": "activity_2306",
    "reason": "hard-linked to ['user_213']",
-   "resource_id": "account_1956"
+   "resource_id": "account_1956",
+   "sources": [
+    "evidence_21"
+   ]
   },
   {
    "activity_id": "activity_2307",
    "reason": "hard-linked to ['user_215']",
-   "resource_id": "account_7030"
+   "resource_id": "account_7030",
+   "sources": [
+    "evidence_21"
+   ]
   },
   {
    "activity_id": "activity_2309",
    "reason": "hard-linked to ['user_230']",
-   "resource_id": "support_9862"
+   "resource_id": "support_9862",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2310",
    "reason": "hard-linked to ['user_228']",
-   "resource_id": "data_flow_2516"
+   "resource_id": "data_flow_2516",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2311",
    "reason": "hard-linked to ['user_228']",
-   "resource_id": "search_5612"
+   "resource_id": "search_5612",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2313",
    "reason": "hard-linked to ['user_214']",
-   "resource_id": "export_5351"
+   "resource_id": "export_5351",
+   "sources": [
+    "evidence_81"
+   ]
   },
   {
    "activity_id": "activity_2315",
    "reason": "hard-linked to ['user_214']",
-   "resource_id": "search_5216"
+   "resource_id": "search_5216",
+   "sources": [
+    "evidence_21",
+    "evidence_81"
+   ]
   },
   {
    "activity_id": "activity_2316",
    "reason": "hard-linked to ['user_215']",
-   "resource_id": "search_3120"
+   "resource_id": "search_3120",
+   "sources": [
+    "evidence_21",
+    "evidence_81"
+   ]
   },
   {
    "activity_id": "activity_2317",
    "reason": "hard-linked to ['user_214']",
-   "resource_id": "support_8453"
+   "resource_id": "support_8453",
+   "sources": [
+    "evidence_21",
+    "evidence_81"
+   ]
   },
   {
    "activity_id": "activity_2318",
    "reason": "hard-linked to ['user_214']",
-   "resource_id": "analytics_4527"
+   "resource_id": "analytics_4527",
+   "sources": [
+    "evidence_21",
+    "evidence_81"
+   ]
   }
  ],
  "excluded": [

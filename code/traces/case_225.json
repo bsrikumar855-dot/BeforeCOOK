@@ -136,7 +136,11 @@
   {
    "activity_id": "activity_2409",
    "reason": "hard-linked to ['user_222']",
-   "resource_id": "data_flow_1140"
+   "resource_id": "data_flow_1140",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   }
  ],
  "excluded": [

@@ -186,12 +186,19 @@
   {
    "activity_id": "activity_1079",
    "reason": "hard-linked to ['user_376']",
-   "resource_id": "account_976"
+   "resource_id": "account_976",
+   "sources": [
+    "evidence_70"
+   ]
   },
   {
    "activity_id": "activity_1082",
    "reason": "hard-linked to ['user_375']",
-   "resource_id": "analytics_3651"
+   "resource_id": "analytics_3651",
+   "sources": [
+    "evidence_35",
+    "evidence_70"
+   ]
   }
  ],
  "excluded": [

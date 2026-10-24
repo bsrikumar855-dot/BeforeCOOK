@@ -154,12 +154,18 @@
   {
    "activity_id": "activity_2713",
    "reason": "hard-linked to ['user_158']",
-   "resource_id": "support_4148"
+   "resource_id": "support_4148",
+   "sources": [
+    "evidence_15"
+   ]
   },
   {
    "activity_id": "activity_2715",
    "reason": "hard-linked to ['user_157']",
-   "resource_id": "backup_1214"
+   "resource_id": "backup_1214",
+   "sources": [
+    "evidence_15"
+   ]
   }
  ],
  "excluded": [

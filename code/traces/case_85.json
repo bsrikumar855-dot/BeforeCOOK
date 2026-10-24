@@ -107,12 +107,18 @@
   {
    "activity_id": "activity_3458",
    "reason": "hard-linked to ['user_81']",
-   "resource_id": "account_2449"
+   "resource_id": "account_2449",
+   "sources": [
+    "evidence_08"
+   ]
   },
   {
    "activity_id": "activity_3460",
    "reason": "hard-linked to ['user_82']",
-   "resource_id": "account_2387"
+   "resource_id": "account_2387",
+   "sources": [
+    "evidence_08"
+   ]
   }
  ],
  "excluded": [

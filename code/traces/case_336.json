@@ -96,62 +96,102 @@
   {
    "activity_id": "activity_1401",
    "reason": "hard-linked to ['user_349']",
-   "resource_id": "support_7137"
+   "resource_id": "support_7137",
+   "sources": [
+    "evidence_71"
+   ]
   },
   {
    "activity_id": "activity_1402",
    "reason": "hard-linked to ['user_349']",
-   "resource_id": "data_flow_4323"
+   "resource_id": "data_flow_4323",
+   "sources": [
+    "evidence_71"
+   ]
   },
   {
    "activity_id": "activity_1403",
    "reason": "hard-linked to ['user_335']",
-   "resource_id": "account_767"
+   "resource_id": "account_767",
+   "sources": [
+    "evidence_31"
+   ]
   },
   {
    "activity_id": "activity_1404",
    "reason": "hard-linked to ['user_349']",
-   "resource_id": "backup_024"
+   "resource_id": "backup_024",
+   "sources": [
+    "evidence_71"
+   ]
   },
   {
    "activity_id": "activity_1406",
    "reason": "hard-linked to ['user_333']",
-   "resource_id": "account_8892"
+   "resource_id": "account_8892",
+   "sources": [
+    "evidence_31"
+   ]
   },
   {
    "activity_id": "activity_1408",
    "reason": "hard-linked to ['user_333']",
-   "resource_id": "support_4712"
+   "resource_id": "support_4712",
+   "sources": [
+    "evidence_31",
+    "evidence_72"
+   ]
   },
   {
    "activity_id": "activity_1409",
    "reason": "hard-linked to ['user_333']",
-   "resource_id": "data_flow_7452"
+   "resource_id": "data_flow_7452",
+   "sources": [
+    "evidence_31",
+    "evidence_72"
+   ]
   },
   {
    "activity_id": "activity_1410",
    "reason": "hard-linked to ['user_350']",
-   "resource_id": "support_3980"
+   "resource_id": "support_3980",
+   "sources": [
+    "evidence_71"
+   ]
   },
   {
    "activity_id": "activity_1411",
    "reason": "hard-linked to ['user_333']",
-   "resource_id": "backup_3136"
+   "resource_id": "backup_3136",
+   "sources": [
+    "evidence_31",
+    "evidence_72"
+   ]
   },
   {
    "activity_id": "activity_1413",
    "reason": "hard-linked to ['user_350']",
-   "resource_id": "search_5685"
+   "resource_id": "search_5685",
+   "sources": [
+    "evidence_71"
+   ]
   },
   {
    "activity_id": "activity_1414",
    "reason": "hard-linked to ['user_348']",
-   "resource_id": "data_flow_9775"
+   "resource_id": "data_flow_9775",
+   "sources": [
+    "evidence_71"
+   ]
   },
   {
    "activity_id": "activity_1416",
    "reason": "hard-linked to ['user_335']",
-   "resource_id": "search_3773"
+   "resource_id": "search_3773",
+   "sources": [
+    "evidence_31",
+    "evidence_72"
+   ]
   }
  ],
  "excluded": [

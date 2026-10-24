@@ -212,52 +212,89 @@
   {
    "activity_id": "activity_2300",
    "reason": "hard-linked to ['user_229']",
-   "resource_id": "account_7324"
+   "resource_id": "account_7324",
+   "sources": [
+    "evidence_22"
+   ]
   },
   {
    "activity_id": "activity_2302",
    "reason": "hard-linked to ['user_229']",
-   "resource_id": "support_3964"
+   "resource_id": "support_3964",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2303",
    "reason": "hard-linked to ['user_229']",
-   "resource_id": "data_flow_2576"
+   "resource_id": "data_flow_2576",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2305",
    "reason": "hard-linked to ['user_229']",
-   "resource_id": "backup_6564"
+   "resource_id": "backup_6564",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2306",
    "reason": "hard-linked to ['user_213']",
-   "resource_id": "account_1956"
+   "resource_id": "account_1956",
+   "sources": [
+    "evidence_21"
+   ]
   },
   {
    "activity_id": "activity_2307",
    "reason": "hard-linked to ['user_215']",
-   "resource_id": "account_7030"
+   "resource_id": "account_7030",
+   "sources": [
+    "evidence_21"
+   ]
   },
   {
    "activity_id": "activity_2309",
    "reason": "hard-linked to ['user_230']",
-   "resource_id": "support_9862"
+   "resource_id": "support_9862",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2310",
    "reason": "hard-linked to ['user_228']",
-   "resource_id": "data_flow_2516"
+   "resource_id": "data_flow_2516",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2311",
    "reason": "hard-linked to ['user_228']",
-   "resource_id": "search_5612"
+   "resource_id": "search_5612",
+   "sources": [
+    "evidence_22",
+    "evidence_80"
+   ]
   },
   {
    "activity_id": "activity_2316",
    "reason": "hard-linked to ['user_215']",
-   "resource_id": "search_3120"
+   "resource_id": "search_3120",
+   "sources": [
+    "evidence_21",
+    "evidence_81"
+   ]
   }
  ],
  "excluded": [

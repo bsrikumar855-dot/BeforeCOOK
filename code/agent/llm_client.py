@@ -28,7 +28,8 @@ import yaml
 from .loaders import REPO_ROOT
 
 CONFIG_PATH = REPO_ROOT / "code" / "config" / "models.yaml"
-CACHE_DIR = REPO_ROOT / "code" / "cache"
+# ORCHESTRATE_CACHE_DIR points a run at another cache copy (the coupling probes use a renamed copy).
+CACHE_DIR = Path(os.environ["ORCHESTRATE_CACHE_DIR"]) if os.environ.get("ORCHESTRATE_CACHE_DIR") else REPO_ROOT / "code" / "cache"
 PROMPTS_DIR = REPO_ROOT / "code" / "prompts"
 
 

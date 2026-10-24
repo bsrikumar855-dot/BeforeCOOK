@@ -45,7 +45,12 @@
   {
    "activity_id": "activity_3485",
    "reason": "hard-linked to ['user_11']",
-   "resource_id": "account_5762"
+   "resource_id": "account_5762",
+   "sources": [
+    "activity_4000",
+    "evidence_01",
+    "evidence_04"
+   ]
   }
  ],
  "excluded": [],

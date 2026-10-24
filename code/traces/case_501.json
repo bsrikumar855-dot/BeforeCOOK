@@ -47,12 +47,18 @@
   {
    "activity_id": "activity_176",
    "reason": "hard-linked to ['user_498']",
-   "resource_id": "data_flow_006"
+   "resource_id": "data_flow_006",
+   "sources": [
+    "evidence_63"
+   ]
   },
   {
    "activity_id": "activity_178",
    "reason": "hard-linked to ['user_498']",
-   "resource_id": "search_6092"
+   "resource_id": "search_6092",
+   "sources": [
+    "evidence_63"
+   ]
   }
  ],
  "excluded": [],

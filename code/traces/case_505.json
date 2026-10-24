@@ -183,12 +183,18 @@
   {
    "activity_id": "activity_339",
    "reason": "hard-linked to ['user_501']",
-   "resource_id": "support_2295"
+   "resource_id": "support_2295",
+   "sources": [
+    "evidence_47"
+   ]
   },
   {
    "activity_id": "activity_340",
    "reason": "hard-linked to ['user_502']",
-   "resource_id": "export_3120"
+   "resource_id": "export_3120",
+   "sources": [
+    "evidence_47"
+   ]
   }
  ],
  "excluded": [

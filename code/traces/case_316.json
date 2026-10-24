@@ -163,57 +163,98 @@
   {
    "activity_id": "activity_1555",
    "reason": "hard-linked to ['user_329']",
-   "resource_id": "account_6814"
+   "resource_id": "account_6814",
+   "sources": [
+    "evidence_73"
+   ]
   },
   {
    "activity_id": "activity_1559",
    "reason": "hard-linked to ['user_329']",
-   "resource_id": "support_1403"
+   "resource_id": "support_1403",
+   "sources": [
+    "evidence_31",
+    "evidence_73"
+   ]
   },
   {
    "activity_id": "activity_1560",
    "reason": "hard-linked to ['user_329']",
-   "resource_id": "data_flow_8534"
+   "resource_id": "data_flow_8534",
+   "sources": [
+    "evidence_31",
+    "evidence_73"
+   ]
   },
   {
    "activity_id": "activity_1561",
    "reason": "hard-linked to ['user_329']",
-   "resource_id": "backup_9376"
+   "resource_id": "backup_9376",
+   "sources": [
+    "evidence_31",
+    "evidence_73"
+   ]
   },
   {
    "activity_id": "activity_1562",
    "reason": "hard-linked to ['user_312']",
-   "resource_id": "account_591"
+   "resource_id": "account_591",
+   "sources": [
+    "evidence_30"
+   ]
   },
   {
    "activity_id": "activity_1564",
    "reason": "hard-linked to ['user_313']",
-   "resource_id": "account_782"
+   "resource_id": "account_782",
+   "sources": [
+    "evidence_30"
+   ]
   },
   {
    "activity_id": "activity_1566",
    "reason": "hard-linked to ['user_327']",
-   "resource_id": "analytics_671"
+   "resource_id": "analytics_671",
+   "sources": [
+    "evidence_31",
+    "evidence_73"
+   ]
   },
   {
    "activity_id": "activity_1567",
    "reason": "hard-linked to ['user_328']",
-   "resource_id": "support_4851"
+   "resource_id": "support_4851",
+   "sources": [
+    "evidence_31",
+    "evidence_73"
+   ]
   },
   {
    "activity_id": "activity_1568",
    "reason": "hard-linked to ['user_327']",
-   "resource_id": "search_5226"
+   "resource_id": "search_5226",
+   "sources": [
+    "evidence_31",
+    "evidence_73"
+   ]
   },
   {
    "activity_id": "activity_1569",
    "reason": "hard-linked to ['user_328']",
-   "resource_id": "search_4560"
+   "resource_id": "search_4560",
+   "sources": [
+    "evidence_31",
+    "evidence_73"
+   ]
   },
   {
    "activity_id": "activity_1570",
    "reason": "hard-linked to ['user_313']",
-   "resource_id": "backup_7421"
+   "resource_id": "backup_7421",
+   "sources": [
+    "evidence_30",
+    "evidence_74"
+   ]
   }
  ],
  "excluded": [

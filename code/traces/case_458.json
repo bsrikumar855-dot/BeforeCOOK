@@ -116,17 +116,26 @@
   {
    "activity_id": "activity_478",
    "reason": "hard-linked to ['user_458']",
-   "resource_id": "legal_hold_5622"
+   "resource_id": "legal_hold_5622",
+   "sources": [
+    "evidence_43"
+   ]
   },
   {
    "activity_id": "activity_479",
    "reason": "hard-linked to ['user_457']",
-   "resource_id": "backup_1140"
+   "resource_id": "backup_1140",
+   "sources": [
+    "evidence_43"
+   ]
   },
   {
    "activity_id": "activity_480",
    "reason": "hard-linked to ['user_458']",
-   "resource_id": "support_4146"
+   "resource_id": "support_4146",
+   "sources": [
+    "evidence_43"
+   ]
   }
  ],
  "excluded": [

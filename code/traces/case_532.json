@@ -223,7 +223,11 @@
   {
    "activity_id": "activity_97",
    "reason": "hard-linked to ['user_529']",
-   "resource_id": "backup_3382"
+   "resource_id": "backup_3382",
+   "sources": [
+    "evidence_49",
+    "evidence_62"
+   ]
   }
  ],
  "excluded": [

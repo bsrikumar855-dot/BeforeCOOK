@@ -105,52 +105,82 @@
   {
    "activity_id": "activity_3568",
    "reason": "hard-linked to ['user_67']",
-   "resource_id": "account_6138"
+   "resource_id": "account_6138",
+   "sources": [
+    "evidence_06"
+   ]
   },
   {
    "activity_id": "activity_3570",
    "reason": "hard-linked to ['user_68']",
-   "resource_id": "account_6633"
+   "resource_id": "account_6633",
+   "sources": [
+    "evidence_06"
+   ]
   },
   {
    "activity_id": "activity_3571",
    "reason": "hard-linked to ['user_53']",
-   "resource_id": "account_994"
+   "resource_id": "account_994",
+   "sources": [
+    "evidence_05"
+   ]
   },
   {
    "activity_id": "activity_3578",
    "reason": "hard-linked to ['user_51']",
-   "resource_id": "analytics_4440"
+   "resource_id": "analytics_4440",
+   "sources": [
+    "evidence_05"
+   ]
   },
   {
    "activity_id": "activity_3579",
    "reason": "hard-linked to ['user_52']",
-   "resource_id": "support_835"
+   "resource_id": "support_835",
+   "sources": [
+    "evidence_05"
+   ]
   },
   {
    "activity_id": "activity_3580",
    "reason": "hard-linked to ['user_53']",
-   "resource_id": "search_1007"
+   "resource_id": "search_1007",
+   "sources": [
+    "evidence_05"
+   ]
   },
   {
    "activity_id": "activity_3581",
    "reason": "hard-linked to ['user_51']",
-   "resource_id": "search_8911"
+   "resource_id": "search_8911",
+   "sources": [
+    "evidence_05"
+   ]
   },
   {
    "activity_id": "activity_3582",
    "reason": "hard-linked to ['user_52']",
-   "resource_id": "search_3995"
+   "resource_id": "search_3995",
+   "sources": [
+    "evidence_05"
+   ]
   },
   {
    "activity_id": "activity_3583",
    "reason": "hard-linked to ['user_52']",
-   "resource_id": "analytics_1738"
+   "resource_id": "analytics_1738",
+   "sources": [
+    "evidence_05"
+   ]
   },
   {
    "activity_id": "activity_3584",
    "reason": "hard-linked to ['user_52']",
-   "resource_id": "data_flow_5080"
+   "resource_id": "data_flow_5080",
+   "sources": [
+    "evidence_05"
+   ]
   }
  ],
  "excluded": [],
