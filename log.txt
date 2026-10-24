@@ -235,3 +235,24 @@ branch=main
 repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
+
+## [2026-10-25T02:11:18+05:30] C10: multi-pass OCR and underscore fix for C9 false drops
+
+User Prompt (verbatim, secrets redacted):
+## C10 — FIRST, before Round 4: fix the C9 OCR false negatives. [Full pasted block: all 5 ids C9 dropped are visible (3 found at 2x upscale; export_1258/export_1261 at base with Tesseract 5.3.4, so the matcher is suspect). Fix: multi-pass OCR union (base; 2x LANCZOS; 2x psm 11; 3x + autocontrast psm 6; grayscale first), passes and engine in CONSTANTS.md as JUDGEMENT, cache key image+engine+pass; inspect the token matcher and fix the root cause without fuzzy matching; rerun grounding per image; negative control must hold; validate samples, eval rows changed, determinism over 3 seeds, new sha256; change record + commit C10; log "C9 single-pass OCR caused false drops; found by an independent re-check; fixed in C10." Then continue with Round 4 below.]
+
+Agent Response Summary:
+Root cause from the raw OCR text: Tesseract reads an id's underscore as a space, a period or nothing in table rows (export 1261, search 1874, data_flow.9846), and the C9 matcher required a literal underscore; audit_record_002 was absent at base resolution. Implemented four grayscale passes united per image (cached by image+engine+pass) and a matcher where only the underscore varies and letters and digits stay exact. All 5 ids are now grounded (32/32) and the injected fake id is still rejected. The first run hung on catastrophic regex backtracking, which is fixed. 0 output rows and 0 sample steps changed; traces case_15 and case_45 regained facts C9 had removed; output.csv sha256 e176b22d... unchanged; determinism holds over 3 processes. The pasted message referred to "Round 4 below" but contained no Round 4 text.
+
+Actions:
+* Rewrote code/agent/parsers/ocr_grounding.py; replaced 11 single-pass OCR cache entries with 44 multi-pass ones; added matcher tests (80 pass)
+* Added CONSTANTS.md; DESIGN.md C10 row and rejection-log line; evaluation/usage report wording
+* Commit e140ebf (local only, never pushed); no model calls
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none
