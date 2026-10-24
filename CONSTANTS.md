@@ -108,7 +108,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/category_coverage.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/compare_intent.py` | 2 | a sentence used <= 2 times marks a free-text (non-template) request | JUDGEMENT | which texts the C4 comparison treats as free text |
 | `code/analysis/compare_intent.py` | 90 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
-| `code/analysis/constants_register.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 24, 25, 30, 40, 60.0, 64, 100, 200, 255, 400, 401, 403, 404, 429, 500, 502, 503, 504, 5000, 40000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
+| `code/analysis/constants_register.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 24, 25, 30, 40, 60.0, 64, 100, 200, 255, 400, 401, 403, 404, 429, 500, 502, 503, 504, 518, 5000, 40000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
 | `code/analysis/e1_order_inference.py` | 25 | E1-B burst gap in minutes (first trough of the unlabelled gap histogram) | JUDGEMENT | rejected experiment only; see main table |
 | `code/analysis/e1_order_inference.py` | 10 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/e1_order_inference.py` | 60 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
@@ -145,6 +145,11 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/evaluation/main.py` | 2 | index of the 'correct' flag in an attribution tuple | JUDGEMENT | report arithmetic |
 | `code/evaluation/main.py` | 10, 20, 120, 160, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/main.py` | 100.0, 1000000.0 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
+| `code/evaluation/spec_audit.py` | 2 | column index of steps_json / minimum steps for the negative control | SPEC | the audit reads the wrong column |
+| `code/evaluation/spec_audit.py` | 7 | deliberately wrong step_no injected by the negative control | JUDGEMENT | only the negative control |
+| `code/evaluation/spec_audit.py` | 3 | output columns per row; minimum steps of the case picked for the negative control | SPEC | problem_statement.md header has 3 columns |
+| `code/evaluation/spec_audit.py` | 518 | required data-row count | SPEC | problem_statement.md: exactly 518 data rows |
+| `code/evaluation/spec_audit.py` | 5, 20 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/main.py` | 3 | exit code: cache miss under --from-cache | JUDGEMENT | callers' exit-code handling (README table) |
 | `code/main.py` | 4 | exit code: model failure / degraded run | JUDGEMENT | callers' exit-code handling (README table) |
 | `code/main.py` | 2 | exit code: output validation failed / invalid explain input | JUDGEMENT | callers' exit-code handling (README table) |
