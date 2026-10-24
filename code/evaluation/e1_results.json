@@ -1,0 +1,48 @@
+{
+ "timing_only_ambiguous_sample_pairs": 19,
+ "A": {
+  "resolved_total": 33,
+  "resolved_in_sample_cases": 5,
+  "sample_case_resource_not_in_answers": 1,
+  "evaluable_correct": 4,
+  "resolved_in_eval_cases_UNVERIFIED": 28,
+  "evaluable_incorrect": 1,
+  "of_19_resolved_correctly": 4,
+  "of_19_still_ambiguous": 14,
+  "incorrect_pairs": [
+   [
+    "case_54",
+    "account_4990"
+   ]
+  ],
+  "previously_correct_steps_broken": 0,
+  "sample_steps_added": 5,
+  "sample_steps_removed": 0,
+  "sample_status_changes": 0,
+  "sample_steps_matched_after": 175,
+  "sample_steps_predicted_after": 176,
+  "eval_rows_changed_UNVERIFIED": 25
+ },
+ "B": {
+  "resolved_total": 22,
+  "resolved_in_sample_cases": 1,
+  "evaluable_correct": 1,
+  "resolved_in_eval_cases_UNVERIFIED": 21,
+  "evaluable_incorrect": 1,
+  "of_19_resolved_correctly": 1,
+  "of_19_still_ambiguous": 17,
+  "incorrect_pairs": [
+   [
+    "case_547",
+    "analytics_5335"
+   ]
+  ],
+  "previously_correct_steps_broken": 0,
+  "sample_steps_added": 1,
+  "sample_steps_removed": 0,
+  "sample_status_changes": 0,
+  "sample_steps_matched_after": 172,
+  "sample_steps_predicted_after": 172,
+  "eval_rows_changed_UNVERIFIED": 15
+ }
+}

@@ -43,6 +43,15 @@ Step object: exactly the keys `step_no, phase, system_id, resource_id, operation
   (a) `request_text` → `{DELETION, NON_DELETION, UNCLEAR}`. This must be multilingual and negation-aware.
   (b) Extract PNG content (and the content of any PDF *without* a text layer) into the Observation schema, cached by SHA-256 of the file bytes plus the prompt version.
 - **Code decides everything that reaches the CSV:** status, every step, every ID, every citation.
+- **Experiment E2 (built, measured, not shipped):** a tool-calling investigator loop (`code/analysis/e2_investigator.py`)
+  works one batch of unresolved pairs at a time. The model plans and calls five read-only tools
+  (`find_by_identifier`, `activity_window`, `identity_history`, `resource_observations`, `batch_members`; at most 8
+  calls per batch) and proposes ASSIGN/AMBIGUOUS. A deterministic verifier (`code/analysis/e2_investigator_verifier.py`)
+  alone decides: it accepts only cited, existing tool results that show a shared identifier or user_id link, and it
+  rejects contradicted hard links, double assignments and ordering-only arguments. On the samples it accepted 0 of 126
+  proposals, so it is not wired into `code/main.py`.
+- **Exit codes:** 0 ok; 2 validation failed (including self-contradicting rows); 3 cache miss under `--from-cache`;
+  4 model failure. On 2, 3 or 4 output.csv is never replaced; `--allow-degraded` writes output.degraded.csv.
 - **Hard constraints:**
   - The model never writes `deletion_status`, `operation`, `resource_id`, `system_id` or `evidence_id` into the output.
   - Model outputs are validated against enums and known IDs before use (§7).
@@ -326,7 +335,33 @@ The contract assertions above already pass on `sample_output.csv` itself (sort r
 | D-ALIAS | A screenshot row whose identifier exactly equals a data-catalog alias resolves to the catalog's resource (including aliases that are user ids, which become the row's subject reference); the catalog's system wins over the model's system claim, logged | Drop every row whose id is not `<prefix>_<digits>` | Two records are shown only under their catalog alias (`object_19` as a file name, `tombstone_17` as a customer key); free-text mentions still never use user-id aliases |
 | D-SALVAGE | A rejected screenshot id is salvaged only when it splits into exactly one known-prefix resource token plus known user ids | Accept any id the model returns | One row joined two visible ids (`user_11_account_5762`); strict validation stays the default and every salvage is logged |
 | D-CONTENT-CONFLICT | A resource linked to the subject only through a catalog claim or a lookup key, whose own fields carry identifiers none of which belong to the subject, is CONFLICT (no steps) | Trust the catalog link (CONFIRMED) | Catalog rows are activity claims; on `marketing_001` the record itself names a different person absent from the identity tables. Records naming the subject *and* someone else (shared support context) are not affected |
+| C0 (shipped) | Model failures are counted (intent cases + skipped screenshots) and are part of `degraded`; any model failure exits 4 and never replaces output.csv; `--allow-degraded` writes `output.degraded.csv`. Exit codes: 0 ok, 2 validation failed, 3 cache miss under `--from-cache`, 4 model failure | Write the output and print degraded=0 | The first live run silently produced 358 NOT_APPLICABLE fallbacks |
+| C1 (shipped) | The file validator rejects self-contradicting rows (INCOMPLETE with no steps; COMPLETE without a VERIFICATION step), so such a run exits 2 and output.csv is not replaced | Accept them as degraded rows | problem_statement.md line 91: "For `INCOMPLETE`, include findings, the complete remediation plan, and the checks that must pass afterward." Consequence: until the M2 policy is decided, case_55 and case_63 keep every run at exit 2 and the accepted output.csv (ef0cc990…) stays in place |
+| C2 (shipped) | `direct_identifiers_visible` is exactly true / false / "UNKNOWN" with a reason; null is rejected and legacy null upgrades to "UNKNOWN", never false. A screenshot's record_type is kept only if it is one of the resolved system's categories | Coerce null to false; trust the model's category | Re-extracting evidence_42 returned USER_PROFILE for the identity_service tombstone, which would have produced a DELETE of a record policy preserves. With the check, tombstone_17 is unchanged (exposure UNKNOWN, no step) and 0 rows change |
+| D-E2 | Do not ship the investigator; do not run it on eval | Ship (the SHIP rule is met vacuously: 0 accepted, 0 incorrect) | 0 of 126 sample proposals accepted, so no number moves (P1). Ceiling argument: the verifier accepts only identity-link support, and any identity link the tools can reach is already a hard link that attribution marks CONFIRMED. Running eval would cost about 300 calls for an expected 0 |
+| D-E1 | Ship neither ordering strategy (see rejection log) | Ship A (4 correct resolutions) | Both made one incorrect resolution on the samples; timing/ordering cannot meet the zero-incorrect bar. The E2 verifier therefore does not accept ordering-only support either |
 | D-TRACE-NORMAL | Traces hold decision facts only; run metadata (cache hits, call ids, latency) lives in the usage ledger | Keep `cache_hit` in traces | The flag made 358 traces differ between a live and a cached run with identical decisions |
+
+### M2: proposed policy for unresolvable evidence (PROPOSED, NOT IMPLEMENTED; awaiting approval)
+
+Rows affected today: case_55 and case_63 (eval) and case_04 (sample). Governing text, problem_statement.md line 91:
+"For `COMPLETE`, include only verification steps proving the current state. For `INCOMPLETE`, include findings,
+the complete remediation plan, and the checks that must pass afterward." And lines 24–29: "A deletion is complete
+only when: every relevant copy has received the treatment required … no active sync, import, or restore path can
+recreate the data …".
+
+Proposal (two reason codes, no case ids):
+1. **In-scope record with an undecidable state** (case_55: backup_9287, restore setting not shown). COMPLETE is
+   impossible (the restore path is not proven blocked). Emit INCOMPLETE with the policy-required check only:
+   `VERIFY_RESTORE_BLOCKED` (or the category's verification) with evidence "". No finding, because no evidence shows
+   a violation. The validator would accept an INCOMPLETE row whose steps are all VERIFICATION when every one of them
+   carries the reason code `STATE_UNDECIDABLE` in the trace.
+2. **No attributable record at all** (case_63: the only candidate is a CONFLICT; case_04: only AMBIGUOUS pairs).
+   Nothing can be planned without acting on data that may belong to someone else, and nothing can be verified.
+   Keep INCOMPLETE `[]`, and have the validator accept it only with the trace reason code `NO_ATTRIBUTABLE_RECORD`,
+   listed in the evaluation report. Rejected alternative: COMPLETE `[]` (claims proof that does not exist).
+
+Trade-off: rule 1 adds a step the reference may not contain; rule 2 keeps a row the strict validator flags.
 
 ### Rejection log
 
@@ -336,6 +371,9 @@ The contract assertions above already pass on `sample_output.csv` itself (sort r
 | Citation by request email (A_email) | 44/75 vs 74/75 for C |
 | Citation by system scope alone (A′) | 36/75 (scope) and 12/75 (full snapshot); an empty account collection would outrank direct mentions (case_21) |
 | Fuzzy identity matching | Planted near-name decoys; 3 names shared by different users |
+| E1 strategy A: anchored monotone matching of account deletes (INFERRED_ORDER) | On the 19 timing-only AMBIGUOUS sample pairs: 4 correct, **1 incorrect** (account_4990 given to case_54; its owner is case_22), 14 still AMBIGUOUS; 0 previously correct steps broken; 25 eval rows would change (UNVERIFIED). Fails the zero-incorrect SHIP rule. Code kept only in `code/analysis/e1_order_inference.py` |
+| E2 investigator loop + verifier (INFERRED_AGENT) | 11 sample batches, 28 calls, 41,780 tokens: 126 proposals, all AMBIGUOUS, 0 accepted. Ceiling 0 by construction given D-E1 |
+| E1 strategy B: burst segmentation, new burst after a gap > 25 min (first trough of the unlabelled gap histogram) | 1 correct, **1 incorrect** (analytics_5335 given to case_547; its owner is case_21), 17 still AMBIGUOUS; 0 steps broken; 15 eval rows would change (UNVERIFIED). Fails the SHIP rule |
 | Scoping by a "requested_at − 30 days" margin | It worked on the samples, but 30 is an arbitrary constant; `[requested_at, audit_at]` gives the same separation without a tuned number |
 
 ---

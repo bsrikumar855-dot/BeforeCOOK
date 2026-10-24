@@ -1,0 +1,106 @@
+{
+ "batch_id": "batch_eece46e2c9",
+ "batch_size": 1,
+ "call_id": "287fa248f7294a80",
+ "call_usage": {
+  "input_tokens": 1390,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 567,
+  "thinking_tokens": 0,
+  "total_tokens": 1957
+ },
+ "key": "64b02ca55620be8eb59584e416e8c6b7e723ac7c49b1db0c225aec3545663f88",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "p15424f9426dd",
+ "provider": "gemini",
+ "response": {
+  "action": "final",
+  "proposals": [
+   {
+    "case_id": "case_13",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no identifying information found in resource observations",
+    "resource_id": "analytics_2265"
+   },
+   {
+    "case_id": "case_18",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool results link this account to the case",
+    "resource_id": "account_5037"
+   },
+   {
+    "case_id": "case_18",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool results link this account to the case",
+    "resource_id": "account_5521"
+   },
+   {
+    "case_id": "case_18",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no identifying information found in resource observations",
+    "resource_id": "analytics_2265"
+   },
+   {
+    "case_id": "case_20",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool results link this account to the case",
+    "resource_id": "account_5037"
+   },
+   {
+    "case_id": "case_20",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool results link this account to the case",
+    "resource_id": "account_5521"
+   },
+   {
+    "case_id": "case_20",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no identifying information found in resource observations",
+    "resource_id": "analytics_2265"
+   },
+   {
+    "case_id": "case_36",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no identifying information found in resource observations",
+    "resource_id": "analytics_2265"
+   },
+   {
+    "case_id": "case_37",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no identifying information found in resource observations",
+    "resource_id": "analytics_2265"
+   },
+   {
+    "case_id": "case_51",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no identifying information found in resource observations",
+    "resource_id": "analytics_2265"
+   }
+  ]
+ },
+ "task": "investigator",
+ "turn": 1
+}

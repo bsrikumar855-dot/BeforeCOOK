@@ -109,26 +109,6 @@
     "resource_id": "ORD-20265034"
    },
    {
-    "file_id": "evidence_42",
-    "reason": "resource_id prefix is not a known system prefix",
-    "resource_id": "ORD-20263245"
-   },
-   {
-    "file_id": "evidence_42",
-    "reason": "resource_id prefix is not a known system prefix",
-    "resource_id": "CS-3245"
-   },
-   {
-    "file_id": "evidence_42",
-    "reason": "resource_id prefix is not a known system prefix",
-    "resource_id": "CS-3378"
-   },
-   {
-    "file_id": "evidence_42",
-    "reason": "resource_id prefix is not a known system prefix",
-    "resource_id": "FIN-7742"
-   },
-   {
     "file_id": "evidence_46",
     "reason": "resource_id prefix is not a known system prefix",
     "resource_id": "delivery_confirmation_20.pdf"
@@ -186,6 +166,56 @@
   ],
   "failed_files": []
  },
+ "image_legacy_replies_upgraded": [
+  {
+   "file_id": "evidence_04",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_09",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_14",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_19",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_23",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_28",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_32",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_37",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_46",
+   "prompt_version": "pb1da0fa903ab"
+  },
+  {
+   "file_id": "evidence_60",
+   "prompt_version": "pb1da0fa903ab"
+  }
+ ],
+ "image_record_type_claims_rejected": [
+  {
+   "claimed": "USER_PROFILE",
+   "file_id": "evidence_42",
+   "resource_id": "tombstone_17",
+   "system_id": "identity_service"
+  }
+ ],
  "image_rows_accepted": [
   {
    "file_id": "evidence_04",

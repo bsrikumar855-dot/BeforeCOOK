@@ -1,0 +1,269 @@
+{
+ "batch_id": "batch_31acd24549",
+ "batch_size": 1,
+ "call_id": "511132a7b3df4975",
+ "call_usage": {
+  "input_tokens": 2469,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 1737,
+  "thinking_tokens": 0,
+  "total_tokens": 4206
+ },
+ "key": "c15b8cd510e9fbfc32b43d89eddf9354e48edf34db11d11042388568e6f03741",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "p15424f9426dd",
+ "provider": "gemini",
+ "response": {
+  "action": "final",
+  "proposals": [
+   {
+    "case_id": "case_21",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_294"
+   },
+   {
+    "case_id": "case_21",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_410"
+   },
+   {
+    "case_id": "case_21",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_6440"
+   },
+   {
+    "case_id": "case_21",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_7015"
+   },
+   {
+    "case_id": "case_21",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_8832"
+   },
+   {
+    "case_id": "case_21",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_9155"
+   },
+   {
+    "case_id": "case_21",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "analytics_5335"
+   },
+   {
+    "case_id": "case_23",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_294"
+   },
+   {
+    "case_id": "case_23",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_410"
+   },
+   {
+    "case_id": "case_23",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_6440"
+   },
+   {
+    "case_id": "case_23",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_7015"
+   },
+   {
+    "case_id": "case_23",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_8832"
+   },
+   {
+    "case_id": "case_23",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_9155"
+   },
+   {
+    "case_id": "case_23",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "analytics_5335"
+   },
+   {
+    "case_id": "case_546",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_294"
+   },
+   {
+    "case_id": "case_546",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_410"
+   },
+   {
+    "case_id": "case_546",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_6440"
+   },
+   {
+    "case_id": "case_546",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_7015"
+   },
+   {
+    "case_id": "case_546",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_8832"
+   },
+   {
+    "case_id": "case_546",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_9155"
+   },
+   {
+    "case_id": "case_546",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "analytics_5335"
+   },
+   {
+    "case_id": "case_547",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_294"
+   },
+   {
+    "case_id": "case_547",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_410"
+   },
+   {
+    "case_id": "case_547",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_6440"
+   },
+   {
+    "case_id": "case_547",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_7015"
+   },
+   {
+    "case_id": "case_547",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_8832"
+   },
+   {
+    "case_id": "case_547",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_9155"
+   },
+   {
+    "case_id": "case_547",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "analytics_5335"
+   },
+   {
+    "case_id": "case_548",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_294"
+   },
+   {
+    "case_id": "case_548",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_410"
+   },
+   {
+    "case_id": "case_548",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_6440"
+   },
+   {
+    "case_id": "case_548",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_7015"
+   },
+   {
+    "case_id": "case_548",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_8832"
+   },
+   {
+    "case_id": "case_548",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "account_9155"
+   },
+   {
+    "case_id": "case_548",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "insufficient evidence",
+    "resource_id": "analytics_5335"
+   }
+  ]
+ },
+ "task": "investigator",
+ "turn": 1
+}

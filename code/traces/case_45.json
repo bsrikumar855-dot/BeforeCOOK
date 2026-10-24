@@ -213,7 +213,7 @@
    "required_action": "RETAIN",
    "resource_id": "audit_record_003",
    "state": {
-    "exposure": "UNKNOWN",
+    "exposure": "DIRECT_IDENTIFIERS",
     "flow_state": null,
     "observation_ids": [
      "evidence_37#img0"

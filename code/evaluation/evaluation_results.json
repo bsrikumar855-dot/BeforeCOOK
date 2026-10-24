@@ -1776,25 +1776,28 @@
  ],
  "determinism": {
   "run_1": {
-   "returncode": 0,
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmp9wxms52i\\run_1\\output.csv",
-   "stderr": "",
+   "returncode": 2,
+   "pythonhashseed": "1",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\run_1\\output.csv",
+   "stderr": "invalid output: case_55: INCOMPLETE with no steps; case_63: INCOMPLETE with no steps; output.csv untouched, diagnostic rows in C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\run_1\\output.degraded.csv",
    "model_calls": 0,
    "files_compared": 553
   },
   "run_2": {
-   "returncode": 0,
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmp9wxms52i\\run_2\\output.csv",
-   "stderr": "",
+   "returncode": 2,
+   "pythonhashseed": "2",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\run_2\\output.csv",
+   "stderr": "invalid output: case_55: INCOMPLETE with no steps; case_63: INCOMPLETE with no steps; output.csv untouched, diagnostic rows in C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\run_2\\output.degraded.csv",
    "model_calls": 0,
    "identical_to_run_1": true,
    "differences": [],
    "files_compared": 553
   },
   "from_cache_no_keys": {
-   "returncode": 0,
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmp9wxms52i\\from_cache_no_keys\\output.csv",
-   "stderr": "",
+   "returncode": 2,
+   "pythonhashseed": "3",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\from_cache_no_keys\\output.csv",
+   "stderr": "invalid output: case_55: INCOMPLETE with no steps; case_63: INCOMPLETE with no steps; output.csv untouched, diagnostic rows in C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\from_cache_no_keys\\output.degraded.csv",
    "model_calls": 0,
    "identical_to_run_1": true,
    "differences": [],
@@ -1838,6 +1841,16 @@
   "live_calls_this_run": 0,
   "cache_hits_this_run": 409,
   "events": [],
-  "models_verified": {}
+  "models_verified": {},
+  "experiments": {
+   "investigator/gemini-3.5-flash-lite": {
+    "calls": 28,
+    "tokens": 41780
+   },
+   "vision/gemini-3.5-flash": {
+    "calls": 1,
+    "tokens": 5959
+   }
+  }
  }
 }

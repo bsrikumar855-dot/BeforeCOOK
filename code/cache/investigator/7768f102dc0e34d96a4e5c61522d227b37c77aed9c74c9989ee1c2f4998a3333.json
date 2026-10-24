@@ -1,0 +1,56 @@
+{
+ "batch_id": "batch_15736e891a",
+ "batch_size": 1,
+ "call_id": "075131e164c64505",
+ "call_usage": {
+  "input_tokens": 1275,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 241,
+  "thinking_tokens": 0,
+  "total_tokens": 1516
+ },
+ "key": "7768f102dc0e34d96a4e5c61522d227b37c77aed9c74c9989ee1c2f4998a3333",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "p15424f9426dd",
+ "provider": "gemini",
+ "response": {
+  "action": "final",
+  "proposals": [
+   {
+    "case_id": "case_03",
+    "cited_tool_results": [
+     "r2"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "resource observations show no identifiers linking to user_43",
+    "resource_id": "analytics_5589"
+   },
+   {
+    "case_id": "case_03",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no identifying evidence linking to user_43",
+    "resource_id": "analytics_9406"
+   },
+   {
+    "case_id": "case_44",
+    "cited_tool_results": [
+     "r2"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "resource observations show no identifiers linking to user_42",
+    "resource_id": "analytics_5589"
+   },
+   {
+    "case_id": "case_44",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no identifying evidence linking to user_42",
+    "resource_id": "analytics_9406"
+   }
+  ]
+ },
+ "task": "investigator",
+ "turn": 2
+}

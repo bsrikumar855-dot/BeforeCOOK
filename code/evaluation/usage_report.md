@@ -33,3 +33,14 @@ entries this run reused). Provider: Google Gemini API, free tier (actual cost $0
 - The intent replies also cover the 32 sample requests (the pipeline runs samples and eval jointly for global
   attribution); averages divide by the 518 eval requests.
 - Calls made while evaluating the custom fixtures (X1–X5) are not part of the dataset run and are not counted.
+
+## Experiment calls (not part of the dataset run)
+
+Counted from the cached replies: E2 investigator turns, and screenshot replies produced after the dataset run
+(the evidence_42 re-extraction under the tri-state prompt). Groq was never called: no GROQ_API_KEY is set,
+so every investigator turn fell back to Gemini (one `fallback_used` event per turn).
+
+| Task / model | Calls | Total tokens |
+|---|---|---|
+| investigator/gemini-3.5-flash-lite | 28 | 41780 |
+| vision/gemini-3.5-flash | 1 | 5959 |

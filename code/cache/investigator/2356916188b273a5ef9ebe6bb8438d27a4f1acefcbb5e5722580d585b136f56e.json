@@ -1,0 +1,70 @@
+{
+ "batch_id": "batch_ae6e6fd7e6",
+ "batch_size": 1,
+ "call_id": "fb3b8a6168d44e38",
+ "call_usage": {
+  "input_tokens": 1116,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 323,
+  "thinking_tokens": 0,
+  "total_tokens": 1439
+ },
+ "key": "2356916188b273a5ef9ebe6bb8438d27a4f1acefcbb5e5722580d585b136f56e",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "p15424f9426dd",
+ "provider": "gemini",
+ "response": {
+  "action": "final",
+  "proposals": [
+   {
+    "case_id": "case_04",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no observations found for resource",
+    "resource_id": "account_4163"
+   },
+   {
+    "case_id": "case_04",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tools called to link resource",
+    "resource_id": "analytics_901"
+   },
+   {
+    "case_id": "case_30",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no observations found for resource",
+    "resource_id": "account_4163"
+   },
+   {
+    "case_id": "case_83",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tools called to link resource",
+    "resource_id": "analytics_901"
+   },
+   {
+    "case_id": "case_84",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tools called to link resource",
+    "resource_id": "analytics_901"
+   },
+   {
+    "case_id": "case_85",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tools called to link resource",
+    "resource_id": "analytics_901"
+   }
+  ]
+ },
+ "task": "investigator",
+ "turn": 1
+}

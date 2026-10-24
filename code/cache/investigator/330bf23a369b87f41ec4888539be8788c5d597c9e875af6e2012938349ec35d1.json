@@ -1,0 +1,27 @@
+{
+ "batch_id": "batch_54da9650bc",
+ "batch_size": 1,
+ "call_id": "d0eb7877e1bc48df",
+ "call_usage": {
+  "input_tokens": 786,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 55,
+  "thinking_tokens": 0,
+  "total_tokens": 841
+ },
+ "key": "330bf23a369b87f41ec4888539be8788c5d597c9e875af6e2012938349ec35d1",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "p15424f9426dd",
+ "provider": "gemini",
+ "response": {
+  "action": "tool",
+  "args": {
+   "resource_id": "analytics_3264",
+   "until": "2026-09-15T12:00:00Z"
+  },
+  "tool": "resource_observations"
+ },
+ "task": "investigator",
+ "turn": 0
+}

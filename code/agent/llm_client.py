@@ -126,9 +126,9 @@ class LLMClient:
     def task_setting(self, task: str, name: str, default: Any = None) -> Any:
         return self.config["tasks"][task].get(name, default)
 
-    def _key(self, slot: str) -> str | None:
-        env_name = self.config["providers"]["gemini"]["key_slots"][slot]
-        return os.environ.get(env_name) or None
+    def _key(self, slot: str, provider: str = "gemini") -> str | None:
+        env_name = self.config["providers"][provider]["key_slots"].get(slot)
+        return (os.environ.get(env_name) or None) if env_name else None
 
     def available_slots(self) -> list[str]:
         return [s for s in self.config["providers"]["gemini"]["key_slots"] if self._key(s)]
@@ -176,7 +176,8 @@ class LLMClient:
             if (slot, model_id) in self.exhausted:
                 attempts_log.append({"model": model_id, "key_slot": slot, "outcome": "skipped_exhausted"})
                 continue
-            key = self._key(slot)
+            provider = model_cfg.get("provider", "gemini")
+            key = self._key(slot, provider)
             if not key:
                 attempts_log.append({"model": model_id, "key_slot": slot, "outcome": "skipped_no_key"})
                 continue
@@ -206,7 +207,7 @@ class LLMClient:
                 if len(attempts_log) > 1:
                     self.ledger.events.append({"event": "fallback_used", "task": task, "answered_by": model_id,
                                                "key_slot": slot, "attempts": attempts_log})
-                return ModelReply(data, "gemini", model_id, slot, usage, call_id, attempts_log)
+                return ModelReply(data, provider, model_id, slot, usage, call_id, attempts_log)
         self.ledger.events.append({"event": "all_providers_failed", "task": task, "attempts": attempts_log})
         raise AllProvidersFailed(f"{task}: every configured attempt failed: {attempts_log}")
 
@@ -244,6 +245,8 @@ class LLMClient:
         return "retries_exhausted", None
 
     def _post(self, model_cfg: dict, key: str, prompt: str, image: bytes | None, image_mime: str) -> tuple[int, dict]:
+        if model_cfg.get("provider") == "groq":
+            return self._post_openai_compatible(model_cfg, key, prompt)
         endpoint = self.config["providers"]["gemini"]["endpoint"]
         parts: list[dict] = [{"text": prompt}]
         if image is not None:
@@ -265,9 +268,36 @@ class LLMClient:
         except (urllib.error.URLError, TimeoutError, ConnectionError):
             return -1, {}
 
+    def _post_openai_compatible(self, model_cfg: dict, key: str, prompt: str) -> tuple[int, dict]:
+        """Groq chat completions (OpenAI-compatible), JSON-object responses, temperature 0."""
+        endpoint = self.config["providers"][model_cfg["provider"]]["endpoint"]
+        body = json.dumps({"model": model_cfg["id"], "temperature": 0, "response_format": {"type": "json_object"},
+                           "messages": [{"role": "user", "content": prompt}]}).encode()
+        req = urllib.request.Request(f"{endpoint}/chat/completions", data=body, method="POST",
+                                     headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"})
+        try:
+            with urllib.request.urlopen(req, timeout=self.config["limits"]["timeout_seconds"]) as resp:
+                return resp.status, json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            try:
+                return exc.code, json.loads(exc.read().decode("utf-8"))
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                return exc.code, {}
+        except (urllib.error.URLError, TimeoutError, ConnectionError):
+            return -1, {}
+
     def _record(self, model_cfg: dict, slot: str, body: dict) -> tuple[str, dict, str]:
         self.call_counter += 1
         call_id = uuid.uuid4().hex[:16]          # unique across runs, so cached usage is never double counted
+        provider = model_cfg.get("provider", "gemini")
+        if provider == "groq":
+            u = body.get("usage", {})
+            usage = {"input_tokens": u.get("prompt_tokens", 0), "output_tokens": u.get("completion_tokens", 0),
+                     "thinking_tokens": 0, "total_tokens": u.get("total_tokens", 0), "model_version": body.get("model")}
+            self.ledger.calls.append({"call_id": call_id, "provider": provider, "model": model_cfg["id"],
+                                      "key_slot": slot, **usage})
+            text = ((body.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+            return text, usage, call_id
         meta = body.get("usageMetadata", {})
         usage = {"input_tokens": meta.get("promptTokenCount", 0),
                  "output_tokens": meta.get("candidatesTokenCount", 0),

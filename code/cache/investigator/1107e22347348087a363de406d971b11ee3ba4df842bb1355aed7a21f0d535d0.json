@@ -1,0 +1,42 @@
+{
+ "batch_id": "batch_54da9650bc",
+ "batch_size": 1,
+ "call_id": "54341337cc6749ea",
+ "call_usage": {
+  "input_tokens": 991,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 120,
+  "thinking_tokens": 0,
+  "total_tokens": 1111
+ },
+ "key": "1107e22347348087a363de406d971b11ee3ba4df842bb1355aed7a21f0d535d0",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "p15424f9426dd",
+ "provider": "gemini",
+ "response": {
+  "action": "final",
+  "proposals": [
+   {
+    "case_id": "case_103",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "resource observations show no identifiers",
+    "resource_id": "analytics_3264"
+   },
+   {
+    "case_id": "case_19",
+    "cited_tool_results": [
+     "r1"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "resource observations show no identifiers",
+    "resource_id": "analytics_3264"
+   }
+  ]
+ },
+ "task": "investigator",
+ "turn": 1
+}

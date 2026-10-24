@@ -1,0 +1,880 @@
+{
+ "sample_timing_only_pairs_in_scope": 19,
+ "batches": 11,
+ "model_calls": 0,
+ "tool_calls": 17,
+ "tokens": 0,
+ "batches_failed": 0,
+ "proposed_AMBIGUOUS": 126,
+ "rejected_or_ambiguous": 126,
+ "events": {},
+ "models": {},
+ "per_batch": [
+  {
+   "batch": "batch_15736e891a",
+   "pairs": 4,
+   "model_calls": 0,
+   "tool_calls": 2,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_03",
+     "analytics_5589",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_03",
+     "analytics_9406",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_44",
+     "analytics_5589",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_44",
+     "analytics_9406",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_18e7f44ce2",
+   "pairs": 4,
+   "model_calls": 0,
+   "tool_calls": 2,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_22",
+     "account_4990",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_22",
+     "account_6829",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_54",
+     "account_4990",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_54",
+     "account_6829",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_1af668836c",
+   "pairs": 2,
+   "model_calls": 0,
+   "tool_calls": 1,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_09",
+     "analytics_5718",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_64",
+     "analytics_5718",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_31acd24549",
+   "pairs": 35,
+   "model_calls": 0,
+   "tool_calls": 1,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_21",
+     "account_294",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_21",
+     "account_410",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_21",
+     "account_6440",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_21",
+     "account_7015",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_21",
+     "account_8832",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_21",
+     "account_9155",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_21",
+     "analytics_5335",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_23",
+     "account_294",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_23",
+     "account_410",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_23",
+     "account_6440",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_23",
+     "account_7015",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_23",
+     "account_8832",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_23",
+     "account_9155",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_23",
+     "analytics_5335",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_546",
+     "account_294",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_546",
+     "account_410",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_546",
+     "account_6440",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_546",
+     "account_7015",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_546",
+     "account_8832",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_546",
+     "account_9155",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_546",
+     "analytics_5335",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_547",
+     "account_294",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_547",
+     "account_410",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_547",
+     "account_6440",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_547",
+     "account_7015",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_547",
+     "account_8832",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_547",
+     "account_9155",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_547",
+     "analytics_5335",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_548",
+     "account_294",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_548",
+     "account_410",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_548",
+     "account_6440",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_548",
+     "account_7015",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_548",
+     "account_8832",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_548",
+     "account_9155",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_548",
+     "analytics_5335",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_54da9650bc",
+   "pairs": 2,
+   "model_calls": 0,
+   "tool_calls": 1,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_103",
+     "analytics_3264",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_19",
+     "analytics_3264",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_63e7766be3",
+   "pairs": 10,
+   "model_calls": 0,
+   "tool_calls": 2,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_27",
+     "analytics_4574",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_27",
+     "analytics_6077",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_28",
+     "account_5482",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_28",
+     "account_7012",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_28",
+     "analytics_4574",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_28",
+     "analytics_6077",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_29",
+     "account_5482",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_29",
+     "account_7012",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_29",
+     "analytics_4574",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_29",
+     "analytics_6077",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_8fd914c43a",
+   "pairs": 28,
+   "model_calls": 0,
+   "tool_calls": 2,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_10",
+     "account_010",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_10",
+     "account_3136",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_10",
+     "account_4842",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_10",
+     "account_7225",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_10",
+     "analytics_1895",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_10",
+     "analytics_4566",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_24",
+     "analytics_1895",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_24",
+     "analytics_4566",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_25",
+     "account_010",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_25",
+     "account_3136",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_25",
+     "account_4842",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_25",
+     "account_7225",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_25",
+     "analytics_1895",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_25",
+     "analytics_4566",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_26",
+     "analytics_1895",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_26",
+     "analytics_4566",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_549",
+     "account_010",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_549",
+     "account_3136",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_549",
+     "account_4842",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_549",
+     "account_7225",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_549",
+     "analytics_1895",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_549",
+     "analytics_4566",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_550",
+     "account_010",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_550",
+     "account_3136",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_550",
+     "account_4842",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_550",
+     "account_7225",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_550",
+     "analytics_1895",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_550",
+     "analytics_4566",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_99e82d5a1e",
+   "pairs": 21,
+   "model_calls": 0,
+   "tool_calls": 1,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_11",
+     "analytics_9447",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_47",
+     "account_034",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_47",
+     "account_483",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_47",
+     "account_617",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_47",
+     "account_7119",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_47",
+     "analytics_9447",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_48",
+     "account_034",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_48",
+     "account_483",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_48",
+     "account_617",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_48",
+     "account_7119",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_48",
+     "analytics_9447",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_49",
+     "account_034",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_49",
+     "account_483",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_49",
+     "account_617",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_49",
+     "account_7119",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_49",
+     "analytics_9447",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_62",
+     "account_034",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_62",
+     "account_483",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_62",
+     "account_617",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_62",
+     "account_7119",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_62",
+     "analytics_9447",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_ae6e6fd7e6",
+   "pairs": 6,
+   "model_calls": 0,
+   "tool_calls": 1,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_04",
+     "account_4163",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_04",
+     "analytics_901",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_30",
+     "account_4163",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_83",
+     "analytics_901",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_84",
+     "analytics_901",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_85",
+     "analytics_901",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_b5d5eeb694",
+   "pairs": 4,
+   "model_calls": 0,
+   "tool_calls": 3,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_31",
+     "account_4857",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_31",
+     "account_8858",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_32",
+     "account_4857",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_32",
+     "account_8858",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "batch": "batch_eece46e2c9",
+   "pairs": 10,
+   "model_calls": 0,
+   "tool_calls": 1,
+   "tokens": 0,
+   "error": "",
+   "decisions": [
+    [
+     "case_13",
+     "analytics_2265",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_18",
+     "account_5037",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_18",
+     "account_5521",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_18",
+     "analytics_2265",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_20",
+     "account_5037",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_20",
+     "account_5521",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_20",
+     "analytics_2265",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_36",
+     "analytics_2265",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_37",
+     "analytics_2265",
+     false,
+     "model answered AMBIGUOUS"
+    ],
+    [
+     "case_51",
+     "analytics_2265",
+     false,
+     "model answered AMBIGUOUS"
+    ]
+   ]
+  }
+ ]
+}

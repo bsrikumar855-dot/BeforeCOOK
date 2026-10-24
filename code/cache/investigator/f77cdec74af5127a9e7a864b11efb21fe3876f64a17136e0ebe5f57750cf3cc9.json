@@ -1,0 +1,56 @@
+{
+ "batch_id": "batch_18e7f44ce2",
+ "batch_size": 1,
+ "call_id": "aa8395ee78ca4153",
+ "call_usage": {
+  "input_tokens": 1133,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 248,
+  "thinking_tokens": 0,
+  "total_tokens": 1381
+ },
+ "key": "f77cdec74af5127a9e7a864b11efb21fe3876f64a17136e0ebe5f57750cf3cc9",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "p15424f9426dd",
+ "provider": "gemini",
+ "response": {
+  "action": "final",
+  "proposals": [
+   {
+    "case_id": "case_22",
+    "cited_tool_results": [
+     "r2"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no observations found for this resource",
+    "resource_id": "account_4990"
+   },
+   {
+    "case_id": "case_22",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no observations or identifiers link this resource to case 22",
+    "resource_id": "account_6829"
+   },
+   {
+    "case_id": "case_54",
+    "cited_tool_results": [
+     "r2"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "no observations found for this resource",
+    "resource_id": "account_4990"
+   },
+   {
+    "case_id": "case_54",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no observations or identifiers link this resource to case 54",
+    "resource_id": "account_6829"
+   }
+  ]
+ },
+ "task": "investigator",
+ "turn": 2
+}

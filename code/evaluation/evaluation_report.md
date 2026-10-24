@@ -106,9 +106,9 @@ Why each case exists (expected output, why naive logic fails, spec rule) is docu
 
 ## 5. Determinism
 
-- run_1: exit 0, live model calls 0, files compared 553
-- run_2: exit 0, live model calls 0, files compared 553, identical to run_1: True, differences: []
-- from_cache_no_keys: exit 0, live model calls 0, files compared 553, identical to run_1: True, differences: []
+- run_1: PYTHONHASHSEED=1, exit 2, live model calls 0, files compared 553
+- run_2: PYTHONHASHSEED=2, exit 2, live model calls 0, files compared 553, identical to run_1: True, differences: []
+- from_cache_no_keys: PYTHONHASHSEED=3, exit 2, live model calls 0, files compared 553, identical to run_1: True, differences: []
 
 ## 6. Failures found and improvements made
 
@@ -132,6 +132,18 @@ Why each case exists (expected output, why naive logic fails, spec rule) is docu
   person absent from the identity tables. It is now CONFLICT (no steps) instead of a CONFIRMED attribution.
 - **Trace determinism.** Traces carried a `cache_hit` flag, so a live run and a cached run differed in 358 traces; the
   flag now lives only in the usage ledger and traces are byte-identical across live, repeat and keyless runs.
+
+### Change records (checkpoint 807cc74 onward; one local commit per shipped change)
+
+| Id | Change | Rows it should fix | Rows it could break | Measured | Verdict |
+|---|---|---|---|---|---|
+| C0 | Model failures counted in `degraded`; exit 4 never replaces output.csv; `--allow-degraded` writes output.degraded.csv | none (guard) | none | 0 rows changed; 4 new tests; a real VLM failure exited 4 with output.csv untouched | SHIPPED (807cc74) |
+| C1 | File validator rejects INCOMPLETE `[]` and COMPLETE without VERIFICATION | none (gate) | none | 0 rows changed; case_55 and case_63 now keep every run at exit 2, so output.csv stays at ef0cc990 until the M2 policy is approved | SHIPPED (e9681aa) |
+| E1-A | Anchored monotone matching of account deletes (INFERRED_ORDER) | 19 timing-only AMBIGUOUS sample pairs | any pair it resolves wrongly | 4 correct, 1 incorrect, 14 still AMBIGUOUS; 0 steps broken; 25 eval rows would change (UNVERIFIED) | REVERTED (1 incorrect) |
+| E1-B | Burst segmentation, gap > 25 min (unlabelled histogram trough) | same | same | 1 correct, 1 incorrect, 17 still AMBIGUOUS; 0 steps broken; 15 eval rows would change (UNVERIFIED) | REVERTED (1 incorrect) |
+| C2 | Tri-state `direct_identifiers_visible` (+ reason, null rejected, legacy null -> UNKNOWN); screenshot category claims must fit the system; vision fallback gemini-3.5-flash | tombstone_17 semantics | a screenshot-derived treatment | evidence_42 re-extracted: tombstone_17 unchanged (exposure UNKNOWN, no step); without the category check the new reply would have turned the tombstone into a DELETE (caught, rejected); 0 rows changed | SHIPPED (ef0f478) |
+| E2 | Tool-calling investigator + deterministic verifier (INFERRED_AGENT) | remaining AMBIGUOUS/CONFLICT pairs | any accepted wrong proposal | 11 sample batches, 28 model calls, 17 tool calls, 41,780 tokens; 126 proposals, all AMBIGUOUS; 0 accepted. Verifier negative control: 3/3 wrong proposals rejected (unit test) | NOT SHIPPED (no metric moves; eval run skipped) |
+
 - **Known remaining failure class.** 19 of 22 missing sample steps are AMBIGUOUS attributions (interleaved deletion
   bursts), which by policy produce no steps; 3 are records found in no parsed source. Individual wrong rows are not
   fixed until reviewed.

@@ -269,13 +269,17 @@ def determinism_check() -> dict:
     out = {}
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        runs = {"run_1": {}, "run_2": {}, "from_cache_no_keys": {"from_cache": True, "strip_keys": True}}
+        # Separate processes with different hash seeds; --allow-degraded so the rows are compared even when the
+        # file gate (exit 2) keeps them out of output.csv.
+        runs = {"run_1": {"seed": "1"}, "run_2": {"seed": "2"},
+                "from_cache_no_keys": {"from_cache": True, "strip_keys": True, "seed": "3"}}
         for name, opt in runs.items():
             d = tmp / name
             cmd = [sys.executable, str(CODE_DIR / "main.py"), "--output", str(d / "output.csv"),
                    "--sample-output", str(d / "sample_predictions.csv"), "--traces", str(d / "traces"),
-                   "--ledger", str(tmp / f"{name}_ledger.json")]
+                   "--ledger", str(tmp / f"{name}_ledger.json"), "--allow-degraded"]
             env = dict(os.environ)
+            env["PYTHONHASHSEED"] = opt["seed"]
             if opt.get("from_cache"):
                 cmd.append("--from-cache")
             if opt.get("strip_keys"):
@@ -283,7 +287,7 @@ def determinism_check() -> dict:
                     env.pop(var)                                  # --from-cache never reads .env either
             proc = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=str(REPO_ROOT))
             ledger = json.loads((tmp / f"{name}_ledger.json").read_text()) if (tmp / f"{name}_ledger.json").exists() else {}
-            out[name] = {"returncode": proc.returncode, "stdout": proc.stdout.strip()[-300:],
+            out[name] = {"returncode": proc.returncode, "pythonhashseed": opt["seed"], "stdout": proc.stdout.strip()[-300:],
                          "stderr": proc.stderr.strip()[-300:], "model_calls": len(ledger.get("calls", [])),
                          "digests": _digest_dir(d) if d.exists() else {}}
         base = out["run_1"]["digests"]
@@ -334,9 +338,24 @@ def usage_summary(ledger_path: Path, n_requests: int) -> dict:
         for k in ("calls", "input_tokens", "output_tokens", "thinking_tokens", "total_tokens"):
             total[k] += r[k]
     total_est = sum(r["estimated_paid_usd"] for r in rows)
+    # Experiment calls (not part of the dataset run): every cached investigator turn and every vision reply
+    # produced after the first full run (re-extraction under the current prompt).
+    experiments = Counter()
+    for task in ("investigator", "vision"):
+        root = CODE_DIR / "cache" / task
+        for p in sorted(root.glob("*.json")) if root.exists() else []:
+            e = json.loads(p.read_text(encoding="utf-8"))
+            if task == "vision" and e.get("call_id") in {c["call_id"] for c in calls.values()}:
+                continue
+            u = e.get("call_usage", {})
+            k = (task, e.get("model"))
+            experiments[(k, "calls")] += 1
+            experiments[(k, "tokens")] += int(u.get("total_tokens", 0) or 0)
     return {"rows": rows, "total": dict(total), "estimated_paid_usd": total_est, "requests": n_requests,
             "live_calls_this_run": len(ledger.get("calls", [])), "cache_hits_this_run": len(ledger.get("cache_hits", [])),
-            "events": ledger.get("events", []), "models_verified": ledger.get("models_verified", {})}
+            "events": ledger.get("events", []), "models_verified": ledger.get("models_verified", {}),
+            "experiments": {f"{t}/{m}": {"calls": experiments[((t, m), "calls")], "tokens": experiments[((t, m), "tokens")]}
+                            for (t, m), kind in experiments if kind == "calls"}}
 
 
 # ----------------------------------------------------------------------------------- report
@@ -414,7 +433,7 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
     L += ["## 5. Determinism", ""]
     if det:
         for name, r in det.items():
-            L.append(f"- {name}: exit {r['returncode']}, live model calls {r['model_calls']}, files compared {r['files_compared']}"
+            L.append(f"- {name}: PYTHONHASHSEED={r.get('pythonhashseed')}, exit {r['returncode']}, live model calls {r['model_calls']}, files compared {r['files_compared']}"
                      + (f", identical to run_1: {r['identical_to_run_1']}, differences: {r['differences']}" if "identical_to_run_1" in r else ""))
     else:
         L.append("- Not run in this invocation (use `--determinism`).")
@@ -455,7 +474,13 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
           "  ledger, which the rerun overwrote, so they are not included (UNKNOWN, at most two calls).",
           "- The intent replies also cover the 32 sample requests (the pipeline runs samples and eval jointly for global",
           "  attribution); averages divide by the 518 eval requests.",
-          "- Calls made while evaluating the custom fixtures (X1–X5) are not part of the dataset run and are not counted."]
+          "- Calls made while evaluating the custom fixtures (X1–X5) are not part of the dataset run and are not counted.", "",
+          "## Experiment calls (not part of the dataset run)", "",
+          "Counted from the cached replies: E2 investigator turns, and screenshot replies produced after the dataset run",
+          "(the evidence_42 re-extraction under the tri-state prompt). Groq was never called: no GROQ_API_KEY is set,",
+          "so every investigator turn fell back to Gemini (one `fallback_used` event per turn).", "",
+          "| Task / model | Calls | Total tokens |", "|---|---|---|"] + [
+          f"| {k} | {v['calls']} | {v['tokens']} |" for k, v in sorted(usage.get("experiments", {}).items())]
     (EVAL_DIR / "usage_report.md").write_text("\n".join(U) + "\n", encoding="utf-8")
 
 
@@ -508,6 +533,33 @@ NARRATIVE = [
     "  person absent from the identity tables. It is now CONFLICT (no steps) instead of a CONFIRMED attribution.",
     "- **Trace determinism.** Traces carried a `cache_hit` flag, so a live run and a cached run differed in 358 traces; the",
     "  flag now lives only in the usage ledger and traces are byte-identical across live, repeat and keyless runs.",
+    "",
+    "### Change records (checkpoint 807cc74 onward; one local commit per shipped change)",
+    "",
+    "| Id | Change | Rows it should fix | Rows it could break | Measured | Verdict |",
+    "|---|---|---|---|---|---|",
+    "| C0 | Model failures counted in `degraded`; exit 4 never replaces output.csv; `--allow-degraded` writes "
+    "output.degraded.csv | none (guard) | none | 0 rows changed; 4 new tests; a real VLM failure exited 4 with "
+    "output.csv untouched | SHIPPED (807cc74) |",
+    "| C1 | File validator rejects INCOMPLETE `[]` and COMPLETE without VERIFICATION | none (gate) | none | 0 rows "
+    "changed; case_55 and case_63 now keep every run at exit 2, so output.csv stays at ef0cc990 until the M2 "
+    "policy is approved | SHIPPED (e9681aa) |",
+    "| E1-A | Anchored monotone matching of account deletes (INFERRED_ORDER) | 19 timing-only AMBIGUOUS sample "
+    "pairs | any pair it resolves wrongly | 4 correct, 1 incorrect, 14 still AMBIGUOUS; 0 steps broken; 25 eval "
+    "rows would change (UNVERIFIED) | REVERTED (1 incorrect) |",
+    "| E1-B | Burst segmentation, gap > 25 min (unlabelled histogram trough) | same | same | 1 correct, 1 "
+    "incorrect, 17 still AMBIGUOUS; 0 steps broken; 15 eval rows would change (UNVERIFIED) | REVERTED (1 "
+    "incorrect) |",
+    "| C2 | Tri-state `direct_identifiers_visible` (+ reason, null rejected, legacy null -> UNKNOWN); screenshot "
+    "category claims must fit the system; vision fallback gemini-3.5-flash | tombstone_17 semantics | a "
+    "screenshot-derived treatment | evidence_42 re-extracted: tombstone_17 unchanged (exposure UNKNOWN, no "
+    "step); without the category check the new reply would have turned the tombstone into a DELETE (caught, "
+    "rejected); 0 rows changed | SHIPPED (ef0f478) |",
+    "| E2 | Tool-calling investigator + deterministic verifier (INFERRED_AGENT) | remaining AMBIGUOUS/CONFLICT "
+    "pairs | any accepted wrong proposal | 11 sample batches, 28 model calls, 17 tool calls, 41,780 tokens; 126 "
+    "proposals, all AMBIGUOUS; 0 accepted. Verifier negative control: 3/3 wrong proposals rejected (unit "
+    "test) | NOT SHIPPED (no metric moves; eval run skipped) |",
+    "",
     "- **Known remaining failure class.** 19 of 22 missing sample steps are AMBIGUOUS attributions (interleaved deletion",
     "  bursts), which by policy produce no steps; 3 are records found in no parsed source. Individual wrong rows are not",
     "  fixed until reviewed.",

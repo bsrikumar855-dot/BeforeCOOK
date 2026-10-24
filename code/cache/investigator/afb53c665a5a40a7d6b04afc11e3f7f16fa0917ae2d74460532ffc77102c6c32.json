@@ -1,0 +1,100 @@
+{
+ "batch_id": "batch_63e7766be3",
+ "batch_size": 1,
+ "call_id": "a8c6c1a6626b4452",
+ "call_usage": {
+  "input_tokens": 1600,
+  "model_version": "gemini-3.5-flash-lite",
+  "output_tokens": 658,
+  "thinking_tokens": 0,
+  "total_tokens": 2258
+ },
+ "key": "afb53c665a5a40a7d6b04afc11e3f7f16fa0917ae2d74460532ffc77102c6c32",
+ "key_slot": "primary",
+ "model": "gemini-3.5-flash-lite",
+ "prompt_version": "p15424f9426dd",
+ "provider": "gemini",
+ "response": {
+  "action": "final",
+  "proposals": [
+   {
+    "case_id": "case_27",
+    "cited_tool_results": [
+     "r2"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "resource observations show no identifiers linking analytics_4574 to case_27",
+    "resource_id": "analytics_4574"
+   },
+   {
+    "case_id": "case_27",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool evidence linking analytics_6077 to case_27",
+    "resource_id": "analytics_6077"
+   },
+   {
+    "case_id": "case_28",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool evidence linking account_5482 to case_28",
+    "resource_id": "account_5482"
+   },
+   {
+    "case_id": "case_28",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool evidence linking account_7012 to case_28",
+    "resource_id": "account_7012"
+   },
+   {
+    "case_id": "case_28",
+    "cited_tool_results": [
+     "r2"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "resource observations show no identifiers linking analytics_4574 to case_28",
+    "resource_id": "analytics_4574"
+   },
+   {
+    "case_id": "case_28",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool evidence linking analytics_6077 to case_28",
+    "resource_id": "analytics_6077"
+   },
+   {
+    "case_id": "case_29",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool evidence linking account_5482 to case_29",
+    "resource_id": "account_5482"
+   },
+   {
+    "case_id": "case_29",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool evidence linking account_7012 to case_29",
+    "resource_id": "account_7012"
+   },
+   {
+    "case_id": "case_29",
+    "cited_tool_results": [
+     "r2"
+    ],
+    "decision": "AMBIGUOUS",
+    "rationale": "resource observations show no identifiers linking analytics_4574 to case_29",
+    "resource_id": "analytics_4574"
+   },
+   {
+    "case_id": "case_29",
+    "cited_tool_results": [],
+    "decision": "AMBIGUOUS",
+    "rationale": "no tool evidence linking analytics_6077 to case_29",
+    "resource_id": "analytics_6077"
+   }
+  ]
+ },
+ "task": "investigator",
+ "turn": 2
+}
