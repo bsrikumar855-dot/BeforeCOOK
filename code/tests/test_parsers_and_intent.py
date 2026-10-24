@@ -169,3 +169,16 @@ def test_model_label_outside_the_enum_is_rejected():
     from agent.llm_client import ValidationFailed
     with pytest.raises(ValidationFailed):
         make_validator(1)({"results": [{"id": "t01", "label": "COMPLETE", "negation_detected": False}]})
+
+
+def test_ocr_underscore_renderings_match_but_characters_never_substitute():
+    from agent.parsers.ocr_grounding import grounded, ocr_ids
+    text = "1) export 1261 customer_export 1261.zip\n2) data_flow.9846 warehouse\n7) data_flow1121 x\nsearch_428"
+    for tok in ("export_1261", "data_flow_9846", "data_flow_1121", "search_428"):
+        assert grounded(tok, text), tok
+    assert not grounded("export_1262", text)          # a different digit is never accepted
+    assert not grounded("export_126", text)           # no prefix-of-number match
+    assert not grounded("search_42", text)
+    assert not grounded("export_1261", "export l261")  # no l/1 substitution
+    assert not grounded("search_428", "research_428")  # boundary: not inside a longer word
+    assert ocr_ids(text, {"export", "data_flow", "search"}) == {"export_1261", "data_flow_9846", "data_flow_1121", "search_428"}

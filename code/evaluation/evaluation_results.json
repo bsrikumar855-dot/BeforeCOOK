@@ -1101,7 +1101,7 @@
   "labels_eval": {
    "AMBIGUOUS": 1247,
    "CONFIRMED": 1434,
-   "CONFIRMED/OUT_OF_SCOPE": 40,
+   "CONFIRMED/OUT_OF_SCOPE": 41,
    "CONFLICT": 1,
    "INFERRED": 40
   },
@@ -1111,7 +1111,7 @@
   ],
   "coverage_eval": [
    1474,
-   2762
+   2763
   ],
   "inferred_evaluable": [
    [
@@ -1446,6 +1446,10 @@
    [
     "case_45",
     "audit_record_001"
+   ],
+   [
+    "case_45",
+    "audit_record_002"
    ],
    [
     "case_45",
@@ -2664,7 +2668,7 @@
   "run_1": {
    "returncode": 0,
    "pythonhashseed": "1",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpxwn2m1fi\\run_1\\output.csv",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpmexu_0dy\\run_1\\output.csv",
    "stderr": "",
    "model_calls": 0,
    "files_compared": 553
@@ -2672,7 +2676,7 @@
   "run_2": {
    "returncode": 0,
    "pythonhashseed": "2",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpxwn2m1fi\\run_2\\output.csv",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpmexu_0dy\\run_2\\output.csv",
    "stderr": "",
    "model_calls": 0,
    "identical_to_run_1": true,
@@ -2682,7 +2686,7 @@
   "from_cache_no_keys": {
    "returncode": 0,
    "pythonhashseed": "3",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpxwn2m1fi\\from_cache_no_keys\\output.csv",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpmexu_0dy\\from_cache_no_keys\\output.csv",
    "stderr": "",
    "model_calls": 0,
    "identical_to_run_1": true,
@@ -2775,41 +2779,13 @@
   "cache_entries_used": 409,
   "live_calls_this_run": 0,
   "cache_hits_this_run": 409,
-  "events": [
-   {
-    "event": "env_file_loaded",
-    "variable": "GEMINI_API_KEY"
-   },
-   {
-    "event": "env_file_loaded",
-    "variable": "GEMINI_API_KEY_FALLBACK_1"
-   },
-   {
-    "event": "env_file_loaded",
-    "variable": "GEMINI_API_KEY_FALLBACK_2"
-   },
-   {
-    "event": "env_file_loaded",
-    "variable": "GEMINI_API_KEY_FALLBACK_3"
-   },
-   {
-    "event": "env_file_loaded",
-    "variable": "GEMINI_API_KEY_FALLBACK_4"
-   },
-   {
-    "event": "env_file_loaded",
-    "variable": "GEMINI_API_KEY_FALLBACK_5"
-   },
-   {
-    "event": "env_file_loaded",
-    "variable": "GEMINI_API_KEY_FALLBACK_6"
-   }
-  ],
+  "events": [],
   "ocr": {
    "engines": [
     "tesseract 5.5.3.20260724"
    ],
-   "images": 11
+   "images": 11,
+   "passes": 4
   },
   "experiments": {
    "intent/gemini-3.5-flash": {

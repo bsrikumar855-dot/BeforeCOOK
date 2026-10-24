@@ -18,7 +18,7 @@
  "eval": {
   "attribution_labels": {
    "AMBIGUOUS": 1247,
-   "CONFIRMED": 1474,
+   "CONFIRMED": 1475,
    "CONFLICT": 1,
    "INFERRED": 40
   },
@@ -30,7 +30,7 @@
    "AMBIGUOUS": 1247,
    "CONFLICT": 1,
    "EXPOSURE_UNKNOWN": 1,
-   "OUT_OF_SCOPE": 40
+   "OUT_OF_SCOPE": 41
   },
   "intent_paths": {
    "model_deletion->DELETION": 508,
@@ -52,7 +52,7 @@
   "TEXT_LAYER": 4
  },
  "image_extraction": {
-  "accepted_rows": 19,
+  "accepted_rows": 24,
   "dropped_rows": [
    {
     "file_id": "evidence_04",
@@ -63,16 +63,6 @@
     "file_id": "evidence_04",
     "reason": "resource_id prefix is not a known system prefix",
     "resource_id": "ORD-20265518"
-   },
-   {
-    "file_id": "evidence_09",
-    "reason": "UNGROUNDED: token absent from the image's OCR text",
-    "resource_id": "search_1874"
-   },
-   {
-    "file_id": "evidence_14",
-    "reason": "UNGROUNDED: token absent from the image's OCR text",
-    "resource_id": "data_flow_9846"
    },
    {
     "file_id": "evidence_14",
@@ -110,16 +100,6 @@
     "resource_id": "5"
    },
    {
-    "file_id": "evidence_23",
-    "reason": "UNGROUNDED: token absent from the image's OCR text",
-    "resource_id": "export_1261"
-   },
-   {
-    "file_id": "evidence_23",
-    "reason": "UNGROUNDED: token absent from the image's OCR text",
-    "resource_id": "export_1258"
-   },
-   {
     "file_id": "evidence_28",
     "reason": "resource_id prefix is not a known system prefix",
     "resource_id": "CS-5034"
@@ -128,11 +108,6 @@
     "file_id": "evidence_28",
     "reason": "resource_id prefix is not a known system prefix",
     "resource_id": "ORD-20265034"
-   },
-   {
-    "file_id": "evidence_37",
-    "reason": "UNGROUNDED: token absent from the image's OCR text",
-    "resource_id": "audit_record_002"
    },
    {
     "file_id": "evidence_46",
@@ -255,8 +230,18 @@
    "system_id": "search_service"
   },
   {
+   "file_id": "evidence_09",
+   "resource_id": "search_1874",
+   "system_id": "search_service"
+  },
+  {
    "file_id": "evidence_14",
    "resource_id": "data_flow_1121",
+   "system_id": "integration_service"
+  },
+  {
+   "file_id": "evidence_14",
+   "resource_id": "data_flow_9846",
    "system_id": "integration_service"
   },
   {
@@ -266,12 +251,22 @@
   },
   {
    "file_id": "evidence_23",
+   "resource_id": "export_1261",
+   "system_id": "export_service"
+  },
+  {
+   "file_id": "evidence_23",
    "resource_id": "export_1260",
    "system_id": "export_service"
   },
   {
    "file_id": "evidence_23",
    "resource_id": "export_1259",
+   "system_id": "export_service"
+  },
+  {
+   "file_id": "evidence_23",
+   "resource_id": "export_1258",
    "system_id": "export_service"
   },
   {
@@ -302,6 +297,11 @@
   {
    "file_id": "evidence_37",
    "resource_id": "audit_record_003",
+   "system_id": "security_service"
+  },
+  {
+   "file_id": "evidence_37",
+   "resource_id": "audit_record_002",
    "system_id": "security_service"
   },
   {
@@ -357,11 +357,13 @@
      "account_5762"
     ],
     "ocr_ids": [
+     "account_5",
      "account_5762",
      "support_9538",
      "support_9638"
     ],
     "ocr_only": [
+     "account_5",
      "support_9538",
      "support_9638"
     ],
@@ -372,15 +374,15 @@
    },
    "evidence_09": {
     "grounded": [
-     "search_428"
+     "search_428",
+     "search_1874"
     ],
     "ocr_ids": [
+     "search_1874",
      "search_428"
     ],
     "ocr_only": [],
-    "ungrounded": [
-     "search_1874"
-    ],
+    "ungrounded": [],
     "vlm_ids": [
      "search_428",
      "search_1874"
@@ -388,15 +390,15 @@
    },
    "evidence_14": {
     "grounded": [
-     "data_flow_1121"
-    ],
-    "ocr_ids": [
-     "data_flow_1121"
-    ],
-    "ocr_only": [],
-    "ungrounded": [
+     "data_flow_1121",
      "data_flow_9846"
     ],
+    "ocr_ids": [
+     "data_flow_1121",
+     "data_flow_9846"
+    ],
+    "ocr_only": [],
+    "ungrounded": [],
     "vlm_ids": [
      "data_flow_1121",
      "data_flow_9846"
@@ -417,18 +419,19 @@
    },
    "evidence_23": {
     "grounded": [
-     "export_1260",
-     "export_1259"
-    ],
-    "ocr_ids": [
-     "export_1259",
-     "export_1260"
-    ],
-    "ocr_only": [],
-    "ungrounded": [
      "export_1261",
+     "export_1260",
+     "export_1259",
      "export_1258"
     ],
+    "ocr_ids": [
+     "export_1258",
+     "export_1259",
+     "export_1260",
+     "export_1261"
+    ],
+    "ocr_only": [],
+    "ungrounded": [],
     "vlm_ids": [
      "export_1261",
      "export_1260",
@@ -460,11 +463,13 @@
      "backup_9281",
      "backup_9286",
      "backup_9287",
+     "backup_92871",
      "backup_9288",
      "backup_9291"
     ],
     "ocr_only": [
-     "backup_9281"
+     "backup_9281",
+     "backup_92871"
     ],
     "ungrounded": [],
     "vlm_ids": [
@@ -477,6 +482,7 @@
    "evidence_37": {
     "grounded": [
      "audit_record_003",
+     "audit_record_002",
      "audit_record_001",
      "audit_record_006",
      "audit_record_005",
@@ -484,15 +490,14 @@
     ],
     "ocr_ids": [
      "audit_record_001",
+     "audit_record_002",
      "audit_record_003",
      "audit_record_004",
      "audit_record_005",
      "audit_record_006"
     ],
     "ocr_only": [],
-    "ungrounded": [
-     "audit_record_002"
-    ],
+    "ungrounded": [],
     "vlm_ids": [
      "audit_record_003",
      "audit_record_002",
@@ -538,33 +543,7 @@
     ]
    }
   },
-  "ungrounded": [
-   {
-    "file_id": "evidence_09",
-    "resource_id": "search_1874",
-    "shown_as": "search_1874"
-   },
-   {
-    "file_id": "evidence_14",
-    "resource_id": "data_flow_9846",
-    "shown_as": "data_flow_9846"
-   },
-   {
-    "file_id": "evidence_23",
-    "resource_id": "export_1261",
-    "shown_as": "export_1261"
-   },
-   {
-    "file_id": "evidence_23",
-    "resource_id": "export_1258",
-    "shown_as": "export_1258"
-   },
-   {
-    "file_id": "evidence_37",
-    "resource_id": "audit_record_002",
-    "shown_as": "audit_record_002"
-   }
-  ]
+  "ungrounded": []
  },
  "samples": {
   "attribution_labels": {

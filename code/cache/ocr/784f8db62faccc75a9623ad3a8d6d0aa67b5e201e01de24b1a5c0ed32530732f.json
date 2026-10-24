@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_28",
+ "image_sha256": "542b7aec17e6b2f38827896e7eb52c70e4bfaaca22433621be1f80f54884e944",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "x3_autocontrast_psm6:gray:scale=3:lanczos:autocontrast=1:config=--psm 6",
+ "text": "i i Pr ion Hel\n<> Northstar Shop Helpline Console 9 Search tickets, customers, orders... oductio elp (HC\nNorthstar Shop / Helpline Console / Inbox\nInbox \u00a9 2 ; .\nf CS-5034 - Where is my delivery? \u00b0\u00b0\" Fiter Expo\n\u2014 ; rt_1034 - Kofi A man - Normal priori\na My tickets support_1034 - Kofi Agyemar ormal priority\n\u2014 Conversation Internal notes Activity\n|_| Assigned to me\n[_] Mentions Customer Email Assigned Tags\nKofi Agyeman kagyeman8947@fastmail.com Maya Chen Delivery - Tracking - Order update\n(_] Customer search\n[| Knowledge base Conversation Updated moments ago - 4 records Order ORD-20265034\n|_| Reports Time Sender Message Product Running shoes\n1, 09:12 Kofi Agyeman Could you let me know where my order is and when it is expected to arrive? Status In transit\n2) 09:13 Northstar Bot We received your message and are checking the order details. Carrier SwiftShip\nTracking SWF-884103\n3 | 09:28 Maya Chen The parcel reached the regional hub and is on track for delivery on 26 May.\nExpected 26 May 2026\n4) 09:35 Kofi Agyeman Thanks for the update.\nAssigned agent Maya Chen\nActivity\n@ 22 May\nOrder confirmed\n@ 23 May\nDispatched\n@ 24 May 07:46\nReached regional hub\n@ 24 May 08:15\nIn transit\n@ 26 May\nDelivery expected\n"
+}

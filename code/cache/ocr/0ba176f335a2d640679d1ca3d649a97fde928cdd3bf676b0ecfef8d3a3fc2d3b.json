@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_04",
+ "image_sha256": "d5c32ca5b6e1a2b4bbe9f5d41835ef1fd5d4f7061dab9067a4f9f88cea3c1861",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "x2_psm11:gray:scale=2:lanczos:autocontrast=0:config=--psm 11",
+ "text": "Le\n\nProduction Help\n\nco\n\n5\n\nNorthstar Shop\n\nCustomer Operations\n\n9 Search customers, orders, tickets...\n\nWY\n\nNorthstar Shop / Customer Operations / Customers\n\nO Customers\n\nSilver\n\nHaruka Sato\n\nFilter\n\nuser_11 - account_5762\n\nOrders\n\nOverview\n\nOrders\n\nAddresses\n\nSupport history\n\nSupport\n\nEmail\n\nPhone\n\nMarket\n\nLast contact\n\nCatalog\n\nSignup channel\n\nPreferred language\n\nharuka.s1838@zoho.com\n\n+81 90 7610 2507\n\nmobile_app\n\nJP\n\nJapanese\n\n24 Sep 2026 09:14 JST\n\nPromotions\n\nAnalytics\n\nOverview\n\nUpdated moments ago\n\n2 records\n\nCustomer details\n\nOrder ID\n\nDate\n\nItem\n\nQty\n\nTotal\n\nStatus\n\nDefault addr\n\ness\n\ness\n\n2-18-4 Kichijoji, Musashino, Tokyo\n\n180-0004\n\n1\n\nORD-20265762\n\n12 Sep 2026\n\nCeramic coffee set\n\nJPY 8,900\n\nDelivered - 18 Sep\n\nLoyalty tier\n\nSilver\n\n2\n\nORD-20265518\n\n28 Aug 2026\n\nTravel backpack\n\nJPY 12,400\n\nReturned - 03 Sep\n\nSupport\n\nCS-8538 - support_9538\n\nMember since\n\n12 Jan 2024\n\nActivity\n\ne\n\n24 Sep\n\nCustomer replied to CS-8538\n\n22 Sep\n\nSupport agent responded\n\n18 Sep\n\nOrder ORD-20265762 deli\n\n03 Sep\n\nOrder ORD-20265518 returned\n\n28 Aug\n\nsuppo\n\nt\n\n9538 created\n"
+}

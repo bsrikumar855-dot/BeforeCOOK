@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_09",
+ "image_sha256": "75afdb0ae53a4510c83399a70d88073cb4fb2747454095756e4ddad1a8c70605",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "x3_autocontrast_psm6:gray:scale=3:lanczos:autocontrast=1:config=--psm 6",
+ "text": "<> Northstar Shop Search Console \u00a9 email:g.silva76@gmail.com Production Help (SC\nNorthstar Shop / Search Console / Customer Search\nCustomer Search . ;\n| UO Customer Search 2\" Filter Export NT\nmer_di ry_v3 -\na Prodiuet Search customer_directory_v3 / prod-eu\n__ Results (2) Query details Shard timing\n|_| Order Search\n(_] Indexes Executed Latency Index Environment Shard tota\n01 Sep 2026 06:00:14 UTC 184 ms customer_directory_v3 prod-eu 184 ms\n[_] Cluster health\n[| Slow queries Results (2) Updated moments ago - 2 records Raw document - search_428\n_id Display name Email Customer reference Score Last indexed index customer_directory_v3\n1 search_428 Gabriel Silva g.silva76@gmail.com user_13 9.84 05:58:21 UTC id search_428\n2) search_1874 - g.silva76.jr@gmail.com \u2014 4.12 05:55:03 UTC display_name Gabriel Silva\nemail g.silva76@gmail.com\ncustomer_reference user_13\nindexed_at 2026-09-01T05:58:21Z\nActivity\n@ 06:00:14\nemail:g.silva76@gmail.com - 2 hits\n@ 05:42:03\ncustomer_reference:user_9842 - 1 hit\n@ 05:31:18\ndisplay_name:\"Aditi Jain\" - 1 hit\n"
+}

@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_42",
+ "image_sha256": "68c28a72afd6ed184d5990d15c543f8a516face204f0360f732755a8a63c28be",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "x3_autocontrast_psm6:gray:scale=3:lanczos:autocontrast=1:config=--psm 6",
+ "text": "Customer Reference P \u2018\nNorthstar Shop Registry \u00a3 Search references, orders, support cases or finance records... Production Help | CR\nNorthstar Shop / Customer Reference Registry / Customer references\nHome :\nL} user 17 Retained reference Filter Export\nCustomer key - Account Platform - eu-west\n() Customer references\n\u2014 Overview Linked records History\n|_| Orders\n(| Support Reference type Created Most recent update Owner team\nCustomer key 11 Jan 2024 08:42 UTC 10 Mar 2026 07:18 UTC Account Platform\n[_] Finance\n[| Data management Overview Updated moments ago : 4 records History\n| Reports i i\n| p System Record reference Relationship Created (UTC) Status 10 Mar 2026 a\n1 | Orders ORD-20263245 Linked to customer 11 Jan 2024 08:45 Active \u00ae 22 Aug 2024 Finance link added\n2 | Support CS-3245 Linked to customer 14 Feb 2024 12:16 Active \u00a9 03 Jun 2024 Support link added\n14 Feb 2024 Support link added\n3 Support CS-3378 Linked to customer 03 Jun 2024 09:27 Active \u00ae\n11 Jan 2024 Reference created\n4) Finance FIN-7742 Linked to customer 22 Aug 2024 15:03 Active \u00b0\nActivity\n@ Reference created\nRecorded\n@ Order link added\nORD-20263245\n@ Support links added\n@ Finance link added\nFIN-7742\n@ Metadata reviewed\nRecorded\n"
+}

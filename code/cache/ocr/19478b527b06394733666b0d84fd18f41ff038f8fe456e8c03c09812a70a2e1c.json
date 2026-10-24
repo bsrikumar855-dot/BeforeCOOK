@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_14",
+ "image_sha256": "e81fabc93ea1b5f4c918d934cdb2bea05d61737adfcc29f281494f5d8ec46355",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "x2:gray:scale=2:lanczos:autocontrast=0:config=",
+ "text": "<> Northstar Shop BridgeOps 9 Search connectors... Production Help { B\n\nNorthstar Shop / BridgeOps / Connections\n\nO Connections Connections 12 connectors Filter Export\n\nPRODUCTION - eu-west - 07 Aug 2026 08:00 UTC\n\nTopology\nTopology Throughput Recent deliveries\nMonitoring\nEvents Healthy Events / hour Delivery p95 Backlog Destination health\n12 4,113 185s 18 Healthy\nDestinations\nSettings Topology Updated moments 4 records data_flow_1121\nConnector Destination Selector Mode Events/hour Last contact Status Healthy\n1 data_flow_1121 customer_analytics_warehouse jain.aditi@gmail.com Continuous 1,284 07:59:42 Owner Data Platform\n2| data_flow_9846 customer_analytics_warehouse lucia-torres@gmail.com Continuous 842 07:59:36 Destination customer_analytics_warehouse\nSelector jain.aditi@gmail.com\n3 Order notifications notification_service order events Continuous 650 07:59:28\nSync mode Continuous sync\nDelivery tracking logistics_warehouse shipment events Continuous 420 07:59:13\nLast response 200 OK-1.8s\nActivity\n@ 07:59:42\n1 ts delivered\n\n@ 07:58:10\n\ncheckpoint committed\n\n@ 07:56:44\n\nents retried\n\n@ 07:55:02\n\nnation acknowledged batch\n\n"
+}

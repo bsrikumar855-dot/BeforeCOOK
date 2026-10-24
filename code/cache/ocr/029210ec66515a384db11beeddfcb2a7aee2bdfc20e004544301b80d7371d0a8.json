@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_14",
+ "image_sha256": "e81fabc93ea1b5f4c918d934cdb2bea05d61737adfcc29f281494f5d8ec46355",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "base:gray:scale=1:lanczos:autocontrast=0:config=",
+ "text": "Northstar Shop\n\nConnections\n\nTopology\n\nMonitoring\n\nEvents\n\nDestinations\n\nSettings\n\nBridgeOps\n\nNort\n\nConnections\n\nPRODUCTION - eu-west\n\nTopology \u2014 Throughput\n\nHealthy\n\n12\n\nTopology\nConnector\n\n7) data_flow1121\n2) data_flow.9846\n2) Order notifications\n\n& | Delivery tracking\n\n2 Search connectors...\n\nShop / BridgeOps / Connections\n\n\u201812 connectors\n\n07 Aug 2026 08:00 UTC\n\nRecent deliveries\n\n4.113\n\nDestination\n\ncustomer_analytics_warehouse\n\ncustomer_analytics_warehouse\n\nnotification_service\n\nlogistics_warehouse\n\nDeliver\n\n18s\n\nSelector\n\njain.aditi@gmail.com\n\nlucia-torres@gmail.com\n\norder events\n\nshipment events\n\nMode\n\nContinuous\n\nContinuous\n\nContinuous\n\nContinuous\n\nEvents/hour\n\n1,284\n\n842\n\n650\n\n420\n\nUpdated moments ago: 4\n\nLast contact\n\n07:59:42\n\n07:59:36\n\n07:59:28\n\n07:59:13\n\nProduction Help ( B\n\nHealthy\ndata_flow_1121\nstatus Healthy\nOwner Data Platform\n\nContinuous syne\n\nLast response 200 OK- 1.8\nActi\n@ 07:59:02\n24 events delivered\n@ 07:58:10\ncheckpoint committed\n@ 07:56:44\n8 events retried\n@ 07:55:02\n\ndestination acknowledged ba\n\n"
+}

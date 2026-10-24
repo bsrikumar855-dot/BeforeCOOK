@@ -57,12 +57,12 @@ Root-cause totals (one tag per mismatched resource): ATTRIBUTION 19, MISREAD 3
 ## 2. Attribution
 
 - Labelled (case, resource) pairs from the sample answers: 111; correctly attributed (CONFIRMED or INFERRED, in scope): 89/111 (80.2%).
-- Coverage (non-ambiguous share of candidate pairs): samples 89/153 (58.2%); eval 1474/2762 (53.4%).
+- Coverage (non-ambiguous share of candidate pairs): samples 89/153 (58.2%); eval 1474/2763 (53.3%).
 - INFERRED precision (pairs whose resource appears in some sample answer): 5/5 (100.0%); UNEVALUABLE INFERRED pairs (resource in no sample answer): 40.
 - INFERRED recall over labelled pairs without a direct identity link: 5/27 (18.5%).
 - Expected sample pairs dropped by the AMBIGUOUS/CONFLICT output policy: 19.
 - CONFIRMED attributions without a direct identity edge (gate: must be 0): 0.
-- CONFIRMED attributions whose only identity edge was read from a screenshot by the model (validated against known identifiers): 4 [('case_45', 'audit_record_001'), ('case_45', 'audit_record_004'), ('case_45', 'audit_record_005'), ('case_45', 'audit_record_006')].
+- CONFIRMED attributions whose only identity edge was read from a screenshot by the model (validated against known identifiers): 5 [('case_45', 'audit_record_001'), ('case_45', 'audit_record_002'), ('case_45', 'audit_record_004'), ('case_45', 'audit_record_005'), ('case_45', 'audit_record_006')].
 - Hard-link contradictions (resources linked to >1 known person): 0 {}.
 - Content contradictions (record's own identifiers name someone else while a catalog claim or lookup key links it to the subject): 1 {'marketing_001': {'linked_by': ['CATALOG_LINK'], 'own_identifiers': ['email:sj.park@naver.com', 'phone:+82 10-5837-9451'], 'subject_user_ids': ['user_09']}}.
 
@@ -70,7 +70,7 @@ Root-cause totals (one tag per mismatched resource): ATTRIBUTION 19, MISREAD 3
 |---|---|---|
 | AMBIGUOUS | 61 | 1247 |
 | CONFIRMED | 84 | 1434 |
-| CONFIRMED/OUT_OF_SCOPE | 3 | 40 |
+| CONFIRMED/OUT_OF_SCOPE | 3 | 41 |
 | CONFLICT | 0 | 1 |
 | INFERRED | 5 | 40 |
 
@@ -88,31 +88,32 @@ Expected pairs dropped by the policy: case_03/analytics_9406, case_04/analytics_
 
 - Status distribution: {'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10}
 - Intent paths: {'model_deletion->DELETION': 508, 'model_non_deletion+classify_corroborates->NOT_APPLICABLE': 10}
-- Excluded resource reasons: {'AMBIGUOUS': 1247, 'CONFLICT': 1, 'EXPOSURE_UNKNOWN': 1, 'OUT_OF_SCOPE': 40}
+- Excluded resource reasons: {'AMBIGUOUS': 1247, 'CONFLICT': 1, 'EXPOSURE_UNKNOWN': 1, 'OUT_OF_SCOPE': 41}
 - Degraded cases (INCOMPLETE,[]): 1 ['case_63']
-- Evidence files: {'EXTRACTED': 11, 'PARSED': 79, 'TEXT_LAYER': 4}; image rows accepted 19, dropped 27, failed files 0
+- Evidence files: {'EXTRACTED': 11, 'PARSED': 79, 'TEXT_LAYER': 4}; image rows accepted 24, dropped 22, failed files 0
 
-### Screenshot id grounding (C9, local OCR, no model calls)
+### Screenshot id grounding (C9, multi-pass since C10; local OCR, no model calls)
 
 Engine: tesseract 5.5.3.20260724. A resource id read by the vision model is kept only when the
-exact token appears in the image's OCR text; OCR-only ids are listed, never added (Tesseract also reads dates and
-mangled digits as ids).
+id appears in the united OCR text of four passes (grayscale base, 2x, 2x psm 11, 3x autocontrast psm 6; CONSTANTS.md).
+Letters and digits match exactly; an underscore may be read as a space, a period or nothing. OCR-only ids are
+listed, never added (Tesseract also reads dates and mangled digits as ids).
 
 | Image | VLM ids | OCR ids | Grounded | Ungrounded (dropped) | OCR-only (not added) |
 |---|---|---|---|---|---|
-| evidence_04 | 1 | 3 | 1 | — | support_9538, support_9638 |
-| evidence_09 | 2 | 1 | 1 | search_1874 | — |
-| evidence_14 | 2 | 1 | 1 | data_flow_9846 | — |
+| evidence_04 | 1 | 4 | 1 | — | account_5, support_9538, support_9638 |
+| evidence_09 | 2 | 2 | 2 | — | — |
+| evidence_14 | 2 | 2 | 2 | — | — |
 | evidence_19 | 1 | 1 | 1 | — | — |
-| evidence_23 | 4 | 2 | 2 | export_1261, export_1258 | — |
+| evidence_23 | 4 | 4 | 4 | — | — |
 | evidence_28 | 1 | 1 | 1 | — | — |
-| evidence_32 | 4 | 5 | 4 | — | backup_9281 |
-| evidence_37 | 6 | 5 | 5 | audit_record_002 | — |
+| evidence_32 | 4 | 6 | 4 | — | backup_9281, backup_92871 |
+| evidence_37 | 6 | 6 | 6 | — | — |
 | evidence_42 | 1 | 0 | 1 | — | — |
 | evidence_46 | 1 | 0 | 1 | — | — |
 | evidence_60 | 1 | 1 | 1 | — | — |
 
-Ungrounded ids dropped: 5. Effect on the eval output: 0 rows changed; on the samples: 0 steps changed (none of the dropped ids is in a sample answer).
+Ungrounded ids dropped: 0. History: single-pass C9 dropped 5 visible ids (audit_record_002, search_1874, data_flow_9846, export_1258, export_1261): base resolution missed small text and the matcher required a literal underscore. An independent re-check found it; C10 fixed both. Neither version changed an output row or a sample step.
 
 NOT_DERIVABLE_FROM_INPUTS (missing sample steps no parsed source names; not pursued): `account_004`, `audit_record_6645`, `audit_record_5569`.
 

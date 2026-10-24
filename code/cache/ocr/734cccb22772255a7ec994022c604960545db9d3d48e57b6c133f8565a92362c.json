@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_04",
+ "image_sha256": "d5c32ca5b6e1a2b4bbe9f5d41835ef1fd5d4f7061dab9067a4f9f88cea3c1861",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "x3_autocontrast_psm6:gray:scale=3:lanczos:autocontrast=1:config=--psm 6",
+ "text": "i i Pr ion Hel\n<> Northstar Shop Customer Operations \u00a3 Search customers, orders, tickets... oductio elp CO\nNorthstar Shop / Customer Operations / Customers\nCustomers . ;\n[OC Haruka Sato |\" Fiter Export\n\u2014 r_i1- nt_57\nC] Grriera user_\u2019 account_5/62\n\u2014 Overview Orders Addresses Support history\n|_| Support\n(| Catalog Email Phone Signup channel Market Preferred language Last contact\nharuka.s1838@zoho.com +81 90 7610 2507 mobile_app JP Japanese 24 Sep 2026 09:14 JST\n[| Promotions\n[| Analytics Overview Updated moments ago - 2 records Customer details\nOrder ID Date item Qty Total Status Default address 2-18-4 Kichijoji, Musashino, Tokyo\n180-0004\n1 ORD-20265762 12 Sep 2026 Ceramic coffee set 1 JPY 8,900 Delivered - 18 Sep Ca)\nLoyalty tier Silver\n2, ORD-20265518 28 Aug 2026 Travel backpack 1 JPY 12,400 Returned - 03 Sep\nSupport CS-8538 - support_9538\nMember since 12 Jan 2024\nActivity\n@ 24Sep\nCustomer replied to CS-8538\n@ 22Sep\nSupport agent responded\n@ 18Sep\nOrder ORD-20265762 delivered\n@ 0O3Sep\nOrder ORD-20265518 returned\n@ 28Aug\nsupport_9538 created\n"
+}

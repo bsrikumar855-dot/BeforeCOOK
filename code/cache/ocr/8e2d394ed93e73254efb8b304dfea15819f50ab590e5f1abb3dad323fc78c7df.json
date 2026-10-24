@@ -1,6 +1,0 @@
-{
- "file_id": "evidence_14",
- "image_sha256": "e81fabc93ea1b5f4c918d934cdb2bea05d61737adfcc29f281494f5d8ec46355",
- "engine": "tesseract 5.5.3.20260724",
- "text": "Northstar Shop\n\nConnections\n\nTopology\n\nMonitoring\n\nEvents\n\nDestinations\n\nSettings\n\nBridgeOps \u00a9 Search connectors...\n\ni Shop | BridgeOps / Connections\n\nConnections\n\nPRODUCTION - eu-west - 07 Aug 2026 08:00 UTC\n\n\u201812 connectors\n\nTopology Throughput _\u2014_\u2014Recent deliveries\n\nHealthy\n\n12\n\nTopology\nConnector Destination\n7) data_flow1121 customer_analytics_warehouse\n2) data_flow.9846 customer_analytics_warehouse\nnotification_service\n\n3) Order notifications\n\n4) Delivery tracking logistics_warehouse\n\nDeliver\n\n18s\n\nSelector\n\njain.aditi@gmail.com\n\nlucia-torres@gmail.com\n\norder events\n\nshipment events\n\nMode\n\nContinuous\n\nContinuous\n\nContinuous\n\nContinuous\n\nEvents/hour\n\n1,284\n\na2\n\n650\n\n420\n\nUpdated moments ago: 4\n\nLast contact\n\n07:59:42\n\n07:59:36\n\n07:59:28\n\n07:59:13\n\nProduction Help ( B\n\nHealthy\ndata_flow_1121\nstatus Healthy\nOwner Data Platform\nSelector jain.aditi@gmail.com\nLast response 2000K-18s\nActi\n\u00a9 o7:so:a2\n\u00a9 07:58:10\n\u00a9 o7:se:aa\n\n@ 07:55:02\nination acknowledged b\n\n"
-}

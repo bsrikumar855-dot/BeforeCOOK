@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_09",
+ "image_sha256": "75afdb0ae53a4510c83399a70d88073cb4fb2747454095756e4ddad1a8c70605",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "x2_psm11:gray:scale=2:lanczos:autocontrast=0:config=--psm 11",
+ "text": "~\n\nie\n\n5\n\nS\n\nSearch Console\n\n2 email:g.silva76@gmail.com\n\nProduction Help\n\nsc\n\nNorthstar Shop\n\nWY\n\nNorthstar Shop / Search Console / Customer Search\n\nO Customer Search\n\n2 hits\n\nFilter\n\nCustomer Search\n\ncustomer_directory_v3 / prod-eu\n\nProduct Search\n\nResults (2)\n\nQuery details\n\nShard timing\n\nOrder Search\n\nIndexes\n\nExecuted\n\nLatency\n\nIndex\n\nEnvironment\n\nShard tota\n\n01 Sep 2026 06:00:14 UTC\n\n184 ms\n\ncustomer_directory_v3\n\nprod-eu\n\n184 ms\n\nCluster health\n\nSlow queries\n\nUpdated moments ago\n\n2 records\n\nResults (2)\n\nRaw document - search_428\n\n=\n\nid\n\nDisplay name\n\nEmail\n\nCustomer reference\n\nScore\n\nLast indexed\n\nindex\n\ncustomer_directory_v3\n\n1\n\nsearch_428\n\nGabriel Silva\n\ng.silva76@gmail.com\n\nuser_13\n\n9.84\n\n05:58:21 UTC\n\nid\n\nsearch_428\n\n4.12\n\n05:55:03 UTC\n\ndisplay_name\n\nGabriel Silva\n\n2\n\nsearch_1874\n\ng.silva76.jr@gmail.com\n\nemail\n\ng.silva76@gmail.com\n\ncustomer_reference\n\nuser_13\n\nindexed_at\n\n2026-09-01T05:58:21Z\n\nActivity\n\ne\n\n06:00:14\n\n2 hits\n\nemail:g.silva76@gmail.com\n\n05:42:03\n\ncustomer_reference:user_9842\n\n1 hit\n\n05:31:18\n\ndisp\n\nI\n\nay_name:\"Aditi Jain\"\n\n1 hit\n"
+}

@@ -372,7 +372,8 @@ def usage_summary(ledger_path: Path, n_requests: int) -> dict:
             "timestamps": dict(timestamps), "cache_entries_used": len(used_entries),
             "live_calls_this_run": len(ledger.get("calls", [])), "cache_hits_this_run": len(ledger.get("cache_hits", [])),
             "events": ledger.get("events", []),
-            "ocr": {"engines": sorted({o["engine"] for o in ocr}), "images": len(ocr)},
+            "ocr": {"engines": sorted({o["engine"] for o in ocr}), "images": len({o["image_sha256"] for o in ocr}),
+                    "passes": len({o.get("pass") for o in ocr})},
             "experiments": {f"{t}/{m}": dict(c) for (t, m), c in sorted(experiments.items(), key=lambda kv: str(kv[0]))}}
 
 
@@ -442,16 +443,19 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
           f"- Evidence files: {summary['evidence_files']}; image rows accepted {summary['image_extraction']['accepted_rows']}, "
           f"dropped {len(summary['image_extraction']['dropped_rows'])}, failed files {len(summary['image_extraction']['failed_files'])}", ""]
     og = summary.get("ocr_grounding") or {}
-    L += ["### Screenshot id grounding (C9, local OCR, no model calls)", "",
+    L += ["### Screenshot id grounding (C9, multi-pass since C10; local OCR, no model calls)", "",
           f"Engine: {', '.join(og.get('engines', [])) or 'UNKNOWN'}. A resource id read by the vision model is kept only when the",
-          "exact token appears in the image's OCR text; OCR-only ids are listed, never added (Tesseract also reads dates and",
-          "mangled digits as ids).", "",
+          "id appears in the united OCR text of four passes (grayscale base, 2x, 2x psm 11, 3x autocontrast psm 6; CONSTANTS.md).",
+          "Letters and digits match exactly; an underscore may be read as a space, a period or nothing. OCR-only ids are",
+          "listed, never added (Tesseract also reads dates and mangled digits as ids).", "",
           "| Image | VLM ids | OCR ids | Grounded | Ungrounded (dropped) | OCR-only (not added) |", "|---|---|---|---|---|---|"]
     for fid, g in sorted(og.get("per_image", {}).items()):
         L.append(f"| {fid} | {len(g['vlm_ids'])} | {len(g['ocr_ids'])} | {len(g['grounded'])} | "
                  f"{', '.join(g['ungrounded']) or '—'} | {', '.join(g['ocr_only']) or '—'} |")
-    L += ["", f"Ungrounded ids dropped: {len(og.get('ungrounded', []))}. Effect on the eval output: 0 rows changed; on the samples: "
-          "0 steps changed (none of the dropped ids is in a sample answer).", "",
+    L += ["", f"Ungrounded ids dropped: {len(og.get('ungrounded', []))}. History: single-pass C9 dropped 5 visible ids "
+          "(audit_record_002, search_1874, data_flow_9846, export_1258, export_1261): base resolution missed small text and the "
+          "matcher required a literal underscore. An independent re-check found it; C10 fixed both. Neither version changed an "
+          "output row or a sample step.", "",
           "NOT_DERIVABLE_FROM_INPUTS (missing sample steps no parsed source names; not pursued): `account_004`, "
           "`audit_record_6645`, `audit_record_5569`.", "",
           "Rows emitted as INCOMPLETE `[]` with `reason_code=NO_ATTRIBUTABLE_RESOURCE` (DESIGN.md C5/M2(b)): "
@@ -531,7 +535,7 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
     U += [f"| **all** | | | {t.get('calls', 0)} | {usage['cache_entries_used']} | {t.get('input_tokens', 0)} | "
           f"{t.get('output_tokens', 0)} | {t.get('thinking_tokens', 0)} | {t.get('total_tokens', 0)} | {usd:.4f}"
           f"{' + UNKNOWN' if unpriced else ''} |",
-          f"| local OCR | {', '.join(usage['ocr']['engines']) or 'not used'} | screenshot id grounding | {usage['ocr']['images']} images | "
+          f"| local OCR | {', '.join(usage['ocr']['engines']) or 'not used'} | screenshot id grounding | {usage['ocr']['images']} images x {usage['ocr']['passes']} passes | "
           f"| 0 | 0 | 0 | 0 | 0.0000 (local, no API) |", "",
           "## Per key alias", "",
           "Aliases only (`primary`, `fallback_1` …); key values never appear in any file. Keys of one Google Cloud project",

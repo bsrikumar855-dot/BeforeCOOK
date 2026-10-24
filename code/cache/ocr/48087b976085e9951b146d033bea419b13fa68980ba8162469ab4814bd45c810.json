@@ -1,0 +1,7 @@
+{
+ "file_id": "evidence_23",
+ "image_sha256": "18b95c1bd8b8956e40216df935498a9f3c181ea2a69b5cd6d3c0841a816d5557",
+ "engine": "tesseract 5.5.3.20260724",
+ "pass": "x2:gray:scale=2:lanczos:autocontrast=0:config=",
+ "text": "> Northstar Shop\n\nHome\n\nOrders\n\nCustomers\n\nData exports\n\nProducts\n\nMarketing\n\nAnalytics\n\nSettings\n\nCustomer Download Center 9 Search exports... Production Help (CD\n\nNorthstar Shop / Customer Download Center / Data exports\n\nData exports a Fiter || Export\n\nCreate and manage customer download packages\n\nAll exports Ready Processing Expired\nReady Processing Created today Downloads today\n2 2 1 0\nAll exports Updated moments 4 records export_1260\nExport ID Filename Owner Status Created Owner ingrid.dahl@outlook.com\n1 export_1261 customer_export_1261.zip marcus.lee@northstar.shop Collecting 20 Jun 14:18 UTC Created 148 Jun 2026 06:42 UTC\n2) export_1260 customer_export_1260.zip ingrid.dahl@outlook.com Ready 18 Jun 06:42 UTC Expires 25 Jun 2026 06:42 UTC\nSize 18.4 MB\n3 export_1259 customer_export_1259.zip sara.kim@northstar.shop Packaging 17 Jun 11:03 UTC\nChecksum SHA-256 - 41ca09...\nexport_1258 customer_export_1258.zip daniel.park@northstar.shop Ready 16 Jun 09:27 UTC\nDownload count \u00b0\nIncluded Profile - Orders - Saved addresses\nActivity\n@ 06:46\n\nReady for download\n\n@ 06:45\n\nPackag'\n\n@ 06:43\n\nCollecting customer records\n\n@ 06:42\nExport requested\n"
+}
