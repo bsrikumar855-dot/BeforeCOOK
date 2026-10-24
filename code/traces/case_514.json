@@ -166,6 +166,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-02-03T06:00:00Z",
   "email": "andersson.linnea@icloud.com",

@@ -342,7 +342,7 @@ The contract assertions above already pass on `sample_output.csv` itself (sort r
 | D-E1 | Ship neither ordering strategy (see rejection log) | Ship A (4 correct resolutions) | Both made one incorrect resolution on the samples; timing/ordering cannot meet the zero-incorrect bar. The E2 verifier therefore does not accept ordering-only support either |
 | D-TRACE-NORMAL | Traces hold decision facts only; run metadata (cache hits, call ids, latency) lives in the usage ledger | Keep `cache_hit` in traces | The flag made 358 traces differ between a live and a cached run with identical decisions |
 
-### M2: proposed policy for unresolvable evidence (PROPOSED, NOT IMPLEMENTED; awaiting approval)
+### M2: policy for unresolvable evidence (APPROVED and IMPLEMENTED as C5)
 
 Rows affected today: case_55 and case_63 (eval) and case_04 (sample). Governing text, problem_statement.md line 91:
 "For `COMPLETE`, include only verification steps proving the current state. For `INCOMPLETE`, include findings,
@@ -350,7 +350,11 @@ the complete remediation plan, and the checks that must pass afterward." And lin
 only when: every relevant copy has received the treatment required … no active sync, import, or restore path can
 recreate the data …".
 
-Proposal (two reason codes, no case ids):
+Implemented (approved version; no case ids):
+- (a) **Undeterminable control.** The record exists (admissible observation) but its restore or flow state is not shown: the control is treated as OPEN. REPORT_RESTORE_RISK / REPORT_ACTIVE_DATA_FLOW cites the observation, then BLOCK_RESTORE / DISABLE_DATA_FLOW, then VERIFY_RESTORE_BLOCKED / VERIFY_DATA_FLOW_DISABLED. Spec basis: "A deletion is complete only when … no active sync, import, or restore path can recreate the data": an unproven block is not proof. Effect: case_55.
+- (b) **Nothing attributable.** No in-scope CONFIRMED/INFERRED resource: INCOMPLETE `[]` with trace `reason_code=NO_ATTRIBUTABLE_RESOURCE`; the file validator accepts an empty INCOMPLETE row only with that code. Effect: case_63 (eval), case_04 (sample). A bounded trace found no general cause: neither subject's identifiers appear in any evidence file, there is no identity history, and no unowned account delete exists near reported_at.
+
+Original proposal (kept for the record):
 1. **In-scope record with an undecidable state** (case_55: backup_9287, restore setting not shown). COMPLETE is
    impossible (the restore path is not proven blocked). Emit INCOMPLETE with the policy-required check only:
    `VERIFY_RESTORE_BLOCKED` (or the category's verification) with evidence "". No finding, because no evidence shows

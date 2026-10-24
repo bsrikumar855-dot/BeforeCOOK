@@ -42,7 +42,7 @@
   }
  ],
  "case_id": "case_04",
- "degraded": "no resource could be verified",
+ "degraded": "no attributable resource",
  "eliminated": [
   {
    "activity_id": "activity_3459",
@@ -84,6 +84,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": "NO_ATTRIBUTABLE_RESOURCE",
  "request": {
   "audit_at": "2026-09-07T10:20:00Z",
   "email": "thandiwe.n@gmail.com",

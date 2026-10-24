@@ -98,3 +98,13 @@ def test_restorable_backup_needs_block():
     idx = index([o], {"ev1": "2026-09-10T00:00:00Z"})
     v = Policy(RULES).verdict("BACKUP_ARCHIVE", "t", reconstruct("backup_1", "backup_service", AUDIT, idx))
     assert (v.finding_op, v.remediation_op) == ("REPORT_RESTORE_RISK", "BLOCK_RESTORE")
+
+
+def test_undeterminable_restore_control_is_treated_as_open():
+    o = obs("ev1", "2026-09-10T00:00:00Z", "backup_1", "backup_service", {"presence": "PRESENT"},
+            kind="IMAGE_EXTRACTION", container="image_row")
+    idx = index([o], {"ev1": "2026-09-10T00:00:00Z"})
+    v = Policy(RULES).verdict("BACKUP_ARCHIVE", "t", reconstruct("backup_1", "backup_service", AUDIT, idx))
+    assert (v.finding_op, v.remediation_op, v.verification_op) == ("REPORT_RESTORE_RISK", "BLOCK_RESTORE",
+                                                                    "VERIFY_RESTORE_BLOCKED")
+    assert v.proof_file_id == "ev1" and "CONTROL_UNDETERMINABLE" in v.note

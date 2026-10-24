@@ -79,9 +79,10 @@ def validate_row(status: str, steps_json: str, audit_at: str, catalog: EvidenceC
     return errors
 
 
-def self_contradictions(rows: list[dict]) -> list[tuple[str, str]]:
+def self_contradictions(rows: list[dict], allowed_empty: set[str] = frozenset()) -> list[tuple[str, str]]:
     """Rows whose status contradicts their own steps (problem_statement.md 'Required Output'):
-    INCOMPLETE must carry findings, remediation and checks; COMPLETE must carry verification steps."""
+    INCOMPLETE must carry findings, remediation and checks; COMPLETE must carry verification steps.
+    allowed_empty: cases whose trace carries reason_code NO_ATTRIBUTABLE_RESOURCE (M2(b))."""
     bad = []
     for r in rows:
         try:
@@ -89,21 +90,21 @@ def self_contradictions(rows: list[dict]) -> list[tuple[str, str]]:
         except (json.JSONDecodeError, KeyError):
             continue                                       # malformed JSON is reported elsewhere
         status = r.get("deletion_status")
-        if status == "INCOMPLETE" and not steps:
+        if status == "INCOMPLETE" and not steps and r["case_id"] not in allowed_empty:
             bad.append((r["case_id"], "INCOMPLETE with no steps"))
         elif status == "COMPLETE" and not any(s.get("phase") == "VERIFICATION" for s in steps):
             bad.append((r["case_id"], "COMPLETE without a VERIFICATION step"))
     return bad
 
 
-def validate_output_file(path: Path, expected_case_ids: list[str]) -> list[str]:
+def validate_output_file(path: Path, expected_case_ids: list[str], allowed_empty: set[str] = frozenset()) -> list[str]:
     errors: list[str] = []
     with open(path, encoding="utf-8", newline="") as fh:
         reader = csv.reader(fh)
         header = next(reader, None)
         rows = list(reader)
     if header == HEADER:
-        for cid, why in self_contradictions([dict(zip(HEADER, r)) for r in rows]):
+        for cid, why in self_contradictions([dict(zip(HEADER, r)) for r in rows], allowed_empty):
             errors.append(f"{cid}: {why}")
     if header != HEADER:
         errors.append(f"header {header} != {HEADER}")

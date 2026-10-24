@@ -280,6 +280,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-06-28T07:00:00Z",
   "email": "mariam.najjar@gmail.com",

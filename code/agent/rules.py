@@ -100,6 +100,11 @@ class Policy:
                 return self._fail(v, "REPORT_RESTORE_RISK", "BLOCK_RESTORE", "VERIFY_RESTORE_BLOCKED")
             if state.restore_state == "BLOCKED":
                 return self._pass(v, "VERIFY_RESTORE_BLOCKED")
+            if p == "PRESENT" and state.proof_basis == "MENTION":
+                # M2(a): the archive exists but no evidence <= audit_at shows restore blocked. An unproven block is
+                # not proof ("no active sync, import, or restore path can recreate the data"), so the control is open.
+                v.note = "CONTROL_UNDETERMINABLE: restore state not shown; treated as open"
+                return self._fail(v, "REPORT_RESTORE_RISK", "BLOCK_RESTORE", "VERIFY_RESTORE_BLOCKED")
             v.note = "RESTORE_STATE_UNKNOWN"
             return v
         elif action == "DISABLE":
@@ -107,6 +112,9 @@ class Policy:
                 return self._fail(v, "REPORT_ACTIVE_DATA_FLOW", "DISABLE_DATA_FLOW", "VERIFY_DATA_FLOW_DISABLED")
             if state.flow_state == "DISABLED":
                 return self._pass(v, "VERIFY_DATA_FLOW_DISABLED")
+            if p == "PRESENT" and state.proof_basis == "MENTION":
+                v.note = "CONTROL_UNDETERMINABLE: flow state not shown; treated as open"     # M2(a)
+                return self._fail(v, "REPORT_ACTIVE_DATA_FLOW", "DISABLE_DATA_FLOW", "VERIFY_DATA_FLOW_DISABLED")
             v.note = "FLOW_STATE_UNKNOWN"
             return v
         v.note = v.note or f"no verdict for action={action} presence={p}"

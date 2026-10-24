@@ -177,6 +177,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-09-20T12:00:00Z",
   "email": "soojin.k584@outlook.com",

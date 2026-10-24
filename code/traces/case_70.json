@@ -136,6 +136,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-09-16T09:00:00Z",
   "email": "collins.grace@icloud.com",

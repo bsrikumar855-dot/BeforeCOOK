@@ -328,6 +328,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-05-19T06:00:00Z",
   "email": "naledi-mahlangu79@proton.me",

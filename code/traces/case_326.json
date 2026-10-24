@@ -368,6 +368,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-05-09T11:00:00Z",
   "email": "HYUNWOO.KANG94@GMAIL.COM",

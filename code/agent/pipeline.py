@@ -163,13 +163,19 @@ def audit_case(ctx: CaseContext, ds: Dataset, index: EvidenceIndex, attribution:
         excluded.append({"resource_id": v.resource_id, "label": label_of.get(v.resource_id),
                          "reason": f"UNPROVEN_IN_COMPLETE: {v.note}"})
     degraded = None
+    reason_code = None
     if not steps:
-        status, degraded = "INCOMPLETE", "no resource could be verified"
+        status = "INCOMPLETE"
+        attributable = [a for a in attrs if a.in_scope and a.label in ("CONFIRMED", "INFERRED")]
+        # M2(b): nothing can be attributed to this person without risking someone else's data. The row stays
+        # INCOMPLETE [] and the file validator accepts it only with this reason code.
+        reason_code = "NO_ATTRIBUTABLE_RESOURCE" if not attributable else "NO_VERIFIABLE_RESOURCE"
+        degraded = "no attributable resource" if not attributable else "no resource could be verified"
     errors = validate_row(status, serialize(steps), req["audit_at"], catalog)
     if errors:
         status, steps, degraded = "INCOMPLETE", [], "validation_failed"
     trace.update({"resources": resources, "excluded": excluded, "status": status, "steps": steps,
-                  "validation_errors": errors, "degraded": degraded})
+                  "validation_errors": errors, "degraded": degraded, "reason_code": reason_code})
     return CaseOutcome(ctx.case_id, status, steps, trace, degraded)
 
 
@@ -201,6 +207,8 @@ def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
             # A case whose intent call failed is degraded too: it fell back to NOT_APPLICABLE without a decision.
             "model_failures": sorted(c for c in ids if is_model_failure(rr.outcomes[c])),
             "degraded": sorted(c for c in ids if rr.outcomes[c].degraded or is_model_failure(rr.outcomes[c])),
+            "no_attributable_resource": sorted(c for c in ids if rr.outcomes[c].trace.get("reason_code")
+                                               == "NO_ATTRIBUTABLE_RESOURCE"),
         }
     files = Counter(f.status for f in rr.index.files.values())
     return {

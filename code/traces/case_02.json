@@ -37,6 +37,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-09-04T15:00:00Z",
   "email": "mateo.rios@outlook.com",

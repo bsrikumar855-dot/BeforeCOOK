@@ -235,6 +235,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-03-20T08:00:00Z",
   "email": "anair9899@fastmail.com",

@@ -24,21 +24,22 @@
   },
   "cases": 518,
   "degraded": [
-   "case_55",
    "case_63"
   ],
   "excluded_reasons": {
    "AMBIGUOUS": 1247,
    "CONFLICT": 1,
    "EXPOSURE_UNKNOWN": 1,
-   "OUT_OF_SCOPE": 41,
-   "RESTORE_STATE_UNKNOWN": 1
+   "OUT_OF_SCOPE": 41
   },
   "intent_paths": {
    "model_deletion->DELETION": 508,
    "model_non_deletion+classify_corroborates->NOT_APPLICABLE": 10
   },
   "model_failures": [],
+  "no_attributable_resource": [
+   "case_63"
+  ],
   "status": {
    "COMPLETE": 153,
    "INCOMPLETE": 355,
@@ -364,6 +365,9 @@
    "model_deletion->DELETION": 32
   },
   "model_failures": [],
+  "no_attributable_resource": [
+   "case_04"
+  ],
   "status": {
    "COMPLETE": 9,
    "INCOMPLETE": 23

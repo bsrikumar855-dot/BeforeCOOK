@@ -149,6 +149,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-03-15T07:00:00Z",
   "email": "javier.m7818@zoho.com",

@@ -31,7 +31,7 @@
   }
  ],
  "case_id": "case_63",
- "degraded": "no resource could be verified",
+ "degraded": "no attributable resource",
  "eliminated": [],
  "excluded": [
   {
@@ -52,6 +52,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": "NO_ATTRIBUTABLE_RESOURCE",
  "request": {
   "audit_at": "2026-09-17T09:20:00Z",
   "email": "kwame-mensah@proton.me",

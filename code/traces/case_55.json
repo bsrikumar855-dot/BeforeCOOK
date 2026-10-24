@@ -109,7 +109,7 @@
   }
  ],
  "case_id": "case_55",
- "degraded": "no resource could be verified",
+ "degraded": null,
  "eliminated": [],
  "excluded": [
   {
@@ -121,11 +121,6 @@
    "label": "CONFIRMED",
    "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
    "resource_id": "audit_record_2857"
-  },
-  {
-   "label": "CONFIRMED",
-   "reason": "RESTORE_STATE_UNKNOWN",
-   "resource_id": "backup_9287"
   },
   {
    "label": "CONFIRMED",
@@ -145,6 +140,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-04-30T11:00:00Z",
   "email": "areed1433@gmail.com",
@@ -157,12 +153,12 @@
    "attribution": "CONFIRMED",
    "category": "BACKUP_ARCHIVE",
    "category_basis": "record_type stated in evidence_32",
-   "compliant": null,
-   "note": "RESTORE_STATE_UNKNOWN",
+   "compliant": false,
+   "note": "CONTROL_UNDETERMINABLE: restore state not shown; treated as open",
    "operations": [
-    null,
-    null,
-    null
+    "REPORT_RESTORE_RISK",
+    "BLOCK_RESTORE",
+    "VERIFY_RESTORE_BLOCKED"
    ],
    "proof_file_id": "evidence_32",
    "required_action": "RETAIN",
@@ -184,7 +180,35 @@
   }
  ],
  "status": "INCOMPLETE",
- "steps": [],
+ "steps": [
+  {
+   "evidence_id": "evidence_32",
+   "operation": "REPORT_RESTORE_RISK",
+   "phase": "FINDING",
+   "resource_id": "backup_9287",
+   "state": "ACTIVE",
+   "step_no": 1,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "BLOCK_RESTORE",
+   "phase": "REMEDIATION",
+   "resource_id": "backup_9287",
+   "state": "BLOCKED",
+   "step_no": 2,
+   "system_id": "backup_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "phase": "VERIFICATION",
+   "resource_id": "backup_9287",
+   "state": "BLOCKED",
+   "step_no": 3,
+   "system_id": "backup_service"
+  }
+ ],
  "subject": {
   "identifiers": {
    "email": {

@@ -65,7 +65,8 @@ def main(argv: list[str] | None = None) -> int:
     pipeline.write_outputs(rr, tmp, args.sample_output, args.traces)
     args.ledger.parent.mkdir(parents=True, exist_ok=True)
     args.ledger.write_text(json.dumps(rr.ledger.to_json(), indent=1, sort_keys=True) + "\n", encoding="utf-8")
-    errors = validate_output_file(tmp, [r["case_id"] for r in rr.dataset.requests])
+    allowed_empty = {cid for cid, o in rr.outcomes.items() if o.trace.get("reason_code") == "NO_ATTRIBUTABLE_RESOURCE"}
+    errors = validate_output_file(tmp, [r["case_id"] for r in rr.dataset.requests], allowed_empty)
     failures = rr.summary["model_failures"]
     n_fail = failures["intent_cases"] + failures["vlm_files_skipped"]
     s = rr.summary["eval"]

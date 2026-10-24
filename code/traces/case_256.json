@@ -264,6 +264,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-06-13T11:00:00Z",
   "email": "mansour.yasmine@gmail.com",

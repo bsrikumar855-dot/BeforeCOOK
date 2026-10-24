@@ -197,6 +197,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-02-23T10:00:00Z",
   "email": "nwosu.ikenna@icloud.com",

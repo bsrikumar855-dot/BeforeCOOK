@@ -77,6 +77,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-04-09T12:00:00Z",
   "email": "camila.almeida@outlook.com",

@@ -95,3 +95,10 @@ def test_self_contradicting_rows_are_rejected():
             {"case_id": "c", "deletion_status": "NOT_APPLICABLE", "steps_json": "[]"},
             {"case_id": "d", "deletion_status": "COMPLETE", "steps_json": json.dumps(GOOD)}]
     assert self_contradictions(rows) == [("a", "INCOMPLETE with no steps"), ("b", "COMPLETE without a VERIFICATION step")]
+
+
+def test_empty_incomplete_allowed_only_with_reason_code():
+    from agent.validation import self_contradictions
+    rows = [{"case_id": "a", "deletion_status": "INCOMPLETE", "steps_json": "[]"}]
+    assert self_contradictions(rows, allowed_empty={"a"}) == []
+    assert self_contradictions(rows, allowed_empty={"b"}) == [("a", "INCOMPLETE with no steps")]

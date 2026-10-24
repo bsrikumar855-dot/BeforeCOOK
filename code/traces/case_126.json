@@ -166,6 +166,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-08-17T10:00:00Z",
   "email": "yfarouk6685@gmail.com",

@@ -512,6 +512,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-03-30T10:00:00Z",
   "email": "lucia-garcia@proton.me",

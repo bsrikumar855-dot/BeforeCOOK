@@ -215,6 +215,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-07-08T09:00:00Z",
   "email": "kavya.n9800@outlook.com",

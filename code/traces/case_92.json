@@ -139,6 +139,7 @@
   "path": "model_deletion->DELETION",
   "provider": "gemini"
  },
+ "reason_code": null,
  "request": {
   "audit_at": "2026-09-06T07:00:00Z",
   "email": "doyun.lim@outlook.com",
