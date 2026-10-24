@@ -9,16 +9,17 @@ entries this run reused). Provider: Google Gemini API, free tier (actual cost $0
 
 | Provider | Model | Calls | Cache hits (this run) | Input tokens | Output tokens | Thinking tokens | Total tokens | Est. paid-list cost (USD) |
 |---|---|---|---|---|---|---|---|---|
-| gemini | gemini-2.5-flash | 19 | 171 | 29634 | 16945 | 0 | 46579 | 0.0513 |
+| gemini | gemini-2.5-flash | 8 | 170 | 15974 | 6177 | 0 | 22151 | 0.0202 |
+| gemini | gemini-3.5-flash | 1 | 1 | 2176 | 281 | 3502 | 5959 | 0.0000 |
 | gemini | gemini-3.5-flash-lite | 6 | 238 | 20048 | 9873 | 0 | 29921 | 0.0307 |
-| **all** | | 25 | 409 | 49682 | 26818 | 0 | 76500 | 0.0819 |
+| **all** | | 15 | 409 | 38198 | 16331 | 3502 | 58031 | 0.0509 |
 
-- Average tokens per eval request: 147.7
-- Actual cost: $0 (free tier). Estimated cost at paid list price: $0.0819 total, $0.000158 per request.
+- Average tokens per eval request: 112.0
+- Actual cost: $0 (free tier). Estimated cost at paid list price: $0.0509 total, $0.000098 per request.
 - Price source: Gemini Developer API pricing page, paid tier (https://ai.google.dev/gemini-api/docs/pricing; page last updated 2026-10-22 UTC, retrieved 2026-10-24). Rates are copied into code/config/models.yaml.
 
 - Fallback / quota / validation events in this run: {}
-- Model ids listed by the provider for each key (`python3 code/main.py --check-models`): {"primary": {"gemini-2.5-flash": true, "gemini-3.5-flash-lite": true, "gemini-3.8-flash": true}, "fallback_1": {"gemini-2.5-flash": true, "gemini-3.5-flash-lite": true, "gemini-3.8-flash": true}, "fallback_2": {"gemini-2.5-flash": true, "gemini-3.5-flash-lite": true, "gemini-3.8-flash": true}, "fallback_3": {"gemini-2.5-flash": true, "gemini-3.5-flash-lite": true, "gemini-3.8-flash": true}}
+- Model ids listed by the provider for each key (`python3 code/main.py --check-models`): "not checked"
 
 ## Notes on the counts
 
@@ -43,4 +44,4 @@ so every investigator turn fell back to Gemini (one `fallback_used` event per tu
 | Task / model | Calls | Total tokens |
 |---|---|---|
 | investigator/gemini-3.5-flash-lite | 28 | 41780 |
-| vision/gemini-3.5-flash | 1 | 5959 |
+| vision/gemini-2.5-flash | 11 | 24428 |

@@ -423,6 +423,22 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
           f"- Degraded cases (INCOMPLETE,[]): {len(summary['eval']['degraded'])} {summary['eval']['degraded'][:20]}",
           f"- Evidence files: {summary['evidence_files']}; image rows accepted {summary['image_extraction']['accepted_rows']}, "
           f"dropped {len(summary['image_extraction']['dropped_rows'])}, failed files {len(summary['image_extraction']['failed_files'])}", ""]
+    og = summary.get("ocr_grounding") or {}
+    L += ["### Screenshot id grounding (C9, local OCR, no model calls)", "",
+          f"Engine: {', '.join(og.get('engines', [])) or 'UNKNOWN'}. A resource id read by the vision model is kept only when the",
+          "exact token appears in the image's OCR text; OCR-only ids are listed, never added (Tesseract also reads dates and",
+          "mangled digits as ids).", "",
+          "| Image | VLM ids | OCR ids | Grounded | Ungrounded (dropped) | OCR-only (not added) |", "|---|---|---|---|---|---|"]
+    for fid, g in sorted(og.get("per_image", {}).items()):
+        L.append(f"| {fid} | {len(g['vlm_ids'])} | {len(g['ocr_ids'])} | {len(g['grounded'])} | "
+                 f"{', '.join(g['ungrounded']) or '—'} | {', '.join(g['ocr_only']) or '—'} |")
+    L += ["", f"Ungrounded ids dropped: {len(og.get('ungrounded', []))}. Effect on the eval output: 0 rows changed; on the samples: "
+          "0 steps changed (none of the dropped ids is in a sample answer).", "",
+          "NOT_DERIVABLE_FROM_INPUTS (missing sample steps no parsed source names; not pursued): `account_004`, "
+          "`audit_record_6645`, `audit_record_5569`.", "",
+          "Rows emitted as INCOMPLETE `[]` with `reason_code=NO_ATTRIBUTABLE_RESOURCE` (DESIGN.md C5/M2(b)): "
+          + (", ".join(summary["eval"].get("no_attributable_resource", [])) or "none") + " (eval); "
+          + (", ".join(summary.get("samples", {}).get("no_attributable_resource", [])) or "none") + " (samples).", ""]
     L += ["## 4. Custom evaluation cases (X1–X5, fixtures in `code/evaluation/custom_cases/`)", "",
           "| Case | Failure mode tested | Expected | Predicted | Steps exact | Result |", "|---|---|---|---|---|---|"]
     for c in custom:

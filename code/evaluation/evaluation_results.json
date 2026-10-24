@@ -1101,7 +1101,7 @@
   "labels_eval": {
    "AMBIGUOUS": 1247,
    "CONFIRMED": 1434,
-   "CONFIRMED/OUT_OF_SCOPE": 41,
+   "CONFIRMED/OUT_OF_SCOPE": 40,
    "CONFLICT": 1,
    "INFERRED": 40
   },
@@ -1111,7 +1111,7 @@
   ],
   "coverage_eval": [
    1474,
-   2763
+   2762
   ],
   "inferred_evaluable": [
    [
@@ -1449,10 +1449,6 @@
    ],
    [
     "case_45",
-    "audit_record_002"
-   ],
-   [
-    "case_45",
     "audit_record_004"
    ],
    [
@@ -1774,48 +1770,30 @@
    "error": ""
   }
  ],
- "determinism": {
-  "run_1": {
-   "returncode": 2,
-   "pythonhashseed": "1",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\run_1\\output.csv",
-   "stderr": "invalid output: case_55: INCOMPLETE with no steps; case_63: INCOMPLETE with no steps; output.csv untouched, diagnostic rows in C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\run_1\\output.degraded.csv",
-   "model_calls": 0,
-   "files_compared": 553
-  },
-  "run_2": {
-   "returncode": 2,
-   "pythonhashseed": "2",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\run_2\\output.csv",
-   "stderr": "invalid output: case_55: INCOMPLETE with no steps; case_63: INCOMPLETE with no steps; output.csv untouched, diagnostic rows in C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\run_2\\output.degraded.csv",
-   "model_calls": 0,
-   "identical_to_run_1": true,
-   "differences": [],
-   "files_compared": 553
-  },
-  "from_cache_no_keys": {
-   "returncode": 2,
-   "pythonhashseed": "3",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=2 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\from_cache_no_keys\\output.csv",
-   "stderr": "invalid output: case_55: INCOMPLETE with no steps; case_63: INCOMPLETE with no steps; output.csv untouched, diagnostic rows in C:\\Users\\babus\\AppData\\Local\\Temp\\tmpfjda42em\\from_cache_no_keys\\output.degraded.csv",
-   "model_calls": 0,
-   "identical_to_run_1": true,
-   "differences": [],
-   "files_compared": 553
-  }
- },
+ "determinism": null,
  "usage": {
   "rows": [
    {
     "provider": "gemini",
     "model": "gemini-2.5-flash",
-    "calls": 19,
-    "input_tokens": 29634,
-    "output_tokens": 16945,
+    "calls": 8,
+    "input_tokens": 15974,
+    "output_tokens": 6177,
     "thinking_tokens": 0,
-    "total_tokens": 46579,
-    "cache_hits_this_run": 171,
-    "estimated_paid_usd": 0.0512527
+    "total_tokens": 22151,
+    "cache_hits_this_run": 170,
+    "estimated_paid_usd": 0.0202347
+   },
+   {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "calls": 1,
+    "input_tokens": 2176,
+    "output_tokens": 281,
+    "thinking_tokens": 3502,
+    "total_tokens": 5959,
+    "cache_hits_this_run": 1,
+    "estimated_paid_usd": 0.0
    },
    {
     "provider": "gemini",
@@ -1830,13 +1808,13 @@
    }
   ],
   "total": {
-   "calls": 25,
-   "input_tokens": 49682,
-   "output_tokens": 26818,
-   "thinking_tokens": 0,
-   "total_tokens": 76500
+   "calls": 15,
+   "input_tokens": 38198,
+   "output_tokens": 16331,
+   "thinking_tokens": 3502,
+   "total_tokens": 58031
   },
-  "estimated_paid_usd": 0.0819496,
+  "estimated_paid_usd": 0.05093160000000001,
   "requests": 518,
   "live_calls_this_run": 0,
   "cache_hits_this_run": 409,
@@ -1847,9 +1825,9 @@
     "calls": 28,
     "tokens": 41780
    },
-   "vision/gemini-3.5-flash": {
-    "calls": 1,
-    "tokens": 5959
+   "vision/gemini-2.5-flash": {
+    "calls": 11,
+    "tokens": 24428
    }
   }
  }
