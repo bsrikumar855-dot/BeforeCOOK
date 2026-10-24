@@ -1,0 +1,3484 @@
+{
+ "m1": {
+  "totals": {
+   "cases": 381,
+   "pairs": 1247,
+   "proven_present_resources": 0,
+   "cases_with_proven_present": 0,
+   "would_flip_complete_to_incomplete": 0,
+   "cases_with_unknown_state": 8,
+   "state_unknown_resources": 14
+  },
+  "rows": [
+   {
+    "case_id": "case_36",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_37",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_44",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_47",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_48",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_49",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_51",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_54",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_56",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_57",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_58",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_59",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_60",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_62",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_64",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_65",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_66",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_67",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_71",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_72",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_73",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_74",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_75",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_76",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_77",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_78",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_79",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_80",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_81",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_82",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_83",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_84",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_85",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_86",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_87",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_88",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_92",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_95",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_96",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_97",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_98",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_99",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_100",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_102",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_103",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_104",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_106",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_107",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_108",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_109",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_110",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_111",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_112",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_113",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_114",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_115",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_116",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_117",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_118",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_122",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_123",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_124",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_125",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_126",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_127",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_128",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_129",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_130",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_131",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_132",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_134",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_135",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_136",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_142",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_143",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_144",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_145",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_146",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_147",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_148",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_149",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_150",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_151",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_155",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_156",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_157",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_158",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_159",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_160",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_162",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_164",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_165",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_166",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_170",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_171",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_172",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_173",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_174",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_175",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_176",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_177",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_178",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_179",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_180",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_181",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_183",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_184",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_185",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_186",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_187",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_188",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_189",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_190",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_191",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_192",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_193",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_194",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_195",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_196",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_197",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_198",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_202",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_203",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_204",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_205",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_206",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_207",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_208",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_209",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_210",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_211",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_212",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_213",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_214",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_215",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_216",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_217",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_218",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_219",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_220",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_222",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_224",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_225",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_226",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_227",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_228",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_229",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_230",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_231",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_232",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_233",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_234",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_235",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_239",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_240",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_241",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_242",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_243",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_244",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_245",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_246",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_248",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_250",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_251",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_252",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_253",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_254",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_255",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_256",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_257",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_258",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_259",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_260",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_261",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_262",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_263",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_264",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_265",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_266",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_267",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_268",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_272",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_273",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_274",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_275",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_276",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_277",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_278",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_279",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_280",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_282",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_284",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_285",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_286",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_287",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_288",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_289",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_290",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_291",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_292",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_293",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 10,
+    "proven_present": [],
+    "compliant_if_owned": 10,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_294",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 10,
+    "proven_present": [],
+    "compliant_if_owned": 10,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_295",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 10,
+    "proven_present": [],
+    "compliant_if_owned": 10,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_296",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_297",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_298",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_299",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_300",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_301",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_302",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_303",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_304",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_305",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_306",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_308",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 10,
+    "proven_present": [],
+    "compliant_if_owned": 10,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_309",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 10,
+    "proven_present": [],
+    "compliant_if_owned": 10,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_310",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 10,
+    "proven_present": [],
+    "compliant_if_owned": 10,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_311",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_312",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_313",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_314",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_315",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_316",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_317",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_318",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_319",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_323",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_324",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_325",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_326",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_327",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_328",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_329",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_330",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_331",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_332",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_333",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_334",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_335",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_336",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_337",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_338",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_339",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_340",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_342",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_344",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_345",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_346",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_347",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_348",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_349",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_350",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_351",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_352",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_353",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_354",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_355",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_356",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_358",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_359",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_360",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_361",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_362",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_368",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_369",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_370",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_374",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_375",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_376",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_377",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_378",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_379",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_380",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_381",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_383",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_384",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_385",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_389",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_390",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_391",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_393",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_394",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_395",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_396",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_397",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_398",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_399",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_400",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_404",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_406",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_407",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_408",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_409",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_410",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_411",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_412",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 8,
+    "proven_present": [],
+    "compliant_if_owned": 8,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_422",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_423",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_424",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_425",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_426",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_427",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_431",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_432",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_433",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_437",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_438",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_439",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_442",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_443",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_444",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_445",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_446",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_447",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_448",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_449",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_450",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_451",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_452",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_454",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_455",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_456",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_457",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_458",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_459",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_460",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_464",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_465",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_466",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_470",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_471",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_472",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_473",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_474",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_476",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_478",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_479",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_480",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_481",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_482",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_485",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_486",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_487",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_493",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_494",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_495",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_496",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_497",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_498",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_499",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_502",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_503",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_504",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_505",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_506",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_507",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_508",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_509",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_510",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_511",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_512",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_515",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_516",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_517",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_522",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_524",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [
+     "account_1400"
+    ],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_526",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 2,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [
+     "account_1400"
+    ],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_527",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 0,
+    "state_unknown": [
+     "account_1184",
+     "account_3693",
+     "account_4063"
+    ],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_528",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 0,
+    "state_unknown": [
+     "account_1184",
+     "account_3693",
+     "account_4063"
+    ],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_529",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 0,
+    "state_unknown": [
+     "account_1184",
+     "account_3693",
+     "account_4063"
+    ],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_530",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [
+     "account_3146"
+    ],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_531",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [
+     "account_3146"
+    ],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_532",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [
+     "account_3146"
+    ],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_543",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_544",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_545",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_546",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_547",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_548",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 7,
+    "proven_present": [],
+    "compliant_if_owned": 7,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_549",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_550",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 6,
+    "proven_present": [],
+    "compliant_if_owned": 6,
+    "state_unknown": [],
+    "would_flip": false
+   }
+  ]
+ },
+ "m2": {
+  "output": [
+   [
+    "case_55",
+    "INCOMPLETE with no steps"
+   ],
+   [
+    "case_63",
+    "INCOMPLETE with no steps"
+   ]
+  ],
+  "samples": [
+   [
+    "case_04",
+    "INCOMPLETE with no steps"
+   ]
+  ]
+ }
+}

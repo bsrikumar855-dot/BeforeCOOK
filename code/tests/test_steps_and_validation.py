@@ -86,3 +86,12 @@ def test_not_applicable_requires_empty_array():
 
 def test_case_ids_sort_numerically():
     assert sorted(["case_100", "case_33", "case_550"], key=case_sort_key) == ["case_33", "case_100", "case_550"]
+
+
+def test_self_contradicting_rows_are_rejected():
+    from agent.validation import self_contradictions
+    rows = [{"case_id": "a", "deletion_status": "INCOMPLETE", "steps_json": "[]"},
+            {"case_id": "b", "deletion_status": "COMPLETE", "steps_json": "[]"},
+            {"case_id": "c", "deletion_status": "NOT_APPLICABLE", "steps_json": "[]"},
+            {"case_id": "d", "deletion_status": "COMPLETE", "steps_json": json.dumps(GOOD)}]
+    assert self_contradictions(rows) == [("a", "INCOMPLETE with no steps"), ("b", "COMPLETE without a VERIFICATION step")]
