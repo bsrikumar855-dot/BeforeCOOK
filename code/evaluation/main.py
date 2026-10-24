@@ -537,6 +537,25 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
               f"- output.csv: {sum(a['status_counts'].values())} rows {a['status_counts']}, {a['steps']} steps; violations: {len(a['violations'])}",
               f"- INCOMPLETE [] rows: {a['incomplete_empty']}",
               f"- Negative control: {sum(nc.values())}/{len(nc)} injected defect classes caught ({', '.join(nc)})", ""]
+    sec = EVAL_DIR / "security_audit.json"
+    if sec.exists():
+        sa = json.loads(sec.read_text(encoding="utf-8"))
+        L += ["### Security pass (G8, `code/evaluation/security_audit.py`)", "",
+              f"Every regex in code/main.py and code/agent/** run on ten 1 MB adversarial lines in a child process, bound "
+              f"{sa['bound_seconds']} s per input:", "",
+              "| Where | Pattern | Worst time (s) | Slowest input | Result |", "|---|---|---|---|---|"]
+        for r in sa["regex"]:
+            pat = (r.get("pattern") or "").replace("|", "\\|")
+            L.append(f"| {r['where']} | `{pat}` | {r.get('max_seconds')} | {r.get('slowest_input')} | {r['result'][:40]} |")
+        L += ["", "Seven patterns were quadratic before G8 (each > 30 s on a 1 MB line): the email pattern, the log key=value "
+              "pattern, both screenshot id token patterns, and three lazy PDF block patterns. Fixed by RFC 5321 bounds, "
+              "word-start lookbehinds, bounded id prefixes and a linear block scan; output.csv and every trace unchanged.", "",
+              "Hostile evidence fixtures (temporary dataset copies, run end to end):", "",
+              "| Fixture | Rejected | Exit | Rows | Cases failed closed | Checks |", "|---|---|---|---|---|---|"]
+        for name, f in sa["fixtures"].items():
+            L.append(f"| {name} | {f['rejected']} | {f['exit']} | {f['rows']} | {f['cases_failed_closed']} | "
+                     f"{'all pass' if f['pass'] else f['checks']} |")
+        L.append("")
     L += ["## 5. Determinism", ""]
     if det:
         for name, r in det.items():

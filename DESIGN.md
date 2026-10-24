@@ -254,19 +254,42 @@ text may still flip the intent label (DELETION ↔ UNCLEAR) because that label *
 label held on these attacks, not that it always will. A screenshot could show a fake id in its pixels; OCR grounding
 proves only that the id is visible, not that it is genuine. Measured by fixtures X14–X19 (6/6 pass).
 
+G8 extends the threat model to the evidence files themselves: a manifest path can point outside the dataset (rejected by `resolve_inside`), a file can lie about its type (magic bytes), be corrupt or truncated (PNG CRC/IEND, PDF `%%EOF`, SQL transaction never committed) or be missing. Each is rejected and counted, the run fails closed (§8.1) and exits 4, so an attacker who can tamper with evidence can make the run refuse, never make it claim COMPLETE. A crafted 1 MB line could stall a parser regex: seven quadratic patterns were found and bounded; all product regexes now finish a 1 MB adversarial line within 2 s (`code/evaluation/security_audit.py`).
+
 ## 8. Failure handling
 
-| Failure | What happens to the row | Logged where | Run continues? |
-|---|---|---|---|
-| Model timeout / API error (intent) | Retry ×2 with backoff → UNCLEAR → `NOT_APPLICABLE` | `run_log.jsonl` (case_id, error class) | Yes |
-| Malformed model output after retries | Intent → UNCLEAR; image → no observations from that file | `run_log.jsonl` | Yes |
-| Unknown label from model | Rejected by the enum validator → as above | `run_log.jsonl` | Yes |
-| Evidence file parse error | File excluded from all cases | `run_log.jsonl` (file_id) | Yes |
-| Unexpected exception in one case | `INCOMPLETE`,`[]` (degraded, counted) | `run_log.jsonl` with traceback hash | Yes |
-| Output validator fails a row | Row replaced by the degraded row; counted | `run_log.jsonl` | Yes |
-| Output row count ≠ 518 or unsorted | ABORT (no partial `output.csv` is written) | stderr, exit code 2 | No |
+### 8.1 Failure semantics (G8; enforced in code and asserted by `code/evaluation/security_audit.py`)
 
-Model calls are cached (content hash + prompt version), so a crashed run resumes and pays only for the remainder.
+1. **Reject and log.** An evidence file that is missing, corrupt, truncated, of the wrong type, or whose manifest path
+   escapes the dataset directory is rejected before parsing (`code/agent/parsers/file_checks.py`). Its observations
+   are dropped, it is listed in `_run_summary.json` under `evidence_rejected` with its status and reason, and it
+   counts as a **DEGRADE** event. The run continues and every case still gets a row.
+2. **Fail closed.** A case may never be COMPLETE if a verification it needs could have depended on a dropped
+   observation: when a rejected file was captured after a verification's proof file and at or before the case's
+   audit_at, it could hold a newer observation, so that proof no longer establishes the state. The case becomes
+   INCOMPLETE, its checks become future checks (evidence ""), and the trace carries
+   `reason_code=DEPENDS_ON_DROPPED_EVIDENCE` with the file ids (the M2/C5 rule: an unproven state is not proof).
+3. **Never replace the accepted output.** Any DEGRADE event (a rejected evidence file, a failed intent call, a skipped
+   screenshot) makes the run exit **4**. output.csv is not replaced; with `--allow-degraded` the rows go to
+   `output.degraded.csv` for diagnosis (C0 semantics).
+
+| Failure | Detected by | Status | Row | Exit |
+|---|---|---|---|---|
+| Manifest path absolute or `..` escape | `resolve_inside` | REJECTED_PATH | every case gets a row; fail closed where it applies | 4 |
+| File named by the manifest missing | `is_file()` | MISSING | as above | 4 |
+| Content contradicts extension (PNG named .json, JSON named .png, binary in a text format) | magic bytes | WRONG_TYPE | as above | 4 |
+| PNG with a bad chunk CRC or no IEND; PDF without `%%EOF` | `file_checks.check` | CORRUPT | as above | 4 |
+| SQL export that opens a transaction and never commits | `file_checks.check` | TRUNCATED | as above | 4 |
+| Any parser exception | parser try/except | PARSE_ERROR | as above | 4 |
+| Intent call fails on every (model, key) | `AllProvidersFailed` | model failure | `NOT_APPLICABLE` (no decision), counted | 4 |
+| Screenshot extraction fails | `AllProvidersFailed` | vlm_files_skipped | no observations from that image | 4 |
+| Model reply fails the schema | validator, 2 retries with the error fed back, then the next (model, key) | — | as above if all fail | 4 if all fail |
+| Unexpected exception in one case | per-case try/except | degraded | `INCOMPLETE`, `[]`, traceback tail in the trace | 2 (self-contradicting row) |
+| A row fails row validation | `validate_row` | validation_failed | `INCOMPLETE`, `[]` | 2 |
+| Cache miss under `--from-cache` (or no OCR cache and no Tesseract) | `CacheMiss` | — | no output written | 3 |
+| Row count, ids or order wrong | `validate_output_file` | — | output.csv untouched | 2 |
+
+Model calls are cached (content hash + prompt version), so an interrupted live run resumes and pays only for the rest.
 
 ---
 
@@ -370,6 +393,7 @@ The contract assertions above already pass on `sample_output.csv` itself (sort r
 | G2 (shipped) | `--case <id> --explain` and ad-hoc `--email --audit-at --request-text` (`code/agent/explain.py`): identity with provenance, candidate edges and labels, eliminations with their evidence, observations per resource with OCR grounding and an after-audit_at marker, rules fired, intent path, final steps. Input validated (email shape, ISO-8601 with zone, text 1–5,000 chars, else exit 2); output limited to the subject's candidate set, 25 items per list, 40,000 characters; read-only (an ad-hoc request runs on a temporary dataset copy) | Read traces by hand in the interview | Skill input-tracing: a live trace of a new case is the strongest answer to "walk me through it". 4 tests; 0 output rows changed |
 | G3 (shipped) | CONSTANTS.md completed: 31-row main table (value, file:line, purpose, label, evidence or rejected alternative, what breaks), typed spec enums, a generated register of every numeric literal in code/ and every config key (`code/analysis/constants_register.py`; an unclassified literal stops it), and `code/tests/test_constants_coverage.py` (literals, config keys, enums vs schema, labels). Four labels corrected (±3 h, OCR underscore, scope window, provider limits) | Hand-maintained list only | Skill CONSTANTS-template: every number gets a provenance; MEASURED only where a sweep is on record (citation rule C, intent model) |
 | G5 (shipped, audit only) | `code/evaluation/spec_audit.py`: constants typed from problem_statement.md, no imports from our code; 0 violations on output.csv (518 rows, 2,913 steps); negative control 17/17 defect classes caught; standing test `code/tests/test_spec_audit.py` | Validate with our own schema module | Skill spec-auditor: a checker importing our constants only proves the code agrees with itself. Open question recorded: the spec does not define case_id sort order; we follow the input file's numeric order (a plain string sort would differ) |
+| G8 (shipped) | Evidence admission checks (`code/agent/parsers/file_checks.py`: path escape, missing, wrong type by magic bytes, corrupt PNG/PDF, truncated SQL), fail-closed rule for verifications whose proof predates a rejected file, any DEGRADE → exit 4; seven quadratic regexes bounded. Fixtures: 5/5 hostile-file classes pass (exit 4, a row per case, output.csv untouched, no COMPLETE row cites a pre-drop proof) | Note the problem and parse anyway | Skills security-auditor and robustness: every hostile input must still produce a valid row, and a swallowed failure is a silent wrong answer. 0 output rows changed |
 | D-E2 | Do not ship the investigator; do not run it on eval | Ship (the SHIP rule is met vacuously: 0 accepted, 0 incorrect) | 0 of 126 sample proposals accepted, so no number moves (P1). Ceiling argument: the verifier accepts only identity-link support, and any identity link the tools can reach is already a hard link that attribution marks CONFIRMED. Running eval would cost about 300 calls for an expected 0 |
 | D-E1 | Ship neither ordering strategy (see rejection log) | Ship A (4 correct resolutions) | Both made one incorrect resolution on the samples; timing/ordering cannot meet the zero-incorrect bar. The E2 verifier therefore does not accept ordering-only support either |
 | D-TRACE-NORMAL | Traces hold decision facts only; run metadata (cache hits, call ids, latency) lives in the usage ledger | Keep `cache_hit` in traces | The flag made 358 traces differ between a live and a cached run with identical decisions |

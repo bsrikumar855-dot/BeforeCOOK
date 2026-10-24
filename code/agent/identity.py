@@ -11,7 +11,9 @@ from dataclasses import dataclass, field
 
 from .schema import Identifier
 
-EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
+# Bounded by RFC 5321 (local part <= 64, domain <= 253) and never started inside an address: an unbounded
+# local part rescanned to the end of the line at every position (G8: > 30 s on a 1 MB line).
+EMAIL_RE = re.compile(r"(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}")
 HEX64_RE = re.compile(r"\b[0-9a-f]{64}\b")
 PHONE_RE = re.compile(r"^\+\d[\d ()\-]{6,}$")
 NAME_FIELDS = {"name", "full_name", "display_name", "requester_name"}

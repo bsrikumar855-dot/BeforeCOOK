@@ -16,7 +16,8 @@ from .json_records import ledger_observation
 from .parsed_file import ParsedFile
 
 TS_PREFIX_RE = re.compile(r"^(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)\s+(.*)$")
-KV_RE = re.compile(r'([A-Za-z_][A-Za-z0-9_]*)=("((?:[^"\\]|\\.)*)"|[^\s"]+)')
+# A key starts at a word boundary (G8: without the lookbehind every position of a long word rescanned it).
+KV_RE = re.compile(r'(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]|\\.)*)"|[^\s"]+)')
 SYSLOG_RE = re.compile(r"^<\d+>1 (\S+) (\S+) (\S+) - - (.*)$")
 BRACKET_RE = re.compile(r"^\[(\w+)\] \[([^\]]+)\] \[([^\]]+)\] ([a-z_]+): (.*)$")
 PIPE_RE = re.compile(r"^\| (\w+) \| ([^|]+?) \| ([^|]+?) \| ([a-z_]+) \| (.*)$")

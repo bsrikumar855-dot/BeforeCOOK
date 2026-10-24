@@ -90,6 +90,10 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/agent/llm_client.py` | 16, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/agent/loaders.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/agent/parsers/__init__.py` | 2, 5, 6 | regex capture-group index | STANDARD | the wrong capture is read |
+| `code/agent/parsers/file_checks.py` | 4 | PNG chunk CRC length in bytes | BOUND | PNG specification: CRC check breaks |
+| `code/agent/parsers/file_checks.py` | 4294967295 | PNG chunk layout of the synthetic probe image | BOUND | PNG specification (ISO/IEC 15948); an invalid probe image |
+| `code/agent/parsers/file_checks.py` | 8 | PNG signature / chunk header length in bytes | BOUND | PNG specification (ISO/IEC 15948): chunk parsing breaks |
+| `code/agent/parsers/file_checks.py` | 1024, 4096 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/agent/parsers/ocr_grounding.py` | 2 | OCR pass upscale factor 2x | JUDGEMENT | see main table (OCR passes) |
 | `code/agent/parsers/ocr_grounding.py` | 3 | OCR pass upscale factor 3x | JUDGEMENT | see main table (OCR passes) |
 | `code/agent/parsers/pdf_text.py` | 16 | hexadecimal base | STANDARD | CMap / hex decoding breaks |
@@ -98,6 +102,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/agent/parsers/png_vlm.py` | 12 | hash-prefix length (cache keys, prompt versions, nonces, call ids) | JUDGEMENT | existing cache keys / prompt versions no longer match: every cached reply misses |
 | `code/agent/parsers/png_vlm.py` | 40, 120, 160, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/agent/parsers/record_semantics.py` | 4 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/agent/pipeline.py` | 200 | HTTP status code | BOUND | RFC 9110 / provider API semantics: retry, quota and 404 handling |
 | `code/agent/pipeline.py` | 3 | traceback lines kept in a degraded trace | JUDGEMENT | only diagnostic text |
 | `code/agent/schema.py` | 4 | index where REMEDIATION operations start in the spec operation table | SPEC | phase of every operation; validator rejects every row |
 | `code/agent/schema.py` | 9 | index where VERIFICATION operations start in the spec operation table | SPEC | phase of every operation; validator rejects every row |
@@ -108,7 +113,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/category_coverage.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/compare_intent.py` | 2 | a sentence used <= 2 times marks a free-text (non-template) request | JUDGEMENT | which texts the C4 comparison treats as free text |
 | `code/analysis/compare_intent.py` | 90 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
-| `code/analysis/constants_register.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 24, 25, 30, 40, 60.0, 64, 100, 200, 255, 400, 401, 403, 404, 429, 500, 502, 503, 504, 518, 5000, 40000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
+| `code/analysis/constants_register.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 24, 25, 30, 40, 60.0, 64, 100, 200, 255, 400, 401, 403, 404, 429, 500, 502, 503, 504, 518, 5000, 40000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
 | `code/analysis/e1_order_inference.py` | 25 | E1-B burst gap in minutes (first trough of the unlabelled gap histogram) | JUDGEMENT | rejected experiment only; see main table |
 | `code/analysis/e1_order_inference.py` | 10 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/e1_order_inference.py` | 60 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
@@ -143,8 +148,19 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/evaluation/coupling_probes.py` | 400, 900 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/custom_cases/build_fixtures.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 32, 700 | fictional fixture data (case numbers, step numbers, hash filler, padding repeat) | JUDGEMENT | only that fixture; expected outputs are written next to it |
 | `code/evaluation/main.py` | 2 | index of the 'correct' flag in an attribution tuple | JUDGEMENT | report arithmetic |
-| `code/evaluation/main.py` | 10, 20, 120, 160, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/evaluation/main.py` | 10, 20, 40, 120, 160, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/main.py` | 100.0, 1000000.0 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
+| `code/evaluation/security_audit.py` | 255 | XOR mask used to flip bytes | STANDARD | only the fixture |
+| `code/evaluation/security_audit.py` | 1000000 | adversarial line length (1 MB) | JUDGEMENT | the G8 brief's 1 MB line |
+| `code/evaluation/security_audit.py` | 64 | bytes flipped to corrupt a PNG | JUDGEMENT | only the fixture |
+| `code/evaluation/security_audit.py` | 4 | expected exit code of a degraded run | SPEC | C0 semantics: degraded → exit 4 |
+| `code/evaluation/security_audit.py` | 2.0 | half of a file / argv index / AST argument count | JUDGEMENT | only the audit |
+| `code/evaluation/security_audit.py` | 5 | keep 3/5 of a SQL file to truncate it | JUDGEMENT | only the fixture |
+| `code/evaluation/security_audit.py` | 10 | number of adversarial inputs / timeout slack / divisor of a 10-char repeat | JUDGEMENT | only the audit's timeout |
+| `code/evaluation/security_audit.py` | 3 | repeat-unit length of 3-char adversarial lines / truncation to 3/5 / rounding | JUDGEMENT | only the audit inputs |
+| `code/evaluation/security_audit.py` | 6 | repeat-unit length of 6-char adversarial lines | JUDGEMENT | only the audit inputs |
+| `code/evaluation/security_audit.py` | 7 | seed of the random-printable adversarial line | JUDGEMENT | which random line is tested |
+| `code/evaluation/security_audit.py` | 80, 90, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/spec_audit.py` | 2 | column index of steps_json / minimum steps for the negative control | SPEC | the audit reads the wrong column |
 | `code/evaluation/spec_audit.py` | 7 | deliberately wrong step_no injected by the negative control | JUDGEMENT | only the negative control |
 | `code/evaluation/spec_audit.py` | 3 | output columns per row; minimum steps of the case picked for the negative control | SPEC | problem_statement.md header has 3 columns |

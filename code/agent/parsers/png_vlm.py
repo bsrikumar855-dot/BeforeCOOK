@@ -19,7 +19,8 @@ from .ocr_grounding import grounded, ocr_ids
 
 TASK = "vision"
 RESOURCE_RE = re.compile(r"^([a-z]+(?:_[a-z]+)*)_(\d+)$")
-TOKEN_RE = re.compile(r"(?<![a-z0-9])[a-z]+(?:_[a-z]+)*_\d+")
+# At most 4 words of 32 letters: unbounded, a long underscore-joined run was quadratic (G8).
+TOKEN_RE = re.compile(r"(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}")
 PRESENCE = {"PRESENT", "ABSENT", "UNKNOWN"}
 
 

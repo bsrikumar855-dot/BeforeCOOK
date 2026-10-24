@@ -10,11 +10,13 @@ import hashlib
 import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Callable
 
 from ..identity import IdentityUniverse
 from ..loaders import Dataset, parse_ts
 from ..schema import EvidenceFile, FullSnapshot, Observation
+from .file_checks import check as check_file, resolve_inside
 from .handover_text import parse_handover
 from .json_records import parse_json
 from .log_lines import parse_log
@@ -23,7 +25,6 @@ from .pdf_text import parse_pdf
 from .record_semantics import annotate
 from .sql_snapshots import parse_sql
 
-MAGIC = {"png": b"\x89PNG\r\n\x1a\n", "pdf": b"%PDF"}
 # Activity rows whose target_system is a sink, not the owner of the resource id.
 NON_OWNER_EVENTS = {"SYNC_RECORD", "INDEX_RECORD", "UPDATE_RECORD", "RETAIN_RECORD", "CREATE_EXPORT",
                     "RESTORE_BACKUP", "CLASSIFY_REQUEST"}
@@ -83,17 +84,25 @@ def build_evidence_index(dataset: Dataset, universe: IdentityUniverse,
     parsed: dict[str, ParsedFile] = {}
     raw_bytes: dict[str, bytes] = {}
     for row in dataset.manifest:
-        path = dataset.root / row["file_path"]
-        fmt = path.suffix.lower().lstrip(".")
+        fmt = Path(row["file_path"]).suffix.lower().lstrip(".")
         ef = EvidenceFile(row["file_id"], row["file_path"], row["origin"], row["captured_at"], fmt)
         files[ef.file_id] = ef
-        if not path.exists():
+        path = resolve_inside(dataset.root, row["file_path"])       # G8: never read outside the dataset
+        if path is None:
+            ef.status = "REJECTED_PATH"
+            ef.notes.append("manifest path is absolute or escapes the dataset directory")
+            continue
+        if not path.is_file():
             ef.status = "MISSING"
+            ef.notes.append("file named by the manifest does not exist")
             continue
         raw = path.read_bytes()
         ef.sha256 = hashlib.sha256(raw).hexdigest()
-        if fmt in MAGIC and not raw.startswith(MAGIC[fmt]):
-            ef.notes.append("magic bytes do not match extension")
+        rejected = check_file(raw, fmt)
+        if rejected:
+            ef.status, why = rejected
+            ef.notes.append(why)
+            continue
         raw_bytes[ef.file_id] = raw
         try:
             if fmt == "sql":

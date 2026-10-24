@@ -16,8 +16,9 @@ from .attribution import AttributionResult, CaseContext, attribute, classify_req
 from .identity import IdentityUniverse
 from .intent import MAX_CLASSIFY_CHARS, IntentClassifier, IntentResult, decide, model_text
 from .llm_client import LLMClient, ResponseCache, UsageLedger
-from .loaders import Dataset, load_dataset
+from .loaders import Dataset, load_dataset, parse_ts
 from .parsers import EvidenceIndex, build_evidence_index, catalog_aliases
+from .parsers.file_checks import DEGRADE_STATUSES
 from .parsers.ocr_grounding import OcrReader
 from .parsers.png_vlm import ImageExtractor
 from .rules import DATA_FLOW, SYSTEM_CATEGORIES, Policy
@@ -166,12 +167,30 @@ def audit_case(ctx: CaseContext, ds: Dataset, index: EvidenceIndex, attribution:
         else:
             verdicts.append(v)
     status, steps, unproven = build_steps(verdicts)
+    # G8 fail closed: a verification is unproven if a rejected evidence file captured after its proof and at or
+    # before audit_at could hold a newer observation. Such a case is never COMPLETE.
+    dropped = {fid: ef.captured_at for fid, ef in index.files.items() if ef.status in DEGRADE_STATUSES
+               and (parse_ts(ef.captured_at) is None or parse_ts(ef.captured_at) <= parse_ts(req["audit_at"]))}
+    depends = {}
+    for v in verdicts:
+        if v.compliant and v.proof_file_id in index.files and dropped:
+            proof_t = parse_ts(index.files[v.proof_file_id].captured_at)
+            later = sorted(f for f, t in dropped.items() if parse_ts(t) is None or parse_ts(t) > proof_t)
+            if later:
+                depends[v.resource_id] = later
+    fail_closed = bool(depends) and status == "COMPLETE"
+    if fail_closed:
+        status = "INCOMPLETE"
+        steps = [{**s, "evidence_id": ""} for s in steps]          # future checks, not proof
     label_of = {a.resource_id: a.label for a in attrs}
     for v in unproven:
         excluded.append({"resource_id": v.resource_id, "label": label_of.get(v.resource_id),
                          "reason": f"UNPROVEN_IN_COMPLETE: {v.note}"})
     degraded = None
     reason_code = None
+    if fail_closed:
+        reason_code = "DEPENDS_ON_DROPPED_EVIDENCE"
+        degraded = f"verification depends on rejected evidence: {depends}"
     if not steps:
         status = "INCOMPLETE"
         attributable = [a for a in attrs if a.in_scope and a.label in ("CONFIRMED", "INFERRED")]
@@ -179,7 +198,7 @@ def audit_case(ctx: CaseContext, ds: Dataset, index: EvidenceIndex, attribution:
         # INCOMPLETE [] and the file validator accepts it only with this reason code.
         reason_code = "NO_ATTRIBUTABLE_RESOURCE" if not attributable else "NO_VERIFIABLE_RESOURCE"
         degraded = "no attributable resource" if not attributable else "no resource could be verified"
-    errors = validate_row(status, serialize(steps), req["audit_at"], catalog)
+    errors = validate_row(status, serialize(steps), req["audit_at"], catalog, allow_no_finding=fail_closed)
     if errors:
         status, steps, degraded = "INCOMPLETE", [], "validation_failed"
     trace.update({"resources": resources, "excluded": excluded, "status": status, "steps": steps,
@@ -219,6 +238,8 @@ def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
                                                == "NO_ATTRIBUTABLE_RESOURCE"),
         }
     files = Counter(f.status for f in rr.index.files.values())
+    rejected_files = [{"file_id": f.file_id, "status": f.status, "reason": "; ".join(f.notes)[:200]}
+                      for f in sorted(rr.index.files.values(), key=lambda f: f.file_id) if f.status in DEGRADE_STATUSES]
     return {
         "eval": counts(eval_ids), "samples": counts(sample_ids),
         "evidence_files": dict(sorted(files.items())),
@@ -226,7 +247,9 @@ def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
                              "dropped_rows": extractor.dropped if extractor else [],
                              "failed_files": extractor.failures if extractor else []},
         "model_failures": {"intent_cases": len(counts(eval_ids + sample_ids)["model_failures"]),
-                           "vlm_files_skipped": len(extractor.failures) if extractor else 0},
+                           "vlm_files_skipped": len(extractor.failures) if extractor else 0,
+                           "evidence_files_rejected": len(rejected_files)},
+        "evidence_rejected": rejected_files,
         "conflicts": rr.attribution.conflicts,
         "content_conflicts": rr.attribution.content_conflicts,
         "image_rows_accepted": extractor.accepted if extractor else [],

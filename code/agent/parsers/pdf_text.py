@@ -17,8 +17,26 @@ BS = b"\x5c"
 TEXT_OPS = rb"/([^\s]+)\s+[\d.]+\s+Tf|\(((?:[^()\x5c]|\x5c.)*)\)\s*Tj|<([0-9A-Fa-f]+)>\s*Tj|\bET\b|(T\*|Td|TD)"
 
 
+def _blocks(data: bytes, start: re.Pattern, end: bytes) -> list[tuple[re.Match, bytes]]:
+    """(start match, body up to the next `end`) in order. A linear scan: a lazy `start(.*?)end` regex rescans to the
+    end of the input from every start that has no `end` after it (G8: > 30 s on a 1 MB input)."""
+    out, pos = [], 0
+    while True:
+        m = start.search(data, pos)
+        if not m:
+            return out
+        stop = data.find(end, m.end())
+        if stop < 0:
+            return out
+        out.append((m, data[m.end():stop].strip()))
+        pos = stop + len(end)
+
+
+OBJ_START = re.compile(rb"(?<!\d)(\d{1,10}) 0 obj")
+
+
 def _objects(raw: bytes) -> dict[int, bytes]:
-    return {int(m.group(1)): m.group(2) for m in re.finditer(rb"(\d+) 0 obj\s*(.*?)\s*endobj", raw, re.S)}
+    return {int(m.group(1)): body for m, body in _blocks(raw, OBJ_START, b"endobj")}
 
 
 def _stream(obj: bytes) -> bytes:
@@ -37,10 +55,10 @@ def _stream(obj: bytes) -> bytes:
 
 def _cmap(data: bytes) -> dict[int, str]:
     out: dict[int, str] = {}
-    for blk in re.findall(rb"beginbfchar(.*?)endbfchar", data, re.S):
+    for _, blk in _blocks(data, re.compile(rb"beginbfchar"), b"endbfchar"):
         for a, u in re.findall(rb"<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>", blk):
             out[int(a, 16)] = bytes.fromhex(u.decode()).decode("utf-16-be")
-    for blk in re.findall(rb"beginbfrange(.*?)endbfrange", data, re.S):
+    for _, blk in _blocks(data, re.compile(rb"beginbfrange"), b"endbfrange"):
         for a, z, u in re.findall(rb"<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>", blk):
             for i in range(int(a, 16), int(z, 16) + 1):
                 out[i] = chr(int(u, 16) + i - int(a, 16))

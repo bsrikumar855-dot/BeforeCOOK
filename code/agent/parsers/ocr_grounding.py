@@ -29,9 +29,9 @@ WINDOWS_DEFAULT = Path("C:/Program Files/Tesseract-OCR/tesseract.exe")
 PASSES = (("base", 1, False, ""), ("x2", 2, False, ""), ("x2_psm11", 2, False, "--psm 11"),
           ("x3_autocontrast_psm6", 3, True, "--psm 6"))
 SEP = r"[_ .]?"                                   # how OCR renders an underscore inside an id
-# The separator inside the prefix is mandatory: an optional one makes the group ambiguous and backtracks
-# exponentially on long lowercase runs (found when the first C10 run hung).
-TOKEN_RE = re.compile(r"(?<![A-Za-z0-9_])([a-z]+(?:[_ .][a-z]+)*)[_ .]?(\d+)(?![0-9])")
+# The separator inside the prefix is mandatory (an optional one backtracked exponentially: the first C10 run
+# hung) and the prefix is at most 4 words of 32 letters (unbounded, a long run of words was quadratic: G8).
+TOKEN_RE = re.compile(r"(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])")
 
 
 class OcrUnavailable(CacheMiss):

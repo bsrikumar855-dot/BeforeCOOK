@@ -233,6 +233,64 @@ INCOMPLETE [] only with NO_ATTRIBUTABLE_RESOURCE.
 - INCOMPLETE [] rows: ['case_63']
 - Negative control: 17/17 injected defect classes caught (header, row_count, id_set, row_order, status, json, not_applicable_steps, incomplete_empty, step_keys, step_no, triple, complete_phase, citation_missing, future_step_cited, citation_unknown, citation_after_audit, ordering)
 
+### Security pass (G8, `code/evaluation/security_audit.py`)
+
+Every regex in code/main.py and code/agent/** run on ten 1 MB adversarial lines in a child process, bound 2.0 s per input:
+
+| Where | Pattern | Worst time (s) | Slowest input | Result |
+|---|---|---|---|---|
+| code/agent/attribution.py:324 | `non-deletion` | 0.058 | prefix_repeated | PASS |
+| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.355 | digits | PASS |
+| code/agent/explain.py:46 | `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z\|[+-]\d{2}:\d{2})` | 0.054 | digits | PASS |
+| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.081 | email_like | PASS |
+| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.221 | prefix_repeated | PASS |
+| code/agent/identity.py:18 | `^\+\d[\d ()\-]{6,}$` | 0.0 | letters | PASS |
+| code/agent/parsers/__init__.py:31 | `linked (\S+) \(([^)]+)\) to (\S+?) and (\S+?)[.;]\|confirmed (\S+) \(([^)]+)\) belongs only` | 0.022 | email_like | PASS |
+| code/agent/parsers/__init__.py:37 | `^(.*)_\d+$` | 0.064 | separators | PASS |
+| code/agent/parsers/file_checks.py:68 | `^\s*BEGIN(\s+TRANSACTION)?\s*;` | 0.0 | letters | PASS |
+| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.129 | letters_spaces | PASS |
+| code/agent/parsers/file_checks.py:70 | `COMMIT\s*;$` | 0.004 | prefix_repeated | PASS |
+| code/agent/parsers/handover_text.py:11 | `^-\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(.+?)\s*$` | 0.0 | letters | PASS |
+| code/agent/parsers/log_lines.py:18 | `^(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)\s+(.*)$` | 0.0 | letters | PASS |
+| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.064 | email_like | PASS |
+| code/agent/parsers/log_lines.py:21 | `^<\d+>1 (\S+) (\S+) (\S+) - - (.*)$` | 0.0 | letters | PASS |
+| code/agent/parsers/log_lines.py:22 | `^\[(\w+)\] \[([^\]]+)\] \[([^\]]+)\] ([a-z_]+): (.*)$` | 0.0 | letters | PASS |
+| code/agent/parsers/log_lines.py:23 | `^\\| (\w+) \\| ([^\|]+?) \\| ([^\|]+?) \\| ([a-z_]+) \\| (.*)$` | 0.0 | letters | PASS |
+| code/agent/parsers/ocr_grounding.py:34 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.497 | letters_spaces | PASS |
+| code/agent/parsers/ocr_grounding.py:106 | `` | None | None | DYNAMIC: covered by its builder or not a |
+| code/agent/parsers/ocr_grounding.py:117 | `[ .]` | 0.411 | separators | PASS |
+| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.081 | email_like | PASS |
+| code/agent/parsers/pdf_text.py:43 | `<<(.*)>>\s*stream\r?\n(.*?)\r?\n?endstream` | 0.001 | letters | PASS |
+| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.007 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.246 | words_underscores | PASS |
+| code/agent/parsers/pdf_text.py:58 | `beginbfchar` | 0.023 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:59 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
+| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.024 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:62 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
+| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.005 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:74 | `/ToUnicode (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.278 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:73 | `/Name /([^\s/]+)` | 0.006 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:81 | `/Contents (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
+| code/agent/parsers/png_vlm.py:21 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.194 | words_underscores | PASS |
+| code/agent/parsers/png_vlm.py:23 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.278 | words_underscores | PASS |
+| code/agent/parsers/sql_snapshots.py:27 | `_replica_[a-z_]+$` | 0.004 | prefix_repeated | PASS |
+| code/agent/parsers/sql_snapshots.py:36 | `^-- Captured at:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
+| code/agent/parsers/sql_snapshots.py:38 | `^-- Database topology:\s*(\S+)` | 0.0 | letters | PASS |
+| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.043 | random_printable | PASS |
+
+Seven patterns were quadratic before G8 (each > 30 s on a 1 MB line): the email pattern, the log key=value pattern, both screenshot id token patterns, and three lazy PDF block patterns. Fixed by RFC 5321 bounds, word-start lookbehinds, bounded id prefixes and a linear block scan; output.csv and every trace unchanged.
+
+Hostile evidence fixtures (temporary dataset copies, run end to end):
+
+| Fixture | Rejected | Exit | Rows | Cases failed closed | Checks |
+|---|---|---|---|---|---|
+| path_traversal | {'evidence_01': 'REJECTED_PATH', 'evidence_02': 'REJECTED_PATH'} | 4 | 518 | 0 | all pass |
+| wrong_extension | {'evidence_02': 'WRONG_TYPE', 'evidence_04': 'WRONG_TYPE'} | 4 | 518 | 3 | all pass |
+| truncated_sql | {'evidence_05': 'TRUNCATED'} | 4 | 518 | 0 | all pass |
+| corrupt_png | {'evidence_04': 'CORRUPT'} | 4 | 518 | 3 | all pass |
+| missing_file | {'evidence_21': 'MISSING'} | 4 | 518 | 0 | all pass |
+
 ## 5. Determinism
 
 - Not run in this invocation (use `--determinism`).

@@ -27,7 +27,9 @@ class EvidenceCatalog:
         self.time.update({a["audit_id"]: a["event_time"] for a in audit_log})
 
 
-def validate_row(status: str, steps_json: str, audit_at: str, catalog: EvidenceCatalog) -> list[str]:
+def validate_row(status: str, steps_json: str, audit_at: str, catalog: EvidenceCatalog,
+                 allow_no_finding: bool = False) -> list[str]:
+    """allow_no_finding: a fail-closed row (DEPENDS_ON_DROPPED_EVIDENCE) has checks but no provable finding."""
     errors: list[str] = []
     if status not in STATUSES:
         return [f"unknown deletion_status {status!r}"]
@@ -74,7 +76,7 @@ def validate_row(status: str, steps_json: str, audit_at: str, catalog: EvidenceC
     valid = [s for s in steps if isinstance(s, dict) and set(s) == set(STEP_KEYS) and s["operation"] in OPERATION_PHASE]
     if valid and [sort_key(s) for s in valid] != sorted(sort_key(s) for s in valid):
         errors.append("steps out of order (phase, operation, system_id, resource_id)")
-    if status == "INCOMPLETE" and steps and not any(s.get("phase") == "FINDING" for s in valid):
+    if status == "INCOMPLETE" and steps and not allow_no_finding and not any(s.get("phase") == "FINDING" for s in valid):
         errors.append("INCOMPLETE with steps but no FINDING")
     return errors
 

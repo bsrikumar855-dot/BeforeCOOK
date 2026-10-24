@@ -51,6 +51,7 @@
   "PARSED": 79,
   "TEXT_LAYER": 4
  },
+ "evidence_rejected": [],
  "image_extraction": {
   "accepted_rows": 24,
   "dropped_rows": [
@@ -344,6 +345,7 @@
   }
  ],
  "model_failures": {
+  "evidence_files_rejected": 0,
   "intent_cases": 0,
   "vlm_files_skipped": 0
  },

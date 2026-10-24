@@ -79,7 +79,7 @@ def main(argv: list[str] | None = None) -> int:
     allowed_empty = {cid for cid, o in rr.outcomes.items() if o.trace.get("reason_code") == "NO_ATTRIBUTABLE_RESOURCE"}
     errors = validate_output_file(tmp, [r["case_id"] for r in rr.dataset.requests], allowed_empty)
     failures = rr.summary["model_failures"]
-    n_fail = failures["intent_cases"] + failures["vlm_files_skipped"]
+    n_fail = failures["intent_cases"] + failures["vlm_files_skipped"] + failures.get("evidence_files_rejected", 0)
     s = rr.summary["eval"]
     print(f"rows={s['cases']} status={s['status']} degraded={len(s['degraded'])} "
           f"model_failures={failures['intent_cases']} vlm_files_skipped={failures['vlm_files_skipped']} "
@@ -88,7 +88,9 @@ def main(argv: list[str] | None = None) -> int:
     if code == EXIT_OK:
         tmp.replace(args.output)
         return EXIT_OK
-    reason = (f"{n_fail} model failure(s)" if n_fail else "invalid output: " + "; ".join(errors))
+    reason = (f"{n_fail} degrade event(s): model failures or rejected evidence files "
+              f"{[r['file_id'] for r in rr.summary.get('evidence_rejected', [])]}" if n_fail
+              else "invalid output: " + "; ".join(errors))
     if args.allow_degraded:
         degraded = args.output.with_name(args.output.stem + ".degraded.csv")
         tmp.replace(degraded)
