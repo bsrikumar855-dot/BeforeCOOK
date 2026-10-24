@@ -15,6 +15,9 @@ providers:
       fallback_1: GEMINI_API_KEY_FALLBACK_1
       fallback_2: GEMINI_API_KEY_FALLBACK_2
       fallback_3: GEMINI_API_KEY_FALLBACK_3
+      fallback_4: GEMINI_API_KEY_FALLBACK_4
+      fallback_5: GEMINI_API_KEY_FALLBACK_5
+      fallback_6: GEMINI_API_KEY_FALLBACK_6
   groq:
     endpoint: https://api.groq.com/openai/v1
     key_slots:
@@ -45,6 +48,8 @@ models:
     requests_per_minute: 8
     thinking_budget: null
 
+# Ordered (model, key slot) attempts per task, wired from the 2026-10-25 probe (code/evaluation/models_verified.json):
+# 2.5-flash only on the three aliases where it is listed and callable; 3.5-flash and 3.5-flash-lite on all aliases.
 # Ordered (model, key slot) attempts per task. The next entry is tried on HTTP 429/5xx,
 # timeout, or output that still fails schema validation after 2 retries.
 tasks:
@@ -54,11 +59,13 @@ tasks:
       - {model: flash, key_slot: primary}
       - {model: flash, key_slot: fallback_1}
       - {model: flash, key_slot: fallback_2}
-      - {model: flash, key_slot: fallback_3}
       - {model: flash_new, key_slot: primary}
       - {model: flash_new, key_slot: fallback_1}
       - {model: flash_new, key_slot: fallback_2}
       - {model: flash_new, key_slot: fallback_3}
+      - {model: flash_new, key_slot: fallback_4}
+      - {model: flash_new, key_slot: fallback_5}
+      - {model: flash_new, key_slot: fallback_6}
   intent:
     prompt_file: intent.md
     batch_size: 40
@@ -67,12 +74,16 @@ tasks:
       - {model: flash_lite, key_slot: fallback_1}
       - {model: flash_lite, key_slot: fallback_2}
       - {model: flash_lite, key_slot: fallback_3}
-      - {model: flash, key_slot: primary}
-      - {model: flash, key_slot: fallback_1}
-      - {model: flash, key_slot: fallback_2}
-      - {model: flash, key_slot: fallback_3}
+      - {model: flash_lite, key_slot: fallback_4}
+      - {model: flash_lite, key_slot: fallback_5}
+      - {model: flash_lite, key_slot: fallback_6}
       - {model: flash_new, key_slot: primary}
       - {model: flash_new, key_slot: fallback_1}
+      - {model: flash_new, key_slot: fallback_2}
+      - {model: flash_new, key_slot: fallback_3}
+      - {model: flash_new, key_slot: fallback_4}
+      - {model: flash_new, key_slot: fallback_5}
+      - {model: flash_new, key_slot: fallback_6}
   investigator:                    # experiment E2
     prompt_file: investigator.md
     max_tool_calls: 8
@@ -82,6 +93,9 @@ tasks:
       - {model: flash_lite, key_slot: fallback_1}
       - {model: flash_lite, key_slot: fallback_2}
       - {model: flash_lite, key_slot: fallback_3}
+      - {model: flash_lite, key_slot: fallback_4}
+      - {model: flash_lite, key_slot: fallback_5}
+      - {model: flash_lite, key_slot: fallback_6}
 
 limits:
   timeout_seconds: 90

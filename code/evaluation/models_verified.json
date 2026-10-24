@@ -1,53 +1,160 @@
 {
- "configured": [
-  "gemini-2.5-flash",
-  "gemini-3.5-flash-lite",
-  "gemini-3.8-flash"
- ],
- "by_slot": {
-  "primary": {
-   "gemini-2.5-flash": true,
-   "gemini-3.5-flash-lite": true,
-   "gemini-3.8-flash": true
+ "probed_at": "see git commit time",
+ "pool_note": "Keys of one Google Cloud project share one quota pool; the API does not reveal the project, so pools are UNKNOWN (failover, not proven extra capacity).",
+ "slots": {
+  "gemini/primary": {
+   "env_var": "GEMINI_API_KEY",
+   "pool": "UNKNOWN",
+   "models": {
+    "gemini-3.5-flash-lite": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-3.5-flash": {
+     "listed": true,
+     "text": "http_503"
+    },
+    "gemini-2.5-flash": {
+     "listed": true,
+     "text": "429_quota"
+    }
+   }
   },
-  "fallback_1": {
-   "gemini-2.5-flash": true,
-   "gemini-3.5-flash-lite": true,
-   "gemini-3.8-flash": true
+  "gemini/fallback_1": {
+   "env_var": "GEMINI_API_KEY_FALLBACK_1",
+   "pool": "UNKNOWN",
+   "models": {
+    "gemini-3.5-flash-lite": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-3.5-flash": {
+     "listed": true,
+     "text": "http_503"
+    },
+    "gemini-2.5-flash": {
+     "listed": true,
+     "text": "429_quota"
+    }
+   }
   },
-  "fallback_2": {
-   "gemini-2.5-flash": true,
-   "gemini-3.5-flash-lite": true,
-   "gemini-3.8-flash": true
+  "gemini/fallback_2": {
+   "env_var": "GEMINI_API_KEY_FALLBACK_2",
+   "pool": "UNKNOWN",
+   "models": {
+    "gemini-3.5-flash-lite": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-3.5-flash": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-2.5-flash": {
+     "listed": true,
+     "text": "429_quota"
+    }
+   }
   },
-  "fallback_3": {
-   "gemini-2.5-flash": true,
-   "gemini-3.5-flash-lite": true,
-   "gemini-3.8-flash": true
+  "gemini/fallback_3": {
+   "env_var": "GEMINI_API_KEY_FALLBACK_3",
+   "pool": "UNKNOWN",
+   "models": {
+    "gemini-3.5-flash-lite": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-3.5-flash": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-2.5-flash": {
+     "listed": true,
+     "text": "404_unavailable"
+    }
+   }
+  },
+  "gemini/fallback_4": {
+   "env_var": "GEMINI_API_KEY_FALLBACK_4",
+   "pool": "UNKNOWN",
+   "models": {
+    "gemini-3.5-flash-lite": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-3.5-flash": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "http_503"
+    },
+    "gemini-2.5-flash": {
+     "listed": true,
+     "text": "404_unavailable"
+    }
+   }
+  },
+  "gemini/fallback_5": {
+   "env_var": "GEMINI_API_KEY_FALLBACK_5",
+   "pool": "UNKNOWN",
+   "models": {
+    "gemini-3.5-flash-lite": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-3.5-flash": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-2.5-flash": {
+     "listed": true,
+     "text": "404_unavailable"
+    }
+   }
+  },
+  "gemini/fallback_6": {
+   "env_var": "GEMINI_API_KEY_FALLBACK_6",
+   "pool": "UNKNOWN",
+   "models": {
+    "gemini-3.5-flash-lite": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "ok"
+    },
+    "gemini-3.5-flash": {
+     "listed": true,
+     "text": "ok",
+     "vision": "ok",
+     "tool_calling": "429_quota"
+    },
+    "gemini-2.5-flash": {
+     "listed": true,
+     "text": "404_unavailable"
+    }
+   }
+  },
+  "groq/primary": {
+   "env_var": "GROQ_API_KEY",
+   "status": "not set"
   }
- },
- "flash_family_available": [
-  "gemini-2.5-flash",
-  "gemini-2.5-flash-image",
-  "gemini-2.5-flash-lite",
-  "gemini-2.5-flash-preview-tts",
-  "gemini-3-flash-preview",
-  "gemini-3.1-flash-image",
-  "gemini-3.1-flash-image-preview",
-  "gemini-3.1-flash-lite",
-  "gemini-3.1-flash-lite-image",
-  "gemini-3.1-flash-lite-preview",
-  "gemini-3.1-flash-tts-preview",
-  "gemini-3.5-flash",
-  "gemini-3.5-flash-lite",
-  "gemini-3.6-flash",
-  "gemini-3.7-flash",
-  "gemini-3.8-flash",
-  "gemini-3.8-flash-lite-tts",
-  "gemini-3.8-flash-tts",
-  "gemini-flash-latest",
-  "gemini-flash-lite-latest",
-  "gemini-omni-1.1-flash",
-  "gemini-omni-flash-preview"
- ]
+ }
 }

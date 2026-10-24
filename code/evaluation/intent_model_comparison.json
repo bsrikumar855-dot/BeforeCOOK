@@ -1,0 +1,34 @@
+{
+ "texts": 42,
+ "truth_source": "samples: sample_output.csv (DELETION); 10 eval texts: NON_DELETION, corroborated by 10 CLASSIFY_REQUEST rows (inference)",
+ "models": {
+  "gemini-3.5-flash-lite": {
+   "accuracy": "42/42",
+   "by_truth": {
+    "DELETION": "32/32",
+    "NON_DELETION": "10/10"
+   },
+   "failures": 0,
+   "calls": 2,
+   "tokens": 5711,
+   "answered_by": {
+    "gemini-3.5-flash-lite@primary": 2
+   }
+  },
+  "gemini-3.5-flash": {
+   "accuracy": "42/42",
+   "by_truth": {
+    "DELETION": "32/32",
+    "NON_DELETION": "10/10"
+   },
+   "failures": 0,
+   "calls": 2,
+   "tokens": 12372,
+   "answered_by": {
+    "gemini-3.5-flash@primary": 2
+   }
+  }
+ },
+ "agreement": "42/42",
+ "disagreements": []
+}
