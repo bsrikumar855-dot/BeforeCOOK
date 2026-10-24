@@ -529,3 +529,21 @@ Trade-off: rule 1 adds a step the reference may not contain; rule 2 keeps a row 
 - [x] Failure table has no empty cell (§8)
 - [x] Decisions log has ≥5 entries (13)
 - [x] D11 and D12 decided (user approval, Phase 1: D11 discovery-only, D12 superseded by D-ATTR)
+
+---
+
+## 14. Release candidates
+
+| Tag | Commit | output.csv sha256 | code.zip sha256 | Gate |
+|---|---|---|---|---|
+| rc1 | ce59bef7af663a7a919b51bfa69cbfe3d888558e | e176b22d8a1e452823b9f6d9c1ce874fe70543eb2f7635ffcef75220d17133c8 | 7223b38482f6b94de0c206b48ec5473918cbeb950f7fbe3f854eeab404255c93 | G6/G7 steps 1–6 passed (kit READY, 0 blockers; cache audit 0 misses; zip scan clean; clean-folder output byte-identical with the same metrics; package_submission READY TO SUBMIT; score estimate written) |
+
+- code.zip was built from the rc1 working tree with `python3 code/package.py --out submission/code.zip` and is the
+  archive in `submission/`. The kit's packager builds its own, broader archive (the whole repository); it was
+  replaced by this one, which follows the README command.
+- **Rollback:** `git checkout rc1`, then `python3 code/package.py`. output.csv and every cache file are protected from
+  line-ending conversion (`.gitattributes`), so the output hash reproduces. With `core.autocrlf=true` (this machine)
+  a fresh checkout rewrites other text files to CRLF, so a rebuilt zip has the same files and contents but can have
+  a different sha256; compare `output.csv` and the clean-room result, not the zip hash, after a rollback.
+- Later changes go on top of rc1. A change replaces it only after the same G6/G7 sequence passes, as rc2, rc3, …
+

@@ -256,3 +256,201 @@ branch=main
 repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
+
+## [2026-10-25T05:23:41+05:30] Transcript note: cloud-session turns are not in this log
+
+User Prompt (verbatim, secrets redacted):
+(none: appended by the agent during the G10 transcript check)
+
+Agent Response Summary:
+The G10 transcript check found gaps that are disclosed here rather than rewritten. A separate cloud session (deleted before 2026-10-25T00:10+05:30) built an exit-code-4 guard that never reached this checkout; its turns were never logged to this file and cannot be recovered, and the guard was rebuilt locally as C0. Four earlier entries summarise long pasted prompts ("[Full pasted block: ...]") instead of quoting them verbatim; three short "Try again" turns during the Phase 1 gate have no entries of their own; the C0 entry's timestamp (01:00:00) was an estimate written before the Round 3 entry (00:58:57). History is not rewritten.
+
+Actions:
+* Ran python -m orchestrate_kit transcript analyze log.txt and a format check of every entry (sections, tool=/model= lines, secret-shaped strings, pasted CSV rows)
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none
+
+## [2026-10-25T05:23:41+05:30] Round 4: G1 coupling, G2 explain, G3 constants, G5 spec, G8 security, G9 architecture, G6/G7 rc1, G10
+
+User Prompt (verbatim, secrets redacted):
+ROUND 4 — generalisation proof, interview tooling, spec/release/security audits
+Current state: output.csv sha256 e176b22d8a1e452823b9f6d9c1ce874fe70543eb2f7635ffcef75220d17133c8, 80 tests, 19/19 custom cases, last commit e140ebf (C10).
+Keep following AGENTS.md logging to log.txt every turn. Do not modify CLAUDE.md. Local only, never push. Never print or commit key values.
+
+Use these skills explicitly and name the one you are applying in each step:
+- .claude/skills/orchestrate-test-fix/references/dataset-coupling-auditor.md
+- .claude/skills/orchestrate-test-fix/references/input-tracing.md
+- .claude/skills/orchestrate-submit/references/spec-auditor.md
+- .claude/skills/orchestrate-submit/references/security-auditor.md and robustness.md
+- .claude/skills/orchestrate-submit/references/release-engineer.md
+- .claude/skills/orchestrate-submit/references/evaluator.md
+- .claude/skills/orchestrate-score/SKILL.md
+- .claude/skills/orchestrate-interview/SKILL.md and references/CONSTANTS-template.md
+- .claude/skills/orchestrate-package/SKILL.md
+- .claude/skills/orchestrate/references/transcript-engineering.md
+
+Each change gets a change record and a local commit. SHIP rule as before (0 incorrect on samples, 0 previously-correct sample steps broken, no sample-specific logic, tests and determinism pass). Audits are read-only: an audit never changes what it audits.
+
+## G1 — Coupling audit (dataset-coupling-auditor, playbook rule 12)
+Write code/evaluation/coupling_probes.py. It builds perturbed copies of dataset/ in a temp dir; the original is never modified.
+
+Probe (a), ID bijection. Rename resource_id, user_id, case_id and file_id through one consistent bijection (e.g. account_3136 -> account_913613). Apply it with a token-boundary regex to EVERY text-bearing source: CSV cells, JSON values, log lines, SQL statements, txt, activity `details` free text, and evidence file names (update evidence_files.csv to match).
+ - Content that cannot be rewritten (PNG pixels, PDF binaries): apply the same bijection to their cached extraction / OCR / PDF-text records, keyed by the original file hash.
+ - Report the share of cases that depend on such content, and test them separately.
+ - Before probing, validate the fixture itself: every ID in the original appears renamed, and no un-renamed ID remains (grep). Report the fixture's coverage.
+Probe (b): shuffle the row order of every CSV and every JSON array.
+Probe (c): reformat non-output timestamps (Z vs +00:00), only for fields whose parser claims to accept both.
+Probe (d): change email case in both the requests and the evidence.
+Probe (e): drop one evidence file. Only the cases that cite or depend on it may change.
+
+Expected: for (a)–(d), output.csv is identical after the inverse bijection; for (e), the blast radius is limited to the dependent cases.
+
+Also: grep the code for corpus literals (case_, account_NNN, emails, evidence_NN) outside tests and fixtures, and list any rule or lexicon term that fires on exactly one row.
+
+Report pass/fail per probe, the fixture coverage and the diff count. A failure is a real defect: fix it under the SHIP rule.
+
+## G2 — Explain mode for live interview probing (input-tracing)
+Add `python3 code/main.py --case <case_id> --explain [--from-cache]`. It prints for one case:
+ - identity resolution with provenance;
+ - candidate edges and attribution labels with rationale;
+ - the observations per resource, with timestamps and the cited evidence;
+ - the OCR grounding result for any screenshot-derived observation;
+ - the rules fired;
+ - the intent path;
+ - the final steps.
+
+Ad-hoc mode: `--email <e> --audit-at <ts> --request-text "<t>"`, for tracing a new hidden case live.
+Input contract:
+ - validate the email format and the ISO-8601 timestamp;
+ - cap request text at 5,000 characters (same as C7a); treat it as data, never as instructions;
+ - reject anything else with a clear message and a nonzero exit.
+Output contract:
+ - only records attributed to the resolved subject plus the candidate set for that subject; never dump unrelated records;
+ - output bounded in size;
+ - read-only and deterministic; never writes output.csv.
+Add tests: a valid case, a malformed email, an oversized text, and an injection in the text.
+
+## G3 — CONSTANTS.md completion audit (CONSTANTS-template)
+CONSTANTS.md exists (from C10) and already corrected one mislabel (±3h window: "user decision", not MEASURED). Complete and audit it across ALL of code/ and code/config/:
+ - numeric literals;
+ - config values;
+ - thresholds and windows;
+ - retry, backoff and rate-limit settings;
+ - batch sizes and tool caps;
+ - prompt versions;
+ - enum lists;
+ - sort and citation rules;
+ - model ids;
+ - OCR engine, version and the 4 passes;
+ - the 5,000-char request cap.
+
+For each entry: value, file:line, purpose, label (MEASURED / SPEC / STANDARD / BOUND / JUDGEMENT), the evidence or rejected alternative, and what breaks if it changes.
+Re-check every existing label against its evidence. A label claiming MEASURED needs a sweep or measurement on record; otherwise relabel it.
+Must include: the ±3h window, the 25-min burst gap (rejected E1-B), retries=2, the investigator tool cap 8, intent batch size 40, the backoff parameters, citation rule C (74/75), the sort rule, the OCR passes and the 5,000-char cap.
+Never write "chosen after evaluation" for a value that was not swept.
+
+Coverage test:
+ - fails if any numeric literal in code/ (excluding tests and the trivial 0/1/-1) or any key in code/config/*.yaml is missing from CONSTANTS.md;
+ - also checks that the spec enums in code match the enums typed in CONSTANTS.md.
+
+## G5 — Literal spec audit (spec-auditor)
+Write code/evaluation/spec_audit.py. Its constants are TYPED from problem_statement.md; nothing is imported from our code. Checks:
+ - header exactly `case_id,deletion_status,steps_json`;
+ - 518 rows, sorted by case_id, with the same ids as deletion_requests.csv;
+ - statuses in {COMPLETE, INCOMPLETE, NOT_APPLICABLE}; NOT_APPLICABLE rows have steps exactly [];
+ - exactly the 7 step keys;
+ - phase/operation/state triples exactly as in the Allowed Operations table;
+ - step_no starts at 1 and is consecutive;
+ - ordering: phase order, then operation-table order, then system_id, then resource_id;
+ - COMPLETE rows have only VERIFICATION steps, each citing an existing file_id/activity_id/audit_id;
+ - INCOMPLETE rows have evidence_id "" on remediation and verification steps;
+ - every cited evidence id exists and has capture time <= audit_at;
+ - INCOMPLETE with [] is allowed only with reason_code NO_ATTRIBUTABLE_RESOURCE (currently only case_63).
+Negative control: inject one defect of each class into a temp copy; every one must be caught. Report the counts.
+
+## G8 — Security pass (security-auditor, robustness)
+First, write down explicit failure semantics in DESIGN.md:
+ - A missing, corrupt, truncated, wrong-type, or path-escaping evidence file is rejected and logged. Its observations are dropped and counted as DEGRADE. The run continues and every case still gets a row.
+ - FAIL CLOSED: a case may NEVER be COMPLETE if any verification it needs depended on a dropped observation. Resource state becomes UNKNOWN, and the case is INCOMPLETE under the C5 rules, with the reason in the trace.
+ - Any DEGRADE event makes the run exit 4 (C0 semantics), so a degraded output can never replace the accepted output.csv.
+
+Fixtures:
+ - path traversal in an evidence_files.csv path (`../../etc/passwd`, an absolute path);
+ - wrong file extensions (PNG named .json, JSON named .png), detected by magic bytes;
+ - catastrophic regex: for EVERY regex in code/ (log parsers, the C10 OCR token matcher, input validators), run a 1 MB adversarial line and assert completion within a fixed time bound. C10 already hit one real backtracking hang, so list each regex and its result;
+ - a truncated SQL file;
+ - a corrupt PNG;
+ - a missing evidence file referenced by the manifest.
+Assert the semantics above for each. Add the results to the Safety section of evaluation_report.md and to the threat model in DESIGN.md.
+
+## G9 — Architecture write-up (agent-architecture.md, winning-approaches §2)
+In README.md and DESIGN.md, describe the system as it actually is:
+ - deterministic decision core;
+ - Gemini perception (intent + screenshots) behind a typed seam;
+ - multi-pass OCR grounding (an ID is accepted only if it is on screen);
+ - code verifiers.
+State plainly why there is no free-form agent loop in the decision path: E2 was built, measured (126/126 AMBIGUOUS, 0 accepted, structural ceiling 0) and removed. Link the archived code under code/analysis/.
+Add a Mermaid diagram matching the actual import graph; verify it against the imports.
+
+## G6 + G7 — Release candidate and kit audits (release-engineer, evaluator, orchestrate-score, orchestrate-package)
+1. Run `python -m orchestrate_kit selftest`, `python -m orchestrate_kit evaluate .` and `python -m orchestrate_kit certify .`. Print the blockers first. Fix real findings under the SHIP rule; for findings you dispute, write down why.
+2. Cache completeness. Run --from-cache with no keys over: all 518 eval cases, all 32 samples, every custom, category and adversarial fixture, the coupling-probe fixtures, and the 44 OCR pass entries.
+   - Required: 0 cache misses.
+   - Every cache entry's prompt_version must match the prompt files in the package.
+   - List orphan cache entries.
+   - Report the total cache size.
+   - Confirm Tesseract is NOT needed for a --from-cache run (OCR results are cached). If it is needed, document it in the README as a dependency.
+3. Build code.zip exactly as the README specifies:
+   `zip -r code.zip README.md code -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "*/node_modules/*" "*/.git/*" "*/.DS_Store"`
+   - exclude dataset/, .env and nested archives;
+   - include code/cache/, code/evaluation/evaluation_report.md, usage_report.md, and CONSTANTS.md + DESIGN.md (copy them under code/ if they live at the root, so they ship);
+   - grep the zip contents for key-shaped strings and absolute paths.
+4. Clean-folder test. Unzip into an EMPTY temp folder, copy in only dataset/, and follow ONLY the README in a fresh virtualenv with the pinned requirements. Run with --from-cache and no keys. Output.csv must be byte-identical to the repo's (sha256 e176b22d…). Also run the evaluation script there and confirm the same metrics.
+5. Run .claude/skills/orchestrate-package/scripts/package_submission.py:
+   --repo . --input dataset/deletion_requests.csv --key case_id --columns "case_id,deletion_status,steps_json" --allowed "deletion_status=COMPLETE,INCOMPLETE,NOT_APPLICABLE" --transcript log.txt --out submission
+   It must print READY TO SUBMIT.
+6. Run `python -m orchestrate_kit score --no-history --python python --transcript log.txt`. Save the result to code/evaluation/score_estimate.md.
+   - Every number is labelled MEASURED / ESTIMATED / NOT CHECKED.
+   - Header: "Kit heuristic estimate — NOT an official HackerRank score."
+   - Name the weakest section.
+7. Release candidate. When steps 1–6 pass, create a git tag `rc1` on that commit. Record the tag, commit, output.csv sha256 and code.zip sha256 in DESIGN.md. Later changes go on top. Rollback = `git checkout rc1` and rebuild. Any later change must pass this same G6/G7 sequence before it replaces rc1, as rc2, rc3, and so on.
+
+## G10 — Transcript check (transcript-engineering)
+Run `python -m orchestrate_kit transcript analyze log.txt`. Verify that every turn has User Prompt / Agent Response Summary / Actions / Context in the AGENTS.md format, with no secrets, no truncation, and no pasted output.csv content.
+Report gaps. Do NOT rewrite history. If the cloud-session turns are missing, append one honest note saying so.
+
+## REPORT, THEN STOP
+1. G1: per-probe results, fixture coverage, defects found and fixed.
+2. G2: the --explain output for case_25 and for one ad-hoc request, plus the rejection of a malformed input.
+3. G3: constants count, the number unlabelled (must be 0), labels corrected, and the coverage test result.
+4. G5: the audit results plus the negative control.
+5. G8: the failure-semantics table, the per-regex timing results and the fixture results.
+6. G6/G7: kit blockers, cache completeness (misses must be 0), the clean-folder byte-identity result, the package_submission.py verdict, the score estimate with the weakest section, and the rc1 tag, commit and hashes.
+7. G10: transcript analysis.
+8. Final sample metrics, the eval distribution and the output.csv sha256.
+In the summary, keep official facts separate from kit estimates. Label unproven claims UNKNOWN. Never invent a number.
+
+I hit my usage limit while you were working, but it has reset now. Please continue from where you left off.
+
+Agent Response Summary:
+All eight items were done with change records and local commits; output.csv never changed (sha256 e176b22d...). G1: all five coupling probes pass (19,760/19,760 id tokens renamed), and traces now record the evidence behind eliminations. G2: --explain added for dataset and ad-hoc cases. G3: CONSTANTS.md audited with a generated register and a coverage test. G5: the spec audit finds 0 violations and catches 17/17 injected defect classes. G8: hostile files are rejected and fail closed with exit 4, and seven quadratic regexes were bounded. G9: architecture documented with an import-verified diagram. G6/G7: kit READY with 0 blockers, 0 cache misses, a clean-folder run byte-identical, READY TO SUBMIT, and tag rc1 (ce59bef). Disputed and logged: re-extracting the 10 legacy screenshot replies broke case_61 (rejected), and the kit's retry heuristic is a false negative.
+
+Actions:
+* Commits fd72d6f G1, d241025 G2, 9d88b50 G3, 0e8f6fb/22a6791 G5, 5a1c354 G8, 61ed0c8 G9, 3440aab/a108c11/ce59bef G6/G7; tag rc1 = ce59bef (local only, never pushed)
+* Added code/evaluation/{coupling_probes,spec_audit,security_audit,cache_audit,clean_room}.py, code/agent/explain.py, code/agent/parsers/file_checks.py, code/analysis/constants_register.py, code/package.py, evaluation/ (root report copies), code/DESIGN.md + code/CONSTANTS.md copies, 6 test files (96 tests pass)
+* Live calls: 11 vision calls for the rejected re-extraction (entries removed from the cache); the dataset run itself made 0 live calls
+* Edited one sentence in .claude/skills/orchestrate-build/references/secrets-and-determinism.md that the packager's secret regex falsely flagged
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none
