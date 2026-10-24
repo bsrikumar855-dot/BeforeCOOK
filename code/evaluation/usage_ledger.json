@@ -2865,6 +2865,35 @@
   }
  ],
  "calls": [],
- "events": [],
+ "events": [
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_1"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_2"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_3"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_4"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_5"
+  },
+  {
+   "event": "env_file_loaded",
+   "variable": "GEMINI_API_KEY_FALLBACK_6"
+  }
+ ],
  "models_verified": {}
 }

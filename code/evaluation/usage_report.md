@@ -36,7 +36,7 @@ share a quota pool and the API does not reveal the project, so pools are UNKNOWN
 - Actual cost: $0. Every call used the Gemini API free tier; the OCR engine runs locally.
 - Estimated cost at paid list price: $0.0791 total, $0.000153 per request (excluding gemini-3.5-flash: no published price, UNKNOWN).
 - Price source: Gemini Developer API pricing page, paid tier (https://ai.google.dev/gemini-api/docs/pricing; page last updated 2026-10-22 UTC, retrieved 2026-10-24). Rates are copied into code/config/models.yaml.
-- Fallback / quota / validation events in this run: none
+- Fallback / quota / validation events in this run: {'env_file_loaded': 7}
 - Call timestamps: {'UNKNOWN': 25}. Calls made before C8 did not store their time; their entries carry
   `timestamp: UNKNOWN` and `timestamp_upper_bound` (the commit that first added the entry). Calls made after C8
   store the provider-call time.

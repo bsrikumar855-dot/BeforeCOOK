@@ -205,7 +205,9 @@ Agreement 42/42. Kept `gemini-3.5-flash-lite`: equal accuracy at fewer tokens. K
 
 ## 5. Determinism
 
-- Not run in this invocation (use `--determinism`).
+- run_1: PYTHONHASHSEED=1, exit 0, live model calls 0, files compared 553
+- run_2: PYTHONHASHSEED=2, exit 0, live model calls 0, files compared 553, identical to run_1: True, differences: []
+- from_cache_no_keys: PYTHONHASHSEED=3, exit 0, live model calls 0, files compared 553, identical to run_1: True, differences: []
 
 ## 6. Failures found and improvements made
 
