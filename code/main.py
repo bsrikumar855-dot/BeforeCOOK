@@ -47,7 +47,18 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--reextract", action="append", default=[], metavar="FILE_ID",
                     help="send this screenshot to the vision model again under the current prompt (repeatable)")
     ap.add_argument("--check-models", action="store_true")
+    g = ap.add_argument_group("explain mode (read-only; never writes output.csv)")
+    g.add_argument("--case", help="case_id to trace")
+    g.add_argument("--explain", action="store_true", help="print the stage-by-stage trace of --case or an ad-hoc request")
+    g.add_argument("--email", help="ad-hoc request: subject email")
+    g.add_argument("--audit-at", help="ad-hoc request: ISO-8601 audit time")
+    g.add_argument("--request-text", help="ad-hoc request: request text (at most 5,000 characters; data, not instructions)")
+    g.add_argument("--requested-at", help="ad-hoc request: ISO-8601 request time (default: --audit-at)")
+    g.add_argument("--reported-at", help="ad-hoc request: ISO-8601 report time (default: --audit-at)")
     args = ap.parse_args(argv)
+
+    if args.explain or args.case or args.email:
+        return explain_mode(args)
 
     if args.check_models:
         report = LLMClient().verify_models()
@@ -86,6 +97,37 @@ def main(argv: list[str] | None = None) -> int:
         tmp.unlink(missing_ok=True)
         print(f"{reason}; output.csv untouched (use --allow-degraded for diagnostic rows)", file=sys.stderr)
     return code
+
+
+def explain_mode(args) -> int:
+    from agent.explain import ADHOC_CASE_ID, ExplainInputError, adhoc_dataset, explain, validate_adhoc
+    adhoc = args.email is not None or args.audit_at is not None or args.request_text is not None
+    tmp_root = None
+    try:
+        if not args.explain:
+            raise ExplainInputError("--case/--email need --explain")
+        if adhoc == bool(args.case):
+            raise ExplainInputError("give either --case, or --email with --audit-at and --request-text")
+        dataset = args.dataset
+        if adhoc:
+            validate_adhoc(args.email or "", args.audit_at or "", args.request_text or "", args.requested_at,
+                           args.reported_at)
+            dataset = adhoc_dataset(args.dataset, args.email, args.audit_at, args.request_text, args.requested_at,
+                                    args.reported_at)
+            tmp_root = dataset.parent
+        rr = pipeline.run(dataset, from_cache=args.from_cache)
+        print(explain(rr, ADHOC_CASE_ID if adhoc else args.case), end="")
+        return EXIT_OK
+    except ExplainInputError as exc:
+        print(f"ERROR (explain): {exc}", file=sys.stderr)
+        return EXIT_INVALID
+    except CacheMiss as exc:
+        print(f"ERROR (--from-cache): {exc}", file=sys.stderr)
+        return EXIT_CACHE_MISS
+    finally:
+        if tmp_root is not None:
+            import shutil
+            shutil.rmtree(tmp_root, ignore_errors=True)
 
 
 if __name__ == "__main__":

@@ -106,6 +106,21 @@ Exit codes (also in `python3 code/main.py --help`):
 | 3 | cache miss under `--from-cache` (or no OCR cache and no Tesseract) | untouched |
 | 4 | model failure (an intent call or a screenshot extraction failed) | untouched; `--allow-degraded` writes the diagnostic rows to `output.degraded.csv` |
 
+Explain one case stage by stage (read-only; never writes output.csv). It prints identity resolution with provenance,
+attribution labels and edges, observations per resource (with OCR grounding), the rules fired, the intent path and the
+final steps:
+
+```bash
+python3 code/main.py --case case_25 --explain --from-cache
+```
+
+Trace a new request live (the text is data for the intent classifier only; at most 5,000 characters; timestamps are
+ISO-8601 with a zone; malformed input exits 2; with `--from-cache` an unseen text exits 3):
+
+```bash
+python3 code/main.py --explain --from-cache --email s.yoon04@gmail.com --audit-at 2026-09-15T12:00:00Z --request-text "Please permanently delete my account and the personal data linked to it."
+```
+
 Evaluate (sample metrics, attribution metrics, root causes, category coverage, custom cases X1–X19 including the
 adversarial X14–X19, determinism over three processes, usage report):
 
