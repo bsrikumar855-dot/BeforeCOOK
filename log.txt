@@ -1389,3 +1389,293 @@ branch=fix/rc6
 repo_root=/home/user/BeforeCOOK
 worktree=main
 parent_agent=none
+
+## [2026-10-25T07:00:31Z] RC-infinity optimization loop: rc7 (X4, X1, D1, R1), gate passed, rc7 tagged locally
+
+User Prompt (verbatim, secrets redacted):
+MISSION RC∞ — Dominate HackerRank Orchestrate October | Target Rank #1
+You are Opus 5.5 Max operating as a principal engineer, adversarial evaluator, reliability researcher, and competitive optimization agent.
+Your mission is to make `bsrikumar855-dot/BeforeCOOK` the strongest defensible submission possible for HackerRank Orchestrate October.
+Target: Rank #1. This is an optimization objective, not a guaranteed outcome. You must pursue every material, evidence-backed improvement available while preserving correctness, reproducibility, security, and submission integrity.
+Do not stop after reviewing the repository, writing a report, or passing the current tests. Run a disciplined improvement loop: diagnose → hypothesize → implement → test → benchmark → adversarially review → retain or revert → repeat.
+Continue until no high-value, evidence-backed improvement remains within the available budget, or a hard blocker requires my input.
+1. Starting context
+Repository: `bsrikumar855-dot/BeforeCOOK`
+Current release candidate: RC6.
+
+* RC5 tag target: `5616cb9941dffbde806380c7b13a9ebf232962f6`
+* RC6 tag target: `d87f1c4be5e91ac024b80cd56ba82d5686e3b882`
+* RC6 branch head reported: `6dbd4b9`
+* Working branch: `fix/rc6`
+* PR #3: `https://github.com/bsrikumar855-dot/BeforeCOOK/pull/3`
+* RC6 output SHA-256: `7bf6151ab2e907a4e2803d945e3f029d2d009c078544a1c255906e3c7459ea20`
+* RC6 code ZIP SHA-256: `71dd1675060cab4749d5ccf7c7b3e08d4ca0c2a7a516a8412903bab06dc8a6bf`
+
+Reported baseline:
+
+* 123 tests passing.
+* All 12 phase-2 release gates passing.
+* Spec audit: zero violations.
+* Sample status: 31/32.
+* Step precision: 178/178.
+* Step recall: 178/193.
+* Exact sequence: 19/32.
+* Code ZIP heuristic: 82.3, not an official score.
+* 131 evaluation cases have unattributable primary accounts.
+* RC6's substantive output change is case_34, adding three steps for `support_9538`.
+* RC5 and RC6 tags reportedly exist locally but have not been published successfully.
+
+These facts are initial claims to verify. Inspect the actual repository, reports, specifications, fixtures, history, and available tooling before relying on them.
+2. Non-negotiable objective hierarchy
+Optimize in this order:
+
+1. Actual scoring potential: maximize rubric-aligned performance and competitive differentiation.
+2. Correctness: every output decision must be supported by evidence and the specification.
+3. Generalization: improve behavior on unseen cases, not just known fixtures.
+4. Robustness: resist adversarial inputs, malformed evidence, ambiguous identities, and boundary conditions.
+5. Reproducibility: deterministic outputs, clean-room builds, stable artifacts.
+6. Interview defensibility: explain architecture, metrics, trade-offs, failed experiments, and uncertainty precisely.
+7. Release integrity: maintain a verified, reproducible, submission-ready release.
+
+Never sacrifice correctness for a cosmetic metric increase. Never fabricate evidence, exploit evaluator weaknesses, hardcode hidden answers, or misrepresent measured results.
+3. First: establish a trustworthy baseline
+Before editing:
+
+* Inspect `AGENTS.md`, the scoring rubric, repository instructions, README, design docs, evaluation report, interview facts, interview mock, and release scripts.
+* Verify the working tree, current branch, RC4/RC5/RC6 history, tag targets, remote state, and PR status.
+* Verify the exact output and code ZIP used for submission.
+* Reproduce baseline metrics from committed artifacts wherever possible.
+* Identify which measurements are official, locally measured, heuristic, inferred, or unknown.
+* Record baseline hashes, gate results, runtime, model/API calls, and approximate resource cost.
+
+Do not repeat expensive evaluations if trustworthy cached results already exist. Reuse existing artifacts and identify exactly what each result proves.
+Create or update a concise experiment ledger. Every experiment must record:
+
+* Hypothesis
+* Evidence motivating it
+* Expected scoring benefit
+* Implementation change
+* Tests and benchmark results
+* Regressions and side effects
+* Runtime/API/credit cost
+* Decision: retain, revise, or revert
+
+4. Build the competitive score model
+Inspect the actual available rubric and scoring artifacts. Build a table mapping each scoring dimension to:
+
+* Current measured baseline
+* Known weaknesses
+* Evidence supporting the weakness
+* Potential improvement
+* Confidence that the improvement matters to scoring
+* Cost and regression risk
+* Cheapest reliable validation
+
+If the working rubric remains Output CSV 30%, Code ZIP 30%, AI Judge interview 30%, transcript 10%, treat that as provisional until verified.
+Do not confuse the local Code ZIP heuristic with the official score. Do not invent evaluation-set labels or claim an improvement in leaderboard rank without evidence.
+Prioritize work by expected value:
+Priority = plausible score impact × confidence in the defect × probability of a safe fix ÷ implementation and validation cost.
+Use this to avoid spending credits on low-value refactoring or speculative experiments.
+5. Iterative optimization loop
+Repeat the following cycle.
+A. Diagnose
+Search for the largest genuine weaknesses in:
+
+* Missing or incorrect output steps
+* Status classification
+* Evidence attribution
+* Citation correctness and admissibility
+* Ordering and serialization
+* Ambiguous identities and ownership
+* Time-window and episode boundaries
+* Error handling and edge cases
+* Prompt and cache behavior
+* Hidden-test generalization
+* Package completeness
+* Code quality and auditability
+* Interview explanations and transcript evidence
+
+Use error analysis and counterexamples, not intuition alone.
+B. Form a falsifiable hypothesis
+Before each change, state:
+
+* What is wrong?
+* What evidence demonstrates it?
+* Why could fixing it improve the target rubric?
+* Which cases should change?
+* Which cases must remain unchanged?
+* What test would disprove the hypothesis?
+
+If the hypothesis is unsupported, do not implement it.
+C. Implement the smallest meaningful fix
+
+* Work on a new iteration branch based on the verified release candidate.
+* Preserve RC4, RC5, and RC6 as immutable historical checkpoints.
+* Keep changes small and attributable.
+* Avoid broad rewrites unless evidence shows they are necessary.
+* Prefer deterministic logic for decisions that can be made reliably in code.
+* Use models only where justified by the task, and preserve source provenance.
+* Do not add expensive model calls without a demonstrated expected benefit.
+* Do not change known-good outputs without explaining why the change is correct.
+
+D. Test and benchmark
+After each meaningful change:
+
+* Run focused regression tests first.
+* Run the relevant sample benchmark and compare outputs against the baseline.
+* Measure precision, recall, status accuracy, exact sequence, and other available metrics.
+* Inspect every changed output row.
+* Test relevant negative controls and adversarial cases.
+* Check deterministic behavior and cache integrity.
+* Confirm unrelated cases remain unchanged.
+* Run the full release gate only when the change merits it.
+
+A test passing is not proof of correctness if the test encodes the same faulty assumption as the implementation.
+E. Adversarially review the result
+Act as a skeptical evaluator trying to disprove the improvement.
+Ask:
+
+* Could this create a false positive?
+* Does the specification actually permit it?
+* Is the evidence admissible at the relevant audit time?
+* Does ownership require an independent identity link?
+* Is the improvement merely overfitting the sample?
+* Did the score proxy improve while real correctness deteriorated?
+* Could the same fix break an unseen boundary case?
+
+Use independent derivations when feasible. Keep uncertainty explicit.
+F. Retain or revert
+Retain a change only if:
+
+* It fixes a demonstrated defect or produces a convincing, independently validated improvement.
+* It does not introduce a material regression.
+* Its behavior is explainable under the specification.
+* Its costs and risks are proportionate to its expected benefit.
+
+Otherwise revert it cleanly and record why.
+Then proceed to the next highest-value hypothesis.
+6. Mandatory focus areas
+Priority 1 — RC6 case_34
+Independently determine whether `support_9538` should be included.
+Verify the ownership proof, the screenshot's provenance and timestamp, the request's time window, the three added steps, their citations, and the implementation's identity boundaries.
+A screenshot of a person's own customer page may establish temporal relevance for an already-owned record; it must not independently establish ownership unless the specification explicitly permits it.
+Keep RC6 only if the evidence supports the change. Otherwise evaluate a minimal correction or the RC5 fallback.
+Priority 2 — Missing account attribution
+Investigate the 131 unattributable primary-account cases.
+Search for admissible identity links that have not already been examined. Do not repeat rejected experiments or infer ownership from mere co-occurrence, filenames, 404 profile lookups, or coincidental identifiers.
+If new admissible evidence exists, implement and validate the smallest fix. If not, document the evidence ceiling and move on.
+Priority 3 — D-SCOPE and time boundaries
+Review the six pre-request records and other excluded records against the exact specification. Distinguish:
+
+* Explicitly prohibited evidence
+* Explicitly required evidence
+* Unspecified episode boundaries
+
+Do not invent episode semantics. Resolve ambiguity only when the specification or admissible evidence supports a clear answer.
+Priority 4 — CSV quality
+Analyze all available incorrect or incomplete sample cases. Improve step coverage, ordering, status classification, and citations only where evidence supports the correction.
+Avoid changing correct cases merely to optimize an imperfect proxy.
+Priority 5 — Code ZIP score
+Inspect the evaluator-facing package, not just internal code quality.
+Identify concrete improvements to:
+
+* Architecture and modularity
+* Tests and independent validation
+* Documentation and reproducibility
+* Security and input handling
+* Error messages and maintainability
+* Package structure and unnecessary files
+
+Use the actual scoring criteria where available. Treat heuristic score movements as weak evidence, not a goal by themselves.
+Priority 6 — Interview and transcript
+Use `INTERVIEW_FACTS.md` and `INTERVIEW_MOCK.md` as source material.
+Run a rigorous mock interview covering architecture, attribution, time windows, failed experiments, reproducibility, security, limitations, and metrics.
+For each answer:
+
+* Provide a concise, technically defensible response.
+* Identify unsupported claims.
+* Challenge it with a likely follow-up.
+* Improve the answer without inventing facts.
+
+Do not claim an actual interview score or simulate a real evaluator's verdict as if measured.
+7. Credit and time budget
+Be aggressive about outcomes and conservative about waste.
+
+* Inspect existing files before regenerating artifacts.
+* Use targeted searches instead of repeatedly reading the whole repository.
+* Reuse cached model responses and benchmark outputs.
+* Avoid rerunning unchanged pipelines.
+* Do not run parallel jobs that contend for the same artifacts.
+* Before any expensive operation, explain internally what uncertainty it resolves and why it is worth the cost.
+* If no meaningful scoring gain is likely, skip the operation.
+* Never spend credits just to make a report longer or a heuristic number look better.
+
+After every three meaningful experiments, reassess the priority order. Stop exploring a branch of work when two successive evidence-backed attempts fail to improve the objective or reveal no new information.
+8. Release and Git safety
+Until the optimization and validation phases are complete:
+
+* Do not merge PRs.
+* Do not push release tags.
+* Do not modify `main`.
+* Do not force-push or rewrite history.
+* Do not overwrite or delete RC4, RC5, or RC6.
+* Do not claim a tag is remotely published unless verified.
+* Do not commit failing or unvalidated changes as a release.
+* Preserve historical logs and record new events append-only.
+
+Use a new iteration branch for further work. Keep the current release candidate available as a rollback point.
+Once an iteration shows a genuine improvement, run the complete required release gates on the exact final commit and artifacts. Verify the clean-room output, archive contents, hashes, and submission readiness.
+9. Stop conditions
+Do not stop merely because all tests pass or because the current heuristic score is high.
+Continue while there is a material, testable, evidence-backed opportunity with acceptable risk and cost.
+Stop when:
+
+* No high-value hypothesis remains.
+* Further changes require unsupported assumptions or hidden evaluation labels.
+* Repeated experiments fail to improve the objective.
+* A required external fact or permission is unavailable.
+* The available budget is exhausted.
+
+If blocked, state the exact blocker and the minimum action needed from me.
+10. Final deliverables
+Maintain a compact, current status report containing:
+
+1. Current best candidate and its exact commit.
+2. Verified score rubric and the provenance of each criterion.
+3. Baseline versus best measured metrics.
+4. Experiment ledger, including rejected changes.
+5. Defects fixed and evidence supporting each.
+6. Regressions detected and how they were handled.
+7. Remaining score opportunities ranked by expected value.
+8. Remaining risks and unknowns.
+9. Full release-gate results for the exact candidate.
+10. Recommended submission artifact and verified hashes.
+
+Separate every claim into:
+
+* Measured
+* Evidence-supported
+* Judgment
+* Unknown
+
+Do not claim Rank #1 unless the official leaderboard establishes it.
+Begin now
+Start with a compact baseline verification and identify the single highest-value experiment. Then execute the optimization loop autonomously, making safe local changes and validating them as you go.
+Do not ask me to approve each low-risk, reversible experiment. Use your engineering judgment within the constraints above.
+If a change requires a destructive action, external publication, a release decision with unresolved correctness risk, or access you do not have, stop and ask.
+The goal is not to produce the most activity. The goal is to produce the strongest evidence-backed submission possible and maximize the probability of finishing #1.
+
+Agent Response Summary:
+The baseline matched RC6: output 7bf6151a, zip 71dd1675, 123 tests. The rubric weights come from the community kit's notes (attributed to a July HackerRank blog), so they are provisional. On a new branch fix/rc7 I ran the loop. Rejected or no-defect: the analytics cohort as an owner signal, intent mislabels, the case_63 status (samples map NOT_STARTED to INCOMPLETE 7/10), legal holds, resource_id order exposure (0 rows). Shipped: X4 gives an attributed record with undecidable state its policy's required check in INCOMPLETE plans (3 eval rows); X1 makes a screenshot mention of a known resource count for citation rule C (case_34 support_9538 → evidence_04); D1 makes attribution_variants.json byte-deterministic and re-runs stale artifacts (M1 was pre-A1: now 904 / 347); R1 splits attribute() and types the decision code (byte-identical); section 6 of the report is now generated and current. I also wrote the experiment ledger and prepared interview answers. Sample metrics are unchanged; 4 eval rows changed vs rc6. All gates passed on 3fa3254 (certify needed the gate outputs committed first, as in rc5/rc6). rc7 is tagged locally only; no tag was pushed.
+
+Actions:
+* Commits f2e04d8 (X4), 141249a (X1), cbf3093 (artifact refresh), b5d9254 (D1), a5bac81 (R1), c144f58 (types), 2fcd0b8 (report section 6), 44d8df6 (ledger, interview), 9d0a5f2 (README), 3fa3254 (gate outputs; tag rc7, local), then the rc7 record commit
+* No model calls; keyless cache-only runs; gate logs in the session scratchpad
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc7
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
