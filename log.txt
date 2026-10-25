@@ -1797,3 +1797,333 @@ branch=fix/rc7
 repo_root=/home/user/BeforeCOOK
 worktree=main
 parent_agent=none
+
+## [2026-10-25T07:32:23Z] RC7 -> RC-infinity: official sources audit, gap register, rc8 (docs only), gate passed
+
+User Prompt (verbatim, secrets redacted):
+PROJECT MISSION: RC7 → RC∞
+HackerRank Orchestrate October — Evidence-Driven Loop Engineering for Rank #1
+You are Opus 5.5 Max acting as a principal agent engineer, adversarial evaluator, scoring-rubric auditor, and release engineer.
+Your objective is to maximize the probability of achieving Rank #1 in HackerRank Orchestrate October.
+This is an optimization target, not a guaranteed result. Do not claim a rank or score improvement without official or measured evidence.
+Do not stop after a report. Execute repeated, bounded, evidence-backed improvement cycles until no high-value improvement remains or a genuine blocker requires my input.
+0. Source-of-truth hierarchy
+Before modifying code, load and inspect the following sources.
+Official HackerRank sources
+
+1. Behind the Scenes of HackerRank Orchestrate:
+https://www.hackerrank.com/blog/behind-the-scenes-of-hackerrank-orchestrate/
+2. October challenge problem statement:
+https://github.com/interviewstreet/hackerrank-orchestrate-october26/blob/main/problem_statement.md
+3. October repository README:
+https://github.com/interviewstreet/hackerrank-orchestrate-october26/blob/main/README.md
+4. October participant repository:
+https://github.com/interviewstreet/hackerrank-orchestrate-october26
+5. Current HackerRank Orchestrate scoring and participation guidance:
+https://help.hackerrank.com/articles/3728112689-hackerrank-orchestrate
+
+Load the actual content of these sources. Do not merely rely on summaries of them.
+Important: the BTS article describes the published evaluation methodology for an earlier edition. The October-specific task contract is authoritative for output requirements. Verify whether any October-specific scoring changes are available. Label every unverified weight or criterion as provisional rather than silently assuming the previous edition's rubric is identical.
+Local project sources
+Read the repository's:
+
+* AGENTS.md and all applicable task instructions.
+* problem_statement.md and README.md.
+* DESIGN.md and CONSTANTS.md.
+* evaluation_report.md and usage_report.md.
+* experiment_ledger.md and relevant audit reports.
+* INTERVIEW_FACTS.md, INTERVIEW_MOCK.md, INTERVIEW_TRAINING_PACK.md, if present.
+* Actual implementation, prompts, tool schemas, tests, fixtures, package scripts, and final submission artifacts.
+
+Resolve file paths before reading or editing. Respect project logging instructions. Do not rewrite historical logs.
+At the start, report which official and local sources were successfully loaded, which could not be accessed, and the exact commit being audited.
+1. Official scoring framework
+Use the BTS model as the working scoring framework unless an authoritative October-specific document overrides it.
+Published overall signals:
+
+* Code ZIP: 30%
+* Output CSV: 30%
+* AI Judge Interview: 30%
+* AI Chat Transcript: 10%
+
+Published Code ZIP sub-criteria:
+
+* Agent architecture: 30% of the Code ZIP score.
+* Prompt and tool craft: 30%.
+* Agent robustness: 25%.
+* Engineering rigor: 15%.
+
+Published Interview sub-criteria:
+
+* Technical depth and ownership: 40%.
+* Problem understanding and judgment: 25%.
+* Communication clarity: 20%.
+* Honesty and self-awareness: 15%.
+
+Published Chat Transcript sub-criteria:
+
+* Direction and architecture ownership: 35%.
+* Technical specificity and constraints: 25%.
+* Iteration and verification: 25%.
+* Safety, edge cases, and quality awareness: 15%.
+
+Treat these as published reference criteria, not a guarantee of October's exact scoring weights. Search the official October materials for any additional rules.
+The October output task must be audited against its own explicit contract:
+
+* Correct deletion intent and status.
+* Current and historical identity resolution.
+* Discovery of relevant remaining records and recreation risks.
+* Correct deletion-policy application.
+* Evidence references and admissibility at audit_at.
+* Complete remediation and verification plans.
+* Required step ordering and schema.
+* Exact required row count and output format.
+* Required evaluation and token/cost reports.
+* Security and package constraints.
+
+2. Establish a trustworthy RC7 baseline
+The last report states:
+
+* RC7 tagged commit: 3fa3254396e1ac198915ca015256db7a3e8225cc
+* Branch head reported: 1a78c46
+* Best reported Code ZIP heuristic: 82.4, not an official score.
+* Sample status accuracy: 31/32.
+* Step precision: 178/178.
+* Step recall: 178/193.
+* Exact sequence: 19/32.
+* 129 tests passing.
+* All 12 reported release-gate checks passed.
+* Four evaluation rows changed relative to RC6: case_34, case_526, case_528, case_531.
+* 131 evaluation cases reportedly lack attributable primary-account steps.
+* 15 sample steps are missing: 12 attributed to identity/account attribution and 3 said to be absent from the source evidence.
+* Remaining judgments include case_34's screenshot citation, case_63's status/empty plan, six pre-request D-SCOPE exclusions, and screenshot citations not demonstrated in sample references.
+* The reported submission hashes are:
+output.csv: ce35e3a53efd093ad529c0ff53cccca21e9e3ca27d0cc07e5944e67208520b8e
+code.zip: e29f15778f906ca21093b752828560421662005ddf9877baf30abcdded7ef995
+
+These are reported facts to verify, not assumptions to hardcode.
+First inspect Git state, tag targets, the actual RC7 tree, output artifacts, test logs, and release gates. Confirm whether the current best candidate still matches RC7. Preserve RC7 as an immutable rollback point.
+Do not overwrite RC7, modify main, force-push, merge PRs, or publish tags without explicit authorization.
+3. Produce a cited gap register
+Before implementation, create a rubric-to-evidence matrix.
+For every gap, record:
+
+* Unique gap ID.
+* Exact official criterion.
+* Source URL and section, or local file and line/function reference.
+* Current implementation behavior.
+* Evidence of the weakness.
+* Baseline metric and denominator.
+* Likely scoring impact and why.
+* Confidence: measured, evidence-supported, judgment, or unknown.
+* Proposed hypothesis and smallest experiment.
+* Regression risk.
+* Model/API/compute cost.
+* Acceptance criteria and rollback condition.
+
+Rank gaps using:
+expected value = plausible score impact × confidence in the defect × probability of safe correction ÷ implementation and validation cost.
+Do not assign invented official scores to individual criteria. A heuristic score is not an official score.
+4. Priority A — Output accuracy and missing steps
+Audit the 15 missing sample steps independently.
+For each step:
+
+1. Locate the exact sample reference.
+2. Trace the subject's current and historical identifiers.
+3. Inspect raw admissible evidence and timestamps.
+4. Identify the applicable deletion rule.
+5. Determine whether the current implementation missed a real record, made an unsupported attribution, or correctly abstained.
+6. Add a targeted regression test if a concrete failure mode is established.
+
+Challenge the claim that all 12 attribution-related omissions are irrecoverable. Search for previously unexamined admissible identity evidence and overlooked parsing paths.
+Do not repeat rejected attribution experiments without a new hypothesis. Do not infer ownership from mere co-occurrence, weak identifiers, names alone, or coincidental resource IDs.
+For the three supposedly non-derivable steps, independently verify the source corpus and sample reference. Do not copy answer-key-only identifiers into production logic.
+Measure changes in:
+
+* Status accuracy.
+* Step precision and recall.
+* Exact sequence.
+* Field-level correctness.
+* Unchanged-case count.
+* False-positive and false-negative examples.
+
+The sample answer key is small and does not prove hidden-evaluation accuracy. Explicitly distinguish these measurements.
+5. Priority B — Agent architecture
+The BTS article asks whether the implementation is a real agent or a hardcoded workflow with LLM calls. It rewards observable architecture, tool-calling loops, model-driven routing, and useful handoffs.
+Inspect the actual implementation. Do not solve this by adding decorative agent classes, fake tool calls, or multi-agent handoffs that do no meaningful work.
+Evaluate:
+
+* Which decisions are deterministic and why.
+* Which decisions genuinely require model reasoning.
+* Whether retrieval, evidence interpretation, routing, and validation are separated.
+* Whether tool outputs influence subsequent decisions in a meaningful loop.
+* Whether model calls are bounded and failures recover safely.
+* Whether prompts and tool schemas impose explicit constraints.
+* Whether the system has a defensible reason to abstain when evidence is insufficient.
+* Whether the deterministic design is appropriate for this task.
+
+The previous report says an investigator-agent experiment accepted 0/126 proposals. Inspect its actual setup, proposal definitions, evaluation, and failure causes before concluding the architecture cannot improve.
+Run a low-cost architecture experiment only if there is a credible, testable hypothesis. Compare it against RC7 and keep it only if the implementation genuinely improves a rubric criterion without harming correctness, reliability, or budget.
+No new expensive model calls without a specific expected benefit and explicit confirmation if required by project rules or current resource limits.
+6. Priority C — Evidence, time boundaries, and policy
+Adversarially inspect:
+
+* case_34 and support_9538.
+* The screenshot citation rule and evidence admissibility.
+* The six older D-SCOPE records.
+* case_63 and empty-step behavior.
+* The 131 unattributable-account cases.
+* Historical identifiers, tombstones, retained records, legal holds, and restore/sync risks.
+* Inclusive audit_at handling.
+* Citation selection and step ordering.
+
+Use the exact challenge contract and raw evidence. Do not invent semantics for unspecified episode boundaries.
+For each judgment call, create competing hypotheses, identify evidence that distinguishes them, and run the cheapest decisive check.
+If the specification and evidence cannot distinguish two interpretations, preserve the ambiguity and avoid speculative changes.
+7. Priority D — Robustness and prompt/tool craft
+Audit observable behavior, not just test count.
+Inspect:
+
+* Invalid or incomplete model output.
+* Malformed JSON and schema violations.
+* Missing, contradictory, or post-audit evidence.
+* Prompt injection or instruction-like content inside evidence.
+* Unicode and identifier normalization.
+* Duplicate or conflicting records.
+* Retry exhaustion and model/API failures.
+* Cache misses, stale cache entries, and provenance.
+* Partial-run recovery and deterministic regeneration.
+* Secrets, archive exclusions, and dependency hygiene.
+* Failure logging without leaking sensitive data.
+
+Find uncovered failure modes and write focused tests. Add retries, validation, or fallback paths only when they solve a real defect.
+Review the actual prompts and tool descriptions for role definition, allowed inputs, evidence constraints, output schemas, refusal/abstention conditions, and clear failure behavior.
+8. Priority E — Engineering rigor and release quality
+The BTS rubric values modularity, type hints, environment-based secrets, function size, and reproducibility.
+Inspect whether each improvement is substantive:
+
+* Does modularity improve testability and ownership boundaries?
+* Are types meaningful and correct?
+* Are functions easier to understand and verify?
+* Are configuration and model settings reproducible?
+* Can a clean environment rebuild the exact output?
+* Do package scripts include required files and exclude datasets, secrets, local logs, and nested archives?
+* Do evaluation reports reflect the exact candidate being submitted?
+* Does usage_report.md accurately document the final full-dataset run, models, calls, tokens, and costs?
+
+Do not make cosmetic refactors solely to increase a heuristic score.
+9. Priority F — Interview and chat transcript
+The interview and transcript are separate score signals. Do not assume a good code submission guarantees either.
+Interview
+Run a realistic mock interview based on the actual source code and reports. Cover:
+
+* Architecture and why the chosen design fits the task.
+* Evidence retrieval and identity resolution.
+* Deterministic rules versus model judgment.
+* Audit-time constraints and citations.
+* Status and remediation semantics.
+* Failure analysis and rejected experiments.
+* Security and adversarial testing.
+* Reproducibility, monitoring, and production risks.
+* Limitations and future improvements.
+
+For every answer, inspect the source code and provide:
+
+* A concise answer.
+* A difficult follow-up.
+* A precise answer to the follow-up.
+* Any unsupported claim to remove.
+* The best evidence or metric to cite.
+
+Never fabricate personal experience, results, or understanding. The participant must actually understand the answer.
+Transcript
+Evaluate the real chat transcript for:
+
+* Explicit problem framing and architecture ownership.
+* Specific constraints, schemas, files, models, and metrics.
+* Actual iteration and regression checks.
+* Meaningful pushback on incorrect or unsupported AI suggestions.
+* Safety and edge-case awareness.
+
+Do not fabricate or rewrite the transcript to imitate rubric signals. Improve the actual engineering process and preserve genuine history.
+10. Required iterative loop
+Repeat this cycle:
+
+1. Select the highest-value unclosed gap.
+2. State a falsifiable hypothesis and expected impact.
+3. Inspect the minimum necessary source material.
+4. Implement one bounded change on an iteration branch.
+5. Run targeted tests and benchmarks.
+6. Compare the output and metrics to the RC7 baseline.
+7. Inspect every changed row and relevant regression cases.
+8. Run an independent adversarial review.
+9. Retain or revert based on evidence.
+10. Update the gap register and experiment ledger.
+11. Re-rank remaining opportunities.
+12. Repeat.
+
+After every three meaningful experiments, reassess priorities. Stop spending effort on a line of attack after two successive attempts fail to improve the objective or reveal new evidence.
+Prefer reuse of cached artifacts and existing test outputs. Avoid unnecessary full reruns and expensive model calls.
+11. Release discipline
+Do not replace RC7 until a candidate demonstrates a real improvement.
+After any meaningful accepted change:
+
+* Run all required tests and gates.
+* Confirm the output schema and 518 data rows.
+* Confirm step numbering, valid JSON, and required ordering.
+* Compare every changed row to the prior candidate.
+* Verify citation validity and audit-time admissibility.
+* Verify no unrelated output changes.
+* Verify security, archive contents, and clean-room reproducibility.
+* Regenerate the required reports from the exact final candidate.
+* Recalculate and record hashes.
+
+Keep each candidate and experiment traceable. Never force-push, overwrite historical tags, merge PRs, or publish a release without authorization.
+12. Stopping condition
+Do not stop merely because the current tests pass. Do not continue indefinitely merely because the objective is Rank #1.
+Stop when no high-value, evidence-backed improvement remains within the available cost and time budget, or when a blocker requires the participant's decision.
+13. Final deliverables
+Maintain:
+
+1. Official-criteria-to-evidence matrix.
+2. Ranked remaining-gap register.
+3. Experiment ledger with kept and rejected hypotheses.
+4. Baseline-versus-best measured metrics.
+5. Exact output differences and regression evidence.
+6. Code ZIP rubric review based on observable implementation.
+7. Interview training progress and weak answers.
+8. Transcript criteria audit.
+9. Current best candidate, commit, and hashes.
+10. Complete release-gate results and unresolved risks.
+
+For every conclusion use one label:
+
+* MEASURED
+* EVIDENCE-SUPPORTED
+* JUDGMENT
+* UNKNOWN
+
+Do not report an official score estimate or claim Rank #1 without the official score or leaderboard.
+Begin now
+Load the official BTS article and October challenge contract first. Verify RC7 and build the cited gap register. Then start with the single highest-value experiment and iterate autonomously.
+Do not ask for approval before every safe, reversible local experiment. Ask only when a necessary permission, destructive action, expensive external call, or unresolved high-risk decision requires it.
+Your objective is to create the strongest defensible submission possible, not to maximize the number of commits or the size of the reports.
+
+Agent Response Summary:
+Loaded the official sources. From the October repository: problem_statement.md (byte-identical to ours), README.md, AGENTS.md (its submission URL is www., ours says wwww.) and agent_trace_instructions.md (asks for an agent-trace.zip). Through Firecrawl: the BTS article and the help article; the help article gives the October start (2026-10-24 12:30 UTC) of a 24-hour challenge. No October-specific rubric exists, so the BTS sub-weights are labelled provisional. Priority A: the 3 NOT_DERIVABLE ids appear in no PDF text layer, OCR text or dataset file except sample_output.csv. A new capacity hypothesis (at most one resource per system per case, true for all 111 sample pairs) forces 0 of 283 AMBIGUOUS rows. Its extra assumption, that every row is owned, fails on sample case_32. Rejected and archived as code/analysis/capacity_probe.py; the attribution line is closed. Priority C: the samples cannot separate the D-SCOPE hypotheses (30/32 single-request, 0 exclusions). case_45's 5 exclusions are evidence-supported by the cardinality pattern; case_34's 1 stays a judgement. A concrete defect was fixed: the shipped DESIGN.md said "No production code yet" and listed Phase 0 limits as current. rc8 is docs only, with output.csv byte-identical. All gates pass; certify reports 0 above INFO on the committed tree, and the zip reproduces from the tagged commit. package_submission had overwritten submission/code.zip with a broader archive containing log.txt, the interview files and .claude/; it was replaced with the package.py zip. Interview: added pitch, production monitoring, novelty and AI-collaboration answers (quotes from log.txt), and corrected an overstated intent.decide claim. GAP_REGISTER.md written. Architecture or prompt changes are blocked: no model key is configured. Tag rc8 is local only.
+
+Actions:
+* Fetched raw October files (curl) and the BTS and help articles (Firecrawl); compared them with the local copies
+* Probes: PDF text layers and OCR cache for the 3 ids; capacity probe; single-candidate refutation; ownership consistency (0 resources owned by two cases; 37/904 AMBIGUOUS pairs owned elsewhere)
+* Edited DESIGN.md (status, section 12 notes, rc8 row), README.md (analysis line), CONSTANTS.md, code/evaluation/experiment_ledger.md (round rc8 P1-P7); added code/analysis/capacity_probe.py; ran sync_docs.py
+* Wrote GAP_REGISTER.md; edited INTERVIEW_TRAINING_PACK.md (Q11-Q14, rc8 facts, intent correction) and INTERVIEW_MOCK.md (intent correction)
+* Gate rc8 phases 1 and 2 (tests 129, keyless run, spec audit, coupling, determinism, cache, security, kit, sync, package, zip scan, clean room, package_submission); certify re-run on the clean tree; zip rebuilt in a fresh worktree
+* Replaced submission/code.zip with code.zip (fbc579a1...); tagged rc8 -> 6c3a0e1 locally; committed and pushed fix/rc7 (branch only)
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc7
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
