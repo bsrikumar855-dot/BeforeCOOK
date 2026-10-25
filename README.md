@@ -5,6 +5,39 @@ deletion was requested, reconstructs the subject's current and historical identi
 subject, rebuilds each record's state at `audit_at` from the evidence, applies `dataset/deletion_rules.csv`, and writes
 `COMPLETE`, `INCOMPLETE` or `NOT_APPLICABLE` with an ordered `steps_json` plan to `output.csv`.
 
+**Architecture in one line.** The model reads request intent and the 11 screenshots; deterministic code makes every
+decision that reaches the CSV. An investigator agent loop (experiment E2) was built and measured: on the 19
+AMBIGUOUS timing-only sample pairs it made 126 proposals and its verifier accepted 0 (11 batches, 28 calls, 41,780
+tokens; DESIGN.md D-E2 and rejection log; `code/evaluation/e2_results.json` is a cache replay of that run). So it was taken out of the decision path and archived. That it can never resolve a pair is an
+argument, not a measurement: its verifier accepts only identity-link support, and attribution already confirms every
+such link.
+
+**Reproduce (no API keys, no network, no Tesseract):**
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 code/main.py --from-cache                           # rebuilds output.csv from the committed cache; exit 0
+python3 code/evaluation/main.py --from-cache --determinism  # sample metrics, custom cases, 3-seed determinism
+```
+
+Every cached model reply records the prompt that produced it, and every one of those prompts ships in `code/prompts/`
+(`intent.md`; `image_extraction.md` is the current vision prompt, `image_extraction_v1.md` the legacy one behind 10 of
+the 11 screenshot replies). `code/tests/test_prompt_provenance.py` enforces this. A live re-extraction is **not**
+guaranteed to reproduce the cache. Re-reading the 10 legacy screenshots with the current prompt changed 2 eval rows
+(case_61 lost object_19 and became INCOMPLETE [], case_34 gained an unverifiable finding), so it was rejected (DESIGN.md
+rejection log, G6).
+
+**What to read first**
+
+| Path | What it is |
+|---|---|
+| `code/main.py` | Entry point (run, `--from-cache`, `--explain`, exit codes) |
+| `code/agent/` | The pipeline: `pipeline.py` (orchestration), `attribution.py`, `state.py`, `rules.py`, `steps.py`, `validation.py`, evidence parsers under `parsers/` |
+| `code/evaluation/` | Evaluation: `main.py` writes `evaluation_report.md` and `usage_report.md`; `spec_audit.py` (literal spec audit with a negative control), `coupling_probes.py`, `security_audit.py`, `cache_audit.py`, custom cases X1–X19 |
+| `code/analysis/` | Offline analysis and archived experiments (Phase 0 profiling; the rejected E1 ordering, E2 investigator and rc8 capacity probe). `code/agent/` and `code/main.py` import nothing from it; `code/evaluation/main.py` imports one table builder from it (`category_coverage.py`) |
+| `code/evaluation/evaluation_report.md` §7 | Known limitations and judgement calls (ambiguous accounts, case_63, F1, D-SCOPE) |
+| `code/evaluation/experiment_ledger.md` | The latest round's experiments, kept and rejected, with evidence and measured effect (earlier rounds: DESIGN.md) |
+
 Design, decisions and rejected alternatives: [`DESIGN.md`](DESIGN.md). Measured results:
 [`code/evaluation/evaluation_report.md`](code/evaluation/evaluation_report.md) and
 [`code/evaluation/usage_report.md`](code/evaluation/usage_report.md).
@@ -221,5 +254,8 @@ Without `zip` (stdlib, same inputs and exclusions, byte-identical for identical 
 ```bash
 python3 code/package.py
 ```
+
+`DESIGN.md` and `CONSTANTS.md` are edited at the repository root; `python3 code/sync_docs.py` writes the shipped copies
+in `code/` (it refuses to overwrite a copy edited directly), and `code/package.py` refuses to build while they differ.
 
 Challenge and submission page: https://wwww.hackerrank.com/contests/hackerrank-orchestrate-october26/challenges/ghost-data-still-exists

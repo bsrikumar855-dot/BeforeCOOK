@@ -36,8 +36,7 @@
   "excluded_reasons": {
    "AMBIGUOUS": 904,
    "CONFLICT": 1,
-   "OUT_OF_SCOPE": 41,
-   "UNKNOWN_STATE": 3
+   "OUT_OF_SCOPE": 40
   },
   "intent_paths": {
    "model_deletion->DELETION": 508,

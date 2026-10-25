@@ -1,13 +1,13 @@
 {
  "m1": {
   "totals": {
-   "cases": 381,
-   "pairs": 1247,
+   "cases": 347,
+   "pairs": 904,
    "proven_present_resources": 0,
    "cases_with_proven_present": 0,
    "would_flip_complete_to_incomplete": 0,
-   "cases_with_unknown_state": 8,
-   "state_unknown_resources": 14
+   "cases_with_unknown_state": 0,
+   "state_unknown_resources": 0
   },
   "rows": [
    {
@@ -58,9 +58,9 @@
    {
     "case_id": "case_49",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
@@ -76,6 +76,24 @@
    {
     "case_id": "case_54",
     "status": "INCOMPLETE",
+    "ambiguous_pairs": 1,
+    "proven_present": [],
+    "compliant_if_owned": 1,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_56",
+    "status": "INCOMPLETE",
+    "ambiguous_pairs": 4,
+    "proven_present": [],
+    "compliant_if_owned": 4,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_57",
+    "status": "COMPLETE",
     "ambiguous_pairs": 2,
     "proven_present": [],
     "compliant_if_owned": 2,
@@ -83,56 +101,38 @@
     "would_flip": false
    },
    {
-    "case_id": "case_56",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
-    "proven_present": [],
-    "compliant_if_owned": 5,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_57",
-    "status": "COMPLETE",
-    "ambiguous_pairs": 5,
-    "proven_present": [],
-    "compliant_if_owned": 5,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_58",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_59",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_60",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_62",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
@@ -210,15 +210,6 @@
    },
    {
     "case_id": "case_75",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_76",
     "status": "INCOMPLETE",
     "ambiguous_pairs": 3,
     "proven_present": [],
@@ -346,27 +337,27 @@
    {
     "case_id": "case_95",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_96",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_97",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -436,54 +427,54 @@
    {
     "case_id": "case_107",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_108",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_109",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_110",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_111",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_112",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -551,20 +542,11 @@
     "would_flip": false
    },
    {
-    "case_id": "case_123",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_124",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 2,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -598,9 +580,9 @@
    {
     "case_id": "case_128",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -616,27 +598,27 @@
    {
     "case_id": "case_130",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_131",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_132",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -686,15 +668,6 @@
     "would_flip": false
    },
    {
-    "case_id": "case_144",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_145",
     "status": "INCOMPLETE",
     "ambiguous_pairs": 3,
@@ -706,51 +679,60 @@
    {
     "case_id": "case_146",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_147",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_148",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_149",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_150",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_151",
     "status": "COMPLETE",
+    "ambiguous_pairs": 3,
+    "proven_present": [],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_155",
+    "status": "COMPLETE",
     "ambiguous_pairs": 5,
     "proven_present": [],
     "compliant_if_owned": 5,
@@ -758,65 +740,29 @@
     "would_flip": false
    },
    {
-    "case_id": "case_155",
-    "status": "COMPLETE",
-    "ambiguous_pairs": 6,
-    "proven_present": [],
-    "compliant_if_owned": 6,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_156",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_157",
     "status": "COMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_158",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_159",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_160",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_162",
-    "status": "COMPLETE",
-    "ambiguous_pairs": 4,
-    "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -877,18 +823,18 @@
    {
     "case_id": "case_173",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_174",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -904,9 +850,9 @@
    {
     "case_id": "case_176",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -922,54 +868,18 @@
    {
     "case_id": "case_178",
     "status": "COMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 6,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_179",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_180",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_181",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_183",
-    "status": "COMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_184",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1003,9 +913,9 @@
    {
     "case_id": "case_188",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1021,27 +931,27 @@
    {
     "case_id": "case_190",
     "status": "COMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_191",
     "status": "COMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_192",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1057,9 +967,9 @@
    {
     "case_id": "case_194",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1084,18 +994,9 @@
    {
     "case_id": "case_197",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_198",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1111,36 +1012,36 @@
    {
     "case_id": "case_203",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_204",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_205",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_206",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1165,18 +1066,18 @@
    {
     "case_id": "case_209",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_210",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1192,9 +1093,9 @@
    {
     "case_id": "case_212",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1460,24 +1361,6 @@
     "would_flip": false
    },
    {
-    "case_id": "case_248",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_250",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_251",
     "status": "INCOMPLETE",
     "ambiguous_pairs": 2,
@@ -1498,36 +1381,18 @@
    {
     "case_id": "case_253",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_254",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_255",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_256",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1660,36 +1525,36 @@
    {
     "case_id": "case_274",
     "status": "COMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_275",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 8,
+    "ambiguous_pairs": 6,
     "proven_present": [],
-    "compliant_if_owned": 8,
+    "compliant_if_owned": 6,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_276",
     "status": "COMPLETE",
-    "ambiguous_pairs": 8,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 8,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_277",
     "status": "COMPLETE",
-    "ambiguous_pairs": 8,
+    "ambiguous_pairs": 6,
     "proven_present": [],
-    "compliant_if_owned": 8,
+    "compliant_if_owned": 6,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1712,20 +1577,11 @@
     "would_flip": false
    },
    {
-    "case_id": "case_280",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_282",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1759,45 +1615,45 @@
    {
     "case_id": "case_287",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_288",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_289",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_290",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 8,
+    "ambiguous_pairs": 6,
     "proven_present": [],
-    "compliant_if_owned": 8,
+    "compliant_if_owned": 6,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_291",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 8,
+    "ambiguous_pairs": 6,
     "proven_present": [],
-    "compliant_if_owned": 8,
+    "compliant_if_owned": 6,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1813,27 +1669,27 @@
    {
     "case_id": "case_293",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 10,
+    "ambiguous_pairs": 8,
     "proven_present": [],
-    "compliant_if_owned": 10,
+    "compliant_if_owned": 8,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_294",
     "status": "COMPLETE",
-    "ambiguous_pairs": 10,
+    "ambiguous_pairs": 8,
     "proven_present": [],
-    "compliant_if_owned": 10,
+    "compliant_if_owned": 8,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_295",
     "status": "COMPLETE",
-    "ambiguous_pairs": 10,
+    "ambiguous_pairs": 8,
     "proven_present": [],
-    "compliant_if_owned": 10,
+    "compliant_if_owned": 8,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1849,18 +1705,18 @@
    {
     "case_id": "case_297",
     "status": "COMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_298",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1894,9 +1750,9 @@
    {
     "case_id": "case_302",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -1919,56 +1775,38 @@
     "would_flip": false
    },
    {
-    "case_id": "case_305",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_306",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_308",
     "status": "COMPLETE",
-    "ambiguous_pairs": 10,
+    "ambiguous_pairs": 8,
     "proven_present": [],
-    "compliant_if_owned": 10,
+    "compliant_if_owned": 8,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_309",
     "status": "COMPLETE",
-    "ambiguous_pairs": 10,
+    "ambiguous_pairs": 8,
     "proven_present": [],
-    "compliant_if_owned": 10,
+    "compliant_if_owned": 8,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_310",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 10,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 10,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_311",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2101,18 +1939,18 @@
    {
     "case_id": "case_329",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_330",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2218,27 +2056,27 @@
    {
     "case_id": "case_344",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_345",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_346",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2254,9 +2092,9 @@
    {
     "case_id": "case_348",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2272,45 +2110,45 @@
    {
     "case_id": "case_350",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_351",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_352",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_353",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_354",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2324,47 +2162,20 @@
     "would_flip": false
    },
    {
-    "case_id": "case_356",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_358",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_359",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_360",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_361",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2533,18 +2344,18 @@
    {
     "case_id": "case_393",
     "status": "COMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_394",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2596,9 +2407,9 @@
    {
     "case_id": "case_400",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2623,27 +2434,27 @@
    {
     "case_id": "case_407",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_408",
     "status": "COMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_409",
     "status": "COMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2722,27 +2533,9 @@
    {
     "case_id": "case_427",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 4,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_431",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_432",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2794,81 +2587,63 @@
    {
     "case_id": "case_443",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_444",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_445",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_446",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_447",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_448",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_449",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_450",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_451",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2882,8 +2657,35 @@
     "would_flip": false
    },
    {
-    "case_id": "case_454",
+    "case_id": "case_455",
     "status": "INCOMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_456",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_457",
+    "status": "COMPLETE",
+    "ambiguous_pairs": 5,
+    "proven_present": [],
+    "compliant_if_owned": 5,
+    "state_unknown": [],
+    "would_flip": false
+   },
+   {
+    "case_id": "case_458",
+    "status": "COMPLETE",
     "ambiguous_pairs": 2,
     "proven_present": [],
     "compliant_if_owned": 2,
@@ -2891,56 +2693,20 @@
     "would_flip": false
    },
    {
-    "case_id": "case_455",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
-    "proven_present": [],
-    "compliant_if_owned": 6,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_456",
-    "status": "COMPLETE",
-    "ambiguous_pairs": 6,
-    "proven_present": [],
-    "compliant_if_owned": 6,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_457",
-    "status": "COMPLETE",
-    "ambiguous_pairs": 6,
-    "proven_present": [],
-    "compliant_if_owned": 6,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_458",
-    "status": "COMPLETE",
-    "ambiguous_pairs": 4,
-    "proven_present": [],
-    "compliant_if_owned": 4,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_459",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_460",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -2999,74 +2765,38 @@
     "would_flip": false
    },
    {
-    "case_id": "case_473",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_474",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_476",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_478",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 2,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
     "case_id": "case_479",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_480",
     "status": "COMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_481",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 4,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_482",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 2,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
@@ -3100,54 +2830,54 @@
    {
     "case_id": "case_493",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_494",
     "status": "COMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_495",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_496",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_497",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_498",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -3166,15 +2896,6 @@
     "ambiguous_pairs": 1,
     "proven_present": [],
     "compliant_if_owned": 1,
-    "state_unknown": [],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_503",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
@@ -3199,45 +2920,45 @@
    {
     "case_id": "case_506",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_507",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_508",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 1,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 1,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_509",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 3,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_510",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
@@ -3253,9 +2974,9 @@
    {
     "case_id": "case_512",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 5,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
@@ -3296,168 +3017,119 @@
     "would_flip": false
    },
    {
-    "case_id": "case_524",
-    "status": "COMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 1,
-    "state_unknown": [
-     "account_1400"
-    ],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_526",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 2,
-    "proven_present": [],
-    "compliant_if_owned": 1,
-    "state_unknown": [
-     "account_1400"
-    ],
-    "would_flip": false
-   },
-   {
     "case_id": "case_527",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 0,
-    "state_unknown": [
-     "account_1184",
-     "account_3693",
-     "account_4063"
-    ],
-    "would_flip": false
-   },
-   {
-    "case_id": "case_528",
-    "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
-    "proven_present": [],
-    "compliant_if_owned": 0,
-    "state_unknown": [
-     "account_1184",
-     "account_3693",
-     "account_4063"
-    ],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_529",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 0,
-    "state_unknown": [
-     "account_1184",
-     "account_3693",
-     "account_4063"
-    ],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_530",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 3,
     "proven_present": [],
-    "compliant_if_owned": 4,
-    "state_unknown": [
-     "account_3146"
-    ],
+    "compliant_if_owned": 3,
+    "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_531",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 4,
-    "state_unknown": [
-     "account_3146"
-    ],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_532",
     "status": "COMPLETE",
-    "ambiguous_pairs": 5,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 4,
-    "state_unknown": [
-     "account_3146"
-    ],
+    "compliant_if_owned": 2,
+    "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_543",
     "status": "COMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_544",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_545",
     "status": "COMPLETE",
-    "ambiguous_pairs": 3,
+    "ambiguous_pairs": 2,
     "proven_present": [],
-    "compliant_if_owned": 3,
+    "compliant_if_owned": 2,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_546",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_547",
     "status": "COMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_548",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 7,
+    "ambiguous_pairs": 4,
     "proven_present": [],
-    "compliant_if_owned": 7,
+    "compliant_if_owned": 4,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_549",
     "status": "COMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    },
    {
     "case_id": "case_550",
     "status": "INCOMPLETE",
-    "ambiguous_pairs": 6,
+    "ambiguous_pairs": 5,
     "proven_present": [],
-    "compliant_if_owned": 6,
+    "compliant_if_owned": 5,
     "state_unknown": [],
     "would_flip": false
    }
@@ -3465,10 +3137,6 @@
  },
  "m2": {
   "output": [
-   [
-    "case_55",
-    "INCOMPLETE with no steps"
-   ],
    [
     "case_63",
     "INCOMPLETE with no steps"

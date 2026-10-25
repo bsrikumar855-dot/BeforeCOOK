@@ -21,6 +21,7 @@ import os
 import re
 import shutil
 from pathlib import Path
+from types import ModuleType
 
 from ..llm_client import CACHE_DIR, CacheMiss
 
@@ -38,7 +39,7 @@ class OcrUnavailable(CacheMiss):
     """No cached OCR text and no OCR engine: fail loudly instead of accepting ungrounded ids."""
 
 
-def _engine():
+def _engine() -> tuple[ModuleType, str]:
     import pytesseract
     cmd = os.environ.get("TESSERACT_CMD") or shutil.which("tesseract") or (str(WINDOWS_DEFAULT) if WINDOWS_DEFAULT.exists() else None)
     if not cmd:
@@ -53,7 +54,7 @@ def pass_config(p: tuple) -> str:
 
 
 class OcrReader:
-    def __init__(self, cache_root: Path = CACHE_DIR / "ocr"):
+    def __init__(self, cache_root: Path = CACHE_DIR / "ocr") -> None:
         self.root = cache_root
         self.engines_used: set[str] = set()
         self._engine = None

@@ -21,7 +21,7 @@ HEADER = ["case_id", "deletion_status", "steps_json"]
 class EvidenceCatalog:
     """Every citable id with its capture/event time: manifest file_ids, activity_ids, audit_ids."""
 
-    def __init__(self, manifest: list[dict], activity: list, audit_log: list[dict]):
+    def __init__(self, manifest: list[dict], activity: list, audit_log: list[dict]) -> None:
         self.time = {r["file_id"]: r["captured_at"] for r in manifest}
         self.time.update({a.activity_id: a.event_time for a in activity})
         self.time.update({a["audit_id"]: a["event_time"] for a in audit_log})

@@ -44,8 +44,8 @@
     "claim_conflicts": 0,
     "rows_changed": 0,
     "status": {
-     "INCOMPLETE": 355,
      "COMPLETE": 153,
+     "INCOMPLETE": 355,
      "NOT_APPLICABLE": 10
     },
     "status_flips": []
@@ -131,13 +131,28 @@
    "new_sample_assignments": 7,
    "correct": [
     [
-     "case_25",
-     "account_3136",
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_20",
+     "account_5037",
      "INFERRED_CLAIM"
     ],
     [
      "case_21",
      "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_25",
+     "account_3136",
      "INFERRED_CLAIM"
     ],
     [
@@ -148,21 +163,6 @@
     [
      "case_32",
      "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_20",
-     "account_5037",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_22",
-     "account_4990",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_18",
-     "account_5521",
      "INFERRED_CLAIM"
     ]
    ],
@@ -185,10 +185,10 @@
      "assignments_total": 135
     },
     "claim_conflicts": 0,
-    "rows_changed": 92,
+    "rows_changed": 95,
     "status": {
-     "INCOMPLETE": 355,
      "COMPLETE": 153,
+     "INCOMPLETE": 355,
      "NOT_APPLICABLE": 10
     },
     "status_flips": []
@@ -275,13 +275,28 @@
    "new_sample_assignments": 7,
    "correct": [
     [
-     "case_25",
-     "account_3136",
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_20",
+     "account_5037",
      "INFERRED_CLAIM"
     ],
     [
      "case_21",
      "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_25",
+     "account_3136",
      "INFERRED_CLAIM"
     ],
     [
@@ -292,21 +307,6 @@
     [
      "case_32",
      "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_20",
-     "account_5037",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_22",
-     "account_4990",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_18",
-     "account_5521",
      "INFERRED_CLAIM"
     ]
    ],
@@ -350,10 +350,10 @@
      "assignments_total": 147
     },
     "claim_conflicts": 0,
-    "rows_changed": 104,
+    "rows_changed": 107,
     "status": {
-     "INCOMPLETE": 355,
      "COMPLETE": 153,
+     "INCOMPLETE": 355,
      "NOT_APPLICABLE": 10
     },
     "status_flips": []
@@ -365,8 +365,8 @@
     "ambiguous_resources": 23,
     "ambiguous_cases": 20,
     "assignments": {
-     "INFERRED_CLAIM": 7,
-     "INFERRED": 4
+     "INFERRED": 4,
+     "INFERRED_CLAIM": 7
     },
     "assignments_total": 11
    },
@@ -440,13 +440,28 @@
    "new_sample_assignments": 7,
    "correct": [
     [
-     "case_25",
-     "account_3136",
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_20",
+     "account_5037",
      "INFERRED_CLAIM"
     ],
     [
      "case_21",
      "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_25",
+     "account_3136",
      "INFERRED_CLAIM"
     ],
     [
@@ -457,21 +472,6 @@
     [
      "case_32",
      "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_20",
-     "account_5037",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_22",
-     "account_4990",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_18",
-     "account_5521",
      "INFERRED_CLAIM"
     ]
    ],
@@ -515,10 +515,10 @@
      "assignments_total": 147
     },
     "claim_conflicts": 0,
-    "rows_changed": 104,
+    "rows_changed": 107,
     "status": {
-     "INCOMPLETE": 355,
      "COMPLETE": 153,
+     "INCOMPLETE": 355,
      "NOT_APPLICABLE": 10
     },
     "status_flips": []
@@ -530,8 +530,8 @@
     "ambiguous_resources": 23,
     "ambiguous_cases": 20,
     "assignments": {
-     "INFERRED_CLAIM": 7,
-     "INFERRED": 4
+     "INFERRED": 4,
+     "INFERRED_CLAIM": 7
     },
     "assignments_total": 11
    },
@@ -621,6 +621,26 @@
    "new_sample_assignments": 10,
    "correct": [
     [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_20",
+     "account_5037",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_21",
+     "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
      "case_25",
      "account_3136",
      "INFERRED_CLAIM"
@@ -629,11 +649,6 @@
      "case_28",
      "account_5482",
      "INFERRED_ORDER"
-    ],
-    [
-     "case_21",
-     "account_6440",
-     "INFERRED_CLAIM"
     ],
     [
      "case_29",
@@ -648,21 +663,6 @@
     [
      "case_32",
      "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_20",
-     "account_5037",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_22",
-     "account_4990",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_18",
-     "account_5521",
      "INFERRED_CLAIM"
     ]
    ],
@@ -714,10 +714,10 @@
      "assignments_total": 164
     },
     "claim_conflicts": 0,
-    "rows_changed": 119,
+    "rows_changed": 124,
     "status": {
-     "INCOMPLETE": 355,
      "COMPLETE": 153,
+     "INCOMPLETE": 355,
      "NOT_APPLICABLE": 10
     },
     "status_flips": []
@@ -729,8 +729,8 @@
     "ambiguous_resources": 18,
     "ambiguous_cases": 20,
     "assignments": {
-     "INFERRED_CLAIM": 7,
      "INFERRED": 4,
+     "INFERRED_CLAIM": 7,
      "INFERRED_ORDER": 3
     },
     "assignments_total": 14
@@ -821,6 +821,26 @@
    "new_sample_assignments": 10,
    "correct": [
     [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_20",
+     "account_5037",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_21",
+     "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
      "case_25",
      "account_3136",
      "INFERRED_CLAIM"
@@ -829,11 +849,6 @@
      "case_28",
      "account_5482",
      "INFERRED_ORDER"
-    ],
-    [
-     "case_21",
-     "account_6440",
-     "INFERRED_CLAIM"
     ],
     [
      "case_29",
@@ -848,21 +863,6 @@
     [
      "case_32",
      "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_20",
-     "account_5037",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_22",
-     "account_4990",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_18",
-     "account_5521",
      "INFERRED_CLAIM"
     ]
    ],
@@ -893,10 +893,10 @@
      "assignments_total": 152
     },
     "claim_conflicts": 0,
-    "rows_changed": 107,
+    "rows_changed": 112,
     "status": {
-     "INCOMPLETE": 355,
      "COMPLETE": 153,
+     "INCOMPLETE": 355,
      "NOT_APPLICABLE": 10
     },
     "status_flips": []
@@ -1398,8 +1398,8 @@
   "candidate_edges_removed_by_A1": 264,
   "A1_on_hard_linked_accounts": {
    "status_result_counts": {
-    "COMPLETE->SUCCESS": 133,
     "NOT_STARTED->FAILED": 50,
+    "COMPLETE->SUCCESS": 133,
     "PARTIALLY_COMPLETE->PARTIAL": 69
    },
    "inconsistent": []

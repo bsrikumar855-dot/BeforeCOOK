@@ -108,3 +108,45 @@ def test_undeterminable_restore_control_is_treated_as_open():
     assert (v.finding_op, v.remediation_op, v.verification_op) == ("REPORT_RESTORE_RISK", "BLOCK_RESTORE",
                                                                     "VERIFY_RESTORE_BLOCKED")
     assert v.proof_file_id == "ev1" and "CONTROL_UNDETERMINABLE" in v.note
+
+
+def test_unknown_state_record_is_a_required_check_only():
+    """rc7-X4: no admissible observation and no full snapshot: no finding (nothing shows a violation), but the
+    check the policy requires afterwards; an INCOMPLETE plan lists it with evidence "", a COMPLETE row drops it."""
+    from agent.steps import build_steps
+    policy = Policy(RULES)
+    unknown = reconstruct("account_1", "account_service", AUDIT, index([], {}))
+    assert unknown.proof_basis == "NONE"
+    v = policy.verdict("USER_PROFILE", "t", unknown)
+    assert (v.finding_op, v.remediation_op, v.verification_op) == (None, None, "VERIFY_RECORD_ABSENT")
+    assert v.compliant is True and v.provable is False and v.note.startswith("UNKNOWN_STATE")
+    from agent.schema import Verdict
+    failing = Verdict("search_1", "search_service", "SEARCH_INDEX_ENTRY", "t", "DELETE", False,
+                      "REPORT_REMAINING_RECORD", "DELETE_RECORD", "VERIFY_RECORD_ABSENT", "ev1")
+    status, steps, _ = build_steps([failing, v])
+    assert status == "INCOMPLETE"
+    assert [(s["operation"], s["resource_id"], s["evidence_id"]) for s in steps if s["resource_id"] == "account_1"] == \
+        [("VERIFY_RECORD_ABSENT", "account_1", "")]
+    status, steps, dropped = build_steps([v])
+    assert status == "COMPLETE" and steps == [] and dropped == [v]           # never an uncited proof
+    for category, check in (("ANALYTICS_PROFILE", "VERIFY_RECORD_ANONYMIZED"), ("SUPPORT_MESSAGE", "VERIFY_RECORD_REDACTED"),
+                            ("BACKUP_ARCHIVE", "VERIFY_RESTORE_BLOCKED")):
+        assert policy.verdict(category, "t", unknown).verification_op == check
+
+
+def test_every_undecidable_state_gives_the_required_check_without_a_proof():
+    """The same rule on every branch where admissible evidence does not decide the state (rc7-X4)."""
+    from agent.schema import ResourceState
+    policy = Policy(RULES)
+    cases = [  # (category, state, expected check, note prefix)
+        ("USER_PROFILE", ResourceState("account_1", "account_service", "UNKNOWN", "UNKNOWN", None, None, "ev1", "MENTION", []),
+         "VERIFY_RECORD_ABSENT", "PRESENCE_UNKNOWN"),
+        ("ANALYTICS_PROFILE", ResourceState("analytics_1", "analytics_platform", "PRESENT", "UNKNOWN", None, None, "ev1",
+                                            "MENTION", []), "VERIFY_RECORD_ANONYMIZED", "EXPOSURE_UNKNOWN"),
+        ("BACKUP_ARCHIVE", ResourceState("backup_1", "backup_service", "ABSENT", "UNKNOWN", None, None, "ev1",
+                                         "FULL_SNAPSHOT", []), "VERIFY_RESTORE_BLOCKED", "RESTORE_STATE_UNKNOWN"),
+    ]
+    for category, state, check, note in cases:
+        v = policy.verdict(category, "t", state)
+        assert (v.finding_op, v.remediation_op, v.verification_op) == (None, None, check), category
+        assert v.compliant is True and v.provable is False and v.proof_file_id is None and v.note.startswith(note)
