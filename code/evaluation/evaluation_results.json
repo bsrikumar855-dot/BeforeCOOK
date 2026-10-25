@@ -1018,8 +1018,8 @@
   },
   "labels_eval": {
    "AMBIGUOUS": 904,
-   "CONFIRMED": 1434,
-   "CONFIRMED/OUT_OF_SCOPE": 41,
+   "CONFIRMED": 1435,
+   "CONFIRMED/OUT_OF_SCOPE": 40,
    "CONFLICT": 1,
    "INFERRED": 40,
    "INFERRED_CLAIM": 95
@@ -1029,7 +1029,7 @@
    137
   ],
   "coverage_eval": [
-   1569,
+   1570,
    2515
   ],
   "inferred_evaluable": [

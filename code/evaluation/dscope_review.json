@@ -1,0 +1,1148 @@
+{
+ "cases": [
+  "case_34",
+  "case_35",
+  "case_39",
+  "case_45",
+  "case_50",
+  "case_53",
+  "case_55",
+  "case_67",
+  "case_72",
+  "case_121",
+  "case_170",
+  "case_176",
+  "case_278",
+  "case_489",
+  "case_491",
+  "case_527"
+ ],
+ "records": 28,
+ "rows": [
+  {
+   "admissible_identity_link_before_request": [
+    "evidence_01"
+   ],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-09-27T13:00:00Z",
+   "case_id": "case_34",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "before_requested_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:54:47Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-09-26T02:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-09-24T08:00:00Z",
+   "resource_id": "audit_record_3753",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "before_requested_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "+81 90 6156 0005",
+      "haruka.s1838@zoho.com",
+      "user_11"
+     ],
+     "subject_identifiers_same_line": [
+      "user_11"
+     ]
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-09-02T08:00:00Z",
+   "case_id": "case_35",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:58:56Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-08-31T21:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-08-30T03:00:00Z",
+   "resource_id": "account_8491",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "g.silva76@gmail.com",
+      "user_13"
+     ],
+     "subject_identifiers_same_line": []
+    },
+    {
+     "event_time": "2026-08-25T10:56:16Z",
+     "event_type": "DELETE_RECORD",
+     "hours_from_reported_at": -154.1,
+     "kind": "activity",
+     "reported_result": "PARTIAL",
+     "side": "before_requested_at",
+     "source": "activity_3431",
+     "source_system": "deletion_worker",
+     "subject_identifiers_in_details": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "account_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-09-02T08:00:00Z",
+   "case_id": "case_35",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:58:17Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-08-31T21:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-08-30T03:00:00Z",
+   "resource_id": "audit_record_8925",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "g.silva76@gmail.com",
+      "user_13"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-08-08T10:00:00Z",
+   "case_id": "case_39",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:57:27Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-08-06T23:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-08-05T05:00:00Z",
+   "resource_id": "account_8926",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "jain.aditi@gmail.com",
+      "user_14"
+     ],
+     "subject_identifiers_same_line": []
+    },
+    {
+     "event_time": "2026-08-25T10:45:32Z",
+     "event_type": "DELETE_RECORD",
+     "hours_from_reported_at": 443.8,
+     "kind": "activity",
+     "reported_result": "FAILED",
+     "side": "after_audit_at",
+     "source": "activity_3430",
+     "source_system": "deletion_worker",
+     "subject_identifiers_in_details": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "account_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-08-08T10:00:00Z",
+   "case_id": "case_39",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:53:56Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-08-06T23:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-08-05T05:00:00Z",
+   "resource_id": "audit_record_7301",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "jain.aditi@gmail.com",
+      "user_14"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-08-08T10:00:00Z",
+   "case_id": "case_39",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:53:09Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-08-06T23:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-08-05T05:00:00Z",
+   "resource_id": "search_4801",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "jain.aditi@gmail.com",
+      "user_14"
+     ],
+     "subject_identifiers_same_line": [
+      "jain.aditi@gmail.com"
+     ]
+    },
+    {
+     "event_time": "2026-08-25T13:03:53Z",
+     "event_type": "DELETE_RECORD",
+     "hours_from_reported_at": 446.1,
+     "kind": "activity",
+     "reported_result": "FAILED",
+     "side": "after_audit_at",
+     "source": "activity_3437",
+     "source_system": "deletion_worker",
+     "subject_identifiers_in_details": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [
+    "evidence_37"
+   ],
+   "audit_at": "2026-09-06T09:00:00Z",
+   "case_id": "case_45",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "before_requested_at",
+     "source": "evidence_37",
+     "time": "2026-08-24T16:14:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-09-04T22:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-09-03T04:00:00Z",
+   "resource_id": "audit_record_001",
+   "sources": [
+    {
+     "captured_at": "2026-09-05T07:00:00Z",
+     "kind": "file",
+     "path": "evidence/images/security_audit_explorer_20260905.png",
+     "side": "in_window",
+     "source": "evidence_37",
+     "subject_identifiers_in_file": [
+      "user_03"
+     ],
+     "subject_identifiers_same_line": [
+      "user_03"
+     ]
+    }
+   ],
+   "status": "COMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [
+    "evidence_37"
+   ],
+   "audit_at": "2026-09-06T09:00:00Z",
+   "case_id": "case_45",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "before_requested_at",
+     "source": "evidence_37",
+     "time": "2026-08-25T03:21:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-09-04T22:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-09-03T04:00:00Z",
+   "resource_id": "audit_record_002",
+   "sources": [
+    {
+     "captured_at": "2026-09-05T07:00:00Z",
+     "kind": "file",
+     "path": "evidence/images/security_audit_explorer_20260905.png",
+     "side": "in_window",
+     "source": "evidence_37",
+     "subject_identifiers_in_file": [
+      "user_03"
+     ],
+     "subject_identifiers_same_line": [
+      "user_03"
+     ]
+    }
+   ],
+   "status": "COMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [
+    "evidence_37"
+   ],
+   "audit_at": "2026-09-06T09:00:00Z",
+   "case_id": "case_45",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "before_requested_at",
+     "source": "evidence_37",
+     "time": "2026-08-18T14:05:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-09-04T22:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-09-03T04:00:00Z",
+   "resource_id": "audit_record_004",
+   "sources": [
+    {
+     "captured_at": "2026-09-05T07:00:00Z",
+     "kind": "file",
+     "path": "evidence/images/security_audit_explorer_20260905.png",
+     "side": "in_window",
+     "source": "evidence_37",
+     "subject_identifiers_in_file": [
+      "user_03"
+     ],
+     "subject_identifiers_same_line": [
+      "user_03"
+     ]
+    }
+   ],
+   "status": "COMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [
+    "evidence_37"
+   ],
+   "audit_at": "2026-09-06T09:00:00Z",
+   "case_id": "case_45",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "before_requested_at",
+     "source": "evidence_37",
+     "time": "2026-08-20T09:42:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-09-04T22:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-09-03T04:00:00Z",
+   "resource_id": "audit_record_005",
+   "sources": [
+    {
+     "captured_at": "2026-09-05T07:00:00Z",
+     "kind": "file",
+     "path": "evidence/images/security_audit_explorer_20260905.png",
+     "side": "in_window",
+     "source": "evidence_37",
+     "subject_identifiers_in_file": [
+      "user_03"
+     ],
+     "subject_identifiers_same_line": [
+      "user_03"
+     ]
+    }
+   ],
+   "status": "COMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [
+    "evidence_37"
+   ],
+   "audit_at": "2026-09-06T09:00:00Z",
+   "case_id": "case_45",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "before_requested_at",
+     "source": "evidence_37",
+     "time": "2026-08-22T11:27:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-09-04T22:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-09-03T04:00:00Z",
+   "resource_id": "audit_record_006",
+   "sources": [
+    {
+     "captured_at": "2026-09-05T07:00:00Z",
+     "kind": "file",
+     "path": "evidence/images/security_audit_explorer_20260905.png",
+     "side": "in_window",
+     "source": "evidence_37",
+     "subject_identifiers_in_file": [
+      "user_03"
+     ],
+     "subject_identifiers_same_line": [
+      "user_03"
+     ]
+    }
+   ],
+   "status": "COMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-07-14T12:00:00Z",
+   "case_id": "case_50",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:54:42Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-07-13T01:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-07-11T07:00:00Z",
+   "resource_id": "account_3270",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "darwish.omar@icloud.com",
+      "user_20"
+     ],
+     "subject_identifiers_same_line": []
+    },
+    {
+     "event_time": "2026-09-08T11:12:08Z",
+     "event_type": "DELETE_RECORD",
+     "hours_from_reported_at": 1378.2,
+     "kind": "activity",
+     "reported_result": "FAILED",
+     "side": "after_audit_at",
+     "source": "activity_3719",
+     "source_system": "deletion_worker",
+     "subject_identifiers_in_details": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "account_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-07-14T12:00:00Z",
+   "case_id": "case_50",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:57:56Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-07-13T01:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-07-11T07:00:00Z",
+   "resource_id": "audit_record_5080",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "darwish.omar@icloud.com",
+      "user_20"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-07-14T12:00:00Z",
+   "case_id": "case_50",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:51:16Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-07-13T01:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-07-11T07:00:00Z",
+   "resource_id": "search_4639",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "darwish.omar@icloud.com",
+      "user_20"
+     ],
+     "subject_identifiers_same_line": [
+      "darwish.omar@icloud.com"
+     ]
+    },
+    {
+     "event_time": "2026-09-08T12:59:29Z",
+     "event_type": "DELETE_RECORD",
+     "hours_from_reported_at": 1380.0,
+     "kind": "activity",
+     "reported_result": "FAILED",
+     "side": "after_audit_at",
+     "source": "activity_3725",
+     "source_system": "deletion_worker",
+     "subject_identifiers_in_details": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-05-25T09:00:00Z",
+   "case_id": "case_53",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_02",
+     "time": "2026-09-15T12:00:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-05-23T22:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-05-22T04:00:00Z",
+   "resource_id": "audit_record_9644",
+   "sources": [
+    {
+     "captured_at": "2026-09-17T12:00:00Z",
+     "kind": "file",
+     "path": "evidence/records/customer_data_snapshot_bundle_20260917.json",
+     "side": "after_audit_at",
+     "source": "evidence_02",
+     "subject_identifiers_in_file": [
+      "Kofi Agyeman",
+      "kagyeman8947@fastmail.com",
+      "user_22"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-05-25T09:00:00Z",
+   "case_id": "case_53",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_02",
+     "time": "2026-09-15T12:00:00Z"
+    },
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_02",
+     "time": "2026-09-15T12:00:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-05-23T22:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-05-22T04:00:00Z",
+   "resource_id": "search_2912",
+   "sources": [
+    {
+     "captured_at": "2026-09-17T12:00:00Z",
+     "kind": "file",
+     "path": "evidence/records/customer_data_snapshot_bundle_20260917.json",
+     "side": "after_audit_at",
+     "source": "evidence_02",
+     "subject_identifiers_in_file": [
+      "Kofi Agyeman",
+      "kagyeman8947@fastmail.com",
+      "user_22"
+     ],
+     "subject_identifiers_same_line": []
+    },
+    {
+     "event_time": "2026-09-05T13:13:31Z",
+     "event_type": "DELETE_RECORD",
+     "hours_from_reported_at": 2511.2,
+     "kind": "activity",
+     "reported_result": "FAILED",
+     "side": "after_audit_at",
+     "source": "activity_3672",
+     "source_system": "deletion_worker",
+     "subject_identifiers_in_details": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-04-30T11:00:00Z",
+   "case_id": "case_55",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:52:44Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-04-29T00:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-04-27T06:00:00Z",
+   "resource_id": "account_9494",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "areed1433@gmail.com",
+      "user_16"
+     ],
+     "subject_identifiers_same_line": []
+    },
+    {
+     "event_time": "2026-08-22T10:54:34Z",
+     "event_type": "DELETE_RECORD",
+     "hours_from_reported_at": 2770.9,
+     "kind": "activity",
+     "reported_result": "PARTIAL",
+     "side": "after_audit_at",
+     "source": "activity_3381",
+     "source_system": "deletion_worker",
+     "subject_identifiers_in_details": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "account_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-04-30T11:00:00Z",
+   "case_id": "case_55",
+   "identity_edges": [
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:51:47Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-04-29T00:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-04-27T06:00:00Z",
+   "resource_id": "audit_record_2857",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "areed1433@gmail.com",
+      "user_16"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "security_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-04-30T11:00:00Z",
+   "case_id": "case_55",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "time": "2026-09-15T11:55:10Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-04-29T00:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-04-27T06:00:00Z",
+   "resource_id": "search_4882",
+   "sources": [
+    {
+     "captured_at": "2026-09-15T11:59:39Z",
+     "kind": "file",
+     "path": "evidence/logs/service_events_ap_south_20260915.log",
+     "side": "after_audit_at",
+     "source": "evidence_01",
+     "subject_identifiers_in_file": [
+      "areed1433@gmail.com",
+      "user_16"
+     ],
+     "subject_identifiers_same_line": []
+    },
+    {
+     "event_time": "2026-08-22T13:17:55Z",
+     "event_type": "DELETE_RECORD",
+     "hours_from_reported_at": 2773.3,
+     "kind": "activity",
+     "reported_result": "FAILED",
+     "side": "after_audit_at",
+     "source": "activity_3388",
+     "source_system": "deletion_worker",
+     "subject_identifiers_in_details": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-09-16T09:00:00Z",
+   "case_id": "case_67",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_06",
+     "time": "2026-09-18T11:51:37Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-09-04T09:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-09-01T09:00:00Z",
+   "resource_id": "search_9837",
+   "sources": [
+    {
+     "captured_at": "2026-09-18T11:55:24Z",
+     "kind": "file",
+     "path": "evidence/logs/structured_service_events_eu_west_20260918.log",
+     "side": "after_audit_at",
+     "source": "evidence_06",
+     "subject_identifiers_in_file": [
+      "rafael.r9464@outlook.com",
+      "user_65"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-09-16T09:00:00Z",
+   "case_id": "case_72",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_06",
+     "time": "2026-09-18T11:55:22Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-08-29T09:00:00Z",
+   "reported_status": "PARTIALLY_COMPLETE",
+   "requested_at": "2026-08-27T09:00:00Z",
+   "resource_id": "search_209",
+   "sources": [
+    {
+     "captured_at": "2026-09-18T11:55:24Z",
+     "kind": "file",
+     "path": "evidence/logs/structured_service_events_eu_west_20260918.log",
+     "side": "after_audit_at",
+     "source": "evidence_06",
+     "subject_identifiers_in_file": [
+      "ajohansson9059@fastmail.com",
+      "user_70"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-08-22T11:00:00Z",
+   "case_id": "case_121",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_11",
+     "time": "2026-08-24T13:56:43Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-07-27T11:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-07-24T11:00:00Z",
+   "resource_id": "search_3573",
+   "sources": [
+    {
+     "captured_at": "2026-08-24T13:56:43Z",
+     "kind": "file",
+     "path": "evidence/logs/syslog_archive_us_east_20260824.log",
+     "side": "after_audit_at",
+     "source": "evidence_11",
+     "subject_identifiers_in_file": [
+      "nicolas.n7090@zoho.com",
+      "user_119"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "COMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-07-28T06:00:00Z",
+   "case_id": "case_170",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_16",
+     "time": "2026-07-30T08:53:10Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-07-11T06:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-07-10T06:00:00Z",
+   "resource_id": "search_3619",
+   "sources": [
+    {
+     "captured_at": "2026-07-30T08:53:12Z",
+     "kind": "file",
+     "path": "evidence/logs/application_trace_ap_northeast_20260730.log",
+     "side": "after_audit_at",
+     "source": "evidence_16",
+     "subject_identifiers_in_file": [
+      "jihoon.jang@gmail.com",
+      "user_168"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "COMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-07-23T12:00:00Z",
+   "case_id": "case_176",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_17",
+     "time": "2026-07-25T15:00:00Z"
+    },
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_17",
+     "time": "2026-07-25T15:00:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-06-30T12:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-06-29T12:00:00Z",
+   "resource_id": "search_2597",
+   "sources": [
+    {
+     "captured_at": "2026-07-25T15:00:00Z",
+     "kind": "file",
+     "path": "evidence/records/customer_data_snapshot_bundle_20260725.json",
+     "side": "after_audit_at",
+     "source": "evidence_17",
+     "subject_identifiers_in_file": [
+      "Freja Svensson",
+      "freja.svensson@outlook.com",
+      "user_174"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-06-03T09:00:00Z",
+   "case_id": "case_278",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_26",
+     "time": "2026-06-05T12:00:00Z"
+    },
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_26",
+     "time": "2026-06-05T12:00:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-05-09T09:00:00Z",
+   "reported_status": "PARTIALLY_COMPLETE",
+   "requested_at": "2026-05-08T09:00:00Z",
+   "resource_id": "search_9526",
+   "sources": [
+    {
+     "captured_at": "2026-06-05T12:00:00Z",
+     "kind": "file",
+     "path": "evidence/records/customer_data_snapshot_bundle_20260605.json",
+     "side": "after_audit_at",
+     "source": "evidence_26",
+     "subject_identifiers_in_file": [
+      "+44 7700 900276",
+      "570031d75a04ce9043c2e4011097491bc1bd9437f495d92905490cd3b8bbb068",
+      "Amelia Parker",
+      "amelia.parker@gmail.com",
+      "user_276"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-02-18T09:00:00Z",
+   "case_id": "case_489",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_45",
+     "time": "2026-02-20T12:00:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-02-03T09:00:00Z",
+   "reported_status": "PARTIALLY_COMPLETE",
+   "requested_at": "2026-02-01T09:00:00Z",
+   "resource_id": "search_8332",
+   "sources": [
+    {
+     "captured_at": "2026-02-23T10:00:00Z",
+     "kind": "file",
+     "path": "evidence/records/customer_data_snapshot_bundle_20260223.json",
+     "side": "after_audit_at",
+     "source": "evidence_45",
+     "subject_identifiers_in_file": [
+      "i.zielinski8281@yahoo.com",
+      "user_487"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-02-18T09:00:00Z",
+   "case_id": "case_491",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_45",
+     "time": "2026-02-20T12:00:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-01-31T09:00:00Z",
+   "reported_status": "COMPLETE",
+   "requested_at": "2026-01-30T09:00:00Z",
+   "resource_id": "search_8910",
+   "sources": [
+    {
+     "captured_at": "2026-02-23T10:00:00Z",
+     "kind": "file",
+     "path": "evidence/records/customer_data_snapshot_bundle_20260223.json",
+     "side": "after_audit_at",
+     "source": "evidence_45",
+     "subject_identifiers_in_file": [
+      "chioma-oladipo@proton.me",
+      "user_489"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "COMPLETE",
+   "system_id": "search_service"
+  },
+  {
+   "admissible_identity_link_before_request": [],
+   "admissible_identity_link_in_window": [],
+   "audit_at": "2026-01-29T12:00:00Z",
+   "case_id": "case_527",
+   "identity_edges": [
+    {
+     "identifier": "email",
+     "side": "after_audit_at",
+     "source": "evidence_49",
+     "time": "2026-01-31T15:00:00Z"
+    },
+    {
+     "identifier": "user_id",
+     "side": "after_audit_at",
+     "source": "evidence_49",
+     "time": "2026-01-31T15:00:00Z"
+    }
+   ],
+   "label": "CONFIRMED",
+   "reported_at": "2026-01-15T12:00:00Z",
+   "reported_status": "NOT_STARTED",
+   "requested_at": "2026-01-14T12:00:00Z",
+   "resource_id": "search_2979",
+   "sources": [
+    {
+     "captured_at": "2026-01-31T15:00:00Z",
+     "kind": "file",
+     "path": "evidence/records/customer_data_snapshot_bundle_20260131.json",
+     "side": "after_audit_at",
+     "source": "evidence_49",
+     "subject_identifiers_in_file": [
+      "+46 70 808 74 05",
+      "Jonas Lund",
+      "bf0907a94fa8c7edbccc82b18751ac35563c83d921b9a7932a7085f19af01a65",
+      "jonas-lund@proton.me",
+      "user_525"
+     ],
+     "subject_identifiers_same_line": []
+    }
+   ],
+   "status": "INCOMPLETE",
+   "system_id": "search_service"
+  }
+ ]
+}

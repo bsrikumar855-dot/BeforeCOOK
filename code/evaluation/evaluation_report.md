@@ -76,7 +76,7 @@ Residual steps by tag: ATTRIBUTION 12, NOT_DERIVABLE 3
 ## 2. Attribution
 
 - Labelled (case, resource) pairs from the sample answers: 111; correctly attributed (CONFIRMED or INFERRED, in scope): 96/111 (86.5%).
-- Coverage (non-ambiguous share of candidate pairs): samples 96/137 (70.1%); eval 1569/2515 (62.4%).
+- Coverage (non-ambiguous share of candidate pairs): samples 96/137 (70.1%); eval 1570/2515 (62.4%).
 - INFERRED precision (pairs whose resource appears in some sample answer): 12/12 (100.0%); UNEVALUABLE INFERRED pairs (resource in no sample answer): 135.
 - INFERRED recall over labelled pairs without a direct identity link: 12/27 (44.4%).
 - Expected sample pairs dropped by the AMBIGUOUS/CONFLICT output policy: 12.
@@ -88,8 +88,8 @@ Residual steps by tag: ATTRIBUTION 12, NOT_DERIVABLE 3
 | Label | Samples | Eval (518) |
 |---|---|---|
 | AMBIGUOUS | 38 | 904 |
-| CONFIRMED | 84 | 1434 |
-| CONFIRMED/OUT_OF_SCOPE | 3 | 41 |
+| CONFIRMED | 84 | 1435 |
+| CONFIRMED/OUT_OF_SCOPE | 3 | 40 |
 | CONFLICT | 0 | 1 |
 | INFERRED | 5 | 40 |
 | INFERRED_CLAIM | 7 | 95 |
@@ -108,7 +108,7 @@ Expected pairs dropped by the policy: case_03/analytics_9406, case_04/analytics_
 
 - Status distribution: {'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10}
 - Intent paths: {'model_deletion->DELETION': 508, 'model_non_deletion+classify_corroborates->NOT_APPLICABLE': 10}
-- Excluded resource reasons: {'AMBIGUOUS': 904, 'CONFLICT': 1, 'OUT_OF_SCOPE': 41, 'UNKNOWN_STATE': 3}
+- Excluded resource reasons: {'AMBIGUOUS': 904, 'CONFLICT': 1, 'OUT_OF_SCOPE': 40, 'UNKNOWN_STATE': 3}
 - Degraded cases (INCOMPLETE,[]): 1 ['case_63']
 - Evidence files: {'EXTRACTED': 11, 'PARSED': 79, 'TEXT_LAYER': 4}; image rows accepted 24, dropped 22, failed files 0
 
@@ -151,7 +151,7 @@ Categories with no sample coverage are exercised by fixtures X6–X13 (section 4
 | SEARCH_INDEX_ENTRY | 270 | 270 | 12 |
 | CACHE_ENTRY | 0 | 0 | 0 |
 | SUPPORT_MESSAGE | 155 | 155 | 8 |
-| SUPPORT_ATTACHMENT | 27 | 27 | 3 |
+| SUPPORT_ATTACHMENT | 28 | 28 | 3 |
 | ANALYTICS_PROFILE | 81 | 81 | 5 |
 | PRODUCT_TELEMETRY | 0 | 0 | 0 |
 | USER_EXPORT | 31 | 31 | 2 |
@@ -360,51 +360,51 @@ Every regex in code/main.py and code/agent/** run on ten 1 MB adversarial lines 
 
 | Where | Pattern | Worst time (s) | Slowest input | Result |
 |---|---|---|---|---|
-| code/agent/attribution.py:606 | `non-deletion` | 0.019 | prefix_repeated | PASS |
-| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.358 | letters | PASS |
-| code/agent/explain.py:46 | `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z\|[+-]\d{2}:\d{2})` | 0.052 | digits | PASS |
-| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.065 | prefix_repeated | PASS |
-| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.122 | email_like | PASS |
+| code/agent/attribution.py:606 | `non-deletion` | 0.016 | prefix_repeated | PASS |
+| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.428 | digits | PASS |
+| code/agent/explain.py:46 | `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z\|[+-]\d{2}:\d{2})` | 0.044 | random_printable | PASS |
+| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.063 | email_like | PASS |
+| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.074 | random_printable | PASS |
 | code/agent/identity.py:18 | `^\+\d[\d ()\-]{6,}$` | 0.0 | letters | PASS |
-| code/agent/identity.py:20 | `[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}){0,31}` | 0.311 | prefix_repeated | PASS |
-| code/agent/identity.py:23 | `[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?` | 0.356 | prefix_repeated | PASS |
-| code/agent/identity.py:24 | `[A-Za-z]{2,24}` | 0.193 | words_underscores | PASS |
-| code/agent/parsers/__init__.py:31 | `linked (\S+) \(([^)]+)\) to (\S+?) and (\S+?)[.;]\|confirmed (\S+) \(([^)]+)\) belongs only` | 0.022 | words_underscores | PASS |
+| code/agent/identity.py:20 | `[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}){0,31}` | 0.234 | prefix_repeated | PASS |
+| code/agent/identity.py:23 | `[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?` | 0.303 | email_like | PASS |
+| code/agent/identity.py:24 | `[A-Za-z]{2,24}` | 0.197 | letters_spaces | PASS |
+| code/agent/parsers/__init__.py:31 | `linked (\S+) \(([^)]+)\) to (\S+?) and (\S+?)[.;]\|confirmed (\S+) \(([^)]+)\) belongs only` | 0.023 | id_like | PASS |
 | code/agent/parsers/__init__.py:37 | `^(.*)_\d+$` | 0.028 | separators | PASS |
 | code/agent/parsers/file_checks.py:68 | `^\s*BEGIN(\s+TRANSACTION)?\s*;` | 0.0 | letters | PASS |
-| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.14 | letters_spaces | PASS |
+| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.104 | letters_spaces | PASS |
 | code/agent/parsers/file_checks.py:70 | `COMMIT\s*;$` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/handover_text.py:11 | `^-\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(.+?)\s*$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:18 | `^(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)\s+(.*)$` | 0.0 | letters | PASS |
-| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.066 | letters_spaces | PASS |
+| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.065 | separators | PASS |
 | code/agent/parsers/log_lines.py:21 | `^<\d+>1 (\S+) (\S+) (\S+) - - (.*)$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:22 | `^\[(\w+)\] \[([^\]]+)\] \[([^\]]+)\] ([a-z_]+): (.*)$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:23 | `^\\| (\w+) \\| ([^\|]+?) \\| ([^\|]+?) \\| ([a-z_]+) \\| (.*)$` | 0.0 | letters | PASS |
-| code/agent/parsers/ocr_grounding.py:34 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.514 | letters_spaces | PASS |
-| code/agent/parsers/ocr_grounding.py:131 | `(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}` | 0.074 | random_printable | PASS |
-| code/agent/parsers/ocr_grounding.py:132 | `(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])` | 0.107 | id_like | PASS |
-| code/agent/parsers/ocr_grounding.py:135 | `[^\s@]@[^\s@]` | 0.13 | email_like | PASS |
+| code/agent/parsers/ocr_grounding.py:34 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.434 | letters_spaces | PASS |
+| code/agent/parsers/ocr_grounding.py:131 | `(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}` | 0.06 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:132 | `(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])` | 0.051 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:135 | `[^\s@]@[^\s@]` | 0.118 | email_like | PASS |
 | code/agent/parsers/ocr_grounding.py:106 | `` | None | None | DYNAMIC: covered by its builder or not a |
-| code/agent/parsers/ocr_grounding.py:117 | `[ .]` | 0.4 | separators | PASS |
-| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.074 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:117 | `[ .]` | 0.428 | separators | PASS |
+| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.076 | random_printable | PASS |
 | code/agent/parsers/pdf_text.py:43 | `<<(.*)>>\s*stream\r?\n(.*?)\r?\n?endstream` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.005 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.209 | words_underscores | PASS |
-| code/agent/parsers/pdf_text.py:58 | `beginbfchar` | 0.024 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:59 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.024 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.009 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.145 | words_underscores | PASS |
+| code/agent/parsers/pdf_text.py:58 | `beginbfchar` | 0.025 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:59 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.002 | letters | PASS |
+| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.023 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:62 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.006 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:74 | `/ToUnicode (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.291 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:73 | `/Name /([^\s/]+)` | 0.009 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.263 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:73 | `/Name /([^\s/]+)` | 0.007 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:81 | `/Contents (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
-| code/agent/parsers/png_vlm.py:23 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.192 | words_underscores | PASS |
-| code/agent/parsers/png_vlm.py:25 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.247 | words_underscores | PASS |
+| code/agent/parsers/png_vlm.py:23 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.115 | words_underscores | PASS |
+| code/agent/parsers/png_vlm.py:25 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.195 | words_underscores | PASS |
 | code/agent/parsers/sql_snapshots.py:27 | `_replica_[a-z_]+$` | 0.004 | prefix_repeated | PASS |
 | code/agent/parsers/sql_snapshots.py:36 | `^-- Captured at:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
 | code/agent/parsers/sql_snapshots.py:38 | `^-- Database topology:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
-| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.037 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.042 | random_printable | PASS |
 
 Seven patterns were quadratic before G8 (each > 30 s on a 1 MB line): the email pattern, the log key=value pattern, both screenshot id token patterns, and three lazy PDF block patterns. Fixed by RFC 5321 bounds, word-start lookbehinds, bounded id prefixes and a linear block scan; output.csv and every trace unchanged.
 
@@ -488,14 +488,14 @@ Each item says what the code does today, the evidence behind it, and what is unt
 
 ### D. D-SCOPE: records linked to the subject only outside the request's lifecycle are excluded
 
-- What the code does (`attribution.CaseContext.in_lifecycle`): a hard-linked record enters the case only through identity evidence dated inside [requested_at, audit_at] or through the case's own deletion burst. Excluded records produce no step (trace reason `OUT_OF_SCOPE`).
+- What the code does (`attribution.CaseContext.in_lifecycle`): a hard-linked record enters the case only through identity evidence dated inside [requested_at, audit_at], through the case's own deletion burst, or (rc6-P1, `attribution.page_scope`) through an admissible screenshot captured inside that window that shows the record's id on a page whose extracted records all belong to the subject. The page is scope evidence only: the record must already be hard-linked to the subject elsewhere. Excluded records produce no step (trace reason `OUT_OF_SCOPE`).
 - Basis: on the samples the rule keeps 84/84 expected hard- or catalog-linked pairs and excludes exactly the 3 pairs the reference omits (object_19, account_6523, tombstone_17), all from the same user's other request (DESIGN.md D-SCOPE). The spec does not define a request episode.
 - **MEASURED.** 20 eval cases exclude at least one record this way; in 16 of them the subject has no other request in the dataset. That single-request situation never occurs in the samples, so the rule is **untested** there and its correctness is **UNKNOWN**.
 
 | Case | Subject's other requests | Status | Excluded records (side of the window their identity evidence falls) |
 |---|---|---|---|
 | case_33 | case_52 | INCOMPLETE | account_2373 (after audit_at), audit_record_8486 (after audit_at), export_1260 (before requested_at), search_2352 (after audit_at) |
-| case_34 | none | INCOMPLETE | audit_record_3753 (before requested_at), support_9538 (before requested_at) |
+| case_34 | none | INCOMPLETE | audit_record_3753 (before requested_at) |
 | case_35 | none | INCOMPLETE | account_8491 (after audit_at), audit_record_8925 (after audit_at) |
 | case_39 | none | INCOMPLETE | account_8926 (after audit_at), audit_record_7301 (after audit_at), search_4801 (after audit_at) |
 | case_45 | none | COMPLETE | audit_record_001 (before requested_at), audit_record_002 (before requested_at), audit_record_004 (before requested_at), audit_record_005 (before requested_at), audit_record_006 (before requested_at) |
@@ -515,7 +515,11 @@ Each item says what the code does today, the evidence behind it, and what is unt
 | case_491 | none | COMPLETE | search_8910 (after audit_at) |
 | case_527 | none | INCOMPLETE | search_2979 (after audit_at) |
 
-Raw evidence for the cases the independent re-derivation examined (`independent_rederivation/triage.json`):
+- **MEASURED (single-request subjects).** 22 excluded records in 14 cases are linked to the subject only by evidence dated after audit_at. Including them would let later evidence change the answer, which AGENTS.md §6.2 forbids ("Evidence created later must not change the answer for that case"), so their exclusion is required by the contract, not by D-SCOPE alone. 6 records in 2 cases (case_34, case_45) are linked only by admissible evidence dated before the request: that is the open **JUDGEMENT** (the spec does not define a request episode). For case_45, every one of the 24 sample cases with an audit record lists exactly one, and its five excluded audit records appear only as older rows on one screenshot (no activity row, no other file), while the one kept (audit_record_003) is also catalog-linked; `code/evaluation/dscope_review.json` lists every source of every excluded record.
+
+Records brought into scope by the page rule (rc6-P1): 1: case_34 support_9538 (shown on the subject's own page in evidence_04, captured within [requested_at, audit_at]).
+
+Raw evidence for the cases the independent re-derivation examined (`independent_rederivation/triage.json`; written before rc6-P1, so its case_34 premise that support_9538 is linked only outside the lifecycle is superseded by evidence_04):
 
 - case_33: SUBAGENT_ERROR: "Subject user_18 filed two requests (case_33, case_52). account_2373's only delete is activity_3324 2026-08-19T11:03:36Z DELETE_RECORD deletion_worker SUCCESS (777 h after case_33's reported_at 2026-07-18T02:00:00Z, i.e. case_52's job); export_1260's delete is activity_3328 2026-08-19T12:49:28Z. Their identity evidence lies outside case_33's [requested_at, audit_at]. The sample reference excludes a user's other-request records from a case (D-SCOPE: 84/84 expected pairs kept, all 3 other-episode pairs excluded: object_19, account_6523, tombstone_17)."
 - case_34: AMBIGUOUS_SPEC: "support_9538's only worker row is activity_3489 2026-08-28T12:46:35Z DELETE_RECORD FAILED, 685 h before case_34's reported_at 2026-09-26T02:00:00Z and before its requested_at 2026-09-24; the identifying read-back (evidence_01, 2026-09-15) predates the request. Both resources are linked to user_11 only by evidence outside the request lifecycle. Our D-SCOPE (sample-backed) treats them as another episode; the independent reading treats every record of the subject as in scope. The spec does not define episodes."

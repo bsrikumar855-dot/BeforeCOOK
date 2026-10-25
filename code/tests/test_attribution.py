@@ -107,3 +107,34 @@ def test_non_deletion_cases_do_not_take_burst_rows():
     cases = [ctx("c1", "rhea.vale@example.test"), ctx("c2", "omar.quint@example.test", deletion=False)]
     r = attribute(cases, index([], {}), rows, universe())
     assert labels(r, "c1") == {"account_7": "INFERRED"} and labels(r, "c2") == {}
+
+
+# ---- rc6-P1: a screenshot of the subject's own page is scope evidence, never an ownership link ----------------
+def _page_case(page_captured: str, page_fields: dict, page_ids: dict):
+    old = obs("ev1", "2026-08-01T00:00:00Z", "support_3", "support_platform", {"phone": "+44 7700 900901"})
+    page = obs("ev2", page_captured, "account_1", "account_service", page_fields, kind="IMAGE_EXTRACTION",
+               container="image_row")
+    files = {"ev1": "2026-08-01T00:00:00Z", "ev2": page_captured}
+    r = attribute([ctx("c1", "rhea.vale@example.test")], index([old, page], files), [], universe(), page_ids=page_ids)
+    return {a.resource_id: a for a in r.per_case["c1"]}
+
+
+def test_owned_record_shown_on_subjects_page_in_window_is_in_scope():
+    att = _page_case("2026-09-10T00:00:00Z", {"email": "rhea.vale@example.test"}, {"ev2": ["support_3"]})
+    assert att["support_3"].label == "CONFIRMED" and att["support_3"].in_scope
+    assert "subject's own page in ev2" in att["support_3"].scope_reason
+
+
+def test_page_outside_window_or_shared_page_gives_no_scope():
+    outside = _page_case("2026-09-20T00:00:00Z", {"email": "rhea.vale@example.test"}, {"ev2": ["support_3"]})
+    assert not outside["support_3"].in_scope                             # captured after audit_at
+    shared = _page_case("2026-09-10T00:00:00Z", {"email": "rhea.vale@example.test", "customer_reference": "user_902"},
+                        {"ev2": ["support_3"]})
+    assert not shared["support_3"].in_scope                              # the page belongs to two people
+    absent = _page_case("2026-09-10T00:00:00Z", {"email": "rhea.vale@example.test"}, {})
+    assert not absent["support_3"].in_scope                              # no OCR mention: rc5 behaviour
+
+
+def test_ocr_id_without_an_ownership_edge_is_never_attributed():
+    att = _page_case("2026-09-10T00:00:00Z", {"email": "rhea.vale@example.test"}, {"ev2": ["support_3", "search_77"]})
+    assert "search_77" not in att                                       # an OCR id alone links nobody

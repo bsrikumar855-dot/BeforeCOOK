@@ -894,6 +894,7 @@ def limitations_section(traces: dict[str, dict], sample_ids: set[str], amb_accou
         for u in (t.get("subject") or {}).get("user_ids") or []:
             subjects[u].add(cid)
     rows, single = [], 0
+    single_sides, single_records = defaultdict(set), Counter()
     for cid in sorted(eval_t, key=lambda c: int(c.rsplit("_", 1)[1])):
         t = eval_t[cid]
         oos = [a for a in t.get("attribution", []) if not a.get("in_scope") and a.get("scope_reason")]
@@ -909,11 +910,17 @@ def limitations_section(traces: dict[str, dict], sample_ids: set[str], amb_accou
             side = ("before requested_at" if times and times[-1] < lo else "after audit_at" if times and times[0] > hi
                     else "mixed")
             where.append(f"{a['resource_id']} ({side})")
+            if not others:
+                single_sides[side].add(cid)
+                single_records[side] += 1
         rows.append(f"| {cid} | {', '.join(others) or 'none'} | {t['status']} | {', '.join(where)} |")
     L += ["### D. D-SCOPE: records linked to the subject only outside the request's lifecycle are excluded", "",
           "- What the code does (`attribution.CaseContext.in_lifecycle`): a hard-linked record enters the case only "
-          "through identity evidence dated inside [requested_at, audit_at] or through the case's own deletion burst. "
-          "Excluded records produce no step (trace reason `OUT_OF_SCOPE`).",
+          "through identity evidence dated inside [requested_at, audit_at], through the case's own deletion burst, or "
+          "(rc6-P1, `attribution.page_scope`) through an admissible screenshot captured inside that window that shows the "
+          "record's id on a page whose extracted records all belong to the subject. The page is scope evidence only: "
+          "the record must already be hard-linked to the subject elsewhere. Excluded records produce no step (trace "
+          "reason `OUT_OF_SCOPE`).",
           "- Basis: on the samples the rule keeps 84/84 expected hard- or catalog-linked pairs and excludes exactly the 3 "
           "pairs the reference omits (object_19, account_6523, tombstone_17), all from the same user's other request "
           "(DESIGN.md D-SCOPE). The spec does not define a request episode.",
@@ -922,7 +929,25 @@ def limitations_section(traces: dict[str, dict], sample_ids: set[str], amb_accou
           "**untested** there and its correctness is **UNKNOWN**.", "",
           "| Case | Subject's other requests | Status | Excluded records (side of the window their identity evidence falls) |",
           "|---|---|---|---|"] + rows
-    L += ["", "Raw evidence for the cases the independent re-derivation examined (`independent_rederivation/triage.json`):", ""]
+    late, early = single_records["after audit_at"], single_records["before requested_at"]
+    L += ["", f"- **MEASURED (single-request subjects).** {late} excluded records in "
+          f"{len(single_sides['after audit_at'])} cases are linked to the subject only by evidence dated after audit_at. "
+          "Including them would let later evidence change the answer, which AGENTS.md §6.2 forbids (\"Evidence created "
+          "later must not change the answer for that case\"), so their exclusion is required by the contract, not by "
+          f"D-SCOPE alone. {early} records in {len(single_sides['before requested_at'])} cases "
+          f"({', '.join(sorted(single_sides['before requested_at'], key=lambda c: int(c.rsplit('_', 1)[1])))}) are linked "
+          "only by admissible evidence dated before the request: that is the open **JUDGEMENT** (the spec does not "
+          "define a request episode). For case_45, every one of the 24 sample cases with an audit record lists exactly "
+          "one, and its five excluded audit records appear only as older rows on one screenshot (no activity row, no "
+          "other file), while the one kept (audit_record_003) is also catalog-linked; `code/evaluation/dscope_review.json` "
+          "lists every source of every excluded record."]
+    paged = [(cid, a["resource_id"], a["scope_reason"]) for cid, t in sorted(eval_t.items())
+             for a in t.get("attribution", []) if a.get("in_scope") and "subject's own page" in (a.get("scope_reason") or "")]
+    L += ["", f"Records brought into scope by the page rule (rc6-P1): {len(paged)}" +
+          (": " + "; ".join(f"{c} {r} ({why})" for c, r, why in paged) if paged else "") + "."]
+    L += ["", "Raw evidence for the cases the independent re-derivation examined (`independent_rederivation/triage.json`; "
+          "written before rc6-P1, so its case_34 premise that support_9538 is linked only outside the lifecycle is "
+          "superseded by evidence_04):", ""]
     for cid in ("case_33", "case_34", "case_35", "case_39", "case_55"):
         if cid in triage:
             L.append(f"- {cid}: {quote(cid)}")
