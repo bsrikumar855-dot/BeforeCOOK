@@ -19,7 +19,8 @@ import os
 import re
 from collections import defaultdict
 from dataclasses import dataclass, field
-from datetime import timedelta
+from collections.abc import Callable
+from datetime import datetime, timedelta
 
 from .identity import IdentityUniverse, Subject
 from .loaders import parse_ts
@@ -39,7 +40,7 @@ class CaseContext:
     is_deletion: bool
 
     @property
-    def burst_window(self):
+    def burst_window(self) -> tuple[datetime, datetime]:
         rep = parse_ts(self.request["reported_at"])
         return rep - BURST_HALF_WIDTH, rep + BURST_HALF_WIDTH
 
@@ -236,7 +237,8 @@ def _components(adj: dict[str, list[str]]) -> list[tuple[list[str], list[str]]]:
     return comps
 
 
-def forced_edges(adj: dict[str, list[str]], conflict: set[str]):
+def forced_edges(adj: dict[str, list[str]], conflict: set[str]) \
+        -> tuple[set[tuple[str, str]], set[tuple[str, str]], list[tuple[list[str], list[str]]]]:
     """(forced, possible, components): forced = in every maximum one-to-one assignment; possible = in some."""
     forced, possible = set(), set()
     comps = _components(adj)
@@ -253,7 +255,8 @@ def forced_edges(adj: dict[str, list[str]], conflict: set[str]):
     return forced, possible | forced, comps
 
 
-def verify_unique(adj: dict[str, list[str]], conflict: set[str], comps, forced: set) -> dict:
+def verify_unique(adj: dict[str, list[str]], conflict: set[str], comps: list[tuple[list[str], list[str]]],
+                  forced: set[tuple[str, str]]) -> dict:
     """A3: enumerate every maximum one-to-one assignment per batch and confirm that the assigned pairs are exactly
     the pairs common to all of them; report batches with several solutions."""
     report = {"batches": len(comps), "unique_solution": 0, "several_solutions": 0, "not_enumerated": 0,
@@ -290,8 +293,12 @@ def verify_unique(adj: dict[str, list[str]], conflict: set[str], comps, forced: 
     return report
 
 
-def provenance(cid, a, rid, use, rejection, rivals_of, adj, rows_of, eliminated, bands, group, offset_s, status_of,
-               assigned) -> dict:
+def provenance(cid: str, a: ActivityClaim, rid: str, use: set[str],
+               rejection: Callable[[str, ActivityClaim, set[str]], str | None], rivals_of: list[str],
+               adj: dict[str, list[str]], rows_of: dict[str, ActivityClaim], eliminated: dict[str, list[dict]],
+               bands: dict[str, dict], group: Callable[[ActivityClaim], tuple[str, str, str]],
+               offset_s: Callable[[str, ActivityClaim], int], status_of: dict[str, str],
+               assigned: set[tuple[str, str]]) -> dict:
     """The provenance contract for an INFERRED_* pick: filters, claim vs status, band, hard links, rejected owners."""
     g = "|".join(group(a))
     b = bands.get(g)
@@ -309,7 +316,7 @@ def provenance(cid, a, rid, use, rejection, rivals_of, adj, rows_of, eliminated,
             "rejected_alternatives": rejected}
 
 
-def order_tiebreak(cases: list[CaseContext], by_case: dict[str, dict[str, Attribution]], result,
+def order_tiebreak(cases: list[CaseContext], by_case: dict[str, dict[str, Attribution]], result: AttributionResult,
                    rows_of: dict[str, ActivityClaim], bursts: dict[str, list[ActivityClaim]]) -> None:
     """E1-A anchored monotone ordering, used ONLY on residual AMBIGUOUS account batches (label INFERRED_ORDER)."""
     by_id = {c.case_id: c for c in cases}

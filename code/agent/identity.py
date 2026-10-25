@@ -60,7 +60,7 @@ class Subject:
 class IdentityUniverse:
     """Every identifier value known from user_identities + user_audit_log, mapped to its owner."""
 
-    def __init__(self, users: list[dict[str, str]], audit_log: list[dict[str, str]]):
+    def __init__(self, users: list[dict[str, str]], audit_log: list[dict[str, str]]) -> None:
         self.users = users
         self.audit_log = audit_log
         self.user_ids = {u["user_id"] for u in users}

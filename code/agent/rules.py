@@ -40,7 +40,7 @@ REQUIRED_CHECK = {"DELETE": "VERIFY_RECORD_ABSENT", "ANONYMIZE": "VERIFY_RECORD_
 
 
 class Policy:
-    def __init__(self, rules: list[dict[str, str]]):
+    def __init__(self, rules: list[dict[str, str]]) -> None:
         self.action = {r["data_category"]: r["required_action"] for r in rules}
         self.rule_id = {r["data_category"]: r["rule_id"] for r in rules}
         self.action[DATA_FLOW] = "DISABLE"

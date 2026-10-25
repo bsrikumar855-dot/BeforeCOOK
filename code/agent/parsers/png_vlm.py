@@ -59,7 +59,7 @@ def upgrade_legacy(reply: dict, version: str) -> dict:
 
 
 class ImageExtractor:
-    def __init__(self, client: LLMClient, cache: ResponseCache, universe: IdentityUniverse, categories: list[str]):
+    def __init__(self, client: LLMClient, cache: ResponseCache, universe: IdentityUniverse, categories: list[str]) -> None:
         self.client = client
         self.cache = cache
         self.universe = universe

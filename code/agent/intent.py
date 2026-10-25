@@ -7,6 +7,7 @@ The decision path (CLASSIFY_REQUEST corroboration, UNCLEAR -> NOT_APPLICABLE) is
 from __future__ import annotations
 
 import hashlib
+from collections.abc import Callable
 from dataclasses import dataclass
 
 from .llm_client import AllProvidersFailed, CacheMiss, LLMClient, ResponseCache, ValidationFailed, content_key
@@ -45,7 +46,7 @@ def build_batch_prompt(base_prompt: str, texts: list[str]) -> str:
     return "\n".join(parts) + "\n"
 
 
-def make_validator(n: int):
+def make_validator(n: int) -> Callable[[object], dict[str, dict]]:
     expected = {_text_id(i) for i in range(1, n + 1)}
 
     def validate(payload: object) -> dict[str, dict]:
@@ -73,7 +74,7 @@ def make_validator(n: int):
 
 
 class IntentClassifier:
-    def __init__(self, client: LLMClient, cache: ResponseCache):
+    def __init__(self, client: LLMClient, cache: ResponseCache) -> None:
         self.client = client
         self.cache = cache
         self.base_prompt, self.prompt_version = client.prompt(TASK)

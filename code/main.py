@@ -101,7 +101,7 @@ def main(argv: list[str] | None = None) -> int:
     return code
 
 
-def explain_mode(args) -> int:
+def explain_mode(args: argparse.Namespace) -> int:
     from agent.explain import ADHOC_CASE_ID, ExplainInputError, adhoc_dataset, explain, validate_adhoc
     adhoc = args.email is not None or args.audit_at is not None or args.request_text is not None
     tmp_root = None
