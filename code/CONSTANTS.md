@@ -217,6 +217,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/package.py` | 420 | file mode 0o644 for zip entries | STANDARD | extracted file permissions |
 | `code/package.py` | 2026 | fixed zip entry timestamp (year) for a reproducible archive | JUDGEMENT | only the archive bytes; any fixed date works |
 | `code/package.py` | 16 | shift of the Unix mode into external_attr | BOUND | ZIP APPNOTE 4.4.15: modes unreadable |
+| `code/sync_docs.py` | 2 | exit code: a copy edited since the last sync was refused | JUDGEMENT | callers would mistake a refusal for a successful sync |
 
 ### Config keys (generated from `code/config/*.yaml`; list items collapsed to `[]`)
 
