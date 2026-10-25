@@ -131,13 +131,13 @@
    "rule": "rule_06",
    "category": "SUPPORT_ATTACHMENT",
    "branch": "UNKNOWN",
-   "eval": 5,
+   "eval": 6,
    "sample": 3,
    "sample_vs_reference": {
     "agree": 3
    },
    "decisions": {
-    "REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT": 8
+    "REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT": 9
    },
    "spot_check_candidates": []
   },
@@ -430,19 +430,19 @@
    "sample": 0,
    "sample_vs_reference": {},
    "decisions": {
-    "no step (EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields)": 1
+    "VERIFY_RECORD_REDACTED": 1
    },
    "spot_check_candidates": [
     {
      "case_id": "case_46",
      "resource_id": "tombstone_17",
      "operations": [
-      "no step (EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields)"
+      "VERIFY_RECORD_REDACTED"
      ],
      "proof": "evidence_42",
      "state": {
       "presence": "PRESENT",
-      "exposure": "UNKNOWN",
+      "exposure": "STABLE_REFERENCE_ONLY",
       "restore_state": null,
       "proof_basis": "MENTION"
      },

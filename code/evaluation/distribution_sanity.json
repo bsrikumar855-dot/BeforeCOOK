@@ -108,12 +108,12 @@
    "NOT_APPLICABLE": 10
   },
   "steps_per_case": {
-   "mean": 5.92,
+   "mean": 5.93,
    "median": 6.0,
    "min": 0,
    "max": 14
   },
-  "distinct_operations_per_case_mean": 4.95,
+  "distinct_operations_per_case_mean": 4.96,
   "share_of_cases_with_operation": {
    "ANONYMIZE_RECORD": 0.144,
    "BLOCK_RESTORE": 0.051,
@@ -125,10 +125,10 @@
    "REPORT_REMAINING_RECORD": 0.575,
    "REPORT_RESTORE_RISK": 0.051,
    "VERIFY_DATA_FLOW_DISABLED": 0.287,
-   "VERIFY_RECORD_ABSENT": 0.868,
+   "VERIFY_RECORD_ABSENT": 0.87,
    "VERIFY_RECORD_ANONYMIZED": 0.159,
    "VERIFY_RECORD_PRESENT": 0.819,
-   "VERIFY_RECORD_REDACTED": 0.321,
+   "VERIFY_RECORD_REDACTED": 0.323,
    "VERIFY_RESTORE_BLOCKED": 0.116
   },
   "phases_present_per_status": {
@@ -146,7 +146,7 @@
    }
   },
   "share_verify_present": 0.819,
-  "share_tombstone_steps": 0.016,
+  "share_tombstone_steps": 0.018,
   "share_restore_steps": 0.116,
   "share_flow_steps": 0.287
  },

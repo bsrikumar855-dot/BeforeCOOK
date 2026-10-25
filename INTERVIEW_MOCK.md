@@ -43,8 +43,9 @@ Companion fact table: `INTERVIEW_FACTS.md`.
 ## 3. Attribution ambiguity: why omit instead of guessing?
 
 - **Facts.** AMBIGUOUS and CONFLICT pairs produce no steps (`attribution.attribute`; DESIGN D-ATTR). 131 eval deletion
-  cases have an AMBIGUOUS primary account (`evaluation_report.md` §4e and §7A). M1: 1,247 AMBIGUOUS eval pairs in 381
-  cases. 0 withheld resources are proven PRESENT, so 0 COMPLETE → INCOMPLETE flips (`code/evaluation/measurements.json`).
+  cases have an AMBIGUOUS primary account (`evaluation_report.md` §4e and §7A). M1 (re-run in rc7 on the current
+  attribution): 904 AMBIGUOUS eval pairs in 347 cases (1,247 / 381 before A1). 0 withheld resources are proven PRESENT,
+  so 0 COMPLETE → INCOMPLETE flips (`code/evaluation/measurements.json`).
   The ordering tiebreak made 10 sample assignments instead of 7, and 1 was wrong: case_23 → account_9155, while the
   reference account is account_410 (`attribution_variants.json` a1o). rc6-P2 found 0 unused same-line identity
   co-occurrences for the 159 AMBIGUOUS account pairs (DESIGN rc6-P2).
