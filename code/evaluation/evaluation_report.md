@@ -350,7 +350,7 @@ statuses, NOT_APPLICABLE = [], the 7 step keys, phase/operation/state triples, c
 COMPLETE = verification only and cited, INCOMPLETE future steps uncited, citations exist and are <= audit_at,
 INCOMPLETE [] only with NO_ATTRIBUTABLE_RESOURCE.
 
-- output.csv: 518 rows {'INCOMPLETE': 355, 'COMPLETE': 153, 'NOT_APPLICABLE': 10}, 3006 steps; violations: 0
+- output.csv: 518 rows {'INCOMPLETE': 355, 'COMPLETE': 153, 'NOT_APPLICABLE': 10}, 3009 steps; violations: 0
 - INCOMPLETE [] rows: ['case_63']
 - Negative control: 18/18 injected defect classes caught (header, row_count, id_set, row_order, case_id_sort, status, json, not_applicable_steps, incomplete_empty, step_keys, step_no, triple, complete_phase, citation_missing, future_step_cited, citation_unknown, citation_after_audit, ordering)
 

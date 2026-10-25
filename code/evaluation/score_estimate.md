@@ -1,8 +1,9 @@
 # Kit heuristic estimate — NOT an official HackerRank score
 
 Produced by `python -m orchestrate_kit score --no-history --python python --transcript log.txt` (orchestrate-kit
-1.0.0, a fresh clone at its commit ccb175f) on 2026-10-25, against commit 4aff96c (rc5 candidate; the rc4 run used
-commit 5b7fdbc and gave the same section values). The kit itself says: "ESTIMATED, not official. No public ground-truth
+1.0.0, a fresh clone at its commit ccb175f) on 2026-10-25, against commit ad4d146 (rc6 candidate). The rc5 run (commit
+4aff96c) gave Code ZIP 82.4; rc6 adds `attribution.page_scope` and `code/analysis/dscope_review.py`, and the heuristic
+reads 82.3. Its sub-scores are architecture 100, craft 100, robustness 60, rigor 49 (weights 30/30/25/15, giving about 82.35), so the 0.1 change is below the precision of the sub-scores it prints. The kit itself says: "ESTIMATED, not official. No public ground-truth
 graded Orchestrate submission exists to calibrate any of these scorers against."
 
 Labels: **MEASURED** (a number this repository computed from its own outputs), **ESTIMATED** (a kit heuristic),
@@ -12,13 +13,13 @@ Labels: **MEASURED** (a number this repository computed from its own outputs), *
 
 | Section (official weight) | Kit result | Label | Notes |
 |---|---|---|---|
-| Code ZIP (30%) | 82.4 / 100 | ESTIMATED | One finding, disputed below |
+| Code ZIP (30%) | 82.3 / 100 | ESTIMATED | One finding, disputed below |
 | Output CSV (30%) | 100.0 / 100 | ESTIMATED, mostly NOT CHECKED | The kit marks it "measured", but only 1 of its 4 audits ran; spec conformance, evidence quality and output sanity "could not run" (they expect a different challenge's files) |
 | AI Judge Interview (30%) | UNKNOWN | NOT CHECKED | No interview result exists locally |
 | AI Chat Transcript (10%) | 100.0 / 100 | ESTIMATED | The kit counted "1 turn(s)" and 7/7 evidence-chain nodes, "not in a plausible order"; `transcript analyze` PASS |
 | Overall | UNKNOWN (64.71 points measured from 70% of the weight) | ESTIMATED | The interview is missing and is not counted as zero |
 
-**Weakest known section: Code ZIP (82.4, ESTIMATED).** The interview (30%) is unmeasured and could be weaker.
+**Weakest known section: Code ZIP (82.3, ESTIMATED).** The interview (30%) is unmeasured and could be weaker.
 
 ## Our own measurements (not from the kit)
 
