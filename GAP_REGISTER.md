@@ -76,6 +76,22 @@ Ranking is by expected value = impact × confidence × P(safe fix) ÷ cost, judg
 Stop rule: two consecutive attempts (H2, H1) produced no defensible improvement. The remaining gaps are blocked
 (G6, G7: model calls needed, no key) or are user decisions (G1, G2, G3).
 
+## Hardening pass rc9 (tag `rc9` → `318c159`; ledger round rc9 Q1–Q9)
+
+| Item | Classification | Evidence |
+|---|---|---|
+| Row order | FIXED AND VERIFIED (no defect) | numeric = input order; validator, spec audit and test enforce it; grader collation UNKNOWN |
+| case_63 `INCOMPLETE []` | VERIFIED BUT UNRESOLVED (participant decision) | the alternative COMPLETE `[]` changes 2 rows (case_04 sample → 32/32 status; case_63 eval); it overturns the approved M2(b) |
+| 131 ambiguous accounts | VERIFIED BUT UNRESOLVED | 366 TIMING edges, 0 identity; AMBIGUOUS 131/131 |
+| F1 (case_46) | VERIFIED BUT UNRESOLVED (JUDGMENT) | own detail page, no identifiers in the OCR text; 1 row |
+| D-SCOPE 33/35/39/55 | FIXED AND VERIFIED (no defect; test added) | linked only by post-audit evidence_01 |
+| D-SCOPE case_34 `audit_record_3753` | REQUIRES EXTERNAL OR HIDDEN INFORMATION | pre-request link; the samples cannot decide |
+| Cache prompt versioning | FIXED AND VERIFIED (no defect; test added) | key includes the rendered-prompt hash; legacy reuse is restricted and recorded |
+| `score_e1.py` crash | FIXED AND VERIFIED | runs again; E1 still rejected on the current code |
+| E2 replay claim | FIXED AND VERIFIED | byte-identical at `63c7ecb`; a cache miss on the current code (documented) |
+| Report/security timing lag | FIXED AND VERIFIED | 44/44 rows match |
+| Architecture (agent loop) | REQUIRES EXTERNAL OR HIDDEN INFORMATION | no API key; rubric weight for October unpublished |
+
 ## Baseline vs best
 
 | Metric | rc7 | rc8 candidate |

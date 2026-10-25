@@ -2283,3 +2283,291 @@ branch=fix/rc7
 repo_root=/home/user/BeforeCOOK
 worktree=main
 parent_agent=none
+
+## [2026-10-25T08:08:01Z] RC8 -> final hardening: rc9 (docs, tests, script fix), output unchanged; case_63 decision pending
+
+User Prompt (verbatim, secrets redacted):
+RC8 → FINAL HARDENING: FIX EVERY REMAINING DEFECT
+You are Opus 5.5 Max acting as the principal engineer, adversarial evaluator, and release manager for my HackerRank Orchestrate October 2026 submission, “Ghost Data Still Exists.”
+Your mission is to eliminate every genuinely fixable remaining gap, verify every claimed correction, and produce the strongest defensible submission possible.
+Do not merely audit, document, or explain the gaps. Inspect the actual repository, implement justified fixes, run the checks, and verify the final artifacts.
+Do not promise a rank or score. Optimize against the actual specification, admissible evidence, reproducibility, and published evaluation criteria.
+0. Non-negotiable safety and release rules
+
+1. Inspect the current repository state before acting. The latest known RC8 report may be stale.
+2. Record the current HEAD, branch, working-tree status, RC7 and RC8 tag targets, submission hashes, and current candidate metrics.
+3. Preserve RC8 as an immutable rollback candidate. Never overwrite its tag or destroy its artifacts.
+4. Create a new working branch for this hardening pass.
+5. Do not force-push, merge PRs, publish tags/releases, submit externally, or make other irreversible external changes without my explicit authorization.
+6. Do not invent evidence, hidden evaluation labels, official scores, or successful test results.
+7. Do not modify correct outputs simply to improve recall, make metrics look better, or satisfy an unverified assumption.
+8. If a proposed fix is unsupported, stop that specific change, record why, and proceed to the next independently fixable issue.
+9. Minimize model/API calls and avoid unnecessary rebuilds.
+10. Continue through all safe, actionable fixes rather than stopping after the first audit.
+
+1. Establish the actual baseline
+Inspect:
+
+* Repository instructions and `AGENTS.md`.
+* Official October problem statement and README.
+* Relevant official HackerRank evaluation and submission instructions.
+* `INTERVIEW_FACTS.md`, `INTERVIEW_TRAINING_PACK.md`, `DESIGN.md`, `CONSTANTS.md`, `GAP_REGISTER.md`, and `log.txt`, if present.
+* Actual code, tests, sample data, evaluation outputs, prompts, cached responses, packaging scripts, and submission artifacts.
+
+Reconcile the documents with the code. Treat prior reports as claims to verify, not ground truth.
+Produce a compact baseline containing:
+
+* HEAD and branch.
+* RC7/RC8 references and artifact hashes.
+* Working-tree status.
+* Existing test and release-gate results.
+* Current CSV row count, header, ordering, and schema.
+* Current metrics and their exact denominators.
+* Existing unresolved gaps.
+
+Do not proceed on assumptions about which release is currently checked out.
+2. Fix output CSV ordering first
+This is the highest-priority low-cost investigation.
+Required actions
+
+1. Read the exact October specification and inspect the input dataset and evaluation scripts to determine what “sorted by case_id” means.
+2. Test the actual submitted file, not an intermediate CSV.
+3. Compare at least:
+   * Numeric ordering by the numeric suffix.
+   * Lexicographic ordering.
+   * Original input order, if the specification or reference implementation supports it.
+4. Determine the authoritative interpretation from the strongest available evidence.
+5. If the current output is incorrectly ordered, fix the producing pipeline—not just the final file—and regenerate the output.
+6. Add a regression test that fails if the output violates the verified ordering rule.
+7. Re-run all output and release gates.
+
+Do not switch to numeric ordering merely because another team uses it. Do not assume input order and numeric order are equivalent.
+Acceptance criteria:
+
+* Ordering follows the actual contract.
+* Every required row is preserved.
+* No row's content changes unintentionally.
+* All applicable tests pass.
+* The final output hash is recorded.
+
+3. Resolve the incomplete case_63 output
+Inspect the exact `INCOMPLETE` contract and the evidence available to case_63.
+Determine whether an empty `steps` array is valid for this status.
+If the specification requires findings, remediation, or verification checks:
+
+* Identify what is genuinely supported by evidence.
+* Add the minimum required supported steps or fields.
+* Preserve step schema, ordering, evidence citations, and ownership rules.
+* Do not fabricate a finding merely to make the array nonempty.
+* If the available evidence cannot support a compliant remediation, implement the correct explicit failure/abstention behavior if the contract permits it.
+
+Add a focused regression test.
+Acceptance criteria:
+
+* The row satisfies the actual schema and status contract.
+* Every new step is evidence-backed.
+* No unrelated rows change.
+* The reason for any unavoidable incompleteness is documented precisely.
+
+4. Re-examine the 131 ambiguous account-step omissions
+Do not accept “no legitimate fix remains” without one final, systematic audit. Also do not assume all 131 omissions are recoverable.
+For each candidate account step, investigate only evidence permitted by the task:
+
+* Primary and historical identifiers.
+* Account mappings and ownership evidence.
+* Temporal validity and audit timestamps.
+* Cross-system relationships.
+* Authoritative deletion or retention records.
+* Conflicting, incomplete, and empty snapshots.
+* The exact admissibility and provenance rules.
+
+Classify every potentially recoverable case as:
+
+* PROVEN: sufficient admissible evidence identifies the account and supports the required action.
+* AMBIGUOUS: multiple plausible owners or identities remain.
+* UNSUPPORTED: no admissible evidence establishes the relationship.
+* CONFLICTING: authoritative evidence disagrees and requires abstention or explicit conflict handling.
+
+Implement a missing step only when the evidence supports it and the task contract requires it.
+Never:
+
+* Infer ownership from timing alone when the task requires identity evidence.
+* Use evaluation-only knowledge.
+* Hardcode hidden answers or case-specific identifiers.
+* Add all candidate accounts simply to increase recall.
+* Change the decision threshold without measuring false positives.
+
+Produce a before/after analysis of:
+
+* Added, removed, and changed steps.
+* Status accuracy.
+* Step precision and recall.
+* Exact sequence.
+* Wrong-owner actions.
+* Evidence citation validity.
+* Changes to all affected rows.
+
+If no defensible improvement exists, retain the conservative behavior and document the remaining limitation. This is an acceptable result only after the audit is complete.
+5. Audit the two unverified judgment rules
+A. F1 detail-page absence proof — case_46
+Inspect the exact rule, source evidence, detail-page coverage, resource identifiers, and applicable specification.
+Determine whether the absence of a record can actually be established from the available evidence.
+If the evidence does not prove absence, do not convert missing data into a negative finding. Fix the rule only if a better evidence-backed rule can be derived.
+B. D-SCOPE episode exclusion — cases 33, 34, 35, 39, and 55
+Inspect the policy text, event boundaries, relevant timestamps, source records, and existing tests.
+Determine whether these exclusions follow the specification consistently.
+Create focused positive and negative tests using known evidence. Do not tune the rule to match an unknown evaluation answer key.
+For both rules:
+
+* Record the exact evidence supporting the decision.
+* Quantify the affected rows.
+* Test counterexamples.
+* Compare the complete output before and after.
+* Revert any change that creates unsupported actions or worsens the evidence standard.
+
+6. Close the README and project-structure gaps
+Inspect the actual README and package. Implement these improvements if they are missing.
+What to read first
+Add a concise section at the beginning of the README:
+
+1. `main.py`
+2. `agent/`
+3. `evaluation/`
+
+Explain each component's role and the actual execution path.
+State the architecture accurately: the model handles the perception tasks actually implemented; deterministic code performs the decisions actually implemented. Do not claim capabilities that are absent from the code.
+Explain that the investigator-agent experiment was evaluated and removed only if the experiment logs substantiate that claim.
+Reproducibility and cached responses
+Document:
+
+* The exact supported command for cache-based reproduction.
+* Where the cached replies and their associated prompts live.
+* Whether cache replay reproduces the shipped output byte for byte.
+* Why live extraction may differ, if demonstrated by actual tests.
+* The distinction between deterministic downstream processing and nondeterministic external model responses.
+
+Test the documented commands in a clean environment where feasible. Do not claim reproducibility beyond what was actually tested.
+Archived experiments and repository organization
+Explain that `analysis/` contains archived experiments if this matches the actual contents.
+Review duplicated documentation, unused scripts, and experiment artifacts.
+Remove files only when they are demonstrably unnecessary, unreferenced, and safe to remove. Preserve rejected experiments that materially support reproducibility or engineering decisions.
+Avoid large reorganizations, cosmetic refactoring, and unnecessary dependency changes.
+7. Investigate the agent-architecture scoring risk
+Inspect the official published rubric and actual decision path.
+Identify whether the rubric explicitly requires a model-driven agent loop and determine which capabilities are actually implemented.
+Evaluate the existing experiment that rejected the investigator agent:
+
+* Original hypothesis.
+* Experiment setup.
+* Acceptance criteria.
+* Measured outcome.
+* Failure reason.
+* Whether the result generalizes to the actual task.
+
+Do not add an agent loop solely for appearance. Do not add expensive model calls without a measurable expected benefit.
+If a new architecture experiment is justified, isolate it on the working branch, use a bounded benchmark, and compare:
+
+* Task correctness.
+* Evidence attribution.
+* False-positive actions.
+* Reproducibility.
+* Runtime and token cost.
+* Error handling.
+* Code ZIP rubric alignment, clearly distinguished from official marks.
+
+Retain the deterministic architecture unless a tested alternative demonstrates a meaningful net improvement.
+8. Harden the live-versus-cache behavior
+The reported issue is that a fresh extraction with the newer prompt changes cases 34 and 61, while the cached run reflects the earlier prompt.
+Investigate:
+
+* The exact prompts associated with every cached response.
+* Cache keys and versioning.
+* Whether stale cached responses can be mistaken for responses from the current prompt.
+* Whether live extraction is required during normal execution or only during refresh.
+* Whether the README and execution logs describe the behavior accurately.
+
+If cache versioning is defective, fix it and add regression tests.
+If the cache correctly preserves the original extraction and live output is inherently variable, document that limitation precisely. Do not silently mix responses generated by incompatible prompt versions.
+Verify that the supported submission command produces the expected artifacts from the shipped package.
+9. Prepare the interview using verified facts
+Inspect `INTERVIEW_FACTS.md` and `INTERVIEW_TRAINING_PACK.md` against source code, logs, and measured reports.
+Resolve numerical inconsistencies before drafting answers.
+Prioritize:
+
+* Why the core decision logic is deterministic.
+* Why ambiguous account ownership does not generate a step.
+* Why case_63 is incomplete.
+* Why the investigator agent was removed.
+* What the independent verification actually tested.
+* How the AI was directed and challenged.
+* What failed, what was reverted, and what remains uncertain.
+* How production monitoring, cache invalidation, auditability, and recovery would work.
+
+Create concise answers that distinguish:
+
+* What was implemented.
+* What was measured.
+* What was inferred.
+* What remains unknown.
+
+Do not fabricate personal work, model interactions, tests, or metrics. Treat the interview pack as preparation, not a replacement for understanding the code.
+10. Final regression and release verification
+After all justified fixes:
+
+1. Run focused tests for every changed behavior.
+2. Run the full test suite.
+3. Run every existing release gate.
+4. Validate the complete CSV against the exact specification.
+5. Confirm row count, header, row uniqueness, ordering, status values, step schema, step order, citations, and timestamps.
+6. Compare the candidate output against RC8 and inspect every changed row.
+7. Recompute all available metrics using exact denominators.
+8. Test clean-room reproduction and verify the documented cache command.
+9. Inspect the final ZIP contents for missing files, unintended files, secrets, and incorrect packaging.
+10. Generate fresh reports from the exact final candidate.
+11. Compute final SHA-256 hashes.
+12. Confirm the original RC8 fallback remains intact.
+
+Do not treat passing tests as proof that the hidden score increased.
+If a change introduces a regression, revert that change alone and continue with other independent fixes.
+11. Required final report
+Return:
+A. Fixes actually implemented
+For every fix: file, root cause, change, test, and measured result.
+B. Remaining gaps
+Classify each as:
+
+* FIXED AND VERIFIED
+* VERIFIED BUT UNRESOLVED
+* NOT REPRODUCED
+* REQUIRES EXTERNAL OR HIDDEN INFORMATION
+
+C. Before/after metrics
+Include exact counts and denominators. Never substitute heuristic estimates for official marks.
+D. Output diff
+List every changed row and the evidence justifying each change.
+E. Release status
+Include candidate commit, RC8 fallback reference, working-tree status, gate results, ZIP hash, CSV hash, transcript hash if applicable, and reproducibility result.
+F. Interview preparation
+Provide corrected, source-backed answers to the highest-risk questions.
+G. Final recommendation
+State whether the new candidate is demonstrably better than RC8, equivalent, or worse. If no improvement is demonstrated, recommend the safer candidate.
+EXECUTE NOW
+Start with baseline verification. Then run the numeric sort check, verify case_63, audit the remaining attribution and judgment rules, fix missing README requirements, and complete release verification.
+Do not stop after identifying gaps. Fix every justified defect that can be fixed safely within the available budget. Preserve RC8, record each experiment, and stop only when all actionable gaps have been addressed or evidence shows that further changes would be speculative or harmful.
+
+Agent Response Summary:
+Baseline verified on branch fix/rc9 (from fix/rc7 1c24135; rc7 3fa3254 and rc8 6c3a0e1 untouched). Row order: the submitted file is in numeric order, which equals the input order; lexicographic order differs from row 1. The samples are zero-padded and the upstream starter code is empty, so this is kept as is: the validator, the spec audit and a test already enforce it. case_63: user_09's identifiers appear only in the identity tables, the request and catalog row activity_4008, and marketing_001's screenshot names Soo-jin Park, so CONFLICT stands. The INCOMPLETE [] policy (approved M2(b)) fires on exactly 2 rows, case_04 (sample, reference COMPLETE) and case_63; the COMPLETE [] alternative would move sample status to 32/32 and change only case_63. It was not changed and is put to the participant as a decision. The 131 ambiguous-account cases were classified: 366 TIMING edges, 0 identity, AMBIGUOUS 131/131, with the classification now generated in the report. F1 and the D-SCOPE exclusions were re-verified: cases 33/35/39/55 are excluded because their only links come from post-audit evidence_01, and a window test was added. The cache key includes the rendered-prompt hash, and the legacy reuse is restricted and recorded; a test with a counterfactual was added. Fixed: the score_e1.py crash (since rc6); the README's E2 replay claim (byte-identical at 63c7ecb, a cache miss on the current code); the gate order, so the report's timings match the shipped security audit (44/44). README now documents the execution path and cache facts, and the interview figures are reconciled. Gate on 318c159: all phase 2 checks exit 0, including certify 0 above INFO; the zip bc71dead... rebuilds from the commit; tag rc9 is local only.
+
+Actions:
+* git checkout -b fix/rc9; baseline hashes; curl of the upstream starter code/main.py and code/evaluation/main.py (both empty)
+* Probes: row-order comparison on submission/output.csv; case_63 identifier search across all files plus evidence_60 OCR; 131-case edge classification; evidence_42 OCR; D-SCOPE link times; cache-key code read; E1/E2 replay in a worktree at 63c7ecb
+* Edited code/evaluation/main.py, code/analysis/score_e1.py, code/tests/test_attribution.py, code/tests/test_parsers_and_intent.py, README.md, code/evaluation/experiment_ledger.md, DESIGN.md (rc9 row), GAP_REGISTER.md and the interview docs
+* Gate rc9 phases 1 and 2 (security audit before the report; submission/code.zip restored); zip rebuilt in a fresh worktree; tagged rc9 -> 318c159 locally; pushed fix/rc9 (branch only)
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc9
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
