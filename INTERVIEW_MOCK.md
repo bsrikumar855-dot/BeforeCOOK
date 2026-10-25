@@ -21,8 +21,9 @@ Companion fact table: `INTERVIEW_FACTS.md`.
   `code/evaluation/intent_model_comparison.json`). Adversarial fixtures X14–X19 (injections, an empty
   text, a 50k-character text, invalid UTF-8): 6/6 pass (`code/evaluation/evaluation_report.md` §4 Safety).
 - **Likely follow-up.** "Isn't the intent label itself an injection surface?" Yes, it is the one model output that
-  changes a status. It is a closed enum, UNCLEAR maps to NOT_APPLICABLE, and every NON_DELETION is cross-checked against
-  the request's own activity rows (`intent.decide`). X14 and X15 cover it.
+  changes a status. It is a closed enum, and UNCLEAR maps to NOT_APPLICABLE. In `intent.decide`, a DELETION label is
+  vetoed when the request's own CLASSIFY_REQUEST row says otherwise, while for NON_DELETION that row only corroborates
+  (rc8 correction; 0 vetoes in the run). X14 and X15 cover it.
 - **Uncertainty.** Six adversarial fixtures are a small sample. Live intent replies are cached, so a different
   model version could label a borderline text differently (UNKNOWN).
 
@@ -181,7 +182,7 @@ over-stated), the hardest follow-up, and the improved answer to give. Numbers ar
 - **Improved answer.** The pipeline is data-driven, not hardcoded: categories come from deletion_rules.csv, ownership
   from identity evidence, state from admissible files. Where an agent could add value (resolving ambiguous owners) I
   built one (E2), measured it, and removed it because it accepted 0 of 126 proposals. The model's influence is bounded:
-  intent is cross-checked against the request's own activity rows, and screenshot ids must appear in local OCR text.
+  a DELETION label is vetoed by a contradicting CLASSIFY_REQUEST row, and screenshot ids must appear in local OCR text.
 
 ### A2. E2
 - **Answer.** E2 was a tool-calling investigator with a deterministic verifier, run on the 19 ambiguous timing-only

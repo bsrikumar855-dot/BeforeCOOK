@@ -47,8 +47,11 @@ denominator. Never say "accuracy" for the eval set: it has no labels.
   - The model does two perception jobs: request intent (a closed enum, `intent.IntentClassifier.classify`) and reading
     11 screenshots (`parsers/png_vlm.ImageExtractor`).
   - Code decides every output field: status, operation, resource id and citation.
-  - A screenshot id survives only if its exact token is in local 4-pass OCR text (C9/C10). Intent is cross-checked
-    against the request's own activity rows (`intent.decide`).
+  - A screenshot id survives only if its exact token is in local 4-pass OCR text (C9/C10).
+  - `intent.decide`: a DELETION label becomes NOT_APPLICABLE when the request's own CLASSIFY_REQUEST activity row
+    says otherwise. For NON_DELETION the row only corroborates; it does not change the outcome. Run summary: 508
+    `model_deletion->DELETION` with 0 vetoes, and all 10 NOT_APPLICABLE rows corroborated **[M]**.
+    Don't say "every label is cross-checked".
 - **Numbers.**
   - Intent: 42/42 on both models compared (32 samples + 10 non-deletion texts). flash-lite used 5,711 tokens vs
     12,372 for flash **[M]**.
