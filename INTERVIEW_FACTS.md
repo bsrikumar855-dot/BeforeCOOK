@@ -24,7 +24,7 @@ source is named). Corrections to figures quoted in the final brief are marked **
 | C9 → C10 | single-pass OCR dropped 5 visible ids (audit_record_002, search_1874, data_flow_9846, export_1258, export_1261); causes: underscore read as space/period/nothing, small text at base resolution; fix: 4-pass OCR + underscore-tolerant exact matching; 32/32 ids grounded | MEASURED | DESIGN.md C10; commit e140ebf |
 | Seven quadratic regexes | EMAIL_RE, log KV_RE, two screenshot id token regexes, three lazy PDF block regexes (> 30 s on 1 MB); fixed with RFC 5321 bounds, word-start lookbehinds, bounded id prefixes, a linear block scan; worst now ≈ 0.5 s | MEASURED | `code/evaluation/security_audit.json`; commit 5a1c354 |
 | Coupling probes | 5/5 pass; 19,760/19,760 id tokens renamed (10,558 ids, 19 prefixes) | MEASURED | `code/evaluation/coupling_probes.json` |
-| Spec-audit negative control | 17/17 injected defect classes caught; 0 violations | MEASURED | `code/evaluation/spec_audit.json` |
+| Spec-audit negative control | 18/18 injected defect classes caught (rc5 added `case_id_sort`); 0 violations | MEASURED | `code/evaluation/spec_audit.json` |
 | Independent re-derivation | status 23/24; 101/103 of our steps matched (101/115 of its steps); triage 0 OUR_BUG, 3 SUBAGENT_ERROR, 8 AMBIGUOUS_SPEC | MEASURED | `code/evaluation/independent_rederivation/{comparison,triage}.json`; commit 14d13b2 |
 | Intent model choice | 42/42 for both models (32 samples + 10 non-deletion texts); flash-lite 5,711 tokens vs flash 12,372 (46.2%) | MEASURED | `code/evaluation/intent_model_comparison.json`; commit e05bc17 |
 | Legacy prompt v1 | 10 screenshot replies came from the af50210 prompt; shipped byte-exact (`code/prompts/image_extraction_v1.md`, rendered hash pb1da0fa903ab); re-extraction under the current prompt changed 2 eval rows (case_61 → INCOMPLETE [], exit 2) and was rejected | MEASURED | DESIGN.md R6-R5, G6; commit 2c148fe |
@@ -34,7 +34,10 @@ source is named). Corrections to figures quoted in the final brief are marked **
 | Usage behind output.csv | 25 distinct provider calls behind the cached run, 80,243 tokens, 154.9 tokens per eval request; actual cost $0; scope = cache entries the final run read (early failed calls UNKNOWN, ≤ 12 intent + 2 vision) | MEASURED | `code/evaluation/usage_report.md` |
 | Eval-set correctness | no labels exist | UNKNOWN | needs the hidden reference |
 
-Count of UNKNOWN facts: 2 (provider privacy policy; eval-set correctness).
+| Row order (rc5 G1) | output = deletion_requests.csv order = numeric case_id suffix; string order differs (unpadded eval ids); grader collation | MEASURED / UNKNOWN | DESIGN.md D-ROWSORT; `spec_audit.py` `case_id_sort` |
+| D-SCOPE exposure (rc5 G3) | 20 eval cases exclude records as OUT_OF_SCOPE; 16 are single-request subjects, never seen in the samples | MEASURED (counts) / UNKNOWN (correctness) | evaluation_report.md §7 D |
+
+Count of UNKNOWN facts: 4 (provider privacy policy; eval-set correctness; grader row collation; D-SCOPE on single-request subjects).
 
 ## Nine topics
 
@@ -46,7 +49,7 @@ Count of UNKNOWN facts: 2 (provider privacy policy; eval-set correctness).
 | End-to-end flow | `main.py:main` → `pipeline.run` (load, `parsers.build_evidence_index` with `file_checks.check`, intent, `attribution.attribute`, `state.reconstruct`, rules, steps, `validation.validate_row`/`validate_output_file`) | clean-folder run byte-identical | — | exit 4 on any degrade means no partial release |
 | Evidence and citation | `state.py:reconstruct` (admissible = captured ≤ audit_at; latest per copy; absence by full snapshot) | rule C 74/75 | A 71/75, A′ 36/75 | 34 eval fallback citations rest on snapshots (R3 found 0 stronger) |
 | Uncertainty | AMBIGUOUS/CONFLICT → no steps (`attribution.attribute`); C5 open-control rule; RETAIN_UNPROVEN; fail-closed on dropped evidence (`pipeline.audit_case`); F1 absence proof (`ocr_grounding.absence_proof`) | 131 eval cases still have an AMBIGUOUS account (evaluation_report.md §4e) | ordering/offset tiebreaks (1 incorrect each) | correct owners of AMBIGUOUS pairs unknown |
-| AI-assisted workflow | change record + SHIP rule per change; tests gate commits; independent re-derivation agent | 113 tests; 0 OUR_BUG in 24 cases | — | the agent's own errors were caught only by measurement (C9, C7a, G8) |
+| AI-assisted workflow | change record + SHIP rule per change; tests gate commits; independent re-derivation agent | 120 tests (rc5); 0 OUR_BUG in 24 cases | — | the agent's own errors were caught only by measurement (C9, C7a, G8) |
 | Trade-offs | recall vs wrong-owner risk (`attribution.forced_edges` uniqueness) | +A1 recall 178/193 at 0 incorrect | +A1+ordering 180/193 with 1 incorrect | precision kept at 178/178 by refusing ties |
 | Limitations | episode scope `CaseContext.in_lifecycle`; C2 visibility tri-state | residual: 12 ATTRIBUTION + 3 NOT_DERIVABLE steps (evaluation_report.md §1) | treat every subject record as in scope (independent agent's reading) | eval correctness UNKNOWN |
 
