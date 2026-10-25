@@ -217,6 +217,107 @@ denominator. Never say "accuracy" for the eval set: it has no labels.
 
 ---
 
+## Added in rc8: topics the official materials list that Q1–Q10 did not cover
+
+The BTS article gives the judge's usual order: quick pitch → retrieval and architecture → safety and failure modes →
+implementation and code familiarity → evaluation → production monitoring → what is novel. It also says the judge
+"probes how the candidate worked with their AI tools; what they directed, what they accepted, and what they pushed
+back on". The help article lists the same topics. Q11–Q14 cover the four that were missing.
+
+## Q11. Opening pitch (60 seconds; it comes first)
+
+- **Answer.**
+  - The problem: a deletion workflow can say COMPLETE while copies survive in replicas, logs, exports, indexes and
+    backups, and sync or restore jobs can bring deleted data back.
+  - What the agent does: for each of 518 requests it decides whether deletion was asked for, then rebuilds the
+    person's current and historical identifiers. It finds the records and the active flows, establishes their state
+    at audit_at from admissible evidence only, applies deletion_rules.csv, and writes findings, an ordered fix plan and
+    checks.
+  - Design: a model reads intent and 11 screenshots; code makes every decision. When ownership can't be shown, the
+    record gets no step, so remediation is never planned against another person's data.
+  - **Close with one number:** samples status 31/32, step precision 178/178.
+- **Weakness.** Don't open with the architecture debate. Lead with the problem and one measured number.
+
+## Q12. Production monitoring — how would you know it's going wrong?
+
+- **What exists today [M].**
+  - Exit codes: 0 ok, 2 validation failed, 3 cache miss, 4 model failure. output.csv is untouched on 2/3/4;
+    `--allow-degraded` writes `output.degraded.csv` instead.
+  - Every run writes `code/traces/_run_summary.json`:
+    - status mix (153/355/10);
+    - attribution labels (AMBIGUOUS 904, CONFIRMED 1,475, INFERRED_CLAIM 95, INFERRED 40, CONFLICT 1);
+    - intent paths, model failures (0), rejected evidence files (0), degraded cases;
+    - screenshot rows accepted (24) and dropped, each with a reason.
+  - `usage_ledger.json`: live calls, cache entries read, fallback events.
+  - One trace per case, and `--explain` for one case.
+- **What I'd alert on [J].**
+  - The AMBIGUOUS share moving.
+  - The UNGROUNDED screenshot-id rate.
+  - The intent UNCLEAR / NON_DELETION share.
+  - Fallback or 404 events. The first live run lost 358 of 550 cases this way, which is why C0 exists.
+  - Rejected evidence files.
+  - Status mix drift against the last release. `distribution_sanity.py` already compares the sample and eval
+    distributions.
+- **Follow-up.** "What would you add first?" → An alert on intent paths. A model change that flips borderline texts
+  would move the NOT_APPLICABLE count, which today only the cache freezes.
+- **Weakness.** None of these alerts is wired to a scheduler. Say "these are the signals the run already records",
+  not "we monitor".
+
+## Q13. What is novel?
+
+- **Answers to choose from (each is in the code, with a number).**
+  - Claims are linkage, never proof. Reported status is used only to tell interleaved owners apart (A1, 252/252
+    consistent on hard links). State always comes from observations at audit_at.
+  - The model proposes, OCR confirms. A screenshot id survives only if its exact token is in local multi-pass OCR text
+    (C9/C10). 5 of 32 single-pass misses were fixed without letting OCR invent ids.
+  - Abstention is measured, not hoped for. M1: 0 of the records withheld from 904 ambiguous pairs is proven PRESENT,
+    so abstaining flips 0 statuses.
+  - A label-free release gate:
+    - every id renamed (19,760 tokens) with no row change;
+    - a spec audit whose negative control catches 18/18 injected defects;
+    - an independent re-derivation by a separate agent (0 OUR_BUG).
+- **Weakness.** "Novel" claims invite "isn't that standard?". Answer with the measurement, not the adjective.
+
+## Q14. How did you work with the AI tool? What did you direct, accept and push back on?
+
+Use only what is in `log.txt`. These are the participant's own logged instructions, not something to embellish:
+- **Directed the architecture.** The Phase 1 prompt fixed D-ATTR (labels; AMBIGUOUS gives no steps), D11 and D-CITE
+  rule C before any build. Model choice was also the participant's: "Dont use groq instead we'll use … gemini … as
+  fall back".
+- **Pushed back on a claimed result.** At the STEP 0 checkpoint the exit-code-4 guard turned out to exist only in a
+  deleted cloud session ("Correction accepted … Rebuild it now as change C0").
+- **Pushed back on a measured result.** C10: "all 5 ids C9 dropped are visible … so the matcher is suspect". This led
+  to 4-pass OCR and underscore-tolerant matching.
+- **Set the safety rule for inference.** Round 5 CORE RULE: A1/A2 "are FILTERING signals, not proof of ownership". A
+  timing-only resource is assigned only when exactly one owner remains.
+- **Demanded evidence for eval changes.** Round 6: "any eval row change must be justified by raw evidence quoted …".
+- **Rejected AI work by measurement.**
+  - A2 broke case_02.
+  - Ordering made 1 wrong owner.
+  - E2 accepted 0/126.
+  - Re-extracting screenshots broke case_61.
+- **Weakness.** Never say "Claude built it". Say "I required X; the run showed Y; I kept or reverted it". Describe
+  only decisions you actually made and can explain.
+
+## rc8 additions to the facts (all [M] unless marked)
+
+- The 3 NOT_DERIVABLE ids appear in none of the 4 PDF text layers, none of the 11 screenshots' OCR text, and no
+  other dataset file except `sample_output.csv`.
+- Capacity probe (`code/analysis/capacity_probe.py`): no sample case owns two resources of one system (111 pairs).
+  The rule forces 0 of the 283 AMBIGUOUS rows that have two or more candidates. Its extra assumption ("every row is
+  owned") fails on sample case_32. Rejected.
+- D-SCOPE:
+  - The samples cannot decide the single-request question: 30/32 sample cases are single-request, with 0 exclusions.
+  - case_45's 5 exclusions are evidence-supported: keeping them would give 6 security_service resources, against 0/32
+    sample cases with two in one system.
+  - case_34 `audit_record_3753` stays JUDGEMENT.
+- 37 of the 904 eval AMBIGUOUS pairs involve a resource another case owns, so 867 are truly unresolved. 0 resources
+  are owned by two cases.
+- Official October README: the code judge ignores `.json/.csv/.log` files. Every audit result used here is quoted in
+  shipped Markdown.
+
+---
+
 ## Last-minute revision sheet (one page)
 
 **Numbers to say with their denominators (all [M]).**
