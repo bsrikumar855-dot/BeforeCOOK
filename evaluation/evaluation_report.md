@@ -282,6 +282,49 @@ A2 offset bands (from the +A1+A2 run; CONFIRMED pairs only):
 
 Eval deletion cases whose primary account is still AMBIGUOUS (no account step): 131.
 
+## 4f. Round 6 eval-side audits
+
+Conditional-rule branches (`code/evaluation/rule_branch_audit.py`; branch from raw fields at audit_at; sample columns compare our operations with the reference for the same resource):
+
+| Rule | Category | Branch | Eval | Sample | Sample vs reference | Our decisions |
+|---|---|---|---|---|---|---|
+| rule_05 | SUPPORT_MESSAGE | FALSE | 48 | 3 | {'agree': 3} | {'VERIFY_RECORD_REDACTED': 9, 'REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED': 42} |
+| rule_05 | SUPPORT_MESSAGE | TRUE | 43 | 2 | {'agree': 2} | {'VERIFY_RECORD_REDACTED': 14, 'REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED': 31} |
+| rule_05 | SUPPORT_MESSAGE | UNKNOWN | 64 | 3 | {'agree': 3} | {'REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED': 54, 'VERIFY_RECORD_REDACTED': 13} |
+| rule_06 | SUPPORT_ATTACHMENT | TRUE | 22 | 0 | - | {'REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT': 22} |
+| rule_06 | SUPPORT_ATTACHMENT | UNKNOWN | 5 | 3 | {'agree': 3} | {'REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT': 8} |
+| rule_07 | ANALYTICS_PROFILE | FALSE | 8 | 0 | - | {'VERIFY_RECORD_ANONYMIZED': 8} |
+| rule_07 | ANALYTICS_PROFILE | TRUE | 73 | 5 | {'agree': 5} | {'REPORT_EXPOSED_PII + ANONYMIZE_RECORD + VERIFY_RECORD_ANONYMIZED': 78} |
+| rule_08 | PRODUCT_TELEMETRY | - | 0 | 0 | - | - |
+| rule_11 | EMAIL_DELIVERY_LOG | - | 0 | 0 | - | - |
+| rule_12 | SECURITY_AUDIT_LOG | TRUE | 98 | 6 | {'agree': 6} | {'VERIFY_RECORD_PRESENT': 104} |
+| rule_12 | SECURITY_AUDIT_LOG | UNKNOWN | 318 | 16 | {'agree': 16} | {'VERIFY_RECORD_PRESENT': 334} |
+| rule_13 | LEGAL_HOLD_RECORD | TRUE | 5 | 0 | - | {'VERIFY_RECORD_PRESENT': 5} |
+| rule_13 | LEGAL_HOLD_RECORD | UNKNOWN | 3 | 0 | - | {'VERIFY_RECORD_PRESENT': 3} |
+| rule_14 | BACKUP_ARCHIVE | TRUE | 59 | 6 | {'agree': 6} | {'REPORT_RESTORE_RISK + BLOCK_RESTORE + VERIFY_RESTORE_BLOCKED': 29, 'VERIFY_RESTORE_BLOCKED': 36} |
+| rule_15 | ACCOUNT_TOMBSTONE | TRUE | 8 | 2 | {'agree': 2} | {'VERIFY_RECORD_REDACTED': 5, 'REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED': 5} |
+| rule_15 | ACCOUNT_TOMBSTONE | UNKNOWN | 1 | 0 | - | {'no step (EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields)': 1} |
+
+Citation exposure (`code/evaluation/citation_exposure.py`): cited eval steps by rule-C path {'i_mention': 1061, 'ii_full_snapshot': 34}; fallback (full-snapshot) citations in 34 cases; with a stronger admissible capture: 0.
+
+Distribution sanity (`code/evaluation/distribution_sanity.py`): steps per case reference {'mean': 6.03, 'median': 5.0, 'min': 1, 'max': 14} vs eval {'mean': 5.92, 'median': 6.0, 'min': 0, 'max': 14}; VERIFY_RECORD_PRESENT share 0.75 vs 0.819; restore 0.188 vs 0.116; flow 0.281 vs 0.287; eval cases with operations unseen in the reference: 0; INCOMPLETE findings without their remediation and check: 0.
+
+Independent re-derivation (24 stratified eval cases chosen before any answer existed; an agent that read only the problem statement and dataset/):
+
+- Status agreement 23/24; steps of ours matched exactly 101/103; steps of the independent answer matched 101/115; rows identical 13/24.
+- Triage of every disagreement: {'OUR_BUG': 0, 'SUBAGENT_ERROR': 3, 'AMBIGUOUS_SPEC': 8} (details with quoted raw evidence in `code/evaluation/independent_rederivation/triage.json`).
+  - case_33 SUBAGENT_ERROR: export_1260 REPORT_REMAINING_RECORD/DELETE_RECORD/VERIFY_RECORD_ABSENT; account_2373 VERIFY_RECORD_ABSENT (evidence '')
+  - case_34 AMBIGUOUS_SPEC: support_9538 REPORT_REMAINING_RECORD/DELETE_RECORD/VERIFY_RECORD_ABSENT; audit_record_3753 VERIFY_RECORD_PRESENT
+  - case_35 AMBIGUOUS_SPEC: account_8491 VERIFY_RECORD_ABSENT (evidence '')
+  - case_39 AMBIGUOUS_SPEC: account_8926 VERIFY_RECORD_ABSENT (evidence '')
+  - case_55 AMBIGUOUS_SPEC: account_9494 VERIFY_RECORD_ABSENT (evidence '')
+  - case_44 AMBIGUOUS_SPEC: analytics_5589 VERIFY_RECORD_ANONYMIZED evidence_94
+  - case_51 AMBIGUOUS_SPEC: analytics_2265 VERIFY_RECORD_ANONYMIZED evidence_94
+  - case_46 AMBIGUOUS_SPEC: tombstone_17 VERIFY_RECORD_REDACTED evidence_42
+  - case_57 SUBAGENT_ERROR: account_1298 VERIFY_RECORD_ABSENT evidence_05 (ours only)
+  - case_220 SUBAGENT_ERROR: audit_record_3698 VERIFY_RECORD_PRESENT (evidence '', ours only)
+  - case_63 AMBIGUOUS_SPEC: status: ours INCOMPLETE [] vs independent COMPLETE []
+
 ## 4c. Dataset-coupling probes (G1, `code/evaluation/coupling_probes.py`)
 
 Perturbed copies of dataset/ and code/cache/ in a temp dir, each run with --from-cache in a child process;

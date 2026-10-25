@@ -1,0 +1,98 @@
+{
+ "case_id": "case_220",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "search_service",
+   "resource_id": "search_941",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_81",
+   "justification": "Inventory 2026-07-03T07:43 (evidence_81): search_941 still indexes historical email mokoena.zanele98@gmail.com; delete activity_2267 FAILED"
+  },
+  {
+   "step_no": 2,
+   "phase": "FINDING",
+   "system_id": "support_platform",
+   "resource_id": "support_4529",
+   "operation": "REPORT_EXPOSED_PII",
+   "state": "PRESENT",
+   "evidence_id": "evidence_81",
+   "justification": "Inventory 2026-07-03 (evidence_81): support_4529 requester_email mokoena.zanele98@gmail.com, delivery-correction conversation; redact activity_2266 FAILED"
+  },
+  {
+   "step_no": 3,
+   "phase": "REMEDIATION",
+   "system_id": "search_service",
+   "resource_id": "search_941",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Inventory 2026-07-03T07:43 (evidence_81): search_941 still indexes historical email mokoena.zanele98@gmail.com; delete activity_2267 FAILED"
+  },
+  {
+   "step_no": 4,
+   "phase": "REMEDIATION",
+   "system_id": "support_platform",
+   "resource_id": "support_4529",
+   "operation": "REDACT_RECORD",
+   "state": "REDACTED",
+   "evidence_id": "",
+   "justification": "remediation for: Inventory 2026-07-03 (evidence_81): support_4529 requester_email mokoena.zanele98@gmail.com, delivery-correction conversation; redact activity_2266 FAILED"
+  },
+  {
+   "step_no": 5,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_1007",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "Inventory 2026-07-03 (evidence_81) covers account_service and has no account_1007 row"
+  },
+  {
+   "step_no": 6,
+   "phase": "VERIFICATION",
+   "system_id": "search_service",
+   "resource_id": "search_941",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 7,
+   "phase": "VERIFICATION",
+   "system_id": "legal_service",
+   "resource_id": "legal_hold_4961",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "",
+   "justification": "Legal hold retained via activity_2264 (RETAIN_RECORD 2026-06-08); rule_13 RETAIN"
+  },
+  {
+   "step_no": 8,
+   "phase": "VERIFICATION",
+   "system_id": "support_platform",
+   "resource_id": "support_4529",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "state": "REDACTED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_218",
+  "identifiers_used": [
+   "mokoena.zanele98@gmail.com",
+   "mokoena.zanele@gmail.com",
+   "user_218"
+  ]
+ },
+ "uncertain": [
+  "legal_hold_4961 is supported before audit only by the activity_2264 claim; the later log evidence_21 (captured 2026-07-05) confirms it.",
+  "audit_record_3698 (user_218) appears only in evidence_21, captured after audit, and is not in the 2026-07-03 security snapshot, so it was left out."
+ ]
+}

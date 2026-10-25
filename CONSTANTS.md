@@ -180,6 +180,8 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/evaluation/main.py` | 60 | seconds per minute when printing band offsets | STANDARD | printed units |
 | `code/evaluation/main.py` | 10, 20, 40, 110, 120, 160, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/main.py` | 100.0, 1000000.0 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
+| `code/evaluation/rederivation_compare.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
+| `code/evaluation/rederivation_compare.py` | 6, 140 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/rederivation_selection.py` | 8 | R2 quota: COMPLETE cases | SPEC | Round 6 brief |
 | `code/evaluation/rederivation_selection.py` | 12 | R2 quota: INCOMPLETE cases (plus case_55 and case_63) | SPEC | Round 6 brief |
 | `code/evaluation/rederivation_selection.py` | 2 | R2 quota: NOT_APPLICABLE cases / the two fixed cases | SPEC | Round 6 brief |

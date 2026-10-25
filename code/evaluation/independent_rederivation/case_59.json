@@ -1,0 +1,26 @@
+{
+ "case_id": "case_59",
+ "deletion_status": "COMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_962",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): audit_record_962 subject user_57 account_deletion_reviewed; no other subject rows present"
+  }
+ ],
+ "subject": {
+  "user_id": "user_57",
+  "identifiers_used": [
+   "lars-nielsen@proton.me",
+   "user_57"
+  ]
+ },
+ "uncertain": [
+  "The account id could not be attributed: the 2026-08-26 deletion batch has three accounts (account_3865, account_631, account_5661) for cases 59/60, so no account ABSENT step was emitted. analytics_9069 (anonymized 2026-08-26) may belong to user_57 or user_58."
+ ]
+}

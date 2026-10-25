@@ -1,0 +1,158 @@
+{
+ "case_id": "case_54",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "search_service",
+   "resource_id": "search_3995",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): search_3995 document Beatriz Carvalho, BCARVALHO6517@GMAIL.COM, user_52; delete activity_3582 FAILED"
+  },
+  {
+   "step_no": 2,
+   "phase": "FINDING",
+   "system_id": "analytics_platform",
+   "resource_id": "analytics_1738",
+   "operation": "REPORT_EXPOSED_PII",
+   "state": "PRESENT",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): analytics_1738 still carries user_52, email, phone, email_hash; anonymize activity_3583 FAILED; rule_07 ANONYMIZE"
+  },
+  {
+   "step_no": 3,
+   "phase": "FINDING",
+   "system_id": "support_platform",
+   "resource_id": "support_835",
+   "operation": "REPORT_EXPOSED_PII",
+   "state": "PRESENT",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): support_835 (CS-4835, order context) message text still contains BCARVALHO6517@GMAIL.COM; redact activity_3579 FAILED; rule_05 REDACT"
+  },
+  {
+   "step_no": 4,
+   "phase": "FINDING",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_5080",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "state": "ACTIVE",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): data_flow_5080 subject_selector BCARVALHO6517@GMAIL.COM enabled=true continuous_sync to analytics warehouse; activity_3584 confirms still enabled"
+  },
+  {
+   "step_no": 5,
+   "phase": "REMEDIATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_5080",
+   "operation": "DISABLE_DATA_FLOW",
+   "state": "DISABLED",
+   "evidence_id": "",
+   "justification": "remediation for: Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): data_flow_5080 subject_selector BCARVALHO6517@GMAIL.COM enabled=true continuous_sync to analytics warehouse; activity_3584 confirms still enabled"
+  },
+  {
+   "step_no": 6,
+   "phase": "REMEDIATION",
+   "system_id": "search_service",
+   "resource_id": "search_3995",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): search_3995 document Beatriz Carvalho, BCARVALHO6517@GMAIL.COM, user_52; delete activity_3582 FAILED"
+  },
+  {
+   "step_no": 7,
+   "phase": "REMEDIATION",
+   "system_id": "support_platform",
+   "resource_id": "support_835",
+   "operation": "REDACT_RECORD",
+   "state": "REDACTED",
+   "evidence_id": "",
+   "justification": "remediation for: Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): support_835 (CS-4835, order context) message text still contains BCARVALHO6517@GMAIL.COM; redact activity_3579 FAILED; rule_05 REDACT"
+  },
+  {
+   "step_no": 8,
+   "phase": "REMEDIATION",
+   "system_id": "analytics_platform",
+   "resource_id": "analytics_1738",
+   "operation": "ANONYMIZE_RECORD",
+   "state": "ANONYMIZED",
+   "evidence_id": "",
+   "justification": "remediation for: Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): analytics_1738 still carries user_52, email, phone, email_hash; anonymize activity_3583 FAILED; rule_07 ANONYMIZE"
+  },
+  {
+   "step_no": 9,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_6829",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "No profile row in 2026-09-21 snapshot; account_6829 attributed by deletion-worker batch 2026-09-01 (activity_3572 PARTIAL), other batch accounts map to cases 16/22/68/69/70"
+  },
+  {
+   "step_no": 10,
+   "phase": "VERIFICATION",
+   "system_id": "search_service",
+   "resource_id": "search_3995",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 11,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_6325",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): audit_record_6325 subject user_52 account_deletion_reviewed (retained, rule_12)"
+  },
+  {
+   "step_no": 12,
+   "phase": "VERIFICATION",
+   "system_id": "support_platform",
+   "resource_id": "support_835",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "state": "REDACTED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 13,
+   "phase": "VERIFICATION",
+   "system_id": "analytics_platform",
+   "resource_id": "analytics_1738",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "state": "ANONYMIZED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 14,
+   "phase": "VERIFICATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_5080",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "state": "DISABLED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_52",
+  "identifiers_used": [
+   "bcarvalho6517@gmail.com",
+   "user_52",
+   "Beatriz Carvalho",
+   "+55 41 90257-9346"
+  ]
+ },
+ "uncertain": [
+  "account_6829 has no identifier in evidence; it is attributed to user_52 because it is the only account left in the 2026-09-01 deletion batch once the others are matched to other subjects."
+ ]
+}

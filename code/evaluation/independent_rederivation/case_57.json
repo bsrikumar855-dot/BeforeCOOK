@@ -1,0 +1,59 @@
+{
+ "case_id": "case_57",
+ "deletion_status": "COMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_7219",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): audit_record_7219 subject user_55 account_deletion_reviewed"
+  },
+  {
+   "step_no": 2,
+   "phase": "VERIFICATION",
+   "system_id": "support_platform",
+   "resource_id": "support_7479",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "state": "REDACTED",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): support_7479 subject_reference user_55, message_text [REDACTED]"
+  },
+  {
+   "step_no": 3,
+   "phase": "VERIFICATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_1368",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "state": "DISABLED",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): data_flow_1368 selector user_55 enabled=false"
+  },
+  {
+   "step_no": 4,
+   "phase": "VERIFICATION",
+   "system_id": "backup_service",
+   "resource_id": "backup_7711",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "state": "BLOCKED",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): backup_7711 subject_reference user_55 restore_allowed=false"
+  }
+ ],
+ "subject": {
+  "user_id": "user_55",
+  "identifiers_used": [
+   "e.parker74@yahoo.com",
+   "user_55",
+   "+1 (617) 555-0155",
+   "+1 (415) 555-0105"
+  ]
+ },
+ "uncertain": [
+  "No account row for the subject exists in the 2026-09-21 snapshot, but the account resource id could not be attributed with confidence. The 2026-08-29 deletion batch lists account_5715, account_1298 and account_9862 for cases 56/57/58, and their order does not settle which is which, so no account ABSENT step was emitted (account_1298 is the most likely).",
+  "analytics_2572 and analytics_8858 (both anonymized, no identifiers) were anonymized in the same batch; one probably belongs to user_55, but ownership cannot be determined, so it was left out."
+ ]
+}

@@ -587,6 +587,47 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
                 and any(a["label"] == "AMBIGUOUS" for a in accts):
             amb_accounts.append(cid)
     L += [f"Eval deletion cases whose primary account is still AMBIGUOUS (no account step): {len(amb_accounts)}.", ""]
+    rb, ce, dsn = (EVAL_DIR / "rule_branch_audit.json", EVAL_DIR / "citation_exposure.json",
+                   EVAL_DIR / "distribution_sanity.json")
+    if rb.exists():
+        R6 = json.loads(rb.read_text(encoding="utf-8"))
+        L += ["## 4f. Round 6 eval-side audits", "",
+              "Conditional-rule branches (`code/evaluation/rule_branch_audit.py`; branch from raw fields at audit_at; "
+              "sample columns compare our operations with the reference for the same resource):", "",
+              "| Rule | Category | Branch | Eval | Sample | Sample vs reference | Our decisions |", "|---|---|---|---|---|---|---|"]
+        for r in R6["rows"]:
+            L.append(f"| {r['rule']} | {r['category']} | {r['branch']} | {r['eval']} | {r['sample']} | "
+                     f"{r.get('sample_vs_reference') or '-'} | {r['decisions'] or '-'} |")
+        L.append("")
+    if ce.exists():
+        C6 = json.loads(ce.read_text(encoding="utf-8"))
+        L += [f"Citation exposure (`code/evaluation/citation_exposure.py`): cited eval steps by rule-C path "
+              f"{C6['cited_steps_by_path']}; fallback (full-snapshot) citations in {len(C6['fallback_cases'])} cases; "
+              f"with a stronger admissible capture: {len(C6['fallback_with_a_stronger_proof'])}.", ""]
+    if dsn.exists():
+        D6 = json.loads(dsn.read_text(encoding="utf-8"))
+        ref_p, ev_p = D6["reference_samples"], D6["eval"]
+        L += [f"Distribution sanity (`code/evaluation/distribution_sanity.py`): steps per case reference "
+              f"{ref_p['steps_per_case']} vs eval {ev_p['steps_per_case']}; VERIFY_RECORD_PRESENT share "
+              f"{ref_p['share_verify_present']} vs {ev_p['share_verify_present']}; restore {ref_p['share_restore_steps']} vs "
+              f"{ev_p['share_restore_steps']}; flow {ref_p['share_flow_steps']} vs {ev_p['share_flow_steps']}; eval cases with "
+              f"operations unseen in the reference: {len(D6['eval_cases_with_operations_never_in_sample_reference'])}; INCOMPLETE "
+              f"findings without their remediation and check: {len(D6['incomplete_findings_without_required_remediation_or_check'])}.", ""]
+    rd = EVAL_DIR / "independent_rederivation"
+    if (rd / "comparison.json").exists():
+        CMP = json.loads((rd / "comparison.json").read_text(encoding="utf-8"))
+        TRI = json.loads((rd / "triage.json").read_text(encoding="utf-8")) if (rd / "triage.json").exists() else {}
+        t = CMP["totals"]
+        L += ["Independent re-derivation (24 stratified eval cases chosen before any answer existed; an agent that read only "
+              "the problem statement and dataset/):", "",
+              f"- Status agreement {t['status_match']}/{t['cases']}; steps of ours matched exactly {t['steps_matched']}/"
+              f"{t['steps_ours']}; steps of the independent answer matched {t['steps_matched']}/{t['steps_independent']}; rows "
+              f"identical {t['sequence_exact']}/{t['cases']}.",
+              f"- Triage of every disagreement: {TRI.get('counts', {})} (details with quoted raw evidence in "
+              "`code/evaluation/independent_rederivation/triage.json`)."]
+        for it in TRI.get("items", []):
+            L.append(f"  - {it['case_id']} {it['triage']}: {'; '.join(it['steps'])}")
+        L.append("")
     cp = EVAL_DIR / "coupling_probes.json"
     if cp.exists():
         pr = json.loads(cp.read_text(encoding="utf-8"))

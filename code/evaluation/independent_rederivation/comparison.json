@@ -1,0 +1,499 @@
+{
+ "totals": {
+  "cases": 24,
+  "status_match": 23,
+  "sequence_exact": 13,
+  "steps_ours": 103,
+  "steps_independent": 115,
+  "steps_matched": 101
+ },
+ "cases": {
+  "case_33": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 3,
+   "steps_independent": 7,
+   "steps_matched": 3,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [
+    [
+     "FINDING",
+     "export_service",
+     "export_1260",
+     "REPORT_REMAINING_RECORD",
+     "PRESENT",
+     "evidence_23",
+     "Export console 2026-06-18 shows export_1260 owner ingrid.dahl@outlook.com status Ready; no deletion evidence before 2026-07-19 (deletion attempt activity_3328 is later)"
+    ],
+    [
+     "REMEDIATION",
+     "export_service",
+     "export_1260",
+     "DELETE_RECORD",
+     "ABSENT",
+     "",
+     "remediation for: Export console 2026-06-18 shows export_1260 owner ingrid.dahl@outlook.com status Ready; no deletion evidence before 2026-07-19 (deletion attempt activity_3328 is later)"
+    ],
+    [
+     "VERIFICATION",
+     "account_service",
+     "account_2373",
+     "VERIFY_RECORD_ABSENT",
+     "ABSENT",
+     "",
+     "Target final state for primary profile; id known only from later log evidence_01 (404 on 2026-09-15)"
+    ],
+    [
+     "VERIFICATION",
+     "export_service",
+     "export_1260",
+     "VERIFY_RECORD_ABSENT",
+     "ABSENT",
+     "",
+     "post-remediation check"
+    ]
+   ],
+   "independent_uncertain": [
+    "export_1260: included because the 2026-06-18 console shows it Ready and nothing before audit shows deletion; reference may scope it only to case_52 (same subject, audit 2026-06-19).",
+    "account_2373: no account evidence captured at or before audit; id comes from a later 2026-09-15 log, so only a future ABSENT verification is listed.",
+    "audit_record_8486 (security, user_18) is visible only in evidence after audit, so it was left out; a reference may include a VERIFY_RECORD_PRESENT for it."
+   ]
+  },
+  "case_34": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 3,
+   "steps_independent": 7,
+   "steps_matched": 3,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [
+    [
+     "FINDING",
+     "support_platform",
+     "support_9538",
+     "REPORT_REMAINING_RECORD",
+     "PRESENT",
+     "evidence_01",
+     "2026-09-15 log: attachment PII scan on support_9538 (delivery_confirmation_32.pdf) matched historical phone +81 90 6156 0005; deletion activity_3489 FAILED; console 09-26 still lists support_9538"
+    ],
+    [
+     "REMEDIATION",
+     "support_platform",
+     "support_9538",
+     "DELETE_RECORD",
+     "ABSENT",
+     "",
+     "remediation for: 2026-09-15 log: attachment PII scan on support_9538 (delivery_confirmation_32.pdf) matched historical phone +81 90 6156 0005; deletion activity_3489 FAILED; console 09-26 still lists support_9538"
+    ],
+    [
+     "VERIFICATION",
+     "support_platform",
+     "support_9538",
+     "VERIFY_RECORD_ABSENT",
+     "ABSENT",
+     "",
+     "post-remediation check"
+    ],
+    [
+     "VERIFICATION",
+     "security_service",
+     "audit_record_3753",
+     "VERIFY_RECORD_PRESENT",
+     "PRESENT",
+     "",
+     "Security record for user_11 read 2026-09-15 (evidence_01); retained under rule_12"
+    ]
+   ],
+   "independent_uncertain": [
+    "support_9538 treated as a SUPPORT_ATTACHMENT owned only by the subject (DELETE); it could instead be a shared conversation needing REDACT.",
+    "audit_record_3753 retention period not shown explicitly; assumed within retention."
+   ]
+  },
+  "case_35": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 3,
+   "steps_independent": 4,
+   "steps_matched": 3,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [
+    [
+     "VERIFICATION",
+     "account_service",
+     "account_8491",
+     "VERIFY_RECORD_ABSENT",
+     "ABSENT",
+     "",
+     "Target final state; deletion activity_3431 PARTIAL before audit, no readback before audit"
+    ]
+   ],
+   "independent_uncertain": [
+    "account_8491 state at audit unproven (only PARTIAL worker claim); listed only as future verification.",
+    "audit_record_8925 (user_13) is seen only in post-audit evidence, so it was left out."
+   ]
+  },
+  "case_36": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 8,
+   "steps_independent": 8,
+   "steps_matched": 8,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": []
+  },
+  "case_37": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 8,
+   "steps_independent": 8,
+   "steps_matched": 8,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": []
+  },
+  "case_38": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 5,
+   "steps_independent": 5,
+   "steps_matched": 5,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": []
+  },
+  "case_39": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 3,
+   "steps_independent": 4,
+   "steps_matched": 3,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [
+    [
+     "VERIFICATION",
+     "account_service",
+     "account_8926",
+     "VERIFY_RECORD_ABSENT",
+     "ABSENT",
+     "",
+     "Target final state; account id from later evidence only"
+    ]
+   ],
+   "independent_uncertain": [
+    "account_8926 and audit_record_7301 appear only in post-audit evidence; the account is listed as future verification and the security record is left out.",
+    "search_4801, which the connector repopulated, shows up only after audit (2026-08-25), so it was left out."
+   ]
+  },
+  "case_40": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 8,
+   "steps_independent": 8,
+   "steps_matched": 8,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": []
+  },
+  "case_41": {
+   "status_ours": "COMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": true,
+   "steps_ours": 6,
+   "steps_independent": 6,
+   "steps_matched": 6,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "analytics_6830 has no identifier in evidence; it is attributed to user_39 only because the deletion-worker activity batch on 2026-09-03 fits that timing."
+   ]
+  },
+  "case_42": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 8,
+   "steps_independent": 8,
+   "steps_matched": 8,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": []
+  },
+  "case_43": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 3,
+   "steps_independent": 3,
+   "steps_matched": 3,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "No security audit record or other downstream record for user_41 was found in any evidence; only the account is reported."
+   ]
+  },
+  "case_44": {
+   "status_ours": "COMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": true,
+   "steps_ours": 5,
+   "steps_independent": 6,
+   "steps_matched": 5,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [
+    [
+     "VERIFICATION",
+     "analytics_platform",
+     "analytics_5589",
+     "VERIFY_RECORD_ANONYMIZED",
+     "ANONYMIZED",
+     "evidence_94",
+     "Readback trace 2026-09-26 (evidence_94): analytics_5589 all identifiers null; attributed to user_42 via 2026-09-15 deletion-worker batch (activity_3853 next to support_1066/data_flow_223/backup_6266)"
+    ]
+   ],
+   "independent_uncertain": [
+    "analytics_5589 is attributed to user_42 only through activity timing; analytics_9406, anonymized in the same minute, belongs to the sample subject of account_7566."
+   ]
+  },
+  "case_45": {
+   "status_ours": "COMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": true,
+   "steps_ours": 1,
+   "steps_independent": 1,
+   "steps_matched": 1,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "No account resource id for user_03 could be found in any evidence, so no account ABSENT verification was listed. The compliance extract evidence_55 could be cited instead of evidence_37."
+   ]
+  },
+  "case_46": {
+   "status_ours": "COMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": true,
+   "steps_ours": 1,
+   "steps_independent": 2,
+   "steps_matched": 1,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [
+    [
+     "VERIFICATION",
+     "identity_service",
+     "tombstone_17",
+     "VERIFY_RECORD_REDACTED",
+     "REDACTED",
+     "evidence_42",
+     "Customer Reference Registry 2026-03-10 shows retained reference user_17 with only linked record refs and no name/email/phone/hash (catalog activity_4011 links tombstone_17)"
+    ]
+   ],
+   "independent_uncertain": [
+    "account_4092, backup_3245 and audit_record_1797 for user_17 appear only in evidence from Aug-Sep 2026, after this audit, so they were left out."
+   ]
+  },
+  "case_51": {
+   "status_ours": "COMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": true,
+   "steps_ours": 5,
+   "steps_independent": 6,
+   "steps_matched": 5,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [
+    [
+     "VERIFICATION",
+     "analytics_platform",
+     "analytics_2265",
+     "VERIFY_RECORD_ANONYMIZED",
+     "ANONYMIZED",
+     "evidence_94",
+     "Readback trace 2026-09-26 (evidence_94): analytics_2265 all identifiers null; attributed to user_49 via 2026-09-09 deletion-worker batch (activity_3735 between account_3610 and support_1097/data_flow_4713/backup_7809)"
+    ]
+   ],
+   "independent_uncertain": [
+    "analytics_2265 is attributed to user_49 only through activity timing."
+   ]
+  },
+  "case_54": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 14,
+   "steps_independent": 14,
+   "steps_matched": 14,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "account_6829 has no identifier in evidence; it is attributed to user_52 because it is the only account left in the 2026-09-01 deletion batch once the others are matched to other subjects."
+   ]
+  },
+  "case_55": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 3,
+   "steps_independent": 4,
+   "steps_matched": 3,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [
+    [
+     "VERIFICATION",
+     "account_service",
+     "account_9494",
+     "VERIFY_RECORD_ABSENT",
+     "ABSENT",
+     "",
+     "Target final state; account id from later evidence only"
+    ]
+   ],
+   "independent_uncertain": [
+    "account_9494 and audit_record_2857 appear only in post-audit evidence; the account is listed as future verification and the security record is left out."
+   ]
+  },
+  "case_57": {
+   "status_ours": "COMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": true,
+   "steps_ours": 5,
+   "steps_independent": 4,
+   "steps_matched": 4,
+   "sequence_exact": false,
+   "only_ours": [
+    [
+     "VERIFICATION",
+     "account_service",
+     "account_1298",
+     "VERIFY_RECORD_ABSENT",
+     "ABSENT",
+     "evidence_05"
+    ]
+   ],
+   "only_independent": [],
+   "independent_uncertain": [
+    "No account row for the subject exists in the 2026-09-21 snapshot, but the account resource id could not be attributed with confidence. The 2026-08-29 deletion batch lists account_5715, account_1298 and account_9862 for cases 56/57/58, and their order does not settle which is which, so no account ABSENT step was emitted (account_1298 is the most likely).",
+    "analytics_2572 and analytics_8858 (both anonymized, no identifiers) were anonymized in the same batch; one probably belongs to user_55, but ownership cannot be determined, so it was left out."
+   ]
+  },
+  "case_58": {
+   "status_ours": "COMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": true,
+   "steps_ours": 1,
+   "steps_independent": 1,
+   "steps_matched": 1,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "reported_status is NOT_STARTED, but no subject record other than the retained security record appears in any evidence at or before audit. The account id could not be attributed (candidates account_5715/account_1298/account_9862 from the 2026-08-29 batch), so no account ABSENT step was emitted.",
+    "One of analytics_2572/analytics_8858 may belong to this subject; ownership cannot be determined."
+   ]
+  },
+  "case_59": {
+   "status_ours": "COMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": true,
+   "steps_ours": 1,
+   "steps_independent": 1,
+   "steps_matched": 1,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "The account id could not be attributed: the 2026-08-26 deletion batch has three accounts (account_3865, account_631, account_5661) for cases 59/60, so no account ABSENT step was emitted. analytics_9069 (anonymized 2026-08-26) may belong to user_57 or user_58."
+   ]
+  },
+  "case_63": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "COMPLETE",
+   "status_match": false,
+   "steps_ours": 0,
+   "steps_independent": 0,
+   "steps_matched": 0,
+   "sequence_exact": false,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "The only candidate record, marketing_001, is linked to user_09 by data catalog activity_4008. But its screenshot (evidence_60) shows Soo-jin Park, sj.park@naver.com, +82 10-5837-9451, which does not match any identifier of the subject, so it was treated as another person's record. If the reference trusts the catalog link, this case is INCOMPLETE with a MARKETING_PROFILE DELETE for marketing_001.",
+    "No account or other subject record could be found, so COMPLETE is returned with no verification steps."
+   ]
+  },
+  "case_220": {
+   "status_ours": "INCOMPLETE",
+   "status_independent": "INCOMPLETE",
+   "status_match": true,
+   "steps_ours": 9,
+   "steps_independent": 8,
+   "steps_matched": 8,
+   "sequence_exact": false,
+   "only_ours": [
+    [
+     "VERIFICATION",
+     "security_service",
+     "audit_record_3698",
+     "VERIFY_RECORD_PRESENT",
+     "PRESENT",
+     ""
+    ]
+   ],
+   "only_independent": [],
+   "independent_uncertain": [
+    "legal_hold_4961 is supported before audit only by the activity_2264 claim; the later log evidence_21 (captured 2026-07-05) confirms it.",
+    "audit_record_3698 (user_218) appears only in evidence_21, captured after audit, and is not in the 2026-07-03 security snapshot, so it was left out."
+   ]
+  },
+  "case_533": {
+   "status_ours": "NOT_APPLICABLE",
+   "status_independent": "NOT_APPLICABLE",
+   "status_match": true,
+   "steps_ours": 0,
+   "steps_independent": 0,
+   "steps_matched": 0,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "Request asks only to update the mobile number and keep the account active; this does not authorize deletion."
+   ]
+  },
+  "case_534": {
+   "status_ours": "NOT_APPLICABLE",
+   "status_independent": "NOT_APPLICABLE",
+   "status_match": true,
+   "steps_ours": 0,
+   "steps_independent": 0,
+   "steps_matched": 0,
+   "sequence_exact": true,
+   "only_ours": [],
+   "only_independent": [],
+   "independent_uncertain": [
+    "Request is a marketing opt-out and explicitly says it is not a deletion request."
+   ]
+  }
+ }
+}

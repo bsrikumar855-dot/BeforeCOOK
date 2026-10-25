@@ -1,0 +1,27 @@
+{
+ "case_id": "case_58",
+ "deletion_status": "COMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_8465",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "evidence_05",
+   "justification": "Read-replica snapshot 2026-09-21 (evidence_05, primary and replica tables): audit_record_8465 subject user_56 account_deletion_reviewed; no other row in the snapshot references user_56 identifiers"
+  }
+ ],
+ "subject": {
+  "user_id": "user_56",
+  "identifiers_used": [
+   "fournier.manon@icloud.com",
+   "user_56"
+  ]
+ },
+ "uncertain": [
+  "reported_status is NOT_STARTED, but no subject record other than the retained security record appears in any evidence at or before audit. The account id could not be attributed (candidates account_5715/account_1298/account_9862 from the 2026-08-29 batch), so no account ABSENT step was emitted.",
+  "One of analytics_2572/analytics_8858 may belong to this subject; ownership cannot be determined."
+ ]
+}
