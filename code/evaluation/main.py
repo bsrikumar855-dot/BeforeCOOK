@@ -692,6 +692,10 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
     else:
         L.append("- Not run in this invocation (use `--determinism`).")
     L += ["", "## 6. Failures found and improvements made", ""] + NARRATIVE
+    L += ["", f"- **Known remaining failure class (generated from section 1).** {sum(residual_tags.values())} reference "
+              f"sample steps are still missing: " + ", ".join(f"{k} {v}" for k, v in sorted(residual_tags.items())) +
+              ". ATTRIBUTION steps belong to AMBIGUOUS pairs, which by policy produce no steps; NOT_DERIVABLE resources "
+              "appear in no participant file."]
     L += [""] + limitations_section(traces, {r["case_id"] for r in ds_sample_rows}, amb_accounts)
     L += [""] + appendix
     for target in (EVAL_DIR, REPO_ROOT / "evaluation"):     # code/evaluation and the zip-root evaluation/ the spec names
@@ -1008,10 +1012,30 @@ NARRATIVE = [
     "pairs | any accepted wrong proposal | 11 sample batches, 28 model calls, 17 tool calls, 41,780 tokens; 126 "
     "proposals, all AMBIGUOUS; 0 accepted. Verifier negative control: 3/3 wrong proposals rejected (unit "
     "test) | NOT SHIPPED (no metric moves; eval run skipped) |",
-    "",
-    "- **Known remaining failure class.** 19 of 22 missing sample steps are AMBIGUOUS attributions (interleaved deletion",
-    "  bursts), which by policy produce no steps; 3 are records found in no parsed source. Individual wrong rows are not",
-    "  fixed until reviewed.",
+    "| R5-A1 | Claim-consistency filter on timing-only account candidates (worker result must fit the case's reported "
+    "status) | 19 timing-only AMBIGUOUS sample pairs | a wrong owner | 7 resolved, 7 correct, 0 incorrect; recall "
+    "171 -> 178/193, sequence 16 -> 19/32 | SHIPPED (rc2) |",
+    "| R5-A2 / ordering | Offset bands; ordering tiebreak on residual ties | same | same | A2 removed case_02's "
+    "correct account_002; ordering made 1 wrong owner (case_23 -> account_9155) | REJECTED |",
+    "| F1 | Screenshot proof that a tombstone holds no direct identifiers (own detail page, whole-image OCR scan) | "
+    "tombstone_17 | redaction claimed from a partial view | 1 eligible record; case_46 +VERIFY_RECORD_REDACTED; 0 "
+    "sample rows | SHIPPED (rc4) |",
+    "| rc5-A1 | Custom-case fixtures written with LF line endings | the evaluation command rewrote 19 committed files | "
+    "none | 0 rows; a fresh build equals the committed fixtures | SHIPPED (rc5) |",
+    "| rc6-P1 | An OCR id on the subject's own page captured inside the window is scope evidence for an already-owned "
+    "record | case_34 support_9538 | an OCR misread attached to someone | 1 eval row, 0 sample rows; an OCR id alone "
+    "attributes nothing | SHIPPED (rc6) |",
+    "| rc7-X4 | Undecidable state: no finding, but the policy's required check in INCOMPLETE plans (dropped in COMPLETE) "
+    "| attributed records with no admissible state | a check on a wrongly attributed record | 3 eval rows "
+    "+VERIFY_RECORD_ABSENT \"\"; 0 sample rows; statuses unchanged | SHIPPED (fix/rc7) |",
+    "| rc7-X1 | An OCR mention of a known resource counts for citation rule C (never for state) | case_34 support_9538 "
+    "citation | a citation to a misread | 1 step: evidence_01 -> evidence_04; 0 sample rows | SHIPPED (fix/rc7) |",
+    "| rc7-D1 | attribution_variants.json made byte-deterministic; stale artifacts re-run | artifact drift | none | "
+    "byte-identical under 3 hash seeds; M1 now 904 pairs / 347 cases (the committed 1,247 / 381 predated A1) | "
+    "SHIPPED (fix/rc7) |",
+    "| rc7-R1 | attribution.attribute split into named phases; type annotations (163/165 decision functions) | "
+    "readability | any behaviour | output.csv, 553 traces and all 6 attribution variants byte-identical | SHIPPED "
+    "(fix/rc7) |",
 ]
 
 
