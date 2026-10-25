@@ -1018,8 +1018,8 @@
   },
   "labels_eval": {
    "AMBIGUOUS": 904,
-   "CONFIRMED": 1434,
-   "CONFIRMED/OUT_OF_SCOPE": 41,
+   "CONFIRMED": 1435,
+   "CONFIRMED/OUT_OF_SCOPE": 40,
    "CONFLICT": 1,
    "INFERRED": 40,
    "INFERRED_CLAIM": 95
@@ -1029,7 +1029,7 @@
    137
   ],
   "coverage_eval": [
-   1569,
+   1570,
    2515
   ],
   "inferred_evaluable": [
@@ -2953,7 +2953,7 @@
   "run_1": {
    "returncode": 0,
    "pythonhashseed": "1",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>\\run_1\\output.csv",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>/run_1/output.csv",
    "stderr": "",
    "model_calls": 0,
    "files_compared": 553
@@ -2961,7 +2961,7 @@
   "run_2": {
    "returncode": 0,
    "pythonhashseed": "2",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>\\run_2\\output.csv",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>/run_2/output.csv",
    "stderr": "",
    "model_calls": 0,
    "identical_to_run_1": true,
@@ -2971,7 +2971,7 @@
   "from_cache_no_keys": {
    "returncode": 0,
    "pythonhashseed": "3",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>\\from_cache_no_keys\\output.csv",
+   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>/from_cache_no_keys/output.csv",
    "stderr": "",
    "model_calls": 0,
    "identical_to_run_1": true,

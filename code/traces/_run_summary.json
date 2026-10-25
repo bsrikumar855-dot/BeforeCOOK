@@ -36,7 +36,7 @@
   "excluded_reasons": {
    "AMBIGUOUS": 904,
    "CONFLICT": 1,
-   "OUT_OF_SCOPE": 41,
+   "OUT_OF_SCOPE": 40,
    "UNKNOWN_STATE": 3
   },
   "intent_paths": {

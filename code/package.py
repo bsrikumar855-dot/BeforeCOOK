@@ -3,7 +3,8 @@
     zip -r code.zip README.md requirements.txt code evaluation -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "*/node_modules/*" "*/.git/*" "*/.DS_Store"
 
 Same inputs (README.md, requirements.txt, code/, evaluation/) and the same exclusions, plus the release rules: no dataset/, no .env, no
-nested archives, no temporary or degraded outputs. Entries are written in sorted order with a fixed timestamp, so the
+nested archives, no temporary or degraded outputs. It refuses to build while code/DESIGN.md or code/CONSTANTS.md differ
+from the root originals (code/sync_docs.py). Entries are written in sorted order with a fixed timestamp, so the
 archive is byte-identical for identical inputs. Prints the archive's sha256.
 
     python3 code/package.py [--out code.zip]
@@ -52,6 +53,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Build code.zip (README packaging command, stdlib only)")
     ap.add_argument("--out", type=Path, default=REPO / "code.zip")
     args = ap.parse_args()
+    sys.path.insert(0, str(REPO / "code"))
+    from sync_docs import diverged
+    stale = diverged()
+    if stale:
+        print(f"refusing to package: {', '.join(stale)} differ from the root originals (run python3 code/sync_docs.py)")
+        return 1
     digest = build(args.out)
     print(f"{args.out} {len(members())} files sha256={digest}")
     return 0

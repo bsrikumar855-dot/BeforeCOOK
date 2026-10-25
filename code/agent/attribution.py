@@ -351,13 +351,37 @@ def order_tiebreak(cases: list[CaseContext], by_case: dict[str, dict[str, Attrib
                                                                 "sources": []})
 
 
+def page_scope(page_ids: dict[str, list[str]], index: EvidenceIndex,
+               owners: dict[str, list[OwnerEdge]]) -> dict[str, list[tuple[str, str, str]]]:
+    """rc6-P1: resource -> [(file_id, captured_at, page owner)] for screenshots that show the resource's id (OCR) on a
+    page whose extracted records all belong to one person. Used only as SCOPE evidence for a record that already
+    has a hard identity edge to that person (never as an ownership link), so an OCR misread cannot attach a record
+    to anyone."""
+    page_owner: dict[str, set[str]] = defaultdict(set)
+    for edges in owners.values():
+        for e in edges:
+            if e.is_content and e.source_id in page_ids:
+                page_owner[e.source_id].add(e.user_id)
+    out: dict[str, list[tuple[str, str, str]]] = defaultdict(list)
+    for fid, ids in sorted(page_ids.items()):
+        f = index.files.get(fid)
+        if len(page_owner.get(fid, ())) != 1 or not f or not f.captured_at:
+            continue
+        (user,) = page_owner[fid]
+        for rid in ids:
+            out[rid].append((fid, f.captured_at, user))
+    return out
+
+
 def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[ActivityClaim],
-              universe: IdentityUniverse, variant: str | None = None) -> AttributionResult:
+              universe: IdentityUniverse, variant: str | None = None,
+              page_ids: dict[str, list[str]] | None = None) -> AttributionResult:
     variant = variant or os.environ.get("ORCHESTRATE_ATTRIBUTION") or DEFAULT_VARIANT
     result = AttributionResult()
     result.variant = variant
     owners = resource_owners(index, activity, universe)
     owner_users = {rid: sorted({e.user_id for e in edges}) for rid, edges in owners.items()}
+    on_page = page_scope(page_ids or {}, index, owners)
     result.conflicts = {rid: us for rid, us in owner_users.items() if len(us) > 1}
     content = record_content(index)
 
@@ -385,10 +409,13 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
             case_edges = [Edge(c.case_id, rid, "CATALOG" if e.provenance == "CATALOG_LINK" else "HARD", e.source_id,
                                e.identifier, e.time, "HARD") for e in mine]
             lifecycle = [e for e in mine if c.in_lifecycle(e.time)]
+            page = [fid for fid, cap, user in on_page.get(rid, []) if user in users and c.in_lifecycle(cap)]
             if lifecycle:
                 scope, reason = True, f"identity evidence within [requested_at, audit_at]: {lifecycle[0].source_id}"
             elif rid in burst_ids:
                 scope, reason = True, "resource is in the case's own deletion burst"
+            elif page:
+                scope, reason = True, f"shown on the subject's own page in {page[0]}, captured within [requested_at, audit_at]"
             else:
                 scope, reason = False, "identity evidence only outside the request lifecycle (earlier/later episode)"
             own = content.get(rid, set())

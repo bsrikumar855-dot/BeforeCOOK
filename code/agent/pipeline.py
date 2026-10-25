@@ -94,7 +94,9 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
                              **({"truncated_to": MAX_CLASSIFY_CHARS} if len(r["request_text"]) > MAX_CLASSIFY_CHARS else {})}
 
     # ---- attribution (global, all cases jointly) ----
-    attribution = attribute(contexts, index, ds.activity, universe)
+    # OCR ids a screenshot shows but the model did not extract: scope evidence only (rc6-P1, attribution.page_scope)
+    page_ids = {f: r["ocr_only"] for f, r in extractor.grounding_report.items()} if extractor is not None else {}
+    attribution = attribute(contexts, index, ds.activity, universe, page_ids=page_ids)
     worker_events: dict[str, list[str]] = {}
     for a in sorted(ds.activity, key=lambda a: (a.event_time, a.activity_id)):
         if a.source_system == WORKER:

@@ -798,3 +798,594 @@ branch=main
 repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
+
+## [2026-10-25T00:00:00Z] SESSION START
+
+tool=Claude Code
+model=claude-opus-5-5
+Repo Root: /home/user/BeforeCOOK
+Branch: main-3guhx9
+Worktree: main
+Parent Agent: none
+Language: py
+Time Remaining: not configured
+
+## [2026-10-25T05:31:34Z] Stop hook: commit and push the session-start log entry; draft PR #1
+
+User Prompt (verbatim, secrets redacted):
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+Agent Response Summary:
+The only uncommitted change was the SESSION START entry appended to log.txt in this cloud checkout. I committed it on the designated branch main-3guhx9 and pushed it, then opened draft PR #1 (main-3guhx9 -> main) and subscribed to its activity. I warned that log.txt is append-only and the Windows clone holds its own copy, so a merge must keep both sets of entries. This entry was appended late, during the rc5 turn. The SESSION START entry above carries a wrong timestamp (2026-10-25T00:00:00Z); the session was created at 2026-10-25T05:30:27Z (session metadata). The old entry is left as written because the log is append-only.
+
+Actions:
+* git commit 1a6e869 "log: cloud session start entry"; git push -u origin main-3guhx9
+* mcp__github__create_pull_request (draft, #1); subscribe_pr_activity #1; send_later safety check-in
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main-3guhx9
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T05:54:30Z] RC5: G1-G4, additional audit, full keyless release gate, tag rc5
+
+User Prompt (verbatim, secrets redacted):
+# ORCHESTRATE OCTOBER — RC5 SCORE OPTIMIZATION & RELEASE ENGINEERING
+
+## MISSION
+
+You are operating as a senior competitive-programming evaluation engineer, Python architect, adversarial auditor, and release engineer.
+
+Repository: `bsrikumar855-dot/BeforeCOOK`
+
+Current release: `rc4`  
+RC4 commit: `a89b7c6`  
+Target branch: `fix/rc5`  
+Target release tag: `rc5`
+
+Your mission is to produce the strongest defensible submission possible by:
+1. Closing the four identified gaps G1–G4.
+2. Finding any additional, demonstrable score-relevant defects that can be fixed safely.
+3. Preserving all previously correct behavior.
+4. Running the complete keyless release gate against the final tree.
+5. Creating and pushing `fix/rc5` and tag `rc5` only if every required gate passes.
+
+This is the final score-improvement build. Optimize for correctness, generalization, specification compliance, reproducibility, explainability, and evaluation performance—not code volume or architectural complexity.
+
+## 0. NON-NEGOTIABLE OPERATING RULES
+
+### Repository and release safety
+- Clone the repository if it is not already available in the cloud workspace.
+- Verify the remote repository, working directory, current Git state, and `rc4` tag.
+- Check out the exact `rc4` commit `a89b7c6` and create branch `fix/rc5` from it.
+- Verify that the existing `rc4` tag resolves to the expected commit. If it does not, stop and report the discrepancy.
+- Never modify or move the `rc4` tag.
+- Never push to `main`.
+- Never force-push.
+- Push only `fix/rc5` and the new `rc5` tag after all gates pass.
+- If authenticated Git access is unavailable, finish the local work and report that pushing is blocked. Do not claim a push succeeded.
+
+### Session discipline
+- Read and obey `AGENTS.md`.
+- Append the required record for every turn to `log.txt`.
+- Do not modify `CLAUDE.md`.
+- Do not print, expose, or commit credentials, tokens, environment variables containing secrets, or private keys.
+- Do not request API keys. All required evaluation and reproduction must use existing cache data and `--from-cache`.
+- Do not make new model calls.
+- Preserve existing cached prompt provenance and evidence.
+- Never fabricate test results, metrics, commits, hashes, or successful operations.
+
+### Evidence and regression rules
+- Every fix must have a change record describing the defect, evidence, implementation, tests, and expected metric impact.
+- Every commit must be gated by the real exit code from the relevant test suite.
+- Do not use `;` or another shell construct that can hide a failing test command's exit status.
+- No sample-specific logic.
+- No regression to previously correct sample steps or statuses.
+- Any changed evaluation row must be justified by quoted, admissible raw evidence.
+- Keep `MEASURED`, `ESTIMATED`, `JUDGEMENT`, and `UNKNOWN` clearly separated.
+- Never describe a heuristic score as an official HackerRank score.
+- Do not rewrite history to make the transcript appear more complete.
+- Do not reopen previously rejected attribution, ordering, or offset-band experiments without new admissible evidence that changes the earlier conclusion.
+
+### Stop conditions
+If the starting state is wrong, a required artifact is missing, the specification conflicts with an assumption, or a required release gate fails, do not create or push `rc5`. Preserve `rc4` and report the blocker.
+
+## 1. ESTABLISH THE BASELINE
+
+Before changing code:
+
+1. Read `AGENTS.md`, the challenge specification, README, `DESIGN.md`, `CONSTANTS.md`, `evaluation_report.md`, the rejection/change log, and the existing release instructions.
+2. Inspect the exact `rc4` commit, tag, output, archive, and Git status.
+3. Record the baseline hashes and current sample/evaluation metrics.
+4. Run only inexpensive baseline checks needed to establish that the environment and artifacts are correct.
+5. Identify the authoritative specification wording for every planned behavior change.
+
+Known RC4 reference facts—verify them against the repository:
+- Commit: `a89b7c6`.
+- Output CSV SHA-256: `713bf4ae6ea26afc533885403da4b3efa5206542454f8e1518f1a6561455a4ab`.
+- Code ZIP SHA-256: `5b6a08a62f76159c3a2252189eb3cb01edf5c8f247a048a3ac4ffca20eac67b2`.
+- Sample status: `31/32`.
+- Step precision: `178/178`.
+- Step recall: `178/193`.
+- Exact sequence: `19/32`.
+- Evaluation distribution: `153 COMPLETE`, `355 INCOMPLETE`, `10 NOT_APPLICABLE`.
+- Evaluation-set correctness is UNKNOWN because reference labels are unavailable.
+- RC4 passed its recorded release gates, with 113 tests and a Code ZIP heuristic estimate of 82.4.
+
+If the verified baseline differs from these facts, report the difference and investigate before proceeding.
+
+## 2. G1 — VERIFY AND FIX CASE-ID SORT ORDER
+
+The challenge specification says output is sorted by `case_id`. Determine the exact intended ordering from the literal specification and input data.
+
+### Required actions
+1. Inspect the input case IDs, writer implementation, output CSV, and `spec_audit.py`.
+2. Determine whether the required order is lexicographic or numeric-suffix order. Do not assume that the input's apparent order alone overrides the literal contract.
+3. If numeric-suffix order is required and the output is not numeric:
+   - Fix the central output writer, not a single output file.
+   - Update `spec_audit.py` to independently enforce the required order.
+   - Add regression tests covering boundary IDs such as `case_99`, `case_100`, `case_550`, and any other relevant cases.
+4. Regenerate output using the keyless workflow.
+
+### Prove the change is safe
+- Canonicalize the original and new CSV by sorting both using the same complete-row representation.
+- Compare all columns and all rows, preserving duplicate multiplicity.
+- Confirm zero content differences; only row order may change.
+- Confirm row counts, schema, statuses, step JSON, evidence IDs, and all case contents remain unchanged.
+- Run the negative-control test for the specification auditor.
+
+If the existing output already satisfies the actual specification, leave the writer untouched and document the result.
+
+**Expected benefit:** specification compliance and possible recovery of output-format points. Do not claim a score increase unless the evaluator measures one.
+
+## 3. G2 — IMPROVE THE README'S FIRST SCREEN
+
+Improve the README so an evaluator can quickly understand, reproduce, and inspect the project. Keep it concise and factual. Do not remove existing required instructions.
+
+Add the following near the beginning.
+
+### What to read first
+- `code/main.py`: execution entry point.
+- `code/agent/`: pipeline, attribution, rules, and step generation.
+- `code/evaluation/`: evaluation reports, specification audit, and coupling probes.
+- `code/analysis/`: archived rejected experiments retained for reproducibility; not part of the active decision path unless the code proves otherwise.
+
+Verify these paths and descriptions against the actual repository before publishing them.
+
+### Architecture in one line
+Use this statement only if verified against the code:
+
+“The model perceives intent and screenshots; deterministic code makes the final decisions. The E2 investigator agent was implemented and measured, achieved a measured resolution ceiling of zero on the tested cases, and was removed.”
+
+Cite the relevant measurement and implementation evidence in the documentation. Clearly state the scope of the measured ceiling.
+
+### Reproduce
+Document the actual, tested keyless command:
+
+`python code/main.py --from-cache`
+
+Explain that:
+- No API keys are required for this reproduction path.
+- Every cached reply's prompt provenance is available in `code/prompts/`, including v1 and v2, if this is verified.
+- Re-running live extraction is not guaranteed to reproduce the cached result.
+- The recorded v2 regression on `case_61` and `case_34` is documented in the DESIGN rejection log, if confirmed.
+
+Run the documented command from the intended clean environment. The README must not promise a workflow that has not been tested.
+
+**Expected benefit:** reproducibility, reviewer confidence, and interview explainability. Do not claim a direct score gain without scoring evidence.
+
+## 4. G3 — DISCLOSE INTERVIEW-RELEVANT LIMITATIONS
+
+Update `code/evaluation/evaluation_report.md` without changing decision logic merely to improve presentation.
+
+Add a concise section covering these items.
+
+### A. Ambiguous account attribution
+Document:
+- The 131 evaluation deletion cases where an account step is omitted because the primary account cannot be confidently attributed.
+- M1's measured result: zero status flips.
+- The ordering experiment involving `case_23` and `account_9155`, including why the wrong-owner result was rejected.
+- Why conservative omission is safer than assigning an action to the wrong person's record.
+- The impact on step recall and exact-sequence metrics, clearly distinguished from the unmeasured effect on official score.
+
+Cite the corresponding measurements and rejection log.
+
+### B. Case 63
+Document `case_63` with:
+- Status: `INCOMPLETE`.
+- Steps: `[]`.
+- Reason: `NO_ATTRIBUTABLE_RESOURCE`.
+- The actual evidence and specification basis for this result.
+
+Verify the case's current output and raw evidence before documenting it.
+
+### C. F1 detail-page absence proof
+Document the F1 judgment behind the `case_46` addition:
+- The relevant screenshot and capture timestamp.
+- The evidence supporting the detail-page interpretation.
+- The OCR coverage and identifier-absence checks.
+- The specification basis, if any.
+- The remaining uncertainty if the specification does not explicitly define when visual absence proves deletion-state compliance.
+
+Explicitly label any unsupported inference `JUDGEMENT`; do not present it as an established specification rule.
+
+### D. D-SCOPE episode exclusion
+Document the exclusion judgment affecting `case_33`, `case_34`, `case_35`, `case_39`, and `case_55`.
+
+For each case or shared rule, explain:
+- Which records were excluded.
+- Why they were considered outside the request's own lifecycle.
+- Which raw evidence and specification language support the decision.
+- What remains untested, particularly the single-request-subject scenario.
+
+If the specification does not settle the behavior, label it `JUDGEMENT` or `UNKNOWN` as appropriate.
+
+No output logic changes for G3. Documentation must describe what the implementation actually does, not what it ought to do.
+
+## 5. G4 — ELIMINATE DUPLICATE-DOCUMENT DRIFT
+
+Inspect the repository for `DESIGN.md` and `CONSTANTS.md` at both the repository root and under `code/`.
+
+If both copies exist:
+1. Identify the authoritative source for each file.
+2. Implement one deterministic generation or synchronization mechanism that writes the secondary copies from the authoritative source.
+3. Add a test that fails when the copies diverge.
+4. Ensure the synchronization process does not overwrite newer information silently.
+5. Run the sync and verify the copies are byte-identical.
+
+If only one copy exists, or packaging intentionally uses a different layout, do not invent a duplicate. Document the actual arrangement and test the relevant packaging contract instead.
+
+Do not include secrets, private paths, or session-only data in either copy.
+
+**Expected benefit:** consistency, reproducibility, and fewer reviewer contradictions.
+
+## 6. ADDITIONAL SCORE-IMPROVEMENT AUDIT
+
+After G1–G4, perform a bounded, evidence-driven review for other high-value defects. Do not repeat completed Round 6 work.
+
+Inspect only areas where a demonstrable defect could materially affect CSV correctness, code evaluation, or reproducibility.
+
+Prioritize:
+1. Contract and schema compliance.
+2. Incorrect statuses or missing/extra steps supported by evidence.
+3. Evidence citation correctness and timestamp admissibility.
+4. Generalization failures not already covered by coupling probes.
+5. Packaging omissions, accidental files, path issues, or nondeterministic behavior.
+6. Documentation claims that contradict the actual code or measured results.
+
+Use existing tests, reports, cached evidence, and audit scripts. Do not launch broad speculative experiments or new model calls.
+
+For each candidate defect, record:
+- Observed behavior.
+- Relevant specification clause or raw evidence.
+- Number of cases potentially affected, with denominator.
+- Proposed fix.
+- Regression risk.
+- Expected metric effect, labelled MEASURED, ESTIMATED, or UNKNOWN.
+
+Only implement a fix if the evidence establishes a defect and the SHIP rule can be satisfied. If no additional fix is justified, say so. Do not manufacture work to make the round look productive.
+
+## 7. REQUIRED VALIDATION — KEYLESS ONLY
+
+Run the full release gate against the final tree, after all intended changes.
+
+Capture each real exit code and preserve the logs.
+
+| Gate | Required outcome |
+|---|---|
+| Full tests | PASS; actual process exit code 0 |
+| Specification audit | PASS; zero violations |
+| Negative control | PASS |
+| Coupling probes | PASS, 5/5 |
+| Three-seed determinism | PASS |
+| Cache completeness | Zero misses and zero orphans |
+| Security audit | PASS, including relevant regex and input fixtures |
+| Kit selftest | PASS, zero blockers |
+| Kit evaluate | PASS |
+| Kit certify | PASS, zero blockers |
+| Kit score | Record heuristic estimate and weakest section |
+| Code ZIP | Correct contents and README-defined structure |
+| Secret/path scan | No secrets, unintended absolute paths, or usernames |
+| Archive exclusions | No `dataset/`, `.env`, nested archives, or `INTERVIEW_FACTS.md` |
+| Clean-folder reproduction | Output byte-identical to the final expected output |
+| Package submission | `READY TO SUBMIT` |
+| Transcript analysis | Run and report actual result |
+
+Do not treat the previous RC4 gate as proof that RC5 passes. Every required gate must apply to the final tree.
+
+If the sort-order change intentionally alters the CSV byte order, establish the new canonical hash and separately prove that canonicalized row content is unchanged.
+
+Build `code.zip` according to the verified README instructions. Do not include the root `INTERVIEW_FACTS.md`. Verify the archive by listing its actual contents and scanning it before packaging.
+
+## 8. RELEASE AND PUSH POLICY
+
+Only after every required gate passes:
+
+1. Create the final local commit or commits with meaningful messages and corresponding change records.
+2. Verify that the working tree is clean.
+3. Verify the exact `fix/rc5` branch and final commit.
+4. Record the final output CSV SHA-256 and code ZIP SHA-256 in `DESIGN.md` using the established convention.
+5. Re-run any validation invalidated by the DESIGN or release-record changes.
+6. Create the `rc5` tag at the verified final commit. Never move or overwrite `rc4`.
+7. Rebuild the final submission directory and verify its contents.
+8. Push only `fix/rc5` and tag `rc5`; never push to `main` and never force-push.
+9. Verify the push and remote tag resolution if authenticated access permits.
+
+If any gate fails, do not tag or push. Keep `rc4` as the known fallback, preserve the diagnostic evidence, and report the exact blocker.
+
+If remote authentication fails after local validation, keep the verified local branch and tag, report that the push was not completed, and provide the exact local commit and hashes. Do not claim a remote release exists.
+
+## 9. COMPACT FINAL REPORT
+
+Return a concise, evidence-backed report containing:
+
+### G1 — Sorting
+- Required ordering interpretation and specification citation.
+- Whether the original output was already correct.
+- Whether rows were reordered.
+- Canonical content differences: must be zero if only order changed.
+- Writer and auditor test results.
+
+### G2–G4
+- README updates completed.
+- Documentation disclosures completed.
+- Duplicate-document synchronization and divergence-test results.
+
+### Additional score audit
+- Defects investigated.
+- Fixes made and evidence.
+- Potentially affected cases and denominators.
+- Remaining issues and reasons no further fix was made.
+
+### Final release gates
+A table with PASS, FAIL, or NOT RUN for every required gate, plus actual exit codes where applicable.
+
+### RC5 artifacts
+- Final commit.
+- Branch and tag status.
+- Output CSV SHA-256.
+- Code ZIP SHA-256.
+- Package readiness.
+- Push verification status.
+
+### Scoring outlook
+- Final sample metrics.
+- Kit heuristic score and weakest section.
+- Remaining top three risks by likely score impact.
+- Explicit distinction between measured improvements and expected or unknown score effects.
+
+Do not promise rank #1 or invent an official score. The goal is a more defensible, correct, reproducible submission—not a cosmetic metric increase.
+
+After the report, stop and wait for review.
+
+Agent Response Summary:
+The baseline matched: rc4 = a89b7c6, the output hash matched, 113 tests passed, and the metrics were 31/32, 178/178, 178/193 and 19/32. fix/rc5 was created from a89b7c6 and fast-forwarded over 580b24b and 1a6e869 (DESIGN rc4 record, clean_room.json, log entries only) so that no log entries were dropped. G1: output.csv was already in numeric-suffix order, equal to the order of deletion_requests.csv; the spec does not define a collation, so this is kept as JUDGEMENT. The writer is unchanged; spec_audit gained an independent check (case_id_sort, 18/18 negative control). G4: sync_docs.py with a sha256 manifest refuses to overwrite a copy edited directly, and package.py refuses to build from diverged copies. A1 (found in the bounded audit): the fixtures held CRLF rule files, so the eval command rewrote 19 committed files in a clean clone; fixed and tested. G3: a generated §7 covers the limitations (131 AMBIGUOUS accounts, M1, case_23 → account_9155, case_63, F1, D-SCOPE with 16 single-request subjects). G2: README first screen, with "ceiling of zero" corrected to measured 0/126 plus an argued ceiling. The first kit certify failed (exit 3) because the gate's refreshed reports were uncommitted; after committing them, every gate passed on 5616cb9, and rc5 is tagged there. output.csv is byte-identical to rc4 and code.zip is 88abb2ab….
+
+Actions:
+* Commits 7591bef (G1), 1a675b5 (G4), 652be30 (A1), 8df3bc5 (G3), 4aff96c (G2), 5616cb9 (gate outputs; tag rc5), then the rc5 record commit
+* Edited code/evaluation/spec_audit.py, code/evaluation/main.py, code/evaluation/custom_cases/build_fixtures.py (+19 regenerated rule files), code/package.py, README.md, DESIGN.md, CONSTANTS.md, code/evaluation/score_estimate.md, INTERVIEW_FACTS.md; added code/sync_docs.py, code/docs_sync.json, code/tests/test_fixture_bytes.py; extended test_spec_audit.py, test_steps_and_validation.py, test_packaged_docs.py (120 tests)
+* Gate scripts and logs in the session scratchpad; orchestrate-kit cloned fresh (commit ccb175f); no model calls, no keys
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc5
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:17:36Z] RC6: rc5 tag push retry; D-SCOPE review and fix; attribution audit; interview mock (gate pending)
+
+User Prompt (verbatim, secrets redacted):
+First "git fetch origin fix/rc5
+git tag rc5 5616cb9941dffbde806380c7b13a9ebf232962f6
+git push origin rc5"
+
+Then: "FINAL SCORE OPTIMIZATION — RC5 → RC6
+Repository: `bsrikumar855-dot/BeforeCOOK`
+Current baseline: RC5 branch `fix/rc5`, release commit `5616cb9941dffbde806380c7b13a9ebf232962f6`, with release-record commits on the branch. Verify the actual remote and local state before acting.
+Mission
+Improve the expected competition score by investigating the remaining high-impact correctness risks and preparing for the AI Judge interview. Make only evidence-backed changes. Preserve RC5 as the rollback baseline.
+Rules
+
+* Read `AGENTS.md`; follow append-only logging requirements. Do not modify `CLAUDE.md`.
+* Local work first. Never push to `main`, force-push, expose secrets, or make new model calls.
+* Use cached evidence and keyless reproduction.
+* Create a new branch, `fix/rc6`, from the verified RC5 release state.
+* Every change requires a change record and tests. Gate commits on the real pytest exit code.
+* No sample-specific logic. Zero regressions to previously correct sample steps or statuses.
+* Every changed evaluation row must be justified by quoted raw evidence.
+* Distinguish MEASURED, ESTIMATED, JUDGEMENT, and UNKNOWN.
+* Do not repeat completed RC5 release audits unless a change invalidates them.
+* Do not promise a rank or invent score improvements.
+
+Priority 1 — D-SCOPE episode-boundary risk
+The RC5 report identifies 20 evaluation cases where records were excluded as outside the request's time window; 16 involve people with only one request, a scenario not covered by the samples. The independent review described episode scope as an ambiguous specification issue.
+
+1. Inspect the literal specification, raw evidence, relevant code, and the existing rejection log.
+2. Select a small, representative set of the 16 single-request cases, including both straightforward and ambiguous examples.
+3. Determine whether each excluded record belongs to the request's lifecycle using only admissible evidence.
+4. Separate definite implementation defects from unresolved specification ambiguity.
+5. Do not expand the scope window or include records merely to increase recall.
+6. If a proposed fix changes outputs, quote the raw evidence and explain why the existing interpretation is demonstrably wrong.
+7. If the specification remains ambiguous, retain the current behavior and document the uncertainty instead of guessing.
+
+Report the number of cases inspected, evidence, conclusions, and output changes. If no safe fix is proven, make no logic change.
+Priority 2 — Account attribution and safe recall
+RC5 reports 131 evaluation deletion cases without an account step because the primary account cannot be confidently attributed.
+
+* Inspect the existing attribution analysis and measurements.
+* Identify whether any new admissible identity evidence exists that was not considered previously.
+* Do not repeat rejected A1/A2, ordering, offset-band, or other attribution experiments without new evidence.
+* Never link an account from a normalized email alone.
+* Never emit remediation against a potentially wrong person's record.
+* Preserve the M1 result and verify whether any proposed change could flip a status or introduce a wrong-owner action.
+
+If no new identity evidence exists, confirm that attribution remains at its evidenced ceiling and stop investigating this area.
+Priority 3 — Remaining output correctness
+Use existing reports and tests to identify the most likely remaining CSV point losses.
+Focus on:
+
+* Incorrect or missing evidence citations.
+* Incorrect status or missing/extra steps.
+* Serialization and schema compliance.
+* Any output behavior that contradicts the literal specification.
+
+Do not optimize for exact sequence matching by changing ordering without specification evidence. Do not treat missing steps caused by insufficient identity evidence as a defect that can be safely repaired.
+For every candidate fix, provide the current behavior, specification or evidence basis, affected cases and denominator, expected effect, and regression risk. Implement only demonstrated defects.
+Priority 4 — Interview readiness
+Review `INTERVIEW_FACTS.md`, `DESIGN.md`, `CONSTANTS.md`, the rejection log, evaluation report, and relevant source code.
+Create a concise `INTERVIEW_MOCK.md` outside `code.zip`. Include ten adversarial questions covering:
+
+1. Architecture and why deterministic code makes final decisions.
+2. Why E2 was removed and what its measurements actually establish.
+3. Attribution ambiguity and why conservative omission is safer.
+4. D-SCOPE and the single-request limitation.
+5. F1 screenshot-based absence proof and its judgment boundary.
+6. Case 63: INCOMPLETE with no steps.
+7. Citation selection and admissibility at `audit_at`.
+8. Failed experiments, measured trade-offs, and rejected alternatives.
+9. Reproducibility, cache provenance, and generalization probes.
+10. Known limitations and what would be investigated with more time.
+
+For each question, provide:
+
+* The facts and source locations required to answer.
+* The key metric with its denominator.
+* The likely adversarial follow-up.
+* Any uncertainty that must be acknowledged.
+
+Do not invent an interview score or pretend a mock interview was conducted. Keep the fact sheet factual and distinguish evidence from interpretation.
+Validation
+If and only if code or output changes:
+
+* Run the full test suite with a verified exit code.
+* Run the specification audit and negative control.
+* Run coupling probes and determinism checks.
+* Verify cache completeness.
+* Run security checks and kit evaluation/certification.
+* Rebuild the archive and verify exclusions.
+* Run clean-folder keyless reproduction.
+* Run package submission validation.
+* Run transcript analysis if the transcript or release history changed.
+
+A documentation-only change still requires the relevant documentation and packaging checks. Do not rerun unrelated expensive audits unless required by the repository's release contract.
+Release decision
+
+* If a genuine defect is fixed and all required gates pass, create a new verified release candidate `rc6`, preserving RC5 and its tag.
+* If no correctness defect is established, do not manufacture a code change just to create RC6. Keep RC5 as the release candidate.
+* Do not push or publish a tag until the final release gates pass and the remote state is verified.
+* If a remote tag push fails, report it clearly; do not claim publication succeeded.
+
+Final report
+Return:
+
+1. D-SCOPE cases inspected and findings.
+2. Attribution investigation and whether new evidence existed.
+3. Other defects found and fixes, or why no safe fix was justified.
+4. Interview mock file status and ten questions.
+5. Validation results and actual exit codes.
+6. RC6 hashes and tag status, or explicit `RC5 KEPT`.
+7. Updated sample metrics and remaining risks.
+8. Which conclusions are measured versus estimated or unknown.
+
+Then stop for review."
+
+Agent Response Summary:
+The rc5 tag push from this container failed again (exit 1, "unexpected disconnect"); the remote still has no rc5 tag, so it has to be pushed from the user's machine. fix/rc6 was created from origin/fix/rc5 (9523831, which contains rc5 5616cb9). P1: all 16 single-request subjects were inspected (29 excluded records). 22 records in 14 cases are linked only by post-audit evidence, so their exclusion is required by AGENTS.md §6.2. 6 records in 2 cases (case_34 audit_record_3753; case_45 audit_record_001/002/004/005/006) stay excluded as a documented JUDGEMENT. One defect was fixed: case_34 support_9538 is shown on user_11's own page in the in-window screenshot evidence_04, so attribution.page_scope now uses OCR ids the model missed as scope evidence for already-owned records (1/518 eval rows changed, 0/32 samples). P2: no new identity evidence for the 159 AMBIGUOUS account pairs. P3: every residual sample miss is identity-limited or underivable. P4: INTERVIEW_MOCK.md written. The release gate could not start because the Bash permission classifier returned no verdict 8 times in a row, so the turn was paused before the gate; rc6 is NOT tagged and nothing of rc6 is pushed.
+
+Actions:
+* Commits 11f9c26 (rc6-P1 fix, D-SCOPE review, P2 audit record), 3818793 (INTERVIEW_MOCK.md, INTERVIEW_FACTS rc6 rows); two later INTERVIEW_MOCK.md wording fixes are uncommitted
+* Edited code/agent/attribution.py, code/agent/pipeline.py, code/evaluation/main.py, code/tests/test_attribution.py (123 tests, exit 0), DESIGN.md, CONSTANTS.md; added code/analysis/dscope_review.py, code/evaluation/dscope_review.json, INTERVIEW_MOCK.md
+* Release gate (gate_rc6.sh) NOT RUN: tool permission classifier unavailable
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:26:22Z] Stop hook (1 of 2): uncommitted INTERVIEW_MOCK.md and log.txt
+
+User Prompt (verbatim, secrets redacted):
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+Agent Response Summary:
+I tried to commit the two files locally, but the Bash permission classifier returned no verdict, and the tenth consecutive failure ended the turn. I declined to push: the user's RC6 rules say local work first and no push before the final release gates pass, and those take precedence over the generic hook. This entry was appended late, in the "continue" turn.
+
+Actions:
+* git commit attempted; blocked (no classifier verdict); nothing pushed
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:26:22Z] "Try again": commit still blocked; how to change the permission mode
+
+User Prompt (verbatim, secrets redacted):
+Try again
+
+Agent Response Summary:
+Two more commit attempts got no classifier verdict. I read the environment's permission documentation and told the user to switch the session's mode dropdown from Auto to Accept edits so that shell commands ask for approval instead. Nothing was committed or pushed. This entry was appended late.
+
+Actions:
+* git commit attempted twice; blocked; read_documentation session.permissions
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:26:22Z] Stop hook (2 of 2): still blocked
+
+User Prompt (verbatim, secrets redacted):
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+Agent Response Summary:
+One more commit attempt got no verdict; I stopped retrying and repeated the mode-change instruction. Nothing was committed or pushed. This entry was appended late.
+
+Actions:
+* git commit attempted; blocked
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:26:22Z] continue: RC6 release gate passed; rc6 tagged
+
+User Prompt (verbatim, secrets redacted):
+continue
+
+Agent Response Summary:
+After the mode change, Bash ran again. I committed the pending files (ad4d146) and ran the full release gate. Phase 1: 14 of 15 gates passed; kit certify exited 3 because the gate's own refreshed outputs were uncommitted, and spec_audit.json from 11f9c26 was stale (3006 → 3009 steps). I committed the refreshed outputs (d87f1c4) and re-ran phase 2 on that clean commit: all 12 gates exit 0, including certify (0 findings above INFO), clean-folder byte-identical output and package_submission READY TO SUBMIT. output.csv differs from rc5 only in case_34. rc6 is tagged at d87f1c4. rc5 and rc4 are unchanged; rc5 still exists only as a local tag.
+
+Actions:
+* Commits ad4d146, d87f1c4 (tag rc6), then the rc6 record commit; gate logs in the session scratchpad
+* output.csv 7bf6151a…; code.zip 71dd1675…
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none

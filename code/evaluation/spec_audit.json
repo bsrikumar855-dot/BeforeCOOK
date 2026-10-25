@@ -5,7 +5,7 @@
   "COMPLETE": 153,
   "NOT_APPLICABLE": 10
  },
- "steps": 3006,
+ "steps": 3009,
  "incomplete_empty": [
   "case_63"
  ],
@@ -14,6 +14,7 @@
   "row_count": true,
   "id_set": true,
   "row_order": true,
+  "case_id_sort": true,
   "status": true,
   "json": true,
   "not_applicable_steps": true,
