@@ -1,7 +1,7 @@
 # CONSTANTS.md: every number, window, rule and enum the solution depends on
 
 Provenance labels (only these; skill `orchestrate-interview/references/CONSTANTS-template.md`):
-**MEASURED** (swept: the losing alternative and its number are on record), **SPEC** (fixed by problem_statement.md /
+**MEASURED** (swept: the losing alternative and its number are on record), **SPEC-DERIVED** (follows from spec text by a stated argument, and checked on data), **SPEC** (fixed by problem_statement.md /
 README / AGENTS.md), **STANDARD** (canonical value, not tuned), **BOUND** (an external limit: RFC, file format, provider
 limit or price), **JUDGEMENT** (reasoned, not measured; the reasoning is given). No value below was "chosen after
 evaluation" unless its row names the sweep.
@@ -23,6 +23,10 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | Deletion-burst window | ±3 h around `reported_at` | `code/agent/attribution.py:28` `BURST_HALF_WIDTH` | Timing edges: deletion-worker rows inside it become attribution *candidates* (never confirmations) | JUDGEMENT | User decision in Phase 1 (DESIGN.md D-ATTR). Not swept | Wider: more candidates, more AMBIGUOUS batches, fewer INFERRED picks. Narrower: real burst rows missed |
 | Scope window | `[requested_at, audit_at]` | `code/agent/attribution.py:45-47` `in_lifecycle` | A hard-linked resource is in scope only through identity evidence inside the request's own lifecycle (or the case's burst) | JUDGEMENT | Keeps 84/84 expected hard/catalog-linked sample pairs and excludes the 3 from users' earlier requests. Rejected: `requested_at − 30 days` (worked, but 30 is an arbitrary tuned number) | Earlier requests of the same user leak into a later case |
 | E1-B burst gap (rejected) | 25 min | `code/analysis/e1_order_inference.py:28` `BURST_GAP` | Segment interleaved bursts by time gaps | JUDGEMENT | First trough of the unlabelled gap histogram. Measured as a *strategy* (1 correct, 1 incorrect on 19 AMBIGUOUS sample pairs) and rejected; the value itself was not swept | Nothing shipped depends on it |
+| A1 claim-consistency map (`CLAIM_RESULTS`) | COMPLETE → {SUCCESS}; NOT_STARTED → {FAILED}; PARTIALLY_COMPLETE → {PARTIAL, SUCCESS} | `code/agent/attribution.py` `CLAIM_RESULTS` | Filters the subject's primary-profile account-delete candidates (deletion_worker → account_service DELETE_RECORD) to those whose worker result agrees with the case's reported_status. Linkage only, never state | SPEC-DERIVED | problem_statement.md: reported_status is a claim from the existing deletion workflow; the claim about a job derives from its worker's result for that job. Measured on known-good links, label-free: all 252 hard-linked account deletes agree (COMPLETE→SUCCESS 133, NOT_STARTED→FAILED 50, PARTIALLY_COMPLETE→PARTIAL 69, 0 inconsistent); the brief's independent check on 29 sample cases agrees. Shipped (Round 5): 7/7 timing-only sample resolutions correct, 0 incorrect | A wrong pair would be accepted or a right one rejected; follow-up rows are never filtered (NOT_STARTED cases have SUCCESS anonymize/redact rows) |
+| A2 offset-band rule | groups (event_type, target_system, reported_result); n ≥ 10; band = median ± max(4 × MAD, 120 s); multimodal if an internal gap is wider than the full band with ≥ 10% of points on each side; a group with any CONFIRMED offset outside its own band is bandless | `code/agent/attribution.py` `BAND_MIN_N`, `BAND_MAD_K`, `BAND_MIN_HALF_S`, `MULTIMODAL_SIDE_SHARE` | Filter follow-up and account candidates by offset from reported_at | JUDGEMENT | Fixed before any accuracy number (the first three by the Round 5 brief, the multimodality test by us). Trained on CONFIRMED pairs only (test `test_band_training_uses_only_confirmed_pairs`). 7 of 15 groups with n ≥ 10 qualified. **Rejected:** the PARTIAL account band [−86, −40] min removed case_02's correct account_002 (offset +5 min), breaking a previously correct step and status; 0 extra sample resolutions | Not shipped |
+| Attribution variant (`DEFAULT_VARIANT`) | `a1` | `code/agent/attribution.py` | Which filters run | MEASURED | Variant table in evaluation_report.md §4e: baseline 0/19 timing-only resolved; +A1 7/19 (7 correct, 0 incorrect, 0 broken, 0 status changes); +A1+A2 breaks case_02; ordering variants make 1 incorrect resolution (case_23 → account_9155, reference account_410) | Other variants change sample rows for the worse |
+| A3 enumeration cap (`ENUMERATION_LIMIT`) | 200,000 maximum assignments per batch | `code/agent/attribution.py` | Prove uniqueness by enumeration | JUDGEMENT | 159 batches enumerated, 0 over the cap; the forced pairs equal the pairs common to all maximum assignments in every batch | A batch over the cap is reported as not enumerated |
 | Request-text cap | 5,000 characters | `code/agent/intent.py:16` `MAX_CLASSIFY_CHARS`; `code/agent/explain.py` (ad-hoc input limit) | Longer texts are classified on their first 5,000 characters; explain mode rejects longer input | JUDGEMENT | Longest dataset request is 252 characters; bounds prompt size and cost; fixture X18 (55k chars) passes (C7a). Rejected: treating long text as an input issue (stopped the whole run with exit 2) | Smaller: long genuine requests could be cut before the deletion sentence |
 | Intent batch size | 40 texts per call | `code/config/models.yaml:71`; fallback 20 at `code/agent/intent.py:96` | Fewer calls within free-tier daily quotas | JUDGEMENT | Not swept. Every text keeps its own cache entry, so the batch size changes cost, not labels (C4: 42/42 agreement across two models) | Larger: longer prompts, a failed batch costs more texts; smaller: more calls against quota |
 | Schema retries | 2 | `code/config/models.yaml:102` `limits.schema_retries` | Extra attempts on the same model when its JSON fails validation, with the validator's error fed back | JUDGEMENT | Not swept; two validator failures occurred in the first live run and were fixed by the retry | More: cost on a model that cannot comply; fewer: earlier fallback |
@@ -62,7 +66,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
   - REMEDIATION: DISABLE_DATA_FLOW=DISABLED, BLOCK_RESTORE=BLOCKED, DELETE_RECORD=ABSENT, REDACT_RECORD=REDACTED, ANONYMIZE_RECORD=ANONYMIZED
   - VERIFICATION: VERIFY_RECORD_ABSENT=ABSENT, VERIFY_RECORD_PRESENT=PRESENT, VERIFY_RECORD_REDACTED=REDACTED, VERIFY_RECORD_ANONYMIZED=ANONYMIZED, VERIFY_DATA_FLOW_DISABLED=DISABLED, VERIFY_RESTORE_BLOCKED=BLOCKED
 - INTENT_LABELS (ours, JUDGEMENT): DELETION, NON_DELETION, UNCLEAR
-- ATTRIBUTION_LABELS (ours, JUDGEMENT): CONFIRMED, INFERRED, AMBIGUOUS, CONFLICT
+- ATTRIBUTION_LABELS (ours, JUDGEMENT): CONFIRMED, INFERRED, INFERRED_CLAIM, INFERRED_OFFSET, INFERRED_ORDER, AMBIGUOUS, CONFLICT
 
 <!-- BEGIN GENERATED REGISTER -->
 
@@ -70,7 +74,14 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 
 | File | Values | Role | Label | What breaks if changed |
 |---|---|---|---|---|
-| `code/agent/attribution.py` | 4, 5, 7, 8 | regex capture-group index | STANDARD | the wrong capture is read |
+| `code/agent/attribution.py` | 4 | A2: band half-width multiplier on MAD (BAND_MAD_K); also a regex group index | JUDGEMENT | fixed in the Round 5 brief before any accuracy number |
+| `code/agent/attribution.py` | 10 | A2: minimum CONFIRMED offsets per band group (BAND_MIN_N) | JUDGEMENT | fixed in the Round 5 brief before any accuracy number |
+| `code/agent/attribution.py` | 120 | A2: minimum band half-width in seconds (BAND_MIN_HALF_S) | JUDGEMENT | fixed in the Round 5 brief before any accuracy number |
+| `code/agent/attribution.py` | 0.1 | A2: multimodality side share (MULTIMODAL_SIDE_SHARE) | JUDGEMENT | fixed before any accuracy number; see main table |
+| `code/agent/attribution.py` | 200000 | A3: enumeration cap per batch (ENUMERATION_LIMIT) | JUDGEMENT | batches above it are reported as not enumerated |
+| `code/agent/attribution.py` | 0.999 | ceiling rounding of the multimodality side count | STANDARD | rounding only |
+| `code/agent/attribution.py` | 2 | median midpoint / band full width (2 x half) / filter stage index | STANDARD | median and band arithmetic |
+| `code/agent/attribution.py` | 5, 7, 8 | regex capture-group index | STANDARD | the wrong capture is read |
 | `code/agent/attribution.py` | 3 | ±3 h deletion-burst half-width (timedelta(hours=3)); also 3 identifiers shown in a rationale | JUDGEMENT | candidate sets grow or shrink; see main table |
 | `code/agent/explain.py` | 40000 | character cap of --explain output | JUDGEMENT | only output length |
 | `code/agent/explain.py` | 4 | edges shown per attribution in --explain | JUDGEMENT | only output length |
@@ -113,7 +124,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/category_coverage.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/compare_intent.py` | 2 | a sentence used <= 2 times marks a free-text (non-template) request | JUDGEMENT | which texts the C4 comparison treats as free text |
 | `code/analysis/compare_intent.py` | 90 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
-| `code/analysis/constants_register.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 20, 24, 25, 30, 40, 60.0, 64, 100, 200, 255, 400, 401, 403, 404, 420, 429, 500, 502, 503, 504, 518, 2026, 5000, 40000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
+| `code/analysis/constants_register.py` | 0.1, 0.999, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 20, 24, 25, 30, 40, 60.0, 64, 100, 120, 200, 255, 400, 401, 403, 404, 420, 429, 500, 502, 503, 504, 518, 2026, 5000, 40000, 200000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
 | `code/analysis/e1_order_inference.py` | 25 | E1-B burst gap in minutes (first trough of the unlabelled gap histogram) | JUDGEMENT | rejected experiment only; see main table |
 | `code/analysis/e1_order_inference.py` | 10 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/e1_order_inference.py` | 60 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
@@ -139,6 +150,11 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/profile_dataset.py` | 10 | regex capture-group index | STANDARD | the wrong capture is read |
 | `code/analysis/profile_dataset.py` | 12, 30, 140 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/profile_dataset.py` | 60, 3600, 86400 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
+| `code/evaluation/attribution_variants.py` | 5 | candidate-count histogram cap (5 = 5+) | JUDGEMENT | only the report |
+| `code/evaluation/attribution_variants.py` | 3 | hours before reported_at in both falsification windows / tuple index | JUDGEMENT | only the falsification report |
+| `code/evaluation/attribution_variants.py` | 6, 700 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/evaluation/attribution_variants.py` | 2 | tuple index of resource_id in a step key | STANDARD | only the report |
+| `code/evaluation/attribution_variants.py` | 3600 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
 | `code/evaluation/cache_audit.py` | 2500 | JSON pretty-print indent | STANDARD | only file formatting (cache files are byte-compared) |
 | `code/evaluation/cache_audit.py` | 3 | exit code of a cache miss | SPEC | README exit-code table: 3 = cache miss |
 | `code/evaluation/cache_audit.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
@@ -155,7 +171,8 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/evaluation/coupling_probes.py` | 400, 900 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/custom_cases/build_fixtures.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 32, 700 | fictional fixture data (case numbers, step numbers, hash filler, padding repeat) | JUDGEMENT | only that fixture; expected outputs are written next to it |
 | `code/evaluation/main.py` | 2 | index of the 'correct' flag in an attribution tuple | JUDGEMENT | report arithmetic |
-| `code/evaluation/main.py` | 10, 20, 40, 120, 160, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/evaluation/main.py` | 60 | seconds per minute when printing band offsets | STANDARD | printed units |
+| `code/evaluation/main.py` | 10, 20, 40, 110, 120, 160, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/main.py` | 100.0, 1000000.0 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
 | `code/evaluation/security_audit.py` | 255 | XOR mask used to flip bytes | STANDARD | only the fixture |
 | `code/evaluation/security_audit.py` | 1000000 | adversarial line length (1 MB) | JUDGEMENT | the G8 brief's 1 MB line |

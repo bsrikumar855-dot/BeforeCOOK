@@ -15,7 +15,7 @@
    ],
    "in_scope": true,
    "label": "INFERRED",
-   "rationale": "account delete activity_1110 is in every maximum one-to-one assignment of batch 75 (cases ['case_376'], rows ['account_5454']) after eliminating rows hard-linked to other people",
+   "rationale": "account delete activity_1110 is in every maximum one-to-one assignment of batch 100 (cases ['case_376'], rows ['account_5454']) after eliminating rows hard-linked to other people",
    "resource_id": "account_5454",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"

@@ -20,7 +20,8 @@ IDENTIFIER_KINDS = ("email", "email_hash", "phone", "user_id", "name")
 HARD_IDENTIFIER_KINDS = ("email", "email_hash", "phone", "user_id")
 LINK_PROVENANCE = ("SAME_RECORD", "TRACE_JOIN", "DOCUMENT_COMENTION", "CATALOG_LINK", "MODEL_EXTRACTION")
 
-ATTRIBUTION_LABELS = ("CONFIRMED", "INFERRED", "AMBIGUOUS", "CONFLICT")
+ATTRIBUTION_LABELS = ("CONFIRMED", "INFERRED", "INFERRED_CLAIM", "INFERRED_OFFSET", "INFERRED_ORDER",
+                      "AMBIGUOUS", "CONFLICT")
 INTENT_LABELS = ("DELETION", "NON_DELETION", "UNCLEAR")
 
 PHASES = ("FINDING", "REMEDIATION", "VERIFICATION")
@@ -142,6 +143,7 @@ class Attribution:
     in_scope: bool
     scope_reason: str
     edges: list[Edge] = field(default_factory=list)
+    provenance: dict = field(default_factory=dict)   # INFERRED_* provenance contract (Round 5)
 
 
 @dataclass

@@ -106,6 +106,14 @@ def explain(rr, case_id: str) -> str:
         L.append(f"   {a['resource_id']} [{a['system_id']}] {a['label']} in_scope={a.get('in_scope')}: {a.get('rationale')}")
         for e in (a.get("edges") or [])[:4]:
             L.append(f"      edge {e['kind']}/{e['strength']} {e['identifier']} from {e['source_id']} at {e['time']}")
+        pv = a.get("provenance") or {}
+        if pv:                                       # Round 5 provenance contract for INFERRED_* picks
+            L.append(f"      provenance: filters={pv.get('filters')} account_result={pv.get('account_result')} "
+                     f"case_status={pv.get('case_status')} group={pv.get('event_group')} offset_s={pv.get('offset_s')} "
+                     f"band={pv.get('band')}")
+            L.append(f"      supporting hard links in the batch: {pv.get('supporting_hard_links')}")
+            for alt in (pv.get("rejected_alternatives") or [])[:MAX_ITEMS]:
+                L.append(f"      rejected owner {alt['case_id']}: {alt['reason']}")
     L += [more] if more else []
     elim, more = _cap(t.get("eliminated", []))
     for e in elim:

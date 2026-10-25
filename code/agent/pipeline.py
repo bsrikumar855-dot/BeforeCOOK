@@ -139,7 +139,7 @@ def audit_case(ctx: CaseContext, ds: Dataset, index: EvidenceIndex, attribution:
         return CaseOutcome(ctx.case_id, "INCOMPLETE", [], trace, degraded="identity_unresolved")
 
     attrs = attribution.per_case.get(ctx.case_id, [])
-    trace["attribution"] = [{**{k: v for k, v in asdict(a).items() if k != "edges"},
+    trace["attribution"] = [{**{k: v for k, v in asdict(a).items() if k != "edges" and (k != "provenance" or v)},
                              "edges": [asdict(e) for e in a.edges]} for a in attrs]
     trace["eliminated"] = attribution.eliminated.get(ctx.case_id, [])
     verdicts, resources, excluded = [], [], []
@@ -193,7 +193,7 @@ def audit_case(ctx: CaseContext, ds: Dataset, index: EvidenceIndex, attribution:
         degraded = f"verification depends on rejected evidence: {depends}"
     if not steps:
         status = "INCOMPLETE"
-        attributable = [a for a in attrs if a.in_scope and a.label in ("CONFIRMED", "INFERRED")]
+        attributable = [a for a in attrs if a.in_scope and (a.label == "CONFIRMED" or a.label.startswith("INFERRED"))]
         # M2(b): nothing can be attributed to this person without risking someone else's data. The row stays
         # INCOMPLETE [] and the file validator accepts it only with this reason code.
         reason_code = "NO_ATTRIBUTABLE_RESOURCE" if not attributable else "NO_VERIFIABLE_RESOURCE"
@@ -259,6 +259,8 @@ def summarise(rr: RunResult, extractor: ImageExtractor | None) -> dict:
                           "ungrounded": extractor.ungrounded if extractor else [],
                           "per_image": extractor.grounding_report if extractor else {}},
         "account_batches": len(rr.attribution.batches),
+        "attribution": {"variant": rr.attribution.variant, "bands": rr.attribution.bands, "joint": rr.attribution.joint,
+                        "claim_conflicts": rr.attribution.claim_conflicts},
     }
 
 

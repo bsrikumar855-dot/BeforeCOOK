@@ -14,69 +14,38 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 27: several assignments equally supported (rival cases for account_1090: ['case_176', 'case_191', 'case_192'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "FAILED",
+    "band": null,
+    "case_status": "NOT_STARTED",
+    "event_group": "DELETE_RECORD|account_service|FAILED",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -3525,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_176",
+      "reason": "A1: account result FAILED is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     },
+     {
+      "case_id": "case_191",
+      "reason": "A1: account result FAILED is inconsistent with case status PARTIALLY_COMPLETE (allowed ['PARTIAL', 'SUCCESS'])"
+     },
+     {
+      "case_id": "case_192",
+      "reason": "A1: account result FAILED is inconsistent with case status PARTIALLY_COMPLETE (allowed ['PARTIAL', 'SUCCESS'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_17",
+     "evidence_83",
+     "evidence_84"
+    ]
+   },
+   "rationale": "account delete activity_2599 is in every maximum one-to-one assignment of batch 34 (cases ['case_178'], rows ['account_1090']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_1090",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_178",
-   "edges": [
-    {
-     "case_id": "case_178",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_6608",
-     "source_id": "activity_2591",
-     "strength": "SECONDARY",
-     "time": "2026-06-30T10:02:24Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 27: several assignments equally supported (rival cases for account_6608: ['case_176', 'case_191', 'case_192'])",
-   "resource_id": "account_6608",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_178",
-   "edges": [
-    {
-     "case_id": "case_178",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_9317",
-     "source_id": "activity_2592",
-     "strength": "SECONDARY",
-     "time": "2026-06-30T10:13:39Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 27: several assignments equally supported (rival cases for account_9317: ['case_176', 'case_191', 'case_192'])",
-   "resource_id": "account_9317",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_178",
-   "edges": [
-    {
-     "case_id": "case_178",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_9877",
-     "source_id": "activity_2596",
-     "strength": "SECONDARY",
-     "time": "2026-06-30T10:52:43Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 27: several assignments equally supported (rival cases for account_9877: ['case_176', 'case_191', 'case_192'])",
-   "resource_id": "account_9877",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
   },
@@ -244,29 +213,27 @@
     "evidence_17",
     "evidence_84"
    ]
+  },
+  {
+   "activity_id": "activity_2591",
+   "reason": "A1: account result PARTIAL is inconsistent with case status NOT_STARTED (allowed ['FAILED'])",
+   "resource_id": "account_6608",
+   "sources": []
+  },
+  {
+   "activity_id": "activity_2592",
+   "reason": "A1: account result PARTIAL is inconsistent with case status NOT_STARTED (allowed ['FAILED'])",
+   "resource_id": "account_9317",
+   "sources": []
+  },
+  {
+   "activity_id": "activity_2596",
+   "reason": "A1: account result SUCCESS is inconsistent with case status NOT_STARTED (allowed ['FAILED'])",
+   "resource_id": "account_9877",
+   "sources": []
   }
  ],
  "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 27: several assignments equally supported (rival cases for account_1090: ['case_176', 'case_191', 'case_192'])",
-   "resource_id": "account_1090"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 27: several assignments equally supported (rival cases for account_6608: ['case_176', 'case_191', 'case_192'])",
-   "resource_id": "account_6608"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 27: several assignments equally supported (rival cases for account_9317: ['case_176', 'case_191', 'case_192'])",
-   "resource_id": "account_9317"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 27: several assignments equally supported (rival cases for account_9877: ['case_176', 'case_191', 'case_192'])",
-   "resource_id": "account_9877"
-  },
   {
    "label": "AMBIGUOUS",
    "reason": "AMBIGUOUS: activity_2601 lies in the burst windows of cases ['case_176', 'case_177', 'case_178', 'case_191', 'case_192']",
@@ -299,6 +266,33 @@
   "requested_at": "2026-06-27T12:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_84",
+   "required_action": "DELETE",
+   "resource_id": "account_1090",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_84",
+    "resource_id": "account_1090",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "SECURITY_AUDIT_LOG",
@@ -333,11 +327,20 @@
  "steps": [
   {
    "evidence_id": "evidence_84",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_1090",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_84",
    "operation": "VERIFY_RECORD_PRESENT",
    "phase": "VERIFICATION",
    "resource_id": "audit_record_8521",
    "state": "PRESENT",
-   "step_no": 1,
+   "step_no": 2,
    "system_id": "security_service"
   }
  ],

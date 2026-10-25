@@ -1,9 +1,9 @@
 {
  "categories": {
   "USER_PROFILE": {
-   "eval_resources": 272,
-   "eval_with_steps": 272,
-   "sample_answer_resources": 19
+   "eval_resources": 367,
+   "eval_with_steps": 367,
+   "sample_answer_resources": 26
   },
   "SECONDARY_IDENTIFIER": {
    "eval_resources": 0,
@@ -86,7 +86,7 @@
    "sample_answer_resources": 0
   }
  },
- "sample_answer_resources_not_predicted": 22,
+ "sample_answer_resources_not_predicted": 15,
  "unmapped": [],
  "no_sample_coverage": [
   "SECONDARY_IDENTIFIER",

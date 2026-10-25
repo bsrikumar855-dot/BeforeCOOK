@@ -14,29 +14,29 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 62: several assignments equally supported (rival cases for account_4857: ['case_32'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "SUCCESS",
+    "band": null,
+    "case_status": "COMPLETE",
+    "event_group": "DELETE_RECORD|account_service|SUCCESS",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -4442,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_32",
+      "reason": "every maximum one-to-one assignment gives this row to the assigned case"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_03",
+     "evidence_51"
+    ]
+   },
+   "rationale": "account delete activity_3682 is in every maximum one-to-one assignment of batch 81 (cases ['case_31', 'case_32'], rows ['account_4857', 'account_8858']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_4857",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_31",
-   "edges": [
-    {
-     "case_id": "case_31",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_8858",
-     "source_id": "activity_3685",
-     "strength": "SECONDARY",
-     "time": "2026-09-06T11:05:15Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 62: several assignments equally supported (rival cases for account_8858: ['case_32'])",
-   "resource_id": "account_8858",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
   },
@@ -147,20 +147,15 @@
    "sources": [
     "evidence_03"
    ]
-  }
- ],
- "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 62: several assignments equally supported (rival cases for account_4857: ['case_32'])",
-   "resource_id": "account_4857"
   },
   {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 62: several assignments equally supported (rival cases for account_8858: ['case_32'])",
-   "resource_id": "account_8858"
+   "activity_id": "activity_3685",
+   "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])",
+   "resource_id": "account_8858",
+   "sources": []
   }
  ],
+ "excluded": [],
  "input_issues": [],
  "intent": {
   "classify_request_rows": [],
@@ -182,6 +177,33 @@
   "requested_at": "2026-09-04T12:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_51",
+   "required_action": "DELETE",
+   "resource_id": "account_4857",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_51",
+    "resource_id": "account_4857",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "SECURITY_AUDIT_LOG",
@@ -245,11 +267,20 @@
  "steps": [
   {
    "evidence_id": "evidence_51",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4857",
+   "state": "ABSENT",
+   "step_no": 1,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_51",
    "operation": "VERIFY_RECORD_PRESENT",
    "phase": "VERIFICATION",
    "resource_id": "audit_record_6909",
    "state": "PRESENT",
-   "step_no": 1,
+   "step_no": 2,
    "system_id": "security_service"
   },
   {
@@ -258,7 +289,7 @@
    "phase": "VERIFICATION",
    "resource_id": "tombstone_440",
    "state": "REDACTED",
-   "step_no": 2,
+   "step_no": 3,
    "system_id": "identity_service"
   }
  ],

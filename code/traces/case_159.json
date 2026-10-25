@@ -15,28 +15,8 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 24: several assignments equally supported (rival cases for account_1421: ['case_158', 'case_160'])",
+   "rationale": "batch 27: several assignments equally supported (rival cases for account_1421: ['case_158'])",
    "resource_id": "account_1421",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_159",
-   "edges": [
-    {
-     "case_id": "case_159",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_1688",
-     "source_id": "activity_2712",
-     "strength": "SECONDARY",
-     "time": "2026-07-08T06:13:28Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 24: several assignments equally supported (rival cases for account_1688: ['case_158', 'case_160'])",
-   "resource_id": "account_1688",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
   },
@@ -54,8 +34,31 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 24: several assignments equally supported (rival cases for account_4272: ['case_158', 'case_160'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "PARTIAL",
+    "band": null,
+    "case_status": "PARTIALLY_COMPLETE",
+    "event_group": "DELETE_RECORD|account_service|PARTIAL",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -4008,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_158",
+      "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     },
+     {
+      "case_id": "case_160",
+      "reason": "A1: account result PARTIAL is inconsistent with case status NOT_STARTED (allowed ['FAILED'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_15"
+    ]
+   },
+   "rationale": "account delete activity_2710 is in every maximum one-to-one assignment of batch 27 (cases ['case_158', 'case_159'], rows ['account_1421', 'account_4272']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_4272",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -145,23 +148,19 @@
    "sources": [
     "evidence_15"
    ]
+  },
+  {
+   "activity_id": "activity_2712",
+   "reason": "A1: account result FAILED is inconsistent with case status PARTIALLY_COMPLETE (allowed ['PARTIAL', 'SUCCESS'])",
+   "resource_id": "account_1688",
+   "sources": []
   }
  ],
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 24: several assignments equally supported (rival cases for account_1421: ['case_158', 'case_160'])",
+   "reason": "AMBIGUOUS: batch 27: several assignments equally supported (rival cases for account_1421: ['case_158'])",
    "resource_id": "account_1421"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 24: several assignments equally supported (rival cases for account_1688: ['case_158', 'case_160'])",
-   "resource_id": "account_1688"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 24: several assignments equally supported (rival cases for account_4272: ['case_158', 'case_160'])",
-   "resource_id": "account_4272"
   }
  ],
  "input_issues": [],
@@ -185,6 +184,33 @@
   "requested_at": "2026-07-06T07:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "DELETE",
+   "resource_id": "account_4272",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_15",
+    "resource_id": "account_4272",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "SECURITY_AUDIT_LOG",
@@ -268,11 +294,20 @@
   },
   {
    "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_4272",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
    "operation": "VERIFY_RECORD_PRESENT",
    "phase": "VERIFICATION",
    "resource_id": "audit_record_8742",
    "state": "PRESENT",
-   "step_no": 3,
+   "step_no": 4,
    "system_id": "security_service"
   },
   {
@@ -281,7 +316,7 @@
    "phase": "VERIFICATION",
    "resource_id": "backup_1214",
    "state": "BLOCKED",
-   "step_no": 4,
+   "step_no": 5,
    "system_id": "backup_service"
   }
  ],

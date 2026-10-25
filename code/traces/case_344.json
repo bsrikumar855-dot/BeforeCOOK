@@ -14,8 +14,29 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 68: several assignments equally supported (rival cases for account_486: ['case_345', 'case_346'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "PARTIAL",
+    "band": null,
+    "case_status": "PARTIALLY_COMPLETE",
+    "event_group": "DELETE_RECORD|account_service|PARTIAL",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -3306,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_345",
+      "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     },
+     {
+      "case_id": "case_346",
+      "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     }
+    ],
+    "supporting_hard_links": []
+   },
+   "rationale": "account delete activity_1491 is in every maximum one-to-one assignment of batch 89 (cases ['case_344', 'case_345', 'case_346'], rows ['account_486', 'account_5214', 'account_8834']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_486",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -35,7 +56,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 68: several assignments equally supported (rival cases for account_5214: ['case_345', 'case_346'])",
+   "rationale": "batch 89: several assignments equally supported (rival cases for account_5214: ['case_345', 'case_346'])",
    "resource_id": "account_5214",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -55,7 +76,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 68: several assignments equally supported (rival cases for account_8834: ['case_345', 'case_346'])",
+   "rationale": "batch 89: several assignments equally supported (rival cases for account_8834: ['case_345', 'case_346'])",
    "resource_id": "account_8834",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -156,17 +177,12 @@
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 68: several assignments equally supported (rival cases for account_486: ['case_345', 'case_346'])",
-   "resource_id": "account_486"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 68: several assignments equally supported (rival cases for account_5214: ['case_345', 'case_346'])",
+   "reason": "AMBIGUOUS: batch 89: several assignments equally supported (rival cases for account_5214: ['case_345', 'case_346'])",
    "resource_id": "account_5214"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 68: several assignments equally supported (rival cases for account_8834: ['case_345', 'case_346'])",
+   "reason": "AMBIGUOUS: batch 89: several assignments equally supported (rival cases for account_8834: ['case_345', 'case_346'])",
    "resource_id": "account_8834"
   },
   {
@@ -201,6 +217,33 @@
   "requested_at": "2026-04-17T09:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_33",
+   "required_action": "DELETE",
+   "resource_id": "account_486",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_33",
+    "resource_id": "account_486",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "DATA_FLOW",
@@ -302,9 +345,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "search_5267",
+   "resource_id": "account_486",
    "state": "ABSENT",
    "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_5267",
+   "state": "ABSENT",
+   "step_no": 6,
    "system_id": "search_service"
   },
   {
@@ -313,7 +365,7 @@
    "phase": "VERIFICATION",
    "resource_id": "data_flow_5544",
    "state": "DISABLED",
-   "step_no": 6,
+   "step_no": 7,
    "system_id": "integration_service"
   }
  ],

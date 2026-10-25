@@ -1,0 +1,1501 @@
+{
+ "variants": {
+  "baseline": {
+   "exit": 0,
+   "samples": {
+    "status": "31/32",
+    "precision": "171/171",
+    "recall": "171/193",
+    "sequence": "16/32",
+    "fields": {
+     "phase": "171/193",
+     "system_id": "134/193",
+     "resource_id": "134/193",
+     "operation": "142/193",
+     "state": "142/193",
+     "evidence_id": "171/193"
+    }
+   },
+   "timing_only_pairs": {
+    "total": 19,
+    "resolved": 0,
+    "correct": 0,
+    "resolved_pairs": []
+   },
+   "new_sample_assignments": 0,
+   "correct": [],
+   "incorrect": [],
+   "unverifiable": [],
+   "previously_correct_steps_broken": [],
+   "sample_status_changes": [],
+   "previously_correct_statuses_changed": [],
+   "eval": {
+    "denominators": {
+     "timing_candidate_edges": 1287,
+     "filter_removed_edges": 0,
+     "ambiguous_pairs": 1247,
+     "ambiguous_resources": 351,
+     "ambiguous_cases": 381,
+     "assignments": {
+      "INFERRED": 40
+     },
+     "assignments_total": 40
+    },
+    "claim_conflicts": 0,
+    "rows_changed": 0,
+    "status": {
+     "INCOMPLETE": 355,
+     "COMPLETE": 153,
+     "NOT_APPLICABLE": 10
+    },
+    "status_flips": []
+   },
+   "samples_denominators": {
+    "timing_candidate_edges": 66,
+    "filter_removed_edges": 0,
+    "ambiguous_pairs": 61,
+    "ambiguous_resources": 31,
+    "ambiguous_cases": 21,
+    "assignments": {
+     "INFERRED": 5
+    },
+    "assignments_total": 5
+   },
+   "label_free": {
+    "one_to_one_resources_assigned_twice": [],
+    "assigned_accounts_inconsistent_with_case": [],
+    "assigned_followups_outside_band": [],
+    "spec_audit_violations": 0,
+    "exit": 0
+   },
+   "joint": {}
+  },
+  "a1": {
+   "exit": 0,
+   "samples": {
+    "status": "31/32",
+    "precision": "178/178",
+    "recall": "178/193",
+    "sequence": "19/32",
+    "fields": {
+     "phase": "178/193",
+     "system_id": "152/193",
+     "resource_id": "152/193",
+     "operation": "157/193",
+     "state": "157/193",
+     "evidence_id": "178/193"
+    }
+   },
+   "timing_only_pairs": {
+    "total": 19,
+    "resolved": 7,
+    "correct": 7,
+    "resolved_pairs": [
+     [
+      "case_18",
+      "account_5521",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_20",
+      "account_5037",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_21",
+      "account_6440",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_22",
+      "account_4990",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_25",
+      "account_3136",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_31",
+      "account_4857",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_32",
+      "account_8858",
+      "INFERRED_CLAIM"
+     ]
+    ]
+   },
+   "new_sample_assignments": 7,
+   "correct": [
+    [
+     "case_20",
+     "account_5037",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_21",
+     "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_25",
+     "account_3136",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ]
+   ],
+   "incorrect": [],
+   "unverifiable": [],
+   "previously_correct_steps_broken": [],
+   "sample_status_changes": [],
+   "previously_correct_statuses_changed": [],
+   "eval": {
+    "denominators": {
+     "timing_candidate_edges": 1287,
+     "filter_removed_edges": 248,
+     "ambiguous_pairs": 904,
+     "ambiguous_resources": 277,
+     "ambiguous_cases": 347,
+     "assignments": {
+      "INFERRED": 40,
+      "INFERRED_CLAIM": 95
+     },
+     "assignments_total": 135
+    },
+    "claim_conflicts": 0,
+    "rows_changed": 92,
+    "status": {
+     "INCOMPLETE": 355,
+     "COMPLETE": 153,
+     "NOT_APPLICABLE": 10
+    },
+    "status_flips": []
+   },
+   "samples_denominators": {
+    "timing_candidate_edges": 66,
+    "filter_removed_edges": 16,
+    "ambiguous_pairs": 38,
+    "ambiguous_resources": 22,
+    "ambiguous_cases": 19,
+    "assignments": {
+     "INFERRED": 5,
+     "INFERRED_CLAIM": 7
+    },
+    "assignments_total": 12
+   },
+   "label_free": {
+    "one_to_one_resources_assigned_twice": [],
+    "assigned_accounts_inconsistent_with_case": [],
+    "assigned_followups_outside_band": [],
+    "spec_audit_violations": 0,
+    "exit": 0
+   },
+   "joint": {}
+  },
+  "a1a2": {
+   "exit": 0,
+   "samples": {
+    "status": "30/32",
+    "precision": "177/177",
+    "recall": "177/193",
+    "sequence": "18/32",
+    "fields": {
+     "phase": "177/193",
+     "system_id": "151/193",
+     "resource_id": "151/193",
+     "operation": "156/193",
+     "state": "156/193",
+     "evidence_id": "177/193"
+    }
+   },
+   "timing_only_pairs": {
+    "total": 19,
+    "resolved": 7,
+    "correct": 7,
+    "resolved_pairs": [
+     [
+      "case_18",
+      "account_5521",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_20",
+      "account_5037",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_21",
+      "account_6440",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_22",
+      "account_4990",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_25",
+      "account_3136",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_31",
+      "account_4857",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_32",
+      "account_8858",
+      "INFERRED_CLAIM"
+     ]
+    ]
+   },
+   "new_sample_assignments": 7,
+   "correct": [
+    [
+     "case_20",
+     "account_5037",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_21",
+     "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_25",
+     "account_3136",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ]
+   ],
+   "incorrect": [],
+   "unverifiable": [],
+   "previously_correct_steps_broken": [
+    [
+     "case_02",
+     "account_002",
+     "VERIFY_RECORD_ABSENT"
+    ]
+   ],
+   "sample_status_changes": [
+    [
+     "case_02",
+     "COMPLETE",
+     "INCOMPLETE",
+     "COMPLETE"
+    ]
+   ],
+   "previously_correct_statuses_changed": [
+    [
+     "case_02",
+     "COMPLETE",
+     "INCOMPLETE",
+     "COMPLETE"
+    ]
+   ],
+   "eval": {
+    "denominators": {
+     "timing_candidate_edges": 1287,
+     "filter_removed_edges": 266,
+     "ambiguous_pairs": 874,
+     "ambiguous_resources": 265,
+     "ambiguous_cases": 346,
+     "assignments": {
+      "INFERRED": 40,
+      "INFERRED_CLAIM": 95,
+      "INFERRED_OFFSET": 12
+     },
+     "assignments_total": 147
+    },
+    "claim_conflicts": 0,
+    "rows_changed": 104,
+    "status": {
+     "INCOMPLETE": 355,
+     "COMPLETE": 153,
+     "NOT_APPLICABLE": 10
+    },
+    "status_flips": []
+   },
+   "samples_denominators": {
+    "timing_candidate_edges": 66,
+    "filter_removed_edges": 16,
+    "ambiguous_pairs": 39,
+    "ambiguous_resources": 23,
+    "ambiguous_cases": 20,
+    "assignments": {
+     "INFERRED": 4,
+     "INFERRED_CLAIM": 7
+    },
+    "assignments_total": 11
+   },
+   "label_free": {
+    "one_to_one_resources_assigned_twice": [],
+    "assigned_accounts_inconsistent_with_case": [],
+    "assigned_followups_outside_band": [],
+    "spec_audit_violations": 0,
+    "exit": 0
+   },
+   "joint": {}
+  },
+  "a1a2a3": {
+   "exit": 0,
+   "samples": {
+    "status": "30/32",
+    "precision": "177/177",
+    "recall": "177/193",
+    "sequence": "18/32",
+    "fields": {
+     "phase": "177/193",
+     "system_id": "151/193",
+     "resource_id": "151/193",
+     "operation": "156/193",
+     "state": "156/193",
+     "evidence_id": "177/193"
+    }
+   },
+   "timing_only_pairs": {
+    "total": 19,
+    "resolved": 7,
+    "correct": 7,
+    "resolved_pairs": [
+     [
+      "case_18",
+      "account_5521",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_20",
+      "account_5037",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_21",
+      "account_6440",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_22",
+      "account_4990",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_25",
+      "account_3136",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_31",
+      "account_4857",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_32",
+      "account_8858",
+      "INFERRED_CLAIM"
+     ]
+    ]
+   },
+   "new_sample_assignments": 7,
+   "correct": [
+    [
+     "case_20",
+     "account_5037",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_21",
+     "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_25",
+     "account_3136",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ]
+   ],
+   "incorrect": [],
+   "unverifiable": [],
+   "previously_correct_steps_broken": [
+    [
+     "case_02",
+     "account_002",
+     "VERIFY_RECORD_ABSENT"
+    ]
+   ],
+   "sample_status_changes": [
+    [
+     "case_02",
+     "COMPLETE",
+     "INCOMPLETE",
+     "COMPLETE"
+    ]
+   ],
+   "previously_correct_statuses_changed": [
+    [
+     "case_02",
+     "COMPLETE",
+     "INCOMPLETE",
+     "COMPLETE"
+    ]
+   ],
+   "eval": {
+    "denominators": {
+     "timing_candidate_edges": 1287,
+     "filter_removed_edges": 266,
+     "ambiguous_pairs": 874,
+     "ambiguous_resources": 265,
+     "ambiguous_cases": 346,
+     "assignments": {
+      "INFERRED": 40,
+      "INFERRED_CLAIM": 95,
+      "INFERRED_OFFSET": 12
+     },
+     "assignments_total": 147
+    },
+    "claim_conflicts": 0,
+    "rows_changed": 104,
+    "status": {
+     "INCOMPLETE": 355,
+     "COMPLETE": 153,
+     "NOT_APPLICABLE": 10
+    },
+    "status_flips": []
+   },
+   "samples_denominators": {
+    "timing_candidate_edges": 66,
+    "filter_removed_edges": 16,
+    "ambiguous_pairs": 39,
+    "ambiguous_resources": 23,
+    "ambiguous_cases": 20,
+    "assignments": {
+     "INFERRED": 4,
+     "INFERRED_CLAIM": 7
+    },
+    "assignments_total": 11
+   },
+   "label_free": {
+    "one_to_one_resources_assigned_twice": [],
+    "assigned_accounts_inconsistent_with_case": [],
+    "assigned_followups_outside_band": [],
+    "spec_audit_violations": 0,
+    "exit": 0
+   },
+   "joint": {
+    "batches": 159,
+    "mismatch_with_forced": [],
+    "not_enumerated": 0,
+    "several_solutions": 54,
+    "unique_solution": 105
+   }
+  },
+  "a1a2a3o": {
+   "exit": 0,
+   "samples": {
+    "status": "30/32",
+    "precision": "179/180",
+    "recall": "179/193",
+    "sequence": "19/32",
+    "fields": {
+     "phase": "180/193",
+     "system_id": "164/193",
+     "resource_id": "163/193",
+     "operation": "166/193",
+     "state": "166/193",
+     "evidence_id": "180/193"
+    }
+   },
+   "timing_only_pairs": {
+    "total": 19,
+    "resolved": 9,
+    "correct": 9,
+    "resolved_pairs": [
+     [
+      "case_18",
+      "account_5521",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_20",
+      "account_5037",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_21",
+      "account_6440",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_22",
+      "account_4990",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_25",
+      "account_3136",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_28",
+      "account_5482",
+      "INFERRED_ORDER"
+     ],
+     [
+      "case_29",
+      "account_7012",
+      "INFERRED_ORDER"
+     ],
+     [
+      "case_31",
+      "account_4857",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_32",
+      "account_8858",
+      "INFERRED_CLAIM"
+     ]
+    ]
+   },
+   "new_sample_assignments": 10,
+   "correct": [
+    [
+     "case_20",
+     "account_5037",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_21",
+     "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_28",
+     "account_5482",
+     "INFERRED_ORDER"
+    ],
+    [
+     "case_29",
+     "account_7012",
+     "INFERRED_ORDER"
+    ],
+    [
+     "case_25",
+     "account_3136",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ]
+   ],
+   "incorrect": [
+    [
+     "case_23",
+     "account_9155",
+     "INFERRED_ORDER",
+     "reference account of case_23 is ['account_410']"
+    ]
+   ],
+   "unverifiable": [],
+   "previously_correct_steps_broken": [
+    [
+     "case_02",
+     "account_002",
+     "VERIFY_RECORD_ABSENT"
+    ]
+   ],
+   "sample_status_changes": [
+    [
+     "case_02",
+     "COMPLETE",
+     "INCOMPLETE",
+     "COMPLETE"
+    ]
+   ],
+   "previously_correct_statuses_changed": [
+    [
+     "case_02",
+     "COMPLETE",
+     "INCOMPLETE",
+     "COMPLETE"
+    ]
+   ],
+   "eval": {
+    "denominators": {
+     "timing_candidate_edges": 1265,
+     "filter_removed_edges": 266,
+     "ambiguous_pairs": 835,
+     "ambiguous_resources": 249,
+     "ambiguous_cases": 340,
+     "assignments": {
+      "INFERRED": 40,
+      "INFERRED_CLAIM": 95,
+      "INFERRED_OFFSET": 12,
+      "INFERRED_ORDER": 17
+     },
+     "assignments_total": 164
+    },
+    "claim_conflicts": 0,
+    "rows_changed": 119,
+    "status": {
+     "INCOMPLETE": 355,
+     "COMPLETE": 153,
+     "NOT_APPLICABLE": 10
+    },
+    "status_flips": []
+   },
+   "samples_denominators": {
+    "timing_candidate_edges": 62,
+    "filter_removed_edges": 16,
+    "ambiguous_pairs": 32,
+    "ambiguous_resources": 18,
+    "ambiguous_cases": 20,
+    "assignments": {
+     "INFERRED": 4,
+     "INFERRED_CLAIM": 7,
+     "INFERRED_ORDER": 3
+    },
+    "assignments_total": 14
+   },
+   "label_free": {
+    "one_to_one_resources_assigned_twice": [],
+    "assigned_accounts_inconsistent_with_case": [],
+    "assigned_followups_outside_band": [],
+    "spec_audit_violations": 0,
+    "exit": 0
+   },
+   "joint": {
+    "batches": 159,
+    "mismatch_with_forced": [],
+    "not_enumerated": 0,
+    "several_solutions": 54,
+    "unique_solution": 105
+   }
+  },
+  "a1o": {
+   "exit": 0,
+   "samples": {
+    "status": "31/32",
+    "precision": "180/181",
+    "recall": "180/193",
+    "sequence": "20/32",
+    "fields": {
+     "phase": "181/193",
+     "system_id": "165/193",
+     "resource_id": "164/193",
+     "operation": "167/193",
+     "state": "167/193",
+     "evidence_id": "181/193"
+    }
+   },
+   "timing_only_pairs": {
+    "total": 19,
+    "resolved": 9,
+    "correct": 9,
+    "resolved_pairs": [
+     [
+      "case_18",
+      "account_5521",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_20",
+      "account_5037",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_21",
+      "account_6440",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_22",
+      "account_4990",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_25",
+      "account_3136",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_28",
+      "account_5482",
+      "INFERRED_ORDER"
+     ],
+     [
+      "case_29",
+      "account_7012",
+      "INFERRED_ORDER"
+     ],
+     [
+      "case_31",
+      "account_4857",
+      "INFERRED_CLAIM"
+     ],
+     [
+      "case_32",
+      "account_8858",
+      "INFERRED_CLAIM"
+     ]
+    ]
+   },
+   "new_sample_assignments": 10,
+   "correct": [
+    [
+     "case_20",
+     "account_5037",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_21",
+     "account_6440",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_28",
+     "account_5482",
+     "INFERRED_ORDER"
+    ],
+    [
+     "case_29",
+     "account_7012",
+     "INFERRED_ORDER"
+    ],
+    [
+     "case_25",
+     "account_3136",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_22",
+     "account_4990",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ]
+   ],
+   "incorrect": [
+    [
+     "case_23",
+     "account_9155",
+     "INFERRED_ORDER",
+     "reference account of case_23 is ['account_410']"
+    ]
+   ],
+   "unverifiable": [],
+   "previously_correct_steps_broken": [],
+   "sample_status_changes": [],
+   "previously_correct_statuses_changed": [],
+   "eval": {
+    "denominators": {
+     "timing_candidate_edges": 1265,
+     "filter_removed_edges": 248,
+     "ambiguous_pairs": 865,
+     "ambiguous_resources": 261,
+     "ambiguous_cases": 341,
+     "assignments": {
+      "INFERRED": 40,
+      "INFERRED_CLAIM": 95,
+      "INFERRED_ORDER": 17
+     },
+     "assignments_total": 152
+    },
+    "claim_conflicts": 0,
+    "rows_changed": 107,
+    "status": {
+     "INCOMPLETE": 355,
+     "COMPLETE": 153,
+     "NOT_APPLICABLE": 10
+    },
+    "status_flips": []
+   },
+   "samples_denominators": {
+    "timing_candidate_edges": 62,
+    "filter_removed_edges": 16,
+    "ambiguous_pairs": 31,
+    "ambiguous_resources": 17,
+    "ambiguous_cases": 19,
+    "assignments": {
+     "INFERRED": 5,
+     "INFERRED_CLAIM": 7,
+     "INFERRED_ORDER": 3
+    },
+    "assignments_total": 15
+   },
+   "label_free": {
+    "one_to_one_resources_assigned_twice": [],
+    "assigned_accounts_inconsistent_with_case": [],
+    "assigned_followups_outside_band": [],
+    "spec_audit_violations": 0,
+    "exit": 0
+   },
+   "joint": {}
+  }
+ },
+ "bands": {
+  "ANONYMIZE_RECORD|analytics_platform|FAILED": {
+   "bandless_reason": "",
+   "half_s": 6376.0,
+   "high_s": 11640,
+   "low_s": -1112,
+   "mad_s": 1594.0,
+   "max_s": 7978,
+   "median_s": 5264.0,
+   "min_s": 2294,
+   "multimodal": false,
+   "n": 63,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": true
+  },
+  "ANONYMIZE_RECORD|analytics_platform|PARTIAL": {
+   "bandless_reason": "n < 10",
+   "half_s": 552.0,
+   "high_s": 6485,
+   "low_s": 5381,
+   "mad_s": 138.0,
+   "max_s": 6884,
+   "median_s": 5933.5,
+   "min_s": 2424,
+   "multimodal": true,
+   "n": 8,
+   "outside": 3,
+   "outside_offsets": [
+    2424,
+    6773,
+    6884
+   ],
+   "used": false
+  },
+  "ANONYMIZE_RECORD|analytics_platform|SUCCESS": {
+   "bandless_reason": "n < 10",
+   "half_s": 3166.0,
+   "high_s": 9011,
+   "low_s": 2679,
+   "mad_s": 791.5,
+   "max_s": 6684,
+   "median_s": 5845.5,
+   "min_s": 2361,
+   "multimodal": false,
+   "n": 6,
+   "outside": 1,
+   "outside_offsets": [
+    2361
+   ],
+   "used": false
+  },
+  "BLOCK_RESTORE|backup_service|SUCCESS": {
+   "bandless_reason": "1 CONFIRMED offsets outside their own band",
+   "half_s": 120,
+   "high_s": -324,
+   "low_s": -564,
+   "mad_s": 15.5,
+   "max_s": -174,
+   "median_s": -444.0,
+   "min_s": -478,
+   "multimodal": false,
+   "n": 36,
+   "outside": 1,
+   "outside_offsets": [
+    -174
+   ],
+   "used": false
+  },
+  "CHECK_DATA_FLOW|integration_service|SUCCESS": {
+   "bandless_reason": "20 CONFIRMED offsets outside their own band",
+   "half_s": 2176.0,
+   "high_s": 5389,
+   "low_s": 1037,
+   "mad_s": 544.0,
+   "max_s": 7801,
+   "median_s": 3213.0,
+   "min_s": 2284,
+   "multimodal": false,
+   "n": 89,
+   "outside": 20,
+   "outside_offsets": [
+    5702,
+    5742,
+    6046,
+    6061,
+    6215,
+    6374,
+    6377,
+    6405,
+    6643,
+    6716
+   ],
+   "used": false
+  },
+  "CHECK_RESTORE_ACCESS|backup_service|SUCCESS": {
+   "bandless_reason": "1 CONFIRMED offsets outside their own band",
+   "half_s": 1556.0,
+   "high_s": 4468,
+   "low_s": 1356,
+   "mad_s": 389.0,
+   "max_s": 5118,
+   "median_s": 2912.5,
+   "min_s": 2282,
+   "multimodal": false,
+   "n": 28,
+   "outside": 1,
+   "outside_offsets": [
+    5118
+   ],
+   "used": false
+  },
+  "DELETE_RECORD|account_service|FAILED": {
+   "bandless_reason": "",
+   "half_s": 2064.0,
+   "high_s": -1440,
+   "low_s": -5568,
+   "mad_s": 516.0,
+   "max_s": -2641,
+   "median_s": -3504.5,
+   "min_s": -4489,
+   "multimodal": false,
+   "n": 50,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": true
+  },
+  "DELETE_RECORD|account_service|PARTIAL": {
+   "bandless_reason": "",
+   "half_s": 1392.0,
+   "high_s": -2395,
+   "low_s": -5179,
+   "mad_s": 348.0,
+   "max_s": -2657,
+   "median_s": -3787.0,
+   "min_s": -4488,
+   "multimodal": false,
+   "n": 69,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": true
+  },
+  "DELETE_RECORD|account_service|SUCCESS": {
+   "bandless_reason": "1 CONFIRMED offsets outside their own band",
+   "half_s": 1796.0,
+   "high_s": -1651,
+   "low_s": -5243,
+   "mad_s": 449.0,
+   "max_s": 481,
+   "median_s": -3447.0,
+   "min_s": -4494,
+   "multimodal": false,
+   "n": 133,
+   "outside": 1,
+   "outside_offsets": [
+    481
+   ],
+   "used": false
+  },
+  "DELETE_RECORD|analytics_platform|FAILED": {
+   "bandless_reason": "n < 10",
+   "half_s": 120,
+   "high_s": 3351,
+   "low_s": 3111,
+   "mad_s": 0.0,
+   "max_s": 3231,
+   "median_s": 3231.0,
+   "min_s": 3231,
+   "multimodal": false,
+   "n": 1,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": false
+  },
+  "DELETE_RECORD|export_service|FAILED": {
+   "bandless_reason": "n < 10",
+   "half_s": 4010.0,
+   "high_s": 5334,
+   "low_s": -2685,
+   "mad_s": 1002.5,
+   "max_s": 2327,
+   "median_s": 1324.5,
+   "min_s": 322,
+   "multimodal": false,
+   "n": 2,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": false
+  },
+  "DELETE_RECORD|export_service|PARTIAL": {
+   "bandless_reason": "",
+   "half_s": 1680.0,
+   "high_s": 4754,
+   "low_s": 1394,
+   "mad_s": 420.0,
+   "max_s": 3874,
+   "median_s": 3074.0,
+   "min_s": 2371,
+   "multimodal": false,
+   "n": 28,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": true
+  },
+  "DELETE_RECORD|export_service|SUCCESS": {
+   "bandless_reason": "n < 10",
+   "half_s": 120,
+   "high_s": 3178,
+   "low_s": 2938,
+   "mad_s": 0.0,
+   "max_s": 3058,
+   "median_s": 3058.0,
+   "min_s": 3058,
+   "multimodal": false,
+   "n": 1,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": false
+  },
+  "DELETE_RECORD|search_service|FAILED": {
+   "bandless_reason": "7 CONFIRMED offsets outside their own band",
+   "half_s": 1588.0,
+   "high_s": 5563,
+   "low_s": 2387,
+   "mad_s": 397.0,
+   "max_s": 5896,
+   "median_s": 3975.0,
+   "min_s": 583,
+   "multimodal": false,
+   "n": 221,
+   "outside": 7,
+   "outside_offsets": [
+    583,
+    2313,
+    2333,
+    2377,
+    5699,
+    5885,
+    5896
+   ],
+   "used": false
+  },
+  "DELETE_RECORD|search_service|PARTIAL": {
+   "bandless_reason": "",
+   "half_s": 1596.0,
+   "high_s": 5599,
+   "low_s": 2407,
+   "mad_s": 399.0,
+   "max_s": 4796,
+   "median_s": 4003.0,
+   "min_s": 3465,
+   "multimodal": false,
+   "n": 32,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": true
+  },
+  "DELETE_RECORD|search_service|SUCCESS": {
+   "bandless_reason": "",
+   "half_s": 1196.0,
+   "high_s": 5352,
+   "low_s": 2960,
+   "mad_s": 299.0,
+   "max_s": 4776,
+   "median_s": 4156.5,
+   "min_s": 3429,
+   "multimodal": false,
+   "n": 28,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": true
+  },
+  "DELETE_RECORD|support_platform|FAILED": {
+   "bandless_reason": "1 CONFIRMED offsets outside their own band",
+   "half_s": 1552.0,
+   "high_s": 4499,
+   "low_s": 1395,
+   "mad_s": 388.0,
+   "max_s": 4530,
+   "median_s": 2947.0,
+   "min_s": 2285,
+   "multimodal": false,
+   "n": 25,
+   "outside": 1,
+   "outside_offsets": [
+    4530
+   ],
+   "used": false
+  },
+  "DELETE_RECORD|support_platform|SUCCESS": {
+   "bandless_reason": "n < 10",
+   "half_s": 352.0,
+   "high_s": 2830,
+   "low_s": 2126,
+   "mad_s": 88.0,
+   "max_s": 2566,
+   "median_s": 2478.0,
+   "min_s": 61,
+   "multimodal": true,
+   "n": 3,
+   "outside": 1,
+   "outside_offsets": [
+    61
+   ],
+   "used": false
+  },
+  "DISABLE_DATA_FLOW|integration_service|SUCCESS": {
+   "bandless_reason": "1 CONFIRMED offsets outside their own band",
+   "half_s": 120,
+   "high_s": -756,
+   "low_s": -996,
+   "mad_s": 14.5,
+   "max_s": -444,
+   "median_s": -876.0,
+   "min_s": -899,
+   "multimodal": false,
+   "n": 36,
+   "outside": 1,
+   "outside_offsets": [
+    -444
+   ],
+   "used": false
+  },
+  "REDACT_RECORD|identity_service|FAILED": {
+   "bandless_reason": "n < 10",
+   "half_s": 1220.0,
+   "high_s": 4319,
+   "low_s": 1879,
+   "mad_s": 305.0,
+   "max_s": 3607,
+   "median_s": 3099.0,
+   "min_s": 2532,
+   "multimodal": false,
+   "n": 5,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": false
+  },
+  "REDACT_RECORD|identity_service|SUCCESS": {
+   "bandless_reason": "n < 10",
+   "half_s": 120,
+   "high_s": -1581,
+   "low_s": -1821,
+   "mad_s": 10.0,
+   "max_s": -1691,
+   "median_s": -1701.0,
+   "min_s": -1728,
+   "multimodal": false,
+   "n": 5,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": false
+  },
+  "REDACT_RECORD|support_platform|FAILED": {
+   "bandless_reason": "",
+   "half_s": 3400.0,
+   "high_s": 6855,
+   "low_s": 55,
+   "mad_s": 850.0,
+   "max_s": 6809,
+   "median_s": 3455.0,
+   "min_s": 2296,
+   "multimodal": false,
+   "n": 111,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": true
+  },
+  "REDACT_RECORD|support_platform|PARTIAL": {
+   "bandless_reason": "n < 10",
+   "half_s": 352.0,
+   "high_s": 5102,
+   "low_s": 4398,
+   "mad_s": 88.0,
+   "max_s": 5715,
+   "median_s": 4750.0,
+   "min_s": 2560,
+   "multimodal": true,
+   "n": 9,
+   "outside": 3,
+   "outside_offsets": [
+    2560,
+    5604,
+    5715
+   ],
+   "used": false
+  },
+  "REDACT_RECORD|support_platform|SUCCESS": {
+   "bandless_reason": "multimodal",
+   "half_s": 120,
+   "high_s": -1160,
+   "low_s": -1400,
+   "mad_s": 16.5,
+   "max_s": 5859,
+   "median_s": -1280.0,
+   "min_s": -1319,
+   "multimodal": true,
+   "n": 42,
+   "outside": 7,
+   "outside_offsets": [
+    -893,
+    3046,
+    4687,
+    4725,
+    5421,
+    5574,
+    5859
+   ],
+   "used": false
+  },
+  "RETAIN_RECORD|legal_service|SUCCESS": {
+   "bandless_reason": "n < 10",
+   "half_s": 120,
+   "high_s": -1589,
+   "low_s": -1829,
+   "mad_s": 16.0,
+   "max_s": -1686,
+   "median_s": -1709.0,
+   "min_s": -1739,
+   "multimodal": false,
+   "n": 8,
+   "outside": 0,
+   "outside_offsets": [],
+   "used": false
+  }
+ },
+ "a1_falsification": {
+  "deletion_cases": 540,
+  "cases_with_hard_linked_account": 254,
+  "window_-3h_+3h": {
+   "zero_consistent_before_elimination": [],
+   "zero_consistent_after_elimination": [],
+   "free_candidates_per_case_before_A1": {
+    "0": 10,
+    "1": 39,
+    "2": 54,
+    "3": 113,
+    "4": 24,
+    "5": 46
+   },
+   "consistent_candidates_per_case_after_A1": {
+    "0": 10,
+    "1": 114,
+    "2": 74,
+    "3": 66,
+    "4": 11,
+    "5": 11
+   }
+  },
+  "window_-3h_+1h": {
+   "zero_consistent_before_elimination": [
+    "case_04"
+   ],
+   "zero_consistent_after_elimination": [],
+   "free_candidates_per_case_before_A1": {
+    "0": 11,
+    "1": 40,
+    "2": 52,
+    "3": 114,
+    "4": 24,
+    "5": 45
+   },
+   "consistent_candidates_per_case_after_A1": {
+    "0": 11,
+    "1": 114,
+    "2": 75,
+    "3": 64,
+    "4": 11,
+    "5": 11
+   }
+  },
+  "candidate_edges_removed_by_A1": 264,
+  "A1_on_hard_linked_accounts": {
+   "status_result_counts": {
+    "COMPLETE->SUCCESS": 133,
+    "NOT_STARTED->FAILED": 50,
+    "PARTIALLY_COMPLETE->PARTIAL": 69
+   },
+   "inconsistent": []
+  },
+  "claim_conflict_cases": []
+ },
+ "timing_only_pairs": [
+  [
+   "case_03",
+   "analytics_9406"
+  ],
+  [
+   "case_04",
+   "analytics_901"
+  ],
+  [
+   "case_10",
+   "account_010"
+  ],
+  [
+   "case_18",
+   "account_5521"
+  ],
+  [
+   "case_20",
+   "account_5037"
+  ],
+  [
+   "case_21",
+   "account_6440"
+  ],
+  [
+   "case_21",
+   "analytics_5335"
+  ],
+  [
+   "case_22",
+   "account_4990"
+  ],
+  [
+   "case_23",
+   "account_410"
+  ],
+  [
+   "case_25",
+   "account_3136"
+  ],
+  [
+   "case_25",
+   "analytics_1895"
+  ],
+  [
+   "case_26",
+   "analytics_4566"
+  ],
+  [
+   "case_27",
+   "analytics_4574"
+  ],
+  [
+   "case_28",
+   "account_5482"
+  ],
+  [
+   "case_28",
+   "analytics_6077"
+  ],
+  [
+   "case_29",
+   "account_7012"
+  ],
+  [
+   "case_30",
+   "account_4163"
+  ],
+  [
+   "case_31",
+   "account_4857"
+  ],
+  [
+   "case_32",
+   "account_8858"
+  ]
+ ],
+ "baseline_samples": {
+  "status": "31/32",
+  "precision": "171/171",
+  "recall": "171/193",
+  "sequence": "16/32",
+  "fields": {
+   "phase": "171/193",
+   "system_id": "134/193",
+   "resource_id": "134/193",
+   "operation": "142/193",
+   "state": "142/193",
+   "evidence_id": "171/193"
+  }
+ }
+}

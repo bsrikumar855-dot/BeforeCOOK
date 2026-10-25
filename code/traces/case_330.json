@@ -14,29 +14,31 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 65: several assignments equally supported (rival cases for account_2583: ['case_329'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "SUCCESS",
+    "band": null,
+    "case_status": "COMPLETE",
+    "event_group": "DELETE_RECORD|account_service|SUCCESS",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -3377,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_329",
+      "reason": "A1: account result SUCCESS is inconsistent with case status NOT_STARTED (allowed ['FAILED'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_30",
+     "evidence_31",
+     "evidence_73",
+     "evidence_74"
+    ]
+   },
+   "rationale": "account delete activity_1556 is in every maximum one-to-one assignment of batch 86 (cases ['case_330'], rows ['account_2583']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_2583",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_330",
-   "edges": [
-    {
-     "case_id": "case_330",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_6301",
-     "source_id": "activity_1557",
-     "strength": "SECONDARY",
-     "time": "2026-04-23T10:14:57Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 65: several assignments equally supported (rival cases for account_6301: ['case_329'])",
-   "resource_id": "account_6301",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
   },
@@ -337,19 +339,15 @@
     "evidence_30",
     "evidence_74"
    ]
+  },
+  {
+   "activity_id": "activity_1557",
+   "reason": "A1: account result FAILED is inconsistent with case status COMPLETE (allowed ['SUCCESS'])",
+   "resource_id": "account_6301",
+   "sources": []
   }
  ],
  "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 65: several assignments equally supported (rival cases for account_2583: ['case_329'])",
-   "resource_id": "account_2583"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 65: several assignments equally supported (rival cases for account_6301: ['case_329'])",
-   "resource_id": "account_6301"
-  },
   {
    "label": "AMBIGUOUS",
    "reason": "AMBIGUOUS: activity_1558 lies in the burst windows of cases ['case_314', 'case_315', 'case_316', 'case_329', 'case_330', 'case_331']",
@@ -382,6 +380,33 @@
   "requested_at": "2026-04-21T11:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_72",
+   "required_action": "DELETE",
+   "resource_id": "account_2583",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_72",
+    "resource_id": "account_2583",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "SECURITY_AUDIT_LOG",
@@ -510,9 +535,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "search_4560",
+   "resource_id": "account_2583",
    "state": "ABSENT",
    "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_4560",
+   "state": "ABSENT",
+   "step_no": 6,
    "system_id": "search_service"
   },
   {
@@ -521,7 +555,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_6629",
    "state": "PRESENT",
-   "step_no": 6,
+   "step_no": 7,
    "system_id": "security_service"
   },
   {
@@ -530,7 +564,7 @@
    "phase": "VERIFICATION",
    "resource_id": "support_4851",
    "state": "REDACTED",
-   "step_no": 7,
+   "step_no": 8,
    "system_id": "support_platform"
   }
  ],

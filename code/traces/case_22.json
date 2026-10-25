@@ -14,29 +14,30 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 39: several assignments equally supported (rival cases for account_4990: ['case_54'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "SUCCESS",
+    "band": null,
+    "case_status": "COMPLETE",
+    "event_group": "DELETE_RECORD|account_service|SUCCESS",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -2869,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_54",
+      "reason": "every maximum one-to-one assignment gives this row to the assigned case"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_05",
+     "evidence_06",
+     "evidence_93"
+    ]
+   },
+   "rationale": "account delete activity_3573 is in every maximum one-to-one assignment of batch 51 (cases ['case_22', 'case_54'], rows ['account_4990', 'account_6829']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_4990",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_22",
-   "edges": [
-    {
-     "case_id": "case_22",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_6829",
-     "source_id": "activity_3572",
-     "strength": "SECONDARY",
-     "time": "2026-09-01T09:01:56Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 39: several assignments equally supported (rival cases for account_6829: ['case_54'])",
-   "resource_id": "account_6829",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
   },
@@ -274,20 +275,15 @@
    "sources": [
     "evidence_05"
    ]
-  }
- ],
- "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 39: several assignments equally supported (rival cases for account_4990: ['case_54'])",
-   "resource_id": "account_4990"
   },
   {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 39: several assignments equally supported (rival cases for account_6829: ['case_54'])",
-   "resource_id": "account_6829"
+   "activity_id": "activity_3572",
+   "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])",
+   "resource_id": "account_6829",
+   "sources": []
   }
  ],
+ "excluded": [],
  "input_issues": [],
  "intent": {
   "classify_request_rows": [],
@@ -309,6 +305,33 @@
   "requested_at": "2026-08-31T10:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_05",
+   "required_action": "DELETE",
+   "resource_id": "account_4990",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_05",
+    "resource_id": "account_4990",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "ANALYTICS_PROFILE",
@@ -442,9 +465,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "search_8911",
+   "resource_id": "account_4990",
    "state": "ABSENT",
    "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_8911",
+   "state": "ABSENT",
+   "step_no": 6,
    "system_id": "search_service"
   },
   {
@@ -453,7 +485,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_3482",
    "state": "PRESENT",
-   "step_no": 6,
+   "step_no": 7,
    "system_id": "security_service"
   },
   {
@@ -462,7 +494,7 @@
    "phase": "VERIFICATION",
    "resource_id": "analytics_4440",
    "state": "ANONYMIZED",
-   "step_no": 7,
+   "step_no": 8,
    "system_id": "analytics_platform"
   }
  ],

@@ -71,7 +71,7 @@ def test_spec_enums_match_code():
 
 
 def test_no_unlabelled_main_table_row():
-    allowed = {"MEASURED", "SPEC", "STANDARD", "BOUND", "JUDGEMENT"}
+    allowed = {"MEASURED", "SPEC", "SPEC-DERIVED", "STANDARD", "BOUND", "JUDGEMENT"}
     main = TEXT.split("## Main table", 1)[1].split("## Spec enums", 1)[0]
     rows = [r for r in main.splitlines() if r.startswith("| ") and not r.startswith("| Constant") and "---" not in r]
     assert rows

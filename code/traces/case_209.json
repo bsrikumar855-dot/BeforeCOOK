@@ -7,46 +7,6 @@
      "case_id": "case_209",
      "identifier": "deletion_worker:DELETE_RECORD",
      "kind": "TIMING",
-     "resource_id": "account_4362",
-     "source_id": "activity_2469",
-     "strength": "SECONDARY",
-     "time": "2026-06-22T07:50:07Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 33: several assignments equally supported (rival cases for account_4362: ['case_194', 'case_210'])",
-   "resource_id": "account_4362",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_209",
-   "edges": [
-    {
-     "case_id": "case_209",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_660",
-     "source_id": "activity_2474",
-     "strength": "SECONDARY",
-     "time": "2026-06-22T09:11:25Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 33: several assignments equally supported (rival cases for account_660: ['case_194', 'case_210'])",
-   "resource_id": "account_660",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_209",
-   "edges": [
-    {
-     "case_id": "case_209",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
      "resource_id": "account_6934",
      "source_id": "activity_2470",
      "strength": "SECONDARY",
@@ -54,8 +14,32 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 33: several assignments equally supported (rival cases for account_6934: ['case_194', 'case_210'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "FAILED",
+    "band": null,
+    "case_status": "NOT_STARTED",
+    "event_group": "DELETE_RECORD|account_service|FAILED",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -3518,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_194",
+      "reason": "A1: account result FAILED is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     },
+     {
+      "case_id": "case_210",
+      "reason": "A1: account result FAILED is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_20",
+     "evidence_82"
+    ]
+   },
+   "rationale": "account delete activity_2470 is in every maximum one-to-one assignment of batch 49 (cases ['case_209'], rows ['account_6934']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_6934",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -384,24 +368,21 @@
    "sources": [
     "evidence_82"
    ]
+  },
+  {
+   "activity_id": "activity_2469",
+   "reason": "A1: account result SUCCESS is inconsistent with case status NOT_STARTED (allowed ['FAILED'])",
+   "resource_id": "account_4362",
+   "sources": []
+  },
+  {
+   "activity_id": "activity_2474",
+   "reason": "A1: account result SUCCESS is inconsistent with case status NOT_STARTED (allowed ['FAILED'])",
+   "resource_id": "account_660",
+   "sources": []
   }
  ],
  "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 33: several assignments equally supported (rival cases for account_4362: ['case_194', 'case_210'])",
-   "resource_id": "account_4362"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 33: several assignments equally supported (rival cases for account_660: ['case_194', 'case_210'])",
-   "resource_id": "account_660"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 33: several assignments equally supported (rival cases for account_6934: ['case_194', 'case_210'])",
-   "resource_id": "account_6934"
-  },
   {
    "label": "AMBIGUOUS",
    "reason": "AMBIGUOUS: activity_2476 lies in the burst windows of cases ['case_194', 'case_195', 'case_196', 'case_209', 'case_210', 'case_211']",
@@ -434,6 +415,33 @@
   "requested_at": "2026-06-21T09:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_20",
+   "required_action": "DELETE",
+   "resource_id": "account_6934",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_20",
+    "resource_id": "account_6934",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "ANALYTICS_PROFILE",
@@ -663,9 +671,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "search_7288",
+   "resource_id": "account_6934",
    "state": "ABSENT",
    "step_no": 9,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_7288",
+   "state": "ABSENT",
+   "step_no": 10,
    "system_id": "search_service"
   },
   {
@@ -674,7 +691,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_8189",
    "state": "PRESENT",
-   "step_no": 10,
+   "step_no": 11,
    "system_id": "security_service"
   },
   {
@@ -683,7 +700,7 @@
    "phase": "VERIFICATION",
    "resource_id": "support_8999",
    "state": "REDACTED",
-   "step_no": 11,
+   "step_no": 12,
    "system_id": "support_platform"
   },
   {
@@ -692,7 +709,7 @@
    "phase": "VERIFICATION",
    "resource_id": "analytics_3156",
    "state": "ANONYMIZED",
-   "step_no": 12,
+   "step_no": 13,
    "system_id": "analytics_platform"
   },
   {
@@ -701,7 +718,7 @@
    "phase": "VERIFICATION",
    "resource_id": "data_flow_5196",
    "state": "DISABLED",
-   "step_no": 13,
+   "step_no": 14,
    "system_id": "integration_service"
   }
  ],

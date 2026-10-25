@@ -7,26 +7,6 @@
      "case_id": "case_107",
      "identifier": "deletion_worker:DELETE_RECORD",
      "kind": "TIMING",
-     "resource_id": "account_6750",
-     "source_id": "activity_3239",
-     "strength": "SECONDARY",
-     "time": "2026-08-13T10:56:13Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 12: several assignments equally supported (rival cases for account_6750: ['case_108', 'case_109'])",
-   "resource_id": "account_6750",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_107",
-   "edges": [
-    {
-     "case_id": "case_107",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
      "resource_id": "account_687",
      "source_id": "activity_3238",
      "strength": "SECONDARY",
@@ -35,7 +15,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 12: several assignments equally supported (rival cases for account_687: ['case_108', 'case_109'])",
+   "rationale": "batch 12: several assignments equally supported (rival cases for account_687: ['case_109'])",
    "resource_id": "account_687",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -55,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 12: several assignments equally supported (rival cases for account_7510: ['case_108', 'case_109'])",
+   "rationale": "batch 12: several assignments equally supported (rival cases for account_7510: ['case_109'])",
    "resource_id": "account_7510",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -166,22 +146,23 @@
    "sources": [
     "evidence_10"
    ]
+  },
+  {
+   "activity_id": "activity_3239",
+   "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])",
+   "resource_id": "account_6750",
+   "sources": []
   }
  ],
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 12: several assignments equally supported (rival cases for account_6750: ['case_108', 'case_109'])",
-   "resource_id": "account_6750"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 12: several assignments equally supported (rival cases for account_687: ['case_108', 'case_109'])",
+   "reason": "AMBIGUOUS: batch 12: several assignments equally supported (rival cases for account_687: ['case_109'])",
    "resource_id": "account_687"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 12: several assignments equally supported (rival cases for account_7510: ['case_108', 'case_109'])",
+   "reason": "AMBIGUOUS: batch 12: several assignments equally supported (rival cases for account_7510: ['case_109'])",
    "resource_id": "account_7510"
   },
   {

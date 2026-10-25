@@ -164,7 +164,7 @@ def root_causes(cid: str, es: str, ps: str | None, missing: list[dict], extra: l
             elif rid in resources:
                 tags.append({"resource_id": rid, "tag": "STATE", "why": f"verdict {resources[rid]['operations']}"})
             else:
-                tags.append({"resource_id": rid, "tag": "MISREAD" if not trace.get("_resource_in_text", {}).get(rid)
+                tags.append({"resource_id": rid, "tag": "NOT_DERIVABLE" if not trace.get("_resource_in_text", {}).get(rid)
                              else "ATTRIBUTION",
                              "why": "resource absent from every parsed text source (image content not extracted or misread)"
                              if not trace.get("_resource_in_text", {}).get(rid) else "present in evidence but never linked"})
@@ -186,11 +186,11 @@ def attribution_metrics(expected: dict[str, dict], traces: dict[str, dict], samp
     for cid, rid in labelled:
         a = next((x for x in traces.get(cid, {}).get("attribution", []) if x["resource_id"] == rid), None)
         kinds = {e["kind"] for e in a["edges"]} if a else set()
-        link = "direct" if kinds & {"HARD", "CATALOG"} else ("inferred" if a and a["label"] == "INFERRED"
+        link = "direct" if kinds & {"HARD", "CATALOG"} else ("inferred" if a and a["label"].startswith("INFERRED")
                                                                and kinds & {"SOURCE_REFERENCE"} else
                                                                ("timing-only" if "TIMING" in kinds else "none"))
         label = (a["label"] if a else "NOT_ATTRIBUTED") + ("" if not a or a["in_scope"] else "/OUT_OF_SCOPE")
-        correct = bool(a and a["label"] in ("CONFIRMED", "INFERRED") and a["in_scope"])
+        correct = bool(a and (a["label"] == "CONFIRMED" or a["label"].startswith("INFERRED")) and a["in_scope"])
         rows.append({"case_id": cid, "resource_id": rid, "label": label, "link": link, "correct": correct})
     by_link = defaultdict(Counter)
     for r in rows:
@@ -208,7 +208,7 @@ def attribution_metrics(expected: dict[str, dict], traces: dict[str, dict], samp
     inferred_eval, inferred_unevaluable = [], []
     for cid in sample_ids + eval_ids:
         for a in traces.get(cid, {}).get("attribution", []):
-            if a["label"] != "INFERRED" or not a["in_scope"]:
+            if not a["label"].startswith("INFERRED") or not a["in_scope"]:
                 continue
             if a["resource_id"] in owner_case:
                 inferred_eval.append((cid, a["resource_id"], cid in owner_case[a["resource_id"]]))
@@ -228,16 +228,18 @@ def attribution_metrics(expected: dict[str, dict], traces: dict[str, dict], samp
                     and "DOCUMENT" not in a["rationale"]:
                 confirmed_model_only.append((cid, a["resource_id"]))
     sample_pairs = sum(label_counts(sample_ids).values())
-    sample_non_amb = sum(v for k, v in label_counts(sample_ids).items() if k in ("CONFIRMED", "INFERRED"))
+    sample_non_amb = sum(v for k, v in label_counts(sample_ids).items() if k == "CONFIRMED" or k.startswith("INFERRED")
+                         and "/" not in k)
     eval_pairs = sum(label_counts(eval_ids).values())
-    eval_non_amb = sum(v for k, v in label_counts(eval_ids).items() if k in ("CONFIRMED", "INFERRED"))
+    eval_non_amb = sum(v for k, v in label_counts(eval_ids).items() if k == "CONFIRMED" or k.startswith("INFERRED")
+                       and "/" not in k)
     return {
         "labelled_pairs": len(rows), "correct": sum(r["correct"] for r in rows), "rows": rows,
         "by_link": {k: dict(v) for k, v in sorted(by_link.items())},
         "labels_samples": label_counts(sample_ids), "labels_eval": label_counts(eval_ids),
         "coverage_samples": (sample_non_amb, sample_pairs), "coverage_eval": (eval_non_amb, eval_pairs),
         "inferred_evaluable": inferred_eval, "inferred_unevaluable": inferred_unevaluable,
-        "inferred_recall": (sum(1 for r in no_direct if r["label"] == "INFERRED" and r["correct"]), len(no_direct)),
+        "inferred_recall": (sum(1 for r in no_direct if r["label"].startswith("INFERRED") and r["correct"]), len(no_direct)),
         "dropped_by_policy": [r for r in rows if r["label"].split("/")[0] in ("AMBIGUOUS", "CONFLICT")],
         "confirmed_without_direct_link": confirmed_without_direct,
         "confirmed_only_via_model_extraction": confirmed_model_only,
@@ -389,7 +391,8 @@ def usage_summary(ledger_path: Path, n_requests: int) -> dict:
 
 # ----------------------------------------------------------------------------------- report
 def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usage: dict, summary: dict,
-                  appendix: list[str]) -> None:
+                  appendix: list[str], traces: dict | None = None, ds_sample_rows: list | None = None) -> None:
+    traces, ds_sample_rows = traces or {}, ds_sample_rows or []
     L = []
     L += ["# Evaluation report", "",
           "Generated by `python3 code/evaluation/main.py` from the last `python3 code/main.py` run. Sample metrics and",
@@ -421,6 +424,19 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
             tag_count[t["tag"]] += 1
         L.append(f"| {cid} | {pc['expected_status']} → {pc['predicted_status']} | {causes} |")
     L += ["", "Root-cause totals (one tag per mismatched resource): " + ", ".join(f"{k} {v}" for k, v in sorted(tag_count.items())), ""]
+    L += ["### Residual sample mismatches, step by step (generated from the reference-vs-output diff)", "",
+          "| Case | Missing (expected) / extra (predicted) step | Tag | Why |", "|---|---|---|---|"]
+    residual_tags = Counter()
+    for cid, pc in m["per_case"].items():
+        tag_of = {t["resource_id"]: t for t in pc["root_causes"]}
+        for kind, steps in (("missing", pc.get("missing", [])), ("extra", pc.get("extra", []))):
+            for st in steps:
+                t = tag_of.get(st["resource_id"]) or tag_of.get("*") or {"tag": "UNTAGGED", "why": ""}
+                residual_tags[t["tag"]] += 1
+                ev = st["evidence_id"] or '""'
+                L.append(f"| {cid} | {kind}: {st['phase']} {st['operation']} {st['system_id']}/{st['resource_id']} "
+                         f"evidence={ev} | {t['tag']} | {t['why'][:110]} |")
+    L += ["", "Residual steps by tag: " + ", ".join(f"{k} {v}" for k, v in sorted(residual_tags.items())), ""]
     L += ["## 2. Attribution", "",
           f"- Labelled (case, resource) pairs from the sample answers: {att['labelled_pairs']}; correctly attributed "
           f"(CONFIRMED or INFERRED, in scope): {pct(att['correct'], att['labelled_pairs'])}.",
@@ -510,6 +526,67 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
               for m, r in cmp["models"].items()]
         L += ["", f"Agreement {cmp['agreement']}. Kept `gemini-3.5-flash-lite`: equal accuracy at fewer tokens. Key probes "
               "(aliases only) are in `code/evaluation/models_verified.json`.", ""]
+    av = EVAL_DIR / "attribution_variants.json"
+    if av.exists():
+        R = json.loads(av.read_text(encoding="utf-8"))
+        names = {"baseline": "baseline", "a1": "+A1 claim consistency", "a1a2": "+A1+A2 offset bands",
+                 "a1a2a3": "+A1+A2+A3 joint", "a1a2a3o": "+A1+A2+A3+ordering", "a1o": "+A1+ordering (extra)"}
+        L += ["## 4e. Attribution variants (Round 5, `code/evaluation/attribution_variants.py`)", "",
+              "Each variant runs end to end (`ORCHESTRATE_ATTRIBUTION=<variant>`); sample columns are generated from the",
+              f"reference-vs-output diff. Timing-only sample pairs (AMBIGUOUS at baseline): {len(R['timing_only_pairs'])}.", "",
+              "| Variant | Status | Precision | Recall | Sequence | Timing-only resolved / correct | New sample assignments: correct / incorrect | Prev.-correct steps broken | Prev.-correct statuses changed | Eval rows changed | Eval status flips | Eval AMBIGUOUS pairs / resources / cases | Eval assignments | Label-free checks |",
+              "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+        for v, x in R["variants"].items():
+            d, lf = x["eval"]["denominators"], x["label_free"]
+            ok = not (lf["one_to_one_resources_assigned_twice"] or lf["assigned_accounts_inconsistent_with_case"]
+                      or lf["assigned_followups_outside_band"] or lf["spec_audit_violations"] or lf["exit"])
+            L.append(f"| {names.get(v, v)} | {x['samples']['status']} | {x['samples']['precision']} | {x['samples']['recall']} | "
+                     f"{x['samples']['sequence']} | {x['timing_only_pairs']['resolved']} / {x['timing_only_pairs']['correct']} | "
+                     f"{len(x['correct'])} / {len(x['incorrect'])} | {len(x['previously_correct_steps_broken'])} | "
+                     f"{len(x['previously_correct_statuses_changed'])} | {x['eval']['rows_changed']} | {len(x['eval']['status_flips'])} | "
+                     f"{d['ambiguous_pairs']} / {d['ambiguous_resources']} / {d['ambiguous_cases']} | {d['assignments_total']} "
+                     f"{d['assignments']} | {'pass' if ok else lf} |")
+        L += ["", "Incorrect resolutions and breakages, verbatim from the diff: " + "; ".join(
+            f"{names.get(v, v)}: incorrect {x['incorrect']}, broken {x['previously_correct_steps_broken']}, statuses "
+            f"{x['previously_correct_statuses_changed']}" for v, x in R["variants"].items()
+            if x["incorrect"] or x["previously_correct_steps_broken"]) + ".", "",
+              "Shipped: **+A1** (the only variant with 0 incorrect resolutions, 0 broken steps, 0 status changes). It "
+              "made 0 COMPLETE↔INCOMPLETE flips on eval, so no status flip needs state evidence.", ""]
+        f = R.get("a1_falsification", {})
+        if f:
+            L += ["A1 falsification report (label-free):", "",
+                  f"- Deletion cases: {f['deletion_cases']}; with an account hard-linked independently: {f['cases_with_hard_linked_account']}.",
+                  f"- A1 on hard-linked accounts: {f['A1_on_hard_linked_accounts']['status_result_counts']}, inconsistent: "
+                  f"{len(f['A1_on_hard_linked_accounts']['inconsistent'])}.",
+                  f"- Candidate edges removed by A1 (eval + samples): {f['candidate_edges_removed_by_A1']}; CLAIM_CONFLICT cases: "
+                  f"{len(f['claim_conflict_cases'])}."]
+            for w in ("window_-3h_+3h", "window_-3h_+1h"):
+                x = f[w]
+                L.append(f"- {w}: deletion cases with 0 consistent account candidates before elimination "
+                         f"{len(x['zero_consistent_before_elimination'])}, after elimination "
+                         f"{len(x['zero_consistent_after_elimination'])}; free candidates per case (5 = 5+, cases without a "
+                         f"hard-linked account) before A1 {x['free_candidates_per_case_before_A1']}, after A1 "
+                         f"{x['consistent_candidates_per_case_after_A1']}.")
+            L.append("")
+        bands = R.get("bands", {})
+        if bands:
+            L += ["A2 offset bands (from the +A1+A2 run; CONFIRMED pairs only):", "",
+                  "| Group | n | Median (min) | MAD (s) | Min / max (min) | Band (min) | CONFIRMED outside own band | Multimodal | Used |",
+                  "|---|---|---|---|---|---|---|---|---|"]
+            for g, b in sorted(bands.items(), key=lambda kv: -kv[1]["n"]):
+                L.append(f"| {g} | {b['n']} | {b['median_s'] / 60:.1f} | {b['mad_s']:.0f} | {b['min_s'] / 60:.1f} / "
+                         f"{b['max_s'] / 60:.1f} | [{b['low_s'] / 60:.1f}, {b['high_s'] / 60:.1f}] | {b['outside']} | "
+                         f"{b['multimodal']} | {'yes' if b['used'] else 'no: ' + b['bandless_reason']} |")
+            L.append("")
+    amb_accounts = []
+    for cid, t in traces.items():
+        if not (t.get("intent") or {}).get("is_deletion") or cid in {r["case_id"] for r in ds_sample_rows}:
+            continue
+        accts = [a for a in t.get("attribution", []) if a.get("system_id") == "account_service" and a["in_scope"]]
+        if accts and not any(a["label"] == "CONFIRMED" or a["label"].startswith("INFERRED") for a in accts) \
+                and any(a["label"] == "AMBIGUOUS" for a in accts):
+            amb_accounts.append(cid)
+    L += [f"Eval deletion cases whose primary account is still AMBIGUOUS (no account step): {len(amb_accounts)}.", ""]
     cp = EVAL_DIR / "coupling_probes.json"
     if cp.exists():
         pr = json.loads(cp.read_text(encoding="utf-8"))
@@ -754,7 +831,7 @@ def main(argv: list[str] | None = None) -> int:
     det = determinism_check() if args.determinism else None
     usage = usage_summary(EVAL_DIR / "usage_ledger.json", len(ds.requests))
     write_reports(m, att, custom, det, usage, summary,
-                  ambiguity_appendix(traces, [r["case_id"] for r in ds.requests]))
+                  ambiguity_appendix(traces, [r["case_id"] for r in ds.requests]), traces, ds.sample_requests)
     results = {"samples": {k: v for k, v in m.items() if k not in ("per_case",)}, "attribution": att, "custom": custom,
                "determinism": det, "usage": usage}
     (EVAL_DIR / "evaluation_results.json").write_text(json.dumps(results, indent=1, default=str) + "\n", encoding="utf-8")

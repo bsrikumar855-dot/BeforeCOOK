@@ -7,26 +7,6 @@
      "case_id": "case_474",
      "identifier": "deletion_worker:DELETE_RECORD",
      "kind": "TIMING",
-     "resource_id": "account_6474",
-     "source_id": "activity_409",
-     "strength": "SECONDARY",
-     "time": "2026-02-03T09:11:20Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 99: several assignments equally supported (rival cases for account_6474: ['case_473'])",
-   "resource_id": "account_6474",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_474",
-   "edges": [
-    {
-     "case_id": "case_474",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
      "resource_id": "account_9904",
      "source_id": "activity_408",
      "strength": "SECONDARY",
@@ -34,8 +14,28 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 99: several assignments equally supported (rival cases for account_9904: ['case_473'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "FAILED",
+    "band": null,
+    "case_status": "NOT_STARTED",
+    "event_group": "DELETE_RECORD|account_service|FAILED",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -3565,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_473",
+      "reason": "A1: account result FAILED is inconsistent with case status PARTIALLY_COMPLETE (allowed ['PARTIAL', 'SUCCESS'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_45",
+     "evidence_64"
+    ]
+   },
+   "rationale": "account delete activity_408 is in every maximum one-to-one assignment of batch 129 (cases ['case_474'], rows ['account_9904']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_9904",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -223,20 +223,15 @@
    "sources": [
     "evidence_45"
    ]
-  }
- ],
- "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 99: several assignments equally supported (rival cases for account_6474: ['case_473'])",
-   "resource_id": "account_6474"
   },
   {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 99: several assignments equally supported (rival cases for account_9904: ['case_473'])",
-   "resource_id": "account_9904"
+   "activity_id": "activity_409",
+   "reason": "A1: account result PARTIAL is inconsistent with case status NOT_STARTED (allowed ['FAILED'])",
+   "resource_id": "account_6474",
+   "sources": []
   }
  ],
+ "excluded": [],
  "input_issues": [],
  "intent": {
   "classify_request_rows": [],
@@ -258,6 +253,33 @@
   "requested_at": "2026-02-01T10:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_45",
+   "required_action": "DELETE",
+   "resource_id": "account_9904",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_45",
+    "resource_id": "account_9904",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "SECURITY_AUDIT_LOG",
@@ -388,9 +410,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "search_9925",
+   "resource_id": "account_9904",
    "state": "ABSENT",
    "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_9925",
+   "state": "ABSENT",
+   "step_no": 6,
    "system_id": "search_service"
   },
   {
@@ -399,7 +430,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_712",
    "state": "PRESENT",
-   "step_no": 6,
+   "step_no": 7,
    "system_id": "security_service"
   },
   {
@@ -408,7 +439,7 @@
    "phase": "VERIFICATION",
    "resource_id": "support_4509",
    "state": "REDACTED",
-   "step_no": 7,
+   "step_no": 8,
    "system_id": "support_platform"
   }
  ],

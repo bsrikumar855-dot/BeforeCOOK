@@ -14,29 +14,29 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 29: several assignments equally supported (rival cases for account_5037: ['case_18'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "FAILED",
+    "band": null,
+    "case_status": "NOT_STARTED",
+    "event_group": "DELETE_RECORD|account_service|FAILED",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -2705,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_18",
+      "reason": "A1: account result FAILED is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_03",
+     "evidence_94"
+    ]
+   },
+   "rationale": "account delete activity_3734 is in every maximum one-to-one assignment of batch 45 (cases ['case_20'], rows ['account_5037']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_5037",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_20",
-   "edges": [
-    {
-     "case_id": "case_20",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_5521",
-     "source_id": "activity_3732",
-     "strength": "SECONDARY",
-     "time": "2026-09-09T09:52:26Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 29: several assignments equally supported (rival cases for account_5521: ['case_18'])",
-   "resource_id": "account_5521",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
   },
@@ -285,19 +285,15 @@
    "sources": [
     "evidence_03"
    ]
+  },
+  {
+   "activity_id": "activity_3732",
+   "reason": "A1: account result SUCCESS is inconsistent with case status NOT_STARTED (allowed ['FAILED'])",
+   "resource_id": "account_5521",
+   "sources": []
   }
  ],
  "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 29: several assignments equally supported (rival cases for account_5037: ['case_18'])",
-   "resource_id": "account_5037"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 29: several assignments equally supported (rival cases for account_5521: ['case_18'])",
-   "resource_id": "account_5521"
-  },
   {
    "label": "AMBIGUOUS",
    "reason": "AMBIGUOUS: activity_3735 lies in the burst windows of cases ['case_13', 'case_18', 'case_20', 'case_36', 'case_37', 'case_51']",
@@ -325,6 +321,33 @@
   "requested_at": "2026-09-08T11:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_05",
+   "required_action": "DELETE",
+   "resource_id": "account_5037",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_05",
+    "resource_id": "account_5037",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "DATA_FLOW",
@@ -426,9 +449,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "search_4262",
+   "resource_id": "account_5037",
    "state": "ABSENT",
    "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_4262",
+   "state": "ABSENT",
+   "step_no": 6,
    "system_id": "search_service"
   },
   {
@@ -437,7 +469,7 @@
    "phase": "VERIFICATION",
    "resource_id": "data_flow_1770",
    "state": "DISABLED",
-   "step_no": 6,
+   "step_no": 7,
    "system_id": "integration_service"
   }
  ],

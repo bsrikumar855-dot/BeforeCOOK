@@ -7,46 +7,6 @@
      "case_id": "case_156",
      "identifier": "deletion_worker:DELETE_RECORD",
      "kind": "TIMING",
-     "resource_id": "account_1992",
-     "source_id": "activity_2756",
-     "strength": "SECONDARY",
-     "time": "2026-07-11T06:06:39Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 23: several assignments equally supported (rival cases for account_1992: ['case_155', 'case_157'])",
-   "resource_id": "account_1992",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_156",
-   "edges": [
-    {
-     "case_id": "case_156",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_2154",
-     "source_id": "activity_2757",
-     "strength": "SECONDARY",
-     "time": "2026-07-11T06:15:10Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 23: several assignments equally supported (rival cases for account_2154: ['case_155', 'case_157'])",
-   "resource_id": "account_2154",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_156",
-   "edges": [
-    {
-     "case_id": "case_156",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
      "resource_id": "account_2362",
      "source_id": "activity_2755",
      "strength": "SECONDARY",
@@ -54,8 +14,33 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 23: several assignments equally supported (rival cases for account_2362: ['case_155', 'case_157'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "SUCCESS",
+    "band": null,
+    "case_status": "COMPLETE",
+    "event_group": "DELETE_RECORD|account_service|SUCCESS",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -3876,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_155",
+      "reason": "A1: account result SUCCESS is inconsistent with case status NOT_STARTED (allowed ['FAILED'])"
+     },
+     {
+      "case_id": "case_157",
+      "reason": "A1: account result SUCCESS is inconsistent with case status NOT_STARTED (allowed ['FAILED'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_15",
+     "evidence_16",
+     "evidence_85"
+    ]
+   },
+   "rationale": "account delete activity_2755 is in every maximum one-to-one assignment of batch 26 (cases ['case_156'], rows ['account_2362']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_2362",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -286,24 +271,21 @@
     "evidence_16",
     "evidence_85"
    ]
+  },
+  {
+   "activity_id": "activity_2756",
+   "reason": "A1: account result FAILED is inconsistent with case status COMPLETE (allowed ['SUCCESS'])",
+   "resource_id": "account_1992",
+   "sources": []
+  },
+  {
+   "activity_id": "activity_2757",
+   "reason": "A1: account result FAILED is inconsistent with case status COMPLETE (allowed ['SUCCESS'])",
+   "resource_id": "account_2154",
+   "sources": []
   }
  ],
  "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 23: several assignments equally supported (rival cases for account_1992: ['case_155', 'case_157'])",
-   "resource_id": "account_1992"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 23: several assignments equally supported (rival cases for account_2154: ['case_155', 'case_157'])",
-   "resource_id": "account_2154"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 23: several assignments equally supported (rival cases for account_2362: ['case_155', 'case_157'])",
-   "resource_id": "account_2362"
-  },
   {
    "label": "AMBIGUOUS",
    "reason": "AMBIGUOUS: activity_2754 lies in the burst windows of cases ['case_155', 'case_156', 'case_157', 'case_170', 'case_171', 'case_172']",
@@ -341,6 +323,33 @@
   "requested_at": "2026-07-09T07:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_15",
+   "required_action": "DELETE",
+   "resource_id": "account_2362",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_15",
+    "resource_id": "account_2362",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "SECURITY_AUDIT_LOG",
@@ -474,9 +483,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "export_5897",
+   "resource_id": "account_2362",
    "state": "ABSENT",
    "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "export_5897",
+   "state": "ABSENT",
+   "step_no": 6,
    "system_id": "export_service"
   },
   {
@@ -485,7 +503,7 @@
    "phase": "VERIFICATION",
    "resource_id": "search_4870",
    "state": "ABSENT",
-   "step_no": 6,
+   "step_no": 7,
    "system_id": "search_service"
   },
   {
@@ -494,7 +512,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_5890",
    "state": "PRESENT",
-   "step_no": 7,
+   "step_no": 8,
    "system_id": "security_service"
   }
  ],

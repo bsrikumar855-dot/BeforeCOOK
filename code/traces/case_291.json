@@ -15,28 +15,8 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 52: several assignments equally supported (rival cases for account_2352: ['case_275', 'case_276', 'case_277', 'case_290'])",
+   "rationale": "batch 68: several assignments equally supported (rival cases for account_2352: ['case_275', 'case_277', 'case_290'])",
    "resource_id": "account_2352",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_291",
-   "edges": [
-    {
-     "case_id": "case_291",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_4853",
-     "source_id": "activity_1851",
-     "strength": "SECONDARY",
-     "time": "2026-05-12T08:08:30Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 52: several assignments equally supported (rival cases for account_4853: ['case_275', 'case_276', 'case_277', 'case_290'])",
-   "resource_id": "account_4853",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
   },
@@ -55,7 +35,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 52: several assignments equally supported (rival cases for account_7177: ['case_275', 'case_276', 'case_277', 'case_290'])",
+   "rationale": "batch 68: several assignments equally supported (rival cases for account_7177: ['case_275', 'case_277', 'case_290'])",
    "resource_id": "account_7177",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -75,7 +55,7 @@
    ],
    "in_scope": true,
    "label": "AMBIGUOUS",
-   "rationale": "batch 52: several assignments equally supported (rival cases for account_731: ['case_275', 'case_276', 'case_277', 'case_290'])",
+   "rationale": "batch 68: several assignments equally supported (rival cases for account_731: ['case_275', 'case_277', 'case_290'])",
    "resource_id": "account_731",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -94,8 +74,41 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 52: several assignments equally supported (rival cases for account_8914: ['case_275', 'case_276', 'case_277', 'case_290'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "PARTIAL",
+    "band": null,
+    "case_status": "PARTIALLY_COMPLETE",
+    "event_group": "DELETE_RECORD|account_service|PARTIAL",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -3693,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_275",
+      "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     },
+     {
+      "case_id": "case_276",
+      "reason": "A1: account result PARTIAL is inconsistent with case status NOT_STARTED (allowed ['FAILED'])"
+     },
+     {
+      "case_id": "case_277",
+      "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     },
+     {
+      "case_id": "case_290",
+      "reason": "A1: account result PARTIAL is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_26",
+     "evidence_76",
+     "evidence_77"
+    ]
+   },
+   "rationale": "account delete activity_1842 is in every maximum one-to-one assignment of batch 68 (cases ['case_275', 'case_277', 'case_290', 'case_291'], rows ['account_2352', 'account_7177', 'account_731', 'account_8914']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_8914",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
@@ -303,33 +316,29 @@
     "evidence_26",
     "evidence_77"
    ]
+  },
+  {
+   "activity_id": "activity_1851",
+   "reason": "A1: account result FAILED is inconsistent with case status PARTIALLY_COMPLETE (allowed ['PARTIAL', 'SUCCESS'])",
+   "resource_id": "account_4853",
+   "sources": []
   }
  ],
  "excluded": [
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_2352: ['case_275', 'case_276', 'case_277', 'case_290'])",
+   "reason": "AMBIGUOUS: batch 68: several assignments equally supported (rival cases for account_2352: ['case_275', 'case_277', 'case_290'])",
    "resource_id": "account_2352"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_4853: ['case_275', 'case_276', 'case_277', 'case_290'])",
-   "resource_id": "account_4853"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_7177: ['case_275', 'case_276', 'case_277', 'case_290'])",
+   "reason": "AMBIGUOUS: batch 68: several assignments equally supported (rival cases for account_7177: ['case_275', 'case_277', 'case_290'])",
    "resource_id": "account_7177"
   },
   {
    "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_731: ['case_275', 'case_276', 'case_277', 'case_290'])",
+   "reason": "AMBIGUOUS: batch 68: several assignments equally supported (rival cases for account_731: ['case_275', 'case_277', 'case_290'])",
    "resource_id": "account_731"
-  },
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 52: several assignments equally supported (rival cases for account_8914: ['case_275', 'case_276', 'case_277', 'case_290'])",
-   "resource_id": "account_8914"
   },
   {
    "label": "AMBIGUOUS",
@@ -368,6 +377,33 @@
   "requested_at": "2026-05-10T08:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_75",
+   "required_action": "DELETE",
+   "resource_id": "account_8914",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_75",
+    "resource_id": "account_8914",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "BACKUP_ARCHIVE",
@@ -420,11 +456,20 @@
   },
   {
    "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_8914",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
    "operation": "VERIFY_RESTORE_BLOCKED",
    "phase": "VERIFICATION",
    "resource_id": "backup_7079",
    "state": "BLOCKED",
-   "step_no": 3,
+   "step_no": 4,
    "system_id": "backup_service"
   }
  ],

@@ -2,27 +2,27 @@
  "samples": {
   "cases": 32,
   "status_correct": 31,
-  "sequence_exact": 16,
+  "sequence_exact": 19,
   "steps_expected": 193,
-  "steps_predicted": 171,
-  "steps_matched": 171,
-  "steps_exact_including_step_no": 134,
+  "steps_predicted": 178,
+  "steps_matched": 178,
+  "steps_exact_including_step_no": 152,
   "field_correct": {
-   "step_no": 171,
-   "phase": 171,
-   "system_id": 134,
-   "resource_id": 134,
-   "operation": 142,
-   "state": 142,
-   "evidence_id": 171
+   "step_no": 178,
+   "phase": 178,
+   "system_id": 152,
+   "resource_id": 152,
+   "operation": 157,
+   "state": 157,
+   "evidence_id": 178
   },
   "field_denominator": 193,
   "keyed_correct": {
-   "operation": 171,
-   "state": 171,
-   "evidence_id": 171
+   "operation": 178,
+   "state": 178,
+   "evidence_id": 178
   },
-  "keyed_total": 171,
+  "keyed_total": 178,
   "missing": [
    [
     "case_03",
@@ -75,36 +75,12 @@
    [
     "case_18",
     {
-     "step_no": 9,
-     "phase": "VERIFICATION",
-     "system_id": "account_service",
-     "resource_id": "account_5521",
-     "operation": "VERIFY_RECORD_ABSENT",
-     "state": "ABSENT",
-     "evidence_id": ""
-    }
-   ],
-   [
-    "case_18",
-    {
      "step_no": 11,
      "phase": "VERIFICATION",
      "system_id": "security_service",
      "resource_id": "audit_record_6645",
      "operation": "VERIFY_RECORD_PRESENT",
      "state": "PRESENT",
-     "evidence_id": ""
-    }
-   ],
-   [
-    "case_20",
-    {
-     "step_no": 5,
-     "phase": "VERIFICATION",
-     "system_id": "account_service",
-     "resource_id": "account_5037",
-     "operation": "VERIFY_RECORD_ABSENT",
-     "state": "ABSENT",
      "evidence_id": ""
     }
    ],
@@ -123,18 +99,6 @@
    [
     "case_21",
     {
-     "step_no": 1,
-     "phase": "VERIFICATION",
-     "system_id": "account_service",
-     "resource_id": "account_6440",
-     "operation": "VERIFY_RECORD_ABSENT",
-     "state": "ABSENT",
-     "evidence_id": "evidence_92"
-    }
-   ],
-   [
-    "case_21",
-    {
      "step_no": 3,
      "phase": "VERIFICATION",
      "system_id": "analytics_platform",
@@ -142,18 +106,6 @@
      "operation": "VERIFY_RECORD_ANONYMIZED",
      "state": "ANONYMIZED",
      "evidence_id": "evidence_92"
-    }
-   ],
-   [
-    "case_22",
-    {
-     "step_no": 5,
-     "phase": "VERIFICATION",
-     "system_id": "account_service",
-     "resource_id": "account_4990",
-     "operation": "VERIFY_RECORD_ABSENT",
-     "state": "ABSENT",
-     "evidence_id": ""
     }
    ],
    [
@@ -166,18 +118,6 @@
      "operation": "VERIFY_RECORD_ABSENT",
      "state": "ABSENT",
      "evidence_id": ""
-    }
-   ],
-   [
-    "case_25",
-    {
-     "step_no": 1,
-     "phase": "VERIFICATION",
-     "system_id": "account_service",
-     "resource_id": "account_3136",
-     "operation": "VERIFY_RECORD_ABSENT",
-     "state": "ABSENT",
-     "evidence_id": "evidence_92"
     }
    ],
    [
@@ -263,30 +203,6 @@
      "state": "ABSENT",
      "evidence_id": ""
     }
-   ],
-   [
-    "case_31",
-    {
-     "step_no": 1,
-     "phase": "VERIFICATION",
-     "system_id": "account_service",
-     "resource_id": "account_4857",
-     "operation": "VERIFY_RECORD_ABSENT",
-     "state": "ABSENT",
-     "evidence_id": "evidence_51"
-    }
-   ],
-   [
-    "case_32",
-    {
-     "step_no": 3,
-     "phase": "VERIFICATION",
-     "system_id": "account_service",
-     "resource_id": "account_8858",
-     "operation": "VERIFY_RECORD_ABSENT",
-     "state": "ABSENT",
-     "evidence_id": ""
-    }
    ]
   ],
   "extra": [],
@@ -294,7 +210,7 @@
  },
  "attribution": {
   "labelled_pairs": 111,
-  "correct": 89,
+  "correct": 96,
   "rows": [
    {
     "case_id": "case_01",
@@ -607,9 +523,9 @@
    {
     "case_id": "case_18",
     "resource_id": "account_5521",
-    "label": "AMBIGUOUS",
+    "label": "INFERRED_CLAIM",
     "link": "timing-only",
-    "correct": false
+    "correct": true
    },
    {
     "case_id": "case_18",
@@ -677,9 +593,9 @@
    {
     "case_id": "case_20",
     "resource_id": "account_5037",
-    "label": "AMBIGUOUS",
+    "label": "INFERRED_CLAIM",
     "link": "timing-only",
-    "correct": false
+    "correct": true
    },
    {
     "case_id": "case_20",
@@ -705,9 +621,9 @@
    {
     "case_id": "case_21",
     "resource_id": "account_6440",
-    "label": "AMBIGUOUS",
+    "label": "INFERRED_CLAIM",
     "link": "timing-only",
-    "correct": false
+    "correct": true
    },
    {
     "case_id": "case_21",
@@ -726,9 +642,9 @@
    {
     "case_id": "case_22",
     "resource_id": "account_4990",
-    "label": "AMBIGUOUS",
+    "label": "INFERRED_CLAIM",
     "link": "timing-only",
-    "correct": false
+    "correct": true
    },
    {
     "case_id": "case_22",
@@ -803,9 +719,9 @@
    {
     "case_id": "case_25",
     "resource_id": "account_3136",
-    "label": "AMBIGUOUS",
+    "label": "INFERRED_CLAIM",
     "link": "timing-only",
-    "correct": false
+    "correct": true
    },
    {
     "case_id": "case_25",
@@ -1034,9 +950,9 @@
    {
     "case_id": "case_31",
     "resource_id": "account_4857",
-    "label": "AMBIGUOUS",
+    "label": "INFERRED_CLAIM",
     "link": "timing-only",
-    "correct": false
+    "correct": true
    },
    {
     "case_id": "case_31",
@@ -1055,9 +971,9 @@
    {
     "case_id": "case_32",
     "resource_id": "account_8858",
-    "label": "AMBIGUOUS",
+    "label": "INFERRED_CLAIM",
     "link": "timing-only",
-    "correct": false
+    "correct": true
    },
    {
     "case_id": "case_32",
@@ -1087,31 +1003,34 @@
    },
    "timing-only": {
     "total": 24,
-    "correct": 5,
+    "correct": 12,
     "INFERRED": 5,
-    "AMBIGUOUS": 19
+    "AMBIGUOUS": 12,
+    "INFERRED_CLAIM": 7
    }
   },
   "labels_samples": {
-   "AMBIGUOUS": 61,
+   "AMBIGUOUS": 38,
    "CONFIRMED": 84,
    "CONFIRMED/OUT_OF_SCOPE": 3,
-   "INFERRED": 5
+   "INFERRED": 5,
+   "INFERRED_CLAIM": 7
   },
   "labels_eval": {
-   "AMBIGUOUS": 1247,
+   "AMBIGUOUS": 904,
    "CONFIRMED": 1434,
    "CONFIRMED/OUT_OF_SCOPE": 41,
    "CONFLICT": 1,
-   "INFERRED": 40
+   "INFERRED": 40,
+   "INFERRED_CLAIM": 95
   },
   "coverage_samples": [
-   89,
-   153
+   96,
+   137
   ],
   "coverage_eval": [
-   1474,
-   2763
+   1569,
+   2515
   ],
   "inferred_evaluable": [
    [
@@ -1138,6 +1057,41 @@
     "case_08",
     "account_008",
     true
+   ],
+   [
+    "case_18",
+    "account_5521",
+    true
+   ],
+   [
+    "case_20",
+    "account_5037",
+    true
+   ],
+   [
+    "case_21",
+    "account_6440",
+    true
+   ],
+   [
+    "case_22",
+    "account_4990",
+    true
+   ],
+   [
+    "case_25",
+    "account_3136",
+    true
+   ],
+   [
+    "case_31",
+    "account_4857",
+    true
+   ],
+   [
+    "case_32",
+    "account_8858",
+    true
    ]
   ],
   "inferred_unevaluable": [
@@ -1146,12 +1100,28 @@
     "analytics_6830"
    ],
    [
+    "case_54",
+    "account_6829"
+   ],
+   [
+    "case_57",
+    "account_1298"
+   ],
+   [
+    "case_76",
+    "account_925"
+   ],
+   [
     "case_78",
     "account_8754"
    ],
    [
     "case_94",
     "account_4037"
+   ],
+   [
+    "case_97",
+    "account_6813"
    ],
    [
     "case_101",
@@ -1166,8 +1136,56 @@
     "account_4070"
    ],
    [
+    "case_108",
+    "account_6750"
+   ],
+   [
+    "case_111",
+    "account_9314"
+   ],
+   [
+    "case_123",
+    "account_2988"
+   ],
+   [
+    "case_124",
+    "account_8951"
+   ],
+   [
     "case_125",
     "account_7637"
+   ],
+   [
+    "case_128",
+    "account_7878"
+   ],
+   [
+    "case_130",
+    "account_8729"
+   ],
+   [
+    "case_131",
+    "account_426"
+   ],
+   [
+    "case_132",
+    "account_4395"
+   ],
+   [
+    "case_144",
+    "account_6826"
+   ],
+   [
+    "case_149",
+    "account_9505"
+   ],
+   [
+    "case_150",
+    "account_3897"
+   ],
+   [
+    "case_151",
+    "account_874"
    ],
    [
     "case_152",
@@ -1178,24 +1196,132 @@
     "account_7680"
    ],
    [
+    "case_156",
+    "account_2362"
+   ],
+   [
+    "case_158",
+    "account_1421"
+   ],
+   [
+    "case_159",
+    "account_4272"
+   ],
+   [
+    "case_160",
+    "account_1688"
+   ],
+   [
     "case_161",
     "account_5501"
+   ],
+   [
+    "case_162",
+    "account_5983"
+   ],
+   [
+    "case_174",
+    "account_6659"
+   ],
+   [
+    "case_176",
+    "account_9877"
+   ],
+   [
+    "case_178",
+    "account_1090"
+   ],
+   [
+    "case_179",
+    "account_3482"
+   ],
+   [
+    "case_180",
+    "account_9876"
+   ],
+   [
+    "case_181",
+    "account_5309"
    ],
    [
     "case_182",
     "account_2322"
    ],
    [
+    "case_183",
+    "account_4854"
+   ],
+   [
+    "case_184",
+    "account_9620"
+   ],
+   [
+    "case_190",
+    "account_7063"
+   ],
+   [
+    "case_198",
+    "account_2210"
+   ],
+   [
     "case_200",
     "account_1964"
+   ],
+   [
+    "case_204",
+    "account_9268"
+   ],
+   [
+    "case_206",
+    "account_4522"
+   ],
+   [
+    "case_209",
+    "account_6934"
+   ],
+   [
+    "case_248",
+    "account_3631"
+   ],
+   [
+    "case_250",
+    "account_7010"
+   ],
+   [
+    "case_253",
+    "account_6073"
+   ],
+   [
+    "case_254",
+    "account_5047"
+   ],
+   [
+    "case_255",
+    "account_5091"
+   ],
+   [
+    "case_256",
+    "account_7542"
    ],
    [
     "case_260",
     "account_7811"
    ],
    [
+    "case_276",
+    "account_4853"
+   ],
+   [
+    "case_280",
+    "account_2430"
+   ],
+   [
     "case_281",
     "account_4985"
+   ],
+   [
+    "case_282",
+    "account_9763"
    ],
    [
     "case_283",
@@ -1204,6 +1330,30 @@
    [
     "case_284",
     "account_8322"
+   ],
+   [
+    "case_289",
+    "account_4232"
+   ],
+   [
+    "case_291",
+    "account_8914"
+   ],
+   [
+    "case_305",
+    "account_6680"
+   ],
+   [
+    "case_306",
+    "account_7248"
+   ],
+   [
+    "case_309",
+    "account_4319"
+   ],
+   [
+    "case_310",
+    "account_1235"
    ],
    [
     "case_322",
@@ -1218,6 +1368,14 @@
     "account_206"
    ],
    [
+    "case_329",
+    "account_6301"
+   ],
+   [
+    "case_330",
+    "account_2583"
+   ],
+   [
     "case_332",
     "account_5992"
    ],
@@ -1228,6 +1386,46 @@
    [
     "case_343",
     "analytics_4751"
+   ],
+   [
+    "case_344",
+    "account_486"
+   ],
+   [
+    "case_348",
+    "account_421"
+   ],
+   [
+    "case_350",
+    "account_5202"
+   ],
+   [
+    "case_351",
+    "account_5059"
+   ],
+   [
+    "case_352",
+    "account_6215"
+   ],
+   [
+    "case_353",
+    "account_9056"
+   ],
+   [
+    "case_354",
+    "account_3918"
+   ],
+   [
+    "case_356",
+    "account_6093"
+   ],
+   [
+    "case_358",
+    "account_1850"
+   ],
+   [
+    "case_360",
+    "account_6312"
    ],
    [
     "case_373",
@@ -1250,6 +1448,14 @@
     "analytics_4328"
    ],
    [
+    "case_393",
+    "account_1093"
+   ],
+   [
+    "case_400",
+    "account_928"
+   ],
+   [
     "case_401",
     "account_9820"
    ],
@@ -1266,16 +1472,72 @@
     "analytics_7090"
    ],
    [
+    "case_407",
+    "account_9087"
+   ],
+   [
     "case_424",
     "account_2696"
+   ],
+   [
+    "case_427",
+    "account_8461"
    ],
    [
     "case_428",
     "account_2157"
    ],
    [
+    "case_431",
+    "account_6101"
+   ],
+   [
+    "case_432",
+    "account_6489"
+   ],
+   [
+    "case_445",
+    "account_1736"
+   ],
+   [
+    "case_446",
+    "account_3827"
+   ],
+   [
+    "case_449",
+    "account_5718"
+   ],
+   [
+    "case_450",
+    "account_9275"
+   ],
+   [
+    "case_451",
+    "account_1895"
+   ],
+   [
     "case_452",
     "account_6294"
+   ],
+   [
+    "case_454",
+    "account_3024"
+   ],
+   [
+    "case_456",
+    "account_3584"
+   ],
+   [
+    "case_458",
+    "account_077"
+   ],
+   [
+    "case_459",
+    "account_5892"
+   ],
+   [
+    "case_460",
+    "account_5167"
    ],
    [
     "case_461",
@@ -1290,6 +1552,38 @@
     "analytics_689"
    ],
    [
+    "case_473",
+    "account_6474"
+   ],
+   [
+    "case_474",
+    "account_9904"
+   ],
+   [
+    "case_476",
+    "account_3510"
+   ],
+   [
+    "case_478",
+    "account_5934"
+   ],
+   [
+    "case_479",
+    "account_5582"
+   ],
+   [
+    "case_482",
+    "account_9394"
+   ],
+   [
+    "case_495",
+    "account_9784"
+   ],
+   [
+    "case_498",
+    "account_282"
+   ],
+   [
     "case_500",
     "account_5738"
    ],
@@ -1298,12 +1592,52 @@
     "account_2554"
    ],
    [
+    "case_503",
+    "account_5394"
+   ],
+   [
+    "case_507",
+    "account_3772"
+   ],
+   [
+    "case_508",
+    "account_5423"
+   ],
+   [
     "case_521",
     "analytics_7277"
+   ],
+   [
+    "case_524",
+    "account_704"
+   ],
+   [
+    "case_526",
+    "account_1400"
+   ],
+   [
+    "case_528",
+    "account_1184"
+   ],
+   [
+    "case_530",
+    "account_6169"
+   ],
+   [
+    "case_531",
+    "account_3146"
+   ],
+   [
+    "case_532",
+    "account_470"
+   ],
+   [
+    "case_545",
+    "account_2577"
    ]
   ],
   "inferred_recall": [
-   5,
+   12,
    27
   ],
   "dropped_by_policy": [
@@ -1329,27 +1663,6 @@
     "correct": false
    },
    {
-    "case_id": "case_18",
-    "resource_id": "account_5521",
-    "label": "AMBIGUOUS",
-    "link": "timing-only",
-    "correct": false
-   },
-   {
-    "case_id": "case_20",
-    "resource_id": "account_5037",
-    "label": "AMBIGUOUS",
-    "link": "timing-only",
-    "correct": false
-   },
-   {
-    "case_id": "case_21",
-    "resource_id": "account_6440",
-    "label": "AMBIGUOUS",
-    "link": "timing-only",
-    "correct": false
-   },
-   {
     "case_id": "case_21",
     "resource_id": "analytics_5335",
     "label": "AMBIGUOUS",
@@ -1357,22 +1670,8 @@
     "correct": false
    },
    {
-    "case_id": "case_22",
-    "resource_id": "account_4990",
-    "label": "AMBIGUOUS",
-    "link": "timing-only",
-    "correct": false
-   },
-   {
     "case_id": "case_23",
     "resource_id": "account_410",
-    "label": "AMBIGUOUS",
-    "link": "timing-only",
-    "correct": false
-   },
-   {
-    "case_id": "case_25",
-    "resource_id": "account_3136",
     "label": "AMBIGUOUS",
     "link": "timing-only",
     "correct": false
@@ -1422,20 +1721,6 @@
    {
     "case_id": "case_30",
     "resource_id": "account_4163",
-    "label": "AMBIGUOUS",
-    "link": "timing-only",
-    "correct": false
-   },
-   {
-    "case_id": "case_31",
-    "resource_id": "account_4857",
-    "label": "AMBIGUOUS",
-    "link": "timing-only",
-    "correct": false
-   },
-   {
-    "case_id": "case_32",
-    "resource_id": "account_8858",
     "label": "AMBIGUOUS",
     "link": "timing-only",
     "correct": false
@@ -2664,36 +2949,7 @@
    "error": ""
   }
  ],
- "determinism": {
-  "run_1": {
-   "returncode": 0,
-   "pythonhashseed": "1",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>\\run_1\\output.csv",
-   "stderr": "",
-   "model_calls": 0,
-   "files_compared": 553
-  },
-  "run_2": {
-   "returncode": 0,
-   "pythonhashseed": "2",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>\\run_2\\output.csv",
-   "stderr": "",
-   "model_calls": 0,
-   "identical_to_run_1": true,
-   "differences": [],
-   "files_compared": 553
-  },
-  "from_cache_no_keys": {
-   "returncode": 0,
-   "pythonhashseed": "3",
-   "stdout": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409 output=<tmp>\\from_cache_no_keys\\output.csv",
-   "stderr": "",
-   "model_calls": 0,
-   "identical_to_run_1": true,
-   "differences": [],
-   "files_compared": 553
-  }
- },
+ "determinism": null,
  "usage": {
   "rows": [
    {

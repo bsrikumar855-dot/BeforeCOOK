@@ -1,5 +1,11 @@
 {
- "account_batches": 118,
+ "account_batches": 157,
+ "attribution": {
+  "bands": {},
+  "claim_conflicts": [],
+  "joint": {},
+  "variant": "a1"
+ },
  "conflicts": {},
  "content_conflicts": {
   "marketing_001": {
@@ -17,20 +23,22 @@
  },
  "eval": {
   "attribution_labels": {
-   "AMBIGUOUS": 1247,
+   "AMBIGUOUS": 904,
    "CONFIRMED": 1475,
    "CONFLICT": 1,
-   "INFERRED": 40
+   "INFERRED": 40,
+   "INFERRED_CLAIM": 95
   },
   "cases": 518,
   "degraded": [
    "case_63"
   ],
   "excluded_reasons": {
-   "AMBIGUOUS": 1247,
+   "AMBIGUOUS": 904,
    "CONFLICT": 1,
    "EXPOSURE_UNKNOWN": 1,
-   "OUT_OF_SCOPE": 41
+   "OUT_OF_SCOPE": 41,
+   "UNKNOWN_STATE": 3
   },
   "intent_paths": {
    "model_deletion->DELETION": 508,
@@ -549,16 +557,17 @@
  },
  "samples": {
   "attribution_labels": {
-   "AMBIGUOUS": 61,
+   "AMBIGUOUS": 38,
    "CONFIRMED": 87,
-   "INFERRED": 5
+   "INFERRED": 5,
+   "INFERRED_CLAIM": 7
   },
   "cases": 32,
   "degraded": [
    "case_04"
   ],
   "excluded_reasons": {
-   "AMBIGUOUS": 61,
+   "AMBIGUOUS": 38,
    "OUT_OF_SCOPE": 3
   },
   "intent_paths": {

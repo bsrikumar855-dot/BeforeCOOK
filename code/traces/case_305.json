@@ -14,29 +14,28 @@
     }
    ],
    "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 61: several assignments equally supported (rival cases for account_6680: ['case_306'])",
+   "label": "INFERRED_CLAIM",
+   "provenance": {
+    "account_result": "FAILED",
+    "band": null,
+    "case_status": "NOT_STARTED",
+    "event_group": "DELETE_RECORD|account_service|FAILED",
+    "filters": [
+     "claim"
+    ],
+    "offset_s": -3651,
+    "rejected_alternatives": [
+     {
+      "case_id": "case_306",
+      "reason": "A1: account result FAILED is inconsistent with case status COMPLETE (allowed ['SUCCESS'])"
+     }
+    ],
+    "supporting_hard_links": [
+     "evidence_29"
+    ]
+   },
+   "rationale": "account delete activity_1764 is in every maximum one-to-one assignment of batch 79 (cases ['case_305'], rows ['account_6680']) after eliminating rows hard-linked to other people and applying filters ['claim']",
    "resource_id": "account_6680",
-   "scope_reason": "resource is in the case's own deletion burst",
-   "system_id": "account_service"
-  },
-  {
-   "case_id": "case_305",
-   "edges": [
-    {
-     "case_id": "case_305",
-     "identifier": "deletion_worker:DELETE_RECORD",
-     "kind": "TIMING",
-     "resource_id": "account_7248",
-     "source_id": "activity_1763",
-     "strength": "SECONDARY",
-     "time": "2026-05-07T04:48:54Z"
-    }
-   ],
-   "in_scope": true,
-   "label": "AMBIGUOUS",
-   "rationale": "batch 61: several assignments equally supported (rival cases for account_7248: ['case_306'])",
-   "resource_id": "account_7248",
    "scope_reason": "resource is in the case's own deletion burst",
    "system_id": "account_service"
   },
@@ -270,20 +269,15 @@
    "sources": [
     "evidence_29"
    ]
-  }
- ],
- "excluded": [
-  {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 61: several assignments equally supported (rival cases for account_6680: ['case_306'])",
-   "resource_id": "account_6680"
   },
   {
-   "label": "AMBIGUOUS",
-   "reason": "AMBIGUOUS: batch 61: several assignments equally supported (rival cases for account_7248: ['case_306'])",
-   "resource_id": "account_7248"
+   "activity_id": "activity_1763",
+   "reason": "A1: account result SUCCESS is inconsistent with case status NOT_STARTED (allowed ['FAILED'])",
+   "resource_id": "account_7248",
+   "sources": []
   }
  ],
+ "excluded": [],
  "input_issues": [],
  "intent": {
   "classify_request_rows": [],
@@ -305,6 +299,33 @@
   "requested_at": "2026-05-06T06:00:00Z"
  },
  "resources": [
+  {
+   "attribution": "INFERRED_CLAIM",
+   "category": "USER_PROFILE",
+   "category_basis": "default category for account_service",
+   "compliant": true,
+   "note": "",
+   "operations": [
+    null,
+    null,
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_29",
+   "required_action": "DELETE",
+   "resource_id": "account_6680",
+   "state": {
+    "exposure": "UNKNOWN",
+    "flow_state": null,
+    "observation_ids": [],
+    "presence": "ABSENT",
+    "proof_basis": "FULL_SNAPSHOT",
+    "proof_file_id": "evidence_29",
+    "resource_id": "account_6680",
+    "restore_state": null,
+    "system_id": "account_service"
+   },
+   "system_id": "account_service"
+  },
   {
    "attribution": "CONFIRMED",
    "category": "ANALYTICS_PROFILE",
@@ -441,9 +462,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "search_4321",
+   "resource_id": "account_6680",
    "state": "ABSENT",
    "step_no": 5,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_4321",
+   "state": "ABSENT",
+   "step_no": 6,
    "system_id": "search_service"
   },
   {
@@ -452,7 +482,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_507",
    "state": "PRESENT",
-   "step_no": 6,
+   "step_no": 7,
    "system_id": "security_service"
   },
   {
@@ -461,7 +491,7 @@
    "phase": "VERIFICATION",
    "resource_id": "analytics_9285",
    "state": "ANONYMIZED",
-   "step_no": 7,
+   "step_no": 8,
    "system_id": "analytics_platform"
   }
  ],
