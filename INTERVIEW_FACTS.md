@@ -36,8 +36,10 @@ source is named). Corrections to figures quoted in the final brief are marked **
 
 | Row order (rc5 G1) | output = deletion_requests.csv order = numeric case_id suffix; string order differs (unpadded eval ids); grader collation | MEASURED / UNKNOWN | DESIGN.md D-ROWSORT; `spec_audit.py` `case_id_sort` |
 | D-SCOPE exposure (rc5 G3) | 20 eval cases exclude records as OUT_OF_SCOPE; 16 are single-request subjects, never seen in the samples | MEASURED (counts) / UNKNOWN (correctness) | evaluation_report.md §7 D |
+| D-SCOPE review (rc6-P1) | 16 single-request cases inspected (28 excluded records after the fix): 22 records / 14 cases linked only after audit_at (exclusion required by AGENTS.md §6.2); 6 records / 2 cases linked only before the request (JUDGEMENT); 1 defect fixed: case_34 support_9538 (evidence_04 in-window page) | MEASURED / JUDGEMENT | `code/evaluation/dscope_review.json`; DESIGN.md rc6-P1 |
+| Identity evidence for AMBIGUOUS accounts (rc6-P2) | 159 pairs / 157 eval cases; 0 unused same-line co-occurrences; 11 file-level co-mentions are 404 profile lookups without identifiers | MEASURED | DESIGN.md rc6-P2 |
 
-Count of UNKNOWN facts: 4 (provider privacy policy; eval-set correctness; grader row collation; D-SCOPE on single-request subjects).
+Count of UNKNOWN facts: 4 (provider privacy policy; eval-set correctness; grader row collation; the 6 pre-request D-SCOPE records). Ten adversarial questions with sources: `INTERVIEW_MOCK.md`.
 
 ## Nine topics
 
@@ -49,7 +51,7 @@ Count of UNKNOWN facts: 4 (provider privacy policy; eval-set correctness; grader
 | End-to-end flow | `main.py:main` → `pipeline.run` (load, `parsers.build_evidence_index` with `file_checks.check`, intent, `attribution.attribute`, `state.reconstruct`, rules, steps, `validation.validate_row`/`validate_output_file`) | clean-folder run byte-identical | — | exit 4 on any degrade means no partial release |
 | Evidence and citation | `state.py:reconstruct` (admissible = captured ≤ audit_at; latest per copy; absence by full snapshot) | rule C 74/75 | A 71/75, A′ 36/75 | 34 eval fallback citations rest on snapshots (R3 found 0 stronger) |
 | Uncertainty | AMBIGUOUS/CONFLICT → no steps (`attribution.attribute`); C5 open-control rule; RETAIN_UNPROVEN; fail-closed on dropped evidence (`pipeline.audit_case`); F1 absence proof (`ocr_grounding.absence_proof`) | 131 eval cases still have an AMBIGUOUS account (evaluation_report.md §4e) | ordering/offset tiebreaks (1 incorrect each) | correct owners of AMBIGUOUS pairs unknown |
-| AI-assisted workflow | change record + SHIP rule per change; tests gate commits; independent re-derivation agent | 120 tests (rc5); 0 OUR_BUG in 24 cases | — | the agent's own errors were caught only by measurement (C9, C7a, G8) |
+| AI-assisted workflow | change record + SHIP rule per change; tests gate commits; independent re-derivation agent | 123 tests (rc6); 0 OUR_BUG in 24 cases | — | the agent's own errors were caught only by measurement (C9, C7a, G8) |
 | Trade-offs | recall vs wrong-owner risk (`attribution.forced_edges` uniqueness) | +A1 recall 178/193 at 0 incorrect | +A1+ordering 180/193 with 1 incorrect | precision kept at 178/178 by refusing ties |
 | Limitations | episode scope `CaseContext.in_lifecycle`; C2 visibility tri-state | residual: 12 ATTRIBUTION + 3 NOT_DERIVABLE steps (evaluation_report.md §1) | treat every subject record as in scope (independent agent's reading) | eval correctness UNKNOWN |
 
