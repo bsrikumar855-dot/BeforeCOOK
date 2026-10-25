@@ -17,6 +17,25 @@ EMAIL_RE = re.compile(r"(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9
 HEX64_RE = re.compile(r"\b[0-9a-f]{64}\b")
 PHONE_RE = re.compile(r"^\+\d[\d ()\-]{6,}$")
 NAME_FIELDS = {"name", "full_name", "display_name", "requester_name"}
+LOCAL_RE = re.compile(r"[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]{1,64}){0,31}")
+DOMAIN_RE = re.compile(r"(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.){1,8}[A-Za-z]{2,24}")
+
+
+def valid_email(value: str) -> bool:
+    """RFC 5321-shaped ASCII address: dot-atom local part (no leading, trailing or consecutive dots, <= 64 chars) and
+    LDH domain labels. Bounded patterns, matched with fullmatch (linear time)."""
+    if not isinstance(value, str) or value.count("@") != 1 or not value.isascii():
+        return False
+    local, domain = value.split("@")
+    return len(local) <= 64 and len(domain) <= 253 and bool(LOCAL_RE.fullmatch(local)) and bool(DOMAIN_RE.fullmatch(domain))
+
+
+def norm_email(value: str | None) -> str:
+    """The comparison form of an email: trimmed and ASCII-lowercased. A value with any non-ASCII character is never
+    case-folded (str.lower() maps e.g. KELVIN SIGN to 'k', which would equate a lookalike with a real address) and,
+    being invalid, never matches a known identity. Dots and plus tags are kept exactly; no provider-specific rules."""
+    text = (value or "").strip()
+    return text.lower() if text.isascii() else text
 NULL_TEXT = {"", "null", "none", "[redacted]"}
 
 
@@ -43,13 +62,13 @@ class IdentityUniverse:
         self.owner: dict[tuple[str, str], set[str]] = {}
         for u in users:
             self._own("user_id", u["user_id"], u["user_id"])
-            self._own("email", u["email"].lower(), u["user_id"])
+            self._own("email", norm_email(u["email"]), u["user_id"])
             self._own("phone", u["phone"], u["user_id"])
             self._own("email_hash", u["email_hash"], u["user_id"])
         for a in audit_log:
             kind = a["field_name"]
             for side in ("old_value", "new_value"):
-                value = a[side].lower() if kind == "email" else a[side]
+                value = norm_email(a[side]) if kind == "email" else a[side]
                 self._own(kind, value, a["user_id"])
         self.known_hashes = {v for (k, v) in self.owner if k == "email_hash"}
 
@@ -71,7 +90,8 @@ class IdentityUniverse:
         if text in self.user_ids:
             out.append(Identifier("user_id", text, key, provenance))
         for m in EMAIL_RE.findall(text):
-            out.append(Identifier("email", m.lower(), key, provenance))
+            if valid_email(m):                      # malformed addresses (e.g. consecutive dots) are not identifiers
+                out.append(Identifier("email", norm_email(m), key, provenance))
         for m in HEX64_RE.findall(text):
             # 64-hex counts only when it is a known email hash: integrity seals share the shape.
             if m in self.known_hashes:
@@ -83,18 +103,18 @@ class IdentityUniverse:
         return out
 
     def resolve(self, case_id: str, email: str) -> Subject:
-        e = (email or "").strip().lower()
+        e = norm_email(email) if valid_email(norm_email(email)) else ""
         resolution: list[str] = []
         users: set[str] = set()
         for u in self.users:
-            if u["email"].lower() == e:
+            if e and norm_email(u["email"]) == e:
                 users.add(u["user_id"])
                 resolution.append(f"{u['user_id']} via user_identities.email (current)")
         for a in self.audit_log:
             if a["field_name"] != "email":
                 continue
             for side in ("old_value", "new_value"):
-                if a[side].lower() == e:
+                if e and norm_email(a[side]) == e:
                     users.add(a["user_id"])
                     resolution.append(f"{a['user_id']} via user_audit_log.{side} {a['audit_id']}")
         identifiers: dict[str, dict[str, str]] = {k: {} for k in ("user_id", "email", "phone", "email_hash", "name")}
@@ -104,7 +124,7 @@ class IdentityUniverse:
             identifiers["user_id"][uid] = "user_identities.user_id"
             for u in self.users:
                 if u["user_id"] == uid:
-                    identifiers["email"].setdefault(u["email"].lower(), "user_identities.email")
+                    identifiers["email"].setdefault(norm_email(u["email"]), "user_identities.email")
                     identifiers["phone"].setdefault(u["phone"], "user_identities.phone")
                     identifiers["email_hash"].setdefault(u["email_hash"], "user_identities.email_hash")
                     identifiers["name"].setdefault(u["name"], "user_identities.name")
@@ -113,7 +133,7 @@ class IdentityUniverse:
                     continue
                 kind = a["field_name"]
                 for side in ("old_value", "new_value"):
-                    v = a[side].lower() if kind == "email" else a[side]
+                    v = norm_email(a[side]) if kind == "email" else a[side]
                     if v:
                         identifiers.setdefault(kind, {}).setdefault(v, f"user_audit_log.{side} {a['audit_id']}")
         return Subject(case_id, email, sorted(users), identifiers, resolution)

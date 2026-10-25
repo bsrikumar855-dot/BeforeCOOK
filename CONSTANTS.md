@@ -89,6 +89,8 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/agent/explain.py` | 25 | items per list in --explain output | JUDGEMENT | only output length |
 | `code/agent/explain.py` | 8 | observations shown per resource in --explain | JUDGEMENT | only output length |
 | `code/agent/explain.py` | 80, 200 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/agent/identity.py` | 253 | max email domain length (valid_email) | BOUND | RFC 5321 §4.5.3.1.2 / RFC 1035 |
+| `code/agent/identity.py` | 64 | max email local-part length (valid_email) | BOUND | RFC 5321 §4.5.3.1.1 |
 | `code/agent/intent.py` | 20 | fallback batch size if models.yaml omits tasks.intent.batch_size (yaml sets 40) | JUDGEMENT | only when the yaml key is missing |
 | `code/agent/intent.py` | 10 | hash-prefix length (cache keys, prompt versions, nonces, call ids) | JUDGEMENT | existing cache keys / prompt versions no longer match: every cached reply misses |
 | `code/agent/intent.py` | 5000 | request-text classification cap (C7a) | JUDGEMENT | see main table |
@@ -127,7 +129,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/category_coverage.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/compare_intent.py` | 2 | a sentence used <= 2 times marks a free-text (non-template) request | JUDGEMENT | which texts the C4 comparison treats as free text |
 | `code/analysis/compare_intent.py` | 90 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
-| `code/analysis/constants_register.py` | 0.1, 0.999, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 20, 24, 25, 30, 40, 60.0, 64, 100, 120, 200, 255, 400, 401, 403, 404, 420, 429, 500, 502, 503, 504, 518, 2026, 5000, 40000, 200000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
+| `code/analysis/constants_register.py` | 0.1, 0.999, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 20, 24, 25, 30, 40, 60.0, 64, 100, 120, 200, 253, 255, 400, 401, 403, 404, 420, 429, 500, 502, 503, 504, 518, 2026, 5000, 40000, 200000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
 | `code/analysis/e1_order_inference.py` | 25 | E1-B burst gap in minutes (first trough of the unlabelled gap histogram) | JUDGEMENT | rejected experiment only; see main table |
 | `code/analysis/e1_order_inference.py` | 10 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/e1_order_inference.py` | 60 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
@@ -136,6 +138,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/e2_investigator.py` | 300, 6000 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/e2_investigator.py` | 2 | strip of the 'c:' node prefix | JUDGEMENT | rejected experiment only |
 | `code/analysis/e2_investigator_tools.py` | 40 | rows returned per investigator tool call | JUDGEMENT | rejected experiment only |
+| `code/analysis/email_edge_cases.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/measure_ambiguity.py` | 70 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/probe_keys.py` | 400, 401, 403, 404, 429 | HTTP status code | BOUND | RFC 9110 / provider API semantics: retry, quota and 404 handling |
 | `code/analysis/probe_keys.py` | 8 | PNG bit depth of the probe image | BOUND | PNG specification |

@@ -1,0 +1,36 @@
+{
+ "request_email": {
+  "values": 550,
+  "has_upper_case": 20,
+  "has_surrounding_whitespace": 0,
+  "malformed": 0,
+  "non_ascii": 0,
+  "lower_folds_non_ascii_to_ascii": 0,
+  "has_plus": 0,
+  "gmail_dot_removal_would_collide": 0,
+  "plus_collapse_would_collide": 0
+ },
+ "identity_tables": {
+  "values": 1064,
+  "has_upper_case": 0,
+  "has_surrounding_whitespace": 0,
+  "malformed": 0,
+  "non_ascii": 0,
+  "lower_folds_non_ascii_to_ascii": 0,
+  "has_plus": 0,
+  "gmail_dot_removal_would_collide": 0,
+  "plus_collapse_would_collide": 0
+ },
+ "evidence_tokens": {
+  "values": 1990,
+  "has_upper_case": 49,
+  "has_surrounding_whitespace": 0,
+  "malformed": 0,
+  "non_ascii": 0,
+  "lower_folds_non_ascii_to_ascii": 0,
+  "has_plus": 0,
+  "gmail_dot_removal_would_collide": 0,
+  "plus_collapse_would_collide": 0
+ },
+ "identity_emails_merged_by_gmail_dot_removal": 0
+}
