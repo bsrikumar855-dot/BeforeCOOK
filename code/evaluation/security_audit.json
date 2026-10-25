@@ -3,37 +3,37 @@
  "line_bytes": 1000000,
  "regex": [
   {
-   "where": "code/agent/attribution.py:633",
+   "where": "code/agent/attribution.py:681",
    "pattern": "non-deletion",
-   "max_seconds": 0.017,
+   "max_seconds": 0.018,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
   {
    "where": "code/agent/explain.py:28",
    "pattern": "[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\\.[A-Za-z]{2,24}",
-   "max_seconds": 0.366,
+   "max_seconds": 0.553,
    "slowest_input": "digits",
    "result": "PASS"
   },
   {
    "where": "code/agent/explain.py:46",
    "pattern": "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})",
-   "max_seconds": 0.059,
+   "max_seconds": 0.036,
    "slowest_input": "digits",
    "result": "PASS"
   },
   {
    "where": "code/agent/identity.py:16",
    "pattern": "(?<![A-Za-z0-9._%+\\-])[A-Za-z0-9._%+\\-]{1,64}@[A-Za-z0-9.\\-]{1,253}\\.[A-Za-z]{2,24}",
-   "max_seconds": 0.063,
+   "max_seconds": 0.093,
    "slowest_input": "email_like",
    "result": "PASS"
   },
   {
    "where": "code/agent/identity.py:17",
    "pattern": "\\b[0-9a-f]{64}\\b",
-   "max_seconds": 0.067,
+   "max_seconds": 0.07,
    "slowest_input": "random_printable",
    "result": "PASS"
   },
@@ -47,35 +47,35 @@
   {
    "where": "code/agent/identity.py:20",
    "pattern": "[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]{1,64}(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]{1,64}){0,31}",
-   "max_seconds": 0.215,
+   "max_seconds": 0.253,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
   {
    "where": "code/agent/identity.py:23",
    "pattern": "[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?",
-   "max_seconds": 0.268,
+   "max_seconds": 0.432,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
   {
    "where": "code/agent/identity.py:24",
    "pattern": "[A-Za-z]{2,24}",
-   "max_seconds": 0.158,
+   "max_seconds": 0.181,
    "slowest_input": "words_underscores",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/__init__.py:31",
    "pattern": "linked (\\S+) \\(([^)]+)\\) to (\\S+?) and (\\S+?)[.;]|confirmed (\\S+) \\(([^)]+)\\) belongs only",
-   "max_seconds": 0.022,
+   "max_seconds": 0.023,
    "slowest_input": "id_like",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/__init__.py:37",
    "pattern": "^(.*)_\\d+$",
-   "max_seconds": 0.022,
+   "max_seconds": 0.021,
    "slowest_input": "id_like",
    "result": "PASS"
   },
@@ -89,14 +89,14 @@
   {
    "where": "code/agent/parsers/file_checks.py:69",
    "pattern": "(--[^\\n]*\\n?|\\s)+$",
-   "max_seconds": 0.12,
-   "slowest_input": "separators",
+   "max_seconds": 0.1,
+   "slowest_input": "letters_spaces",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/file_checks.py:70",
    "pattern": "COMMIT\\s*;$",
-   "max_seconds": 0.005,
+   "max_seconds": 0.006,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
@@ -117,7 +117,7 @@
   {
    "where": "code/agent/parsers/log_lines.py:20",
    "pattern": "(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=(\"((?:[^\"\\\\]|\\\\.)*)\"|[^\\s\"]+)",
-   "max_seconds": 0.059,
+   "max_seconds": 0.06,
    "slowest_input": "random_printable",
    "result": "PASS"
   },
@@ -143,51 +143,51 @@
    "result": "PASS"
   },
   {
-   "where": "code/agent/parsers/ocr_grounding.py:34",
+   "where": "code/agent/parsers/ocr_grounding.py:35",
    "pattern": "(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\\d{1,12})(?![0-9])",
-   "max_seconds": 0.429,
+   "max_seconds": 0.423,
    "slowest_input": "letters_spaces",
    "result": "PASS"
   },
   {
-   "where": "code/agent/parsers/ocr_grounding.py:131",
+   "where": "code/agent/parsers/ocr_grounding.py:132",
    "pattern": "(?<![\\w+])\\+\\d{1,3}(?:[ .\\-]?\\(?\\d{1,5}\\)?){2,6}",
    "max_seconds": 0.06,
    "slowest_input": "random_printable",
    "result": "PASS"
   },
   {
-   "where": "code/agent/parsers/ocr_grounding.py:132",
+   "where": "code/agent/parsers/ocr_grounding.py:133",
    "pattern": "(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])",
-   "max_seconds": 0.051,
+   "max_seconds": 0.05,
    "slowest_input": "random_printable",
    "result": "PASS"
   },
   {
-   "where": "code/agent/parsers/ocr_grounding.py:135",
+   "where": "code/agent/parsers/ocr_grounding.py:136",
    "pattern": "[^\\s@]@[^\\s@]",
-   "max_seconds": 0.111,
+   "max_seconds": 0.098,
    "slowest_input": "email_like",
    "result": "PASS"
   },
   {
-   "where": "code/agent/parsers/ocr_grounding.py:106",
+   "where": "code/agent/parsers/ocr_grounding.py:107",
    "pattern": null,
    "dynamic": "'(?<![A-Za-z0-9_])' + body + '(?![A-Za-z0-9_])'",
    "result": "DYNAMIC: covered by its builder or not applicable",
    "max_seconds": null
   },
   {
-   "where": "code/agent/parsers/ocr_grounding.py:117",
+   "where": "code/agent/parsers/ocr_grounding.py:118",
    "pattern": "[ .]",
-   "max_seconds": 0.375,
+   "max_seconds": 0.381,
    "slowest_input": "separators",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/pdf_text.py:35",
    "pattern": "(?<!\\d)(\\d{1,10}) 0 obj",
-   "max_seconds": 0.07,
+   "max_seconds": 0.071,
    "slowest_input": "random_printable",
    "result": "PASS"
   },
@@ -201,49 +201,49 @@
   {
    "where": "code/agent/parsers/pdf_text.py:47",
    "pattern": "/(ASCII85Decode|FlateDecode)",
-   "max_seconds": 0.007,
+   "max_seconds": 0.008,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/pdf_text.py:116",
    "pattern": "\\b([a-z]+(?:_[a-z]+)*)_(\\d+)\\b",
-   "max_seconds": 0.151,
+   "max_seconds": 0.148,
    "slowest_input": "words_underscores",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/pdf_text.py:58",
    "pattern": "beginbfchar",
-   "max_seconds": 0.027,
+   "max_seconds": 0.042,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/pdf_text.py:59",
    "pattern": "<([0-9A-Fa-f]+)>\\s*<([0-9A-Fa-f]+)>",
-   "max_seconds": 0.003,
-   "slowest_input": "parens_backslashes",
+   "max_seconds": 0.001,
+   "slowest_input": "letters",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/pdf_text.py:61",
    "pattern": "beginbfrange",
-   "max_seconds": 0.025,
+   "max_seconds": 0.028,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/pdf_text.py:62",
    "pattern": "<([0-9A-Fa-f]+)>\\s*<([0-9A-Fa-f]+)>\\s*<([0-9A-Fa-f]+)>",
-   "max_seconds": 0.002,
-   "slowest_input": "digits",
+   "max_seconds": 0.003,
+   "slowest_input": "parens_backslashes",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/pdf_text.py:72",
    "pattern": "/Type\\s*/Font[\\s>/]",
-   "max_seconds": 0.005,
+   "max_seconds": 0.008,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
@@ -257,7 +257,7 @@
   {
    "where": "code/agent/parsers/pdf_text.py:112",
    "pattern": "[A-Za-z0-9_.\\-]+",
-   "max_seconds": 0.31,
+   "max_seconds": 0.207,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
@@ -278,21 +278,21 @@
   {
    "where": "code/agent/parsers/png_vlm.py:23",
    "pattern": "^([a-z]+(?:_[a-z]+)*)_(\\d+)$",
-   "max_seconds": 0.115,
+   "max_seconds": 0.121,
    "slowest_input": "words_underscores",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/png_vlm.py:25",
    "pattern": "(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\\d{1,12}",
-   "max_seconds": 0.182,
+   "max_seconds": 0.18,
    "slowest_input": "words_underscores",
    "result": "PASS"
   },
   {
    "where": "code/agent/parsers/sql_snapshots.py:27",
    "pattern": "_replica_[a-z_]+$",
-   "max_seconds": 0.005,
+   "max_seconds": 0.006,
    "slowest_input": "prefix_repeated",
    "result": "PASS"
   },
@@ -313,7 +313,7 @@
   {
    "where": "code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002')",
    "pattern": "token_pattern",
-   "max_seconds": 0.048,
+   "max_seconds": 0.042,
    "slowest_input": "random_printable",
    "result": "PASS"
   }
