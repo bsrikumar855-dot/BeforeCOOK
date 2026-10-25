@@ -36,6 +36,7 @@ rejection log, G6).
 | `code/evaluation/` | Evaluation: `main.py` writes `evaluation_report.md` and `usage_report.md`; `spec_audit.py` (literal spec audit with a negative control), `coupling_probes.py`, `security_audit.py`, `cache_audit.py`, custom cases X1–X19 |
 | `code/analysis/` | Offline analysis and archived experiments (Phase 0 profiling, rejected E1 ordering and E2 investigator). `code/agent/` and `code/main.py` import nothing from it; `code/evaluation/main.py` imports one table builder from it (`category_coverage.py`) |
 | `code/evaluation/evaluation_report.md` §7 | Known limitations and judgement calls (ambiguous accounts, case_63, F1, D-SCOPE) |
+| `code/evaluation/experiment_ledger.md` | The latest round's experiments, kept and rejected, with evidence and measured effect (earlier rounds: DESIGN.md) |
 
 Design, decisions and rejected alternatives: [`DESIGN.md`](DESIGN.md). Measured results:
 [`code/evaluation/evaluation_report.md`](code/evaluation/evaluation_report.md) and
