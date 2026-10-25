@@ -319,6 +319,50 @@ Use only what is in `log.txt`. These are the participant's own logged instructio
 - Official October README: the code judge ignores `.json/.csv/.log` files. Every audit result used here is quoted in
   shipped Markdown.
 
+## rc9 corrections and the highest-risk answers (each checked against code or a run this round)
+
+- **"Why is case_63 INCOMPLETE with no steps?"**
+  - **Implemented.** `pipeline.audit_case` gives reason_code `NO_ATTRIBUTABLE_RESOURCE` when no in-scope record is
+    CONFIRMED or INFERRED. The file validator accepts an empty INCOMPLETE row only with that code.
+  - **Measured.**
+    - user_09's identifiers appear only in the identity tables, the request row and one catalog row (`activity_4008`).
+    - `marketing_001`'s own screenshot shows "Soo-jin Park · sj.park@naver.com", so it is CONFLICT.
+    - The rule fires on 2 rows, sample case_04 and eval case_63. On case_04 it is wrong: the reference is COMPLETE,
+      and that is our one status miss (31/32).
+    - Switching to COMPLETE `[]` would make the samples 32/32 and change only case_63.
+  - **Judgement.** You approved M2(b) earlier. The spec's INCOMPLETE line asks for findings, and its COMPLETE line
+    asks for proof; with no attributable record, neither can be met.
+  - **Say it straight:** "Neither status can be fully satisfied. I chose INCOMPLETE and it costs one sample status."
+    Then describe the alternative with its number.
+- **"Why remove the investigator?"**
+  - **Measured.** 126 proposals, 0 accepted, 28 calls, 41,780 tokens. `score_e2.py --from-cache` replays it
+    byte-identically at commit `63c7ecb`.
+  - **Don't claim** it replays on the current code. A1 changed the ambiguous batches, so the cached prompts no
+    longer match.
+  - **Judgement.** Its ceiling is structural: the verifier accepts only identity links, and attribution already
+    confirms every such link.
+- **"Did you check the 131 ambiguous accounts one by one?"**
+  - **Measured (generated in evaluation_report.md §4e).** 366 candidate edges, all TIMING. 131/131 AMBIGUOUS.
+    0 PROVEN, 0 CONFLICTING, 0 UNSUPPORTED.
+  - **Example.** case_546 has two PARTIAL account deletes two minutes apart, and no other case claims either.
+- **"How do you invalidate the cache?"**
+  - **Implemented.** The key is sha256(task + rendered-prompt version + input), so any prompt edit misses, and
+    `--from-cache` then exits 3.
+  - **The one cross-version reuse.** A legacy reply is reused only when its prompt ships and the image bytes match,
+    and the run summary lists every such use.
+  - **Measured.** `test_legacy_reuse_needs_a_shipped_prompt_and_the_same_image` fails when the version check is
+    removed.
+- **"What did the independent verification test?"**
+  - **What it was.** A separate agent re-derived 24 cases from the spec and the data, without seeing our code.
+  - **Measured.** Status agreed on 23/24, and it matched 101/103 of our steps. Triage: 0 OUR_BUG, 3 SUBAGENT_ERROR,
+    8 AMBIGUOUS_SPEC.
+  - **Unknown.** It is not the hidden reference.
+- **"What did you find broken in this pass?"**
+  - **Measured.**
+    - `score_e1.py` had crashed since rc6 (a signature change); it is fixed.
+    - The gate regenerated the report before the security audit, so the shipped timings lagged the shipped JSON.
+    - The README had overstated that E2 replays.
+
 ---
 
 ## Last-minute revision sheet (one page)

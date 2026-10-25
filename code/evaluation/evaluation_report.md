@@ -282,6 +282,8 @@ A2 offset bands (from the +A1+A2 run; CONFIRMED pairs only):
 
 Eval deletion cases whose primary account is still AMBIGUOUS (no account step): 131.
 
+Their account candidates carry 366 edges by kind {'TIMING': 366}. Classes: {'AMBIGUOUS': 131}. Candidates no other case owns, per case: {2: 81, 3: 34, 4: 8, 5: 2, 6: 6}. A case owns one account delete per burst, so two or more equally supported free candidates leave the owner undecided.
+
 ## 4f. Round 6 eval-side audits
 
 Conditional-rule branches (`code/evaluation/rule_branch_audit.py`; branch from raw fields at audit_at; sample columns compare our operations with the reference for the same resource):
@@ -360,51 +362,51 @@ Every regex in code/main.py and code/agent/** run on ten 1 MB adversarial lines 
 
 | Where | Pattern | Worst time (s) | Slowest input | Result |
 |---|---|---|---|---|
-| code/agent/attribution.py:681 | `non-deletion` | 0.018 | prefix_repeated | PASS |
-| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.553 | digits | PASS |
-| code/agent/explain.py:46 | `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z\|[+-]\d{2}:\d{2})` | 0.036 | digits | PASS |
-| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.093 | email_like | PASS |
-| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.07 | random_printable | PASS |
+| code/agent/attribution.py:681 | `non-deletion` | 0.017 | prefix_repeated | PASS |
+| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.471 | words_underscores | PASS |
+| code/agent/explain.py:46 | `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z\|[+-]\d{2}:\d{2})` | 0.053 | digits | PASS |
+| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.066 | random_printable | PASS |
+| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.068 | random_printable | PASS |
 | code/agent/identity.py:18 | `^\+\d[\d ()\-]{6,}$` | 0.0 | letters | PASS |
-| code/agent/identity.py:20 | `[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}){0,31}` | 0.253 | prefix_repeated | PASS |
-| code/agent/identity.py:23 | `[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?` | 0.432 | prefix_repeated | PASS |
-| code/agent/identity.py:24 | `[A-Za-z]{2,24}` | 0.181 | words_underscores | PASS |
-| code/agent/parsers/__init__.py:31 | `linked (\S+) \(([^)]+)\) to (\S+?) and (\S+?)[.;]\|confirmed (\S+) \(([^)]+)\) belongs only` | 0.023 | id_like | PASS |
+| code/agent/identity.py:20 | `[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}){0,31}` | 0.243 | prefix_repeated | PASS |
+| code/agent/identity.py:23 | `[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?` | 0.307 | email_like | PASS |
+| code/agent/identity.py:24 | `[A-Za-z]{2,24}` | 0.225 | words_underscores | PASS |
+| code/agent/parsers/__init__.py:31 | `linked (\S+) \(([^)]+)\) to (\S+?) and (\S+?)[.;]\|confirmed (\S+) \(([^)]+)\) belongs only` | 0.022 | id_like | PASS |
 | code/agent/parsers/__init__.py:37 | `^(.*)_\d+$` | 0.021 | id_like | PASS |
 | code/agent/parsers/file_checks.py:68 | `^\s*BEGIN(\s+TRANSACTION)?\s*;` | 0.0 | letters | PASS |
-| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.1 | letters_spaces | PASS |
-| code/agent/parsers/file_checks.py:70 | `COMMIT\s*;$` | 0.006 | prefix_repeated | PASS |
+| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.123 | separators | PASS |
+| code/agent/parsers/file_checks.py:70 | `COMMIT\s*;$` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/handover_text.py:11 | `^-\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(.+?)\s*$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:18 | `^(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)\s+(.*)$` | 0.0 | letters | PASS |
-| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.06 | random_printable | PASS |
+| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.062 | email_like | PASS |
 | code/agent/parsers/log_lines.py:21 | `^<\d+>1 (\S+) (\S+) (\S+) - - (.*)$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:22 | `^\[(\w+)\] \[([^\]]+)\] \[([^\]]+)\] ([a-z_]+): (.*)$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:23 | `^\\| (\w+) \\| ([^\|]+?) \\| ([^\|]+?) \\| ([a-z_]+) \\| (.*)$` | 0.0 | letters | PASS |
-| code/agent/parsers/ocr_grounding.py:35 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.423 | letters_spaces | PASS |
-| code/agent/parsers/ocr_grounding.py:132 | `(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}` | 0.06 | random_printable | PASS |
-| code/agent/parsers/ocr_grounding.py:133 | `(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])` | 0.05 | random_printable | PASS |
-| code/agent/parsers/ocr_grounding.py:136 | `[^\s@]@[^\s@]` | 0.098 | email_like | PASS |
+| code/agent/parsers/ocr_grounding.py:35 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.422 | letters_spaces | PASS |
+| code/agent/parsers/ocr_grounding.py:132 | `(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}` | 0.072 | separators | PASS |
+| code/agent/parsers/ocr_grounding.py:133 | `(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])` | 0.059 | parens_backslashes | PASS |
+| code/agent/parsers/ocr_grounding.py:136 | `[^\s@]@[^\s@]` | 0.106 | email_like | PASS |
 | code/agent/parsers/ocr_grounding.py:107 | `` | None | None | DYNAMIC: covered by its builder or not a |
-| code/agent/parsers/ocr_grounding.py:118 | `[ .]` | 0.381 | separators | PASS |
-| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.071 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:118 | `[ .]` | 0.397 | separators | PASS |
+| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.074 | letters | PASS |
 | code/agent/parsers/pdf_text.py:43 | `<<(.*)>>\s*stream\r?\n(.*?)\r?\n?endstream` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.008 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.148 | words_underscores | PASS |
-| code/agent/parsers/pdf_text.py:58 | `beginbfchar` | 0.042 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:59 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.028 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:62 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.003 | parens_backslashes | PASS |
-| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.008 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.011 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.185 | words_underscores | PASS |
+| code/agent/parsers/pdf_text.py:58 | `beginbfchar` | 0.027 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:59 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.002 | digits | PASS |
+| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.025 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:62 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
+| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:74 | `/ToUnicode (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.207 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.215 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:73 | `/Name /([^\s/]+)` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:81 | `/Contents (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
-| code/agent/parsers/png_vlm.py:23 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.121 | words_underscores | PASS |
-| code/agent/parsers/png_vlm.py:25 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.18 | words_underscores | PASS |
-| code/agent/parsers/sql_snapshots.py:27 | `_replica_[a-z_]+$` | 0.006 | prefix_repeated | PASS |
+| code/agent/parsers/png_vlm.py:23 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.13 | words_underscores | PASS |
+| code/agent/parsers/png_vlm.py:25 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.189 | words_underscores | PASS |
+| code/agent/parsers/sql_snapshots.py:27 | `_replica_[a-z_]+$` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/sql_snapshots.py:36 | `^-- Captured at:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
 | code/agent/parsers/sql_snapshots.py:38 | `^-- Database topology:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
-| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.042 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.05 | letters_spaces | PASS |
 
 Seven patterns were quadratic before G8 (each > 30 s on a 1 MB line): the email pattern, the log key=value pattern, both screenshot id token patterns, and three lazy PDF block patterns. Fixed by RFC 5321 bounds, word-start lookbehinds, bounded id prefixes and a linear block scan; output.csv and every trace unchanged.
 

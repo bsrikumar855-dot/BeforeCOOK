@@ -587,6 +587,24 @@ def write_reports(m: dict, att: dict, custom: list[dict], det: dict | None, usag
                 and any(a["label"] == "AMBIGUOUS" for a in accts):
             amb_accounts.append(cid)
     L += [f"Eval deletion cases whose primary account is still AMBIGUOUS (no account step): {len(amb_accounts)}.", ""]
+    # rc9: classify them by the evidence on their account candidates (PROVEN needs an identity edge; CONFLICTING a
+    # CONFLICT label; UNSUPPORTED means every candidate is owned by another case; else AMBIGUOUS).
+    owned = {a["resource_id"] for t in traces.values() for a in t.get("attribution", [])
+             if a["in_scope"] and (a["label"] == "CONFIRMED" or a["label"].startswith("INFERRED"))}
+    edge_kinds, classes, free_counts = Counter(), Counter(), Counter()
+    for cid in amb_accounts:
+        accts = [a for a in traces[cid]["attribution"] if a.get("system_id") == "account_service" and a["in_scope"]]
+        edge_kinds.update(e.get("kind") for a in accts for e in a.get("edges", []))
+        free = [a for a in accts if a["label"] == "AMBIGUOUS" and a["resource_id"] not in owned]
+        free_counts[len(free)] += 1
+        identity = any(e.get("kind") != "TIMING" for a in accts for e in a.get("edges", []))
+        classes["PROVEN" if identity else "CONFLICTING" if any(a["label"] == "CONFLICT" for a in accts) and not free
+                else "UNSUPPORTED" if not free else "AMBIGUOUS"] += 1
+    if amb_accounts:
+        L += [f"Their account candidates carry {sum(edge_kinds.values())} edges by kind {dict(sorted(edge_kinds.items()))}. "
+              f"Classes: {dict(sorted(classes.items()))}. Candidates no other case owns, per case: "
+              f"{dict(sorted(free_counts.items()))}. A case owns one account delete per burst, so two or more equally "
+              "supported free candidates leave the owner undecided.", ""]
     rb, ce, dsn = (EVAL_DIR / "rule_branch_audit.json", EVAL_DIR / "citation_exposure.json",
                    EVAL_DIR / "distribution_sanity.json")
     if rb.exists():

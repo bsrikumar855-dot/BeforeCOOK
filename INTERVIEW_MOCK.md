@@ -2,7 +2,7 @@
 
 A preparation sheet, not a transcript: no mock interview was conducted and no interview score exists. Not shipped in
 code.zip (`code/package.py` ships only README.md, requirements.txt, `code/`, `evaluation/`). Every figure was checked on
-2026-10-25 against the file named next to it, on branch `fix/rc6`. Labels: **MEASURED** (computed by a script in this
+2026-10-25 against the file named next to it, on branch `fix/rc6`; corrections from rc7–rc9 are marked where made. Labels: **MEASURED** (computed by a script in this
 repository), **JUDGEMENT** (a reasoned choice the spec does not settle), **UNKNOWN** (needs the hidden reference).
 Companion fact table: `INTERVIEW_FACTS.md`.
 
@@ -31,8 +31,9 @@ Companion fact table: `INTERVIEW_FACTS.md`.
 
 - **Facts.** E2 was a tool-calling investigator with five read-only tools and a deterministic verifier
   (`code/analysis/e2_investigator*.py`). Run on the 19 AMBIGUOUS timing-only sample pairs: 11 batches, 28 calls,
-  41,780 tokens, 126 proposals, 0 accepted (DESIGN.md D-E2 and rejection log; `code/evaluation/e2_results.json` is a
-  cache replay of that run).
+  41,780 tokens, 126 proposals, 0 accepted (DESIGN.md D-E2 and rejection log). `score_e2.py --from-cache` rebuilds
+  `code/evaluation/e2_results.json` byte-identically at commit `63c7ecb`. It cannot do so on the current code, because
+  A1 changed the ambiguous batches and the cached prompts no longer match (rc9 check).
 - **Key metric.** 0/126 accepted, on 19 pairs (MEASURED).
 - **Likely follow-up.** "So the ceiling is zero?" The measurement is 0/126 on the samples. The zero ceiling is an
   argument (JUDGEMENT): the verifier accepts only identity-link support, and every identity link the tools can reach is
@@ -156,7 +157,7 @@ Companion fact table: `INTERVIEW_FACTS.md`.
   - Residual sample misses: 12 ATTRIBUTION and 3 NOT_DERIVABLE steps. account_004, audit_record_6645 and
     audit_record_5569 appear in no participant file at all.
   - Eval correctness is UNKNOWN.
-  - Kit Code ZIP heuristic: 82.3, an ESTIMATE (`code/evaluation/score_estimate.md`).
+  - Kit Code ZIP heuristic: 82.4 on rc7 and rc8 (82.3 on rc6), an ESTIMATE, not a score (`code/evaluation/score_estimate.md`).
 - **Key metric.** Status 31/32; precision 178/178; recall 178/193; exact sequence 19/32 (MEASURED, samples).
 - **What more time would buy.**
   - An identity signal for the AMBIGUOUS accounts: up to +5 sample steps, ESTIMATED upper bound.

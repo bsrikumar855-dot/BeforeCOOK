@@ -102,6 +102,18 @@ def test_link_outside_request_lifecycle_is_out_of_scope():
     assert att.label == "CONFIRMED" and not att.in_scope
 
 
+def test_scope_window_is_inclusive_and_bounded_on_both_sides():
+    """rc9: D-SCOPE window [requested_at, audit_at] (both inclusive). A link one second outside either edge is out of
+    scope. The after-audit_at side is the pattern of eval cases 33, 35, 39 and 55."""
+    def scoped(when: str) -> bool:
+        o = obs("ev1", when, "search_1", "search_service", {"email": "rhea.vale@example.test"})
+        att = attribute([ctx("c1", "rhea.vale@example.test")], index([o], {"ev1": when}), [], universe()).per_case["c1"][0]
+        assert att.label == "CONFIRMED"                                  # scope never changes ownership
+        return att.in_scope
+    assert scoped("2026-08-30T00:00:00Z") and scoped("2026-09-15T12:00:00Z")
+    assert not scoped("2026-08-29T23:59:59Z") and not scoped("2026-09-15T12:00:01Z")
+
+
 def test_non_deletion_cases_do_not_take_burst_rows():
     rows = [worker("a1", "2026-09-02T11:00:00Z", "DELETE_RECORD", "account_service", "account_7")]
     cases = [ctx("c1", "rhea.vale@example.test"), ctx("c2", "omar.quint@example.test", deletion=False)]

@@ -8,7 +8,11 @@ subject, rebuilds each record's state at `audit_at` from the evidence, applies `
 **Architecture in one line.** The model reads request intent and the 11 screenshots; deterministic code makes every
 decision that reaches the CSV. An investigator agent loop (experiment E2) was built and measured: on the 19
 AMBIGUOUS timing-only sample pairs it made 126 proposals and its verifier accepted 0 (11 batches, 28 calls, 41,780
-tokens; DESIGN.md D-E2 and rejection log; `code/evaluation/e2_results.json` is a cache replay of that run). So it was taken out of the decision path and archived. That it can never resolve a pair is an
+tokens; DESIGN.md D-E2 and rejection log). It was taken out of the decision path and archived.
+- **E2 replay.** `python3 code/analysis/score_e2.py --from-cache` rebuilds `code/evaluation/e2_results.json`
+  byte-identically, without keys, at the experiment's commit `63c7ecb`.
+- **Why not on the current code.** A1 later changed which pairs are ambiguous, so the investigator prompts differ,
+  and the replay stops on a cache miss (exit 1) instead of calling a model. That it can never resolve a pair is an
 argument, not a measurement: its verifier accepts only identity-link support, and attribution already confirms every
 such link.
 
@@ -34,9 +38,40 @@ rejection log, G6).
 | `code/main.py` | Entry point (run, `--from-cache`, `--explain`, exit codes) |
 | `code/agent/` | The pipeline: `pipeline.py` (orchestration), `attribution.py`, `state.py`, `rules.py`, `steps.py`, `validation.py`, evidence parsers under `parsers/` |
 | `code/evaluation/` | Evaluation: `main.py` writes `evaluation_report.md` and `usage_report.md`; `spec_audit.py` (literal spec audit with a negative control), `coupling_probes.py`, `security_audit.py`, `cache_audit.py`, custom cases X1–X19 |
-| `code/analysis/` | Offline analysis and archived experiments (Phase 0 profiling; the rejected E1 ordering, E2 investigator and rc8 capacity probe). `code/agent/` and `code/main.py` import nothing from it; `code/evaluation/main.py` imports one table builder from it (`category_coverage.py`) |
+| `code/analysis/` | Offline analysis and archived experiments: Phase 0 profiling; the rejected E1 ordering, E2 investigator and rc8 capacity probe. `score_e1.py` and `score_e2.py` produce `e1_results.json` and `e2_results.json`; both replay byte-identically at `63c7ecb`. Re-run on the current code (rc9), E1 still makes one wrong owner per strategy: A 2 correct / 1 incorrect, B 1 / 1 of the 19 pairs. `code/agent/` and `code/main.py` import nothing from it; `code/evaluation/main.py` imports one table builder from it (`category_coverage.py`) |
 | `code/evaluation/evaluation_report.md` §7 | Known limitations and judgement calls (ambiguous accounts, case_63, F1, D-SCOPE) |
 | `code/evaluation/experiment_ledger.md` | The latest round's experiments, kept and rejected, with evidence and measured effect (earlier rounds: DESIGN.md) |
+
+**Execution path.** `main.py` calls `agent.pipeline.run`, which does the following:
+1. Loads and validates the CSVs.
+2. Builds one evidence index (`parsers.build_evidence_index`). Each file passes `file_checks` before parsing, and
+   screenshots go through the cached vision extraction plus OCR grounding.
+3. Resolves identities (`identity.IdentityUniverse.resolve`).
+4. Labels intent once per distinct request text (`intent.IntentClassifier.classify`, then `intent.decide`).
+5. Attributes records to cases across all cases at once (`attribution.attribute`).
+
+Then `pipeline.audit_case` runs once per case: `state.reconstruct` at audit_at, then `rules.Policy.category` and
+`Policy.verdict`, then `steps.build_steps`, then `validation.validate_row`. `main.py` writes the rows to a temporary
+file and replaces `output.csv` only if `validation.validate_output_file` passes (exit codes below).
+
+**Cached model replies.**
+- **Where they live.**
+  - `code/cache/intent/` (request-intent replies);
+  - `code/cache/vision/` (screenshot extractions);
+  - `code/cache/ocr/` (Tesseract text, keyed by image and engine);
+  - `code/cache/investigator/` (the archived E2 run);
+  - `code/cache/compare_*` (the intent-model comparison).
+- **Key.** A model reply is keyed by sha256(task + prompt version + input). The prompt version is a hash of the
+  rendered prompt, so a reply from another prompt never passes as the current prompt's reply.
+- **The one deliberate exception.** A screenshot with no reply under the current prompt reuses a reply for the same
+  image bytes only if that reply's prompt also ships (`image_extraction_v1.md`). Its legacy null field is upgraded
+  to UNKNOWN, and every reuse is listed in `code/traces/_run_summary.json` (`image_legacy_replies_upgraded`). In
+  the submitted run, 10 of the 11 screenshots are read this way (`test_legacy_reuse_needs_a_shipped_prompt_and_the_same_image`).
+- **Determinism.** Everything after the replies is deterministic code. `--from-cache` rebuilds `output.csv`
+  byte-identically: the same sha256 across 3 seeds, and again from `code.zip` in an empty folder (`clean_room.py`;
+  hashes in DESIGN.md §14).
+- **Live runs.** The model replies themselves are external and not guaranteed to repeat. A live re-extraction under
+  the current vision prompt changed 2 eval rows, as described above.
 
 Design, decisions and rejected alternatives: [`DESIGN.md`](DESIGN.md). Measured results:
 [`code/evaluation/evaluation_report.md`](code/evaluation/evaluation_report.md) and
