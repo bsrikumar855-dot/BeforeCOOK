@@ -98,7 +98,9 @@ Companion fact table: `INTERVIEW_FACTS.md`.
 - **Likely follow-up.** "Why not COMPLETE []?" The spec requires COMPLETE rows to carry "verification steps proving
   the current state", and an empty COMPLETE proves nothing. The independent re-derivation chose COMPLETE []. The rule
   costs one sample status and is a deliberate JUDGEMENT.
-- **Uncertainty.** The grader may expect COMPLETE for case_63 (UNKNOWN).
+- **Uncertainty.** The grader may expect COMPLETE for case_63 (UNKNOWN). rc7 check: case_63 reported NOT_STARTED, and
+  the sample reference maps NOT_STARTED to INCOMPLETE 7 of 10 times, so INCOMPLETE is the likelier status on that
+  small sample.
 
 ## 7. Citation selection and admissibility at audit_at
 
@@ -108,9 +110,10 @@ Companion fact table: `INTERVIEW_FACTS.md`.
   control injects a citation captured after audit_at and catches it (`spec_audit.py`, 18/18 classes).
 - **Key metric.** C matches 74/75 (MEASURED). The miss is case_04 / account_004 (expected evidence_54; C picks
   evidence_90, an empty inventory).
-- **Likely follow-up.** "case_34 support_9538 cites evidence_01, but evidence_04 is later and shows the id." Rule C
-  counts parsed mentions, and evidence_04's mention is OCR-only. Using it for scope but not for citation is deliberate
-  (rc6-P1 changed scope only), and the right citation is UNKNOWN.
+- **Likely follow-up.** "Do you cite screenshots?" Yes, when one is the latest admissible mention: 10 eval rows do
+  (cases 34, 35, 39, 45, 46, 50, 52, 53, 55, 61). Since rc7-X1, an id the screenshot shows but the model missed counts
+  as a mention of a known resource (never as state), so case_34 support_9538 now cites evidence_04 (09-26) instead of
+  evidence_01 (09-15). No sample cites a screenshot (0/75), so whether the reference does is UNKNOWN.
 - **Uncertainty.** Whether an empty inventory counts as a full snapshot (UNKNOWN).
 
 ## 8. Failed experiments, measured trade-offs, rejected alternatives
@@ -124,6 +127,9 @@ Companion fact table: `INTERVIEW_FACTS.md`.
     exit 2; case_34 gained an unverifiable finding) and was rejected.
   - The first live run silently turned 358 of 550 cases into NOT_APPLICABLE (a model 404 and a daily cap). Since C0,
     any model failure exits 4.
+- **Also (rc7).** The required-check rule (X4) added VERIFY_RECORD_ABSENT "" for 3 attributed accounts whose state no
+  evidence decides. A stale committed measurement was caught and re-run: M1 is 904 AMBIGUOUS pairs in 347 cases, not
+  the pre-A1 1,247 / 381.
 - **Key metric.** A1 alone: 7/19 timing-only pairs resolved, 0 incorrect; recall 171 → 178/193; sequence 16 → 19/32.
 - **Likely follow-up.** "rc6 now includes support_9538, which the rejected re-extraction also produced. Isn't that the
   same change?" No. The re-extraction replaced 10 model replies and broke case_61. rc6-P1 makes no model call: it
@@ -149,7 +155,7 @@ Companion fact table: `INTERVIEW_FACTS.md`.
   - Residual sample misses: 12 ATTRIBUTION and 3 NOT_DERIVABLE steps. account_004, audit_record_6645 and
     audit_record_5569 appear in no participant file at all.
   - Eval correctness is UNKNOWN.
-  - Kit Code ZIP heuristic: 82.4, an ESTIMATE (`code/evaluation/score_estimate.md`).
+  - Kit Code ZIP heuristic: 82.3, an ESTIMATE (`code/evaluation/score_estimate.md`).
 - **Key metric.** Status 31/32; precision 178/178; recall 178/193; exact sequence 19/32 (MEASURED, samples).
 - **What more time would buy.**
   - An identity signal for the AMBIGUOUS accounts: up to +5 sample steps, ESTIMATED upper bound.
@@ -158,3 +164,102 @@ Companion fact table: `INTERVIEW_FACTS.md`.
 - **Likely follow-up.** "Which limitation would you fix first?" The AMBIGUOUS accounts: they are the largest measured
   recall gap. But no admissible signal exists today (rc6-P2), so any fix would be a guess.
 - **Uncertainty.** All eval-side effects are UNKNOWN.
+
+---
+
+# Prepared answers (rc7)
+
+Written answers to rehearse, not a scored interview. For each: the answer, a self-audit (claims that could be
+over-stated), the hardest follow-up, and the improved answer to give. Numbers are those in the fact sections above.
+
+### A1. Architecture
+- **Answer.** Two narrow perception tasks use the model: request intent (a closed enum) and reading 11 screenshots into
+  validated rows. Everything that reaches the CSV is computed by code: identity, attribution, state at audit_at, the
+  rule, the steps, the citation. I wanted every output field to be reproducible from the cache and auditable from a trace.
+- **Self-audit.** "Everything is code" must not hide that intent decides status for 10 rows. Say so first.
+- **Follow-up.** "Isn't a deterministic pipeline just a hardcoded workflow with LLM calls sprinkled in?"
+- **Improved answer.** The pipeline is data-driven, not hardcoded: categories come from deletion_rules.csv, ownership
+  from identity evidence, state from admissible files. Where an agent could add value (resolving ambiguous owners) I
+  built one (E2), measured it, and removed it because it accepted 0 of 126 proposals. The model's influence is bounded:
+  intent is cross-checked against the request's own activity rows, and screenshot ids must appear in local OCR text.
+
+### A2. E2
+- **Answer.** E2 was a tool-calling investigator with a deterministic verifier, run on the 19 ambiguous timing-only
+  sample pairs: 11 batches, 28 calls, 41,780 tokens, 126 proposals, 0 accepted. I removed it from the decision path.
+- **Self-audit.** "Ceiling zero" is an argument, not a measurement. Present it as an argument.
+- **Follow-up.** "Maybe your verifier was too strict?"
+- **Improved answer.** Possibly. But loosening it means accepting non-identity support, which is the same timing
+  inference that the ordering experiment showed makes a wrong owner (case_23 → account_9155). The verifier's strictness
+  is the safety property, not an accident.
+
+### A3. Attribution ambiguity
+- **Answer.** 131 eval deletion cases have no account step because the account delete sits in interleaved bursts with
+  equally supported owners. M1: across 904 ambiguous pairs, 0 withheld records are proven present, so 0 statuses could
+  flip. Omission costs recall; a wrong owner also plans remediation against another person.
+- **Self-audit.** Do not claim omission is score-optimal. Its score effect is UNKNOWN.
+- **Follow-up.** "What did you try?"
+- **Improved answer.** A1 (claim consistency, 7/7 correct, shipped), A2 (offset bands, broke a correct sample row),
+  ordering (1 wrong owner), E1-A and E1-B (1 wrong each), E2 (0 accepted). In rc7 I also checked for unused identity
+  evidence: 0 same-line co-occurrences across 159 pairs, and the only cohort-like attribute names no person. So it is at
+  its evidenced ceiling.
+
+### A4. D-SCOPE
+- **Answer.** A record enters a case only through identity evidence inside [requested_at, audit_at], the case's own
+  burst, or an in-window screenshot of the subject's own page. On samples this keeps 84/84 expected pairs and removes
+  the 3 that belong to the user's other request.
+- **Self-audit.** The single-request situation is untested by samples. Do not over-claim.
+- **Follow-up.** "Then for single-request people you may be dropping their data."
+- **Improved answer.** I reviewed all 16. 22 of the 28 excluded records are linked only by evidence captured after
+  audit_at; including them would let later evidence change the answer, which AGENTS.md §6.2 forbids. One was a real
+  defect (support_9538, shown on the subject's page inside the window) and is fixed. 6 remain a judgement call.
+
+### A5. F1
+- **Answer.** A screenshot proves a tombstone holds no direct identifiers only if it is the record's own detail page
+  and multi-pass OCR finds no email, phone or hash anywhere. 1 record qualified (case_46).
+- **Self-audit.** It is a judgement, not a spec rule.
+- **Follow-up.** "A page can hide stored fields."
+- **Improved answer.** True, so F1 needs the whole page and is labelled JUDGEMENT. It changed 1 row; without it the
+  tombstone would be left unverified in a COMPLETE case.
+
+### A6. case_63
+- **Answer.** The only candidate record shows another person, so nothing is attributable. COMPLETE needs verification
+  steps proving the state, and an empty COMPLETE proves nothing, so the row is INCOMPLETE [] with a reason code.
+- **Self-audit.** The same rule costs sample case_04 its status. Say it.
+- **Follow-up.** "So the rule is wrong on the only sample you can check?"
+- **Improved answer.** On case_04 it is wrong. case_63 differs: it reported NOT_STARTED, and samples map NOT_STARTED to
+  INCOMPLETE 7 of 10 times. I kept the rule as an approved, documented trade-off rather than flip a status on one example.
+
+### A7. Citations
+- **Answer.** Rule C: the latest admissible file that mentions the record, else the latest full snapshot of its
+  system. 74/75 on the sample steps; the next best rule scores 71/75.
+- **Self-audit.** Screenshot citations are untested by samples.
+- **Follow-up.** "Why did one citation change in rc7?"
+- **Improved answer.** Consistency. The screenshot already put support_9538 in scope, so it should also count as the
+  latest mention under rule C. It is recorded as a mention only, never as state, and only for a resource other evidence
+  also names, so an OCR misread cannot become a citation.
+
+### A8. Failed experiments
+- **Answer.** Every change had a SHIP rule: zero wrong owners and zero broken sample steps. That rule rejected A2,
+  ordering, E1 and E2, and the re-extraction that broke case_61.
+- **Self-audit.** Rejections were measured on samples only.
+- **Follow-up.** "What did you get wrong yourself?"
+- **Improved answer.** Three examples. In rc6, an independent triage had marked support_9538 ambiguous; it was a real
+  defect. A committed measurement had gone stale after A1. And my first determinism test shadowed `code/main.py` and
+  broke 7 tests; the suite caught it before commit.
+
+### A9. Reproducibility
+- **Answer.** Keyless `--from-cache` rebuilds output.csv byte-for-byte. Every cached reply's prompt ships. 3 seeds give
+  553 identical files, and the evaluation artifacts are byte-stable too (rc7-D1). 5 coupling probes rename every id,
+  shuffle rows and reformat timestamps without changing a row.
+- **Self-audit.** Live reproduction is not claimed.
+- **Follow-up.** "How do you know the zip runs outside your machine?"
+- **Improved answer.** clean_room.py unzips code.zip into an empty folder, makes a fresh venv from requirements.txt and
+  follows only the README. Output byte-identical, same metrics.
+
+### A10. Limitations
+- **Answer.** The largest is attribution: 131 cases without an account step. Then the 6 pre-request D-SCOPE records,
+  case_63's status, and that eval correctness is unknown without labels.
+- **Self-audit.** Give the sample numbers with denominators: 31/32, 178/178, 178/193, 19/32.
+- **Follow-up.** "With one more week?"
+- **Improved answer.** Look for a new admissible identity signal for the interleaved bursts, and validate the episode
+  rule against a labelled single-request case if one were available. No guess-based fixes.
