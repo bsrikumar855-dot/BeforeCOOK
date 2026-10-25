@@ -373,30 +373,25 @@ def page_scope(page_ids: dict[str, list[str]], index: EvidenceIndex,
     return out
 
 
-def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[ActivityClaim],
-              universe: IdentityUniverse, variant: str | None = None,
-              page_ids: dict[str, list[str]] | None = None) -> AttributionResult:
-    variant = variant or os.environ.get("ORCHESTRATE_ATTRIBUTION") or DEFAULT_VARIANT
-    result = AttributionResult()
-    result.variant = variant
-    owners = resource_owners(index, activity, universe)
-    owner_users = {rid: sorted({e.user_id for e in edges}) for rid, edges in owners.items()}
-    on_page = page_scope(page_ids or {}, index, owners)
-    result.conflicts = {rid: us for rid, us in owner_users.items() if len(us) > 1}
-    content = record_content(index)
-
+def _bursts(cases: list[CaseContext], activity: list[ActivityClaim]) -> dict[str, list[ActivityClaim]]:
+    """Each deletion case's deletion_worker rows inside its burst window (<= audit_at)."""
     worker_rows = sorted((a for a in activity if a.source_system == WORKER),
                          key=lambda a: (a.event_time, a.activity_id))
-    by_case: dict[str, dict[str, Attribution]] = {c.case_id: {} for c in cases}
 
     def burst_rows(c: CaseContext) -> list[ActivityClaim]:
         lo, hi = c.burst_window
         cut = parse_ts(c.request["audit_at"])
         return [a for a in worker_rows if lo <= parse_ts(a.event_time) <= hi and parse_ts(a.event_time) <= cut]
 
-    bursts = {c.case_id: burst_rows(c) if c.is_deletion else [] for c in cases}
+    return {c.case_id: burst_rows(c) if c.is_deletion else [] for c in cases}
 
-    # ---- 1. hard identity edges ---------------------------------------------------
+
+def _hard_edges(cases: list[CaseContext], index: EvidenceIndex, owners: dict[str, list[OwnerEdge]],
+                bursts: dict[str, list[ActivityClaim]], on_page: dict[str, list[tuple[str, str, str]]],
+                content: dict[str, set[str]], result: AttributionResult,
+                by_case: dict[str, dict[str, Attribution]]) -> None:
+    """Phase 1: every resource with a hard identity edge to a case's subject, with its episode scope (D-SCOPE) and
+    its label (CONFIRMED, or CONFLICT when the links contradict each other or the record's own content)."""
     for c in cases:
         users = set(c.subject.user_ids)
         if not users:
@@ -436,7 +431,12 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
             by_case[c.case_id][rid] = Attribution(c.case_id, rid, index.system_of(rid), label, rationale, scope,
                                                   reason, case_edges)
 
-    # ---- 2. timing candidates -----------------------------------------------------
+
+def _timing_candidates(cases: list[CaseContext], bursts: dict[str, list[ActivityClaim]],
+                       owners: dict[str, list[OwnerEdge]], owner_users: dict[str, list[str]],
+                       result: AttributionResult) -> dict[str, list[tuple[str, ActivityClaim]]]:
+    """Phase 2: resource -> (case, worker row) for burst rows on resources nobody owns. A row on a resource
+    hard-linked to someone else eliminates that candidate (kept as evidence for the batch)."""
     timing_cands: dict[str, list[tuple[str, ActivityClaim]]] = defaultdict(list)   # resource -> (case, row)
     for c in cases:
         for a in bursts[c.case_id]:
@@ -449,57 +449,62 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
                          "sources": sorted({e.source_id for e in owners[a.resource_id]})})
                 continue                                  # owned resources were handled by hard edges
             timing_cands[a.resource_id].append((c.case_id, a))
+    return timing_cands
 
-    # ---- 3. timing-only resources: filters (A1 claim consistency, A2 offset bands) + joint assignment ----------
-    # Filters only REMOVE timing candidates; they never add one and never touch a hard-linked resource (hard-linked
-    # resources are not timing candidates). A resource is assigned only when exactly one owner remains after the
-    # filters, jointly with the one-to-one account constraint; if a filter would remove every candidate of a case
-    # (or of a resource), nothing is removed and the pairs stay AMBIGUOUS (CLAIM_CONFLICT / OFFSET_CONFLICT).
-    filters = VARIANTS[variant]
-    req_of = {c.case_id: c.request for c in cases}
-    status_of = {c.case_id: c.request.get("reported_status", "") for c in cases}
-    if "offset" in filters:
-        result.bands = offset_bands(cases, by_case, bursts)
-        result.band_training = result.bands.pop("_training")
-    bands = {g: b for g, b in result.bands.items() if b["used"]}
 
+@dataclass
+class _Filters:
+    """Phase 3 candidate filters for timing-only rows (A1 claim consistency, A2 offset bands). Filters only REMOVE
+    timing candidates; they never add one and never touch a hard-linked resource."""
+    filters: set[str]
+    req_of: dict[str, dict]
+    status_of: dict[str, str]
+    bands: dict[str, dict]
+
+    @staticmethod
     def is_account_delete(a: ActivityClaim) -> bool:
         return a.event_type == "DELETE_RECORD" and a.target_system == "account_service"
 
+    @staticmethod
     def group(a: ActivityClaim) -> tuple[str, str, str]:
         return (a.event_type, a.target_system, a.reported_result)
 
-    def offset_s(cid: str, a: ActivityClaim) -> int:
-        return int((parse_ts(a.event_time) - parse_ts(req_of[cid]["reported_at"])).total_seconds())
+    def offset_s(self, cid: str, a: ActivityClaim) -> int:
+        return int((parse_ts(a.event_time) - parse_ts(self.req_of[cid]["reported_at"])).total_seconds())
 
-    def claim_ok(cid: str, a: ActivityClaim) -> bool:
-        allowed = CLAIM_RESULTS.get(status_of[cid])
+    def claim_ok(self, cid: str, a: ActivityClaim) -> bool:
+        allowed = CLAIM_RESULTS.get(self.status_of[cid])
         return allowed is None or a.reported_result in allowed
 
-    def band_ok(cid: str, a: ActivityClaim) -> bool:
-        b = bands.get("|".join(group(a)))
-        return b is None or b["low_s"] <= offset_s(cid, a) <= b["high_s"]
+    def band_ok(self, cid: str, a: ActivityClaim) -> bool:
+        b = self.bands.get("|".join(self.group(a)))
+        return b is None or b["low_s"] <= self.offset_s(cid, a) <= b["high_s"]
 
-    def rejection(cid: str, a: ActivityClaim, use: set[str]) -> str | None:
-        if "claim" in use and is_account_delete(a) and not claim_ok(cid, a):
-            return (f"A1: account result {a.reported_result} is inconsistent with case status {status_of[cid]} "
-                    f"(allowed {sorted(CLAIM_RESULTS[status_of[cid]])})")
-        if "offset" in use and not band_ok(cid, a):
-            b = bands["|".join(group(a))]
-            return f"A2: offset {offset_s(cid, a)} s outside band [{b['low_s']}, {b['high_s']}] s of {'|'.join(group(a))}"
+    def rejection(self, cid: str, a: ActivityClaim, use: set[str]) -> str | None:
+        if "claim" in use and self.is_account_delete(a) and not self.claim_ok(cid, a):
+            return (f"A1: account result {a.reported_result} is inconsistent with case status {self.status_of[cid]} "
+                    f"(allowed {sorted(CLAIM_RESULTS[self.status_of[cid]])})")
+        if "offset" in use and not self.band_ok(cid, a):
+            b = self.bands["|".join(self.group(a))]
+            return (f"A2: offset {self.offset_s(cid, a)} s outside band [{b['low_s']}, {b['high_s']}] s of "
+                    f"{'|'.join(self.group(a))}")
         return None
 
+
+def _assign_account_deletes(timing_cands: dict[str, list[tuple[str, ActivityClaim]]], f: _Filters,
+                            index: EvidenceIndex, result: AttributionResult,
+                            by_case: dict[str, dict[str, Attribution]]) -> dict[str, ActivityClaim]:
+    """Phase 3a: account deletes, one-to-one per batch; a pair is assigned only if it is in every maximum
+    assignment (uniqueness under each filter subset), else AMBIGUOUS. Returns the account rows by resource."""
     # Cases whose account is already known through identity do not take another account delete.
     has_account = {cid for cid, attrs in by_case.items()
                    if any(at.label == "CONFIRMED" and at.in_scope and at.system_id == "account_service"
                           for at in attrs.values())}
-
-    # ---- 3a. account deletes: one-to-one per batch, uniqueness under each filter subset -----------------------
     all_adj: dict[str, list[str]] = defaultdict(list)
     rows_of: dict[str, ActivityClaim] = {}
     for rid, pairs in timing_cands.items():
         for cid, a in pairs:
-            if is_account_delete(a) and cid not in has_account:
+            if f.is_account_delete(a) and cid not in has_account:
                 all_adj[cid].append(rid)
                 rows_of[rid] = a
     for cid in all_adj:
@@ -510,7 +515,7 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
         and are returned as conflict cases (never assignable)."""
         adj, conflict = {}, set()
         for cid, rids in all_adj.items():
-            kept = [r for r in rids if rejection(cid, rows_of[r], use) is None]
+            kept = [r for r in rids if f.rejection(cid, rows_of[r], use) is None]
             if not kept:
                 conflict.add(cid)
                 kept = rids
@@ -518,10 +523,10 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
         return adj, conflict
 
     subsets = [set()]
-    if "claim" in filters:
+    if "claim" in f.filters:
         subsets.append({"claim"})
-    if "offset" in filters:
-        subsets.append(filters & {"claim", "offset"})
+    if "offset" in f.filters:
+        subsets.append(f.filters & {"claim", "offset"})
     stages = []
     for use in subsets:
         adj, conflict = filtered(use)
@@ -532,7 +537,7 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
                                "forced": sorted(p for p in forced if p[0] in cs),
                                "ambiguous": sorted(p for p in possible - forced if p[0] in cs),
                                "conflict_cases": sorted(set(cs) & conflict)})
-    if "joint" in filters:
+    if "joint" in f.filters:
         result.joint = verify_unique(adj, conflict, comps, forced)
     batch_of = {cid: bi for bi, (cs, _) in enumerate(comps) for cid in cs}
     for cid in sorted(all_adj):
@@ -541,7 +546,7 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
         for r in all_adj[cid]:
             a = rows_of[r]
             edge = Edge(cid, r, "TIMING", a.activity_id, f"{WORKER}:{a.event_type}", a.event_time, "SECONDARY")
-            why_not = rejection(cid, a, use) if cid not in conflict else None
+            why_not = f.rejection(cid, a, use) if cid not in conflict else None
             if (cid, r) in forced and cid not in conflict:
                 first = next(i for i, st in enumerate(stages) if (cid, r) in st[3][0] and cid not in st[2])
                 first_use = stages[first][0]
@@ -549,9 +554,9 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
                 rationale = (f"account delete {a.activity_id} is in every maximum one-to-one assignment of batch {bi} "
                              f"(cases {cs}, rows {rs}) after eliminating rows hard-linked to other people"
                              + (f" and applying filters {sorted(stages[first][0])}" if stages[first][0] else ""))
-                prov = provenance(cid, a, r, use, rejection, sorted(c for c in all_adj if r in all_adj[c]), all_adj,
-                                  rows_of, result.eliminated, bands, group,
-                                  offset_s, status_of, forced) if label != "INFERRED" else {}
+                prov = provenance(cid, a, r, use, f.rejection, sorted(c for c in all_adj if r in all_adj[c]), all_adj,
+                                  rows_of, result.eliminated, f.bands, f.group,
+                                  f.offset_s, f.status_of, forced) if label != "INFERRED" else {}
             elif why_not:
                 result.eliminated.setdefault(cid, []).append({"resource_id": r, "activity_id": a.activity_id,
                                                               "reason": why_not, "sources": []})
@@ -560,22 +565,27 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
                 label = "AMBIGUOUS"
                 rivals = sorted(c for c, x in possible | forced if x == r and c != cid)
                 note = " (CLAIM_CONFLICT: no candidate consistent with the case status)" if cid in conflict and \
-                    "claim" in use and all(not claim_ok(cid, rows_of[x]) for x in all_adj[cid]) else \
+                    "claim" in use and all(not f.claim_ok(cid, rows_of[x]) for x in all_adj[cid]) else \
                     (" (OFFSET_CONFLICT: no candidate inside its band)" if cid in conflict else "")
                 rationale = f"batch {bi}: several assignments equally supported (rival cases for {r}: {rivals}){note}"
                 prov = {}
             by_case[cid][r] = Attribution(cid, r, index.system_of(r), label, rationale, True,
                                           "resource is in the case's own deletion burst", [edge], prov)
     result.claim_conflicts = sorted(c for c in conflict if "claim" in use
-                                    and all(not claim_ok(c, rows_of[x]) for x in all_adj[c]))
+                                    and all(not f.claim_ok(c, rows_of[x]) for x in all_adj[c]))
+    return rows_of
 
-    # ---- 3b. other worker rows: one owner case after the offset filter, else AMBIGUOUS -----------------------
+
+def _assign_other_rows(timing_cands: dict[str, list[tuple[str, ActivityClaim]]], f: _Filters, index: EvidenceIndex,
+                       result: AttributionResult, by_case: dict[str, dict[str, Attribution]]) -> None:
+    """Phase 3b: other worker rows: one owner case (alone in the window, or alone after the offset filter), else
+    AMBIGUOUS."""
     for rid, pairs in sorted(timing_cands.items()):
-        pairs = [(cid, a) for cid, a in pairs if not is_account_delete(a)]
+        pairs = [(cid, a) for cid, a in pairs if not f.is_account_delete(a)]
         if not pairs:
             continue
         cids = sorted({cid for cid, _ in pairs})
-        kept = sorted({cid for cid, a in pairs if rejection(cid, a, filters & {"offset"}) is None}) or cids
+        kept = sorted({cid for cid, a in pairs if f.rejection(cid, a, f.filters & {"offset"}) is None}) or cids
         for cid, a in pairs:
             if rid in by_case[cid]:
                 continue
@@ -586,13 +596,13 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
                                                 f"no identity link to anyone else")
             elif len(kept) == 1 and cid in kept:
                 label = "INFERRED_OFFSET"
-                rationale = (f"only deletion case whose offset band for {'|'.join(group(a))} contains {a.activity_id} "
+                rationale = (f"only deletion case whose offset band for {'|'.join(f.group(a))} contains {a.activity_id} "
                              f"(burst windows of {cids}); no identity link to anyone else")
-                prov = provenance(cid, a, rid, filters & {"offset"}, rejection, cids, {c: [rid] for c in cids},
-                                  {rid: a}, result.eliminated, bands, group, offset_s, status_of, {(cid, rid)})
+                prov = provenance(cid, a, rid, f.filters & {"offset"}, f.rejection, cids, {c: [rid] for c in cids},
+                                  {rid: a}, result.eliminated, f.bands, f.group, f.offset_s, f.status_of, {(cid, rid)})
             elif cid not in kept:
                 result.eliminated.setdefault(cid, []).append({"resource_id": rid, "activity_id": a.activity_id,
-                                                              "reason": rejection(cid, a, filters & {"offset"}),
+                                                              "reason": f.rejection(cid, a, f.filters & {"offset"}),
                                                               "sources": []})
                 continue
             else:
@@ -600,11 +610,11 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
             by_case[cid][rid] = Attribution(cid, rid, index.system_of(rid), label, rationale, True,
                                             "resource is in the case's own deletion burst", [edge], prov)
 
-    # ---- 3c. ordering tiebreak on residual account ties (variant only; INFERRED_ORDER) ----------------------
-    if "ordering" in filters:
-        order_tiebreak(cases, by_case, result, rows_of, bursts)
 
-    # ---- 4. resource-to-resource references (search document -> source account) -------
+def _source_references(index: EvidenceIndex, owner_users: dict[str, list[str]],
+                       by_case: dict[str, dict[str, Attribution]]) -> None:
+    """Phase 4: a resource named as source_resource_id by an in-scope CONFIRMED resource (search document -> source
+    account), when nobody owns it directly."""
     for cid, attrs in by_case.items():
         for at in list(attrs.values()):
             if at.label != "CONFIRMED" or not at.in_scope:
@@ -618,9 +628,40 @@ def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[Act
                                              [Edge(cid, src, "SOURCE_REFERENCE", o.file_id,
                                                    f"source_resource_id:{at.resource_id}", o.time, "SECONDARY")])
 
+
+def attribute(cases: list[CaseContext], index: EvidenceIndex, activity: list[ActivityClaim],
+              universe: IdentityUniverse, variant: str | None = None,
+              page_ids: dict[str, list[str]] | None = None) -> AttributionResult:
+    """Attribute resources to cases, all cases jointly: (1) hard identity edges with episode scope, (2) timing
+    candidates from each case's deletion burst, (3) filters and a one-to-one assignment for timing-only rows,
+    (3c) the ordering tiebreak (variant only), (4) resources referenced by an in-scope CONFIRMED resource.
+    AMBIGUOUS and CONFLICT pairs produce no steps downstream."""
+    variant = variant or os.environ.get("ORCHESTRATE_ATTRIBUTION") or DEFAULT_VARIANT
+    result = AttributionResult()
+    result.variant = variant
+    owners = resource_owners(index, activity, universe)
+    owner_users = {rid: sorted({e.user_id for e in edges}) for rid, edges in owners.items()}
+    result.conflicts = {rid: us for rid, us in owner_users.items() if len(us) > 1}
+    by_case: dict[str, dict[str, Attribution]] = {c.case_id: {} for c in cases}
+    bursts = _bursts(cases, activity)
+
+    _hard_edges(cases, index, owners, bursts, page_scope(page_ids or {}, index, owners), record_content(index),
+                result, by_case)
+    timing_cands = _timing_candidates(cases, bursts, owners, owner_users, result)
+    filters = VARIANTS[variant]
+    if "offset" in filters:
+        result.bands = offset_bands(cases, by_case, bursts)
+        result.band_training = result.bands.pop("_training")
+    f = _Filters(filters, {c.case_id: c.request for c in cases},
+                 {c.case_id: c.request.get("reported_status", "") for c in cases},
+                 {g: b for g, b in result.bands.items() if b["used"]})
+    rows_of = _assign_account_deletes(timing_cands, f, index, result, by_case)
+    _assign_other_rows(timing_cands, f, index, result, by_case)
+    if "ordering" in filters:
+        order_tiebreak(cases, by_case, result, rows_of, bursts)
+    _source_references(index, owner_users, by_case)
     result.per_case = {cid: [attrs[r] for r in sorted(attrs)] for cid, attrs in by_case.items()}
     return result
-
 
 def classify_request_rows(activity: list[ActivityClaim], owners_by_resource: dict[str, list[str]],
                           case: CaseContext) -> list[str]:
