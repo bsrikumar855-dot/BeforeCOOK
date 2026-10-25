@@ -1177,3 +1177,136 @@ branch=fix/rc5
 repo_root=/home/user/BeforeCOOK
 worktree=main
 parent_agent=none
+
+## [2026-10-25T06:17:36Z] RC6: rc5 tag push retry; D-SCOPE review and fix; attribution audit; interview mock (gate pending)
+
+User Prompt (verbatim, secrets redacted):
+First "git fetch origin fix/rc5
+git tag rc5 5616cb9941dffbde806380c7b13a9ebf232962f6
+git push origin rc5"
+
+Then: "FINAL SCORE OPTIMIZATION — RC5 → RC6
+Repository: `bsrikumar855-dot/BeforeCOOK`
+Current baseline: RC5 branch `fix/rc5`, release commit `5616cb9941dffbde806380c7b13a9ebf232962f6`, with release-record commits on the branch. Verify the actual remote and local state before acting.
+Mission
+Improve the expected competition score by investigating the remaining high-impact correctness risks and preparing for the AI Judge interview. Make only evidence-backed changes. Preserve RC5 as the rollback baseline.
+Rules
+
+* Read `AGENTS.md`; follow append-only logging requirements. Do not modify `CLAUDE.md`.
+* Local work first. Never push to `main`, force-push, expose secrets, or make new model calls.
+* Use cached evidence and keyless reproduction.
+* Create a new branch, `fix/rc6`, from the verified RC5 release state.
+* Every change requires a change record and tests. Gate commits on the real pytest exit code.
+* No sample-specific logic. Zero regressions to previously correct sample steps or statuses.
+* Every changed evaluation row must be justified by quoted raw evidence.
+* Distinguish MEASURED, ESTIMATED, JUDGEMENT, and UNKNOWN.
+* Do not repeat completed RC5 release audits unless a change invalidates them.
+* Do not promise a rank or invent score improvements.
+
+Priority 1 — D-SCOPE episode-boundary risk
+The RC5 report identifies 20 evaluation cases where records were excluded as outside the request's time window; 16 involve people with only one request, a scenario not covered by the samples. The independent review described episode scope as an ambiguous specification issue.
+
+1. Inspect the literal specification, raw evidence, relevant code, and the existing rejection log.
+2. Select a small, representative set of the 16 single-request cases, including both straightforward and ambiguous examples.
+3. Determine whether each excluded record belongs to the request's lifecycle using only admissible evidence.
+4. Separate definite implementation defects from unresolved specification ambiguity.
+5. Do not expand the scope window or include records merely to increase recall.
+6. If a proposed fix changes outputs, quote the raw evidence and explain why the existing interpretation is demonstrably wrong.
+7. If the specification remains ambiguous, retain the current behavior and document the uncertainty instead of guessing.
+
+Report the number of cases inspected, evidence, conclusions, and output changes. If no safe fix is proven, make no logic change.
+Priority 2 — Account attribution and safe recall
+RC5 reports 131 evaluation deletion cases without an account step because the primary account cannot be confidently attributed.
+
+* Inspect the existing attribution analysis and measurements.
+* Identify whether any new admissible identity evidence exists that was not considered previously.
+* Do not repeat rejected A1/A2, ordering, offset-band, or other attribution experiments without new evidence.
+* Never link an account from a normalized email alone.
+* Never emit remediation against a potentially wrong person's record.
+* Preserve the M1 result and verify whether any proposed change could flip a status or introduce a wrong-owner action.
+
+If no new identity evidence exists, confirm that attribution remains at its evidenced ceiling and stop investigating this area.
+Priority 3 — Remaining output correctness
+Use existing reports and tests to identify the most likely remaining CSV point losses.
+Focus on:
+
+* Incorrect or missing evidence citations.
+* Incorrect status or missing/extra steps.
+* Serialization and schema compliance.
+* Any output behavior that contradicts the literal specification.
+
+Do not optimize for exact sequence matching by changing ordering without specification evidence. Do not treat missing steps caused by insufficient identity evidence as a defect that can be safely repaired.
+For every candidate fix, provide the current behavior, specification or evidence basis, affected cases and denominator, expected effect, and regression risk. Implement only demonstrated defects.
+Priority 4 — Interview readiness
+Review `INTERVIEW_FACTS.md`, `DESIGN.md`, `CONSTANTS.md`, the rejection log, evaluation report, and relevant source code.
+Create a concise `INTERVIEW_MOCK.md` outside `code.zip`. Include ten adversarial questions covering:
+
+1. Architecture and why deterministic code makes final decisions.
+2. Why E2 was removed and what its measurements actually establish.
+3. Attribution ambiguity and why conservative omission is safer.
+4. D-SCOPE and the single-request limitation.
+5. F1 screenshot-based absence proof and its judgment boundary.
+6. Case 63: INCOMPLETE with no steps.
+7. Citation selection and admissibility at `audit_at`.
+8. Failed experiments, measured trade-offs, and rejected alternatives.
+9. Reproducibility, cache provenance, and generalization probes.
+10. Known limitations and what would be investigated with more time.
+
+For each question, provide:
+
+* The facts and source locations required to answer.
+* The key metric with its denominator.
+* The likely adversarial follow-up.
+* Any uncertainty that must be acknowledged.
+
+Do not invent an interview score or pretend a mock interview was conducted. Keep the fact sheet factual and distinguish evidence from interpretation.
+Validation
+If and only if code or output changes:
+
+* Run the full test suite with a verified exit code.
+* Run the specification audit and negative control.
+* Run coupling probes and determinism checks.
+* Verify cache completeness.
+* Run security checks and kit evaluation/certification.
+* Rebuild the archive and verify exclusions.
+* Run clean-folder keyless reproduction.
+* Run package submission validation.
+* Run transcript analysis if the transcript or release history changed.
+
+A documentation-only change still requires the relevant documentation and packaging checks. Do not rerun unrelated expensive audits unless required by the repository's release contract.
+Release decision
+
+* If a genuine defect is fixed and all required gates pass, create a new verified release candidate `rc6`, preserving RC5 and its tag.
+* If no correctness defect is established, do not manufacture a code change just to create RC6. Keep RC5 as the release candidate.
+* Do not push or publish a tag until the final release gates pass and the remote state is verified.
+* If a remote tag push fails, report it clearly; do not claim publication succeeded.
+
+Final report
+Return:
+
+1. D-SCOPE cases inspected and findings.
+2. Attribution investigation and whether new evidence existed.
+3. Other defects found and fixes, or why no safe fix was justified.
+4. Interview mock file status and ten questions.
+5. Validation results and actual exit codes.
+6. RC6 hashes and tag status, or explicit `RC5 KEPT`.
+7. Updated sample metrics and remaining risks.
+8. Which conclusions are measured versus estimated or unknown.
+
+Then stop for review."
+
+Agent Response Summary:
+The rc5 tag push from this container failed again (exit 1, "unexpected disconnect"); the remote still has no rc5 tag, so it has to be pushed from the user's machine. fix/rc6 was created from origin/fix/rc5 (9523831, which contains rc5 5616cb9). P1: all 16 single-request subjects were inspected (29 excluded records). 22 records in 14 cases are linked only by post-audit evidence, so their exclusion is required by AGENTS.md §6.2. 6 records in 2 cases (case_34 audit_record_3753; case_45 audit_record_001/002/004/005/006) stay excluded as a documented JUDGEMENT. One defect was fixed: case_34 support_9538 is shown on user_11's own page in the in-window screenshot evidence_04, so attribution.page_scope now uses OCR ids the model missed as scope evidence for already-owned records (1/518 eval rows changed, 0/32 samples). P2: no new identity evidence for the 159 AMBIGUOUS account pairs. P3: every residual sample miss is identity-limited or underivable. P4: INTERVIEW_MOCK.md written. The release gate could not start because the Bash permission classifier returned no verdict 8 times in a row, so the turn was paused before the gate; rc6 is NOT tagged and nothing of rc6 is pushed.
+
+Actions:
+* Commits 11f9c26 (rc6-P1 fix, D-SCOPE review, P2 audit record), 3818793 (INTERVIEW_MOCK.md, INTERVIEW_FACTS rc6 rows); two later INTERVIEW_MOCK.md wording fixes are uncommitted
+* Edited code/agent/attribution.py, code/agent/pipeline.py, code/evaluation/main.py, code/tests/test_attribution.py (123 tests, exit 0), DESIGN.md, CONSTANTS.md; added code/analysis/dscope_review.py, code/evaluation/dscope_review.json, INTERVIEW_MOCK.md
+* Release gate (gate_rc6.sh) NOT RUN: tool permission classifier unavailable
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none

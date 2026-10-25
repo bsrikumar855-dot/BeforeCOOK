@@ -14,11 +14,12 @@ Companion fact table: `INTERVIEW_FACTS.md`.
   `code/prompts/intent.md`) and reading the 11 screenshots (`code/agent/parsers/png_vlm.py` `ImageExtractor`). Status,
   operations, ids and citations come from code: `attribution.attribute` → `state.reconstruct` → `rules.Policy.verdict`
   → `steps.build_steps` → `validation.validate_output_file` (README "How it works"; the import graph is checked against
-  the AST by `code/tests/test_architecture_diagram.py`). A screenshot id survives only if its exact token is in local
-  multi-pass OCR text (`parsers/ocr_grounding.py`).
+  the AST by `code/tests/test_architecture_diagram.py`). A screenshot id the model reports survives only if its exact
+  token is in local multi-pass OCR text (`parsers/ocr_grounding.py`). Since rc6, an OCR id the model missed is used
+  only as scope evidence for a record that is already owned (`attribution.page_scope`).
 - **Key metric.** Intent: 42/42 correct on both models compared (32 samples + 10 non-deletion texts;
-  `code/evaluation/intent_model_comparison.json`). Prompt-injection fixtures X14–X19: 6/6 pass
-  (`code/evaluation/evaluation_report.md` §4 Safety).
+  `code/evaluation/intent_model_comparison.json`). Adversarial fixtures X14–X19 (injections, an empty
+  text, a 50k-character text, invalid UTF-8): 6/6 pass (`code/evaluation/evaluation_report.md` §4 Safety).
 - **Likely follow-up.** "Isn't the intent label itself an injection surface?" Yes, it is the one model output that
   changes a status. It is a closed enum, UNCLEAR maps to NOT_APPLICABLE, and every NON_DELETION is cross-checked against
   the request's own activity rows (`intent.decide`). X14 and X15 cover it.
