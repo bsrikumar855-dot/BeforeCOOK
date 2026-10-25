@@ -1,7 +1,7 @@
 # Kit heuristic estimate — NOT an official HackerRank score
 
 Produced by `python -m orchestrate_kit score --no-history --python python --transcript log.txt` (orchestrate-kit
-1.0.0) on 2026-10-25, against commit 28d5e2f (Round 5 candidate). The kit itself says: "ESTIMATED, not official. No public ground-truth
+1.0.0) on 2026-10-25, against commit 57751c9 (Round 6 candidate). The kit itself says: "ESTIMATED, not official. No public ground-truth
 graded Orchestrate submission exists to calibrate any of these scorers against."
 
 Labels: **MEASURED** (a number this repository computed from its own outputs), **ESTIMATED** (a kit heuristic),
@@ -15,7 +15,7 @@ Labels: **MEASURED** (a number this repository computed from its own outputs), *
 | Output CSV (30%) | 100.0 / 100 | ESTIMATED, mostly NOT CHECKED | The kit marks it "measured", but only 1 of its 4 audits ran; spec conformance, evidence quality and output sanity "could not run" (they expect a different challenge's files) |
 | AI Judge Interview (30%) | UNKNOWN | NOT CHECKED | No interview result exists locally |
 | AI Chat Transcript (10%) | 100.0 / 100 | ESTIMATED | The kit counted "1 turn(s)" and 4/7 evidence-chain nodes; see the G10 transcript analysis |
-| Overall | UNKNOWN (64.74 points measured from 70% of the weight) | ESTIMATED | The interview is missing and is not counted as zero |
+| Overall | UNKNOWN (64.75 points measured from 70% of the weight) | ESTIMATED | The interview is missing and is not counted as zero |
 
 **Weakest known section: Code ZIP (82.5, ESTIMATED).** The interview (30%) is unmeasured and could be weaker.
 
@@ -40,7 +40,7 @@ Labels: **MEASURED** (a number this repository computed from its own outputs), *
   before "retry", so it cannot see `schema_retries` or `max_429_retries_per_attempt`. Both exist and are enforced:
   `code/agent/llm_client.py:204` (`for schema_try in range(limits["schema_retries"] + 1)`, the validator's error fed
   back) and `:246` (429 retries with exponential backoff capped at 60 s), configured in `code/config/models.yaml`
-  `limits`. Not changed: renaming code to satisfy a regex would game the heuristic, not improve robustness.
+  `limits`. Round 6 added the named constants `MAX_SCHEMA_RETRIES`, `MAX_HTTP_RETRIES` and `MAX_BACKOFF_SECONDS` (used at both call sites) for readability; the heuristic still reports the finding, because it matches only `max_retries` or words starting with "retry". Not renamed further: changing names to satisfy a regex would game the heuristic, not improve robustness.
 - **README ↔ Code "claims agent loop, rate limit, no corresponding evidence".** The README says there is *no*
   free-form agent loop (E2 was measured and removed); the keyword match ignores the negation. The rate limit is the
   client-side throttle `LLMClient._throttle` (`requests_per_minute` per model in `models.yaml`).
