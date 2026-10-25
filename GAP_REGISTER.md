@@ -66,6 +66,16 @@ Ranking is by expected value = impact × confidence × P(safe fix) ÷ cost, judg
 | G11 | Trace semantics | 26 resources owned by one case still labelled AMBIGUOUS for a rival case (37/904 eval pairs) | 0 output | MEASURED | none | rewrites 553 traces | — | DOCUMENTED |
 | G12 | case_63 INCOMPLETE [] | empty COMPLETE proves nothing; NOT_STARTED → INCOMPLETE in 7/10 samples | 1 row | JUDGMENT | — | — | — | PRESERVED |
 
+## Iteration rc8+1 (after rc8; no shipped change)
+
+| ID | Hypothesis | Test | Result | Decision |
+|---|---|---|---|---|
+| H2 | The sample reference shows whether a screenshot should be cited (10 eval rows cite a PNG: cases 34, 35, 39, 45, 46, 50, 52, 53, 55, 61) | search every sample-reference resource id in the 4-pass OCR text of all 11 screenshots | 1 hit: case_15 `data_flow_9846`, whose reference step has evidence `""` (an INCOMPLETE future check). The screenshots otherwise concern eval cases or the earlier requests of multi-request users | UNTESTABLE on the samples (MEASURED). Keep rc7-X1 / rule C |
+| H1 | The single rule-C miss (case_04 `account_004`: C cites `evidence_90`, the reference cites `evidence_54`) reveals a fallback rule | SQLite load of all 24 snapshots | `evidence_90` has an empty customer_profiles table and a snapshot_scope of `account_service` only. `evidence_54` holds primary and failover account tables (4 + 3 rows) and none of user_04's identifiers. case_04 is one of the hand-crafted sample cases (01–10). Eval exposure: 34 citations use the full-snapshot fallback; 7 of them cite an empty inventory (`evidence_66` case_452; `evidence_69` case_393; `evidence_81` 5 cases) | UNDECIDABLE: one sample with three confounded properties (empty, single-scope, replica coverage). No change (JUDGMENT) |
+
+Stop rule: two consecutive attempts (H2, H1) produced no defensible improvement. The remaining gaps are blocked
+(G6, G7: model calls needed, no key) or are user decisions (G1, G2, G3).
+
 ## Baseline vs best
 
 | Metric | rc7 | rc8 candidate |
