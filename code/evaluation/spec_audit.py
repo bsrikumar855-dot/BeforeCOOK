@@ -40,6 +40,13 @@ OP_RANK = {op: i for i, (_, op, _) in enumerate(TABLE)}
 EMPTY_ALLOWED_REASON = "NO_ATTRIBUTABLE_RESOURCE"      # our documented policy (DESIGN.md C5), not spec text
 
 
+def case_number(case_id: str) -> tuple:
+    """ "sorted by case_id" read as the numeric suffix (case_99 < case_100), the order deletion_requests.csv itself
+    uses (DESIGN.md D-ROWSORT). Typed here, not imported from agent.validation."""
+    head, _, tail = case_id.rpartition("_")
+    return (head, int(tail)) if tail.isdigit() else (case_id, -1)
+
+
 def ts(v: str) -> datetime:
     return datetime.fromisoformat(v.strip().replace("Z", "+00:00"))
 
@@ -68,6 +75,8 @@ def audit(header: list[str], rows: list[list[str]], ctx: dict) -> list[tuple[str
         v.append(("id_set", "-", f"missing {sorted(set(ctx['ids']) - set(ids))[:5]} extra {sorted(set(ids) - set(ctx['ids']))[:5]}"))
     elif ids != ctx["ids"]:
         v.append(("row_order", "-", "rows are not in deletion_requests.csv (case_id) order"))
+    if ids != sorted(ids, key=case_number):
+        v.append(("case_id_sort", "-", "rows are not sorted by case_id's numeric suffix"))
     for r in rows:
         if len(r) != 3:
             v.append(("row_shape", r[0] if r else "?", f"{len(r)} fields"))
@@ -155,6 +164,7 @@ def negative_control(header: list[str], rows: list[list[str]], ctx: dict) -> dic
         "row_count": (header, rows[:-1]),
         "id_set": (header, rows[:-1] + [["case_99999", "NOT_APPLICABLE", "[]"]]),
         "row_order": (header, [rows[1], rows[0]] + rows[2:]),
+        "case_id_sort": (header, sorted(rows, key=lambda r: r[0])),   # plain string order: case_100 before case_33
         "status": (header, [r if j else [r[0], "DONE", r[2]] for j, r in enumerate(rows)]),
         "json": (header, [r if j != inc else [r[0], r[1], r[2][:-1]] for j, r in enumerate(rows)]),
         "not_applicable_steps": (header, [r if j != na else [r[0], r[1], rows[inc][2]] for j, r in enumerate(rows)]),

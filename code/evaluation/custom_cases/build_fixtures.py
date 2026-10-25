@@ -385,7 +385,9 @@ def build(root: Path = HERE) -> list[Path]:
         if d.exists():
             shutil.rmtree(d)
         (d / "evidence").mkdir(parents=True)
-        shutil.copyfile(RULES_SRC, d / "deletion_rules.csv")
+        # LF regardless of how dataset/ was checked out or written, so the committed fixtures are the same bytes
+        # on every platform (a CRLF dataset copy used to rewrite all 19 committed rule files)
+        (d / "deletion_rules.csv").write_bytes(RULES_SRC.read_bytes().replace(b"\r\n", b"\n"))
         _write_csv(d / "deletion_requests.csv", case["requests"], list(case["requests"][0]))
         raw = (d / "deletion_requests.csv").read_bytes()
         if BAD_BYTES_MARK.encode() in raw:          # a lone continuation byte, an invalid lead byte, a cut sequence
@@ -404,7 +406,7 @@ def build(root: Path = HERE) -> list[Path]:
                 content = _sql_flat(captured, case["sql_flat"][fid])
             p = d / rel
             p.parent.mkdir(parents=True, exist_ok=True)
-            p.write_text(content, encoding="utf-8")
+            p.write_text(content, encoding="utf-8", newline="\n")
             manifest.append({"file_id": fid, "file_path": rel, "origin": origin, "captured_at": captured})
         _write_csv(d / "evidence_files.csv", manifest, ["file_id", "file_path", "origin", "captured_at"])
         status, steps = case["expected"]
