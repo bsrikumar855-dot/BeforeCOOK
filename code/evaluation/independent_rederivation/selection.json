@@ -1,0 +1,35 @@
+{
+ "selected_before_any_independent_answer": true,
+ "cases": {
+  "case_33": "status fill",
+  "case_34": "stratum: screenshot_dependent",
+  "case_35": "status fill",
+  "case_36": "status fill",
+  "case_37": "stratum: post_delete_sync_or_restore",
+  "case_38": "status fill",
+  "case_39": "status fill",
+  "case_40": "stratum: historical_identifier_only",
+  "case_41": "status fill",
+  "case_42": "status fill",
+  "case_43": "status fill",
+  "case_44": "status fill",
+  "case_45": "status fill",
+  "case_46": "stratum: tombstone",
+  "case_51": "status fill",
+  "case_54": "stratum: replica_drift",
+  "case_55": "fixed: undeterminable restore control (C5)",
+  "case_57": "stratum: a1_inferred_account",
+  "case_58": "status fill",
+  "case_59": "status fill",
+  "case_63": "fixed: NO_ATTRIBUTABLE_RESOURCE",
+  "case_220": "stratum: legal_hold_or_retention",
+  "case_533": "status fill",
+  "case_534": "status fill"
+ },
+ "status_counts": {
+  "COMPLETE": 8,
+  "INCOMPLETE": 14,
+  "NOT_APPLICABLE": 2
+ },
+ "strata_without_match": []
+}
