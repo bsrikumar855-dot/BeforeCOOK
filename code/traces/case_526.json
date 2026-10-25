@@ -250,13 +250,7 @@
    "sources": []
   }
  ],
- "excluded": [
-  {
-   "label": "INFERRED_CLAIM",
-   "reason": "UNKNOWN_STATE: no admissible observation and no admissible full snapshot",
-   "resource_id": "account_1400"
-  }
- ],
+ "excluded": [],
  "input_issues": [],
  "intent": {
   "classify_request_rows": [],
@@ -282,12 +276,12 @@
    "attribution": "INFERRED_CLAIM",
    "category": "USER_PROFILE",
    "category_basis": "default category for account_service",
-   "compliant": null,
+   "compliant": true,
    "note": "UNKNOWN_STATE: no admissible observation and no admissible full snapshot",
    "operations": [
     null,
     null,
-    null
+    "VERIFY_RECORD_ABSENT"
    ],
    "proof_file_id": null,
    "required_action": "DELETE",
@@ -527,9 +521,18 @@
    "evidence_id": "",
    "operation": "VERIFY_RECORD_ABSENT",
    "phase": "VERIFICATION",
-   "resource_id": "search_3879",
+   "resource_id": "account_1400",
    "state": "ABSENT",
    "step_no": 9,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "search_3879",
+   "state": "ABSENT",
+   "step_no": 10,
    "system_id": "search_service"
   },
   {
@@ -538,7 +541,7 @@
    "phase": "VERIFICATION",
    "resource_id": "audit_record_5792",
    "state": "PRESENT",
-   "step_no": 10,
+   "step_no": 11,
    "system_id": "security_service"
   },
   {
@@ -547,7 +550,7 @@
    "phase": "VERIFICATION",
    "resource_id": "support_1191",
    "state": "REDACTED",
-   "step_no": 11,
+   "step_no": 12,
    "system_id": "support_platform"
   },
   {
@@ -556,7 +559,7 @@
    "phase": "VERIFICATION",
    "resource_id": "analytics_131",
    "state": "ANONYMIZED",
-   "step_no": 12,
+   "step_no": 13,
    "system_id": "analytics_platform"
   },
   {
@@ -565,7 +568,7 @@
    "phase": "VERIFICATION",
    "resource_id": "data_flow_2263",
    "state": "DISABLED",
-   "step_no": 13,
+   "step_no": 14,
    "system_id": "integration_service"
   }
  ],

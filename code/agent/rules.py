@@ -32,6 +32,11 @@ SYSTEM_CATEGORIES = {
     "object_storage": ["SUPPORT_ATTACHMENT"],
 }
 WORKER_ACTION = {"DELETE_RECORD": "DELETE", "REDACT_RECORD": "REDACT", "ANONYMIZE_RECORD": "ANONYMIZE"}
+# The check each required action must pass afterwards (the policy's final state). RETAIN reaches _check_only() only
+# for BACKUP_ARCHIVE: every other retained category returns before it.
+REQUIRED_CHECK = {"DELETE": "VERIFY_RECORD_ABSENT", "ANONYMIZE": "VERIFY_RECORD_ANONYMIZED",
+                  "REDACT": "VERIFY_RECORD_REDACTED", "DISABLE": "VERIFY_DATA_FLOW_DISABLED",
+                  "RETAIN": "VERIFY_RESTORE_BLOCKED"}
 
 
 class Policy:
@@ -75,13 +80,13 @@ class Policy:
                 v.note = "RETAIN_UNPROVEN: no admissible observation shows the retained record"
             return v
         if state.proof_basis == "NONE":
-            v.note = "UNKNOWN_STATE: no admissible observation and no admissible full snapshot"
-            return v
+            return self._check_only(v, "UNKNOWN_STATE: no admissible observation and no admissible full snapshot")
         if action == "DELETE":
             if p == "PRESENT":
                 return self._fail(v, "REPORT_REMAINING_RECORD", "DELETE_RECORD", "VERIFY_RECORD_ABSENT")
             if p == "ABSENT":
                 return self._pass(v, "VERIFY_RECORD_ABSENT")
+            return self._check_only(v, "PRESENCE_UNKNOWN: no admissible observation shows whether the record exists")
         elif action in ("ANONYMIZE", "REDACT"):
             done = "VERIFY_RECORD_ANONYMIZED" if action == "ANONYMIZE" else "VERIFY_RECORD_REDACTED"
             fix = "ANONYMIZE_RECORD" if action == "ANONYMIZE" else "REDACT_RECORD"
@@ -93,8 +98,7 @@ class Policy:
                 return self._fail(v, "REPORT_EXPOSED_PII", fix, done)
             if p == "PRESENT" and e != "UNKNOWN":
                 return self._pass(v, done)
-            v.note = "EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields"
-            return v
+            return self._check_only(v, "EXPOSURE_UNKNOWN: no admissible observation shows the record's fields")
         elif action == "RETAIN" and category == "BACKUP_ARCHIVE":
             if state.restore_state == "RESTORABLE":
                 return self._fail(v, "REPORT_RESTORE_RISK", "BLOCK_RESTORE", "VERIFY_RESTORE_BLOCKED")
@@ -105,8 +109,7 @@ class Policy:
                 # not proof ("no active sync, import, or restore path can recreate the data"), so the control is open.
                 v.note = "CONTROL_UNDETERMINABLE: restore state not shown; treated as open"
                 return self._fail(v, "REPORT_RESTORE_RISK", "BLOCK_RESTORE", "VERIFY_RESTORE_BLOCKED")
-            v.note = "RESTORE_STATE_UNKNOWN"
-            return v
+            return self._check_only(v, "RESTORE_STATE_UNKNOWN")
         elif action == "DISABLE":
             if state.flow_state == "ENABLED":
                 return self._fail(v, "REPORT_ACTIVE_DATA_FLOW", "DISABLE_DATA_FLOW", "VERIFY_DATA_FLOW_DISABLED")
@@ -115,9 +118,18 @@ class Policy:
             if p == "PRESENT" and state.proof_basis == "MENTION":
                 v.note = "CONTROL_UNDETERMINABLE: flow state not shown; treated as open"     # M2(a)
                 return self._fail(v, "REPORT_ACTIVE_DATA_FLOW", "DISABLE_DATA_FLOW", "VERIFY_DATA_FLOW_DISABLED")
-            v.note = "FLOW_STATE_UNKNOWN"
-            return v
+            return self._check_only(v, "FLOW_STATE_UNKNOWN")
         v.note = v.note or f"no verdict for action={action} presence={p}"
+        return v
+
+    @staticmethod
+    def _check_only(v: Verdict, note: str) -> Verdict:
+        """rc7-X4: admissible evidence does not decide the state. Nothing shows a violation, so there is no finding
+        or remediation; the check the policy requires afterwards is still part of an INCOMPLETE plan (evidence ""),
+        and a COMPLETE row drops it (build_steps: unprovable), so no proof is ever claimed."""
+        v.note = note
+        if v.required_action in REQUIRED_CHECK:
+            v.compliant, v.provable, v.verification_op, v.proof_file_id = True, False, REQUIRED_CHECK[v.required_action], None
         return v
 
     @staticmethod
