@@ -543,6 +543,7 @@ Trade-off: rule 1 adds a step the reference may not contain; rule 2 keeps a row 
 | Tag | Commit | output.csv sha256 | code.zip sha256 | Gate |
 |---|---|---|---|---|
 | rc1 | ce59bef7af663a7a919b51bfa69cbfe3d888558e | e176b22d8a1e452823b9f6d9c1ce874fe70543eb2f7635ffcef75220d17133c8 | 7223b38482f6b94de0c206b48ec5473918cbeb950f7fbe3f854eeab404255c93 | G6/G7 steps 1–6 passed (kit READY, 0 blockers; cache audit 0 misses; zip scan clean; clean-folder output byte-identical with the same metrics; package_submission READY TO SUBMIT; score estimate written) |
+| rc2 | 205eb2237e3d5ba966b02133532472c33f987687 | 426049dab1b7ede1f406bef9f24f39fd5e8255f31357859071b5cc51efdfced4 | 1e2b504a30e17268e4525cb10b752743e8b228e019e999fe83afdc7a65b1d2bc | Round 5 (A1 shipped). Label-free gate: spec audit 0 violations (17/17 negative control), coupling probes 5/5 (19,760/19,760 ids renamed), security 38/39 + builder, cache 0 misses / 0 orphans, determinism 3 seeds; G6/G7: kit READY 0 blockers, clean-folder output byte-identical with the same metrics, package_submission READY TO SUBMIT, score estimate refreshed. Replaces rc1 |
 
 - code.zip was built from the rc1 working tree with `python3 code/package.py --out submission/code.zip` and is the
   archive in `submission/`. The kit's packager builds its own, broader archive (the whole repository); it was

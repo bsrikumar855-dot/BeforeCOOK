@@ -454,3 +454,123 @@ branch=main
 repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
+
+## [2026-10-25T06:15:03+05:30] Round 5: attribution filters A1/A2/A3/ordering measured; A1 shipped; rc2
+
+User Prompt (verbatim, secrets redacted):
+ROUND 5 — ATTRIBUTION BREAKTHROUGH: claim-consistency + offset bands
+Goal: top-1 output accuracy. The dominant score loss is missing steps for timing-only resources: sample sequence 16/32, recall 171/193; eval has 1,247 AMBIGUOUS candidate pairs across 381 cases. Almost every deletion case needs VERIFY_RECORD_ABSENT on its account, so an unresolved account sinks the whole row.
+Keep AGENTS.md logging; CLAUDE.md untouched; local only, never push; gate commits on pytest's real exit code. Apply the orchestrate-test-fix change-record loop and the "model proposes, code decides" principle. Work on top of rc1.
+
+CORE RULE (governs everything below):
+ - Claim consistency (A1) and offset proximity (A2) are FILTERING signals, not proof of ownership.
+ - A timing-only resource is assigned ONLY when, after hard links, elimination, A1 and A2 are applied JOINTLY across the batch, exactly one owner remains and the full assignment is globally consistent.
+ - If the filters only shrink the candidate set, the result stays AMBIGUOUS.
+ - Success = more correctly attributed resources at an unchanged evidence standard, not fewer AMBIGUOUS pairs.
+
+## A1 — Claim-consistency filter (attribution.py)
+Measured by an independent check, for the 29 sample cases with an account DELETE_RECORD row from deletion_worker:
+ - COMPLETE ↔ reported_result SUCCESS;
+ - NOT_STARTED ↔ FAILED;
+ - PARTIALLY_COMPLETE ↔ PARTIAL or SUCCESS.
+On the 518 eval cases (no labels), in a [reported_at−3h, reported_at+1h] window, exactly-1-candidate cases go from 23 to 102 and 5+ from 224 to 50, with 0 deletion cases left without a consistent candidate (the only zero is case_538, a NON_DELETION request).
+Spec grounding: reported_status is "a claim from the existing deletion workflow", and the workflow's claim about a job derives from its worker's results for that job. It is used as LINKAGE evidence only, never as proof of state. State comes only from observations at audit_at.
+Implement:
+ - The allowed-result map is a named constant in CONSTANTS.md (label SPEC-DERIVED, plus this measurement).
+ - Apply it ONLY to the subject's primary-profile account delete (deletion_worker -> account_service DELETE_RECORD). Do NOT apply it to other resource types: NOT_STARTED cases have SUCCESS anonymize/redact rows (case_25/26/28).
+ - Inconsistent candidates are removed. A case with 0 consistent candidates -> CLAIM_CONFLICT, kept AMBIGUOUS.
+ - Assignments that became unique through A1 get the label INFERRED_CLAIM (never CONFIRMED).
+Falsification report (must print): deletion cases with 0 consistent candidates, before and after elimination. State separately: candidates ELIMINATED by A1, vs cases whose ownership is INDEPENDENTLY established by hard links.
+
+## A2 — Offset bands per event type (label-free, non-circular)
+Hypothesis: deletion_worker follow-up actions occur at near-fixed offsets from the case's reported_at (sample observation: ANONYMIZE ≈ −29 min, REDACT ≈ −22, DISABLE_DATA_FLOW ≈ −15, BLOCK_RESTORE ≈ −8; failed retries land after reported_at).
+Training data:
+ - ONLY CONFIRMED pairs, i.e. direct identity links: email / phone / email_hash / customer_reference / subject_reference == user_id.
+ - NEVER pairs labelled INFERRED, INFERRED_CLAIM, INFERRED_ORDER or INFERRED_OFFSET, so no inferred link feeds back into the bands.
+ - NEVER sample expected outputs or sample accuracy.
+ - Both eval and sample observations may contribute, since timestamps and identity links are inputs, not labels.
+ - Write a test asserting the training set contains only CONFIRMED pairs.
+Band definition (fix these BEFORE looking at any accuracy number; record the constants in CONSTANTS.md with label JUDGEMENT):
+ - groups are (event_type, target_system, reported_result);
+ - a band is used only if n >= 10;
+ - band = median ± max(4 × MAD, 120 s), computed on second-precision UTC timestamps;
+ - outliers are kept in the report, not dropped from the data;
+ - groups with n < 10 or multimodal offsets (report how detected) get NO band and keep the old window.
+Report per group: n, median, MAD, min/max, the band, and how many CONFIRMED pairs fall OUTSIDE their own band. That count is the band's false-rejection rate on known-good links; if it is above 0, widen nothing ad hoc — report it and keep that group bandless.
+Assignments that became unique through A2 get the label INFERRED_OFFSET.
+
+## A3 — Joint assignment (complete conflict policy)
+Constraints, solved per batch:
+ - Primary account resource: exactly one owner case; a case has at most one primary account delete per burst.
+ - Other resources: one owner case, unless hard links show legitimate shared ownership; such shared resources are only ever assigned by hard links.
+ - Contradictory hard links -> CONFLICT, no steps.
+ - A hard link always beats any filter; a filter never removes a hard-linked candidate.
+Assign only when the joint solution is unique (enumerate or prove uniqueness per batch; report batches where several solutions satisfy all constraints -> AMBIGUOUS).
+Variant: E1-A anchored monotone ordering used ONLY as a tiebreak on residual ties. It is measured separately and labelled INFERRED_ORDER. Its previous single error (account_4990, case_22) collided with case_16, which A1 separates; verify whether that error disappears.
+
+Provenance contract (in every trace, for every INFERRED_* assignment):
+ - which filters fired;
+ - the account result vs the case status;
+ - event group, offset, band bounds;
+ - the supporting hard links in the batch;
+ - every rejected alternative owner and the reason it was rejected.
+Also show this in --explain.
+
+## Measurement
+Report one row per variant: baseline / +A1 / +A1+A2 / +A1+A2+A3 / +A1+A2+A3+ordering.
+
+Denominators, reported separately: candidate edges, distinct resources, distinct cases, AMBIGUOUS pairs, actual assignments.
+
+Samples: mechanically generated from the reference-vs-output diff, never hand-assembled:
+ - the 19 timing-only pairs: resolved / correct / incorrect;
+ - previously-correct steps broken;
+ - status, step precision/recall, sequence exact, per-field accuracy;
+ - every status change vs baseline, with the verified state evidence that justifies it.
+
+Eval (UNVERIFIED):
+ - AMBIGUOUS pairs, resources and cases;
+ - CLAIM_CONFLICT count;
+ - rows changed, status distribution;
+ - every COMPLETE<->INCOMPLETE flip, with the evidence that justifies it.
+
+Label-free checks on eval (assertions about our own system):
+ - no one-to-one resource assigned twice;
+ - every assigned account's reported_result is consistent with its case;
+ - every assigned follow-up's offset is inside its band;
+ - spec audit 0 violations;
+ - coupling probes re-run against the FINAL candidate, with fixture coverage re-validated: 5/5, output diffs checked;
+ - determinism over 3 seeds.
+
+SHIP rule. A variant ships only if ALL hold:
+ - 0 incorrect sample resolutions;
+ - 0 previously-correct sample steps broken;
+ - 0 previously-correct sample STATUSES changed;
+ - every eval status flip justified by verified state evidence;
+ - all label-free checks pass;
+ - no sample-specific logic.
+Ship the best variant that qualifies; record the losers with their numbers in the rejection log. A variant with any incorrect sample resolution does not ship, even if recall rises.
+
+## Residual breakdown
+After the shipped variant, mechanically list every remaining sample mismatch (case, step, expected vs actual), tagged ATTRIBUTION / NOT_DERIVABLE / CITATION / STATE / RULE / SERIALIZATION. Also give the count of eval cases still incomplete because of AMBIGUOUS accounts.
+
+## Release
+If shipped: run the full G6/G7 gate, tag rc2, record the hashes in DESIGN.md, rebuild submission/. Update CONSTANTS.md, DESIGN.md (decisions, rejection log, the A1 spec grounding, the A2 non-circularity rule) and evaluation_report.md.
+
+## REPORT, THEN STOP
+The variant table with denominators; the A2 band table with each group's false-rejection count; the shipped variant; the status-flip justifications; the residual breakdown; rc2 hashes or "rc1 kept". Label unproven claims UNKNOWN. Never invent a number.
+
+Agent Response Summary:
+A1, A2, A3 and the ordering tiebreak were implemented as switchable variants in code/agent/attribution.py and measured end to end. The sample numbers come mechanically from code/evaluation/attribution_variants.py. Only +A1 met the SHIP rule: 7/19 timing-only pairs resolved, all correct; 0 broken steps or statuses; recall 171->178/193; sequence 16->19/32; 92 eval rows changed with 0 status flips; 0 CLAIM_CONFLICT. On known-good links, 252/252 hard-linked account deletes agree with the claim map. +A2 was rejected because the PARTIAL account band removed case_02's correct account_002. A3 enumeration confirmed the forced-edge rule in all 159 batches. Ordering was rejected because it assigned case_23 to account_9155 (reference account_410). The full gate passed and rc2 was tagged (205eb22; output 426049da..., code.zip 1e2b504a...).
+
+Actions:
+* Commits c32b830 (R5 code), 28d5e2f (gate results), 205eb22 (score estimate) = tag rc2; DESIGN rc2 record on top (local only, never pushed)
+* Edited code/agent/{attribution,schema,pipeline,explain}.py, code/evaluation/main.py, CONSTANTS.md, DESIGN.md, constants_register.py; added code/evaluation/attribution_variants.py and code/tests/test_attribution_filters.py (100 tests pass)
+* No model calls
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none

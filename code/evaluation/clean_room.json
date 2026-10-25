@@ -1,13 +1,13 @@
 {
- "zip_sha256": "7223b38482f6b94de0c206b48ec5473918cbeb950f7fbe3f854eeab404255c93",
- "repo_output_sha256": "e176b22d8a1e452823b9f6d9c1ce874fe70543eb2f7635ffcef75220d17133c8",
+ "zip_sha256": "1e2b504a30e17268e4525cb10b752743e8b228e019e999fe83afdc7a65b1d2bc",
+ "repo_output_sha256": "426049dab1b7ede1f406bef9f24f39fd5e8255f31357859071b5cc51efdfced4",
  "pip_install_exit": 0,
  "run_exit": 0,
  "run_summary": "rows=518 status={'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10} degraded=1 model_failures=0 vlm_files_skipped=0 model_calls=0 cache_hits=409",
- "clean_output_sha256": "e176b22d8a1e452823b9f6d9c1ce874fe70543eb2f7635ffcef75220d17133c8",
+ "clean_output_sha256": "426049dab1b7ede1f406bef9f24f39fd5e8255f31357859071b5cc51efdfced4",
  "output_byte_identical": true,
  "evaluation_exit": 0,
- "evaluation_metrics": "status 31/32 (96.9%); steps recall 171/193 (88.6%); precision 171/171 (100.0%); sequence 16/32 (50.0%); custom 19/19 pass",
- "repo_metrics": "status 31/32 (96.9%); steps recall 171/193 (88.6%); precision 171/171 (100.0%); sequence 16/32 (50.0%); custom 19/19 pass",
+ "evaluation_metrics": "status 31/32 (96.9%); steps recall 178/193 (92.2%); precision 178/178 (100.0%); sequence 19/32 (59.4%); custom 19/19 pass",
+ "repo_metrics": "status 31/32 (96.9%); steps recall 178/193 (92.2%); precision 178/178 (100.0%); sequence 19/32 (59.4%); custom 19/19 pass",
  "metrics_identical": true
 }
