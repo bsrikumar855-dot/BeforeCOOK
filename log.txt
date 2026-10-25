@@ -574,3 +574,65 @@ branch=main
 repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
+
+## [2026-10-25T09:36:35+05:30] Round 6: eval-side audits (rule branches, independent re-derivation, citations, distribution), polish, rc3
+
+User Prompt (verbatim, secrets redacted):
+ROUND 6 — EVAL-SIDE AUDIT: conditional rules, independent re-derivation, citation exposure
+State: rc2 (205eb22), output.csv 426049da…, sample status 31/32, P 178/178, R 178/193, seq 19/32. Attribution is at its evidenced ceiling: the 12 residual sample pairs have no identity signal in any file (analytics fully anonymised; the residual accounts appear in ≤1 file with null identifiers). Do NOT reopen attribution. Record in the rejection log: "+A1+ordering: +2 correct, 1 incorrect (case_23 account_9155) — rejected: a wrong owner on an INCOMPLETE case would emit remediation against another person's record".
+Keep AGENTS.md logging; CLAUDE.md untouched; local only, never push; gate commits on pytest's real exit code; change records; SHIP rule as before, plus: any eval row change must be justified by raw evidence quoted in the change record. Anything shipped must pass the full G6/G7 gate before becoming rc3; otherwise rc2 stays.
+
+## R1 — Conditional-rule branch audit (orchestrate-test-fix: edge-case-testing, input-tracing)
+For EVERY rule in deletion_rules.csv whose condition is not "Always" (rule_05, 06, 07, 08, 11, 12, 13, 14, 15):
+ - Write down, from problem_statement.md + the rule text, the decision for the condition TRUE and for the condition FALSE (e.g. a security audit record past retention_until at audit_at; an expired or absent legal hold; a support message with no shared context; an attachment that also belongs to another person; an analytics or telemetry record already unattributable; an email log without an email; a tombstone still holding direct identifiers; a backup whose restore cannot be blocked). Where the spec is silent on a FALSE branch, state your reading and its spec basis, labelled JUDGEMENT.
+ - Count eval instances per (rule, branch) from the traces, and the decision our code actually took.
+ - For every branch with eval instances but no sample coverage, hand-check up to 3 real eval instances against the raw evidence (quote the evidence lines) and confirm the emitted steps.
+ - Any mismatch is a defect: fix it under the SHIP rule.
+Report a table: rule, branch, spec decision, eval count, sample count, spot-checks pass/fail.
+
+## R2 — Independent re-derivation of eval cases (spawn a separate subagent)
+Spawn a fresh subagent that MUST NOT read code/, traces, output.csv or our docs. It may read only problem_statement.md, README.md (the challenge one), dataset/ and the evidence files. Give it 24 eval case_ids, stratified by:
+ - status: 8 COMPLETE, 12 INCOMPLETE, 2 NOT_APPLICABLE, plus case_55 and case_63;
+ - and covering: replica drift, post-delete sync/restore, a historical-identifier-only link, screenshot-dependent evidence, a tombstone, a legal-hold or retention record, and an A1-inferred account.
+Choose the cases by these strata from our traces BEFORE seeing the subagent's answers; record the selection.
+For each case the subagent writes its own deletion_status and full steps_json, with evidence ids and a one-line justification per step, to code/evaluation/independent_rederivation/<case>.json.
+Then compare mechanically with output.csv: status match, step-level exact match, missing and extra steps. Triage every disagreement as OUR_BUG / SUBAGENT_ERROR / AMBIGUOUS_SPEC, quoting the raw evidence. Fix every OUR_BUG under the SHIP rule.
+Report: the agreement rate (status and steps) with denominators, and the full triage list.
+
+## R3 — Citation exposure on eval
+Count the cited evidence on eval by rule C path: (i) latest file mentioning the resource_id, (ii) the fallback "latest full snapshot of the system/table". For path (ii), list the cases and spot-check 5 against the raw files: does the cited capture really cover that system and prove the state at audit_at? Report any case where a different capture <= audit_at is a stronger proof (it mentions the resource_id, or is closer in time and covers the table). No change unless a defect is proven.
+
+## R4 — Distribution sanity (evaluator.md)
+Compare sample vs eval:
+ - steps per case;
+ - operations per case;
+ - phases present per status;
+ - share of cases with VERIFY_RECORD_PRESENT, tombstone steps, restore and flow steps.
+List the eval outliers: top 10 by step count, every case with an operation never seen in the samples, and every INCOMPLETE case with no remediation of the type its findings require. Spot-check the 5 most unusual against the raw evidence.
+
+## R5 — Polish
+ (a) Ship the legacy vision prompt byte-exact as code/prompts/image_extraction_v1.md, so every cache entry references a shipped prompt; add a test that fails otherwise; document the measured rejection of the v2 re-extraction.
+ (b) Named retry and cap constants in llm_client.py (MAX_SCHEMA_RETRIES, MAX_HTTP_RETRIES, MAX_BACKOFF_SECONDS) used at both call sites; update CONSTANTS.md; add a README pointer to where retries, caps and fallbacks live.
+ (c) Report which 3 of the 7 transcript evidence-chain stages are missing and what the analyzer looks for; do not rewrite history.
+0 output rows may change in R5.
+
+## REPORT, THEN STOP
+R1 table + defects; R2 agreement rates + triage list; R3 path counts + spot-checks; R4 outliers + spot-checks; R5 results; every shipped change with the eval rows changed and their quoted evidence; rc3 hashes or "rc2 kept"; final metrics. Label unproven claims UNKNOWN. Never invent a number.
+
+[Turn continued after a usage-limit pause: "I hit my usage limit while you were working, but it has reset now. Please continue from where you left off."]
+
+Agent Response Summary:
+The problem I had to solve was whether our eval rows hold up beyond the samples. My hypothesis was that conditional rules or citation fallbacks might hide eval-only defects. I measured instead of assuming: the branch audit shows every sample instance of every conditional rule agreeing with the reference; spot-checks of uncovered branches pass; 34 fallback citations have no stronger capture; and the sample and eval distributions match. I chose the 24 re-derivation cases before any independent answer existed (commit 12fb512). The independent agent agreed on 23/24 statuses and 101/103 of our steps. I triaged every disagreement against the raw evidence: 0 OUR_BUG, 3 SUBAGENT_ERROR, 8 AMBIGUOUS_SPEC, mostly episode scope and one tombstone screenshot that I kept unproven per C2. I decided to change no output row. I shipped R5 (legacy prompt byte-exact plus a test, named retry constants) and verified it through the full gate as rc3.
+
+Actions:
+* Commits 12fb512 (selection), 2c148fe (R1/R3/R4/R5), 14d13b2 (R2 triage), 57751c9 (gate results), 727cab5 = tag rc3; DESIGN rc3 record on top (local only, never pushed)
+* Added code/evaluation/{rederivation_selection,rederivation_compare,rule_branch_audit,citation_exposure,distribution_sanity}.py, code/prompts/image_extraction_v1.md, code/tests/test_prompt_provenance.py; edited png_vlm.py, llm_client.py, evaluation/main.py, README.md, DESIGN.md, CONSTANTS.md (102 tests pass)
+* Spawned one independent subagent (24 cases); no model calls in the pipeline; output.csv unchanged (426049da...)
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none
