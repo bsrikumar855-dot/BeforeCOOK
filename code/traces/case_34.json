@@ -186,18 +186,19 @@
     "DELETE_RECORD",
     "VERIFY_RECORD_ABSENT"
    ],
-   "proof_file_id": "evidence_01",
+   "proof_file_id": "evidence_04",
    "required_action": "DELETE",
    "resource_id": "support_9538",
    "state": {
     "exposure": "DIRECT_IDENTIFIERS",
     "flow_state": null,
     "observation_ids": [
-     "evidence_01#L25"
+     "evidence_01#L25",
+     "evidence_04#ocr:support_9538"
     ],
     "presence": "PRESENT",
     "proof_basis": "MENTION",
-    "proof_file_id": "evidence_01",
+    "proof_file_id": "evidence_04",
     "resource_id": "support_9538",
     "restore_state": null,
     "system_id": "support_platform"
@@ -217,7 +218,7 @@
    "system_id": "account_service"
   },
   {
-   "evidence_id": "evidence_01",
+   "evidence_id": "evidence_04",
    "operation": "REPORT_REMAINING_RECORD",
    "phase": "FINDING",
    "resource_id": "support_9538",
