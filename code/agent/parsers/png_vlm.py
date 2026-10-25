@@ -15,7 +15,7 @@ from ..identity import EMAIL_RE, IdentityUniverse
 from ..llm_client import AllProvidersFailed, CacheMiss, LLMClient, ResponseCache, ValidationFailed, content_key
 from ..loaders import parse_ts
 from ..schema import EvidenceFile, Observation
-from .ocr_grounding import grounded, ocr_ids
+from .ocr_grounding import absence_proof, grounded, ocr_ids
 
 TASK = "vision"
 # Earlier vision prompts kept byte-exact, so every cached reply was produced by a prompt that ships (Round 6 R5a).
@@ -77,6 +77,7 @@ class ImageExtractor:
         self.ocr = None                      # OcrReader: grounding check for resource ids (C9); None = off
         self.ungrounded: list[dict] = []
         self.grounding_report: dict[str, dict] = {}
+        self.absence_checks: list[dict] = []        # F1: every UNKNOWN-visibility record checked, with the outcome
 
     def render(self, template: str, prefix_system: dict[str, str]) -> tuple[str, str]:
         """(rendered prompt, its version): the systems and record types are substituted before hashing."""
@@ -222,7 +223,14 @@ class ImageExtractor:
                 fields["direct_identifiers"] = "1"
             elif visible is False and not any(k in fields for k in ("email", "phone", "full_name", "email_hash")):
                 fields["direct_identifiers"] = "0"
-            # "UNKNOWN" (or a legacy null) sets nothing: exposure stays UNKNOWN unless captured fields decide it.
+            # "UNKNOWN" (or a legacy null) sets nothing: exposure stays UNKNOWN unless captured fields decide it,
+            # or (F1) deterministic OCR proves the record's own detail page shows no identifier at all.
+            elif visible == "UNKNOWN" and not any(k in fields for k in ("email", "phone", "full_name", "email_hash")):
+                proven, why = absence_proof(shown, len(reply.get("records", [])), ocr_text, set(prefix_system))
+                self.absence_checks.append({"file_id": ef.file_id, "resource_id": rid, "proven": proven, "reason": why})
+                if proven:
+                    fields["direct_identifiers"] = "0"
+                    fields["absence_proof"] = why[:160]
             fields["direct_identifiers_visible"] = visible
             if isinstance(rec.get("direct_identifiers_reason"), str):
                 fields["direct_identifiers_reason"] = rec["direct_identifiers_reason"][:160]

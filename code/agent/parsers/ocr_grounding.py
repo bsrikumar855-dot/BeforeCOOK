@@ -118,3 +118,46 @@ def ocr_ids(ocr_text: str, known_prefixes: set[str]) -> set[str]:
         if canon in known_prefixes:
             out.add(f"{canon}_{digits}")
     return out
+
+
+# ---- F1: screenshot proof that a record holds no direct identifiers (JUDGEMENT; DESIGN.md F1) -----------------------
+# A record's OWN detail page (not a list or search view) that shows no identifier anywhere in the multi-pass OCR text
+# proves its direct identifiers are absent. Patterns are bounded (linear time; G8): email via identity.EMAIL_RE (RFC
+# 5321 bounds), any "@" between non-space characters counts as an uncertain email; phone = "+" country code then 2-6 digit groups (matches all 942
+# phones in the identity tables); hash = exactly 64 hex characters.
+DETAIL_LABELS = ("overview", "created", "owner", "reference type", "most recent update", "updated", "status", "history",
+                 "details", "linked records")
+MIN_DETAIL_LABELS = 3
+PHONE_RE = re.compile(r"(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}")
+HEX64_RE = re.compile(r"(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])")
+# An address always has characters on both sides of its "@"; a free-standing "@" is an OCR'd bullet glyph (the
+# timeline dots on evidence_42 read as "@ Reference created"). Any "@" touching non-space characters is uncertain.
+AT_RE = re.compile(r"[^\s@]@[^\s@]")
+
+
+def absence_proof(shown: str, n_records: int, ocr_text: str | None, known_prefixes: set[str]) -> tuple[bool, str]:
+    """(proven, reason). Proven only for a single-record detail page whose id is grounded, that names no other
+    resource, carries detail-field labels after the header id, and shows no email, '@', phone or 64-hex token."""
+    from ..identity import EMAIL_RE
+    if not ocr_text:
+        return False, "no OCR text"
+    if n_records != 1:
+        return False, f"{n_records} records extracted: not a single-record view"
+    m = token_pattern(shown).search(ocr_text)
+    if not m:
+        return False, f"{shown} not grounded in the OCR text"
+    others = ocr_ids(ocr_text, known_prefixes) - {shown}
+    if others:
+        return False, f"other resource ids on the page {sorted(others)[:3]}: list/search view"
+    low = ocr_text.lower()
+    labels = [lab for lab in DETAIL_LABELS if lab in low]
+    first_label = min((low.index(lab) for lab in labels), default=-1)
+    if len(labels) < MIN_DETAIL_LABELS or first_label < m.start():
+        return False, f"detail-field labels {labels} not found after the header id"
+    if AT_RE.search(ocr_text) or EMAIL_RE.search(ocr_text):
+        return False, "email-shaped text (an '@' between non-space characters) on the page"
+    if PHONE_RE.search(ocr_text):
+        return False, "phone-shaped text on the page"
+    if HEX64_RE.search(ocr_text):
+        return False, "64-hex token on the page"
+    return True, f"own detail page of {shown} (labels {labels[:4]}); no email, phone or hash in multi-pass OCR"

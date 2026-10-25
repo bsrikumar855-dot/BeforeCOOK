@@ -36,7 +36,6 @@
   "excluded_reasons": {
    "AMBIGUOUS": 904,
    "CONFLICT": 1,
-   "EXPOSURE_UNKNOWN": 1,
    "OUT_OF_SCOPE": 41,
    "UNKNOWN_STATE": 3
   },
@@ -358,6 +357,14 @@
   "vlm_files_skipped": 0
  },
  "ocr_grounding": {
+  "absence_checks": [
+   {
+    "file_id": "evidence_42",
+    "proven": true,
+    "reason": "own detail page of user_17 (labels ['overview', 'created', 'owner', 'reference type']); no email, phone or hash in multi-pass OCR",
+    "resource_id": "tombstone_17"
+   }
+  ],
   "engines": [
    "tesseract 5.5.3.20260724"
   ],

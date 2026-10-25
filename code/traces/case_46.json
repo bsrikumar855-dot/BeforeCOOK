@@ -146,11 +146,6 @@
    "label": "CONFIRMED",
    "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
    "resource_id": "backup_3245"
-  },
-  {
-   "label": "CONFIRMED",
-   "reason": "EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields",
-   "resource_id": "tombstone_17"
   }
  ],
  "input_issues": [],
@@ -207,18 +202,18 @@
    "attribution": "CONFIRMED",
    "category": "ACCOUNT_TOMBSTONE",
    "category_basis": "default category for identity_service",
-   "compliant": null,
-   "note": "EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields",
+   "compliant": true,
+   "note": "",
    "operations": [
     null,
     null,
-    null
+    "VERIFY_RECORD_REDACTED"
    ],
    "proof_file_id": "evidence_42",
    "required_action": "REDACT",
    "resource_id": "tombstone_17",
    "state": {
-    "exposure": "UNKNOWN",
+    "exposure": "STABLE_REFERENCE_ONLY",
     "flow_state": null,
     "observation_ids": [
      "evidence_42#img0"
@@ -243,6 +238,15 @@
    "state": "ABSENT",
    "step_no": 1,
    "system_id": "account_service"
+  },
+  {
+   "evidence_id": "evidence_42",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "phase": "VERIFICATION",
+   "resource_id": "tombstone_17",
+   "state": "REDACTED",
+   "step_no": 2,
+   "system_id": "identity_service"
   }
  ],
  "subject": {
