@@ -24,3 +24,21 @@ Result: samples unchanged (31/32, 178/178, 178/193, 19/32 — none of this round
 rows changed vs rc6: 4 (case_34 citation, case_526/528/531 +1 step each); 129 tests. Expected score effect: small and
 UNKNOWN in sign for X1, positive in expectation for X4 (the added check is in the reference whether the account is
 present or absent, if the A1 owner is right).
+
+# Round rc8 (from rc7 `3fa3254`)
+
+Audit against the October README and problem statement (both re-read from the official repository; the problem
+statement is byte-identical to ours) and the published BTS rubric. No model call (no key is configured), no output
+change.
+
+| Id | Hypothesis | Evidence that motivated it | Change | Test / benchmark | Regressions, side effects | Cost | Decision |
+|---|---|---|---|---|---|---|---|
+| P1 | A capacity rule (a case owns at most one resource per system) forces some AMBIGUOUS timing rows | no sample reference has two resources of one system in one case (111 case-system pairs) | none; probe `code/analysis/capacity_probe.py` | 283 AMBIGUOUS resources: 0 forced among rows with two or more candidate cases. 1 more (`account_294`) only if every worker row must belong to one of its candidates, and that assumption fails on the samples: `account_4857`'s only AMBIGUOUS candidate is case_32, whose reference does not include it (case_31 owns it) | — | 30 min | REJECTED: no gain. This is the third attack on timing-only ownership (after E1/ordering and E2); the line is closed |
+| P2 | The 3 NOT_DERIVABLE sample steps are recoverable from text the earlier search could not see | an earlier grep could not read compressed PDF text | none | the 4 PDF text layers, the 4-pass OCR text of the 11 screenshots and every other dataset file: `account_004`, `audit_record_6645` and `audit_record_5569` appear only in `sample_output.csv` | — | minutes | CONFIRMED not derivable |
+| P3 | The samples can decide the 6 pre-request D-SCOPE exclusions | the exclusions are a JUDGEMENT | none | 30 of 32 sample cases are single-request subjects, and the scope rule excludes 0 records among them, so the samples cannot separate "request window" from "every linked record". case_45: including its 5 excluded audit records would give it 6 security_service resources, against 0/32 sample cases with two in one system, so the exclusion is evidence-supported. case_34 `audit_record_3753` (linked only by a log line 9 days before the request): undecided; all 24 sample audit records are linked inside their window | — | 30 min | KEEP (case_45 evidence-supported; case_34 JUDGEMENT) |
+| P4 | Facts the interview needs are visible to the code judge | the October README: automated code evaluation ignores `.csv`, `.tsv`, `.json`, `.jsonl`, `.sql` and `.log` files | none | the results of 15 audits whose artifacts are JSON (coupling, cache, security, clean room, determinism, D-SCOPE review, M1 and others) are all quoted in shipped Markdown (evaluation_report.md, DESIGN.md or README.md) | — | 15 min | NO DEFECT |
+| P5 | The shipped design doc states the current status | DESIGN.md line 3 read "No production code yet"; §12 said PNG content is UNKNOWN | DESIGN.md status line; §12 keeps the Phase 0 text and adds a **Now:** note per changed limit | docs only; `sync_docs.py` copy; tests | — | 15 min | KEEP |
+| P6 | A trace label is consistent across cases | 26 resources owned by one case are labelled AMBIGUOUS for a rival case (e.g. `account_4857`: INFERRED_CLAIM for case_31, AMBIGUOUS for case_32) | none | 0 resources are owned by two cases; 37 of the 904 eval AMBIGUOUS pairs have a resource another case owns (867 unresolved); output unaffected, since AMBIGUOUS pairs emit no steps | relabelling would rewrite 553 traces for no output change | 15 min | DOCUMENTED, not changed |
+| P7 | An agent loop in the decision path would improve the architecture criterion | BTS: "Is this an agent, or a hardcoded workflow with LLM calls?" | none | needs live model calls (no key is configured); E2 measured 0/126 accepted on the samples | — | — | NOT RUN (blocked; JUDGEMENT that the deterministic core fits the task stands) |
+
+Result: output.csv byte-identical to rc7; samples unchanged (31/32, 178/178, 178/193, 19/32).

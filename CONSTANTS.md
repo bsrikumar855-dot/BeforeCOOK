@@ -129,6 +129,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/agent/state.py` | 3 | exposure rank STABLE_REFERENCE_ONLY | JUDGEMENT | which copy's exposure decides |
 | `code/analysis/backfill_usage_metadata.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/category_coverage.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
+| `code/analysis/capacity_probe.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/dscope_review.py` | 2,3600 | repository-root depth of this file; seconds per hour for the offset column | STANDARD | paths resolve outside the repo; offsets read in the wrong unit |
 | `code/analysis/compare_intent.py` | 2 | a sentence used <= 2 times marks a free-text (non-template) request | JUDGEMENT | which texts the C4 comparison treats as free text |
 | `code/analysis/compare_intent.py` | 90 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |

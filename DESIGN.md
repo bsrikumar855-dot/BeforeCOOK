@@ -1,7 +1,9 @@
 # DESIGN.md: Ghost Data Still Exists
 
-Status: **Phase 0 (data forensics) complete. No production code yet.**
-Every number below comes from `python code/analysis/profile_dataset.py` (section in brackets) unless it is labelled **INFERENCE**, **DECISION** or **UNKNOWN**.
+Status: **implemented and released.** The release candidates are listed in §14, and the current measured results and
+limits are in `code/evaluation/evaluation_report.md` (§1 samples, §7 limitations). A number tagged with a section
+in brackets comes from `python code/analysis/profile_dataset.py` (Phase 0 profiling). The change records in §11 and §14 give their own measurement source. **INFERENCE**,
+**DECISION** and **UNKNOWN** mark what is not measured.
 
 ---
 
@@ -536,12 +538,22 @@ Trade-off: rule 1 adds a step the reference may not contain; rule 2 keeps a row 
 
 ## 12. Known limits (as of Phase 0)
 
+Kept as written in Phase 0. The current limits are generated in `code/evaluation/evaluation_report.md` §7. Where a
+limit has since changed, a **Now:** note under it says how.
+
 - **PNG content is UNKNOWN** (11 files, origins: account_admin_portal, search_index_admin, integration_admin, analytics_platform, export_service, support_platform, backup_service, security_service, identity_service, object_storage, marketing_platform). No sample citation points at a PNG.
+  - **Now:** the 11 screenshots are extracted by the vision model, and every extracted id must appear in local
+    multi-pass OCR text (C9, C10). Still true: no sample citation points at a PNG (0/75).
 - **Activity-only attribution:** 284/518 eval cases have no evidence-linked account candidate near `reported_at`, with typically 3–6 unlinked candidates in ±3 h. Elimination may be ambiguous.
+  - **Now:** D-ATTR assignment and the A1 claim filter leave 131 eval deletion cases with an AMBIGUOUS primary
+    account (evaluation_report.md §4e).
 - **case_04 citation** cannot be explained by any rule tested here.
+  - **Now:** still the one rule-C miss (74/75, §5.6).
 - **Untested categories (C6: now covered by fixtures X6–X13, rule text only):** legal holds (0 sample answers include one; the legal register PDF lists orders for user_08/12/17/21/24/29 by order number only, and those sample answers contain no legal step). Also CACHE_ENTRY, EMAIL_DELIVERY_LOG, PRODUCT_TELEMETRY and SECONDARY_IDENTIFIER have no evidence shape.
 - **Unobservable rule conditions:** SUPPORT_MESSAGE "shared context" and SECURITY_AUDIT_LOG "within retention" are not observable as distinct values. Every observed support message with PII expects REDACT; every audit record expects PRESENT.
 - **Order tiebreak:** `resource_id` ordering inside one (phase, operation, system) is untested.
+  - **Now:** still untested on the samples, and 0 eval rows have two resources in one such group (rc7-X5), so the
+    choice changes no output.
 - **Representativeness:** the eval texts are template-built (375 distinct texts from 67 sentences, plus 10 free-text non-deletions). Sample cases 01–10 are hand-crafted and less representative of eval than 11–32.
 
 ---
