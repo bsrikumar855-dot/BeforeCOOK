@@ -121,6 +121,30 @@ def test_legacy_null_becomes_unknown_never_false():
     assert obs[1].exposure == "NO_IDENTIFIERS"
 
 
+def test_legacy_reuse_needs_a_shipped_prompt_and_the_same_image(tmp_path):
+    """rc9: a reply cached under another prompt version is reused only when that prompt ships in code/prompts/
+    (current or LEGACY_PROMPTS) and the image bytes match. Anything else is never mixed in, and each reuse is
+    recorded (run summary: image_legacy_replies_upgraded)."""
+    from agent.llm_client import ResponseCache
+    from agent.parsers.png_vlm import TASK, ImageExtractor
+    cache = ResponseCache(tmp_path)
+    ex = ImageExtractor(None, cache, universe(), ["ACCOUNT_TOMBSTONE"])
+    ex._shipped = {"pshipped00001"}
+    ef = EvidenceFile("ev_img", "evidence/images/x.png", "t", "2026-03-10T06:00:00Z", "png", sha256="a" * 64)
+    reply = {"records": [{"resource_id": "tombstone_4", "direct_identifiers_visible": None}]}
+
+    def entry(key: str, version: str, image_sha: str) -> None:
+        cache.put(TASK, key, {"key": key, "task": TASK, "prompt_version": version, "input_sha256": image_sha,
+                              "response": reply})
+    entry("k1_unshipped", "punshipped001", "a" * 64)
+    entry("k2_other_image", "pshipped00001", "b" * 64)
+    assert ex._legacy_entry(ef) is None and ex.legacy_used == []
+    entry("k3_shipped", "pshipped00001", "a" * 64)
+    hit = ex._legacy_entry(ef)
+    assert hit["key"] == "k3_shipped" and hit["response"]["records"][0]["direct_identifiers_visible"] == "UNKNOWN"
+    assert ex.legacy_used == [{"file_id": "ev_img", "prompt_version": "pshipped00001"}]
+
+
 def test_image_category_claim_must_fit_the_system():
     from agent.parsers.png_vlm import ImageExtractor
     ex = ImageExtractor(None, None, universe(), ["USER_PROFILE", "ACCOUNT_TOMBSTONE"])

@@ -107,11 +107,11 @@
      "time": "2026-09-15T11:51:46Z"
     }
    ],
-   "in_scope": false,
+   "in_scope": true,
    "label": "CONFIRMED",
    "rationale": "direct identity link via SAME_RECORD, TRACE_JOIN",
    "resource_id": "support_9538",
-   "scope_reason": "identity evidence only outside the request lifecycle (earlier/later episode)",
+   "scope_reason": "shown on the subject's own page in evidence_04, captured within [requested_at, audit_at]",
    "system_id": "support_platform"
   }
  ],
@@ -123,11 +123,6 @@
    "label": "CONFIRMED",
    "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
    "resource_id": "audit_record_3753"
-  },
-  {
-   "label": "CONFIRMED",
-   "reason": "OUT_OF_SCOPE: identity evidence only outside the request lifecycle (earlier/later episode)",
-   "resource_id": "support_9538"
   }
  ],
  "input_issues": [],
@@ -179,6 +174,36 @@
     "system_id": "account_service"
    },
    "system_id": "account_service"
+  },
+  {
+   "attribution": "CONFIRMED",
+   "category": "SUPPORT_ATTACHMENT",
+   "category_basis": "shape: attachment",
+   "compliant": false,
+   "note": "",
+   "operations": [
+    "REPORT_REMAINING_RECORD",
+    "DELETE_RECORD",
+    "VERIFY_RECORD_ABSENT"
+   ],
+   "proof_file_id": "evidence_04",
+   "required_action": "DELETE",
+   "resource_id": "support_9538",
+   "state": {
+    "exposure": "DIRECT_IDENTIFIERS",
+    "flow_state": null,
+    "observation_ids": [
+     "evidence_01#L25",
+     "evidence_04#ocr:support_9538"
+    ],
+    "presence": "PRESENT",
+    "proof_basis": "MENTION",
+    "proof_file_id": "evidence_04",
+    "resource_id": "support_9538",
+    "restore_state": null,
+    "system_id": "support_platform"
+   },
+   "system_id": "support_platform"
   }
  ],
  "status": "INCOMPLETE",
@@ -193,13 +218,31 @@
    "system_id": "account_service"
   },
   {
+   "evidence_id": "evidence_04",
+   "operation": "REPORT_REMAINING_RECORD",
+   "phase": "FINDING",
+   "resource_id": "support_9538",
+   "state": "PRESENT",
+   "step_no": 2,
+   "system_id": "support_platform"
+  },
+  {
    "evidence_id": "",
    "operation": "DELETE_RECORD",
    "phase": "REMEDIATION",
    "resource_id": "account_5762",
    "state": "ABSENT",
-   "step_no": 2,
+   "step_no": 3,
    "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "DELETE_RECORD",
+   "phase": "REMEDIATION",
+   "resource_id": "support_9538",
+   "state": "ABSENT",
+   "step_no": 4,
+   "system_id": "support_platform"
   },
   {
    "evidence_id": "",
@@ -207,8 +250,17 @@
    "phase": "VERIFICATION",
    "resource_id": "account_5762",
    "state": "ABSENT",
-   "step_no": 3,
+   "step_no": 5,
    "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "support_9538",
+   "state": "ABSENT",
+   "step_no": 6,
+   "system_id": "support_platform"
   }
  ],
  "subject": {

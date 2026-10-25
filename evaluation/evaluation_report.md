@@ -76,7 +76,7 @@ Residual steps by tag: ATTRIBUTION 12, NOT_DERIVABLE 3
 ## 2. Attribution
 
 - Labelled (case, resource) pairs from the sample answers: 111; correctly attributed (CONFIRMED or INFERRED, in scope): 96/111 (86.5%).
-- Coverage (non-ambiguous share of candidate pairs): samples 96/137 (70.1%); eval 1569/2515 (62.4%).
+- Coverage (non-ambiguous share of candidate pairs): samples 96/137 (70.1%); eval 1570/2515 (62.4%).
 - INFERRED precision (pairs whose resource appears in some sample answer): 12/12 (100.0%); UNEVALUABLE INFERRED pairs (resource in no sample answer): 135.
 - INFERRED recall over labelled pairs without a direct identity link: 12/27 (44.4%).
 - Expected sample pairs dropped by the AMBIGUOUS/CONFLICT output policy: 12.
@@ -88,8 +88,8 @@ Residual steps by tag: ATTRIBUTION 12, NOT_DERIVABLE 3
 | Label | Samples | Eval (518) |
 |---|---|---|
 | AMBIGUOUS | 38 | 904 |
-| CONFIRMED | 84 | 1434 |
-| CONFIRMED/OUT_OF_SCOPE | 3 | 41 |
+| CONFIRMED | 84 | 1435 |
+| CONFIRMED/OUT_OF_SCOPE | 3 | 40 |
 | CONFLICT | 0 | 1 |
 | INFERRED | 5 | 40 |
 | INFERRED_CLAIM | 7 | 95 |
@@ -108,7 +108,7 @@ Expected pairs dropped by the policy: case_03/analytics_9406, case_04/analytics_
 
 - Status distribution: {'COMPLETE': 153, 'INCOMPLETE': 355, 'NOT_APPLICABLE': 10}
 - Intent paths: {'model_deletion->DELETION': 508, 'model_non_deletion+classify_corroborates->NOT_APPLICABLE': 10}
-- Excluded resource reasons: {'AMBIGUOUS': 904, 'CONFLICT': 1, 'OUT_OF_SCOPE': 41, 'UNKNOWN_STATE': 3}
+- Excluded resource reasons: {'AMBIGUOUS': 904, 'CONFLICT': 1, 'OUT_OF_SCOPE': 40}
 - Degraded cases (INCOMPLETE,[]): 1 ['case_63']
 - Evidence files: {'EXTRACTED': 11, 'PARSED': 79, 'TEXT_LAYER': 4}; image rows accepted 24, dropped 22, failed files 0
 
@@ -151,7 +151,7 @@ Categories with no sample coverage are exercised by fixtures X6–X13 (section 4
 | SEARCH_INDEX_ENTRY | 270 | 270 | 12 |
 | CACHE_ENTRY | 0 | 0 | 0 |
 | SUPPORT_MESSAGE | 155 | 155 | 8 |
-| SUPPORT_ATTACHMENT | 27 | 27 | 3 |
+| SUPPORT_ATTACHMENT | 28 | 28 | 3 |
 | ANALYTICS_PROFILE | 81 | 81 | 5 |
 | PRODUCT_TELEMETRY | 0 | 0 | 0 |
 | USER_EXPORT | 31 | 31 | 2 |
@@ -232,11 +232,11 @@ reference-vs-output diff. Timing-only sample pairs (AMBIGUOUS at baseline): 19.
 | Variant | Status | Precision | Recall | Sequence | Timing-only resolved / correct | New sample assignments: correct / incorrect | Prev.-correct steps broken | Prev.-correct statuses changed | Eval rows changed | Eval status flips | Eval AMBIGUOUS pairs / resources / cases | Eval assignments | Label-free checks |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baseline | 31/32 | 171/171 | 171/193 | 16/32 | 0 / 0 | 0 / 0 | 0 | 0 | 0 | 0 | 1247 / 351 / 381 | 40 {'INFERRED': 40} | pass |
-| +A1 claim consistency | 31/32 | 178/178 | 178/193 | 19/32 | 7 / 7 | 7 / 0 | 0 | 0 | 92 | 0 | 904 / 277 / 347 | 135 {'INFERRED': 40, 'INFERRED_CLAIM': 95} | pass |
-| +A1+A2 offset bands | 30/32 | 177/177 | 177/193 | 18/32 | 7 / 7 | 7 / 0 | 1 | 1 | 104 | 0 | 874 / 265 / 346 | 147 {'INFERRED': 40, 'INFERRED_CLAIM': 95, 'INFERRED_OFFSET': 12} | pass |
-| +A1+A2+A3 joint | 30/32 | 177/177 | 177/193 | 18/32 | 7 / 7 | 7 / 0 | 1 | 1 | 104 | 0 | 874 / 265 / 346 | 147 {'INFERRED': 40, 'INFERRED_CLAIM': 95, 'INFERRED_OFFSET': 12} | pass |
-| +A1+A2+A3+ordering | 30/32 | 179/180 | 179/193 | 19/32 | 9 / 9 | 9 / 1 | 1 | 1 | 119 | 0 | 835 / 249 / 340 | 164 {'INFERRED': 40, 'INFERRED_CLAIM': 95, 'INFERRED_OFFSET': 12, 'INFERRED_ORDER': 17} | pass |
-| +A1+ordering (extra) | 31/32 | 180/181 | 180/193 | 20/32 | 9 / 9 | 9 / 1 | 0 | 0 | 107 | 0 | 865 / 261 / 341 | 152 {'INFERRED': 40, 'INFERRED_CLAIM': 95, 'INFERRED_ORDER': 17} | pass |
+| +A1 claim consistency | 31/32 | 178/178 | 178/193 | 19/32 | 7 / 7 | 7 / 0 | 0 | 0 | 95 | 0 | 904 / 277 / 347 | 135 {'INFERRED': 40, 'INFERRED_CLAIM': 95} | pass |
+| +A1+A2 offset bands | 30/32 | 177/177 | 177/193 | 18/32 | 7 / 7 | 7 / 0 | 1 | 1 | 107 | 0 | 874 / 265 / 346 | 147 {'INFERRED': 40, 'INFERRED_CLAIM': 95, 'INFERRED_OFFSET': 12} | pass |
+| +A1+A2+A3 joint | 30/32 | 177/177 | 177/193 | 18/32 | 7 / 7 | 7 / 0 | 1 | 1 | 107 | 0 | 874 / 265 / 346 | 147 {'INFERRED': 40, 'INFERRED_CLAIM': 95, 'INFERRED_OFFSET': 12} | pass |
+| +A1+A2+A3+ordering | 30/32 | 179/180 | 179/193 | 19/32 | 9 / 9 | 9 / 1 | 1 | 1 | 124 | 0 | 835 / 249 / 340 | 164 {'INFERRED': 40, 'INFERRED_CLAIM': 95, 'INFERRED_OFFSET': 12, 'INFERRED_ORDER': 17} | pass |
+| +A1+ordering (extra) | 31/32 | 180/181 | 180/193 | 20/32 | 9 / 9 | 9 / 1 | 0 | 0 | 112 | 0 | 865 / 261 / 341 | 152 {'INFERRED': 40, 'INFERRED_CLAIM': 95, 'INFERRED_ORDER': 17} | pass |
 
 Incorrect resolutions and breakages, verbatim from the diff: +A1+A2 offset bands: incorrect [], broken [['case_02', 'account_002', 'VERIFY_RECORD_ABSENT']], statuses [['case_02', 'COMPLETE', 'INCOMPLETE', 'COMPLETE']]; +A1+A2+A3 joint: incorrect [], broken [['case_02', 'account_002', 'VERIFY_RECORD_ABSENT']], statuses [['case_02', 'COMPLETE', 'INCOMPLETE', 'COMPLETE']]; +A1+A2+A3+ordering: incorrect [['case_23', 'account_9155', 'INFERRED_ORDER', "reference account of case_23 is ['account_410']"]], broken [['case_02', 'account_002', 'VERIFY_RECORD_ABSENT']], statuses [['case_02', 'COMPLETE', 'INCOMPLETE', 'COMPLETE']]; +A1+ordering (extra): incorrect [['case_23', 'account_9155', 'INFERRED_ORDER', "reference account of case_23 is ['account_410']"]], broken [], statuses [].
 
@@ -245,7 +245,7 @@ Shipped: **+A1** (the only variant with 0 incorrect resolutions, 0 broken steps,
 A1 falsification report (label-free):
 
 - Deletion cases: 540; with an account hard-linked independently: 254.
-- A1 on hard-linked accounts: {'COMPLETE->SUCCESS': 133, 'NOT_STARTED->FAILED': 50, 'PARTIALLY_COMPLETE->PARTIAL': 69}, inconsistent: 0.
+- A1 on hard-linked accounts: {'NOT_STARTED->FAILED': 50, 'COMPLETE->SUCCESS': 133, 'PARTIALLY_COMPLETE->PARTIAL': 69}, inconsistent: 0.
 - Candidate edges removed by A1 (eval + samples): 264; CLAIM_CONFLICT cases: 0.
 - window_-3h_+3h: deletion cases with 0 consistent account candidates before elimination 0, after elimination 0; free candidates per case (5 = 5+, cases without a hard-linked account) before A1 {'0': 10, '1': 39, '2': 54, '3': 113, '4': 24, '5': 46}, after A1 {'0': 10, '1': 114, '2': 74, '3': 66, '4': 11, '5': 11}.
 - window_-3h_+1h: deletion cases with 0 consistent account candidates before elimination 1, after elimination 0; free candidates per case (5 = 5+, cases without a hard-linked account) before A1 {'0': 11, '1': 40, '2': 52, '3': 114, '4': 24, '5': 45}, after A1 {'0': 11, '1': 114, '2': 75, '3': 64, '4': 11, '5': 11}.
@@ -282,6 +282,8 @@ A2 offset bands (from the +A1+A2 run; CONFIRMED pairs only):
 
 Eval deletion cases whose primary account is still AMBIGUOUS (no account step): 131.
 
+Their account candidates carry 366 edges by kind {'TIMING': 366}. Classes: {'AMBIGUOUS': 131}. Candidates no other case owns, per case: {2: 81, 3: 34, 4: 8, 5: 2, 6: 6}. A case owns one account delete per burst, so two or more equally supported free candidates leave the owner undecided.
+
 ## 4f. Round 6 eval-side audits
 
 Conditional-rule branches (`code/evaluation/rule_branch_audit.py`; branch from raw fields at audit_at; sample columns compare our operations with the reference for the same resource):
@@ -292,7 +294,7 @@ Conditional-rule branches (`code/evaluation/rule_branch_audit.py`; branch from r
 | rule_05 | SUPPORT_MESSAGE | TRUE | 43 | 2 | {'agree': 2} | {'VERIFY_RECORD_REDACTED': 14, 'REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED': 31} |
 | rule_05 | SUPPORT_MESSAGE | UNKNOWN | 64 | 3 | {'agree': 3} | {'REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED': 54, 'VERIFY_RECORD_REDACTED': 13} |
 | rule_06 | SUPPORT_ATTACHMENT | TRUE | 22 | 0 | - | {'REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT': 22} |
-| rule_06 | SUPPORT_ATTACHMENT | UNKNOWN | 5 | 3 | {'agree': 3} | {'REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT': 8} |
+| rule_06 | SUPPORT_ATTACHMENT | UNKNOWN | 6 | 3 | {'agree': 3} | {'REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT': 9} |
 | rule_07 | ANALYTICS_PROFILE | FALSE | 8 | 0 | - | {'VERIFY_RECORD_ANONYMIZED': 8} |
 | rule_07 | ANALYTICS_PROFILE | TRUE | 73 | 5 | {'agree': 5} | {'REPORT_EXPOSED_PII + ANONYMIZE_RECORD + VERIFY_RECORD_ANONYMIZED': 78} |
 | rule_08 | PRODUCT_TELEMETRY | - | 0 | 0 | - | - |
@@ -303,11 +305,11 @@ Conditional-rule branches (`code/evaluation/rule_branch_audit.py`; branch from r
 | rule_13 | LEGAL_HOLD_RECORD | UNKNOWN | 3 | 0 | - | {'VERIFY_RECORD_PRESENT': 3} |
 | rule_14 | BACKUP_ARCHIVE | TRUE | 59 | 6 | {'agree': 6} | {'REPORT_RESTORE_RISK + BLOCK_RESTORE + VERIFY_RESTORE_BLOCKED': 29, 'VERIFY_RESTORE_BLOCKED': 36} |
 | rule_15 | ACCOUNT_TOMBSTONE | TRUE | 8 | 2 | {'agree': 2} | {'VERIFY_RECORD_REDACTED': 5, 'REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED': 5} |
-| rule_15 | ACCOUNT_TOMBSTONE | UNKNOWN | 1 | 0 | - | {'no step (EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields)': 1} |
+| rule_15 | ACCOUNT_TOMBSTONE | UNKNOWN | 1 | 0 | - | {'VERIFY_RECORD_REDACTED': 1} |
 
-Citation exposure (`code/evaluation/citation_exposure.py`): cited eval steps by rule-C path {'i_mention': 1061, 'ii_full_snapshot': 34}; fallback (full-snapshot) citations in 34 cases; with a stronger admissible capture: 0.
+Citation exposure (`code/evaluation/citation_exposure.py`): cited eval steps by rule-C path {'i_mention': 1063, 'ii_full_snapshot': 34}; fallback (full-snapshot) citations in 34 cases; with a stronger admissible capture: 0.
 
-Distribution sanity (`code/evaluation/distribution_sanity.py`): steps per case reference {'mean': 6.03, 'median': 5.0, 'min': 1, 'max': 14} vs eval {'mean': 5.92, 'median': 6.0, 'min': 0, 'max': 14}; VERIFY_RECORD_PRESENT share 0.75 vs 0.819; restore 0.188 vs 0.116; flow 0.281 vs 0.287; eval cases with operations unseen in the reference: 0; INCOMPLETE findings without their remediation and check: 0.
+Distribution sanity (`code/evaluation/distribution_sanity.py`): steps per case reference {'mean': 6.03, 'median': 5.0, 'min': 1, 'max': 14} vs eval {'mean': 5.93, 'median': 6.0, 'min': 0, 'max': 14}; VERIFY_RECORD_PRESENT share 0.75 vs 0.819; restore 0.188 vs 0.116; flow 0.281 vs 0.287; eval cases with operations unseen in the reference: 0; INCOMPLETE findings without their remediation and check: 0.
 
 Independent re-derivation (24 stratified eval cases chosen before any answer existed; an agent that read only the problem statement and dataset/):
 
@@ -350,9 +352,9 @@ statuses, NOT_APPLICABLE = [], the 7 step keys, phase/operation/state triples, c
 COMPLETE = verification only and cited, INCOMPLETE future steps uncited, citations exist and are <= audit_at,
 INCOMPLETE [] only with NO_ATTRIBUTABLE_RESOURCE.
 
-- output.csv: 518 rows {'INCOMPLETE': 355, 'COMPLETE': 153, 'NOT_APPLICABLE': 10}, 3006 steps; violations: 0
+- output.csv: 518 rows {'INCOMPLETE': 355, 'COMPLETE': 153, 'NOT_APPLICABLE': 10}, 3012 steps; violations: 0
 - INCOMPLETE [] rows: ['case_63']
-- Negative control: 17/17 injected defect classes caught (header, row_count, id_set, row_order, status, json, not_applicable_steps, incomplete_empty, step_keys, step_no, triple, complete_phase, citation_missing, future_step_cited, citation_unknown, citation_after_audit, ordering)
+- Negative control: 18/18 injected defect classes caught (header, row_count, id_set, row_order, case_id_sort, status, json, not_applicable_steps, incomplete_empty, step_keys, step_no, triple, complete_phase, citation_missing, future_step_cited, citation_unknown, citation_after_audit, ordering)
 
 ### Security pass (G8, `code/evaluation/security_audit.py`)
 
@@ -360,51 +362,51 @@ Every regex in code/main.py and code/agent/** run on ten 1 MB adversarial lines 
 
 | Where | Pattern | Worst time (s) | Slowest input | Result |
 |---|---|---|---|---|
-| code/agent/attribution.py:606 | `non-deletion` | 0.019 | prefix_repeated | PASS |
-| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.358 | letters | PASS |
-| code/agent/explain.py:46 | `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z\|[+-]\d{2}:\d{2})` | 0.052 | digits | PASS |
-| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.065 | prefix_repeated | PASS |
-| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.122 | email_like | PASS |
+| code/agent/attribution.py:681 | `non-deletion` | 0.02 | prefix_repeated | PASS |
+| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.465 | letters | PASS |
+| code/agent/explain.py:46 | `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z\|[+-]\d{2}:\d{2})` | 0.048 | digits | PASS |
+| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.072 | random_printable | PASS |
+| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.071 | random_printable | PASS |
 | code/agent/identity.py:18 | `^\+\d[\d ()\-]{6,}$` | 0.0 | letters | PASS |
-| code/agent/identity.py:20 | `[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}){0,31}` | 0.311 | prefix_repeated | PASS |
-| code/agent/identity.py:23 | `[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?` | 0.356 | prefix_repeated | PASS |
-| code/agent/identity.py:24 | `[A-Za-z]{2,24}` | 0.193 | words_underscores | PASS |
-| code/agent/parsers/__init__.py:31 | `linked (\S+) \(([^)]+)\) to (\S+?) and (\S+?)[.;]\|confirmed (\S+) \(([^)]+)\) belongs only` | 0.022 | words_underscores | PASS |
-| code/agent/parsers/__init__.py:37 | `^(.*)_\d+$` | 0.028 | separators | PASS |
+| code/agent/identity.py:20 | `[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}){0,31}` | 0.216 | prefix_repeated | PASS |
+| code/agent/identity.py:23 | `[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?` | 0.322 | prefix_repeated | PASS |
+| code/agent/identity.py:24 | `[A-Za-z]{2,24}` | 0.216 | words_underscores | PASS |
+| code/agent/parsers/__init__.py:31 | `linked (\S+) \(([^)]+)\) to (\S+?) and (\S+?)[.;]\|confirmed (\S+) \(([^)]+)\) belongs only` | 0.022 | id_like | PASS |
+| code/agent/parsers/__init__.py:37 | `^(.*)_\d+$` | 0.022 | id_like | PASS |
 | code/agent/parsers/file_checks.py:68 | `^\s*BEGIN(\s+TRANSACTION)?\s*;` | 0.0 | letters | PASS |
-| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.14 | letters_spaces | PASS |
+| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.098 | letters_spaces | PASS |
 | code/agent/parsers/file_checks.py:70 | `COMMIT\s*;$` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/handover_text.py:11 | `^-\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(.+?)\s*$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:18 | `^(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)\s+(.*)$` | 0.0 | letters | PASS |
-| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.066 | letters_spaces | PASS |
+| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.088 | email_like | PASS |
 | code/agent/parsers/log_lines.py:21 | `^<\d+>1 (\S+) (\S+) (\S+) - - (.*)$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:22 | `^\[(\w+)\] \[([^\]]+)\] \[([^\]]+)\] ([a-z_]+): (.*)$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:23 | `^\\| (\w+) \\| ([^\|]+?) \\| ([^\|]+?) \\| ([a-z_]+) \\| (.*)$` | 0.0 | letters | PASS |
-| code/agent/parsers/ocr_grounding.py:34 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.514 | letters_spaces | PASS |
-| code/agent/parsers/ocr_grounding.py:131 | `(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}` | 0.074 | random_printable | PASS |
-| code/agent/parsers/ocr_grounding.py:132 | `(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])` | 0.107 | id_like | PASS |
-| code/agent/parsers/ocr_grounding.py:135 | `[^\s@]@[^\s@]` | 0.13 | email_like | PASS |
-| code/agent/parsers/ocr_grounding.py:106 | `` | None | None | DYNAMIC: covered by its builder or not a |
-| code/agent/parsers/ocr_grounding.py:117 | `[ .]` | 0.4 | separators | PASS |
-| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.074 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:35 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.459 | letters_spaces | PASS |
+| code/agent/parsers/ocr_grounding.py:132 | `(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}` | 0.086 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:133 | `(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])` | 0.052 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:136 | `[^\s@]@[^\s@]` | 0.143 | email_like | PASS |
+| code/agent/parsers/ocr_grounding.py:107 | `` | None | None | DYNAMIC: covered by its builder or not a |
+| code/agent/parsers/ocr_grounding.py:118 | `[ .]` | 0.421 | separators | PASS |
+| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.08 | words_underscores | PASS |
 | code/agent/parsers/pdf_text.py:43 | `<<(.*)>>\s*stream\r?\n(.*?)\r?\n?endstream` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.005 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.209 | words_underscores | PASS |
-| code/agent/parsers/pdf_text.py:58 | `beginbfchar` | 0.024 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:59 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.024 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:62 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.006 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.007 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.182 | words_underscores | PASS |
+| code/agent/parsers/pdf_text.py:58 | `beginbfchar` | 0.033 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:59 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.002 | letters | PASS |
+| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.025 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:62 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.003 | words_underscores | PASS |
+| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.007 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:74 | `/ToUnicode (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.291 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:73 | `/Name /([^\s/]+)` | 0.009 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:81 | `/Contents (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
-| code/agent/parsers/png_vlm.py:23 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.192 | words_underscores | PASS |
-| code/agent/parsers/png_vlm.py:25 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.247 | words_underscores | PASS |
-| code/agent/parsers/sql_snapshots.py:27 | `_replica_[a-z_]+$` | 0.004 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.271 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:73 | `/Name /([^\s/]+)` | 0.005 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:81 | `/Contents (\d+) 0 R` | 0.005 | prefix_repeated | PASS |
+| code/agent/parsers/png_vlm.py:23 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.14 | words_underscores | PASS |
+| code/agent/parsers/png_vlm.py:25 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.268 | words_underscores | PASS |
+| code/agent/parsers/sql_snapshots.py:27 | `_replica_[a-z_]+$` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/sql_snapshots.py:36 | `^-- Captured at:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
 | code/agent/parsers/sql_snapshots.py:38 | `^-- Database topology:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
-| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.037 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.042 | random_printable | PASS |
 
 Seven patterns were quadratic before G8 (each > 30 s on a 1 MB line): the email pattern, the log key=value pattern, both screenshot id token patterns, and three lazy PDF block patterns. Fixed by RFC 5321 bounds, word-start lookbehinds, bounded id prefixes and a linear block scan; output.csv and every trace unchanged.
 
@@ -457,10 +459,85 @@ Hostile evidence fixtures (temporary dataset copies, run end to end):
 | E1-B | Burst segmentation, gap > 25 min (unlabelled histogram trough) | same | same | 1 correct, 1 incorrect, 17 still AMBIGUOUS; 0 steps broken; 15 eval rows would change (UNVERIFIED) | REVERTED (1 incorrect) |
 | C2 | Tri-state `direct_identifiers_visible` (+ reason, null rejected, legacy null -> UNKNOWN); screenshot category claims must fit the system; vision fallback gemini-3.5-flash | tombstone_17 semantics | a screenshot-derived treatment | evidence_42 re-extracted: tombstone_17 unchanged (exposure UNKNOWN, no step); without the category check the new reply would have turned the tombstone into a DELETE (caught, rejected); 0 rows changed | SHIPPED (ef0f478) |
 | E2 | Tool-calling investigator + deterministic verifier (INFERRED_AGENT) | remaining AMBIGUOUS/CONFLICT pairs | any accepted wrong proposal | 11 sample batches, 28 model calls, 17 tool calls, 41,780 tokens; 126 proposals, all AMBIGUOUS; 0 accepted. Verifier negative control: 3/3 wrong proposals rejected (unit test) | NOT SHIPPED (no metric moves; eval run skipped) |
+| R5-A1 | Claim-consistency filter on timing-only account candidates (worker result must fit the case's reported status) | 19 timing-only AMBIGUOUS sample pairs | a wrong owner | 7 resolved, 7 correct, 0 incorrect; recall 171 -> 178/193, sequence 16 -> 19/32 | SHIPPED (rc2) |
+| R5-A2 / ordering | Offset bands; ordering tiebreak on residual ties | same | same | A2 removed case_02's correct account_002; ordering made 1 wrong owner (case_23 -> account_9155) | REJECTED |
+| F1 | Screenshot proof that a tombstone holds no direct identifiers (own detail page, whole-image OCR scan) | tombstone_17 | redaction claimed from a partial view | 1 eligible record; case_46 +VERIFY_RECORD_REDACTED; 0 sample rows | SHIPPED (rc4) |
+| rc5-A1 | Custom-case fixtures written with LF line endings | the evaluation command rewrote 19 committed files | none | 0 rows; a fresh build equals the committed fixtures | SHIPPED (rc5) |
+| rc6-P1 | An OCR id on the subject's own page captured inside the window is scope evidence for an already-owned record | case_34 support_9538 | an OCR misread attached to someone | 1 eval row, 0 sample rows; an OCR id alone attributes nothing | SHIPPED (rc6) |
+| rc7-X4 | Undecidable state: no finding, but the policy's required check in INCOMPLETE plans (dropped in COMPLETE) | attributed records with no admissible state | a check on a wrongly attributed record | 3 eval rows +VERIFY_RECORD_ABSENT ""; 0 sample rows; statuses unchanged | SHIPPED (fix/rc7) |
+| rc7-X1 | An OCR mention of a known resource counts for citation rule C (never for state) | case_34 support_9538 citation | a citation to a misread | 1 step: evidence_01 -> evidence_04; 0 sample rows | SHIPPED (fix/rc7) |
+| rc7-D1 | attribution_variants.json made byte-deterministic; stale artifacts re-run | artifact drift | none | byte-identical under 3 hash seeds; M1 now 904 pairs / 347 cases (the committed 1,247 / 381 predated A1) | SHIPPED (fix/rc7) |
+| rc7-R1 | attribution.attribute split into named phases; type annotations (163/165 decision functions) | readability | any behaviour | output.csv, 553 traces and all 6 attribution variants byte-identical | SHIPPED (fix/rc7) |
 
-- **Known remaining failure class.** 19 of 22 missing sample steps are AMBIGUOUS attributions (interleaved deletion
-  bursts), which by policy produce no steps; 3 are records found in no parsed source. Individual wrong rows are not
-  fixed until reviewed.
+- **Known remaining failure class (generated from section 1).** 15 reference sample steps are still missing: ATTRIBUTION 12, NOT_DERIVABLE 3. ATTRIBUTION steps belong to AMBIGUOUS pairs, which by policy produce no steps; NOT_DERIVABLE resources appear in no participant file.
+
+## 7. Known limitations and judgement calls
+
+Each item says what the code does today, the evidence behind it, and what is untested. Labels: **MEASURED** (computed from committed files), **JUDGEMENT** (a reasoned choice the spec does not settle), **UNKNOWN** (needs the hidden reference). No item below changes output logic; the numbers are recomputed on every evaluation run.
+
+### A. Primary account not attributable (AMBIGUOUS): the account step is omitted
+
+- **MEASURED.** 131 eval deletion cases have an in-scope account candidate whose only link is timing inside a shared deletion burst, with several equally supported owners; the code emits no step for that account (`attribution.attribute`: AMBIGUOUS and CONFLICT pairs produce no steps).
+- **MEASURED (M1, `measurements.json`).** Over 904 AMBIGUOUS eval pairs in 347 cases: 0 withheld resources are proven PRESENT at audit_at, so 0 COMPLETE rows would flip to INCOMPLETE if every pair were assigned to the case; 0 resources in 0 cases have no admissible state either way.
+- **MEASURED (samples).** 5 reference account steps are missing for this reason (case_10 account_010, case_23 account_410, case_28 account_5482, case_29 account_7012, case_30 account_4163); they are part of the recall gap and of the exact-sequence misses on those cases.
+- **MEASURED (rejected tiebreak, `attribution_variants.json`).** Adding the E1-A ordering tiebreak to A1 made 10 sample assignments instead of 7; 1 was wrong: case_23 → account_9155 (reference account of case_23 is ['account_410']). On an INCOMPLETE case that wrong owner would plan DELETE_RECORD against another person's account, so the variant failed the zero-incorrect SHIP rule (DESIGN.md R5-ordering).
+- **JUDGEMENT.** Omission costs recall on the subject's own record; a wrong assignment both misses that record and acts on someone else's. Omission is the conservative failure. The effect on the official score is **UNKNOWN**.
+
+### B. case_63: INCOMPLETE with an empty plan
+
+- **MEASURED.** Output: `INCOMPLETE`, steps `[]`, trace reason_code `NO_ATTRIBUTABLE_RESOURCE`. Only candidate: marketing_001 — CONFLICT: record's own identifiers ['email:sj.park@naver.com', 'phone:+82 10-5837-9451'] do not belong to the subject, while CATALOG_LINK links it to the subject.
+- Raw evidence and the independent re-derivation (AMBIGUOUS_SPEC: "Both agree marketing_001 is not attributable (its screenshot evidence_60 names Soo-jin Park / sj.park@naver.com, not the subject; only catalog claim activity_4008 links it). Nothing remains: COMPLETE requires 'only verification steps proving the current state' and an empty COMPLETE proves nothing, so we keep INCOMPLETE [] with reason_code NO_ATTRIBUTABLE_RESOURCE (approved policy C5/M2(b)).").
+- **JUDGEMENT (C5/M2(b)).** The spec allows COMPLETE only with "verification steps proving the current state" (problem_statement.md, Required Output), and no record of this subject can be shown compliant, so the row is INCOMPLETE; the plan is empty because no in-scope record is attributable. The validator accepts an empty INCOMPLETE row only with this reason code. The independent reading chose COMPLETE []. Which one the grader expects is **UNKNOWN**.
+
+### C. F1: screenshot proof that a tombstone holds no direct identifiers
+
+- **MEASURED.** case_46: `tombstone_17` VERIFY_RECORD_REDACTED cites evidence_42 (`evidence/images/deleted_account_reference_20260310.png`, captured 2026-03-10T06:00:00Z, audit_at 2026-03-11T08:00:00Z; admissible because captured ≤ audit_at). Check outcome: proven=True, "own detail page of user_17 (labels ['overview', 'created', 'owner', 'reference type']); no email, phone or hash in multi-pass OCR".
+- What the check requires (`ocr_grounding.absence_proof`): exactly one extracted record; its id grounded in the multi-pass OCR text; no other resource id on the page; at least three detail-field labels after the header id; and no email, '@' between non-space characters, phone-shaped or 64-hex token anywhere in the OCR text.
+- **JUDGEMENT.** The spec says tombstones keep the stable reference while "direct identifiers such as name, email, phone, and email hash must be removed", but it does not say when a screenshot proves that. F1 treats the record's own detail page with no identifier anywhere on it as proof of redaction. Untested: the samples have no screenshot-only tombstone, OCR could miss small text, and a page could omit identifier fields that are still stored. Grader agreement is **UNKNOWN**.
+
+### D. D-SCOPE: records linked to the subject only outside the request's lifecycle are excluded
+
+- What the code does (`attribution.CaseContext.in_lifecycle`): a hard-linked record enters the case only through identity evidence dated inside [requested_at, audit_at], through the case's own deletion burst, or (rc6-P1, `attribution.page_scope`) through an admissible screenshot captured inside that window that shows the record's id on a page whose extracted records all belong to the subject. The page is scope evidence only: the record must already be hard-linked to the subject elsewhere. Excluded records produce no step (trace reason `OUT_OF_SCOPE`).
+- Basis: on the samples the rule keeps 84/84 expected hard- or catalog-linked pairs and excludes exactly the 3 pairs the reference omits (object_19, account_6523, tombstone_17), all from the same user's other request (DESIGN.md D-SCOPE). The spec does not define a request episode.
+- **MEASURED.** 20 eval cases exclude at least one record this way; in 16 of them the subject has no other request in the dataset. That single-request situation never occurs in the samples, so the rule is **untested** there and its correctness is **UNKNOWN**.
+
+| Case | Subject's other requests | Status | Excluded records (side of the window their identity evidence falls) |
+|---|---|---|---|
+| case_33 | case_52 | INCOMPLETE | account_2373 (after audit_at), audit_record_8486 (after audit_at), export_1260 (before requested_at), search_2352 (after audit_at) |
+| case_34 | none | INCOMPLETE | audit_record_3753 (before requested_at) |
+| case_35 | none | INCOMPLETE | account_8491 (after audit_at), audit_record_8925 (after audit_at) |
+| case_39 | none | INCOMPLETE | account_8926 (after audit_at), audit_record_7301 (after audit_at), search_4801 (after audit_at) |
+| case_45 | none | COMPLETE | audit_record_001 (before requested_at), audit_record_002 (before requested_at), audit_record_004 (before requested_at), audit_record_005 (before requested_at), audit_record_006 (before requested_at) |
+| case_46 | case_17 | COMPLETE | account_4092 (after audit_at), audit_record_1797 (after audit_at), backup_3245 (after audit_at) |
+| case_50 | none | INCOMPLETE | account_3270 (after audit_at), audit_record_5080 (after audit_at), search_4639 (after audit_at) |
+| case_52 | case_33 | INCOMPLETE | account_2373 (after audit_at), audit_record_8486 (after audit_at), export_1842 (after audit_at), search_2352 (after audit_at) |
+| case_53 | none | INCOMPLETE | audit_record_9644 (after audit_at), search_2912 (after audit_at) |
+| case_55 | none | INCOMPLETE | account_9494 (after audit_at), audit_record_2857 (after audit_at), search_4882 (after audit_at) |
+| case_61 | case_07 | INCOMPLETE | support_001 (after audit_at) |
+| case_67 | none | INCOMPLETE | search_9837 (after audit_at) |
+| case_72 | none | INCOMPLETE | search_209 (after audit_at) |
+| case_121 | none | COMPLETE | search_3573 (after audit_at) |
+| case_170 | none | COMPLETE | search_3619 (after audit_at) |
+| case_176 | none | INCOMPLETE | search_2597 (after audit_at) |
+| case_278 | none | INCOMPLETE | search_9526 (after audit_at) |
+| case_489 | none | INCOMPLETE | search_8332 (after audit_at) |
+| case_491 | none | COMPLETE | search_8910 (after audit_at) |
+| case_527 | none | INCOMPLETE | search_2979 (after audit_at) |
+
+- **MEASURED (single-request subjects).** 22 excluded records in 14 cases are linked to the subject only by evidence dated after audit_at. Including them would let later evidence change the answer, which AGENTS.md §6.2 forbids ("Evidence created later must not change the answer for that case"), so their exclusion is required by the contract, not by D-SCOPE alone. 6 records in 2 cases (case_34, case_45) are linked only by admissible evidence dated before the request: that is the open **JUDGEMENT** (the spec does not define a request episode). For case_45, every one of the 24 sample cases with an audit record lists exactly one, and its five excluded audit records appear only as older rows on one screenshot (no activity row, no other file), while the one kept (audit_record_003) is also catalog-linked; `code/evaluation/dscope_review.json` lists every source of every excluded record.
+
+Records brought into scope by the page rule (rc6-P1): 1: case_34 support_9538 (shown on the subject's own page in evidence_04, captured within [requested_at, audit_at]).
+
+Raw evidence for the cases the independent re-derivation examined (`independent_rederivation/triage.json`; written before rc6-P1, so its case_34 premise that support_9538 is linked only outside the lifecycle is superseded by evidence_04):
+
+- case_33: SUBAGENT_ERROR: "Subject user_18 filed two requests (case_33, case_52). account_2373's only delete is activity_3324 2026-08-19T11:03:36Z DELETE_RECORD deletion_worker SUCCESS (777 h after case_33's reported_at 2026-07-18T02:00:00Z, i.e. case_52's job); export_1260's delete is activity_3328 2026-08-19T12:49:28Z. Their identity evidence lies outside case_33's [requested_at, audit_at]. The sample reference excludes a user's other-request records from a case (D-SCOPE: 84/84 expected pairs kept, all 3 other-episode pairs excluded: object_19, account_6523, tombstone_17)."
+- case_34: AMBIGUOUS_SPEC: "support_9538's only worker row is activity_3489 2026-08-28T12:46:35Z DELETE_RECORD FAILED, 685 h before case_34's reported_at 2026-09-26T02:00:00Z and before its requested_at 2026-09-24; the identifying read-back (evidence_01, 2026-09-15) predates the request. Both resources are linked to user_11 only by evidence outside the request lifecycle. Our D-SCOPE (sample-backed) treats them as another episode; the independent reading treats every record of the subject as in scope. The spec does not define episodes."
+- case_35: AMBIGUOUS_SPEC: "activity_3431 2026-08-25T10:56:16Z DELETE_RECORD deletion_worker PARTIAL on account_8491 — 154 h before case_35's reported_at 2026-08-31T21:00:00Z and before its requested_at 2026-08-30T03:00:00Z; the id is linked to user_13 only by post-audit evidence. Same scope question as case_34."
+- case_39: AMBIGUOUS_SPEC: "activity_3430 2026-08-25T10:45:32Z DELETE_RECORD FAILED on account_8926, 444 h AFTER case_39's reported_at and after its audit_at 2026-08-08T10:00:00Z (a later job); id known only from post-audit evidence."
+- case_55: AMBIGUOUS_SPEC: "activity_3381 2026-08-22T10:54:34Z DELETE_RECORD PARTIAL on account_9494, 2,771 h after case_55's reported_at 2026-04-29T00:00:00Z and months after its audit_at 2026-04-30T11:00:00Z; id known only from post-audit evidence."
+
+- **JUDGEMENT.** For case_33 the other request (case_52) owns the excluded records' delete jobs, the same pattern as the samples. For the single-request cases the excluded records are linked only by evidence captured before the request or after audit_at, and their delete jobs (where one exists) fall outside the case's own burst. The code treats them as another episode. An evaluator that counts every record of the subject would expect extra findings or verifications on these rows.
+
 
 ## Appendix A. AMBIGUOUS / CONFLICT pairs on the eval set
 

@@ -82,7 +82,7 @@ def label_of(traces: dict, cid: str, rid: str) -> str | None:
 
 def timing_pairs(traces: dict, cids) -> list[dict]:
     out = []
-    for cid in cids:
+    for cid in sorted(cids):                     # cids may be a set: iterate in a fixed order (deterministic output)
         for a in traces.get(cid, {}).get("attribution", []):
             if any(e["kind"] == "TIMING" for e in a.get("edges", [])):
                 out.append({"case_id": cid, **a})
@@ -96,7 +96,7 @@ def denominators(traces: dict, cids) -> dict:
     return {"timing_candidate_edges": len(tp) + eliminated, "filter_removed_edges": eliminated,
             "ambiguous_pairs": len(amb), "ambiguous_resources": len({p["resource_id"] for p in amb}),
             "ambiguous_cases": len({p["case_id"] for p in amb}),
-            "assignments": dict(Counter(p["label"] for p in tp if p["label"] in ASSIGNED)),
+            "assignments": dict(sorted(Counter(p["label"] for p in tp if p["label"] in ASSIGNED).items())),
             "assignments_total": sum(1 for p in tp if p["label"] in ASSIGNED)}
 
 
@@ -260,7 +260,7 @@ def main() -> int:
                 "previously_correct_statuses_changed": [s for s in status_changes if s[0] in base_status_ok],
                 "eval": {"denominators": denominators(r["traces"], [c for c in r["eval"]]),
                          "claim_conflicts": len(r["summary"]["attribution"]["claim_conflicts"]),
-                         "rows_changed": len(eval_changed), "status": dict(Counter(s for s, _ in r["eval"].values())),
+                         "rows_changed": len(eval_changed), "status": dict(sorted(Counter(s for s, _ in r["eval"].values()).items())),
                          "status_flips": flips},
                 "samples_denominators": denominators(r["traces"], sample_ids),
                 "label_free": label_free_checks(r, activity, requests),

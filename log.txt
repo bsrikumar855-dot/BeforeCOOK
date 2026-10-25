@@ -798,3 +798,1776 @@ branch=main
 repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
+
+## [2026-10-25T00:00:00Z] SESSION START
+
+tool=Claude Code
+model=claude-opus-5-5
+Repo Root: /home/user/BeforeCOOK
+Branch: main-3guhx9
+Worktree: main
+Parent Agent: none
+Language: py
+Time Remaining: not configured
+
+## [2026-10-25T05:31:34Z] Stop hook: commit and push the session-start log entry; draft PR #1
+
+User Prompt (verbatim, secrets redacted):
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+Agent Response Summary:
+The only uncommitted change was the SESSION START entry appended to log.txt in this cloud checkout. I committed it on the designated branch main-3guhx9 and pushed it, then opened draft PR #1 (main-3guhx9 -> main) and subscribed to its activity. I warned that log.txt is append-only and the Windows clone holds its own copy, so a merge must keep both sets of entries. This entry was appended late, during the rc5 turn. The SESSION START entry above carries a wrong timestamp (2026-10-25T00:00:00Z); the session was created at 2026-10-25T05:30:27Z (session metadata). The old entry is left as written because the log is append-only.
+
+Actions:
+* git commit 1a6e869 "log: cloud session start entry"; git push -u origin main-3guhx9
+* mcp__github__create_pull_request (draft, #1); subscribe_pr_activity #1; send_later safety check-in
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main-3guhx9
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T05:54:30Z] RC5: G1-G4, additional audit, full keyless release gate, tag rc5
+
+User Prompt (verbatim, secrets redacted):
+# ORCHESTRATE OCTOBER — RC5 SCORE OPTIMIZATION & RELEASE ENGINEERING
+
+## MISSION
+
+You are operating as a senior competitive-programming evaluation engineer, Python architect, adversarial auditor, and release engineer.
+
+Repository: `bsrikumar855-dot/BeforeCOOK`
+
+Current release: `rc4`  
+RC4 commit: `a89b7c6`  
+Target branch: `fix/rc5`  
+Target release tag: `rc5`
+
+Your mission is to produce the strongest defensible submission possible by:
+1. Closing the four identified gaps G1–G4.
+2. Finding any additional, demonstrable score-relevant defects that can be fixed safely.
+3. Preserving all previously correct behavior.
+4. Running the complete keyless release gate against the final tree.
+5. Creating and pushing `fix/rc5` and tag `rc5` only if every required gate passes.
+
+This is the final score-improvement build. Optimize for correctness, generalization, specification compliance, reproducibility, explainability, and evaluation performance—not code volume or architectural complexity.
+
+## 0. NON-NEGOTIABLE OPERATING RULES
+
+### Repository and release safety
+- Clone the repository if it is not already available in the cloud workspace.
+- Verify the remote repository, working directory, current Git state, and `rc4` tag.
+- Check out the exact `rc4` commit `a89b7c6` and create branch `fix/rc5` from it.
+- Verify that the existing `rc4` tag resolves to the expected commit. If it does not, stop and report the discrepancy.
+- Never modify or move the `rc4` tag.
+- Never push to `main`.
+- Never force-push.
+- Push only `fix/rc5` and the new `rc5` tag after all gates pass.
+- If authenticated Git access is unavailable, finish the local work and report that pushing is blocked. Do not claim a push succeeded.
+
+### Session discipline
+- Read and obey `AGENTS.md`.
+- Append the required record for every turn to `log.txt`.
+- Do not modify `CLAUDE.md`.
+- Do not print, expose, or commit credentials, tokens, environment variables containing secrets, or private keys.
+- Do not request API keys. All required evaluation and reproduction must use existing cache data and `--from-cache`.
+- Do not make new model calls.
+- Preserve existing cached prompt provenance and evidence.
+- Never fabricate test results, metrics, commits, hashes, or successful operations.
+
+### Evidence and regression rules
+- Every fix must have a change record describing the defect, evidence, implementation, tests, and expected metric impact.
+- Every commit must be gated by the real exit code from the relevant test suite.
+- Do not use `;` or another shell construct that can hide a failing test command's exit status.
+- No sample-specific logic.
+- No regression to previously correct sample steps or statuses.
+- Any changed evaluation row must be justified by quoted, admissible raw evidence.
+- Keep `MEASURED`, `ESTIMATED`, `JUDGEMENT`, and `UNKNOWN` clearly separated.
+- Never describe a heuristic score as an official HackerRank score.
+- Do not rewrite history to make the transcript appear more complete.
+- Do not reopen previously rejected attribution, ordering, or offset-band experiments without new admissible evidence that changes the earlier conclusion.
+
+### Stop conditions
+If the starting state is wrong, a required artifact is missing, the specification conflicts with an assumption, or a required release gate fails, do not create or push `rc5`. Preserve `rc4` and report the blocker.
+
+## 1. ESTABLISH THE BASELINE
+
+Before changing code:
+
+1. Read `AGENTS.md`, the challenge specification, README, `DESIGN.md`, `CONSTANTS.md`, `evaluation_report.md`, the rejection/change log, and the existing release instructions.
+2. Inspect the exact `rc4` commit, tag, output, archive, and Git status.
+3. Record the baseline hashes and current sample/evaluation metrics.
+4. Run only inexpensive baseline checks needed to establish that the environment and artifacts are correct.
+5. Identify the authoritative specification wording for every planned behavior change.
+
+Known RC4 reference facts—verify them against the repository:
+- Commit: `a89b7c6`.
+- Output CSV SHA-256: `713bf4ae6ea26afc533885403da4b3efa5206542454f8e1518f1a6561455a4ab`.
+- Code ZIP SHA-256: `5b6a08a62f76159c3a2252189eb3cb01edf5c8f247a048a3ac4ffca20eac67b2`.
+- Sample status: `31/32`.
+- Step precision: `178/178`.
+- Step recall: `178/193`.
+- Exact sequence: `19/32`.
+- Evaluation distribution: `153 COMPLETE`, `355 INCOMPLETE`, `10 NOT_APPLICABLE`.
+- Evaluation-set correctness is UNKNOWN because reference labels are unavailable.
+- RC4 passed its recorded release gates, with 113 tests and a Code ZIP heuristic estimate of 82.4.
+
+If the verified baseline differs from these facts, report the difference and investigate before proceeding.
+
+## 2. G1 — VERIFY AND FIX CASE-ID SORT ORDER
+
+The challenge specification says output is sorted by `case_id`. Determine the exact intended ordering from the literal specification and input data.
+
+### Required actions
+1. Inspect the input case IDs, writer implementation, output CSV, and `spec_audit.py`.
+2. Determine whether the required order is lexicographic or numeric-suffix order. Do not assume that the input's apparent order alone overrides the literal contract.
+3. If numeric-suffix order is required and the output is not numeric:
+   - Fix the central output writer, not a single output file.
+   - Update `spec_audit.py` to independently enforce the required order.
+   - Add regression tests covering boundary IDs such as `case_99`, `case_100`, `case_550`, and any other relevant cases.
+4. Regenerate output using the keyless workflow.
+
+### Prove the change is safe
+- Canonicalize the original and new CSV by sorting both using the same complete-row representation.
+- Compare all columns and all rows, preserving duplicate multiplicity.
+- Confirm zero content differences; only row order may change.
+- Confirm row counts, schema, statuses, step JSON, evidence IDs, and all case contents remain unchanged.
+- Run the negative-control test for the specification auditor.
+
+If the existing output already satisfies the actual specification, leave the writer untouched and document the result.
+
+**Expected benefit:** specification compliance and possible recovery of output-format points. Do not claim a score increase unless the evaluator measures one.
+
+## 3. G2 — IMPROVE THE README'S FIRST SCREEN
+
+Improve the README so an evaluator can quickly understand, reproduce, and inspect the project. Keep it concise and factual. Do not remove existing required instructions.
+
+Add the following near the beginning.
+
+### What to read first
+- `code/main.py`: execution entry point.
+- `code/agent/`: pipeline, attribution, rules, and step generation.
+- `code/evaluation/`: evaluation reports, specification audit, and coupling probes.
+- `code/analysis/`: archived rejected experiments retained for reproducibility; not part of the active decision path unless the code proves otherwise.
+
+Verify these paths and descriptions against the actual repository before publishing them.
+
+### Architecture in one line
+Use this statement only if verified against the code:
+
+“The model perceives intent and screenshots; deterministic code makes the final decisions. The E2 investigator agent was implemented and measured, achieved a measured resolution ceiling of zero on the tested cases, and was removed.”
+
+Cite the relevant measurement and implementation evidence in the documentation. Clearly state the scope of the measured ceiling.
+
+### Reproduce
+Document the actual, tested keyless command:
+
+`python code/main.py --from-cache`
+
+Explain that:
+- No API keys are required for this reproduction path.
+- Every cached reply's prompt provenance is available in `code/prompts/`, including v1 and v2, if this is verified.
+- Re-running live extraction is not guaranteed to reproduce the cached result.
+- The recorded v2 regression on `case_61` and `case_34` is documented in the DESIGN rejection log, if confirmed.
+
+Run the documented command from the intended clean environment. The README must not promise a workflow that has not been tested.
+
+**Expected benefit:** reproducibility, reviewer confidence, and interview explainability. Do not claim a direct score gain without scoring evidence.
+
+## 4. G3 — DISCLOSE INTERVIEW-RELEVANT LIMITATIONS
+
+Update `code/evaluation/evaluation_report.md` without changing decision logic merely to improve presentation.
+
+Add a concise section covering these items.
+
+### A. Ambiguous account attribution
+Document:
+- The 131 evaluation deletion cases where an account step is omitted because the primary account cannot be confidently attributed.
+- M1's measured result: zero status flips.
+- The ordering experiment involving `case_23` and `account_9155`, including why the wrong-owner result was rejected.
+- Why conservative omission is safer than assigning an action to the wrong person's record.
+- The impact on step recall and exact-sequence metrics, clearly distinguished from the unmeasured effect on official score.
+
+Cite the corresponding measurements and rejection log.
+
+### B. Case 63
+Document `case_63` with:
+- Status: `INCOMPLETE`.
+- Steps: `[]`.
+- Reason: `NO_ATTRIBUTABLE_RESOURCE`.
+- The actual evidence and specification basis for this result.
+
+Verify the case's current output and raw evidence before documenting it.
+
+### C. F1 detail-page absence proof
+Document the F1 judgment behind the `case_46` addition:
+- The relevant screenshot and capture timestamp.
+- The evidence supporting the detail-page interpretation.
+- The OCR coverage and identifier-absence checks.
+- The specification basis, if any.
+- The remaining uncertainty if the specification does not explicitly define when visual absence proves deletion-state compliance.
+
+Explicitly label any unsupported inference `JUDGEMENT`; do not present it as an established specification rule.
+
+### D. D-SCOPE episode exclusion
+Document the exclusion judgment affecting `case_33`, `case_34`, `case_35`, `case_39`, and `case_55`.
+
+For each case or shared rule, explain:
+- Which records were excluded.
+- Why they were considered outside the request's own lifecycle.
+- Which raw evidence and specification language support the decision.
+- What remains untested, particularly the single-request-subject scenario.
+
+If the specification does not settle the behavior, label it `JUDGEMENT` or `UNKNOWN` as appropriate.
+
+No output logic changes for G3. Documentation must describe what the implementation actually does, not what it ought to do.
+
+## 5. G4 — ELIMINATE DUPLICATE-DOCUMENT DRIFT
+
+Inspect the repository for `DESIGN.md` and `CONSTANTS.md` at both the repository root and under `code/`.
+
+If both copies exist:
+1. Identify the authoritative source for each file.
+2. Implement one deterministic generation or synchronization mechanism that writes the secondary copies from the authoritative source.
+3. Add a test that fails when the copies diverge.
+4. Ensure the synchronization process does not overwrite newer information silently.
+5. Run the sync and verify the copies are byte-identical.
+
+If only one copy exists, or packaging intentionally uses a different layout, do not invent a duplicate. Document the actual arrangement and test the relevant packaging contract instead.
+
+Do not include secrets, private paths, or session-only data in either copy.
+
+**Expected benefit:** consistency, reproducibility, and fewer reviewer contradictions.
+
+## 6. ADDITIONAL SCORE-IMPROVEMENT AUDIT
+
+After G1–G4, perform a bounded, evidence-driven review for other high-value defects. Do not repeat completed Round 6 work.
+
+Inspect only areas where a demonstrable defect could materially affect CSV correctness, code evaluation, or reproducibility.
+
+Prioritize:
+1. Contract and schema compliance.
+2. Incorrect statuses or missing/extra steps supported by evidence.
+3. Evidence citation correctness and timestamp admissibility.
+4. Generalization failures not already covered by coupling probes.
+5. Packaging omissions, accidental files, path issues, or nondeterministic behavior.
+6. Documentation claims that contradict the actual code or measured results.
+
+Use existing tests, reports, cached evidence, and audit scripts. Do not launch broad speculative experiments or new model calls.
+
+For each candidate defect, record:
+- Observed behavior.
+- Relevant specification clause or raw evidence.
+- Number of cases potentially affected, with denominator.
+- Proposed fix.
+- Regression risk.
+- Expected metric effect, labelled MEASURED, ESTIMATED, or UNKNOWN.
+
+Only implement a fix if the evidence establishes a defect and the SHIP rule can be satisfied. If no additional fix is justified, say so. Do not manufacture work to make the round look productive.
+
+## 7. REQUIRED VALIDATION — KEYLESS ONLY
+
+Run the full release gate against the final tree, after all intended changes.
+
+Capture each real exit code and preserve the logs.
+
+| Gate | Required outcome |
+|---|---|
+| Full tests | PASS; actual process exit code 0 |
+| Specification audit | PASS; zero violations |
+| Negative control | PASS |
+| Coupling probes | PASS, 5/5 |
+| Three-seed determinism | PASS |
+| Cache completeness | Zero misses and zero orphans |
+| Security audit | PASS, including relevant regex and input fixtures |
+| Kit selftest | PASS, zero blockers |
+| Kit evaluate | PASS |
+| Kit certify | PASS, zero blockers |
+| Kit score | Record heuristic estimate and weakest section |
+| Code ZIP | Correct contents and README-defined structure |
+| Secret/path scan | No secrets, unintended absolute paths, or usernames |
+| Archive exclusions | No `dataset/`, `.env`, nested archives, or `INTERVIEW_FACTS.md` |
+| Clean-folder reproduction | Output byte-identical to the final expected output |
+| Package submission | `READY TO SUBMIT` |
+| Transcript analysis | Run and report actual result |
+
+Do not treat the previous RC4 gate as proof that RC5 passes. Every required gate must apply to the final tree.
+
+If the sort-order change intentionally alters the CSV byte order, establish the new canonical hash and separately prove that canonicalized row content is unchanged.
+
+Build `code.zip` according to the verified README instructions. Do not include the root `INTERVIEW_FACTS.md`. Verify the archive by listing its actual contents and scanning it before packaging.
+
+## 8. RELEASE AND PUSH POLICY
+
+Only after every required gate passes:
+
+1. Create the final local commit or commits with meaningful messages and corresponding change records.
+2. Verify that the working tree is clean.
+3. Verify the exact `fix/rc5` branch and final commit.
+4. Record the final output CSV SHA-256 and code ZIP SHA-256 in `DESIGN.md` using the established convention.
+5. Re-run any validation invalidated by the DESIGN or release-record changes.
+6. Create the `rc5` tag at the verified final commit. Never move or overwrite `rc4`.
+7. Rebuild the final submission directory and verify its contents.
+8. Push only `fix/rc5` and tag `rc5`; never push to `main` and never force-push.
+9. Verify the push and remote tag resolution if authenticated access permits.
+
+If any gate fails, do not tag or push. Keep `rc4` as the known fallback, preserve the diagnostic evidence, and report the exact blocker.
+
+If remote authentication fails after local validation, keep the verified local branch and tag, report that the push was not completed, and provide the exact local commit and hashes. Do not claim a remote release exists.
+
+## 9. COMPACT FINAL REPORT
+
+Return a concise, evidence-backed report containing:
+
+### G1 — Sorting
+- Required ordering interpretation and specification citation.
+- Whether the original output was already correct.
+- Whether rows were reordered.
+- Canonical content differences: must be zero if only order changed.
+- Writer and auditor test results.
+
+### G2–G4
+- README updates completed.
+- Documentation disclosures completed.
+- Duplicate-document synchronization and divergence-test results.
+
+### Additional score audit
+- Defects investigated.
+- Fixes made and evidence.
+- Potentially affected cases and denominators.
+- Remaining issues and reasons no further fix was made.
+
+### Final release gates
+A table with PASS, FAIL, or NOT RUN for every required gate, plus actual exit codes where applicable.
+
+### RC5 artifacts
+- Final commit.
+- Branch and tag status.
+- Output CSV SHA-256.
+- Code ZIP SHA-256.
+- Package readiness.
+- Push verification status.
+
+### Scoring outlook
+- Final sample metrics.
+- Kit heuristic score and weakest section.
+- Remaining top three risks by likely score impact.
+- Explicit distinction between measured improvements and expected or unknown score effects.
+
+Do not promise rank #1 or invent an official score. The goal is a more defensible, correct, reproducible submission—not a cosmetic metric increase.
+
+After the report, stop and wait for review.
+
+Agent Response Summary:
+The baseline matched: rc4 = a89b7c6, the output hash matched, 113 tests passed, and the metrics were 31/32, 178/178, 178/193 and 19/32. fix/rc5 was created from a89b7c6 and fast-forwarded over 580b24b and 1a6e869 (DESIGN rc4 record, clean_room.json, log entries only) so that no log entries were dropped. G1: output.csv was already in numeric-suffix order, equal to the order of deletion_requests.csv; the spec does not define a collation, so this is kept as JUDGEMENT. The writer is unchanged; spec_audit gained an independent check (case_id_sort, 18/18 negative control). G4: sync_docs.py with a sha256 manifest refuses to overwrite a copy edited directly, and package.py refuses to build from diverged copies. A1 (found in the bounded audit): the fixtures held CRLF rule files, so the eval command rewrote 19 committed files in a clean clone; fixed and tested. G3: a generated §7 covers the limitations (131 AMBIGUOUS accounts, M1, case_23 → account_9155, case_63, F1, D-SCOPE with 16 single-request subjects). G2: README first screen, with "ceiling of zero" corrected to measured 0/126 plus an argued ceiling. The first kit certify failed (exit 3) because the gate's refreshed reports were uncommitted; after committing them, every gate passed on 5616cb9, and rc5 is tagged there. output.csv is byte-identical to rc4 and code.zip is 88abb2ab….
+
+Actions:
+* Commits 7591bef (G1), 1a675b5 (G4), 652be30 (A1), 8df3bc5 (G3), 4aff96c (G2), 5616cb9 (gate outputs; tag rc5), then the rc5 record commit
+* Edited code/evaluation/spec_audit.py, code/evaluation/main.py, code/evaluation/custom_cases/build_fixtures.py (+19 regenerated rule files), code/package.py, README.md, DESIGN.md, CONSTANTS.md, code/evaluation/score_estimate.md, INTERVIEW_FACTS.md; added code/sync_docs.py, code/docs_sync.json, code/tests/test_fixture_bytes.py; extended test_spec_audit.py, test_steps_and_validation.py, test_packaged_docs.py (120 tests)
+* Gate scripts and logs in the session scratchpad; orchestrate-kit cloned fresh (commit ccb175f); no model calls, no keys
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc5
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:17:36Z] RC6: rc5 tag push retry; D-SCOPE review and fix; attribution audit; interview mock (gate pending)
+
+User Prompt (verbatim, secrets redacted):
+First "git fetch origin fix/rc5
+git tag rc5 5616cb9941dffbde806380c7b13a9ebf232962f6
+git push origin rc5"
+
+Then: "FINAL SCORE OPTIMIZATION — RC5 → RC6
+Repository: `bsrikumar855-dot/BeforeCOOK`
+Current baseline: RC5 branch `fix/rc5`, release commit `5616cb9941dffbde806380c7b13a9ebf232962f6`, with release-record commits on the branch. Verify the actual remote and local state before acting.
+Mission
+Improve the expected competition score by investigating the remaining high-impact correctness risks and preparing for the AI Judge interview. Make only evidence-backed changes. Preserve RC5 as the rollback baseline.
+Rules
+
+* Read `AGENTS.md`; follow append-only logging requirements. Do not modify `CLAUDE.md`.
+* Local work first. Never push to `main`, force-push, expose secrets, or make new model calls.
+* Use cached evidence and keyless reproduction.
+* Create a new branch, `fix/rc6`, from the verified RC5 release state.
+* Every change requires a change record and tests. Gate commits on the real pytest exit code.
+* No sample-specific logic. Zero regressions to previously correct sample steps or statuses.
+* Every changed evaluation row must be justified by quoted raw evidence.
+* Distinguish MEASURED, ESTIMATED, JUDGEMENT, and UNKNOWN.
+* Do not repeat completed RC5 release audits unless a change invalidates them.
+* Do not promise a rank or invent score improvements.
+
+Priority 1 — D-SCOPE episode-boundary risk
+The RC5 report identifies 20 evaluation cases where records were excluded as outside the request's time window; 16 involve people with only one request, a scenario not covered by the samples. The independent review described episode scope as an ambiguous specification issue.
+
+1. Inspect the literal specification, raw evidence, relevant code, and the existing rejection log.
+2. Select a small, representative set of the 16 single-request cases, including both straightforward and ambiguous examples.
+3. Determine whether each excluded record belongs to the request's lifecycle using only admissible evidence.
+4. Separate definite implementation defects from unresolved specification ambiguity.
+5. Do not expand the scope window or include records merely to increase recall.
+6. If a proposed fix changes outputs, quote the raw evidence and explain why the existing interpretation is demonstrably wrong.
+7. If the specification remains ambiguous, retain the current behavior and document the uncertainty instead of guessing.
+
+Report the number of cases inspected, evidence, conclusions, and output changes. If no safe fix is proven, make no logic change.
+Priority 2 — Account attribution and safe recall
+RC5 reports 131 evaluation deletion cases without an account step because the primary account cannot be confidently attributed.
+
+* Inspect the existing attribution analysis and measurements.
+* Identify whether any new admissible identity evidence exists that was not considered previously.
+* Do not repeat rejected A1/A2, ordering, offset-band, or other attribution experiments without new evidence.
+* Never link an account from a normalized email alone.
+* Never emit remediation against a potentially wrong person's record.
+* Preserve the M1 result and verify whether any proposed change could flip a status or introduce a wrong-owner action.
+
+If no new identity evidence exists, confirm that attribution remains at its evidenced ceiling and stop investigating this area.
+Priority 3 — Remaining output correctness
+Use existing reports and tests to identify the most likely remaining CSV point losses.
+Focus on:
+
+* Incorrect or missing evidence citations.
+* Incorrect status or missing/extra steps.
+* Serialization and schema compliance.
+* Any output behavior that contradicts the literal specification.
+
+Do not optimize for exact sequence matching by changing ordering without specification evidence. Do not treat missing steps caused by insufficient identity evidence as a defect that can be safely repaired.
+For every candidate fix, provide the current behavior, specification or evidence basis, affected cases and denominator, expected effect, and regression risk. Implement only demonstrated defects.
+Priority 4 — Interview readiness
+Review `INTERVIEW_FACTS.md`, `DESIGN.md`, `CONSTANTS.md`, the rejection log, evaluation report, and relevant source code.
+Create a concise `INTERVIEW_MOCK.md` outside `code.zip`. Include ten adversarial questions covering:
+
+1. Architecture and why deterministic code makes final decisions.
+2. Why E2 was removed and what its measurements actually establish.
+3. Attribution ambiguity and why conservative omission is safer.
+4. D-SCOPE and the single-request limitation.
+5. F1 screenshot-based absence proof and its judgment boundary.
+6. Case 63: INCOMPLETE with no steps.
+7. Citation selection and admissibility at `audit_at`.
+8. Failed experiments, measured trade-offs, and rejected alternatives.
+9. Reproducibility, cache provenance, and generalization probes.
+10. Known limitations and what would be investigated with more time.
+
+For each question, provide:
+
+* The facts and source locations required to answer.
+* The key metric with its denominator.
+* The likely adversarial follow-up.
+* Any uncertainty that must be acknowledged.
+
+Do not invent an interview score or pretend a mock interview was conducted. Keep the fact sheet factual and distinguish evidence from interpretation.
+Validation
+If and only if code or output changes:
+
+* Run the full test suite with a verified exit code.
+* Run the specification audit and negative control.
+* Run coupling probes and determinism checks.
+* Verify cache completeness.
+* Run security checks and kit evaluation/certification.
+* Rebuild the archive and verify exclusions.
+* Run clean-folder keyless reproduction.
+* Run package submission validation.
+* Run transcript analysis if the transcript or release history changed.
+
+A documentation-only change still requires the relevant documentation and packaging checks. Do not rerun unrelated expensive audits unless required by the repository's release contract.
+Release decision
+
+* If a genuine defect is fixed and all required gates pass, create a new verified release candidate `rc6`, preserving RC5 and its tag.
+* If no correctness defect is established, do not manufacture a code change just to create RC6. Keep RC5 as the release candidate.
+* Do not push or publish a tag until the final release gates pass and the remote state is verified.
+* If a remote tag push fails, report it clearly; do not claim publication succeeded.
+
+Final report
+Return:
+
+1. D-SCOPE cases inspected and findings.
+2. Attribution investigation and whether new evidence existed.
+3. Other defects found and fixes, or why no safe fix was justified.
+4. Interview mock file status and ten questions.
+5. Validation results and actual exit codes.
+6. RC6 hashes and tag status, or explicit `RC5 KEPT`.
+7. Updated sample metrics and remaining risks.
+8. Which conclusions are measured versus estimated or unknown.
+
+Then stop for review."
+
+Agent Response Summary:
+The rc5 tag push from this container failed again (exit 1, "unexpected disconnect"); the remote still has no rc5 tag, so it has to be pushed from the user's machine. fix/rc6 was created from origin/fix/rc5 (9523831, which contains rc5 5616cb9). P1: all 16 single-request subjects were inspected (29 excluded records). 22 records in 14 cases are linked only by post-audit evidence, so their exclusion is required by AGENTS.md §6.2. 6 records in 2 cases (case_34 audit_record_3753; case_45 audit_record_001/002/004/005/006) stay excluded as a documented JUDGEMENT. One defect was fixed: case_34 support_9538 is shown on user_11's own page in the in-window screenshot evidence_04, so attribution.page_scope now uses OCR ids the model missed as scope evidence for already-owned records (1/518 eval rows changed, 0/32 samples). P2: no new identity evidence for the 159 AMBIGUOUS account pairs. P3: every residual sample miss is identity-limited or underivable. P4: INTERVIEW_MOCK.md written. The release gate could not start because the Bash permission classifier returned no verdict 8 times in a row, so the turn was paused before the gate; rc6 is NOT tagged and nothing of rc6 is pushed.
+
+Actions:
+* Commits 11f9c26 (rc6-P1 fix, D-SCOPE review, P2 audit record), 3818793 (INTERVIEW_MOCK.md, INTERVIEW_FACTS rc6 rows); two later INTERVIEW_MOCK.md wording fixes are uncommitted
+* Edited code/agent/attribution.py, code/agent/pipeline.py, code/evaluation/main.py, code/tests/test_attribution.py (123 tests, exit 0), DESIGN.md, CONSTANTS.md; added code/analysis/dscope_review.py, code/evaluation/dscope_review.json, INTERVIEW_MOCK.md
+* Release gate (gate_rc6.sh) NOT RUN: tool permission classifier unavailable
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:26:22Z] Stop hook (1 of 2): uncommitted INTERVIEW_MOCK.md and log.txt
+
+User Prompt (verbatim, secrets redacted):
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+Agent Response Summary:
+I tried to commit the two files locally, but the Bash permission classifier returned no verdict, and the tenth consecutive failure ended the turn. I declined to push: the user's RC6 rules say local work first and no push before the final release gates pass, and those take precedence over the generic hook. This entry was appended late, in the "continue" turn.
+
+Actions:
+* git commit attempted; blocked (no classifier verdict); nothing pushed
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:26:22Z] "Try again": commit still blocked; how to change the permission mode
+
+User Prompt (verbatim, secrets redacted):
+Try again
+
+Agent Response Summary:
+Two more commit attempts got no classifier verdict. I read the environment's permission documentation and told the user to switch the session's mode dropdown from Auto to Accept edits so that shell commands ask for approval instead. Nothing was committed or pushed. This entry was appended late.
+
+Actions:
+* git commit attempted twice; blocked; read_documentation session.permissions
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:26:22Z] Stop hook (2 of 2): still blocked
+
+User Prompt (verbatim, secrets redacted):
+Stop hook feedback:
+[~/.claude/stop-hook-git-check.sh]: There are uncommitted changes in the repository. Please commit and push these changes to the remote branch.
+
+Agent Response Summary:
+One more commit attempt got no verdict; I stopped retrying and repeated the mode-change instruction. Nothing was committed or pushed. This entry was appended late.
+
+Actions:
+* git commit attempted; blocked
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T06:26:22Z] continue: RC6 release gate passed; rc6 tagged
+
+User Prompt (verbatim, secrets redacted):
+continue
+
+Agent Response Summary:
+After the mode change, Bash ran again. I committed the pending files (ad4d146) and ran the full release gate. Phase 1: 14 of 15 gates passed; kit certify exited 3 because the gate's own refreshed outputs were uncommitted, and spec_audit.json from 11f9c26 was stale (3006 → 3009 steps). I committed the refreshed outputs (d87f1c4) and re-ran phase 2 on that clean commit: all 12 gates exit 0, including certify (0 findings above INFO), clean-folder byte-identical output and package_submission READY TO SUBMIT. output.csv differs from rc5 only in case_34. rc6 is tagged at d87f1c4. rc5 and rc4 are unchanged; rc5 still exists only as a local tag.
+
+Actions:
+* Commits ad4d146, d87f1c4 (tag rc6), then the rc6 record commit; gate logs in the session scratchpad
+* output.csv 7bf6151a…; code.zip 71dd1675…
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc6
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T07:00:31Z] RC-infinity optimization loop: rc7 (X4, X1, D1, R1), gate passed, rc7 tagged locally
+
+User Prompt (verbatim, secrets redacted):
+MISSION RC∞ — Dominate HackerRank Orchestrate October | Target Rank #1
+You are Opus 5.5 Max operating as a principal engineer, adversarial evaluator, reliability researcher, and competitive optimization agent.
+Your mission is to make `bsrikumar855-dot/BeforeCOOK` the strongest defensible submission possible for HackerRank Orchestrate October.
+Target: Rank #1. This is an optimization objective, not a guaranteed outcome. You must pursue every material, evidence-backed improvement available while preserving correctness, reproducibility, security, and submission integrity.
+Do not stop after reviewing the repository, writing a report, or passing the current tests. Run a disciplined improvement loop: diagnose → hypothesize → implement → test → benchmark → adversarially review → retain or revert → repeat.
+Continue until no high-value, evidence-backed improvement remains within the available budget, or a hard blocker requires my input.
+1. Starting context
+Repository: `bsrikumar855-dot/BeforeCOOK`
+Current release candidate: RC6.
+
+* RC5 tag target: `5616cb9941dffbde806380c7b13a9ebf232962f6`
+* RC6 tag target: `d87f1c4be5e91ac024b80cd56ba82d5686e3b882`
+* RC6 branch head reported: `6dbd4b9`
+* Working branch: `fix/rc6`
+* PR #3: `https://github.com/bsrikumar855-dot/BeforeCOOK/pull/3`
+* RC6 output SHA-256: `7bf6151ab2e907a4e2803d945e3f029d2d009c078544a1c255906e3c7459ea20`
+* RC6 code ZIP SHA-256: `71dd1675060cab4749d5ccf7c7b3e08d4ca0c2a7a516a8412903bab06dc8a6bf`
+
+Reported baseline:
+
+* 123 tests passing.
+* All 12 phase-2 release gates passing.
+* Spec audit: zero violations.
+* Sample status: 31/32.
+* Step precision: 178/178.
+* Step recall: 178/193.
+* Exact sequence: 19/32.
+* Code ZIP heuristic: 82.3, not an official score.
+* 131 evaluation cases have unattributable primary accounts.
+* RC6's substantive output change is case_34, adding three steps for `support_9538`.
+* RC5 and RC6 tags reportedly exist locally but have not been published successfully.
+
+These facts are initial claims to verify. Inspect the actual repository, reports, specifications, fixtures, history, and available tooling before relying on them.
+2. Non-negotiable objective hierarchy
+Optimize in this order:
+
+1. Actual scoring potential: maximize rubric-aligned performance and competitive differentiation.
+2. Correctness: every output decision must be supported by evidence and the specification.
+3. Generalization: improve behavior on unseen cases, not just known fixtures.
+4. Robustness: resist adversarial inputs, malformed evidence, ambiguous identities, and boundary conditions.
+5. Reproducibility: deterministic outputs, clean-room builds, stable artifacts.
+6. Interview defensibility: explain architecture, metrics, trade-offs, failed experiments, and uncertainty precisely.
+7. Release integrity: maintain a verified, reproducible, submission-ready release.
+
+Never sacrifice correctness for a cosmetic metric increase. Never fabricate evidence, exploit evaluator weaknesses, hardcode hidden answers, or misrepresent measured results.
+3. First: establish a trustworthy baseline
+Before editing:
+
+* Inspect `AGENTS.md`, the scoring rubric, repository instructions, README, design docs, evaluation report, interview facts, interview mock, and release scripts.
+* Verify the working tree, current branch, RC4/RC5/RC6 history, tag targets, remote state, and PR status.
+* Verify the exact output and code ZIP used for submission.
+* Reproduce baseline metrics from committed artifacts wherever possible.
+* Identify which measurements are official, locally measured, heuristic, inferred, or unknown.
+* Record baseline hashes, gate results, runtime, model/API calls, and approximate resource cost.
+
+Do not repeat expensive evaluations if trustworthy cached results already exist. Reuse existing artifacts and identify exactly what each result proves.
+Create or update a concise experiment ledger. Every experiment must record:
+
+* Hypothesis
+* Evidence motivating it
+* Expected scoring benefit
+* Implementation change
+* Tests and benchmark results
+* Regressions and side effects
+* Runtime/API/credit cost
+* Decision: retain, revise, or revert
+
+4. Build the competitive score model
+Inspect the actual available rubric and scoring artifacts. Build a table mapping each scoring dimension to:
+
+* Current measured baseline
+* Known weaknesses
+* Evidence supporting the weakness
+* Potential improvement
+* Confidence that the improvement matters to scoring
+* Cost and regression risk
+* Cheapest reliable validation
+
+If the working rubric remains Output CSV 30%, Code ZIP 30%, AI Judge interview 30%, transcript 10%, treat that as provisional until verified.
+Do not confuse the local Code ZIP heuristic with the official score. Do not invent evaluation-set labels or claim an improvement in leaderboard rank without evidence.
+Prioritize work by expected value:
+Priority = plausible score impact × confidence in the defect × probability of a safe fix ÷ implementation and validation cost.
+Use this to avoid spending credits on low-value refactoring or speculative experiments.
+5. Iterative optimization loop
+Repeat the following cycle.
+A. Diagnose
+Search for the largest genuine weaknesses in:
+
+* Missing or incorrect output steps
+* Status classification
+* Evidence attribution
+* Citation correctness and admissibility
+* Ordering and serialization
+* Ambiguous identities and ownership
+* Time-window and episode boundaries
+* Error handling and edge cases
+* Prompt and cache behavior
+* Hidden-test generalization
+* Package completeness
+* Code quality and auditability
+* Interview explanations and transcript evidence
+
+Use error analysis and counterexamples, not intuition alone.
+B. Form a falsifiable hypothesis
+Before each change, state:
+
+* What is wrong?
+* What evidence demonstrates it?
+* Why could fixing it improve the target rubric?
+* Which cases should change?
+* Which cases must remain unchanged?
+* What test would disprove the hypothesis?
+
+If the hypothesis is unsupported, do not implement it.
+C. Implement the smallest meaningful fix
+
+* Work on a new iteration branch based on the verified release candidate.
+* Preserve RC4, RC5, and RC6 as immutable historical checkpoints.
+* Keep changes small and attributable.
+* Avoid broad rewrites unless evidence shows they are necessary.
+* Prefer deterministic logic for decisions that can be made reliably in code.
+* Use models only where justified by the task, and preserve source provenance.
+* Do not add expensive model calls without a demonstrated expected benefit.
+* Do not change known-good outputs without explaining why the change is correct.
+
+D. Test and benchmark
+After each meaningful change:
+
+* Run focused regression tests first.
+* Run the relevant sample benchmark and compare outputs against the baseline.
+* Measure precision, recall, status accuracy, exact sequence, and other available metrics.
+* Inspect every changed output row.
+* Test relevant negative controls and adversarial cases.
+* Check deterministic behavior and cache integrity.
+* Confirm unrelated cases remain unchanged.
+* Run the full release gate only when the change merits it.
+
+A test passing is not proof of correctness if the test encodes the same faulty assumption as the implementation.
+E. Adversarially review the result
+Act as a skeptical evaluator trying to disprove the improvement.
+Ask:
+
+* Could this create a false positive?
+* Does the specification actually permit it?
+* Is the evidence admissible at the relevant audit time?
+* Does ownership require an independent identity link?
+* Is the improvement merely overfitting the sample?
+* Did the score proxy improve while real correctness deteriorated?
+* Could the same fix break an unseen boundary case?
+
+Use independent derivations when feasible. Keep uncertainty explicit.
+F. Retain or revert
+Retain a change only if:
+
+* It fixes a demonstrated defect or produces a convincing, independently validated improvement.
+* It does not introduce a material regression.
+* Its behavior is explainable under the specification.
+* Its costs and risks are proportionate to its expected benefit.
+
+Otherwise revert it cleanly and record why.
+Then proceed to the next highest-value hypothesis.
+6. Mandatory focus areas
+Priority 1 — RC6 case_34
+Independently determine whether `support_9538` should be included.
+Verify the ownership proof, the screenshot's provenance and timestamp, the request's time window, the three added steps, their citations, and the implementation's identity boundaries.
+A screenshot of a person's own customer page may establish temporal relevance for an already-owned record; it must not independently establish ownership unless the specification explicitly permits it.
+Keep RC6 only if the evidence supports the change. Otherwise evaluate a minimal correction or the RC5 fallback.
+Priority 2 — Missing account attribution
+Investigate the 131 unattributable primary-account cases.
+Search for admissible identity links that have not already been examined. Do not repeat rejected experiments or infer ownership from mere co-occurrence, filenames, 404 profile lookups, or coincidental identifiers.
+If new admissible evidence exists, implement and validate the smallest fix. If not, document the evidence ceiling and move on.
+Priority 3 — D-SCOPE and time boundaries
+Review the six pre-request records and other excluded records against the exact specification. Distinguish:
+
+* Explicitly prohibited evidence
+* Explicitly required evidence
+* Unspecified episode boundaries
+
+Do not invent episode semantics. Resolve ambiguity only when the specification or admissible evidence supports a clear answer.
+Priority 4 — CSV quality
+Analyze all available incorrect or incomplete sample cases. Improve step coverage, ordering, status classification, and citations only where evidence supports the correction.
+Avoid changing correct cases merely to optimize an imperfect proxy.
+Priority 5 — Code ZIP score
+Inspect the evaluator-facing package, not just internal code quality.
+Identify concrete improvements to:
+
+* Architecture and modularity
+* Tests and independent validation
+* Documentation and reproducibility
+* Security and input handling
+* Error messages and maintainability
+* Package structure and unnecessary files
+
+Use the actual scoring criteria where available. Treat heuristic score movements as weak evidence, not a goal by themselves.
+Priority 6 — Interview and transcript
+Use `INTERVIEW_FACTS.md` and `INTERVIEW_MOCK.md` as source material.
+Run a rigorous mock interview covering architecture, attribution, time windows, failed experiments, reproducibility, security, limitations, and metrics.
+For each answer:
+
+* Provide a concise, technically defensible response.
+* Identify unsupported claims.
+* Challenge it with a likely follow-up.
+* Improve the answer without inventing facts.
+
+Do not claim an actual interview score or simulate a real evaluator's verdict as if measured.
+7. Credit and time budget
+Be aggressive about outcomes and conservative about waste.
+
+* Inspect existing files before regenerating artifacts.
+* Use targeted searches instead of repeatedly reading the whole repository.
+* Reuse cached model responses and benchmark outputs.
+* Avoid rerunning unchanged pipelines.
+* Do not run parallel jobs that contend for the same artifacts.
+* Before any expensive operation, explain internally what uncertainty it resolves and why it is worth the cost.
+* If no meaningful scoring gain is likely, skip the operation.
+* Never spend credits just to make a report longer or a heuristic number look better.
+
+After every three meaningful experiments, reassess the priority order. Stop exploring a branch of work when two successive evidence-backed attempts fail to improve the objective or reveal no new information.
+8. Release and Git safety
+Until the optimization and validation phases are complete:
+
+* Do not merge PRs.
+* Do not push release tags.
+* Do not modify `main`.
+* Do not force-push or rewrite history.
+* Do not overwrite or delete RC4, RC5, or RC6.
+* Do not claim a tag is remotely published unless verified.
+* Do not commit failing or unvalidated changes as a release.
+* Preserve historical logs and record new events append-only.
+
+Use a new iteration branch for further work. Keep the current release candidate available as a rollback point.
+Once an iteration shows a genuine improvement, run the complete required release gates on the exact final commit and artifacts. Verify the clean-room output, archive contents, hashes, and submission readiness.
+9. Stop conditions
+Do not stop merely because all tests pass or because the current heuristic score is high.
+Continue while there is a material, testable, evidence-backed opportunity with acceptable risk and cost.
+Stop when:
+
+* No high-value hypothesis remains.
+* Further changes require unsupported assumptions or hidden evaluation labels.
+* Repeated experiments fail to improve the objective.
+* A required external fact or permission is unavailable.
+* The available budget is exhausted.
+
+If blocked, state the exact blocker and the minimum action needed from me.
+10. Final deliverables
+Maintain a compact, current status report containing:
+
+1. Current best candidate and its exact commit.
+2. Verified score rubric and the provenance of each criterion.
+3. Baseline versus best measured metrics.
+4. Experiment ledger, including rejected changes.
+5. Defects fixed and evidence supporting each.
+6. Regressions detected and how they were handled.
+7. Remaining score opportunities ranked by expected value.
+8. Remaining risks and unknowns.
+9. Full release-gate results for the exact candidate.
+10. Recommended submission artifact and verified hashes.
+
+Separate every claim into:
+
+* Measured
+* Evidence-supported
+* Judgment
+* Unknown
+
+Do not claim Rank #1 unless the official leaderboard establishes it.
+Begin now
+Start with a compact baseline verification and identify the single highest-value experiment. Then execute the optimization loop autonomously, making safe local changes and validating them as you go.
+Do not ask me to approve each low-risk, reversible experiment. Use your engineering judgment within the constraints above.
+If a change requires a destructive action, external publication, a release decision with unresolved correctness risk, or access you do not have, stop and ask.
+The goal is not to produce the most activity. The goal is to produce the strongest evidence-backed submission possible and maximize the probability of finishing #1.
+
+Agent Response Summary:
+The baseline matched RC6: output 7bf6151a, zip 71dd1675, 123 tests. The rubric weights come from the community kit's notes (attributed to a July HackerRank blog), so they are provisional. On a new branch fix/rc7 I ran the loop. Rejected or no-defect: the analytics cohort as an owner signal, intent mislabels, the case_63 status (samples map NOT_STARTED to INCOMPLETE 7/10), legal holds, resource_id order exposure (0 rows). Shipped: X4 gives an attributed record with undecidable state its policy's required check in INCOMPLETE plans (3 eval rows); X1 makes a screenshot mention of a known resource count for citation rule C (case_34 support_9538 → evidence_04); D1 makes attribution_variants.json byte-deterministic and re-runs stale artifacts (M1 was pre-A1: now 904 / 347); R1 splits attribute() and types the decision code (byte-identical); section 6 of the report is now generated and current. I also wrote the experiment ledger and prepared interview answers. Sample metrics are unchanged; 4 eval rows changed vs rc6. All gates passed on 3fa3254 (certify needed the gate outputs committed first, as in rc5/rc6). rc7 is tagged locally only; no tag was pushed.
+
+Actions:
+* Commits f2e04d8 (X4), 141249a (X1), cbf3093 (artifact refresh), b5d9254 (D1), a5bac81 (R1), c144f58 (types), 2fcd0b8 (report section 6), 44d8df6 (ledger, interview), 9d0a5f2 (README), 3fa3254 (gate outputs; tag rc7, local), then the rc7 record commit
+* No model calls; keyless cache-only runs; gate logs in the session scratchpad
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc7
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T07:10:29Z] Final mission: rc7 verified, no defect found, interview training pack, readiness
+
+User Prompt (verbatim, secrets redacted):
+FINAL MISSION — Maximize Rank Potential and Complete RC7 Submission
+You are Opus 5.5 Max. The repository has reached RC7 after multiple optimization rounds. Your objective remains to maximize the probability of achieving Rank #1 in HackerRank Orchestrate October.
+Do not assume RC7 is correct merely because the tests pass. Do not make changes merely to appear productive.
+Current reported state
+
+* Best candidate: RC7, tag target `3fa3254396e1ac198915ca015256db7a3e8225cc`
+* Branch: `fix/rc7`
+* Branch head: `1a78c46`
+* PR #4: https://github.com/bsrikumar855-dot/BeforeCOOK/pull/4
+* Output SHA-256: `ce35e3a53efd093ad529c0ff53cccca21e9e3ca27d0cc07e5944e67208520b8e`
+* Code ZIP SHA-256: `e29f15778f906ca21093b752828560421662005ddf9877baf30abcdded7ef995`
+* Reported validation: 129 tests pass; release gates pass; clean-room output is byte-identical.
+* Sample metrics remain unchanged.
+* Four evaluation rows changed relative to RC6, but evaluation-set correctness is unknown.
+* Code ZIP heuristic: 82.4, not an official score.
+* The provisional scoring split is 30% Code ZIP, 30% Output, 30% Interview, 10% Chat. Verify the provenance and do not assume this is the official October rubric.
+* RC5, RC6 and RC7 tags were reported as local-only.
+* PR #4 passed CI according to the latest report.
+
+Treat these as claims to verify.
+Phase 1 — Verify, don't rebuild blindly
+
+1. Inspect the current Git state, branch, commits, tags, working tree, and PR #4.
+2. Confirm the recorded output and ZIP hashes against the actual submission artifacts.
+3. Confirm all required gates passed on the exact candidate being recommended.
+4. Do not rerun expensive evaluations unless a discrepancy or missing evidence justifies them.
+5. Do not push tags, merge PRs, or modify `main` without explicit authorization.
+
+If the repository state differs from the report, stop and explain the discrepancy.
+Phase 2 — Final adversarial review
+Reassess the remaining high-risk decisions using the existing evidence:
+
+* The four changed evaluation rows, especially case_34.
+* The 131 cases without attributable primary-account steps.
+* X4: the three new `VERIFY_RECORD_ABSENT` checks.
+* The six pre-request D-SCOPE exclusions.
+* case_63's status and empty step list.
+* Whether deterministic architecture could be penalized under the actual available rubric.
+
+Only change the implementation if a concrete defect is established by the specification or admissible evidence. If correctness cannot be determined without the hidden answer key, preserve that uncertainty rather than guessing.
+Phase 3 — Optimize the highest-value remaining scoring dimension
+Prioritize the interview and transcript preparation.
+Read `INTERVIEW_MOCK.md`, `INTERVIEW_FACTS.md`, `DESIGN.md`, `code/evaluation/experiment_ledger.md`, and the current evaluation report.
+Create a concise interview training pack outside `code.zip` that includes:
+
+1. Ten high-probability technical questions.
+2. Strong, truthful model answers based only on documented facts.
+3. A difficult follow-up for each question.
+4. A short answer structure suitable for a timed interview.
+5. Exact metrics and denominators where available.
+6. Likely weaknesses in each answer.
+7. Explicit distinctions between measured outcomes, engineering judgments, and unknowns.
+8. A final one-page last-minute revision sheet.
+
+Focus on architecture, deterministic decisions versus model usage, evidence attribution, identity ambiguity, audit-time constraints, failed experiments, adversarial validation, reproducibility, security, and limitations.
+Do not invent interview questions from confidential evaluator knowledge. Do not claim that a mock interview predicts an official score.
+Phase 4 — One bounded improvement cycle
+Search for at most three remaining opportunities. Rank them by plausible score impact, evidence confidence, regression risk, and credit cost.
+Run only the highest-value experiment that has a clear, testable hypothesis. If no such opportunity exists, skip implementation.
+After any change:
+
+* Run focused regression tests.
+* Compare outputs against RC7.
+* Inspect every changed row.
+* Run all required release gates on the final candidate.
+* Retain the change only if it demonstrates a defensible improvement without material regression.
+* Otherwise revert it and preserve RC7.
+
+Do not pursue cosmetic refactoring or a tiny heuristic increase without a credible scoring rationale.
+Phase 5 — Submission readiness
+Verify:
+
+* Exact submission artifacts and hashes.
+* Correct archive contents.
+* No secrets, datasets, interview files, or local logs accidentally included.
+* Clean-room reproducibility.
+* Final release gate results.
+* Correct release tag target.
+* PR #4's diff and CI status.
+
+Provide exact commands for publishing local-only tags from my machine, but do not execute external publication or merge without my approval.
+Final deliverable
+Return:
+
+1. Verified best candidate and commit.
+2. Any actual improvements beyond RC7, with measured evidence.
+3. Final artifact hashes.
+4. Final validation results.
+5. Interview training pack location and top five answers to rehearse.
+6. Remaining material risks.
+7. A clear KEEP RC7 / REVERT / UNRESOLVED recommendation.
+8. Exact next steps to submit safely.
+
+Continue autonomously through safe local work. Stop when no meaningful evidence-backed improvement remains. Never claim Rank #1, an official score, or a measured score gain without the corresponding official evidence.
+The goal is the strongest defensible submission, not endless iteration.
+
+Agent Response Summary:
+Phase 1 re-verified rc7 rather than rebuilding it: the rc7 tree rebuilds code.zip to the same sha256 (e29f1577...), output.csv is ce35e3a5..., the rc7 phase-2 gate logs on 3fa3254 are all exit 0, and PR #4 is open, draft, mergeable, with no review threads and only GitGuardian (success). Phase 2 found no concrete defect. All four rc7-changed rows cite only admissible evidence. case_34 support_9538's SUPPORT_ATTACHMENT -> DELETE rests on the same "shape: attachment" basis as sample case_07 support_001. The three X4 accounts are INFERRED_CLAIM single-case batches, so they depend on A1, which is already documented. The 131 ambiguous accounts are at their evidenced ceiling, and the six pre-request D-SCOPE exclusions and case_63 remain documented judgements. The architecture-rubric risk is a framing issue with no safe code fix. Phase 3 wrote INTERVIEW_TRAINING_PACK.md at the repository root (not shipped in code.zip): ten questions, model answers, follow-ups, weaknesses, measured/judgement/unknown labels and a one-page revision sheet. Phase 4 ranked three opportunities and implemented none. The three NOT_DERIVABLE sample ids occur only in dataset/sample_output.csv, so they cannot be recovered. The support category is already sample-validated. An agentic layer would need new model calls and has no testable score hypothesis. Phase 5 re-checked readiness: the zip has 1,420 members with no dataset/, .env, INTERVIEW_* or log.txt, zip_scan is clean, and 129 tests pass. Tags rc5/rc6/rc7 are local only and were not pushed.
+
+Actions:
+* Read: output.csv rows case_34/526/528/531 with evidence captured_at vs audit_at; --explain traces for case_526/528/531
+* Grep: dataset/, code/cache/ for account_004, audit_record_6645, audit_record_5569 (only sample_output.csv)
+* Wrote INTERVIEW_TRAINING_PACK.md
+* Ran zip member check, zip_scan.py, pytest (129 passed), git ls-remote --tags
+* GitHub MCP: pull_request_read get / get_check_runs / get_review_comments for PR #4
+* Committed INTERVIEW_TRAINING_PACK.md and log.txt; pushed fix/rc7 (branch only)
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc7
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T07:32:23Z] RC7 -> RC-infinity: official sources audit, gap register, rc8 (docs only), gate passed
+
+User Prompt (verbatim, secrets redacted):
+PROJECT MISSION: RC7 → RC∞
+HackerRank Orchestrate October — Evidence-Driven Loop Engineering for Rank #1
+You are Opus 5.5 Max acting as a principal agent engineer, adversarial evaluator, scoring-rubric auditor, and release engineer.
+Your objective is to maximize the probability of achieving Rank #1 in HackerRank Orchestrate October.
+This is an optimization target, not a guaranteed result. Do not claim a rank or score improvement without official or measured evidence.
+Do not stop after a report. Execute repeated, bounded, evidence-backed improvement cycles until no high-value improvement remains or a genuine blocker requires my input.
+0. Source-of-truth hierarchy
+Before modifying code, load and inspect the following sources.
+Official HackerRank sources
+
+1. Behind the Scenes of HackerRank Orchestrate:
+https://www.hackerrank.com/blog/behind-the-scenes-of-hackerrank-orchestrate/
+2. October challenge problem statement:
+https://github.com/interviewstreet/hackerrank-orchestrate-october26/blob/main/problem_statement.md
+3. October repository README:
+https://github.com/interviewstreet/hackerrank-orchestrate-october26/blob/main/README.md
+4. October participant repository:
+https://github.com/interviewstreet/hackerrank-orchestrate-october26
+5. Current HackerRank Orchestrate scoring and participation guidance:
+https://help.hackerrank.com/articles/3728112689-hackerrank-orchestrate
+
+Load the actual content of these sources. Do not merely rely on summaries of them.
+Important: the BTS article describes the published evaluation methodology for an earlier edition. The October-specific task contract is authoritative for output requirements. Verify whether any October-specific scoring changes are available. Label every unverified weight or criterion as provisional rather than silently assuming the previous edition's rubric is identical.
+Local project sources
+Read the repository's:
+
+* AGENTS.md and all applicable task instructions.
+* problem_statement.md and README.md.
+* DESIGN.md and CONSTANTS.md.
+* evaluation_report.md and usage_report.md.
+* experiment_ledger.md and relevant audit reports.
+* INTERVIEW_FACTS.md, INTERVIEW_MOCK.md, INTERVIEW_TRAINING_PACK.md, if present.
+* Actual implementation, prompts, tool schemas, tests, fixtures, package scripts, and final submission artifacts.
+
+Resolve file paths before reading or editing. Respect project logging instructions. Do not rewrite historical logs.
+At the start, report which official and local sources were successfully loaded, which could not be accessed, and the exact commit being audited.
+1. Official scoring framework
+Use the BTS model as the working scoring framework unless an authoritative October-specific document overrides it.
+Published overall signals:
+
+* Code ZIP: 30%
+* Output CSV: 30%
+* AI Judge Interview: 30%
+* AI Chat Transcript: 10%
+
+Published Code ZIP sub-criteria:
+
+* Agent architecture: 30% of the Code ZIP score.
+* Prompt and tool craft: 30%.
+* Agent robustness: 25%.
+* Engineering rigor: 15%.
+
+Published Interview sub-criteria:
+
+* Technical depth and ownership: 40%.
+* Problem understanding and judgment: 25%.
+* Communication clarity: 20%.
+* Honesty and self-awareness: 15%.
+
+Published Chat Transcript sub-criteria:
+
+* Direction and architecture ownership: 35%.
+* Technical specificity and constraints: 25%.
+* Iteration and verification: 25%.
+* Safety, edge cases, and quality awareness: 15%.
+
+Treat these as published reference criteria, not a guarantee of October's exact scoring weights. Search the official October materials for any additional rules.
+The October output task must be audited against its own explicit contract:
+
+* Correct deletion intent and status.
+* Current and historical identity resolution.
+* Discovery of relevant remaining records and recreation risks.
+* Correct deletion-policy application.
+* Evidence references and admissibility at audit_at.
+* Complete remediation and verification plans.
+* Required step ordering and schema.
+* Exact required row count and output format.
+* Required evaluation and token/cost reports.
+* Security and package constraints.
+
+2. Establish a trustworthy RC7 baseline
+The last report states:
+
+* RC7 tagged commit: 3fa3254396e1ac198915ca015256db7a3e8225cc
+* Branch head reported: 1a78c46
+* Best reported Code ZIP heuristic: 82.4, not an official score.
+* Sample status accuracy: 31/32.
+* Step precision: 178/178.
+* Step recall: 178/193.
+* Exact sequence: 19/32.
+* 129 tests passing.
+* All 12 reported release-gate checks passed.
+* Four evaluation rows changed relative to RC6: case_34, case_526, case_528, case_531.
+* 131 evaluation cases reportedly lack attributable primary-account steps.
+* 15 sample steps are missing: 12 attributed to identity/account attribution and 3 said to be absent from the source evidence.
+* Remaining judgments include case_34's screenshot citation, case_63's status/empty plan, six pre-request D-SCOPE exclusions, and screenshot citations not demonstrated in sample references.
+* The reported submission hashes are:
+output.csv: ce35e3a53efd093ad529c0ff53cccca21e9e3ca27d0cc07e5944e67208520b8e
+code.zip: e29f15778f906ca21093b752828560421662005ddf9877baf30abcdded7ef995
+
+These are reported facts to verify, not assumptions to hardcode.
+First inspect Git state, tag targets, the actual RC7 tree, output artifacts, test logs, and release gates. Confirm whether the current best candidate still matches RC7. Preserve RC7 as an immutable rollback point.
+Do not overwrite RC7, modify main, force-push, merge PRs, or publish tags without explicit authorization.
+3. Produce a cited gap register
+Before implementation, create a rubric-to-evidence matrix.
+For every gap, record:
+
+* Unique gap ID.
+* Exact official criterion.
+* Source URL and section, or local file and line/function reference.
+* Current implementation behavior.
+* Evidence of the weakness.
+* Baseline metric and denominator.
+* Likely scoring impact and why.
+* Confidence: measured, evidence-supported, judgment, or unknown.
+* Proposed hypothesis and smallest experiment.
+* Regression risk.
+* Model/API/compute cost.
+* Acceptance criteria and rollback condition.
+
+Rank gaps using:
+expected value = plausible score impact × confidence in the defect × probability of safe correction ÷ implementation and validation cost.
+Do not assign invented official scores to individual criteria. A heuristic score is not an official score.
+4. Priority A — Output accuracy and missing steps
+Audit the 15 missing sample steps independently.
+For each step:
+
+1. Locate the exact sample reference.
+2. Trace the subject's current and historical identifiers.
+3. Inspect raw admissible evidence and timestamps.
+4. Identify the applicable deletion rule.
+5. Determine whether the current implementation missed a real record, made an unsupported attribution, or correctly abstained.
+6. Add a targeted regression test if a concrete failure mode is established.
+
+Challenge the claim that all 12 attribution-related omissions are irrecoverable. Search for previously unexamined admissible identity evidence and overlooked parsing paths.
+Do not repeat rejected attribution experiments without a new hypothesis. Do not infer ownership from mere co-occurrence, weak identifiers, names alone, or coincidental resource IDs.
+For the three supposedly non-derivable steps, independently verify the source corpus and sample reference. Do not copy answer-key-only identifiers into production logic.
+Measure changes in:
+
+* Status accuracy.
+* Step precision and recall.
+* Exact sequence.
+* Field-level correctness.
+* Unchanged-case count.
+* False-positive and false-negative examples.
+
+The sample answer key is small and does not prove hidden-evaluation accuracy. Explicitly distinguish these measurements.
+5. Priority B — Agent architecture
+The BTS article asks whether the implementation is a real agent or a hardcoded workflow with LLM calls. It rewards observable architecture, tool-calling loops, model-driven routing, and useful handoffs.
+Inspect the actual implementation. Do not solve this by adding decorative agent classes, fake tool calls, or multi-agent handoffs that do no meaningful work.
+Evaluate:
+
+* Which decisions are deterministic and why.
+* Which decisions genuinely require model reasoning.
+* Whether retrieval, evidence interpretation, routing, and validation are separated.
+* Whether tool outputs influence subsequent decisions in a meaningful loop.
+* Whether model calls are bounded and failures recover safely.
+* Whether prompts and tool schemas impose explicit constraints.
+* Whether the system has a defensible reason to abstain when evidence is insufficient.
+* Whether the deterministic design is appropriate for this task.
+
+The previous report says an investigator-agent experiment accepted 0/126 proposals. Inspect its actual setup, proposal definitions, evaluation, and failure causes before concluding the architecture cannot improve.
+Run a low-cost architecture experiment only if there is a credible, testable hypothesis. Compare it against RC7 and keep it only if the implementation genuinely improves a rubric criterion without harming correctness, reliability, or budget.
+No new expensive model calls without a specific expected benefit and explicit confirmation if required by project rules or current resource limits.
+6. Priority C — Evidence, time boundaries, and policy
+Adversarially inspect:
+
+* case_34 and support_9538.
+* The screenshot citation rule and evidence admissibility.
+* The six older D-SCOPE records.
+* case_63 and empty-step behavior.
+* The 131 unattributable-account cases.
+* Historical identifiers, tombstones, retained records, legal holds, and restore/sync risks.
+* Inclusive audit_at handling.
+* Citation selection and step ordering.
+
+Use the exact challenge contract and raw evidence. Do not invent semantics for unspecified episode boundaries.
+For each judgment call, create competing hypotheses, identify evidence that distinguishes them, and run the cheapest decisive check.
+If the specification and evidence cannot distinguish two interpretations, preserve the ambiguity and avoid speculative changes.
+7. Priority D — Robustness and prompt/tool craft
+Audit observable behavior, not just test count.
+Inspect:
+
+* Invalid or incomplete model output.
+* Malformed JSON and schema violations.
+* Missing, contradictory, or post-audit evidence.
+* Prompt injection or instruction-like content inside evidence.
+* Unicode and identifier normalization.
+* Duplicate or conflicting records.
+* Retry exhaustion and model/API failures.
+* Cache misses, stale cache entries, and provenance.
+* Partial-run recovery and deterministic regeneration.
+* Secrets, archive exclusions, and dependency hygiene.
+* Failure logging without leaking sensitive data.
+
+Find uncovered failure modes and write focused tests. Add retries, validation, or fallback paths only when they solve a real defect.
+Review the actual prompts and tool descriptions for role definition, allowed inputs, evidence constraints, output schemas, refusal/abstention conditions, and clear failure behavior.
+8. Priority E — Engineering rigor and release quality
+The BTS rubric values modularity, type hints, environment-based secrets, function size, and reproducibility.
+Inspect whether each improvement is substantive:
+
+* Does modularity improve testability and ownership boundaries?
+* Are types meaningful and correct?
+* Are functions easier to understand and verify?
+* Are configuration and model settings reproducible?
+* Can a clean environment rebuild the exact output?
+* Do package scripts include required files and exclude datasets, secrets, local logs, and nested archives?
+* Do evaluation reports reflect the exact candidate being submitted?
+* Does usage_report.md accurately document the final full-dataset run, models, calls, tokens, and costs?
+
+Do not make cosmetic refactors solely to increase a heuristic score.
+9. Priority F — Interview and chat transcript
+The interview and transcript are separate score signals. Do not assume a good code submission guarantees either.
+Interview
+Run a realistic mock interview based on the actual source code and reports. Cover:
+
+* Architecture and why the chosen design fits the task.
+* Evidence retrieval and identity resolution.
+* Deterministic rules versus model judgment.
+* Audit-time constraints and citations.
+* Status and remediation semantics.
+* Failure analysis and rejected experiments.
+* Security and adversarial testing.
+* Reproducibility, monitoring, and production risks.
+* Limitations and future improvements.
+
+For every answer, inspect the source code and provide:
+
+* A concise answer.
+* A difficult follow-up.
+* A precise answer to the follow-up.
+* Any unsupported claim to remove.
+* The best evidence or metric to cite.
+
+Never fabricate personal experience, results, or understanding. The participant must actually understand the answer.
+Transcript
+Evaluate the real chat transcript for:
+
+* Explicit problem framing and architecture ownership.
+* Specific constraints, schemas, files, models, and metrics.
+* Actual iteration and regression checks.
+* Meaningful pushback on incorrect or unsupported AI suggestions.
+* Safety and edge-case awareness.
+
+Do not fabricate or rewrite the transcript to imitate rubric signals. Improve the actual engineering process and preserve genuine history.
+10. Required iterative loop
+Repeat this cycle:
+
+1. Select the highest-value unclosed gap.
+2. State a falsifiable hypothesis and expected impact.
+3. Inspect the minimum necessary source material.
+4. Implement one bounded change on an iteration branch.
+5. Run targeted tests and benchmarks.
+6. Compare the output and metrics to the RC7 baseline.
+7. Inspect every changed row and relevant regression cases.
+8. Run an independent adversarial review.
+9. Retain or revert based on evidence.
+10. Update the gap register and experiment ledger.
+11. Re-rank remaining opportunities.
+12. Repeat.
+
+After every three meaningful experiments, reassess priorities. Stop spending effort on a line of attack after two successive attempts fail to improve the objective or reveal new evidence.
+Prefer reuse of cached artifacts and existing test outputs. Avoid unnecessary full reruns and expensive model calls.
+11. Release discipline
+Do not replace RC7 until a candidate demonstrates a real improvement.
+After any meaningful accepted change:
+
+* Run all required tests and gates.
+* Confirm the output schema and 518 data rows.
+* Confirm step numbering, valid JSON, and required ordering.
+* Compare every changed row to the prior candidate.
+* Verify citation validity and audit-time admissibility.
+* Verify no unrelated output changes.
+* Verify security, archive contents, and clean-room reproducibility.
+* Regenerate the required reports from the exact final candidate.
+* Recalculate and record hashes.
+
+Keep each candidate and experiment traceable. Never force-push, overwrite historical tags, merge PRs, or publish a release without authorization.
+12. Stopping condition
+Do not stop merely because the current tests pass. Do not continue indefinitely merely because the objective is Rank #1.
+Stop when no high-value, evidence-backed improvement remains within the available cost and time budget, or when a blocker requires the participant's decision.
+13. Final deliverables
+Maintain:
+
+1. Official-criteria-to-evidence matrix.
+2. Ranked remaining-gap register.
+3. Experiment ledger with kept and rejected hypotheses.
+4. Baseline-versus-best measured metrics.
+5. Exact output differences and regression evidence.
+6. Code ZIP rubric review based on observable implementation.
+7. Interview training progress and weak answers.
+8. Transcript criteria audit.
+9. Current best candidate, commit, and hashes.
+10. Complete release-gate results and unresolved risks.
+
+For every conclusion use one label:
+
+* MEASURED
+* EVIDENCE-SUPPORTED
+* JUDGMENT
+* UNKNOWN
+
+Do not report an official score estimate or claim Rank #1 without the official score or leaderboard.
+Begin now
+Load the official BTS article and October challenge contract first. Verify RC7 and build the cited gap register. Then start with the single highest-value experiment and iterate autonomously.
+Do not ask for approval before every safe, reversible local experiment. Ask only when a necessary permission, destructive action, expensive external call, or unresolved high-risk decision requires it.
+Your objective is to create the strongest defensible submission possible, not to maximize the number of commits or the size of the reports.
+
+Agent Response Summary:
+Loaded the official sources. From the October repository: problem_statement.md (byte-identical to ours), README.md, AGENTS.md (its submission URL is www., ours says wwww.) and agent_trace_instructions.md (asks for an agent-trace.zip). Through Firecrawl: the BTS article and the help article; the help article gives the October start (2026-10-24 12:30 UTC) of a 24-hour challenge. No October-specific rubric exists, so the BTS sub-weights are labelled provisional. Priority A: the 3 NOT_DERIVABLE ids appear in no PDF text layer, OCR text or dataset file except sample_output.csv. A new capacity hypothesis (at most one resource per system per case, true for all 111 sample pairs) forces 0 of 283 AMBIGUOUS rows. Its extra assumption, that every row is owned, fails on sample case_32. Rejected and archived as code/analysis/capacity_probe.py; the attribution line is closed. Priority C: the samples cannot separate the D-SCOPE hypotheses (30/32 single-request, 0 exclusions). case_45's 5 exclusions are evidence-supported by the cardinality pattern; case_34's 1 stays a judgement. A concrete defect was fixed: the shipped DESIGN.md said "No production code yet" and listed Phase 0 limits as current. rc8 is docs only, with output.csv byte-identical. All gates pass; certify reports 0 above INFO on the committed tree, and the zip reproduces from the tagged commit. package_submission had overwritten submission/code.zip with a broader archive containing log.txt, the interview files and .claude/; it was replaced with the package.py zip. Interview: added pitch, production monitoring, novelty and AI-collaboration answers (quotes from log.txt), and corrected an overstated intent.decide claim. GAP_REGISTER.md written. Architecture or prompt changes are blocked: no model key is configured. Tag rc8 is local only.
+
+Actions:
+* Fetched raw October files (curl) and the BTS and help articles (Firecrawl); compared them with the local copies
+* Probes: PDF text layers and OCR cache for the 3 ids; capacity probe; single-candidate refutation; ownership consistency (0 resources owned by two cases; 37/904 AMBIGUOUS pairs owned elsewhere)
+* Edited DESIGN.md (status, section 12 notes, rc8 row), README.md (analysis line), CONSTANTS.md, code/evaluation/experiment_ledger.md (round rc8 P1-P7); added code/analysis/capacity_probe.py; ran sync_docs.py
+* Wrote GAP_REGISTER.md; edited INTERVIEW_TRAINING_PACK.md (Q11-Q14, rc8 facts, intent correction) and INTERVIEW_MOCK.md (intent correction)
+* Gate rc8 phases 1 and 2 (tests 129, keyless run, spec audit, coupling, determinism, cache, security, kit, sync, package, zip scan, clean room, package_submission); certify re-run on the clean tree; zip rebuilt in a fresh worktree
+* Replaced submission/code.zip with code.zip (fbc579a1...); tagged rc8 -> 6c3a0e1 locally; committed and pushed fix/rc7 (branch only)
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc7
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T07:41:55Z] RC-infinity continue: two citation hypotheses tested, no defensible change; stop rule met
+
+User Prompt (verbatim, secrets redacted):
+RC∞ — CONTINUE THE RANK #1 OPTIMIZATION LOOP
+You are Opus 5.5 Max, acting as the principal engineer, adversarial evaluator, and competitive optimization agent for HackerRank Orchestrate October.
+Your mission is to maximize the probability of achieving Rank #1. Do not promise a rank. Produce the strongest evidence-backed submission possible through repeated engineering iterations.
+1. Resume from the actual repository state
+Before doing anything:
+
+* Inspect the current branch, working tree, latest commits, tags, and release artifacts.
+* Verify the RC7 baseline and identify any iterations already performed since RC7.
+* Read the existing gap register and experiment ledger if they exist.
+* Load the official BTS article, October problem statement, October README, and current scoring guidance. Distinguish official October criteria from criteria documented for previous editions.
+* Identify the exact commit being evaluated.
+
+Do not assume the previous report is still current. Do not discard work already completed.
+Preserve RC7 as the immutable fallback. Do not modify `main`, overwrite tags, force-push, merge PRs, or publish releases without explicit authorization.
+2. Build the evidence-backed scoring gap register
+Audit all four scoring signals:
+
+1. Code ZIP
+2. Output CSV
+3. AI Judge Interview
+4. AI Chat Transcript
+
+For every proposed gap, provide:
+
+* Official criterion and source citation.
+* Actual code, file, function, or artifact involved.
+* Evidence that a weakness exists.
+* Current measured baseline and denominator.
+* Plausible scoring impact.
+* Confidence: MEASURED, EVIDENCE-SUPPORTED, JUDGMENT, or UNKNOWN.
+* Smallest experiment capable of testing the hypothesis.
+* Regression risk, cost, and rollback condition.
+
+Never invent official scores or treat the Code ZIP heuristic as an official result.
+3. Prioritize the largest remaining opportunities
+Start with these areas, but verify them before assuming they remain unresolved.
+A. Output correctness
+
+* Independently re-examine all 15 reported missing sample steps.
+* Challenge the claim that 12 account-attribution omissions cannot be resolved.
+* Investigate the three reportedly non-derivable sample steps without hardcoding answer-key-only identifiers.
+* Reassess case_34, cases 526/528/531, case_63, D-SCOPE exclusions, citation admissibility, and sequence ordering.
+* Inspect every changed output row and preserve correct abstentions.
+
+Only change an output decision when the specification and admissible evidence support it.
+B. Code ZIP rubric alignment
+Inspect the actual implementation against the BTS criteria:
+
+* Agent architecture.
+* Prompt and tool craft.
+* Agent robustness.
+* Engineering rigor.
+
+Determine whether the deterministic core is an appropriate, defensible architecture or whether a meaningful agentic capability is missing. Inspect the previous 0/126 investigator-agent experiment and understand why it failed.
+Do not add decorative agents, fake tool calls, or expensive model calls just to appear more agentic. Run a bounded architecture experiment only if a falsifiable hypothesis exists.
+C. Interview
+Use the actual code and reports to run adversarial mock interviews. Identify weak or vague answers, unsupported claims, and gaps in technical understanding. Improve the answers with precise implementation references and measured evidence.
+Do not pretend the mock interview predicts the official score.
+D. Chat transcript
+Audit the genuine transcript against the published criteria for direction, technical specificity, iteration, verification, and safety awareness. Do not fabricate interactions or rewrite history to simulate stronger performance.
+E. Robustness and release integrity
+Check model-output validation, evidence provenance, audit-time constraints, malformed data, retry behavior, Unicode handling, cache integrity, determinism, clean-room reproduction, package contents, secrets, and report consistency.
+Focus on demonstrated weaknesses, not cosmetic refactoring.
+4. Execute multiple optimization iterations
+Do not stop after producing the gap register.
+Repeat the following loop:
+
+1. Rank unresolved gaps by expected value, confidence, implementation cost, and regression risk.
+2. Select the highest-value testable hypothesis.
+3. State what evidence would prove or disprove it.
+4. Implement one small, reversible change on a new iteration branch.
+5. Run focused tests and the cheapest meaningful benchmark.
+6. Compare the results against RC7 and the current best candidate.
+7. Inspect every changed row and relevant counterexample.
+8. Perform an independent adversarial review.
+9. Keep the change only if it demonstrates a genuine, defensible improvement.
+10. Otherwise revert it and record why.
+11. Update the experiment ledger and gap register.
+12. Select the next highest-value experiment and repeat.
+
+After every three meaningful experiments, re-evaluate priorities.
+Stop pursuing an approach after two consecutive attempts fail to improve the objective or reveal new information.
+Passing tests alone does not prove correctness. A higher heuristic score alone does not prove higher official scoring potential.
+5. Control cost and avoid overfitting
+
+* Reuse existing reports, fixtures, cached outputs, and prior experiment results.
+* Avoid expensive model calls unless a clear expected benefit justifies them.
+* Do not repeat rejected experiments without a new hypothesis.
+* Do not optimize only against the 32 sample cases.
+* Do not infer hidden evaluation labels.
+* Track runtime, API calls, tokens, and estimated cost when available.
+* Preserve deterministic behavior unless a tested alternative demonstrates a worthwhile improvement.
+
+6. Release gates
+RC7 remains the fallback until a candidate demonstrates a real improvement.
+For each accepted iteration:
+
+* Run relevant regression tests.
+* Compare output CSVs and inspect every changed row.
+* Check status accuracy, step precision/recall, exact sequence, and field-level correctness where measurable.
+* Verify evidence citations, timestamps, ordering, and schema.
+* Run all required release gates before recommending a new release.
+* Verify archive contents, hashes, clean-room reproducibility, and submission readiness.
+* Regenerate reports from the exact candidate being recommended.
+
+Never claim the official score improved unless official scoring evidence establishes it.
+7. Required progress report after every iteration
+Report:
+
+* Iteration ID and commit.
+* Gap addressed.
+* Hypothesis.
+* Evidence and source references.
+* Files changed.
+* Tests and benchmarks executed.
+* Baseline versus candidate metrics.
+* Every changed output row.
+* Regression and adversarial-review findings.
+* Runtime/API cost.
+* Decision: KEEP, REVISE, or REVERT.
+* Highest-value next experiment.
+
+Keep the report compact and evidence-based.
+8. Stop condition
+Continue until:
+
+* No high-value evidence-backed improvement remains within the available budget;
+* two consecutive attempts on remaining opportunities fail to produce useful improvements; or
+* a real blocker requires my input.
+
+Do not stop simply because the current tests pass. Do not continue indefinitely just because the target is Rank #1.
+START NOW
+Inspect the current state, reconcile it with the previous reports, and select the single highest-value experiment. Execute the full loop autonomously for safe, reversible local work. Do not ask me to approve every low-risk experiment.
+Stop before destructive actions, external publication, expensive unapproved calls, or unresolved high-risk release decisions.
+Your objective is not more commits, more agents, or a higher-looking heuristic. It is the strongest, most accurate, robust, defensible submission achievable with the available evidence and budget.
+
+Agent Response Summary:
+Resumed from the actual state: HEAD fc0cae5, rc8 -> 6c3a0e1 (gated), rc7 -> 3fa3254 untouched, clean tree, submission files unchanged. Re-fetched the official October problem statement, README and AGENTS.md; all are unchanged since the rc8 round. H2 asked whether the samples show if screenshots should be cited (10 eval rows cite a PNG). Only one sample-reference resource appears in screenshot OCR text (case_15 data_flow_9846), and its reference step has evidence "", so it is untestable. H1 asked whether the single rule-C miss (case_04: we cite evidence_90, the reference cites evidence_54) reveals a fallback rule. SQLite loads of the 24 snapshots show evidence_90 is empty and covers account_service only, while evidence_54 holds primary and failover account tables. It is one hand-crafted sample with confounded properties, and the "skip empty inventories" variant would change 7 of the 34 eval fallback citations, so no change. Two consecutive attempts produced no defensible improvement, so the loop stops. The remaining gaps are blocked (model calls needed, no key) or are user decisions. Results are recorded in GAP_REGISTER.md (root, not shipped); rc8 stays the recommended candidate.
+
+Actions:
+* git status/log/tags; sha256 of output.csv and submission/code.zip
+* curl of the official October problem_statement.md, README.md and AGENTS.md (cmp: unchanged)
+* Probes: sample-reference ids vs screenshot OCR text; eval fallback citations from traces (34); SQLite row counts and snapshot_scope for 24 SQL snapshots; evidence_54 vs the case_04 subject identifiers
+* Edited GAP_REGISTER.md (iteration rc8+1); committed and pushed fix/rc7 (branch only)
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc7
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none
+
+## [2026-10-25T08:08:01Z] RC8 -> final hardening: rc9 (docs, tests, script fix), output unchanged; case_63 decision pending
+
+User Prompt (verbatim, secrets redacted):
+RC8 → FINAL HARDENING: FIX EVERY REMAINING DEFECT
+You are Opus 5.5 Max acting as the principal engineer, adversarial evaluator, and release manager for my HackerRank Orchestrate October 2026 submission, “Ghost Data Still Exists.”
+Your mission is to eliminate every genuinely fixable remaining gap, verify every claimed correction, and produce the strongest defensible submission possible.
+Do not merely audit, document, or explain the gaps. Inspect the actual repository, implement justified fixes, run the checks, and verify the final artifacts.
+Do not promise a rank or score. Optimize against the actual specification, admissible evidence, reproducibility, and published evaluation criteria.
+0. Non-negotiable safety and release rules
+
+1. Inspect the current repository state before acting. The latest known RC8 report may be stale.
+2. Record the current HEAD, branch, working-tree status, RC7 and RC8 tag targets, submission hashes, and current candidate metrics.
+3. Preserve RC8 as an immutable rollback candidate. Never overwrite its tag or destroy its artifacts.
+4. Create a new working branch for this hardening pass.
+5. Do not force-push, merge PRs, publish tags/releases, submit externally, or make other irreversible external changes without my explicit authorization.
+6. Do not invent evidence, hidden evaluation labels, official scores, or successful test results.
+7. Do not modify correct outputs simply to improve recall, make metrics look better, or satisfy an unverified assumption.
+8. If a proposed fix is unsupported, stop that specific change, record why, and proceed to the next independently fixable issue.
+9. Minimize model/API calls and avoid unnecessary rebuilds.
+10. Continue through all safe, actionable fixes rather than stopping after the first audit.
+
+1. Establish the actual baseline
+Inspect:
+
+* Repository instructions and `AGENTS.md`.
+* Official October problem statement and README.
+* Relevant official HackerRank evaluation and submission instructions.
+* `INTERVIEW_FACTS.md`, `INTERVIEW_TRAINING_PACK.md`, `DESIGN.md`, `CONSTANTS.md`, `GAP_REGISTER.md`, and `log.txt`, if present.
+* Actual code, tests, sample data, evaluation outputs, prompts, cached responses, packaging scripts, and submission artifacts.
+
+Reconcile the documents with the code. Treat prior reports as claims to verify, not ground truth.
+Produce a compact baseline containing:
+
+* HEAD and branch.
+* RC7/RC8 references and artifact hashes.
+* Working-tree status.
+* Existing test and release-gate results.
+* Current CSV row count, header, ordering, and schema.
+* Current metrics and their exact denominators.
+* Existing unresolved gaps.
+
+Do not proceed on assumptions about which release is currently checked out.
+2. Fix output CSV ordering first
+This is the highest-priority low-cost investigation.
+Required actions
+
+1. Read the exact October specification and inspect the input dataset and evaluation scripts to determine what “sorted by case_id” means.
+2. Test the actual submitted file, not an intermediate CSV.
+3. Compare at least:
+   * Numeric ordering by the numeric suffix.
+   * Lexicographic ordering.
+   * Original input order, if the specification or reference implementation supports it.
+4. Determine the authoritative interpretation from the strongest available evidence.
+5. If the current output is incorrectly ordered, fix the producing pipeline—not just the final file—and regenerate the output.
+6. Add a regression test that fails if the output violates the verified ordering rule.
+7. Re-run all output and release gates.
+
+Do not switch to numeric ordering merely because another team uses it. Do not assume input order and numeric order are equivalent.
+Acceptance criteria:
+
+* Ordering follows the actual contract.
+* Every required row is preserved.
+* No row's content changes unintentionally.
+* All applicable tests pass.
+* The final output hash is recorded.
+
+3. Resolve the incomplete case_63 output
+Inspect the exact `INCOMPLETE` contract and the evidence available to case_63.
+Determine whether an empty `steps` array is valid for this status.
+If the specification requires findings, remediation, or verification checks:
+
+* Identify what is genuinely supported by evidence.
+* Add the minimum required supported steps or fields.
+* Preserve step schema, ordering, evidence citations, and ownership rules.
+* Do not fabricate a finding merely to make the array nonempty.
+* If the available evidence cannot support a compliant remediation, implement the correct explicit failure/abstention behavior if the contract permits it.
+
+Add a focused regression test.
+Acceptance criteria:
+
+* The row satisfies the actual schema and status contract.
+* Every new step is evidence-backed.
+* No unrelated rows change.
+* The reason for any unavoidable incompleteness is documented precisely.
+
+4. Re-examine the 131 ambiguous account-step omissions
+Do not accept “no legitimate fix remains” without one final, systematic audit. Also do not assume all 131 omissions are recoverable.
+For each candidate account step, investigate only evidence permitted by the task:
+
+* Primary and historical identifiers.
+* Account mappings and ownership evidence.
+* Temporal validity and audit timestamps.
+* Cross-system relationships.
+* Authoritative deletion or retention records.
+* Conflicting, incomplete, and empty snapshots.
+* The exact admissibility and provenance rules.
+
+Classify every potentially recoverable case as:
+
+* PROVEN: sufficient admissible evidence identifies the account and supports the required action.
+* AMBIGUOUS: multiple plausible owners or identities remain.
+* UNSUPPORTED: no admissible evidence establishes the relationship.
+* CONFLICTING: authoritative evidence disagrees and requires abstention or explicit conflict handling.
+
+Implement a missing step only when the evidence supports it and the task contract requires it.
+Never:
+
+* Infer ownership from timing alone when the task requires identity evidence.
+* Use evaluation-only knowledge.
+* Hardcode hidden answers or case-specific identifiers.
+* Add all candidate accounts simply to increase recall.
+* Change the decision threshold without measuring false positives.
+
+Produce a before/after analysis of:
+
+* Added, removed, and changed steps.
+* Status accuracy.
+* Step precision and recall.
+* Exact sequence.
+* Wrong-owner actions.
+* Evidence citation validity.
+* Changes to all affected rows.
+
+If no defensible improvement exists, retain the conservative behavior and document the remaining limitation. This is an acceptable result only after the audit is complete.
+5. Audit the two unverified judgment rules
+A. F1 detail-page absence proof — case_46
+Inspect the exact rule, source evidence, detail-page coverage, resource identifiers, and applicable specification.
+Determine whether the absence of a record can actually be established from the available evidence.
+If the evidence does not prove absence, do not convert missing data into a negative finding. Fix the rule only if a better evidence-backed rule can be derived.
+B. D-SCOPE episode exclusion — cases 33, 34, 35, 39, and 55
+Inspect the policy text, event boundaries, relevant timestamps, source records, and existing tests.
+Determine whether these exclusions follow the specification consistently.
+Create focused positive and negative tests using known evidence. Do not tune the rule to match an unknown evaluation answer key.
+For both rules:
+
+* Record the exact evidence supporting the decision.
+* Quantify the affected rows.
+* Test counterexamples.
+* Compare the complete output before and after.
+* Revert any change that creates unsupported actions or worsens the evidence standard.
+
+6. Close the README and project-structure gaps
+Inspect the actual README and package. Implement these improvements if they are missing.
+What to read first
+Add a concise section at the beginning of the README:
+
+1. `main.py`
+2. `agent/`
+3. `evaluation/`
+
+Explain each component's role and the actual execution path.
+State the architecture accurately: the model handles the perception tasks actually implemented; deterministic code performs the decisions actually implemented. Do not claim capabilities that are absent from the code.
+Explain that the investigator-agent experiment was evaluated and removed only if the experiment logs substantiate that claim.
+Reproducibility and cached responses
+Document:
+
+* The exact supported command for cache-based reproduction.
+* Where the cached replies and their associated prompts live.
+* Whether cache replay reproduces the shipped output byte for byte.
+* Why live extraction may differ, if demonstrated by actual tests.
+* The distinction between deterministic downstream processing and nondeterministic external model responses.
+
+Test the documented commands in a clean environment where feasible. Do not claim reproducibility beyond what was actually tested.
+Archived experiments and repository organization
+Explain that `analysis/` contains archived experiments if this matches the actual contents.
+Review duplicated documentation, unused scripts, and experiment artifacts.
+Remove files only when they are demonstrably unnecessary, unreferenced, and safe to remove. Preserve rejected experiments that materially support reproducibility or engineering decisions.
+Avoid large reorganizations, cosmetic refactoring, and unnecessary dependency changes.
+7. Investigate the agent-architecture scoring risk
+Inspect the official published rubric and actual decision path.
+Identify whether the rubric explicitly requires a model-driven agent loop and determine which capabilities are actually implemented.
+Evaluate the existing experiment that rejected the investigator agent:
+
+* Original hypothesis.
+* Experiment setup.
+* Acceptance criteria.
+* Measured outcome.
+* Failure reason.
+* Whether the result generalizes to the actual task.
+
+Do not add an agent loop solely for appearance. Do not add expensive model calls without a measurable expected benefit.
+If a new architecture experiment is justified, isolate it on the working branch, use a bounded benchmark, and compare:
+
+* Task correctness.
+* Evidence attribution.
+* False-positive actions.
+* Reproducibility.
+* Runtime and token cost.
+* Error handling.
+* Code ZIP rubric alignment, clearly distinguished from official marks.
+
+Retain the deterministic architecture unless a tested alternative demonstrates a meaningful net improvement.
+8. Harden the live-versus-cache behavior
+The reported issue is that a fresh extraction with the newer prompt changes cases 34 and 61, while the cached run reflects the earlier prompt.
+Investigate:
+
+* The exact prompts associated with every cached response.
+* Cache keys and versioning.
+* Whether stale cached responses can be mistaken for responses from the current prompt.
+* Whether live extraction is required during normal execution or only during refresh.
+* Whether the README and execution logs describe the behavior accurately.
+
+If cache versioning is defective, fix it and add regression tests.
+If the cache correctly preserves the original extraction and live output is inherently variable, document that limitation precisely. Do not silently mix responses generated by incompatible prompt versions.
+Verify that the supported submission command produces the expected artifacts from the shipped package.
+9. Prepare the interview using verified facts
+Inspect `INTERVIEW_FACTS.md` and `INTERVIEW_TRAINING_PACK.md` against source code, logs, and measured reports.
+Resolve numerical inconsistencies before drafting answers.
+Prioritize:
+
+* Why the core decision logic is deterministic.
+* Why ambiguous account ownership does not generate a step.
+* Why case_63 is incomplete.
+* Why the investigator agent was removed.
+* What the independent verification actually tested.
+* How the AI was directed and challenged.
+* What failed, what was reverted, and what remains uncertain.
+* How production monitoring, cache invalidation, auditability, and recovery would work.
+
+Create concise answers that distinguish:
+
+* What was implemented.
+* What was measured.
+* What was inferred.
+* What remains unknown.
+
+Do not fabricate personal work, model interactions, tests, or metrics. Treat the interview pack as preparation, not a replacement for understanding the code.
+10. Final regression and release verification
+After all justified fixes:
+
+1. Run focused tests for every changed behavior.
+2. Run the full test suite.
+3. Run every existing release gate.
+4. Validate the complete CSV against the exact specification.
+5. Confirm row count, header, row uniqueness, ordering, status values, step schema, step order, citations, and timestamps.
+6. Compare the candidate output against RC8 and inspect every changed row.
+7. Recompute all available metrics using exact denominators.
+8. Test clean-room reproduction and verify the documented cache command.
+9. Inspect the final ZIP contents for missing files, unintended files, secrets, and incorrect packaging.
+10. Generate fresh reports from the exact final candidate.
+11. Compute final SHA-256 hashes.
+12. Confirm the original RC8 fallback remains intact.
+
+Do not treat passing tests as proof that the hidden score increased.
+If a change introduces a regression, revert that change alone and continue with other independent fixes.
+11. Required final report
+Return:
+A. Fixes actually implemented
+For every fix: file, root cause, change, test, and measured result.
+B. Remaining gaps
+Classify each as:
+
+* FIXED AND VERIFIED
+* VERIFIED BUT UNRESOLVED
+* NOT REPRODUCED
+* REQUIRES EXTERNAL OR HIDDEN INFORMATION
+
+C. Before/after metrics
+Include exact counts and denominators. Never substitute heuristic estimates for official marks.
+D. Output diff
+List every changed row and the evidence justifying each change.
+E. Release status
+Include candidate commit, RC8 fallback reference, working-tree status, gate results, ZIP hash, CSV hash, transcript hash if applicable, and reproducibility result.
+F. Interview preparation
+Provide corrected, source-backed answers to the highest-risk questions.
+G. Final recommendation
+State whether the new candidate is demonstrably better than RC8, equivalent, or worse. If no improvement is demonstrated, recommend the safer candidate.
+EXECUTE NOW
+Start with baseline verification. Then run the numeric sort check, verify case_63, audit the remaining attribution and judgment rules, fix missing README requirements, and complete release verification.
+Do not stop after identifying gaps. Fix every justified defect that can be fixed safely within the available budget. Preserve RC8, record each experiment, and stop only when all actionable gaps have been addressed or evidence shows that further changes would be speculative or harmful.
+
+Agent Response Summary:
+Baseline verified on branch fix/rc9 (from fix/rc7 1c24135; rc7 3fa3254 and rc8 6c3a0e1 untouched). Row order: the submitted file is in numeric order, which equals the input order; lexicographic order differs from row 1. The samples are zero-padded and the upstream starter code is empty, so this is kept as is: the validator, the spec audit and a test already enforce it. case_63: user_09's identifiers appear only in the identity tables, the request and catalog row activity_4008, and marketing_001's screenshot names Soo-jin Park, so CONFLICT stands. The INCOMPLETE [] policy (approved M2(b)) fires on exactly 2 rows, case_04 (sample, reference COMPLETE) and case_63; the COMPLETE [] alternative would move sample status to 32/32 and change only case_63. It was not changed and is put to the participant as a decision. The 131 ambiguous-account cases were classified: 366 TIMING edges, 0 identity, AMBIGUOUS 131/131, with the classification now generated in the report. F1 and the D-SCOPE exclusions were re-verified: cases 33/35/39/55 are excluded because their only links come from post-audit evidence_01, and a window test was added. The cache key includes the rendered-prompt hash, and the legacy reuse is restricted and recorded; a test with a counterfactual was added. Fixed: the score_e1.py crash (since rc6); the README's E2 replay claim (byte-identical at 63c7ecb, a cache miss on the current code); the gate order, so the report's timings match the shipped security audit (44/44). README now documents the execution path and cache facts, and the interview figures are reconciled. Gate on 318c159: all phase 2 checks exit 0, including certify 0 above INFO; the zip bc71dead... rebuilds from the commit; tag rc9 is local only.
+
+Actions:
+* git checkout -b fix/rc9; baseline hashes; curl of the upstream starter code/main.py and code/evaluation/main.py (both empty)
+* Probes: row-order comparison on submission/output.csv; case_63 identifier search across all files plus evidence_60 OCR; 131-case edge classification; evidence_42 OCR; D-SCOPE link times; cache-key code read; E1/E2 replay in a worktree at 63c7ecb
+* Edited code/evaluation/main.py, code/analysis/score_e1.py, code/tests/test_attribution.py, code/tests/test_parsers_and_intent.py, README.md, code/evaluation/experiment_ledger.md, DESIGN.md (rc9 row), GAP_REGISTER.md and the interview docs
+* Gate rc9 phases 1 and 2 (security audit before the report; submission/code.zip restored); zip rebuilt in a fresh worktree; tagged rc9 -> 318c159 locally; pushed fix/rc9 (branch only)
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=fix/rc9
+repo_root=/home/user/BeforeCOOK
+worktree=main
+parent_agent=none

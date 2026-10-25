@@ -1,7 +1,10 @@
 # Kit heuristic estimate — NOT an official HackerRank score
 
 Produced by `python -m orchestrate_kit score --no-history --python python --transcript log.txt` (orchestrate-kit
-1.0.0) on 2026-10-25, against commit 5b7fdbc (final build candidate). The kit itself says: "ESTIMATED, not official. No public ground-truth
+1.0.0, a fresh clone at its commit ccb175f) on 2026-10-25, against commit 9d0a5f2 (rc7 candidate). Code ZIP reads 82.4 (rc6: 82.3; rc5: 82.4); its sub-scores are architecture
+100, craft 100, robustness 60, rigor 49 (weights 30/30/25/15). rc7 typed the decision code (163/165 functions) and split
+`attribution.attribute`, but the kit's type ratio counts every .py file including tests, so its rigor sub-score did not
+move. The kit itself says: "ESTIMATED, not official. No public ground-truth
 graded Orchestrate submission exists to calibrate any of these scorers against."
 
 Labels: **MEASURED** (a number this repository computed from its own outputs), **ESTIMATED** (a kit heuristic),
@@ -14,7 +17,7 @@ Labels: **MEASURED** (a number this repository computed from its own outputs), *
 | Code ZIP (30%) | 82.4 / 100 | ESTIMATED | One finding, disputed below |
 | Output CSV (30%) | 100.0 / 100 | ESTIMATED, mostly NOT CHECKED | The kit marks it "measured", but only 1 of its 4 audits ran; spec conformance, evidence quality and output sanity "could not run" (they expect a different challenge's files) |
 | AI Judge Interview (30%) | UNKNOWN | NOT CHECKED | No interview result exists locally |
-| AI Chat Transcript (10%) | 100.0 / 100 | ESTIMATED | The kit counted "1 turn(s)" and 4/7 evidence-chain nodes; see the G10 transcript analysis |
+| AI Chat Transcript (10%) | 100.0 / 100 | ESTIMATED | The kit counted "1 turn(s)" and 7/7 evidence-chain nodes, "not in a plausible order"; `transcript analyze` PASS |
 | Overall | UNKNOWN (64.71 points measured from 70% of the weight) | ESTIMATED | The interview is missing and is not counted as zero |
 
 **Weakest known section: Code ZIP (82.4, ESTIMATED).** The interview (30%) is unmeasured and could be weaker.
@@ -27,7 +30,7 @@ Labels: **MEASURED** (a number this repository computed from its own outputs), *
 | Sample step precision / recall | 178/178 / 178/193 | MEASURED |
 | Sample sequence accuracy | 19/32 | MEASURED |
 | Custom, category and adversarial cases | 19/19 pass | MEASURED |
-| Literal spec audit (`code/evaluation/spec_audit.py`) | 0 violations; negative control 17/17 caught | MEASURED |
+| Literal spec audit (`code/evaluation/spec_audit.py`) | 0 violations; negative control 18/18 caught (rc5 added the numeric case_id order check) | MEASURED |
 | Coupling probes (`code/evaluation/coupling_probes.py`) | 5/5 pass | MEASURED |
 | Security audit (`code/evaluation/security_audit.py`) | product regexes < 2 s on 1 MB lines (worst 0.50 s); hostile-file fixtures 5/5 | MEASURED |
 | Determinism | 3 processes (PYTHONHASHSEED 1/2/3, the third keyless), 553 files byte-identical | MEASURED |
@@ -44,5 +47,7 @@ Labels: **MEASURED** (a number this repository computed from its own outputs), *
 - **README ↔ Code "claims agent loop, rate limit, no corresponding evidence".** The README says there is *no*
   free-form agent loop (E2 was measured and removed); the keyword match ignores the negation. The rate limit is the
   client-side throttle `LLMClient._throttle` (`requests_per_minute` per model in `models.yaml`).
+- **Code ↔ Transcript "claims agent loop, no corresponding evidence found in code".** Same negation: the transcript
+  describes the E2 loop as built, measured (0/126 accepted) and removed; its code is archived in `code/analysis/`.
 - **Output CSV 100 "measured".** Three of the four underlying audits did not run; the 100 should not be read as a
   measured CSV score. The repository's own spec audit is the measured conformance check.

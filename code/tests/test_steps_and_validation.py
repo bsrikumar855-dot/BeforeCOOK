@@ -86,6 +86,17 @@ def test_not_applicable_requires_empty_array():
 
 def test_case_ids_sort_numerically():
     assert sorted(["case_100", "case_33", "case_550"], key=case_sort_key) == ["case_33", "case_100", "case_550"]
+    assert sorted(["case_100", "case_99", "case_550", "case_10", "case_9"], key=case_sort_key) == \
+        ["case_9", "case_10", "case_99", "case_100", "case_550"]
+
+
+def test_output_file_in_string_order_is_rejected(tmp_path):
+    from agent.validation import validate_output_file
+    ids = ["case_99", "case_100"]
+    p = tmp_path / "out.csv"
+    p.write_text("case_id,deletion_status,steps_json\ncase_100,NOT_APPLICABLE,[]\ncase_99,NOT_APPLICABLE,[]\n",
+                 encoding="utf-8")
+    assert "rows not sorted by case_id" in validate_output_file(p, ids)
 
 
 def test_self_contradicting_rows_are_rejected():

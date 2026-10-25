@@ -22,6 +22,7 @@ from .parsers.file_checks import DEGRADE_STATUSES
 from .parsers.ocr_grounding import OcrReader
 from .parsers.png_vlm import ImageExtractor
 from .rules import DATA_FLOW, SYSTEM_CATEGORIES, Policy
+from .schema import ActivityClaim, Observation
 from .state import reconstruct
 from .steps import build_steps, serialize
 from .validation import HEADER, EvidenceCatalog, case_sort_key, validate_row
@@ -94,7 +95,10 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
                              **({"truncated_to": MAX_CLASSIFY_CHARS} if len(r["request_text"]) > MAX_CLASSIFY_CHARS else {})}
 
     # ---- attribution (global, all cases jointly) ----
-    attribution = attribute(contexts, index, ds.activity, universe)
+    # OCR ids a screenshot shows but the model did not extract: scope evidence only (rc6-P1, attribution.page_scope)
+    page_ids = {f: r["ocr_only"] for f, r in extractor.grounding_report.items()} if extractor is not None else {}
+    add_ocr_mentions(index, page_ids, ds.activity)
+    attribution = attribute(contexts, index, ds.activity, universe, page_ids=page_ids)
     worker_events: dict[str, list[str]] = {}
     for a in sorted(ds.activity, key=lambda a: (a.event_time, a.activity_id)):
         if a.source_system == WORKER:
@@ -115,6 +119,27 @@ def run(dataset_dir: Path, from_cache: bool, include_samples: bool = True,
     rr = RunResult(ds, index, outcomes, attribution, ledger)
     rr.summary = summarise(rr, extractor)
     return rr
+
+
+def add_ocr_mentions(index: EvidenceIndex, page_ids: dict[str, list[str]], activity: list[ActivityClaim]) -> list[str]:
+    """rc7-X1: citation rule C counts every admissible file that mentions a resource. An id a screenshot shows (OCR)
+    but the model did not extract becomes a field-less, non-state-bearing mention of a KNOWN resource (one that the
+    parsed evidence or the activity stream also names), so it can be the citation but never sets presence or
+    exposure; an OCR misread names no known resource and adds nothing. Returns the observation ids added."""
+    known = set(index.by_resource) | {a.resource_id for a in activity}
+    added = []
+    for fid, ids in sorted(page_ids.items()):
+        f = index.files.get(fid)
+        for rid in ids:
+            if f is None or not f.captured_at or rid not in known:
+                continue
+            o = Observation(f"{fid}#ocr:{rid}", fid, f.captured_at, None, "IMAGE_OCR_MENTION", index.system_of(rid),
+                            "SINGLE", "ocr_mention", rid, {}, state_bearing=False)
+            index.observations.append(o)
+            index.by_resource.setdefault(rid, []).append(o)
+            index.mentions.setdefault(rid, set()).add(fid)
+            added.append(o.obs_id)
+    return added
 
 
 def audit_case(ctx: CaseContext, ds: Dataset, index: EvidenceIndex, attribution: AttributionResult, policy: Policy,

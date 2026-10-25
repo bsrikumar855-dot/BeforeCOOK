@@ -98,7 +98,7 @@ class UsageLedger:
 
 
 class ResponseCache:
-    def __init__(self, root: Path = CACHE_DIR):
+    def __init__(self, root: Path = CACHE_DIR) -> None:
         self.root = root
 
     def path(self, task: str, key: str) -> Path:
@@ -132,7 +132,7 @@ def usage_metadata(record: dict) -> dict:
 
 
 class LLMClient:
-    def __init__(self, from_cache: bool = False, config_path: Path = CONFIG_PATH, ledger: UsageLedger | None = None):
+    def __init__(self, from_cache: bool = False, config_path: Path = CONFIG_PATH, ledger: UsageLedger | None = None) -> None:
         self.config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
         self.from_cache = from_cache
         self.ledger = ledger or UsageLedger()

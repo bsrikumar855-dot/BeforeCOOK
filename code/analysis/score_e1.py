@@ -23,8 +23,8 @@ _attribute = pipeline.attribute
 
 def run(dataset_dir, from_cache, order_strategy=None):
     """Production pipeline, with the reverted strategy patched in after attribution for scoring only."""
-    def patched(contexts, index, activity, universe):
-        result = _attribute(contexts, index, activity, universe)
+    def patched(contexts, index, activity, universe, **kwargs):      # rc9: pass on page_ids (added in rc6)
+        result = _attribute(contexts, index, activity, universe, **kwargs)
         if order_strategy:
             strategy = {"A": e1.strategy_a, "B": e1.strategy_b}[order_strategy]
             e1.apply(result, strategy(contexts, result, activity))

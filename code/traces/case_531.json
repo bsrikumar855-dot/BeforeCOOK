@@ -179,11 +179,6 @@
  ],
  "excluded": [
   {
-   "label": "INFERRED_CLAIM",
-   "reason": "UNKNOWN_STATE: no admissible observation and no admissible full snapshot",
-   "resource_id": "account_3146"
-  },
-  {
    "label": "AMBIGUOUS",
    "reason": "AMBIGUOUS: activity_92 lies in the burst windows of cases ['case_530', 'case_531', 'case_532']",
    "resource_id": "analytics_3744"
@@ -219,12 +214,12 @@
    "attribution": "INFERRED_CLAIM",
    "category": "USER_PROFILE",
    "category_basis": "default category for account_service",
-   "compliant": null,
+   "compliant": true,
    "note": "UNKNOWN_STATE: no admissible observation and no admissible full snapshot",
    "operations": [
     null,
     null,
-    null
+    "VERIFY_RECORD_ABSENT"
    ],
    "proof_file_id": null,
    "required_action": "DELETE",
@@ -321,11 +316,20 @@
   },
   {
    "evidence_id": "",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "phase": "VERIFICATION",
+   "resource_id": "account_3146",
+   "state": "ABSENT",
+   "step_no": 3,
+   "system_id": "account_service"
+  },
+  {
+   "evidence_id": "",
    "operation": "VERIFY_RECORD_PRESENT",
    "phase": "VERIFICATION",
    "resource_id": "audit_record_8556",
    "state": "PRESENT",
-   "step_no": 3,
+   "step_no": 4,
    "system_id": "security_service"
   },
   {
@@ -334,7 +338,7 @@
    "phase": "VERIFICATION",
    "resource_id": "backup_3382",
    "state": "BLOCKED",
-   "step_no": 4,
+   "step_no": 5,
    "system_id": "backup_service"
   }
  ],
