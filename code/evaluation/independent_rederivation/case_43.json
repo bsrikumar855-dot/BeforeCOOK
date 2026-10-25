@@ -1,0 +1,47 @@
+{
+ "case_id": "case_43",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "account_service",
+   "resource_id": "account_8681",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): account_8681 lookup javier.r940897@outlook.com returned rows=1 http 200 with historical email still present, despite activity_3885 SUCCESS claim"
+  },
+  {
+   "step_no": 2,
+   "phase": "REMEDIATION",
+   "system_id": "account_service",
+   "resource_id": "account_8681",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Readback trace 2026-09-26 (evidence_94): account_8681 lookup javier.r940897@outlook.com returned rows=1 http 200 with historical email still present, despite activity_3885 SUCCESS claim"
+  },
+  {
+   "step_no": 3,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_8681",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_41",
+  "identifiers_used": [
+   "javier.r940897@outlook.com",
+   "javier.r9408@outlook.com",
+   "user_41"
+  ]
+ },
+ "uncertain": [
+  "No security audit record or other downstream record for user_41 was found in any evidence; only the account is reported."
+ ]
+}

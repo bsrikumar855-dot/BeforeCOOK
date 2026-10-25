@@ -1,0 +1,64 @@
+{
+ "case_id": "case_38",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_7495",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "state": "ACTIVE",
+   "evidence_id": "evidence_03",
+   "justification": "Handover 2026-10-01 (evidence_03): data_flow_7495 DATA_FLOW ACTIVE for SIPHO.MOKOENA@GMAIL.COM; activity_3693 confirms it remains enabled"
+  },
+  {
+   "step_no": 2,
+   "phase": "REMEDIATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_7495",
+   "operation": "DISABLE_DATA_FLOW",
+   "state": "DISABLED",
+   "evidence_id": "",
+   "justification": "remediation for: Handover 2026-10-01 (evidence_03): data_flow_7495 DATA_FLOW ACTIVE for SIPHO.MOKOENA@GMAIL.COM; activity_3693 confirms it remains enabled"
+  },
+  {
+   "step_no": 3,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_2381",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "Handover 2026-10-01 (evidence_03): account_2381 NOT_FOUND"
+  },
+  {
+   "step_no": 4,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_633",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "",
+   "justification": "Handover 2026-10-01 (evidence_03): audit_record_633 FOUND user_36"
+  },
+  {
+   "step_no": 5,
+   "phase": "VERIFICATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_7495",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "state": "DISABLED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_36",
+  "identifiers_used": [
+   "sipho.mokoena@gmail.com",
+   "user_36"
+  ]
+ },
+ "uncertain": []
+}

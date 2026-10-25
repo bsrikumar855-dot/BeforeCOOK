@@ -1,0 +1,57 @@
+{
+ "case_id": "case_55",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "backup_service",
+   "resource_id": "backup_9287",
+   "operation": "REPORT_RESTORE_RISK",
+   "state": "ACTIVE",
+   "evidence_id": "evidence_32",
+   "justification": "Vault Recovery console 2026-04-29 lists backup_9287 for account areed1433@gmail.com, checksum verified, restorable archive (retention end 2026-07-26); no restore block before audit"
+  },
+  {
+   "step_no": 2,
+   "phase": "REMEDIATION",
+   "system_id": "backup_service",
+   "resource_id": "backup_9287",
+   "operation": "BLOCK_RESTORE",
+   "state": "BLOCKED",
+   "evidence_id": "",
+   "justification": "remediation for: Vault Recovery console 2026-04-29 lists backup_9287 for account areed1433@gmail.com, checksum verified, restorable archive (retention end 2026-07-26); no restore block before audit"
+  },
+  {
+   "step_no": 3,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_9494",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "Target final state; account id from later evidence only"
+  },
+  {
+   "step_no": 4,
+   "phase": "VERIFICATION",
+   "system_id": "backup_service",
+   "resource_id": "backup_9287",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "state": "BLOCKED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_16",
+  "identifiers_used": [
+   "areed1433@gmail.com",
+   "user_16",
+   "Amelia Reed"
+  ]
+ },
+ "uncertain": [
+  "account_9494 and audit_record_2857 appear only in post-audit evidence; the account is listed as future verification and the security record is left out."
+ ]
+}

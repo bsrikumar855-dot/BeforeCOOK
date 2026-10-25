@@ -1,0 +1,58 @@
+{
+ "case_id": "case_35",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "search_service",
+   "resource_id": "search_428",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_09",
+   "justification": "Search console 2026-09-01 hit search_428 display Gabriel Silva, g.silva76@gmail.com, customer_reference user_13; deletion activity_3436 FAILED. search_1874 (g.silva76.jr@) is a lookalike and excluded"
+  },
+  {
+   "step_no": 2,
+   "phase": "REMEDIATION",
+   "system_id": "search_service",
+   "resource_id": "search_428",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Search console 2026-09-01 hit search_428 display Gabriel Silva, g.silva76@gmail.com, customer_reference user_13; deletion activity_3436 FAILED. search_1874 (g.silva76.jr@) is a lookalike and excluded"
+  },
+  {
+   "step_no": 3,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_8491",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "Target final state; deletion activity_3431 PARTIAL before audit, no readback before audit"
+  },
+  {
+   "step_no": 4,
+   "phase": "VERIFICATION",
+   "system_id": "search_service",
+   "resource_id": "search_428",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_13",
+  "identifiers_used": [
+   "g.silva76@gmail.com",
+   "user_13",
+   "Gabriel Silva"
+  ]
+ },
+ "uncertain": [
+  "account_8491 state at audit unproven (only PARTIAL worker claim); listed only as future verification.",
+  "audit_record_8925 (user_13) is seen only in post-audit evidence, so it was left out."
+ ]
+}

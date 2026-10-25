@@ -1,0 +1,600 @@
+{
+ "cited_steps_by_path": {
+  "i_mention": 1061,
+  "ii_full_snapshot": 34
+ },
+ "fallback_citations": [
+  {
+   "case_id": "case_57",
+   "status": "COMPLETE",
+   "resource_id": "account_1298",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_05",
+   "cited_captured_at": "2026-09-21T10:00:00Z",
+   "audit_at": "2026-09-21T10:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_64",
+   "status": "COMPLETE",
+   "resource_id": "account_565",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_93",
+   "cited_captured_at": "2026-09-16T08:37:39Z",
+   "audit_at": "2026-09-16T09:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_69",
+   "status": "COMPLETE",
+   "resource_id": "account_6138",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_93",
+   "cited_captured_at": "2026-09-16T08:37:39Z",
+   "audit_at": "2026-09-16T09:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_70",
+   "status": "COMPLETE",
+   "resource_id": "account_6633",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_93",
+   "cited_captured_at": "2026-09-16T08:37:39Z",
+   "audit_at": "2026-09-16T09:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_103",
+   "status": "COMPLETE",
+   "resource_id": "account_4070",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_10",
+   "cited_captured_at": "2026-08-27T12:00:00Z",
+   "audit_at": "2026-08-27T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_108",
+   "status": "COMPLETE",
+   "resource_id": "account_6750",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_10",
+   "cited_captured_at": "2026-08-27T12:00:00Z",
+   "audit_at": "2026-08-27T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_111",
+   "status": "COMPLETE",
+   "resource_id": "account_9314",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_10",
+   "cited_captured_at": "2026-08-27T12:00:00Z",
+   "audit_at": "2026-08-27T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_126",
+   "status": "COMPLETE",
+   "resource_id": "account_8819",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_87",
+   "cited_captured_at": "2026-08-17T09:42:50Z",
+   "audit_at": "2026-08-17T10:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_127",
+   "status": "COMPLETE",
+   "resource_id": "account_6805",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_87",
+   "cited_captured_at": "2026-08-17T09:42:50Z",
+   "audit_at": "2026-08-17T10:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_162",
+   "status": "COMPLETE",
+   "resource_id": "account_5983",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_15",
+   "cited_captured_at": "2026-08-02T07:00:00Z",
+   "audit_at": "2026-08-02T07:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_175",
+   "status": "COMPLETE",
+   "resource_id": "account_246",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_84",
+   "cited_captured_at": "2026-07-23T11:43:30Z",
+   "audit_at": "2026-07-23T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_178",
+   "status": "COMPLETE",
+   "resource_id": "account_1090",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_84",
+   "cited_captured_at": "2026-07-23T11:43:30Z",
+   "audit_at": "2026-07-23T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_204",
+   "status": "COMPLETE",
+   "resource_id": "account_9268",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_20",
+   "cited_captured_at": "2026-07-08T09:00:00Z",
+   "audit_at": "2026-07-08T09:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_206",
+   "status": "COMPLETE",
+   "resource_id": "account_4522",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_20",
+   "cited_captured_at": "2026-07-08T09:00:00Z",
+   "audit_at": "2026-07-08T09:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_213",
+   "status": "COMPLETE",
+   "resource_id": "account_6674",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_81",
+   "cited_captured_at": "2026-07-03T07:43:56Z",
+   "audit_at": "2026-07-03T08:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_215",
+   "status": "COMPLETE",
+   "resource_id": "account_1956",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_81",
+   "cited_captured_at": "2026-07-03T07:43:56Z",
+   "audit_at": "2026-07-03T08:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_218",
+   "status": "COMPLETE",
+   "resource_id": "account_4066",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_81",
+   "cited_captured_at": "2026-07-03T07:43:56Z",
+   "audit_at": "2026-07-03T08:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_219",
+   "status": "COMPLETE",
+   "resource_id": "account_4678",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_81",
+   "cited_captured_at": "2026-07-03T07:43:56Z",
+   "audit_at": "2026-07-03T08:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_221",
+   "status": "COMPLETE",
+   "resource_id": "account_4512",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_81",
+   "cited_captured_at": "2026-07-03T07:43:56Z",
+   "audit_at": "2026-07-03T08:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_253",
+   "status": "COMPLETE",
+   "resource_id": "account_6073",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_24",
+   "cited_captured_at": "2026-06-13T11:00:00Z",
+   "audit_at": "2026-06-13T11:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_260",
+   "status": "COMPLETE",
+   "resource_id": "account_7811",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_24",
+   "cited_captured_at": "2026-06-13T11:00:00Z",
+   "audit_at": "2026-06-13T11:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_read_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_309",
+   "status": "COMPLETE",
+   "resource_id": "account_4319",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_29",
+   "cited_captured_at": "2026-05-19T06:00:00Z",
+   "audit_at": "2026-05-19T06:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_replica_ap_south:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_335",
+   "status": "COMPLETE",
+   "resource_id": "account_8892",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_72",
+   "cited_captured_at": "2026-05-04T09:41:47Z",
+   "audit_at": "2026-05-04T10:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_336",
+   "status": "COMPLETE",
+   "resource_id": "account_2282",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_72",
+   "cited_captured_at": "2026-05-04T09:41:47Z",
+   "audit_at": "2026-05-04T10:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_339",
+   "status": "COMPLETE",
+   "resource_id": "account_1340",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_72",
+   "cited_captured_at": "2026-05-04T09:41:47Z",
+   "audit_at": "2026-05-04T10:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_354",
+   "status": "COMPLETE",
+   "resource_id": "account_3918",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_33",
+   "cited_captured_at": "2026-04-24T08:00:00Z",
+   "audit_at": "2026-04-24T08:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_replica_eu_west:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_393",
+   "status": "COMPLETE",
+   "resource_id": "account_1093",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_69",
+   "cited_captured_at": "2026-04-04T10:04:19Z",
+   "audit_at": "2026-04-04T11:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_403",
+   "status": "COMPLETE",
+   "resource_id": "account_1246",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_38",
+   "cited_captured_at": "2026-03-30T10:00:00Z",
+   "audit_at": "2026-03-30T10:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_replica_ap_south:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_452",
+   "status": "COMPLETE",
+   "resource_id": "account_6294",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_66",
+   "cited_captured_at": "2026-03-10T05:38:48Z",
+   "audit_at": "2026-03-10T06:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_456",
+   "status": "COMPLETE",
+   "resource_id": "account_3584",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_43",
+   "cited_captured_at": "2026-03-05T12:00:00Z",
+   "audit_at": "2026-03-05T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_reporting_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_458",
+   "status": "COMPLETE",
+   "resource_id": "account_077",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_43",
+   "cited_captured_at": "2026-03-05T12:00:00Z",
+   "audit_at": "2026-03-05T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_reporting_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_462",
+   "status": "COMPLETE",
+   "resource_id": "account_1881",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_43",
+   "cited_captured_at": "2026-03-05T12:00:00Z",
+   "audit_at": "2026-03-05T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_data_reporting_replica:customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_502",
+   "status": "COMPLETE",
+   "resource_id": "account_2554",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_63",
+   "cited_captured_at": "2026-02-13T07:43:27Z",
+   "audit_at": "2026-02-13T08:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles",
+    "snapshot_scope"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  },
+  {
+   "case_id": "case_545",
+   "status": "COMPLETE",
+   "resource_id": "account_2577",
+   "system_id": "account_service",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "cited": "evidence_02",
+   "cited_captured_at": "2026-09-17T12:00:00Z",
+   "audit_at": "2026-09-20T12:00:00Z",
+   "cited_is_full_snapshot_of_system": true,
+   "cited_tables": [
+    "customer_profiles"
+   ],
+   "stronger_mentioning_capture": [],
+   "later_full_snapshot_of_system": []
+  }
+ ],
+ "fallback_cases": [
+  "case_57",
+  "case_64",
+  "case_69",
+  "case_70",
+  "case_103",
+  "case_108",
+  "case_111",
+  "case_126",
+  "case_127",
+  "case_162",
+  "case_175",
+  "case_178",
+  "case_204",
+  "case_206",
+  "case_213",
+  "case_215",
+  "case_218",
+  "case_219",
+  "case_221",
+  "case_253",
+  "case_260",
+  "case_309",
+  "case_335",
+  "case_336",
+  "case_339",
+  "case_354",
+  "case_393",
+  "case_403",
+  "case_452",
+  "case_456",
+  "case_458",
+  "case_462",
+  "case_502",
+  "case_545"
+ ],
+ "fallback_with_a_stronger_proof": []
+}

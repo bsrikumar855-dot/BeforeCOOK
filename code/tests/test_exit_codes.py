@@ -85,3 +85,13 @@ def test_cache_entries_carry_usage_metadata(tmp_path):
     assert (meta["key_slot"], meta["total_tokens"], meta["timestamp"], meta["entries_sharing_call"]) == ("fallback_2", 14, "2026-10-25T10:00:00Z", 3)
     c.put("intent", "k2", {"call_usage": {}, "response": {}})
     assert c.get("intent", "k2")["usage_metadata"]["timestamp"] == "UNKNOWN"
+
+
+
+def test_retry_constants_match_config():
+    import yaml
+    from agent import llm_client
+    limits = yaml.safe_load(llm_client.CONFIG_PATH.read_text(encoding="utf-8"))["limits"]
+    assert limits["schema_retries"] == llm_client.MAX_SCHEMA_RETRIES
+    assert limits["max_429_retries_per_attempt"] == llm_client.MAX_HTTP_RETRIES
+    assert limits["backoff_max_seconds"] == llm_client.MAX_BACKOFF_SECONDS

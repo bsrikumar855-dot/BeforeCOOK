@@ -1,0 +1,18 @@
+{
+ "case_id": "case_63",
+ "deletion_status": "COMPLETE",
+ "steps": [],
+ "subject": {
+  "user_id": "user_09",
+  "identifiers_used": [
+   "kwame-mensah@proton.me",
+   "user_09",
+   "Kwame Mensah",
+   "+233 24 456 1267"
+  ]
+ },
+ "uncertain": [
+  "The only candidate record, marketing_001, is linked to user_09 by data catalog activity_4008. But its screenshot (evidence_60) shows Soo-jin Park, sj.park@naver.com, +82 10-5837-9451, which does not match any identifier of the subject, so it was treated as another person's record. If the reference trusts the catalog link, this case is INCOMPLETE with a MARKETING_PROFILE DELETE for marketing_001.",
+  "No account or other subject record could be found, so COMPLETE is returned with no verification steps."
+ ]
+}

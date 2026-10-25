@@ -29,9 +29,9 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | A3 enumeration cap (`ENUMERATION_LIMIT`) | 200,000 maximum assignments per batch | `code/agent/attribution.py` | Prove uniqueness by enumeration | JUDGEMENT | 159 batches enumerated, 0 over the cap; the forced pairs equal the pairs common to all maximum assignments in every batch | A batch over the cap is reported as not enumerated |
 | Request-text cap | 5,000 characters | `code/agent/intent.py:16` `MAX_CLASSIFY_CHARS`; `code/agent/explain.py` (ad-hoc input limit) | Longer texts are classified on their first 5,000 characters; explain mode rejects longer input | JUDGEMENT | Longest dataset request is 252 characters; bounds prompt size and cost; fixture X18 (55k chars) passes (C7a). Rejected: treating long text as an input issue (stopped the whole run with exit 2) | Smaller: long genuine requests could be cut before the deletion sentence |
 | Intent batch size | 40 texts per call | `code/config/models.yaml:71`; fallback 20 at `code/agent/intent.py:96` | Fewer calls within free-tier daily quotas | JUDGEMENT | Not swept. Every text keeps its own cache entry, so the batch size changes cost, not labels (C4: 42/42 agreement across two models) | Larger: longer prompts, a failed batch costs more texts; smaller: more calls against quota |
-| Schema retries | 2 | `code/config/models.yaml:102` `limits.schema_retries` | Extra attempts on the same model when its JSON fails validation, with the validator's error fed back | JUDGEMENT | Not swept; two validator failures occurred in the first live run and were fixed by the retry | More: cost on a model that cannot comply; fewer: earlier fallback |
-| 429 retries per attempt | 3 | `code/config/models.yaml:105` | Rate-limit (per-minute) retries before moving to the next (model, key) | JUDGEMENT | Not swept; a daily-quota 429 skips immediately (`_is_daily_quota`) | Longer stalls vs earlier fallback |
-| Backoff | initial 4 s, ×2, cap 60 s | `code/config/models.yaml:103-104`; multiplier `code/agent/llm_client.py:255,259` | Exponential backoff on 429 / 5xx | STANDARD | Conventional exponential backoff with a cap; parameters not tuned | Only wall-clock time |
+| Schema retries | 2 | `code/agent/llm_client.py` `MAX_SCHEMA_RETRIES`; `code/config/models.yaml` `limits.schema_retries` (kept equal by a test) | Extra attempts on the same model when its JSON fails validation, with the validator's error fed back | JUDGEMENT | Not swept; two validator failures occurred in the first live run and were fixed by the retry | More: cost on a model that cannot comply; fewer: earlier fallback |
+| HTTP retries per attempt | 3 | `code/agent/llm_client.py` `MAX_HTTP_RETRIES`; `code/config/models.yaml` `limits.max_429_retries_per_attempt` | Rate-limit (per-minute) retries before moving to the next (model, key) | JUDGEMENT | Not swept; a daily-quota 429 skips immediately (`_is_daily_quota`) | Longer stalls vs earlier fallback |
+| Backoff | initial 4 s, ×2, cap 60 s | `code/config/models.yaml` `limits.backoff_*`; cap `code/agent/llm_client.py` `MAX_BACKOFF_SECONDS`, multiplier in `_call_with_backoff` | Exponential backoff on 429 / 5xx | STANDARD | Conventional exponential backoff with a cap; parameters not tuned | Only wall-clock time |
 | Call timeout | 90 s (generation), 30 s (model listing) | `code/config/models.yaml:101`; `code/agent/llm_client.py:171` | Network timeouts | JUDGEMENT | Vision calls with thinking took tens of seconds; listing is small | A timeout counts as a failed attempt → fallback |
 | Requests per minute | flash 8, flash_lite 12, flash_new 8, groq_oss 20 | `code/config/models.yaml:34,39,44,48` | Client-side throttle per (key, model) | JUDGEMENT | Kept under the provider's per-minute limits; the exact free-tier RPM per model was not re-verified (UNKNOWN), the comment's "10 RPM" for flash is from the provider page at build time | Higher: more 429s; lower: slower live runs |
 | Investigator tool cap (E2, not shipped) | 8 calls per batch; 40 rows per tool result | `code/config/models.yaml:89`, `code/analysis/e2_investigator.py:91`; `code/analysis/e2_investigator_tools.py:18` | Bound the experiment's loop and tool output | JUDGEMENT | Not swept; E2 accepted 0/126 proposals for a structural reason (DESIGN.md D-E2), so the cap is not the limiting factor | Nothing shipped depends on it |
@@ -93,11 +93,12 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/agent/intent.py` | 5000 | request-text classification cap (C7a) | JUDGEMENT | see main table |
 | `code/agent/intent.py` | 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/agent/llm_client.py` | 200, 404, 429, 500, 502, 503, 504 | HTTP status code | BOUND | RFC 9110 / provider API semantics: retry, quota and 404 handling |
-| `code/agent/llm_client.py` | 2 | exponential backoff multiplier (delay *= 2) | STANDARD | retry spacing |
+| `code/agent/llm_client.py` | 60 | MAX_BACKOFF_SECONDS (mirrors models.yaml limits.backoff_max_seconds) | STANDARD | see main table |
+| `code/agent/llm_client.py` | 3 | MAX_HTTP_RETRIES (mirrors models.yaml limits.max_429_retries_per_attempt) | JUDGEMENT | see main table |
+| `code/agent/llm_client.py` | 2 | MAX_SCHEMA_RETRIES (mirrors models.yaml limits.schema_retries); also the exponential backoff multiplier (delay *= 2) | JUDGEMENT | see main table |
 | `code/agent/llm_client.py` | 10 | fallback requests_per_minute if a model omits it | JUDGEMENT | only when the yaml key is missing |
 | `code/agent/llm_client.py` | 12 | hash-prefix length (cache keys, prompt versions, nonces, call ids) | JUDGEMENT | existing cache keys / prompt versions no longer match: every cached reply misses |
 | `code/agent/llm_client.py` | 30 | network timeout in seconds (model listing / key probe) | JUDGEMENT | slow providers time out sooner or later; no decision changes |
-| `code/agent/llm_client.py` | 60.0 | seconds per minute in the RPM throttle | STANDARD | throttle interval wrong |
 | `code/agent/llm_client.py` | 16, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/agent/loaders.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/agent/parsers/__init__.py` | 2, 5, 6 | regex capture-group index | STANDARD | the wrong capture is read |
@@ -124,7 +125,7 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/analysis/category_coverage.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/analysis/compare_intent.py` | 2 | a sentence used <= 2 times marks a free-text (non-template) request | JUDGEMENT | which texts the C4 comparison treats as free text |
 | `code/analysis/compare_intent.py` | 90 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
-| `code/analysis/constants_register.py` | 0.1, 0.999, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 20, 24, 25, 30, 40, 60.0, 64, 100, 120, 200, 255, 400, 401, 403, 404, 420, 429, 500, 502, 503, 504, 518, 2026, 5000, 40000, 200000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
+| `code/analysis/constants_register.py` | 0.1, 0.999, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 20, 24, 25, 30, 40, 60.0, 64, 100, 120, 200, 255, 400, 401, 403, 404, 420, 429, 500, 502, 503, 504, 518, 2026, 5000, 40000, 200000, 1000000, 7000000, 20261025 | this register's own classification tables (values classified elsewhere) | JUDGEMENT | only the register |
 | `code/analysis/e1_order_inference.py` | 25 | E1-B burst gap in minutes (first trough of the unlabelled gap histogram) | JUDGEMENT | rejected experiment only; see main table |
 | `code/analysis/e1_order_inference.py` | 10 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/analysis/e1_order_inference.py` | 60 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
@@ -159,6 +160,8 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/evaluation/cache_audit.py` | 3 | exit code of a cache miss | SPEC | README exit-code table: 3 = cache miss |
 | `code/evaluation/cache_audit.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/evaluation/cache_audit.py` | 300, 800 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/evaluation/citation_exposure.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
+| `code/evaluation/citation_exposure.py` | 8 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/clean_room.py` | 2 | repository-root depth of this file | STANDARD | paths resolve outside the repo |
 | `code/evaluation/clean_room.py` | 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/clean_room.py` | 100.0 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
@@ -170,10 +173,19 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/evaluation/coupling_probes.py` | 20261025 | seed of the row-shuffle probe | JUDGEMENT | which permutation is tested |
 | `code/evaluation/coupling_probes.py` | 400, 900 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/custom_cases/build_fixtures.py` | 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 32, 700 | fictional fixture data (case numbers, step numbers, hash filler, padding repeat) | JUDGEMENT | only that fixture; expected outputs are written next to it |
+| `code/evaluation/distribution_sanity.py` | 2 | decimal places when rounding means | STANDARD | report only |
+| `code/evaluation/distribution_sanity.py` | 3 | decimal places when rounding shares | STANDARD | report only |
+| `code/evaluation/distribution_sanity.py` | 5, 10, 20 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/main.py` | 2 | index of the 'correct' flag in an attribution tuple | JUDGEMENT | report arithmetic |
 | `code/evaluation/main.py` | 60 | seconds per minute when printing band offsets | STANDARD | printed units |
 | `code/evaluation/main.py` | 10, 20, 40, 110, 120, 160, 200, 300 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/evaluation/main.py` | 100.0, 1000000.0 | unit conversion (minutes, hours, days, millions, percent) | STANDARD | wrong units in printed numbers |
+| `code/evaluation/rederivation_selection.py` | 8 | R2 quota: COMPLETE cases | SPEC | Round 6 brief |
+| `code/evaluation/rederivation_selection.py` | 12 | R2 quota: INCOMPLETE cases (plus case_55 and case_63) | SPEC | Round 6 brief |
+| `code/evaluation/rederivation_selection.py` | 2 | R2 quota: NOT_APPLICABLE cases / the two fixed cases | SPEC | Round 6 brief |
+| `code/evaluation/rule_branch_audit.py` | 2 | raw evidence lines quoted per spot-check | JUDGEMENT | report only |
+| `code/evaluation/rule_branch_audit.py` | 400 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
+| `code/evaluation/rule_branch_audit.py` | 3 | spot-check instances listed per branch | SPEC | Round 6 brief: up to 3 |
 | `code/evaluation/security_audit.py` | 255 | XOR mask used to flip bytes | STANDARD | only the fixture |
 | `code/evaluation/security_audit.py` | 1000000 | adversarial line length (1 MB) | JUDGEMENT | the G8 brief's 1 MB line |
 | `code/evaluation/security_audit.py` | 64 | bytes flipped to corrupt a PNG | JUDGEMENT | only the fixture |

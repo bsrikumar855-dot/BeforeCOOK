@@ -1,0 +1,207 @@
+{
+ "reference_samples": {
+  "cases": 32,
+  "deletion_cases": 32,
+  "status": {
+   "COMPLETE": 10,
+   "INCOMPLETE": 22
+  },
+  "steps_per_case": {
+   "mean": 6.03,
+   "median": 5.0,
+   "min": 1,
+   "max": 14
+  },
+  "distinct_operations_per_case_mean": 5.09,
+  "share_of_cases_with_operation": {
+   "ANONYMIZE_RECORD": 0.156,
+   "BLOCK_RESTORE": 0.094,
+   "DELETE_RECORD": 0.531,
+   "DISABLE_DATA_FLOW": 0.188,
+   "REDACT_RECORD": 0.188,
+   "REPORT_ACTIVE_DATA_FLOW": 0.188,
+   "REPORT_EXPOSED_PII": 0.219,
+   "REPORT_REMAINING_RECORD": 0.531,
+   "REPORT_RESTORE_RISK": 0.094,
+   "VERIFY_DATA_FLOW_DISABLED": 0.281,
+   "VERIFY_RECORD_ABSENT": 1.0,
+   "VERIFY_RECORD_ANONYMIZED": 0.375,
+   "VERIFY_RECORD_PRESENT": 0.75,
+   "VERIFY_RECORD_REDACTED": 0.312,
+   "VERIFY_RESTORE_BLOCKED": 0.188
+  },
+  "phases_present_per_status": {
+   "COMPLETE": {
+    "cases": 10,
+    "FINDING": 0,
+    "REMEDIATION": 0,
+    "VERIFICATION": 10
+   },
+   "INCOMPLETE": {
+    "cases": 22,
+    "FINDING": 22,
+    "REMEDIATION": 22,
+    "VERIFICATION": 22
+   }
+  },
+  "share_verify_present": 0.75,
+  "share_tombstone_steps": 0.062,
+  "share_restore_steps": 0.188,
+  "share_flow_steps": 0.281
+ },
+ "predicted_samples": {
+  "cases": 32,
+  "deletion_cases": 32,
+  "status": {
+   "COMPLETE": 9,
+   "INCOMPLETE": 23
+  },
+  "steps_per_case": {
+   "mean": 5.56,
+   "median": 5.0,
+   "min": 0,
+   "max": 14
+  },
+  "distinct_operations_per_case_mean": 4.75,
+  "share_of_cases_with_operation": {
+   "ANONYMIZE_RECORD": 0.156,
+   "BLOCK_RESTORE": 0.094,
+   "DELETE_RECORD": 0.531,
+   "DISABLE_DATA_FLOW": 0.188,
+   "REDACT_RECORD": 0.188,
+   "REPORT_ACTIVE_DATA_FLOW": 0.188,
+   "REPORT_EXPOSED_PII": 0.219,
+   "REPORT_REMAINING_RECORD": 0.531,
+   "REPORT_RESTORE_RISK": 0.094,
+   "VERIFY_DATA_FLOW_DISABLED": 0.281,
+   "VERIFY_RECORD_ABSENT": 0.938,
+   "VERIFY_RECORD_ANONYMIZED": 0.156,
+   "VERIFY_RECORD_PRESENT": 0.688,
+   "VERIFY_RECORD_REDACTED": 0.312,
+   "VERIFY_RESTORE_BLOCKED": 0.188
+  },
+  "phases_present_per_status": {
+   "COMPLETE": {
+    "cases": 9,
+    "FINDING": 0,
+    "REMEDIATION": 0,
+    "VERIFICATION": 9
+   },
+   "INCOMPLETE": {
+    "cases": 23,
+    "FINDING": 22,
+    "REMEDIATION": 22,
+    "VERIFICATION": 22
+   }
+  },
+  "share_verify_present": 0.688,
+  "share_tombstone_steps": 0.062,
+  "share_restore_steps": 0.188,
+  "share_flow_steps": 0.281
+ },
+ "eval": {
+  "cases": 518,
+  "deletion_cases": 508,
+  "status": {
+   "INCOMPLETE": 355,
+   "COMPLETE": 153,
+   "NOT_APPLICABLE": 10
+  },
+  "steps_per_case": {
+   "mean": 5.92,
+   "median": 6.0,
+   "min": 0,
+   "max": 14
+  },
+  "distinct_operations_per_case_mean": 4.95,
+  "share_of_cases_with_operation": {
+   "ANONYMIZE_RECORD": 0.144,
+   "BLOCK_RESTORE": 0.051,
+   "DELETE_RECORD": 0.575,
+   "DISABLE_DATA_FLOW": 0.222,
+   "REDACT_RECORD": 0.248,
+   "REPORT_ACTIVE_DATA_FLOW": 0.222,
+   "REPORT_EXPOSED_PII": 0.295,
+   "REPORT_REMAINING_RECORD": 0.575,
+   "REPORT_RESTORE_RISK": 0.051,
+   "VERIFY_DATA_FLOW_DISABLED": 0.287,
+   "VERIFY_RECORD_ABSENT": 0.868,
+   "VERIFY_RECORD_ANONYMIZED": 0.159,
+   "VERIFY_RECORD_PRESENT": 0.819,
+   "VERIFY_RECORD_REDACTED": 0.321,
+   "VERIFY_RESTORE_BLOCKED": 0.116
+  },
+  "phases_present_per_status": {
+   "COMPLETE": {
+    "cases": 153,
+    "FINDING": 0,
+    "REMEDIATION": 0,
+    "VERIFICATION": 153
+   },
+   "INCOMPLETE": {
+    "cases": 355,
+    "FINDING": 354,
+    "REMEDIATION": 354,
+    "VERIFICATION": 354
+   }
+  },
+  "share_verify_present": 0.819,
+  "share_tombstone_steps": 0.016,
+  "share_restore_steps": 0.116,
+  "share_flow_steps": 0.287
+ },
+ "eval_top10_by_steps": [
+  [
+   "case_54",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_90",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_131",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_134",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_140",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_180",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_182",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_209",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_216",
+   "INCOMPLETE",
+   14
+  ],
+  [
+   "case_263",
+   "INCOMPLETE",
+   14
+  ]
+ ],
+ "eval_cases_with_operations_never_in_sample_reference": [],
+ "incomplete_findings_without_required_remediation_or_check": []
+}

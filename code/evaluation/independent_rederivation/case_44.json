@@ -1,0 +1,76 @@
+{
+ "case_id": "case_44",
+ "deletion_status": "COMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_2064",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): account_2064 lookup charlotte.wright@outlook.com rows=0 http 404"
+  },
+  {
+   "step_no": 2,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_1105",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): audit_record_1105 rows=1 subject user_42 retention_until 2034-09-30"
+  },
+  {
+   "step_no": 3,
+   "phase": "VERIFICATION",
+   "system_id": "support_platform",
+   "resource_id": "support_1066",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "state": "REDACTED",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): support_1066 customer_reference user_42, requester name/email/phone null"
+  },
+  {
+   "step_no": 4,
+   "phase": "VERIFICATION",
+   "system_id": "analytics_platform",
+   "resource_id": "analytics_5589",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "state": "ANONYMIZED",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): analytics_5589 all identifiers null; attributed to user_42 via 2026-09-15 deletion-worker batch (activity_3853 next to support_1066/data_flow_223/backup_6266)"
+  },
+  {
+   "step_no": 5,
+   "phase": "VERIFICATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_223",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "state": "DISABLED",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): data_flow_223 enabled=false status stopped, customer_reference user_42"
+  },
+  {
+   "step_no": 6,
+   "phase": "VERIFICATION",
+   "system_id": "backup_service",
+   "resource_id": "backup_6266",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "state": "BLOCKED",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): backup_6266 restore_allowed=false, customer_reference user_42"
+  }
+ ],
+ "subject": {
+  "user_id": "user_42",
+  "identifiers_used": [
+   "charlotte.wright@outlook.com",
+   "user_42"
+  ]
+ },
+ "uncertain": [
+  "analytics_5589 is attributed to user_42 only through activity timing; analytics_9406, anonymized in the same minute, belongs to the sample subject of account_7566."
+ ]
+}

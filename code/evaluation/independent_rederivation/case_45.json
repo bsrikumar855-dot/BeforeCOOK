@@ -1,0 +1,26 @@
+{
+ "case_id": "case_45",
+ "deletion_status": "COMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_003",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "evidence_37",
+   "justification": "Sentinel explorer 2026-09-05 shows audit_record_003 account_closure_recorded for user_03, signature valid; compliance extract evidence_55 shows retain until 2027-08-25 (within retention, rule_12)"
+  }
+ ],
+ "subject": {
+  "user_id": "user_03",
+  "identifiers_used": [
+   "oliver-bennett@gmail.com",
+   "user_03"
+  ]
+ },
+ "uncertain": [
+  "No account resource id for user_03 could be found in any evidence, so no account ABSENT verification was listed. The compliance extract evidence_55 could be cited instead of evidence_37."
+ ]
+}

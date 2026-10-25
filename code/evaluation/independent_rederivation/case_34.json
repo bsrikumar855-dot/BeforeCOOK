@@ -1,0 +1,91 @@
+{
+ "case_id": "case_34",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "account_service",
+   "resource_id": "account_5762",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_04",
+   "justification": "Account admin console 2026-09-26 shows active profile Haruka Sato user_11 account_5762 with email haruka.s1838@zoho.com and phone; deletion activity_3485 FAILED"
+  },
+  {
+   "step_no": 2,
+   "phase": "FINDING",
+   "system_id": "support_platform",
+   "resource_id": "support_9538",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_01",
+   "justification": "2026-09-15 log: attachment PII scan on support_9538 (delivery_confirmation_32.pdf) matched historical phone +81 90 6156 0005; deletion activity_3489 FAILED; console 09-26 still lists support_9538"
+  },
+  {
+   "step_no": 3,
+   "phase": "REMEDIATION",
+   "system_id": "account_service",
+   "resource_id": "account_5762",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Account admin console 2026-09-26 shows active profile Haruka Sato user_11 account_5762 with email haruka.s1838@zoho.com and phone; deletion activity_3485 FAILED"
+  },
+  {
+   "step_no": 4,
+   "phase": "REMEDIATION",
+   "system_id": "support_platform",
+   "resource_id": "support_9538",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: 2026-09-15 log: attachment PII scan on support_9538 (delivery_confirmation_32.pdf) matched historical phone +81 90 6156 0005; deletion activity_3489 FAILED; console 09-26 still lists support_9538"
+  },
+  {
+   "step_no": 5,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_5762",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 6,
+   "phase": "VERIFICATION",
+   "system_id": "support_platform",
+   "resource_id": "support_9538",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 7,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_3753",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "",
+   "justification": "Security record for user_11 read 2026-09-15 (evidence_01); retained under rule_12"
+  }
+ ],
+ "subject": {
+  "user_id": "user_11",
+  "identifiers_used": [
+   "haruka.s1838@zoho.com",
+   "haruka.s183889@zoho.com",
+   "+81 90 7610 2507",
+   "+81 90 6156 0005",
+   "user_11",
+   "Haruka Sato"
+  ]
+ },
+ "uncertain": [
+  "support_9538 treated as a SUPPORT_ATTACHMENT owned only by the subject (DELETE); it could instead be a shared conversation needing REDACT.",
+  "audit_record_3753 retention period not shown explicitly; assumed within retention."
+ ]
+}

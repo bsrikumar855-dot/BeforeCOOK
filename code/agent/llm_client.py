@@ -31,6 +31,13 @@ CONFIG_PATH = REPO_ROOT / "code" / "config" / "models.yaml"
 # ORCHESTRATE_CACHE_DIR points a run at another cache copy (the coupling probes use a renamed copy).
 CACHE_DIR = Path(os.environ["ORCHESTRATE_CACHE_DIR"]) if os.environ.get("ORCHESTRATE_CACHE_DIR") else REPO_ROOT / "code" / "cache"
 PROMPTS_DIR = REPO_ROOT / "code" / "prompts"
+# Retry and cap limits (values mirror code/config/models.yaml `limits`, which is the operator's override; a test keeps
+# the two equal). Schema retries: extra attempts on the same model when its JSON fails validation, with the
+# validator's error fed back. HTTP retries: per (model, key) attempt on 429 / 5xx / timeout, with exponential backoff
+# doubling from backoff_initial_seconds and capped at MAX_BACKOFF_SECONDS. After that the next (model, key) is tried.
+MAX_SCHEMA_RETRIES = 2
+MAX_HTTP_RETRIES = 3
+MAX_BACKOFF_SECONDS = 60
 
 
 class CacheMiss(RuntimeError):
@@ -201,7 +208,7 @@ class LLMClient:
                 attempts_log.append({"model": model_id, "key_slot": slot, "outcome": "skipped_no_key"})
                 continue
             feedback = ""
-            for schema_try in range(limits["schema_retries"] + 1):
+            for schema_try in range(limits.get("schema_retries", MAX_SCHEMA_RETRIES) + 1):
                 outcome, payload = self._call_with_backoff(model_cfg, slot, key, prompt + feedback, image, image_mime)
                 if outcome != "ok":
                     attempts_log.append({"model": model_id, "key_slot": slot, "outcome": outcome})
@@ -243,7 +250,8 @@ class LLMClient:
                            image_mime: str) -> tuple[str, Any]:
         limits = self.config["limits"]
         delay = limits["backoff_initial_seconds"]
-        for _ in range(limits["max_429_retries_per_attempt"] + 1):
+        max_backoff = limits.get("backoff_max_seconds", MAX_BACKOFF_SECONDS)
+        for _ in range(limits.get("max_429_retries_per_attempt", MAX_HTTP_RETRIES) + 1):
             self._throttle(slot, model_cfg)
             status, body = self._post(model_cfg, key, prompt, image, image_mime)
             if status == 200:
@@ -251,11 +259,11 @@ class LLMClient:
             if status == 429:
                 if _is_daily_quota(body):
                     return "quota_exhausted", None
-                time.sleep(min(delay, limits["backoff_max_seconds"]))
+                time.sleep(min(delay, max_backoff))
                 delay *= 2
                 continue
             if status in (500, 502, 503, 504, -1):
-                time.sleep(min(delay, limits["backoff_max_seconds"]))
+                time.sleep(min(delay, max_backoff))
                 delay *= 2
                 continue
             if status == 404:

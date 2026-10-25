@@ -1,0 +1,58 @@
+{
+ "case_id": "case_39",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_1121",
+   "operation": "REPORT_ACTIVE_DATA_FLOW",
+   "state": "ACTIVE",
+   "evidence_id": "evidence_14",
+   "justification": "BridgeOps console 2026-08-07 shows data_flow_1121 selector jain.aditi@gmail.com, continuous sync, healthy, delivering to customer_analytics_warehouse"
+  },
+  {
+   "step_no": 2,
+   "phase": "REMEDIATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_1121",
+   "operation": "DISABLE_DATA_FLOW",
+   "state": "DISABLED",
+   "evidence_id": "",
+   "justification": "remediation for: BridgeOps console 2026-08-07 shows data_flow_1121 selector jain.aditi@gmail.com, continuous sync, healthy, delivering to customer_analytics_warehouse"
+  },
+  {
+   "step_no": 3,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_8926",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "Target final state; account id from later evidence only"
+  },
+  {
+   "step_no": 4,
+   "phase": "VERIFICATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_1121",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "state": "DISABLED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_14",
+  "identifiers_used": [
+   "jain.aditi@gmail.com",
+   "user_14",
+   "Aditi Jain"
+  ]
+ },
+ "uncertain": [
+  "account_8926 and audit_record_7301 appear only in post-audit evidence; the account is listed as future verification and the security record is left out.",
+  "search_4801, which the connector repopulated, shows up only after audit (2026-08-25), so it was left out."
+ ]
+}

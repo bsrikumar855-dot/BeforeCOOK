@@ -1,0 +1,456 @@
+{
+ "classifiers": {
+  "rule_05": "TRUE if the message text names an order/agent/other context (\"order\", \"agent\", \"ticket\") or is already [REDACTED] in a shared thread; FALSE if text exists without such context; UNKNOWN if no text",
+  "rule_06": "TRUE if every person identifier in the attachment record (uploaded_by, requester_*) belongs to the subject; FALSE if one belongs to someone else; UNKNOWN if none observed",
+  "rule_07": "TRUE if the state's exposure is DIRECT_IDENTIFIERS or STABLE_REFERENCE_ONLY; FALSE if NO_IDENTIFIERS; UNKNOWN otherwise (incl. ABSENT records)",
+  "rule_08": "as rule_07",
+  "rule_11": "TRUE if the record exposes an email; FALSE if observed without one",
+  "rule_12": "TRUE if the latest admissible retention_until is after audit_at; FALSE if at or before; UNKNOWN if absent",
+  "rule_13": "TRUE if retained_until is after audit_at (hold active); FALSE if at or before; UNKNOWN if absent",
+  "rule_14": "TRUE unless evidence says restore access cannot be blocked (no such field exists in the data); restore state reported separately",
+  "rule_15": "TRUE if the tombstone's account_status is DELETED; FALSE if another status; UNKNOWN if absent"
+ },
+ "rows": [
+  {
+   "rule": "rule_05",
+   "category": "SUPPORT_MESSAGE",
+   "branch": "FALSE",
+   "eval": 48,
+   "sample": 3,
+   "sample_vs_reference": {
+    "agree": 3
+   },
+   "decisions": {
+    "VERIFY_RECORD_REDACTED": 9,
+    "REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED": 42
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_05",
+   "category": "SUPPORT_MESSAGE",
+   "branch": "TRUE",
+   "eval": 43,
+   "sample": 2,
+   "sample_vs_reference": {
+    "agree": 2
+   },
+   "decisions": {
+    "VERIFY_RECORD_REDACTED": 14,
+    "REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED": 31
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_05",
+   "category": "SUPPORT_MESSAGE",
+   "branch": "UNKNOWN",
+   "eval": 64,
+   "sample": 3,
+   "sample_vs_reference": {
+    "agree": 3
+   },
+   "decisions": {
+    "REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED": 54,
+    "VERIFY_RECORD_REDACTED": 13
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_06",
+   "category": "SUPPORT_ATTACHMENT",
+   "branch": "TRUE",
+   "eval": 22,
+   "sample": 0,
+   "sample_vs_reference": {},
+   "decisions": {
+    "REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT": 22
+   },
+   "spot_check_candidates": [
+    {
+     "case_id": "case_47",
+     "resource_id": "support_5742",
+     "operations": [
+      "REPORT_REMAINING_RECORD",
+      "DELETE_RECORD",
+      "VERIFY_RECORD_ABSENT"
+     ],
+     "proof": "evidence_94",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "DIRECT_IDENTIFIERS",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "2026-09-26T08:49:37Z level=DEBUG service=support_platform trace_id=rb-084937-008 event=support_ticket_read_started resource_id=support_5742 lookup_key=zofia-dvorak79@proton.me",
+      "2026-09-26T08:49:37Z level=INFO service=support_platform trace_id=rb-084937-008 event=support_ticket_read_completed resource_id=support_5742 customer_reference=null requester_name=null requester_email=zofia-dvorak79@proton.me requester_phone=null"
+     ]
+    },
+    {
+     "case_id": "case_71",
+     "resource_id": "support_1370",
+     "operations": [
+      "REPORT_REMAINING_RECORD",
+      "DELETE_RECORD",
+      "VERIFY_RECORD_ABSENT"
+     ],
+     "proof": "evidence_93",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "DIRECT_IDENTIFIERS",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "INSERT INTO support_records VALUES ('support_1370', NULL, NULL, 'JULES-LAURENT@PROTON.ME', NULL, 'Customer asked support to correct delivery details.', '2026-09-16T06:07:44Z');"
+     ]
+    },
+    {
+     "case_id": "case_95",
+     "resource_id": "support_5750",
+     "operations": [
+      "REPORT_REMAINING_RECORD",
+      "DELETE_RECORD",
+      "VERIFY_RECORD_ABSENT"
+     ],
+     "proof": "evidence_89",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "DIRECT_IDENTIFIERS",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "\"resource_id\": \"support_5750\""
+     ]
+    }
+   ]
+  },
+  {
+   "rule": "rule_06",
+   "category": "SUPPORT_ATTACHMENT",
+   "branch": "UNKNOWN",
+   "eval": 5,
+   "sample": 3,
+   "sample_vs_reference": {
+    "agree": 3
+   },
+   "decisions": {
+    "REPORT_REMAINING_RECORD + DELETE_RECORD + VERIFY_RECORD_ABSENT": 8
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_07",
+   "category": "ANALYTICS_PROFILE",
+   "branch": "FALSE",
+   "eval": 8,
+   "sample": 0,
+   "sample_vs_reference": {},
+   "decisions": {
+    "VERIFY_RECORD_ANONYMIZED": 8
+   },
+   "spot_check_candidates": [
+    {
+     "case_id": "case_41",
+     "resource_id": "analytics_6830",
+     "operations": [
+      "VERIFY_RECORD_ANONYMIZED"
+     ],
+     "proof": "evidence_03",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "NO_IDENTIFIERS",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "- 2026-10-01T12:00:00Z | analytics_platform | analytics_6830 | ANALYTICS_PROFILE | ANONYMIZED | no direct identifier"
+     ]
+    },
+    {
+     "case_id": "case_283",
+     "resource_id": "analytics_8408",
+     "operations": [
+      "VERIFY_RECORD_ANONYMIZED"
+     ],
+     "proof": "evidence_76",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "NO_IDENTIFIERS",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "2026-05-29T06:19:56Z level=DEBUG service=analytics_platform trace_id=rb-061956-012 event=analytics_profile_read_started resource_id=analytics_8408 lookup_key=null",
+      "2026-05-29T06:19:56Z level=INFO service=analytics_platform trace_id=rb-061956-012 event=analytics_profile_read_completed resource_id=analytics_8408 customer_reference=null email=null phone=null email_hash=null audience_cohort=returning_customer"
+     ]
+    },
+    {
+     "case_id": "case_322",
+     "resource_id": "analytics_4229",
+     "operations": [
+      "VERIFY_RECORD_ANONYMIZED"
+     ],
+     "proof": "evidence_74",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "NO_IDENTIFIERS",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "\"resource_id\": \"analytics_4229\""
+     ]
+    }
+   ]
+  },
+  {
+   "rule": "rule_07",
+   "category": "ANALYTICS_PROFILE",
+   "branch": "TRUE",
+   "eval": 73,
+   "sample": 5,
+   "sample_vs_reference": {
+    "agree": 5
+   },
+   "decisions": {
+    "REPORT_EXPOSED_PII + ANONYMIZE_RECORD + VERIFY_RECORD_ANONYMIZED": 78
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_08",
+   "category": "PRODUCT_TELEMETRY",
+   "branch": "-",
+   "eval": 0,
+   "sample": 0,
+   "decisions": {},
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_11",
+   "category": "EMAIL_DELIVERY_LOG",
+   "branch": "-",
+   "eval": 0,
+   "sample": 0,
+   "decisions": {},
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_12",
+   "category": "SECURITY_AUDIT_LOG",
+   "branch": "TRUE",
+   "eval": 98,
+   "sample": 6,
+   "sample_vs_reference": {
+    "agree": 6
+   },
+   "decisions": {
+    "VERIFY_RECORD_PRESENT": 104
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_12",
+   "category": "SECURITY_AUDIT_LOG",
+   "branch": "UNKNOWN",
+   "eval": 318,
+   "sample": 16,
+   "sample_vs_reference": {
+    "agree": 16
+   },
+   "decisions": {
+    "VERIFY_RECORD_PRESENT": 334
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_13",
+   "category": "LEGAL_HOLD_RECORD",
+   "branch": "TRUE",
+   "eval": 5,
+   "sample": 0,
+   "sample_vs_reference": {},
+   "decisions": {
+    "VERIFY_RECORD_PRESENT": 5
+   },
+   "spot_check_candidates": [
+    {
+     "case_id": "case_261",
+     "resource_id": "legal_hold_8017",
+     "operations": [
+      "VERIFY_RECORD_PRESENT"
+     ],
+     "proof": "evidence_24",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "UNKNOWN",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "INSERT INTO \"customer_data_primary\" VALUES('legal_hold_8017','legal_service','retained_order_records','{\"resource_id\":\"legal_hold_8017\",\"subject_reference\":\"user_259\",\"order_reference\":\"ORD-20268017\",\"retention_reason\":\"payment_dispute_and_tax_record\",\"retained_until\":\"2033-12-31T23:59:59Z\"}','2026-06-13T11:00:00Z');",
+      "INSERT INTO \"customer_data_read_replica\" VALUES('legal_hold_8017','legal_service','retained_order_records','{\"resource_id\":\"legal_hold_8017\",\"subject_reference\":\"user_259\",\"order_reference\":\"ORD-20268017\",\"retention_reason\":\"payment_dispute_and_tax_record\",\"retained_until\":\"2033-12-31T23:59:59Z\"}','2026-06-13T11:00:00Z');"
+     ]
+    },
+    {
+     "case_id": "case_460",
+     "resource_id": "legal_hold_5622",
+     "operations": [
+      "VERIFY_RECORD_PRESENT"
+     ],
+     "proof": "evidence_43",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "UNKNOWN",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "INSERT INTO \"customer_data_primary\" VALUES('legal_hold_5622','legal_service','retained_order_records','{\"resource_id\":\"legal_hold_5622\",\"subject_reference\":\"user_458\",\"order_reference\":\"ORD-20265622\",\"retention_reason\":\"payment_dispute_and_tax_record\",\"retained_until\":\"2033-12-31T23:59:59Z\"}','2026-03-05T12:00:00Z');",
+      "INSERT INTO \"customer_data_reporting_replica\" VALUES('legal_hold_5622','legal_service','retained_order_records','{\"resource_id\":\"legal_hold_5622\",\"subject_reference\":\"user_458\",\"order_reference\":\"ORD-20265622\",\"retention_reason\":\"payment_dispute_and_tax_record\",\"retained_until\":\"2033-12-31T23:59:59Z\"}','2026-03-05T12:00:00Z');"
+     ]
+    },
+    {
+     "case_id": "case_473",
+     "resource_id": "legal_hold_4743",
+     "operations": [
+      "VERIFY_RECORD_PRESENT"
+     ],
+     "proof": "evidence_45",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "UNKNOWN",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "\"resource_id\": \"legal_hold_4743\","
+     ]
+    }
+   ]
+  },
+  {
+   "rule": "rule_13",
+   "category": "LEGAL_HOLD_RECORD",
+   "branch": "UNKNOWN",
+   "eval": 3,
+   "sample": 0,
+   "sample_vs_reference": {},
+   "decisions": {
+    "VERIFY_RECORD_PRESENT": 3
+   },
+   "spot_check_candidates": [
+    {
+     "case_id": "case_220",
+     "resource_id": "legal_hold_4961",
+     "operations": [
+      "VERIFY_RECORD_PRESENT"
+     ],
+     "proof": null,
+     "state": {
+      "presence": "ABSENT",
+      "exposure": "UNKNOWN",
+      "restore_state": null,
+      "proof_basis": "FULL_SNAPSHOT"
+     },
+     "evidence": []
+    },
+    {
+     "case_id": "case_390",
+     "resource_id": "legal_hold_8049",
+     "operations": [
+      "VERIFY_RECORD_PRESENT"
+     ],
+     "proof": "evidence_36",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "UNKNOWN",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "\"resource_id\": \"legal_hold_8049\","
+     ]
+    },
+    {
+     "case_id": "case_432",
+     "resource_id": "legal_hold_438",
+     "operations": [
+      "VERIFY_RECORD_PRESENT"
+     ],
+     "proof": null,
+     "state": {
+      "presence": "ABSENT",
+      "exposure": "UNKNOWN",
+      "restore_state": null,
+      "proof_basis": "FULL_SNAPSHOT"
+     },
+     "evidence": []
+    }
+   ]
+  },
+  {
+   "rule": "rule_14",
+   "category": "BACKUP_ARCHIVE",
+   "branch": "TRUE",
+   "eval": 59,
+   "sample": 6,
+   "sample_vs_reference": {
+    "agree": 6
+   },
+   "decisions": {
+    "REPORT_RESTORE_RISK + BLOCK_RESTORE + VERIFY_RESTORE_BLOCKED": 29,
+    "VERIFY_RESTORE_BLOCKED": 36
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_15",
+   "category": "ACCOUNT_TOMBSTONE",
+   "branch": "TRUE",
+   "eval": 8,
+   "sample": 2,
+   "sample_vs_reference": {
+    "agree": 2
+   },
+   "decisions": {
+    "VERIFY_RECORD_REDACTED": 5,
+    "REPORT_EXPOSED_PII + REDACT_RECORD + VERIFY_RECORD_REDACTED": 5
+   },
+   "spot_check_candidates": []
+  },
+  {
+   "rule": "rule_15",
+   "category": "ACCOUNT_TOMBSTONE",
+   "branch": "UNKNOWN",
+   "eval": 1,
+   "sample": 0,
+   "sample_vs_reference": {},
+   "decisions": {
+    "no step (EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields)": 1
+   },
+   "spot_check_candidates": [
+    {
+     "case_id": "case_46",
+     "resource_id": "tombstone_17",
+     "operations": [
+      "no step (EXPOSURE_UNKNOWN: record present but no admissible observation shows its fields)"
+     ],
+     "proof": "evidence_42",
+     "state": {
+      "presence": "PRESENT",
+      "exposure": "UNKNOWN",
+      "restore_state": null,
+      "proof_basis": "MENTION"
+     },
+     "evidence": [
+      "(.png evidence; see the screenshot/PDF extraction for tombstone_17)"
+     ]
+    }
+   ]
+  }
+ ]
+}

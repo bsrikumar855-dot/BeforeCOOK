@@ -1,0 +1,76 @@
+{
+ "case_id": "case_51",
+ "deletion_status": "COMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_3610",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): account_3610 lookup n.masuku60@gmail.com rows=0 http 404"
+  },
+  {
+   "step_no": 2,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_3308",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): audit_record_3308 rows=1 subject user_49 ACCOUNT_DELETION_RECORDED retention_until 2031-12-31"
+  },
+  {
+   "step_no": 3,
+   "phase": "VERIFICATION",
+   "system_id": "support_platform",
+   "resource_id": "support_1097",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "state": "REDACTED",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): support_1097 customer_reference user_49, requester fields null"
+  },
+  {
+   "step_no": 4,
+   "phase": "VERIFICATION",
+   "system_id": "analytics_platform",
+   "resource_id": "analytics_2265",
+   "operation": "VERIFY_RECORD_ANONYMIZED",
+   "state": "ANONYMIZED",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): analytics_2265 all identifiers null; attributed to user_49 via 2026-09-09 deletion-worker batch (activity_3735 between account_3610 and support_1097/data_flow_4713/backup_7809)"
+  },
+  {
+   "step_no": 5,
+   "phase": "VERIFICATION",
+   "system_id": "integration_service",
+   "resource_id": "data_flow_4713",
+   "operation": "VERIFY_DATA_FLOW_DISABLED",
+   "state": "DISABLED",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): data_flow_4713 enabled=false stopped, customer_reference user_49"
+  },
+  {
+   "step_no": 6,
+   "phase": "VERIFICATION",
+   "system_id": "backup_service",
+   "resource_id": "backup_7809",
+   "operation": "VERIFY_RESTORE_BLOCKED",
+   "state": "BLOCKED",
+   "evidence_id": "evidence_94",
+   "justification": "Readback trace 2026-09-26 (evidence_94): backup_7809 restore_allowed=false, customer_reference user_49"
+  }
+ ],
+ "subject": {
+  "user_id": "user_49",
+  "identifiers_used": [
+   "n.masuku60@gmail.com",
+   "user_49"
+  ]
+ },
+ "uncertain": [
+  "analytics_2265 is attributed to user_49 only through activity timing."
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "case_id": "case_33",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "export_service",
+   "resource_id": "export_1260",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_23",
+   "justification": "Export console 2026-06-18 shows export_1260 owner ingrid.dahl@outlook.com status Ready; no deletion evidence before 2026-07-19 (deletion attempt activity_3328 is later)"
+  },
+  {
+   "step_no": 2,
+   "phase": "FINDING",
+   "system_id": "export_service",
+   "resource_id": "export_1842",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_18",
+   "justification": "Customer statement PDF NST-2026-0718-1842 (captured 2026-07-18) names Ingrid Dahl, user_18, ingrid.dahl@outlook.com; catalog activity_4009 maps it to export_1842; no deletion before audit"
+  },
+  {
+   "step_no": 3,
+   "phase": "REMEDIATION",
+   "system_id": "export_service",
+   "resource_id": "export_1260",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Export console 2026-06-18 shows export_1260 owner ingrid.dahl@outlook.com status Ready; no deletion evidence before 2026-07-19 (deletion attempt activity_3328 is later)"
+  },
+  {
+   "step_no": 4,
+   "phase": "REMEDIATION",
+   "system_id": "export_service",
+   "resource_id": "export_1842",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Customer statement PDF NST-2026-0718-1842 (captured 2026-07-18) names Ingrid Dahl, user_18, ingrid.dahl@outlook.com; catalog activity_4009 maps it to export_1842; no deletion before audit"
+  },
+  {
+   "step_no": 5,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_2373",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "Target final state for primary profile; id known only from later log evidence_01 (404 on 2026-09-15)"
+  },
+  {
+   "step_no": 6,
+   "phase": "VERIFICATION",
+   "system_id": "export_service",
+   "resource_id": "export_1260",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 7,
+   "phase": "VERIFICATION",
+   "system_id": "export_service",
+   "resource_id": "export_1842",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_18",
+  "identifiers_used": [
+   "ingrid.dahl@outlook.com",
+   "user_18",
+   "Ingrid Dahl",
+   "NST-2026-0718-1842"
+  ]
+ },
+ "uncertain": [
+  "export_1260: included because the 2026-06-18 console shows it Ready and nothing before audit shows deletion; reference may scope it only to case_52 (same subject, audit 2026-06-19).",
+  "account_2373: no account evidence captured at or before audit; id comes from a later 2026-09-15 log, so only a future ABSENT verification is listed.",
+  "audit_record_8486 (security, user_18) is visible only in evidence after audit, so it was left out; a reference may include a VERIFY_RECORD_PRESENT for it."
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "case_id": "case_533",
+ "deletion_status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "user_id": null,
+  "identifiers_used": []
+ },
+ "uncertain": [
+  "Request asks only to update the mobile number and keep the account active; this does not authorize deletion."
+ ]
+}

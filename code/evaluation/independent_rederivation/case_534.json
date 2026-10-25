@@ -1,0 +1,12 @@
+{
+ "case_id": "case_534",
+ "deletion_status": "NOT_APPLICABLE",
+ "steps": [],
+ "subject": {
+  "user_id": null,
+  "identifiers_used": []
+ },
+ "uncertain": [
+  "Request is a marketing opt-out and explicitly says it is not a deletion request."
+ ]
+}

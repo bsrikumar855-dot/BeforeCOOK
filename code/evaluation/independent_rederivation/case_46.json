@@ -1,0 +1,37 @@
+{
+ "case_id": "case_46",
+ "deletion_status": "COMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_6523",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "evidence_67",
+   "justification": "Readback trace 2026-03-10 lookup leonie.g9352@outlook.com on account_6523 returned rows=0 http 404"
+  },
+  {
+   "step_no": 2,
+   "phase": "VERIFICATION",
+   "system_id": "identity_service",
+   "resource_id": "tombstone_17",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "state": "REDACTED",
+   "evidence_id": "evidence_42",
+   "justification": "Customer Reference Registry 2026-03-10 shows retained reference user_17 with only linked record refs and no name/email/phone/hash (catalog activity_4011 links tombstone_17)"
+  }
+ ],
+ "subject": {
+  "user_id": "user_17",
+  "identifiers_used": [
+   "leonie.g9352@outlook.com",
+   "user_17",
+   "Leonie Girard"
+  ]
+ },
+ "uncertain": [
+  "account_4092, backup_3245 and audit_record_1797 for user_17 appear only in evidence from Aug-Sep 2026, after this audit, so they were left out."
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "case_id": "case_42",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "search_service",
+   "resource_id": "search_7078",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_03",
+   "justification": "Handover 2026-10-01 (evidence_03): search_7078 SEARCH_INDEX_ENTRY FOUND for asingh1489@gmail.com; delete activity_3934 PARTIAL"
+  },
+  {
+   "step_no": 2,
+   "phase": "FINDING",
+   "system_id": "support_platform",
+   "resource_id": "support_7769",
+   "operation": "REPORT_EXPOSED_PII",
+   "state": "PRESENT",
+   "evidence_id": "evidence_03",
+   "justification": "Handover 2026-10-01 (evidence_03): support_7769 SUPPORT_MESSAGE IDENTIFIABLE for asingh1489@gmail.com; redact activity_3933 PARTIAL"
+  },
+  {
+   "step_no": 3,
+   "phase": "REMEDIATION",
+   "system_id": "search_service",
+   "resource_id": "search_7078",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Handover 2026-10-01 (evidence_03): search_7078 SEARCH_INDEX_ENTRY FOUND for asingh1489@gmail.com; delete activity_3934 PARTIAL"
+  },
+  {
+   "step_no": 4,
+   "phase": "REMEDIATION",
+   "system_id": "support_platform",
+   "resource_id": "support_7769",
+   "operation": "REDACT_RECORD",
+   "state": "REDACTED",
+   "evidence_id": "",
+   "justification": "remediation for: Handover 2026-10-01 (evidence_03): support_7769 SUPPORT_MESSAGE IDENTIFIABLE for asingh1489@gmail.com; redact activity_3933 PARTIAL"
+  },
+  {
+   "step_no": 5,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_4337",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "Handover 2026-10-01 (evidence_03): account_4337 NOT_FOUND"
+  },
+  {
+   "step_no": 6,
+   "phase": "VERIFICATION",
+   "system_id": "search_service",
+   "resource_id": "search_7078",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 7,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_6760",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "",
+   "justification": "Handover 2026-10-01 (evidence_03): audit_record_6760 FOUND user_40"
+  },
+  {
+   "step_no": 8,
+   "phase": "VERIFICATION",
+   "system_id": "support_platform",
+   "resource_id": "support_7769",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "state": "REDACTED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_40",
+  "identifiers_used": [
+   "asingh1489@gmail.com",
+   "user_40"
+  ]
+ },
+ "uncertain": []
+}

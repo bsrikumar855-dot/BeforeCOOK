@@ -136,7 +136,7 @@ TESSERACT_CMD=...               # optional path to the tesseract binary
 Any subset works: a missing or empty key slot is skipped and logged. Probe results per key alias (never the values)
 are in `code/evaluation/models_verified.json`; quota pools are UNKNOWN because keys of one project share a quota.
 
-The model ids, rate limits and fallback order live in `code/config/models.yaml`. Check them against the provider's
+The model ids, rate limits and fallback order live in `code/config/models.yaml`. Retries and caps: `MAX_SCHEMA_RETRIES` (a reply that fails schema validation is retried on the same model with the validator's error), `MAX_HTTP_RETRIES` and `MAX_BACKOFF_SECONDS` (429/5xx/timeout, exponential backoff) in `code/agent/llm_client.py`, mirrored by `limits` in models.yaml; after them the next (model, key) in the task's `attempts` list is tried, a 404 or a daily-quota 429 retires that (model, key) for the run, and all failures exit 4. Check them against the provider's
 current model list with:
 
 ```bash

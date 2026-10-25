@@ -1,0 +1,95 @@
+{
+ "case_id": "case_40",
+ "deletion_status": "INCOMPLETE",
+ "steps": [
+  {
+   "step_no": 1,
+   "phase": "FINDING",
+   "system_id": "search_service",
+   "resource_id": "search_3200",
+   "operation": "REPORT_REMAINING_RECORD",
+   "state": "PRESENT",
+   "evidence_id": "evidence_03",
+   "justification": "Handover 2026-10-01 (evidence_03): search_3200 SEARCH_INDEX_ENTRY FOUND for historical email CHOI.JIHOON94@GMAIL.COM; delete activity_3694 FAILED"
+  },
+  {
+   "step_no": 2,
+   "phase": "FINDING",
+   "system_id": "support_platform",
+   "resource_id": "support_4887",
+   "operation": "REPORT_EXPOSED_PII",
+   "state": "PRESENT",
+   "evidence_id": "evidence_03",
+   "justification": "Handover 2026-10-01 (evidence_03): support_4887 SUPPORT_MESSAGE IDENTIFIABLE for CHOI.JIHOON94@GMAIL.COM; redact activity_3691 FAILED; rule_05 REDACT"
+  },
+  {
+   "step_no": 3,
+   "phase": "REMEDIATION",
+   "system_id": "search_service",
+   "resource_id": "search_3200",
+   "operation": "DELETE_RECORD",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "remediation for: Handover 2026-10-01 (evidence_03): search_3200 SEARCH_INDEX_ENTRY FOUND for historical email CHOI.JIHOON94@GMAIL.COM; delete activity_3694 FAILED"
+  },
+  {
+   "step_no": 4,
+   "phase": "REMEDIATION",
+   "system_id": "support_platform",
+   "resource_id": "support_4887",
+   "operation": "REDACT_RECORD",
+   "state": "REDACTED",
+   "evidence_id": "",
+   "justification": "remediation for: Handover 2026-10-01 (evidence_03): support_4887 SUPPORT_MESSAGE IDENTIFIABLE for CHOI.JIHOON94@GMAIL.COM; redact activity_3691 FAILED; rule_05 REDACT"
+  },
+  {
+   "step_no": 5,
+   "phase": "VERIFICATION",
+   "system_id": "account_service",
+   "resource_id": "account_1810",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "Handover 2026-10-01 (evidence_03): account_1810 NOT_FOUND"
+  },
+  {
+   "step_no": 6,
+   "phase": "VERIFICATION",
+   "system_id": "search_service",
+   "resource_id": "search_3200",
+   "operation": "VERIFY_RECORD_ABSENT",
+   "state": "ABSENT",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  },
+  {
+   "step_no": 7,
+   "phase": "VERIFICATION",
+   "system_id": "security_service",
+   "resource_id": "audit_record_8349",
+   "operation": "VERIFY_RECORD_PRESENT",
+   "state": "PRESENT",
+   "evidence_id": "",
+   "justification": "Handover 2026-10-01 (evidence_03): audit_record_8349 FOUND user_38"
+  },
+  {
+   "step_no": 8,
+   "phase": "VERIFICATION",
+   "system_id": "support_platform",
+   "resource_id": "support_4887",
+   "operation": "VERIFY_RECORD_REDACTED",
+   "state": "REDACTED",
+   "evidence_id": "",
+   "justification": "post-remediation check"
+  }
+ ],
+ "subject": {
+  "user_id": "user_38",
+  "identifiers_used": [
+   "choi.jihoon94@gmail.com",
+   "choi.jihoon@gmail.com",
+   "user_38"
+  ]
+ },
+ "uncertain": []
+}

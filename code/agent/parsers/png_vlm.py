@@ -18,6 +18,8 @@ from ..schema import EvidenceFile, Observation
 from .ocr_grounding import grounded, ocr_ids
 
 TASK = "vision"
+# Earlier vision prompts kept byte-exact, so every cached reply was produced by a prompt that ships (Round 6 R5a).
+LEGACY_PROMPTS = ("image_extraction_v1.md",)
 RESOURCE_RE = re.compile(r"^([a-z]+(?:_[a-z]+)*)_(\d+)$")
 # At most 4 words of 32 letters: unbounded, a long underscore-joined run was quadratic (G8).
 TOKEN_RE = re.compile(r"(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}")
@@ -76,12 +78,25 @@ class ImageExtractor:
         self.ungrounded: list[dict] = []
         self.grounding_report: dict[str, dict] = {}
 
-    def __call__(self, ef: EvidenceFile, raw: bytes, prefix_system: dict[str, str]) -> list[Observation]:
-        template, _ = self.client.prompt(TASK)
+    def render(self, template: str, prefix_system: dict[str, str]) -> tuple[str, str]:
+        """(rendered prompt, its version): the systems and record types are substituted before hashing."""
         systems = sorted(set(prefix_system.values()))
         prompt = (template.replace("{SYSTEMS}", ", ".join(f"`{s}`" for s in systems))
                   .replace("{RECORD_TYPES}", ", ".join(f"`{c}`" for c in self.categories)))
-        version = "p" + hashlib.sha256(prompt.encode("utf-8")).hexdigest()[:12]
+        return prompt, "p" + hashlib.sha256(prompt.encode("utf-8")).hexdigest()[:12]
+
+    def shipped_versions(self, prefix_system: dict[str, str]) -> set[str]:
+        """Rendered versions of the current and the legacy vision prompts that ship in code/prompts/."""
+        from ..llm_client import PROMPTS_DIR
+        out = {self.render(self.client.prompt(TASK)[0], prefix_system)[1]}
+        for name in LEGACY_PROMPTS:
+            out.add(self.render((PROMPTS_DIR / name).read_text(encoding="utf-8"), prefix_system)[1])
+        return out
+
+    def __call__(self, ef: EvidenceFile, raw: bytes, prefix_system: dict[str, str]) -> list[Observation]:
+        template, _ = self.client.prompt(TASK)
+        prompt, version = self.render(template, prefix_system)
+        self._shipped = self.shipped_versions(prefix_system)
         key = content_key(TASK, version, raw)
         hit = self.cache.get(TASK, key)
         if hit is None and ef.file_id not in self.reextract:
@@ -115,7 +130,8 @@ class ImageExtractor:
         entries = sorted(root.glob("*.json")) if root.exists() else []
         for p in entries:
             entry = json.loads(p.read_text(encoding="utf-8"))
-            if entry.get("input_sha256") == ef.sha256:
+            # only replies whose prompt ships with the code (current or LEGACY_PROMPTS) are reused
+            if entry.get("input_sha256") == ef.sha256 and entry.get("prompt_version") in getattr(self, "_shipped", set()):
                 self.legacy_used.append({"file_id": ef.file_id, "prompt_version": entry.get("prompt_version")})
                 return {**entry, "response": upgrade_legacy(entry["response"], entry.get("prompt_version", "?"))}
         return None
