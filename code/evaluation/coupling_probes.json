@@ -220,6 +220,84 @@
     "kind": "comment/docstring/prompt"
    },
    {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 10,
+    "literal": "account_1234",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 10,
+    "literal": "search_88",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 11,
+    "literal": "support_7",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 11,
+    "literal": "analytics_12",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 11,
+    "literal": "export_5",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 11,
+    "literal": "data_flow_9",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 11,
+    "literal": "backup_3",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 11,
+    "literal": "audit_record_4",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 11,
+    "literal": "tombstone_2",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 12,
+    "literal": "legal_hold_6",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 12,
+    "literal": "marketing_1",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 12,
+    "literal": "object_8",
+    "kind": "comment/docstring/prompt"
+   },
+   {
+    "file": "code/prompts/image_extraction_v1.md",
+    "line": 47,
+    "literal": "account_1",
+    "kind": "comment/docstring/prompt"
+   },
+   {
     "file": "code/prompts/investigator.md",
     "line": 42,
     "literal": "case_1",
