@@ -360,50 +360,51 @@ Every regex in code/main.py and code/agent/** run on ten 1 MB adversarial lines 
 
 | Where | Pattern | Worst time (s) | Slowest input | Result |
 |---|---|---|---|---|
-| code/agent/attribution.py:606 | `non-deletion` | 0.018 | prefix_repeated | PASS |
-| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.358 | digits | PASS |
+| code/agent/attribution.py:606 | `non-deletion` | 0.019 | prefix_repeated | PASS |
+| code/agent/explain.py:28 | `[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\.[A-Za-z]{2,24}` | 0.358 | letters | PASS |
 | code/agent/explain.py:46 | `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z\|[+-]\d{2}:\d{2})` | 0.052 | digits | PASS |
-| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.055 | email_like | PASS |
-| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.075 | email_like | PASS |
+| code/agent/identity.py:16 | `(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,253}\.[A-Za-z]{2,24}` | 0.065 | prefix_repeated | PASS |
+| code/agent/identity.py:17 | `\b[0-9a-f]{64}\b` | 0.122 | email_like | PASS |
 | code/agent/identity.py:18 | `^\+\d[\d ()\-]{6,}$` | 0.0 | letters | PASS |
-| code/agent/identity.py:20 | `[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}){0,31}` | 0.275 | prefix_repeated | PASS |
-| code/agent/identity.py:21 | `(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.){1,8}[A-Za-z]{2,24}` | 2.858 | letters | FAIL: over bound |
+| code/agent/identity.py:20 | `[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{\|}~-]{1,64}){0,31}` | 0.311 | prefix_repeated | PASS |
+| code/agent/identity.py:23 | `[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?` | 0.356 | prefix_repeated | PASS |
+| code/agent/identity.py:24 | `[A-Za-z]{2,24}` | 0.193 | words_underscores | PASS |
 | code/agent/parsers/__init__.py:31 | `linked (\S+) \(([^)]+)\) to (\S+?) and (\S+?)[.;]\|confirmed (\S+) \(([^)]+)\) belongs only` | 0.022 | words_underscores | PASS |
-| code/agent/parsers/__init__.py:37 | `^(.*)_\d+$` | 0.025 | words_underscores | PASS |
+| code/agent/parsers/__init__.py:37 | `^(.*)_\d+$` | 0.028 | separators | PASS |
 | code/agent/parsers/file_checks.py:68 | `^\s*BEGIN(\s+TRANSACTION)?\s*;` | 0.0 | letters | PASS |
-| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.118 | separators | PASS |
-| code/agent/parsers/file_checks.py:70 | `COMMIT\s*;$` | 0.004 | prefix_repeated | PASS |
+| code/agent/parsers/file_checks.py:69 | `(--[^\n]*\n?\|\s)+$` | 0.14 | letters_spaces | PASS |
+| code/agent/parsers/file_checks.py:70 | `COMMIT\s*;$` | 0.005 | prefix_repeated | PASS |
 | code/agent/parsers/handover_text.py:11 | `^-\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(\S+)\s*\\|\s*(.+?)\s*$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:18 | `^(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)\s+(.*)$` | 0.0 | letters | PASS |
-| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.058 | letters_spaces | PASS |
+| code/agent/parsers/log_lines.py:20 | `(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]{0,127})=("((?:[^"\\]\|\\.)*)"\|[^\s"]+)` | 0.066 | letters_spaces | PASS |
 | code/agent/parsers/log_lines.py:21 | `^<\d+>1 (\S+) (\S+) (\S+) - - (.*)$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:22 | `^\[(\w+)\] \[([^\]]+)\] \[([^\]]+)\] ([a-z_]+): (.*)$` | 0.0 | letters | PASS |
 | code/agent/parsers/log_lines.py:23 | `^\\| (\w+) \\| ([^\|]+?) \\| ([^\|]+?) \\| ([a-z_]+) \\| (.*)$` | 0.0 | letters | PASS |
-| code/agent/parsers/ocr_grounding.py:34 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.463 | letters_spaces | PASS |
-| code/agent/parsers/ocr_grounding.py:131 | `(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}` | 0.07 | separators | PASS |
-| code/agent/parsers/ocr_grounding.py:132 | `(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])` | 0.053 | prefix_repeated | PASS |
-| code/agent/parsers/ocr_grounding.py:135 | `[^\s@]@[^\s@]` | 0.158 | email_like | PASS |
+| code/agent/parsers/ocr_grounding.py:34 | `(?<![A-Za-z0-9_])([a-z]{1,32}(?:[_ .][a-z]{1,32}){0,3})[_ .]?(\d{1,12})(?![0-9])` | 0.514 | letters_spaces | PASS |
+| code/agent/parsers/ocr_grounding.py:131 | `(?<![\w+])\+\d{1,3}(?:[ .\-]?\(?\d{1,5}\)?){2,6}` | 0.074 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:132 | `(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])` | 0.107 | id_like | PASS |
+| code/agent/parsers/ocr_grounding.py:135 | `[^\s@]@[^\s@]` | 0.13 | email_like | PASS |
 | code/agent/parsers/ocr_grounding.py:106 | `` | None | None | DYNAMIC: covered by its builder or not a |
-| code/agent/parsers/ocr_grounding.py:117 | `[ .]` | 0.437 | separators | PASS |
-| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.075 | random_printable | PASS |
+| code/agent/parsers/ocr_grounding.py:117 | `[ .]` | 0.4 | separators | PASS |
+| code/agent/parsers/pdf_text.py:35 | `(?<!\d)(\d{1,10}) 0 obj` | 0.074 | random_printable | PASS |
 | code/agent/parsers/pdf_text.py:43 | `<<(.*)>>\s*stream\r?\n(.*?)\r?\n?endstream` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.006 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.218 | words_underscores | PASS |
+| code/agent/parsers/pdf_text.py:47 | `/(ASCII85Decode\|FlateDecode)` | 0.005 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:116 | `\b([a-z]+(?:_[a-z]+)*)_(\d+)\b` | 0.209 | words_underscores | PASS |
 | code/agent/parsers/pdf_text.py:58 | `beginbfchar` | 0.024 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:59 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.02 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:61 | `beginbfrange` | 0.024 | prefix_repeated | PASS |
 | code/agent/parsers/pdf_text.py:62 | `<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>` | 0.001 | letters | PASS |
-| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.005 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:74 | `/ToUnicode (\d+) 0 R` | 0.005 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.253 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:73 | `/Name /([^\s/]+)` | 0.006 | prefix_repeated | PASS |
-| code/agent/parsers/pdf_text.py:81 | `/Contents (\d+) 0 R` | 0.005 | prefix_repeated | PASS |
-| code/agent/parsers/png_vlm.py:23 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.181 | words_underscores | PASS |
-| code/agent/parsers/png_vlm.py:25 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.365 | words_underscores | PASS |
+| code/agent/parsers/pdf_text.py:72 | `/Type\s*/Font[\s>/]` | 0.006 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:74 | `/ToUnicode (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:112 | `[A-Za-z0-9_.\-]+` | 0.291 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:73 | `/Name /([^\s/]+)` | 0.009 | prefix_repeated | PASS |
+| code/agent/parsers/pdf_text.py:81 | `/Contents (\d+) 0 R` | 0.004 | prefix_repeated | PASS |
+| code/agent/parsers/png_vlm.py:23 | `^([a-z]+(?:_[a-z]+)*)_(\d+)$` | 0.192 | words_underscores | PASS |
+| code/agent/parsers/png_vlm.py:25 | `(?<![a-z0-9])[a-z]{1,32}(?:_[a-z]{1,32}){0,3}_\d{1,12}` | 0.247 | words_underscores | PASS |
 | code/agent/parsers/sql_snapshots.py:27 | `_replica_[a-z_]+$` | 0.004 | prefix_repeated | PASS |
 | code/agent/parsers/sql_snapshots.py:36 | `^-- Captured at:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
-| code/agent/parsers/sql_snapshots.py:38 | `^-- Database topology:\s*(\S+)` | 0.0 | letters | PASS |
-| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.033 | random_printable | PASS |
+| code/agent/parsers/sql_snapshots.py:38 | `^-- Database topology:\s*(\S+)` | 0.001 | prefix_repeated | PASS |
+| code/agent/parsers/ocr_grounding.py token_pattern('audit_record_002') | `token_pattern` | 0.037 | random_printable | PASS |
 
 Seven patterns were quadratic before G8 (each > 30 s on a 1 MB line): the email pattern, the log key=value pattern, both screenshot id token patterns, and three lazy PDF block patterns. Fixed by RFC 5321 bounds, word-start lookbehinds, bounded id prefixes and a linear block scan; output.csv and every trace unchanged.
 
