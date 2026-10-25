@@ -13,17 +13,6 @@
   "misses": {},
   "stderr": ""
  },
- "coupling_probes": {
-  "exit": 0,
-  "child_exits": {
-   "baseline": 0,
-   "a_id_bijection": 0,
-   "b_row_order": 0,
-   "c_timestamp_format": 0,
-   "d_email_case": 0,
-   "e_drop_evidence_file": 0
-  }
- },
  "prompt_versions": {
   "current_text_prompts": {
    "intent": "pfb7d2f0c21e6",

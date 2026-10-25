@@ -91,6 +91,8 @@ decision); OCR underscore rendering MEASURED → JUDGEMENT (an observation of th
 | `code/agent/explain.py` | 80, 200 | slice: length cap on diagnostic text, or a fixed prefix/suffix strip | JUDGEMENT | only how much diagnostic text is kept (caps), or the strip of a fixed marker such as 'log:' or '~>' |
 | `code/agent/identity.py` | 253 | max email domain length (valid_email) | BOUND | RFC 5321 §4.5.3.1.2 / RFC 1035 |
 | `code/agent/identity.py` | 64 | max email local-part length (valid_email) | BOUND | RFC 5321 §4.5.3.1.1 |
+| `code/agent/identity.py` | 9 | maximum domain labels accepted (8 labels + TLD) | JUDGEMENT | very deep domains rejected |
+| `code/agent/identity.py` | 2 | minimum domain labels (a label and a TLD) | STANDARD | RFC 1035 host names |
 | `code/agent/intent.py` | 20 | fallback batch size if models.yaml omits tasks.intent.batch_size (yaml sets 40) | JUDGEMENT | only when the yaml key is missing |
 | `code/agent/intent.py` | 10 | hash-prefix length (cache keys, prompt versions, nonces, call ids) | JUDGEMENT | existing cache keys / prompt versions no longer match: every cached reply misses |
 | `code/agent/intent.py` | 5000 | request-text classification cap (C7a) | JUDGEMENT | see main table |

@@ -123,12 +123,17 @@
    "attribution:INFERRED_CLAIM:_           _, _, _, _, _,  _, _, _, _, _",
    "category_basis:default category for object_storage",
    "category_basis:shape: email_opt_in",
-   "note:CONTROL_UNDETERMINABLE",
-   "note:EXPOSURE_UNKNOWN"
+   "note:CONTROL_UNDETERMINABLE"
   ]
  },
  "literals": {
   "hits": [
+   {
+    "file": "code/agent/parsers/ocr_grounding.py",
+    "line": 134,
+    "literal": "evidence_42",
+    "kind": "comment/docstring/prompt"
+   },
    {
     "file": "code/agent/validation.py",
     "line": 126,

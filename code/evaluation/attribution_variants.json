@@ -131,13 +131,18 @@
    "new_sample_assignments": 7,
    "correct": [
     [
-     "case_20",
-     "account_5037",
+     "case_22",
+     "account_4990",
      "INFERRED_CLAIM"
     ],
     [
-     "case_21",
-     "account_6440",
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
      "INFERRED_CLAIM"
     ],
     [
@@ -151,18 +156,13 @@
      "INFERRED_CLAIM"
     ],
     [
-     "case_22",
-     "account_4990",
+     "case_20",
+     "account_5037",
      "INFERRED_CLAIM"
     ],
     [
-     "case_32",
-     "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_31",
-     "account_4857",
+     "case_21",
+     "account_6440",
      "INFERRED_CLAIM"
     ]
    ],
@@ -275,13 +275,18 @@
    "new_sample_assignments": 7,
    "correct": [
     [
-     "case_20",
-     "account_5037",
+     "case_22",
+     "account_4990",
      "INFERRED_CLAIM"
     ],
     [
-     "case_21",
-     "account_6440",
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
      "INFERRED_CLAIM"
     ],
     [
@@ -295,18 +300,13 @@
      "INFERRED_CLAIM"
     ],
     [
-     "case_22",
-     "account_4990",
+     "case_20",
+     "account_5037",
      "INFERRED_CLAIM"
     ],
     [
-     "case_32",
-     "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_31",
-     "account_4857",
+     "case_21",
+     "account_6440",
      "INFERRED_CLAIM"
     ]
    ],
@@ -365,8 +365,8 @@
     "ambiguous_resources": 23,
     "ambiguous_cases": 20,
     "assignments": {
-     "INFERRED": 4,
-     "INFERRED_CLAIM": 7
+     "INFERRED_CLAIM": 7,
+     "INFERRED": 4
     },
     "assignments_total": 11
    },
@@ -440,13 +440,18 @@
    "new_sample_assignments": 7,
    "correct": [
     [
-     "case_20",
-     "account_5037",
+     "case_22",
+     "account_4990",
      "INFERRED_CLAIM"
     ],
     [
-     "case_21",
-     "account_6440",
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
      "INFERRED_CLAIM"
     ],
     [
@@ -460,18 +465,13 @@
      "INFERRED_CLAIM"
     ],
     [
-     "case_22",
-     "account_4990",
+     "case_20",
+     "account_5037",
      "INFERRED_CLAIM"
     ],
     [
-     "case_32",
-     "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_31",
-     "account_4857",
+     "case_21",
+     "account_6440",
      "INFERRED_CLAIM"
     ]
    ],
@@ -530,8 +530,8 @@
     "ambiguous_resources": 23,
     "ambiguous_cases": 20,
     "assignments": {
-     "INFERRED": 4,
-     "INFERRED_CLAIM": 7
+     "INFERRED_CLAIM": 7,
+     "INFERRED": 4
     },
     "assignments_total": 11
    },
@@ -621,13 +621,33 @@
    "new_sample_assignments": 10,
    "correct": [
     [
-     "case_20",
-     "account_5037",
+     "case_22",
+     "account_4990",
      "INFERRED_CLAIM"
     ],
     [
-     "case_21",
-     "account_6440",
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_25",
+     "account_3136",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_20",
+     "account_5037",
      "INFERRED_CLAIM"
     ],
     [
@@ -641,28 +661,8 @@
      "INFERRED_ORDER"
     ],
     [
-     "case_25",
-     "account_3136",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_18",
-     "account_5521",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_22",
-     "account_4990",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_32",
-     "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_31",
-     "account_4857",
+     "case_21",
+     "account_6440",
      "INFERRED_CLAIM"
     ]
    ],
@@ -729,8 +729,8 @@
     "ambiguous_resources": 18,
     "ambiguous_cases": 20,
     "assignments": {
-     "INFERRED": 4,
      "INFERRED_CLAIM": 7,
+     "INFERRED": 4,
      "INFERRED_ORDER": 3
     },
     "assignments_total": 14
@@ -821,13 +821,33 @@
    "new_sample_assignments": 10,
    "correct": [
     [
-     "case_20",
-     "account_5037",
+     "case_22",
+     "account_4990",
      "INFERRED_CLAIM"
     ],
     [
-     "case_21",
-     "account_6440",
+     "case_31",
+     "account_4857",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_32",
+     "account_8858",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_25",
+     "account_3136",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_18",
+     "account_5521",
+     "INFERRED_CLAIM"
+    ],
+    [
+     "case_20",
+     "account_5037",
      "INFERRED_CLAIM"
     ],
     [
@@ -841,28 +861,8 @@
      "INFERRED_ORDER"
     ],
     [
-     "case_25",
-     "account_3136",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_18",
-     "account_5521",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_22",
-     "account_4990",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_32",
-     "account_8858",
-     "INFERRED_CLAIM"
-    ],
-    [
-     "case_31",
-     "account_4857",
+     "case_21",
+     "account_6440",
      "INFERRED_CLAIM"
     ]
    ],

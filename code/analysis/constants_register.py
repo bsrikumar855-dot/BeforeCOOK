@@ -154,6 +154,8 @@ MANUAL = {
                                                         "Round 6 brief"),
     ("code/evaluation/rule_branch_audit.py", 2): ("raw evidence lines quoted per spot-check", "JUDGEMENT", "report only"),
     ("code/evaluation/rule_branch_audit.py", 3): ("spot-check instances listed per branch", "SPEC", "Round 6 brief: up to 3"),
+    ("code/agent/identity.py", 2): ("minimum domain labels (a label and a TLD)", "STANDARD", "RFC 1035 host names"),
+    ("code/agent/identity.py", 9): ("maximum domain labels accepted (8 labels + TLD)", "JUDGEMENT", "very deep domains rejected"),
     ("code/agent/identity.py", 64): ("max email local-part length (valid_email)", "BOUND", "RFC 5321 §4.5.3.1.1"),
     ("code/agent/identity.py", 253): ("max email domain length (valid_email)", "BOUND", "RFC 5321 §4.5.3.1.2 / RFC 1035"),
     ("code/evaluation/spec_audit.py", 518): ("required data-row count", "SPEC", "problem_statement.md: exactly 518 data rows"),
