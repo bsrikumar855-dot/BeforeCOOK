@@ -636,3 +636,165 @@ branch=main
 repo_root=D:\Orchestrate - October
 worktree=main
 parent_agent=none
+
+## [2026-10-25T10:16:01+05:30] Final build: F1 tombstone proof, F2 email edge cases, F3 interview facts, rc4
+
+User Prompt (verbatim, secrets redacted):
+FINAL BUILD — F1 Tombstone Proof, Email Edge Cases, Interview Facts, Release rc4
+This is the final implementation window. Credits are limited. Prioritize correctness and complete the highest-value work without repeating finished audits.
+0. State, constraints, and operating rules
+Current baseline: rc3, commit `727cab5`.
+
+* Existing `output.csv` SHA-256 begins `426049da`.
+* Sample metrics: status `31/32`, step precision `178/178`, recall `178/193`, exact sequence `19/32`.
+* Round 6 is COMPLETE: independent re-derivation `101/103` steps, `0 OUR_BUG`; R1 reported zero defects; R3/R4 reported clean.
+* Do not repeat Round 6 or reopen attribution, ordering, or offset bands. Previous experiments rejected those changes with measured evidence.
+
+Before acting:
+
+1. Read `AGENTS.md`, inspect Git status, and verify `rc3` and its output hash.
+2. Follow the existing logging and change-record conventions. Do not modify `CLAUDE.md`.
+3. Work locally only. Never push. Never print, expose, or commit secrets.
+4. Gate commits on the actual test process exit code.
+5. Preserve `rc3` as the rollback baseline. Do not move or overwrite its tag.
+6. Do not spend credits on broad rediscovery, repeated completed audits, or cosmetic refactoring.
+
+SHIP rule: zero incorrect changes, zero regressions to previously correct sample steps or statuses, no sample-specific logic, and raw-evidence quotations for every changed evaluation row. Separate `MEASURED`, `ESTIMATED`, `JUDGEMENT`, and `UNKNOWN`. Never invent results.
+If a task cannot be completed safely within the available budget, report it as incomplete rather than fabricating success.
+F1 — Screenshot-based proof of absent identifiers
+Investigate `rule_15` and related cases where a tombstone remains UNKNOWN because a screenshot may prove that direct identifiers are absent.
+Known evidence: `evidence_42` (`deleted_account_reference_20260310.png`) is reported to show `user_17`'s own detail page in the Customer Reference Registry, with a “Retained reference” badge, reference type “Customer key”, timestamps, owner team, and links to retained records—but no name, email, phone, or hash. `tombstone_17` in `case_46` currently remains UNKNOWN.
+Verify these facts against the actual image and OCR output before relying on them.
+Implement the absence-proof rule only if supported by the specification and existing evidence architecture. A screenshot may prove absent identifiers only when ALL conditions hold:
+
+1. Deterministic OCR evidence establishes that the image is the record's own detail page: the page header matches the record ID or alias, and detail-field labels are present. List/search views do not qualify.
+2. The record ID or alias is OCR-grounded.
+3. Multi-pass OCR covers the entire image and finds no email-shaped address, E.164-like phone, or 64-character hexadecimal token. Use bounded, linear-time matching patterns and document their provenance in `CONSTANTS.md`.
+4. The capture timestamp is at or before `audit_at`.
+5. The source is admissible under the challenge specification.
+
+Cite the correct `file_id`. Apply the rule generally to eligible currently-UNKNOWN screenshot records, not just `case_46`.
+
+* Add tests for list-view rejection, a detail view containing an email, OCR uncertainty, and capture timestamps after `audit_at`.
+* Confirm tombstones in `case_31` and `case_32` remain unchanged.
+* If OCR evidence is ambiguous, preserve UNKNOWN.
+* Avoid new model calls. If unavoidable, restrict them to affected images, use the existing prompt, use the cache, and compare extracted fields before acceptance.
+
+Report: affected records, evidence, rows changed, `case_46` before/after, and regression results. If the specification does not permit this inference, do not implement it.
+F2 — Email identity edge cases
+Add focused regression tests and fix only defects demonstrated in the existing code or contract.
+Required cases:
+
+* Case-insensitive exact matching, where required.
+* Leading/trailing whitespace trimming.
+* Preserve dots in local parts exactly; never apply Gmail-specific dot removal globally.
+* Do not collapse plus-addressing.
+* Reject malformed addresses, including consecutive dots, without crashing.
+* Do not equate Unicode lookalikes.
+* Never link an identity using normalized email alone when independent identity evidence is required.
+
+Inspect the current implementation first. Do not rewrite a working subsystem unnecessarily.
+Measure whether each proposed normalization or validation rule changes any of the 518 requests or existing evidence. Report counts separately for each rule and explain any nonzero changes. The expected count is zero, but verify it—do not assume it.
+F3 — Create `INTERVIEW_FACTS.md`
+Create this file at the repository root. It must be factual preparation material, not scripted interview answers, and must be excluded from `code.zip`.
+For each of these nine topics, include:
+
+1. Mechanism and exact `file:function` location.
+2. Key metric with denominator and source.
+3. Rejected alternative and its measured result.
+4. Known limitation and what remains untested.
+
+Topics:
+
+* Architecture.
+* Deterministic logic versus LLM use.
+* Arbitration and rule order.
+* End-to-end processing flow.
+* Evidence and citation.
+* Uncertainty handling.
+* AI-assisted workflow.
+* Trade-offs.
+* Limitations.
+
+Verify these facts against code, logs, commits, and reports
+Include each item below. If a value cannot be independently verified, label it `UNKNOWN` and identify the source that would be needed.
+
+* Citation rule C versus alternatives: `74/75`, A `70`, A′ `36`. Verify what each number measures.
+* Attribution baseline `89/111`.
+* A1 claim consistency: `252/252` hard-linked records consistent; seven additional correct pairs; recall `171 → 178`; exact sequence `16 → 19`.
+* A2 rejected: `case_02`, `account_002`, five-minute offset outside the band.
+* Ordering experiment rejected: `case_23`, `account_9155`.
+* E1 A/B and E2 results; E2 `126/126 AMBIGUOUS`, ceiling `0`. Verify the meaning of each denominator.
+* M1: zero status flips.
+* C0 incident: `342` silent `NOT_APPLICABLE` results and exit code `4`.
+* C7a long-text crash.
+* C9 → C10: five real IDs dropped; underscore interpreted as space or period; multi-pass OCR; `32/32`.
+* The seven quadratic regular expressions and the remediation applied.
+* Coupling probes `5/5`, covering `19,760` renamed IDs.
+* Specification-audit negative control `17/17`.
+* Independent re-derivation `101/103`, with the actual disagreement triage and zero `OUR_BUG`.
+* Intent result `42/42` across two models; Flash-Lite using less than 50% of the tokens, if verifiable.
+* Legacy prompt v1 decision.
+* F1 result, after implementing and testing it; otherwise label `PENDING`.
+* `NOT_DERIVABLE`: `account_004`, `audit_record_6645`, `audit_record_5569`.
+* Free-tier privacy note, based only on documented facts; do not expose credentials or sensitive session data.
+* Usage totals, with the measurement source and scope.
+
+Also include:
+
+* Exact `--explain` commands for `case_25`, `case_05` (replica drift), `case_46` (F1), and one documented ad-hoc request. Verify CLI syntax before writing commands.
+* Ten hard follow-up questions, each mapped to the facts or code locations needed to answer it.
+* A “With more time” section listing each proposed improvement and its expected metric effect, clearly labeled as measured, estimated, or unknown.
+
+Do not guess function names, results, usage totals, or metric definitions. Prefer a compact fact table with source paths and commit references.
+F4 — Full release gate for rc4
+Run the complete required G6/G7 gate on the final tree. Reuse valid existing scripts; do not rebuild equivalent tooling.
+
+1. Full tests; capture the real exit code.
+2. Specification audit, including the negative control.
+3. Coupling probes against the final tree.
+4. Security and robustness audit.
+5. Cache completeness: zero misses.
+6. Three-seed determinism.
+7. Kit `selftest`, `evaluate`, `certify`, and scoring checks.
+8. Build `code.zip` according to the repository README. Exclude `dataset/`, `.env`, nested archives, and `INTERVIEW_FACTS.md`.
+9. Scan the archive for secrets, absolute paths, usernames, and unintended files without printing secret values.
+10. Extract into a clean temporary directory and run using only packaged files and documented dependencies. Verify output byte identity and metric consistency.
+11. Run `package_submission.py`; require `READY TO SUBMIT`.
+12. Run transcript analysis and report gaps honestly.
+
+Do not assume a gate passed merely because an earlier release passed it. Run all required gates on the actual final tree.
+Release decision:
+
+* If every required gate passes, create `rc4`, record the final commit and output/archive SHA-256 hashes in `DESIGN.md`, then rebuild `submission/`.
+* If any required gate fails or any change violates the SHIP rule, do not create `rc4`. Keep `rc3` as the release candidate and report the exact blocker.
+* If F1 is not safely supported by the specification, preserve the conservative behavior and document why.
+
+Final report — compact, then stop
+Return only:
+
+1. F1: records inspected, eligible records, rows changed, `case_46` before/after, and test results.
+2. F2: tests, per-rule would-change counts, and actual changes.
+3. F3: file created, topics covered, count of UNKNOWN facts, and confirmation it is excluded from `code.zip`.
+4. F4: each gate with PASS/FAIL/NOT RUN; `rc4` hashes or explicit `rc3 KEPT`.
+5. Final sample metrics and evaluation distribution, with provenance.
+6. Top three remaining risks ranked by likely score impact.
+7. Files changed and commits created.
+
+Do not estimate an official leaderboard score or promise rank #1. Report facts and stop for review.
+
+Agent Response Summary:
+I verified evidence_42 against the image and its OCR. I implemented F1 as a JUDGEMENT rule, a screenshot absence proof requiring the record's own detail page with no identifier anywhere. It changed one eval row: case_46 gained VERIFY_RECORD_REDACTED for tombstone_17 citing evidence_42, and 0 sample rows changed. I decided to ignore free-standing "@" bullet glyphs and to keep any "@" between non-space characters as uncertainty. F2 added norm_email/valid_email: every rule changes 0 values except case-insensitivity (20 request emails, already matched), and it fixed the Kelvin-sign lowercase-folding defect. The first gate run caught my new domain regex at 2.9 s on a 1 MB line; I replaced it with a per-label check and re-ran every gate on the final tree, and all passed. I wrote INTERVIEW_FACTS.md with sources, correcting the brief's 342 to 358 and the A 70 to A_raw. rc4 is tagged at a89b7c6; rc3 is kept as rollback.
+
+Actions:
+* Commits 8d0c804 (F1), e79cf2b (F2), 154b16f (F3), 6274daa (F2 domain fix), 5b7fdbc (gate results), a89b7c6 = tag rc4; DESIGN rc4 record on top (local only, never pushed)
+* Edited code/agent/{identity,pipeline}.py, code/agent/parsers/{ocr_grounding,png_vlm}.py, CONSTANTS.md, DESIGN.md, score_estimate.md; added code/analysis/email_edge_cases.py, code/tests/{test_absence_proof,test_email_identity}.py, INTERVIEW_FACTS.md (113 tests pass)
+* No model calls
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5
+branch=main
+repo_root=D:\Orchestrate - October
+worktree=main
+parent_agent=none
